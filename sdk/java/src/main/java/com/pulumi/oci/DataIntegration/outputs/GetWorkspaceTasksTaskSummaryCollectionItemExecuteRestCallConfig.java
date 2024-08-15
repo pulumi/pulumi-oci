@@ -6,7 +6,6 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValues;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -37,7 +36,7 @@ public final class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConf
      * @return The headers for the REST call.
      * 
      */
-    private Map<String,Object> requestHeaders;
+    private Map<String,String> requestHeaders;
 
     private GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig() {}
     /**
@@ -72,7 +71,7 @@ public final class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConf
      * @return The headers for the REST call.
      * 
      */
-    public Map<String,Object> requestHeaders() {
+    public Map<String,String> requestHeaders() {
         return this.requestHeaders;
     }
 
@@ -89,7 +88,7 @@ public final class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConf
         private String key;
         private String methodType;
         private String modelType;
-        private Map<String,Object> requestHeaders;
+        private Map<String,String> requestHeaders;
         public Builder() {}
         public Builder(GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -133,7 +132,7 @@ public final class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConf
             return this;
         }
         @CustomType.Setter
-        public Builder requestHeaders(Map<String,Object> requestHeaders) {
+        public Builder requestHeaders(Map<String,String> requestHeaders) {
             if (requestHeaders == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig", "requestHeaders");
             }

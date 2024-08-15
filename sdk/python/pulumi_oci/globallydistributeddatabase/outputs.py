@@ -87,7 +87,7 @@ class ShardedDatabaseCatalogDetail(dict):
                  container_database_id: Optional[str] = None,
                  container_database_parent_id: Optional[str] = None,
                  encryption_key_details: Optional['outputs.ShardedDatabaseCatalogDetailEncryptionKeyDetails'] = None,
-                 metadata: Optional[Mapping[str, Any]] = None,
+                 metadata: Optional[Mapping[str, str]] = None,
                  name: Optional[str] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[str] = None,
                  shard_group: Optional[str] = None,
@@ -105,7 +105,7 @@ class ShardedDatabaseCatalogDetail(dict):
         :param str container_database_id: Identifier of the underlying container database.
         :param str container_database_parent_id: Identifier of the underlying container database parent.
         :param 'ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs' encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-        :param Mapping[str, Any] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param Mapping[str, str] metadata: Additional metadata related to shard's underlying supporting resource.
         :param str name: Name of the shard.
         :param str peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param str shard_group: Name of the shard-group to which the shard belongs.
@@ -211,7 +211,7 @@ class ShardedDatabaseCatalogDetail(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
@@ -364,16 +364,16 @@ class ShardedDatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None):
+                 all_connection_strings: Optional[Mapping[str, str]] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: Collection of connection strings.
+        :param Mapping[str, str] all_connection_strings: Collection of connection strings.
         """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         Collection of connection strings.
         """
@@ -412,7 +412,7 @@ class ShardedDatabaseGsm(dict):
     def __init__(__self__, *,
                  compute_count: Optional[float] = None,
                  data_storage_size_in_gbs: Optional[float] = None,
-                 metadata: Optional[Mapping[str, Any]] = None,
+                 metadata: Optional[Mapping[str, str]] = None,
                  name: Optional[str] = None,
                  status: Optional[str] = None,
                  supporting_resource_id: Optional[str] = None,
@@ -422,7 +422,7 @@ class ShardedDatabaseGsm(dict):
         """
         :param float compute_count: The compute amount available to the underlying autonomous database associated with shard.
         :param float data_storage_size_in_gbs: The data disk group size to be allocated in GBs.
-        :param Mapping[str, Any] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param Mapping[str, str] metadata: Additional metadata related to shard's underlying supporting resource.
         :param str name: Name of the shard.
         :param str status: Status of shard or catalog or gsm for the sharded database.
         :param str supporting_resource_id: Identifier of the underlying supporting resource.
@@ -467,7 +467,7 @@ class ShardedDatabaseGsm(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
@@ -618,7 +618,7 @@ class ShardedDatabaseShardDetail(dict):
                  container_database_id: Optional[str] = None,
                  container_database_parent_id: Optional[str] = None,
                  encryption_key_details: Optional['outputs.ShardedDatabaseShardDetailEncryptionKeyDetails'] = None,
-                 metadata: Optional[Mapping[str, Any]] = None,
+                 metadata: Optional[Mapping[str, str]] = None,
                  name: Optional[str] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[str] = None,
                  shard_group: Optional[str] = None,
@@ -637,7 +637,7 @@ class ShardedDatabaseShardDetail(dict):
         :param str container_database_id: Identifier of the underlying container database.
         :param str container_database_parent_id: Identifier of the underlying container database parent.
         :param 'ShardedDatabaseShardDetailEncryptionKeyDetailsArgs' encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-        :param Mapping[str, Any] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param Mapping[str, str] metadata: Additional metadata related to shard's underlying supporting resource.
         :param str name: Name of the shard.
         :param str peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param str shard_group: Name of the shard-group to which the shard belongs.
@@ -746,7 +746,7 @@ class ShardedDatabaseShardDetail(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
@@ -930,10 +930,10 @@ class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
 class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_state_details: str,
                  nsg_ids: Sequence[str],
@@ -941,16 +941,16 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
                  sharded_databases: Sequence[str],
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  vcn_id: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: PrivateEndpoint description.
         :param str display_name: A filter to return only private endpoint that match the entire name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The identifier of the Private Endpoint.
         :param str lifecycle_state_details: Detailed message for the lifecycle state.
         :param Sequence[str] nsg_ids: The OCIDs of the network security groups that the private endpoint belongs to.
@@ -958,7 +958,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
         :param Sequence[str] sharded_databases: The OCIDs of sharded databases that consumes the given private endpoint.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param str subnet_id: Identifier of the subnet in which private endpoint exists.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
         :param str vcn_id: Identifier of the VCN in which subnet exists.
@@ -990,7 +990,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1014,7 +1014,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1078,7 +1078,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1120,7 +1120,7 @@ class GetShardedDatabaseCatalogDetailResult(dict):
                  data_storage_size_in_gbs: float,
                  encryption_key_details: Sequence['outputs.GetShardedDatabaseCatalogDetailEncryptionKeyDetailResult'],
                  is_auto_scaling_enabled: bool,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  peer_cloud_autonomous_vm_cluster_id: str,
                  shard_group: str,
@@ -1137,7 +1137,7 @@ class GetShardedDatabaseCatalogDetailResult(dict):
         :param float data_storage_size_in_gbs: The data disk group size to be allocated in GBs.
         :param Sequence['GetShardedDatabaseCatalogDetailEncryptionKeyDetailArgs'] encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
         :param bool is_auto_scaling_enabled: Determines the auto-scaling mode.
-        :param Mapping[str, Any] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
+        :param Mapping[str, str] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         :param str name: Name of the shard.
         :param str peer_cloud_autonomous_vm_cluster_id: Identifier of the peer cloudAutonomousVmCluster for the shard.
         :param str shard_group: Name of the shard-group to which the shard belongs.
@@ -1228,7 +1228,7 @@ class GetShardedDatabaseCatalogDetailResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         """
@@ -1342,15 +1342,15 @@ class GetShardedDatabaseCatalogDetailEncryptionKeyDetailResult(dict):
 @pulumi.output_type
 class GetShardedDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any]):
+                 all_connection_strings: Mapping[str, str]):
         """
-        :param Mapping[str, Any] all_connection_strings: Collection of connection strings.
+        :param Mapping[str, str] all_connection_strings: Collection of connection strings.
         """
         pulumi.set(__self__, "all_connection_strings", all_connection_strings)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         Collection of connection strings.
         """
@@ -1362,7 +1362,7 @@ class GetShardedDatabaseGsmResult(dict):
     def __init__(__self__, *,
                  compute_count: float,
                  data_storage_size_in_gbs: float,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  status: str,
                  supporting_resource_id: str,
@@ -1372,7 +1372,7 @@ class GetShardedDatabaseGsmResult(dict):
         """
         :param float compute_count: The compute amount available to the underlying autonomous database associated with shard.
         :param float data_storage_size_in_gbs: The data disk group size to be allocated in GBs.
-        :param Mapping[str, Any] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
+        :param Mapping[str, str] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         :param str name: Name of the shard.
         :param str status: Status of shard or catalog or gsm for the sharded database.
         :param str supporting_resource_id: Identifier of the underlying supporting resource.
@@ -1408,7 +1408,7 @@ class GetShardedDatabaseGsmResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         """
@@ -1500,7 +1500,7 @@ class GetShardedDatabaseShardDetailResult(dict):
                  data_storage_size_in_gbs: float,
                  encryption_key_details: Sequence['outputs.GetShardedDatabaseShardDetailEncryptionKeyDetailResult'],
                  is_auto_scaling_enabled: bool,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  peer_cloud_autonomous_vm_cluster_id: str,
                  shard_group: str,
@@ -1518,7 +1518,7 @@ class GetShardedDatabaseShardDetailResult(dict):
         :param float data_storage_size_in_gbs: The data disk group size to be allocated in GBs.
         :param Sequence['GetShardedDatabaseShardDetailEncryptionKeyDetailArgs'] encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
         :param bool is_auto_scaling_enabled: Determines the auto-scaling mode.
-        :param Mapping[str, Any] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
+        :param Mapping[str, str] metadata: Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         :param str name: Name of the shard.
         :param str peer_cloud_autonomous_vm_cluster_id: Identifier of the peer cloudAutonomousVmCluster for the shard.
         :param str shard_group: Name of the shard-group to which the shard belongs.
@@ -1611,7 +1611,7 @@ class GetShardedDatabaseShardDetailResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         """
@@ -1785,9 +1785,9 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
                  db_deployment_type: str,
                  db_version: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_state: str,
                  lifecycle_state_details: str,
@@ -1799,7 +1799,7 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
                  prefix: str,
                  sharding_method: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  total_cpu_count: float,
@@ -1812,9 +1812,9 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
         :param str db_deployment_type: The database deployment type.
         :param str db_version: Oracle Database version number.
         :param str db_workload: Possible workload types.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only sharded databases that match the entire name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Sharded Database identifier
         :param str lifecycle_state_details: Detailed message for the lifecycle state.
         :param int listener_port: The GSM listener port number.
@@ -1825,7 +1825,7 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
         :param str prefix: Unique prefix for the sharded database.
         :param str sharding_method: Sharding Method.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the Sharded Database was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Sharded Database was last updated. An RFC3339 formatted datetime string
         """
@@ -1914,7 +1914,7 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1930,7 +1930,7 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2023,7 +2023,7 @@ class GetShardedDatabasesShardedDatabaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

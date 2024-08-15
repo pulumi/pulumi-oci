@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Map of stage OCIDs to build pipeline stage run progress model.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> BuildPipelineStageRunProgress;
+        public readonly ImmutableDictionary<string, string> BuildPipelineStageRunProgress;
         /// <summary>
         /// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private GetBuildRunBuildRunProgressResult(
-            ImmutableDictionary<string, object> buildPipelineStageRunProgress,
+            ImmutableDictionary<string, string> buildPipelineStageRunProgress,
 
             string timeFinished,
 

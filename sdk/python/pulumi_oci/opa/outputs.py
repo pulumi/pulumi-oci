@@ -230,10 +230,10 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
                  attachments: Sequence['outputs.GetOpaInstancesOpaInstanceCollectionItemAttachmentResult'],
                  compartment_id: str,
                  consumption_model: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  idcs_at: str,
                  identity_app_display_name: str,
@@ -245,17 +245,17 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
                  metering_type: str,
                  shape_name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence['GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs'] attachments: A list of associated attachments to other services
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str consumption_model: The entitlement used for billing purposes
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the Process Automation instance.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique OpaInstance identifier
         :param str identity_app_display_name: This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
         :param str identity_app_guid: This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
@@ -266,7 +266,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
         :param str metering_type: MeteringType Identifier
         :param str shape_name: Shape of the instance.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when OpaInstance was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the OpaInstance was updated. An RFC3339 formatted datetime string
         """
@@ -318,7 +318,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -342,7 +342,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -435,7 +435,7 @@ class GetOpaInstancesOpaInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

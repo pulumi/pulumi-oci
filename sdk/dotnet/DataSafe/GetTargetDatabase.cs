@@ -122,7 +122,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The description of the peer target database in Data Safe.
         /// </summary>
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the Data Safe target database.
         /// </summary>
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TargetDatabaseId;
         /// <summary>
         /// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
@@ -182,13 +182,13 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetTargetDatabaseDatabaseDetailResult> databaseDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.DataSafe
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string targetDatabaseId,
 

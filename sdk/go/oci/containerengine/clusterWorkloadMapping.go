@@ -34,11 +34,11 @@ import (
 //				ClusterId:           pulumi.Any(testCluster.Id),
 //				MappedCompartmentId: pulumi.Any(testCompartment.Id),
 //				Namespace:           pulumi.Any(clusterWorkloadMappingNamespace),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -63,9 +63,9 @@ type ClusterWorkloadMapping struct {
 	// The OCID of the cluster.
 	ClusterId pulumi.StringOutput `pulumi:"clusterId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId pulumi.StringOutput `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
@@ -123,9 +123,9 @@ type clusterWorkloadMappingState struct {
 	// The OCID of the cluster.
 	ClusterId *string `pulumi:"clusterId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId *string `pulumi:"mappedCompartmentId"`
 	// The OCID of the mapped customer tenancy.
@@ -145,9 +145,9 @@ type ClusterWorkloadMappingState struct {
 	// The OCID of the cluster.
 	ClusterId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId pulumi.StringPtrInput
 	// The OCID of the mapped customer tenancy.
@@ -171,9 +171,9 @@ type clusterWorkloadMappingArgs struct {
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId string `pulumi:"mappedCompartmentId"`
 	// The namespace of the workloadMapping.
@@ -188,9 +188,9 @@ type ClusterWorkloadMappingArgs struct {
 	// The OCID of the cluster.
 	ClusterId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the mapped customer compartment.
 	MappedCompartmentId pulumi.StringInput
 	// The namespace of the workloadMapping.
@@ -293,13 +293,13 @@ func (o ClusterWorkloadMappingOutput) ClusterId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterWorkloadMappingOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterWorkloadMappingOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterWorkloadMappingOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterWorkloadMappingOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterWorkloadMapping) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The OCID of the mapped customer compartment.

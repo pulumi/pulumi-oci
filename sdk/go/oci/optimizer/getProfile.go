@@ -63,11 +63,11 @@ type LookupProfileResult struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
 	Id string `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
@@ -76,8 +76,8 @@ type LookupProfileResult struct {
 	Name      string `pulumi:"name"`
 	ProfileId string `pulumi:"profileId"`
 	// The profile's current state.
-	State      string                 `pulumi:"state"`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfileTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -137,8 +137,8 @@ func (o LookupProfileResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupProfileResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Text describing the profile. Avoid entering confidential information.
@@ -147,8 +147,8 @@ func (o LookupProfileResultOutput) Description() pulumi.StringOutput {
 }
 
 // Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o LookupProfileResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID of the profile.
@@ -175,8 +175,8 @@ func (o LookupProfileResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProfileResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o LookupProfileResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.

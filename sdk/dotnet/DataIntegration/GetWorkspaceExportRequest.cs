@@ -128,7 +128,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Contains key of the error
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ErrorMessages;
+        public readonly ImmutableDictionary<string, string> ErrorMessages;
         public readonly string ExportRequestKey;
         /// <summary>
         /// The array of exported object details.
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.DataIntegration
 
             string createdBy,
 
-            ImmutableDictionary<string, object> errorMessages,
+            ImmutableDictionary<string, string> errorMessages,
 
             string exportRequestKey,
 

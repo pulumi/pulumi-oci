@@ -2146,13 +2146,13 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem struct {
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
 	ConnectionState string `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id string `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -2172,7 +2172,7 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -2202,13 +2202,13 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs struct {
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
 	ConnectionState pulumi.StringInput `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -2228,7 +2228,7 @@ type GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -2315,10 +2315,10 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Co
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
@@ -2332,10 +2332,10 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Di
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
@@ -2394,10 +2394,10 @@ func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) Su
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
@@ -3755,7 +3755,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
@@ -3763,7 +3763,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem struct {
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events []GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEvent `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id string `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -3773,7 +3773,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem struct {
 	// A filter to return resources only when their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -3795,7 +3795,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs struct
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
@@ -3803,7 +3803,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs struct
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArrayInput `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -3813,7 +3813,7 @@ type GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemArgs struct
 	// A filter to return resources only when their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -3879,10 +3879,10 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -3903,10 +3903,10 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
@@ -3934,10 +3934,10 @@ func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) 
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]interface{} {
+func (o GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.

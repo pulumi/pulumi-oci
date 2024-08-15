@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// The headers for the REST call.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> RequestHeaders;
+        public readonly ImmutableDictionary<string, string> RequestHeaders;
 
         [OutputConstructor]
         private GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult(
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             string modelType,
 
-            ImmutableDictionary<string, object> requestHeaders)
+            ImmutableDictionary<string, string> requestHeaders)
         {
             ConfigValues = configValues;
             Key = key;

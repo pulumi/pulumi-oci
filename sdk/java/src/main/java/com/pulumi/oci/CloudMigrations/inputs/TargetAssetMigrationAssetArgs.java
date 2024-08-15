@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -218,13 +217,13 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
      * 
      */
     @Import(name="snapshots")
-    private @Nullable Output<Map<String,Object>> snapshots;
+    private @Nullable Output<Map<String,String>> snapshots;
 
     /**
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> snapshots() {
+    public Optional<Output<Map<String,String>>> snapshots() {
         return Optional.ofNullable(this.snapshots);
     }
 
@@ -233,13 +232,13 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
      * 
      */
     @Import(name="sourceAssetData")
-    private @Nullable Output<Map<String,Object>> sourceAssetData;
+    private @Nullable Output<Map<String,String>> sourceAssetData;
 
     /**
      * @return Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> sourceAssetData() {
+    public Optional<Output<Map<String,String>>> sourceAssetData() {
         return Optional.ofNullable(this.sourceAssetData);
     }
 
@@ -686,7 +685,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder snapshots(@Nullable Output<Map<String,Object>> snapshots) {
+        public Builder snapshots(@Nullable Output<Map<String,String>> snapshots) {
             $.snapshots = snapshots;
             return this;
         }
@@ -697,7 +696,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder snapshots(Map<String,Object> snapshots) {
+        public Builder snapshots(Map<String,String> snapshots) {
             return snapshots(Output.of(snapshots));
         }
 
@@ -707,7 +706,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder sourceAssetData(@Nullable Output<Map<String,Object>> sourceAssetData) {
+        public Builder sourceAssetData(@Nullable Output<Map<String,String>> sourceAssetData) {
             $.sourceAssetData = sourceAssetData;
             return this;
         }
@@ -718,7 +717,7 @@ public final class TargetAssetMigrationAssetArgs extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder sourceAssetData(Map<String,Object> sourceAssetData) {
+        public Builder sourceAssetData(Map<String,String> sourceAssetData) {
             return sourceAssetData(Output.of(sourceAssetData));
         }
 

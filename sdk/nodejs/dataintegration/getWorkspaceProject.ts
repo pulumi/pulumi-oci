@@ -66,7 +66,7 @@ export interface GetWorkspaceProjectResult {
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap: {[key: string]: string};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */

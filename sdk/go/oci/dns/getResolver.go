@@ -72,13 +72,13 @@ type LookupResolverResult struct {
 	// The OCID of the default view.
 	DefaultViewId string `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the resolver.
 	DisplayName string `pulumi:"displayName"`
 	// Read-only array of endpoints for the resolver.
 	Endpoints []GetResolverEndpointType `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resolver.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -158,8 +158,8 @@ func (o LookupResolverResultOutput) DefaultViewId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupResolverResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResolverResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupResolverResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResolverResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the resolver.
@@ -173,8 +173,8 @@ func (o LookupResolverResultOutput) Endpoints() GetResolverEndpointTypeArrayOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupResolverResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResolverResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupResolverResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResolverResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resolver.

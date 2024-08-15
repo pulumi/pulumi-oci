@@ -40,8 +40,8 @@ import (
 //				AdditionalFlashCacheInPercent: pulumi.Any(exascaleDbStorageVaultAdditionalFlashCacheInPercent),
 //				DefinedTags:                   pulumi.Any(exascaleDbStorageVaultDefinedTags),
 //				Description:                   pulumi.Any(exascaleDbStorageVaultDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				TimeZone: pulumi.Any(exascaleDbStorageVaultTimeZone),
 //			})
@@ -71,13 +71,13 @@ type ExascaleDbStorageVault struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Exadata Database Storage Vault description.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Create exadata Database Storage Details
 	HighCapacityDatabaseStorage ExascaleDbStorageVaultHighCapacityDatabaseStorageOutput `pulumi:"highCapacityDatabaseStorage"`
 	// Additional information about the current lifecycle state.
@@ -85,7 +85,7 @@ type ExascaleDbStorageVault struct {
 	// The current state of the Exadata Database Storage Vault.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the Exadata Database Storage Vault was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -148,13 +148,13 @@ type exascaleDbStorageVaultState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Exadata Database Storage Vault description.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Create exadata Database Storage Details
 	HighCapacityDatabaseStorage *ExascaleDbStorageVaultHighCapacityDatabaseStorage `pulumi:"highCapacityDatabaseStorage"`
 	// Additional information about the current lifecycle state.
@@ -162,7 +162,7 @@ type exascaleDbStorageVaultState struct {
 	// The current state of the Exadata Database Storage Vault.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Exadata Database Storage Vault was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -184,13 +184,13 @@ type ExascaleDbStorageVaultState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Exadata Database Storage Vault description.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Create exadata Database Storage Details
 	HighCapacityDatabaseStorage ExascaleDbStorageVaultHighCapacityDatabaseStoragePtrInput
 	// Additional information about the current lifecycle state.
@@ -198,7 +198,7 @@ type ExascaleDbStorageVaultState struct {
 	// The current state of the Exadata Database Storage Vault.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time that the Exadata Database Storage Vault was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -224,13 +224,13 @@ type exascaleDbStorageVaultArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Exadata Database Storage Vault description.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Create exadata Database Storage Details
 	HighCapacityDatabaseStorage ExascaleDbStorageVaultHighCapacityDatabaseStorage `pulumi:"highCapacityDatabaseStorage"`
 	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -249,13 +249,13 @@ type ExascaleDbStorageVaultArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Exadata Database Storage Vault description.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Exadata Database Storage Vault. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Create exadata Database Storage Details
 	HighCapacityDatabaseStorage ExascaleDbStorageVaultHighCapacityDatabaseStorageInput
 	// The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -368,8 +368,8 @@ func (o ExascaleDbStorageVaultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ExascaleDbStorageVaultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExascaleDbStorageVaultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Exadata Database Storage Vault description.
@@ -383,8 +383,8 @@ func (o ExascaleDbStorageVaultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ExascaleDbStorageVaultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExascaleDbStorageVaultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Create exadata Database Storage Details
@@ -405,8 +405,8 @@ func (o ExascaleDbStorageVaultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ExascaleDbStorageVaultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ExascaleDbStorageVaultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the Exadata Database Storage Vault was created.

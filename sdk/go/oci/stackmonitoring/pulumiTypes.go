@@ -522,7 +522,7 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemArrayOutput) Index(i pulumi.I
 
 type DiscoveryJobDiscoveryDetailsCredentialsItemProperties struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesInput is an input type that accepts DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs and DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput values.
@@ -538,7 +538,7 @@ type DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesInput interface {
 
 type DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs) ElementType() reflect.Type {
@@ -568,15 +568,15 @@ func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) ToDiscovery
 }
 
 // Key/Value pair of Property
-func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsCredentialsItemProperties) map[string]interface{} {
+func (o DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsCredentialsItemProperties) map[string]string {
 		return v.PropertiesMap
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type DiscoveryJobDiscoveryDetailsProperties struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // DiscoveryJobDiscoveryDetailsPropertiesInput is an input type that accepts DiscoveryJobDiscoveryDetailsPropertiesArgs and DiscoveryJobDiscoveryDetailsPropertiesOutput values.
@@ -592,7 +592,7 @@ type DiscoveryJobDiscoveryDetailsPropertiesInput interface {
 
 type DiscoveryJobDiscoveryDetailsPropertiesArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (DiscoveryJobDiscoveryDetailsPropertiesArgs) ElementType() reflect.Type {
@@ -673,8 +673,8 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) ToDiscoveryJobDiscoveryDet
 }
 
 // Key/Value pair of Property
-func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsProperties) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
+func (o DiscoveryJobDiscoveryDetailsPropertiesOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsProperties) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
 type DiscoveryJobDiscoveryDetailsPropertiesPtrOutput struct{ *pulumi.OutputState }
@@ -702,18 +702,18 @@ func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) Elem() DiscoveryJobDisc
 }
 
 // Key/Value pair of Property
-func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *DiscoveryJobDiscoveryDetailsProperties) map[string]interface{} {
+func (o DiscoveryJobDiscoveryDetailsPropertiesPtrOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DiscoveryJobDiscoveryDetailsProperties) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.PropertiesMap
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type DiscoveryJobDiscoveryDetailsTags struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // DiscoveryJobDiscoveryDetailsTagsInput is an input type that accepts DiscoveryJobDiscoveryDetailsTagsArgs and DiscoveryJobDiscoveryDetailsTagsOutput values.
@@ -729,7 +729,7 @@ type DiscoveryJobDiscoveryDetailsTagsInput interface {
 
 type DiscoveryJobDiscoveryDetailsTagsArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (DiscoveryJobDiscoveryDetailsTagsArgs) ElementType() reflect.Type {
@@ -810,8 +810,8 @@ func (o DiscoveryJobDiscoveryDetailsTagsOutput) ToDiscoveryJobDiscoveryDetailsTa
 }
 
 // Key/Value pair of Property
-func (o DiscoveryJobDiscoveryDetailsTagsOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsTags) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
+func (o DiscoveryJobDiscoveryDetailsTagsOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DiscoveryJobDiscoveryDetailsTags) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
 type DiscoveryJobDiscoveryDetailsTagsPtrOutput struct{ *pulumi.OutputState }
@@ -839,13 +839,13 @@ func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) Elem() DiscoveryJobDiscoveryD
 }
 
 // Key/Value pair of Property
-func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *DiscoveryJobDiscoveryDetailsTags) map[string]interface{} {
+func (o DiscoveryJobDiscoveryDetailsTagsPtrOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DiscoveryJobDiscoveryDetailsTags) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.PropertiesMap
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type MetricExtensionEnabledOnResource struct {
@@ -4057,7 +4057,7 @@ type MonitoredResourceTypeMetadata struct {
 	// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
-	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
 }
 
 // MonitoredResourceTypeMetadataInput is an input type that accepts MonitoredResourceTypeMetadataArgs and MonitoredResourceTypeMetadataOutput values.
@@ -4086,7 +4086,7 @@ type MonitoredResourceTypeMetadataArgs struct {
 	// (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
-	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
 }
 
 func (MonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
@@ -4200,8 +4200,8 @@ func (o MonitoredResourceTypeMetadataOutput) ValidPropertiesForUpdates() pulumi.
 }
 
 // (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
-func (o MonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourceTypeMetadata) map[string]interface{} { return v.ValidPropertyValues }).(pulumi.MapOutput)
+func (o MonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourceTypeMetadata) map[string]string { return v.ValidPropertyValues }).(pulumi.StringMapOutput)
 }
 
 type MonitoredResourceTypeMetadataPtrOutput struct{ *pulumi.OutputState }
@@ -4290,13 +4290,13 @@ func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertiesForUpdates() pulu
 }
 
 // (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
-func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertyValues() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) map[string]interface{} {
+func (o MonitoredResourceTypeMetadataPtrOutput) ValidPropertyValues() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourceTypeMetadata) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.ValidPropertyValues
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type MonitoredResourceTypeMetadataUniquePropertySet struct {
@@ -4634,11 +4634,11 @@ type MonitoredResourcesListMemberItem struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Monitored Resource Host Name.
 	HostName *string `pulumi:"hostName"`
 	// License edition of the monitored resource.
@@ -4660,7 +4660,7 @@ type MonitoredResourcesListMemberItem struct {
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // MonitoredResourcesListMemberItemInput is an input type that accepts MonitoredResourcesListMemberItemArgs and MonitoredResourcesListMemberItemOutput values.
@@ -4678,11 +4678,11 @@ type MonitoredResourcesListMemberItemArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Monitored Resource Host Name.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// License edition of the monitored resource.
@@ -4704,7 +4704,7 @@ type MonitoredResourcesListMemberItemArgs struct {
 	// The current state of the Resource.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (MonitoredResourcesListMemberItemArgs) ElementType() reflect.Type {
@@ -4764,8 +4764,8 @@ func (o MonitoredResourcesListMemberItemOutput) CompartmentId() pulumi.StringPtr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MonitoredResourcesListMemberItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesListMemberItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
@@ -4774,8 +4774,8 @@ func (o MonitoredResourcesListMemberItemOutput) ExternalId() pulumi.StringPtrOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MonitoredResourcesListMemberItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesListMemberItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored Resource Host Name.
@@ -4829,8 +4829,8 @@ func (o MonitoredResourcesListMemberItemOutput) State() pulumi.StringPtrOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MonitoredResourcesListMemberItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesListMemberItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesListMemberItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type MonitoredResourcesListMemberItemArrayOutput struct{ *pulumi.OutputState }
@@ -5235,13 +5235,13 @@ type MonitoredResourcesSearchItem struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId *string `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return resources with host name match.
 	HostName *string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5261,7 +5261,7 @@ type MonitoredResourcesSearchItem struct {
 	// A filter to return resources with matching lifecycle state.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Monitored resource creation time. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Monitored resource update time. An RFC3339 formatted datetime string.
@@ -5288,13 +5288,13 @@ type MonitoredResourcesSearchItemArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId pulumi.StringPtrInput `pulumi:"externalId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return resources with host name match.
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5314,7 +5314,7 @@ type MonitoredResourcesSearchItemArgs struct {
 	// A filter to return resources with matching lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Monitored resource creation time. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// Monitored resource update time. An RFC3339 formatted datetime string.
@@ -5383,8 +5383,8 @@ func (o MonitoredResourcesSearchItemOutput) CompartmentId() pulumi.StringPtrOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MonitoredResourcesSearchItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesSearchItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource display name.
@@ -5398,8 +5398,8 @@ func (o MonitoredResourcesSearchItemOutput) ExternalId() pulumi.StringPtrOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MonitoredResourcesSearchItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesSearchItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return resources with host name match.
@@ -5448,8 +5448,8 @@ func (o MonitoredResourcesSearchItemOutput) State() pulumi.StringPtrOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MonitoredResourcesSearchItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o MonitoredResourcesSearchItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MonitoredResourcesSearchItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource creation time. An RFC3339 formatted datetime string.
@@ -5970,9 +5970,9 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItem struct {
 	// Created user id
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the metric
 	Id string `pulumi:"id"`
 	// Is the baseline enabled metric defined out of box by Oracle or by end-user
@@ -5990,7 +5990,7 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItem struct {
 	// The current lifecycle state of the metric extension
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// OCID of the tenancy
 	TenancyId string `pulumi:"tenancyId"`
 	// creation date
@@ -6018,9 +6018,9 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs struct {
 	// Created user id
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the metric
 	Id pulumi.StringInput `pulumi:"id"`
 	// Is the baseline enabled metric defined out of box by Oracle or by end-user
@@ -6038,7 +6038,7 @@ type GetBaselineableMetricsBaselineableMetricSummaryCollectionItemArgs struct {
 	// The current lifecycle state of the metric extension
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// OCID of the tenancy
 	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 	// creation date
@@ -6114,17 +6114,17 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Cre
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // OCID of the metric
@@ -6168,10 +6168,10 @@ func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) Sta
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]interface{} {
+func (o GetBaselineableMetricsBaselineableMetricSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsBaselineableMetricSummaryCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // OCID of the tenancy
@@ -6346,7 +6346,7 @@ type GetBaselineableMetricsEvaluateItem struct {
 	// list of anomaly data points for the metric
 	DataPoints []GetBaselineableMetricsEvaluateItemDataPoint `pulumi:"dataPoints"`
 	// list of dimensions for the metric
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// list of data points for the metric for evaluation of anomalies
 	EvaluationDataPoints []GetBaselineableMetricsEvaluateItemEvaluationDataPoint `pulumi:"evaluationDataPoints"`
 	// list of data points for the metric for training of baseline
@@ -6368,7 +6368,7 @@ type GetBaselineableMetricsEvaluateItemArgs struct {
 	// list of anomaly data points for the metric
 	DataPoints GetBaselineableMetricsEvaluateItemDataPointArrayInput `pulumi:"dataPoints"`
 	// list of dimensions for the metric
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// list of data points for the metric for evaluation of anomalies
 	EvaluationDataPoints GetBaselineableMetricsEvaluateItemEvaluationDataPointArrayInput `pulumi:"evaluationDataPoints"`
 	// list of data points for the metric for training of baseline
@@ -6434,8 +6434,8 @@ func (o GetBaselineableMetricsEvaluateItemOutput) DataPoints() GetBaselineableMe
 }
 
 // list of dimensions for the metric
-func (o GetBaselineableMetricsEvaluateItemOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+func (o GetBaselineableMetricsEvaluateItemOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBaselineableMetricsEvaluateItem) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // list of data points for the metric for evaluation of anomalies
@@ -7026,11 +7026,11 @@ type GetConfigsConfigCollectionItem struct {
 	// The type of configuration.
 	ConfigType string `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
 	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
@@ -7042,7 +7042,7 @@ type GetConfigsConfigCollectionItem struct {
 	// The current state of the Config.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Config was updated.
@@ -7066,11 +7066,11 @@ type GetConfigsConfigCollectionItemArgs struct {
 	// The type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Unique Oracle ID (OCID) that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
@@ -7082,7 +7082,7 @@ type GetConfigsConfigCollectionItemArgs struct {
 	// The current state of the Config.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Config was updated.
@@ -7151,8 +7151,8 @@ func (o GetConfigsConfigCollectionItemOutput) ConfigType() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -7161,8 +7161,8 @@ func (o GetConfigsConfigCollectionItemOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Unique Oracle ID (OCID) that is immutable on creation.
@@ -7191,8 +7191,8 @@ func (o GetConfigsConfigCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetConfigsConfigCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetConfigsConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the configuration was created. An RFC3339 formatted datetime string.
@@ -7702,7 +7702,7 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemArrayOutput) Index(i pulumi.
 
 type GetDiscoveryJobDiscoveryDetailCredentialItemProperty struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // GetDiscoveryJobDiscoveryDetailCredentialItemPropertyInput is an input type that accepts GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs and GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput values.
@@ -7718,7 +7718,7 @@ type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyInput interface {
 
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArgs) ElementType() reflect.Type {
@@ -7773,10 +7773,8 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) ToGetDiscove
 }
 
 // Key/Value pair of Property
-func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailCredentialItemProperty) map[string]interface{} {
-		return v.PropertiesMap
-	}).(pulumi.MapOutput)
+func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailCredentialItemProperty) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
 type GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -7801,7 +7799,7 @@ func (o GetDiscoveryJobDiscoveryDetailCredentialItemPropertyArrayOutput) Index(i
 
 type GetDiscoveryJobDiscoveryDetailProperty struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // GetDiscoveryJobDiscoveryDetailPropertyInput is an input type that accepts GetDiscoveryJobDiscoveryDetailPropertyArgs and GetDiscoveryJobDiscoveryDetailPropertyOutput values.
@@ -7817,7 +7815,7 @@ type GetDiscoveryJobDiscoveryDetailPropertyInput interface {
 
 type GetDiscoveryJobDiscoveryDetailPropertyArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (GetDiscoveryJobDiscoveryDetailPropertyArgs) ElementType() reflect.Type {
@@ -7872,8 +7870,8 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) ToGetDiscoveryJobDiscovery
 }
 
 // Key/Value pair of Property
-func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailProperty) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
+func (o GetDiscoveryJobDiscoveryDetailPropertyOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailProperty) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
 type GetDiscoveryJobDiscoveryDetailPropertyArrayOutput struct{ *pulumi.OutputState }
@@ -7898,7 +7896,7 @@ func (o GetDiscoveryJobDiscoveryDetailPropertyArrayOutput) Index(i pulumi.IntInp
 
 type GetDiscoveryJobDiscoveryDetailTag struct {
 	// Key/Value pair of Property
-	PropertiesMap map[string]interface{} `pulumi:"propertiesMap"`
+	PropertiesMap map[string]string `pulumi:"propertiesMap"`
 }
 
 // GetDiscoveryJobDiscoveryDetailTagInput is an input type that accepts GetDiscoveryJobDiscoveryDetailTagArgs and GetDiscoveryJobDiscoveryDetailTagOutput values.
@@ -7914,7 +7912,7 @@ type GetDiscoveryJobDiscoveryDetailTagInput interface {
 
 type GetDiscoveryJobDiscoveryDetailTagArgs struct {
 	// Key/Value pair of Property
-	PropertiesMap pulumi.MapInput `pulumi:"propertiesMap"`
+	PropertiesMap pulumi.StringMapInput `pulumi:"propertiesMap"`
 }
 
 func (GetDiscoveryJobDiscoveryDetailTagArgs) ElementType() reflect.Type {
@@ -7969,8 +7967,8 @@ func (o GetDiscoveryJobDiscoveryDetailTagOutput) ToGetDiscoveryJobDiscoveryDetai
 }
 
 // Key/Value pair of Property
-func (o GetDiscoveryJobDiscoveryDetailTagOutput) PropertiesMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailTag) map[string]interface{} { return v.PropertiesMap }).(pulumi.MapOutput)
+func (o GetDiscoveryJobDiscoveryDetailTagOutput) PropertiesMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobDiscoveryDetailTag) map[string]string { return v.PropertiesMap }).(pulumi.StringMapOutput)
 }
 
 type GetDiscoveryJobDiscoveryDetailTagArrayOutput struct{ *pulumi.OutputState }
@@ -8100,7 +8098,7 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollectionItem struct {
 	// The log type like INFO, WARNING, ERROR, SUCCESS
 	LogType string `pulumi:"logType"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the Job log was created
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -8124,7 +8122,7 @@ type GetDiscoveryJobLogsDiscoveryJobLogCollectionItemArgs struct {
 	// The log type like INFO, WARNING, ERROR, SUCCESS
 	LogType pulumi.StringInput `pulumi:"logType"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the Job log was created
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -8196,8 +8194,8 @@ func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) LogType() pulumi
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobLogsDiscoveryJobLogCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobLogsDiscoveryJobLogCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobLogsDiscoveryJobLogCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the Job log was created
@@ -8434,11 +8432,11 @@ type GetDiscoveryJobsDiscoveryJobCollectionItem struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType string `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of Discovery job
 	Id string `pulumi:"id"`
 	// The Name of resource type
@@ -8452,7 +8450,7 @@ type GetDiscoveryJobsDiscoveryJobCollectionItem struct {
 	// The short summary of the status of the discovery job
 	StatusMessage string `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of Tenant
 	TenantId string `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
@@ -8476,11 +8474,11 @@ type GetDiscoveryJobsDiscoveryJobCollectionItemArgs struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType pulumi.StringInput `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of Discovery job
 	Id pulumi.StringInput `pulumi:"id"`
 	// The Name of resource type
@@ -8494,7 +8492,7 @@ type GetDiscoveryJobsDiscoveryJobCollectionItemArgs struct {
 	// The short summary of the status of the discovery job
 	StatusMessage pulumi.StringInput `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The OCID of Tenant
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
@@ -8560,8 +8558,8 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) CompartmentId() pulumi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
@@ -8570,8 +8568,8 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) DiscoveryType() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of Discovery job
@@ -8605,8 +8603,8 @@ func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) StatusMessage() pulumi
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobsDiscoveryJobCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsDiscoveryJobCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of Tenant
@@ -12775,9 +12773,9 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// Name of the task.
@@ -12785,7 +12783,7 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem struct {
 	// The current state of the stack monitoring resource task.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The request details for the performing the task.
 	TaskDetails []GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetail `pulumi:"taskDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
@@ -12813,9 +12811,9 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// Name of the task.
@@ -12823,7 +12821,7 @@ type GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemArgs struct {
 	// The current state of the stack monitoring resource task.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The request details for the performing the task.
 	TaskDetails GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArrayInput `pulumi:"taskDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
@@ -12893,17 +12891,17 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Com
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -12922,10 +12920,10 @@ func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) Sta
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTasksMonitoredResourceTasksCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The request details for the performing the task.
@@ -13249,7 +13247,7 @@ type GetMonitoredResourceTypeMetadata struct {
 	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
 }
 
 // GetMonitoredResourceTypeMetadataInput is an input type that accepts GetMonitoredResourceTypeMetadataArgs and GetMonitoredResourceTypeMetadataOutput values.
@@ -13278,7 +13276,7 @@ type GetMonitoredResourceTypeMetadataArgs struct {
 	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
 }
 
 func (GetMonitoredResourceTypeMetadataArgs) ElementType() reflect.Type {
@@ -13366,8 +13364,8 @@ func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertiesForUpdates() pulu
 }
 
 // List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) map[string]interface{} { return v.ValidPropertyValues }).(pulumi.MapOutput)
+func (o GetMonitoredResourceTypeMetadataOutput) ValidPropertyValues() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypeMetadata) map[string]string { return v.ValidPropertyValues }).(pulumi.StringMapOutput)
 }
 
 type GetMonitoredResourceTypeMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -13696,13 +13694,13 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A friendly description.
 	Description string `pulumi:"description"`
 	// Monitored resource type display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// The metadata details for resource type.
@@ -13718,7 +13716,7 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem struct {
 	// Lifecycle state of the monitored resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -13740,13 +13738,13 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A friendly description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Monitored resource type display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// The metadata details for resource type.
@@ -13762,7 +13760,7 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemArgs struct {
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -13826,10 +13824,10 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Com
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A friendly description.
@@ -13843,10 +13841,10 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Dis
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -13889,10 +13887,10 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) Sta
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]interface{} {
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -13940,7 +13938,7 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata struc
 	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates []string `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-	ValidPropertyValues map[string]interface{} `pulumi:"validPropertyValues"`
+	ValidPropertyValues map[string]string `pulumi:"validPropertyValues"`
 }
 
 // GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataInput is an input type that accepts GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs and GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput values.
@@ -13969,7 +13967,7 @@ type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs s
 	// List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
 	ValidPropertiesForUpdates pulumi.StringArrayInput `pulumi:"validPropertiesForUpdates"`
 	// List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-	ValidPropertyValues pulumi.MapInput `pulumi:"validPropertyValues"`
+	ValidPropertyValues pulumi.StringMapInput `pulumi:"validPropertyValues"`
 }
 
 func (GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs) ElementType() reflect.Type {
@@ -14065,10 +14063,10 @@ func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOut
 }
 
 // List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
-func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidPropertyValues() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) map[string]interface{} {
+func (o GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataOutput) ValidPropertyValues() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadata) map[string]string {
 		return v.ValidPropertyValues
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArrayOutput struct{ *pulumi.OutputState }
@@ -14407,14 +14405,14 @@ type GetMonitoredResourcesMonitoredResourceCollectionItem struct {
 	// Connection details for the database.
 	DatabaseConnectionDetails []GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetail `pulumi:"databaseConnectionDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName string `pulumi:"displayName"`
 	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId         string `pulumi:"externalId"`
 	ExternalResourceId string `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Monitored resource host name.
 	HostName string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -14435,7 +14433,7 @@ type GetMonitoredResourcesMonitoredResourceCollectionItem struct {
 	// Lifecycle state of the monitored resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId string `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -14469,14 +14467,14 @@ type GetMonitoredResourcesMonitoredResourceCollectionItemArgs struct {
 	// Connection details for the database.
 	DatabaseConnectionDetails GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArrayInput `pulumi:"databaseConnectionDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId         pulumi.StringInput `pulumi:"externalId"`
 	ExternalResourceId pulumi.StringInput `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Monitored resource host name.
 	HostName pulumi.StringInput `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -14497,7 +14495,7 @@ type GetMonitoredResourcesMonitoredResourceCollectionItemArgs struct {
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringInput `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -14598,10 +14596,8 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DatabaseConn
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource display name.
@@ -14619,10 +14615,8 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) ExternalReso
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource host name.
@@ -14677,10 +14671,8 @@ func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetMonitoredResourcesMonitoredResourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitoredResourcesMonitoredResourceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -16440,11 +16432,11 @@ type GetProcessSetsProcessSetCollectionItem struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
 	Id string `pulumi:"id"`
 	// The current revision of the Process Set.
@@ -16454,7 +16446,7 @@ type GetProcessSetsProcessSetCollectionItem struct {
 	// The current state of the Resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -16476,11 +16468,11 @@ type GetProcessSetsProcessSetCollectionItemArgs struct {
 	// The ID of the compartment in which data is listed.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The current revision of the Process Set.
@@ -16490,7 +16482,7 @@ type GetProcessSetsProcessSetCollectionItemArgs struct {
 	// The current state of the Resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -16554,8 +16546,8 @@ func (o GetProcessSetsProcessSetCollectionItemOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetProcessSetsProcessSetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetProcessSetsProcessSetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -16564,8 +16556,8 @@ func (o GetProcessSetsProcessSetCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetProcessSetsProcessSetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetProcessSetsProcessSetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
@@ -16591,8 +16583,8 @@ func (o GetProcessSetsProcessSetCollectionItemOutput) State() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetProcessSetsProcessSetCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetProcessSetsProcessSetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProcessSetsProcessSetCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the process set was created. An RFC3339 formatted datetime string.

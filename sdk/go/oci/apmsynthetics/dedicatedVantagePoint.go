@@ -40,11 +40,11 @@ import (
 //					DvpVersion:   pulumi.Any(dedicatedVantagePointDvpStackDetailsDvpVersion),
 //				},
 //				Region: pulumi.Any(dedicatedVantagePointRegion),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Status: pulumi.Any(dedicatedVantagePointStatus),
 //			})
@@ -70,13 +70,13 @@ type DedicatedVantagePoint struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsOutput `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps DedicatedVantagePointMonitorStatusCountMapArrayOutput `pulumi:"monitorStatusCountMaps"`
 	// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -139,13 +139,13 @@ type dedicatedVantagePointState struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId *string `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails *DedicatedVantagePointDvpStackDetails `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []DedicatedVantagePointMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -167,13 +167,13 @@ type DedicatedVantagePointState struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps DedicatedVantagePointMonitorStatusCountMapArrayInput
 	// Unique permanent name of the dedicated vantage point. This is the same as the displayName.
@@ -199,13 +199,13 @@ type dedicatedVantagePointArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetails `pulumi:"dvpStackDetails"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Name of the region.
 	Region string `pulumi:"region"`
 	// (Updatable) Status of the dedicated vantage point.
@@ -220,13 +220,13 @@ type DedicatedVantagePointArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails DedicatedVantagePointDvpStackDetailsInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Name of the region.
 	Region pulumi.StringInput
 	// (Updatable) Status of the dedicated vantage point.
@@ -329,8 +329,8 @@ func (o DedicatedVantagePointOutput) ApmDomainId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DedicatedVantagePointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DedicatedVantagePointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
@@ -344,8 +344,8 @@ func (o DedicatedVantagePointOutput) DvpStackDetails() DedicatedVantagePointDvpS
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DedicatedVantagePointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DedicatedVantagePointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DedicatedVantagePoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`

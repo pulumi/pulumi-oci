@@ -71,11 +71,11 @@ type LookupScriptResult struct {
 	// Content type of the script.
 	ContentType string `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	Id string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -156,8 +156,8 @@ func (o LookupScriptResultOutput) ContentType() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupScriptResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScriptResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupScriptResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScriptResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique name that can be edited. The name should not contain any confidential information.
@@ -166,8 +166,8 @@ func (o LookupScriptResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupScriptResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScriptResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupScriptResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScriptResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.

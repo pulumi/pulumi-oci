@@ -10,7 +10,6 @@ import com.pulumi.oci.DataLabellingService.inputs.DatasetDatasetSourceDetailsArg
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialImportDatasetConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetInitialRecordGenerationConfigurationArgs;
 import com.pulumi.oci.DataLabellingService.inputs.DatasetLabelSetArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -27,13 +26,13 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="additionalProperties")
-    private @Nullable Output<Map<String,Object>> additionalProperties;
+    private @Nullable Output<Map<String,String>> additionalProperties;
 
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> additionalProperties() {
+    public Optional<Output<Map<String,String>>> additionalProperties() {
         return Optional.ofNullable(this.additionalProperties);
     }
 
@@ -102,13 +101,13 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -147,13 +146,13 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -345,7 +344,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder additionalProperties(@Nullable Output<Map<String,Object>> additionalProperties) {
+        public Builder additionalProperties(@Nullable Output<Map<String,String>> additionalProperties) {
             $.additionalProperties = additionalProperties;
             return this;
         }
@@ -356,7 +355,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder additionalProperties(Map<String,Object> additionalProperties) {
+        public Builder additionalProperties(Map<String,String> additionalProperties) {
             return additionalProperties(Output.of(additionalProperties));
         }
 
@@ -450,7 +449,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -461,7 +460,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -513,7 +512,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -524,7 +523,7 @@ public final class DatasetState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

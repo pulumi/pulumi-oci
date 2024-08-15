@@ -104,7 +104,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Stream Distribution Channel display name. Avoid entering confidential information.
         /// </summary>
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.MediaServices
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -148,13 +148,13 @@ namespace Pulumi.Oci.MediaServices
         private GetStreamDistributionChannelResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
             string domainName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.MediaServices
 
             string streamDistributionChannelId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

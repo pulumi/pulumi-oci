@@ -132,7 +132,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Types;
+        public readonly ImmutableDictionary<string, string> Types;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserResult(
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
             int timeoutInMilliseconds,
 
-            ImmutableDictionary<string, object> types)
+            ImmutableDictionary<string, string> types)
         {
             Delimiter = delimiter;
             Expression = expression;

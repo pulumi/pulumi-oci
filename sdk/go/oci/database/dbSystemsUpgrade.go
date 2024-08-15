@@ -77,7 +77,7 @@ type DbSystemsUpgrade struct {
 	// The DB system options.
 	DbSystemOptions DbSystemsUpgradeDbSystemOptionArrayOutput `pulumi:"dbSystemOptions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy pulumi.StringOutput `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -87,7 +87,7 @@ type DbSystemsUpgrade struct {
 	// List of the Fault Domains in which this DB system is provisioned.
 	FaultDomains pulumi.StringArrayOutput `pulumi:"faultDomains"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname for the DB system.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
@@ -220,7 +220,7 @@ type dbSystemsUpgradeState struct {
 	// The DB system options.
 	DbSystemOptions []DbSystemsUpgradeDbSystemOption `pulumi:"dbSystemOptions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy *string `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -230,7 +230,7 @@ type dbSystemsUpgradeState struct {
 	// List of the Fault Domains in which this DB system is provisioned.
 	FaultDomains []string `pulumi:"faultDomains"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the DB system.
 	Hostname *string `pulumi:"hostname"`
 	// The IORM settings of the Exadata DB system.
@@ -328,7 +328,7 @@ type DbSystemsUpgradeState struct {
 	// The DB system options.
 	DbSystemOptions DbSystemsUpgradeDbSystemOptionArrayInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy pulumi.StringPtrInput
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -338,7 +338,7 @@ type DbSystemsUpgradeState struct {
 	// List of the Fault Domains in which this DB system is provisioned.
 	FaultDomains pulumi.StringArrayInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname for the DB system.
 	Hostname pulumi.StringPtrInput
 	// The IORM settings of the Exadata DB system.
@@ -597,8 +597,8 @@ func (o DbSystemsUpgradeOutput) DbSystemOptions() DbSystemsUpgradeDbSystemOption
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o DbSystemsUpgradeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DbSystemsUpgradeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
@@ -622,8 +622,8 @@ func (o DbSystemsUpgradeOutput) FaultDomains() pulumi.StringArrayOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DbSystemsUpgradeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DbSystemsUpgradeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystemsUpgrade) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the DB system.

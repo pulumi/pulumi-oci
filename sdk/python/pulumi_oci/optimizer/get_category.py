@@ -102,7 +102,7 @@ class GetCategoryResult:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs for the category.
         """

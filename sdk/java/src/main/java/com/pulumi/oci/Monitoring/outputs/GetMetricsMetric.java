@@ -6,7 +6,6 @@ package com.pulumi.oci.Monitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -28,12 +27,12 @@ public final class GetMetricsMetric {
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    private Map<String,Object> dimensionFilters;
+    private Map<String,String> dimensionFilters;
     /**
      * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
     /**
      * @return Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the &#34;namespace&#34; field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
      * 
@@ -76,14 +75,14 @@ public final class GetMetricsMetric {
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    public Map<String,Object> dimensionFilters() {
+    public Map<String,String> dimensionFilters() {
         return this.dimensionFilters;
     }
     /**
      * @return Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
     /**
@@ -128,8 +127,8 @@ public final class GetMetricsMetric {
     public static final class Builder {
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
-        private Map<String,Object> dimensionFilters;
-        private Map<String,Object> dimensions;
+        private Map<String,String> dimensionFilters;
+        private Map<String,String> dimensions;
         private List<String> groupBies;
         private String name;
         private String namespace;
@@ -164,7 +163,7 @@ public final class GetMetricsMetric {
             return this;
         }
         @CustomType.Setter
-        public Builder dimensionFilters(Map<String,Object> dimensionFilters) {
+        public Builder dimensionFilters(Map<String,String> dimensionFilters) {
             if (dimensionFilters == null) {
               throw new MissingRequiredPropertyException("GetMetricsMetric", "dimensionFilters");
             }
@@ -172,7 +171,7 @@ public final class GetMetricsMetric {
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             if (dimensions == null) {
               throw new MissingRequiredPropertyException("GetMetricsMetric", "dimensions");
             }

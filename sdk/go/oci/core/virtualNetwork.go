@@ -23,10 +23,10 @@ type VirtualNetwork struct {
 	DefaultDhcpOptionsId         pulumi.StringOutput                        `pulumi:"defaultDhcpOptionsId"`
 	DefaultRouteTableId          pulumi.StringOutput                        `pulumi:"defaultRouteTableId"`
 	DefaultSecurityListId        pulumi.StringOutput                        `pulumi:"defaultSecurityListId"`
-	DefinedTags                  pulumi.MapOutput                           `pulumi:"definedTags"`
+	DefinedTags                  pulumi.StringMapOutput                     `pulumi:"definedTags"`
 	DisplayName                  pulumi.StringOutput                        `pulumi:"displayName"`
 	DnsLabel                     pulumi.StringOutput                        `pulumi:"dnsLabel"`
-	FreeformTags                 pulumi.MapOutput                           `pulumi:"freeformTags"`
+	FreeformTags                 pulumi.StringMapOutput                     `pulumi:"freeformTags"`
 	Ipv6cidrBlocks               pulumi.StringArrayOutput                   `pulumi:"ipv6cidrBlocks"`
 	Ipv6privateCidrBlocks        pulumi.StringArrayOutput                   `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                pulumi.BoolOutput                          `pulumi:"isIpv6enabled"`
@@ -77,10 +77,10 @@ type virtualNetworkState struct {
 	DefaultDhcpOptionsId         *string                           `pulumi:"defaultDhcpOptionsId"`
 	DefaultRouteTableId          *string                           `pulumi:"defaultRouteTableId"`
 	DefaultSecurityListId        *string                           `pulumi:"defaultSecurityListId"`
-	DefinedTags                  map[string]interface{}            `pulumi:"definedTags"`
+	DefinedTags                  map[string]string                 `pulumi:"definedTags"`
 	DisplayName                  *string                           `pulumi:"displayName"`
 	DnsLabel                     *string                           `pulumi:"dnsLabel"`
-	FreeformTags                 map[string]interface{}            `pulumi:"freeformTags"`
+	FreeformTags                 map[string]string                 `pulumi:"freeformTags"`
 	Ipv6cidrBlocks               []string                          `pulumi:"ipv6cidrBlocks"`
 	Ipv6privateCidrBlocks        []string                          `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                *bool                             `pulumi:"isIpv6enabled"`
@@ -99,10 +99,10 @@ type VirtualNetworkState struct {
 	DefaultDhcpOptionsId         pulumi.StringPtrInput
 	DefaultRouteTableId          pulumi.StringPtrInput
 	DefaultSecurityListId        pulumi.StringPtrInput
-	DefinedTags                  pulumi.MapInput
+	DefinedTags                  pulumi.StringMapInput
 	DisplayName                  pulumi.StringPtrInput
 	DnsLabel                     pulumi.StringPtrInput
-	FreeformTags                 pulumi.MapInput
+	FreeformTags                 pulumi.StringMapInput
 	Ipv6cidrBlocks               pulumi.StringArrayInput
 	Ipv6privateCidrBlocks        pulumi.StringArrayInput
 	IsIpv6enabled                pulumi.BoolPtrInput
@@ -121,10 +121,10 @@ type virtualNetworkArgs struct {
 	CidrBlock                    *string                           `pulumi:"cidrBlock"`
 	CidrBlocks                   []string                          `pulumi:"cidrBlocks"`
 	CompartmentId                string                            `pulumi:"compartmentId"`
-	DefinedTags                  map[string]interface{}            `pulumi:"definedTags"`
+	DefinedTags                  map[string]string                 `pulumi:"definedTags"`
 	DisplayName                  *string                           `pulumi:"displayName"`
 	DnsLabel                     *string                           `pulumi:"dnsLabel"`
-	FreeformTags                 map[string]interface{}            `pulumi:"freeformTags"`
+	FreeformTags                 map[string]string                 `pulumi:"freeformTags"`
 	Ipv6privateCidrBlocks        []string                          `pulumi:"ipv6privateCidrBlocks"`
 	IsIpv6enabled                *bool                             `pulumi:"isIpv6enabled"`
 	IsOracleGuaAllocationEnabled *bool                             `pulumi:"isOracleGuaAllocationEnabled"`
@@ -136,10 +136,10 @@ type VirtualNetworkArgs struct {
 	CidrBlock                    pulumi.StringPtrInput
 	CidrBlocks                   pulumi.StringArrayInput
 	CompartmentId                pulumi.StringInput
-	DefinedTags                  pulumi.MapInput
+	DefinedTags                  pulumi.StringMapInput
 	DisplayName                  pulumi.StringPtrInput
 	DnsLabel                     pulumi.StringPtrInput
-	FreeformTags                 pulumi.MapInput
+	FreeformTags                 pulumi.StringMapInput
 	Ipv6privateCidrBlocks        pulumi.StringArrayInput
 	IsIpv6enabled                pulumi.BoolPtrInput
 	IsOracleGuaAllocationEnabled pulumi.BoolPtrInput
@@ -264,8 +264,8 @@ func (o VirtualNetworkOutput) DefaultSecurityListId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DefaultSecurityListId }).(pulumi.StringOutput)
 }
 
-func (o VirtualNetworkOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VirtualNetworkOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o VirtualNetworkOutput) DisplayName() pulumi.StringOutput {
@@ -276,8 +276,8 @@ func (o VirtualNetworkOutput) DnsLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringOutput { return v.DnsLabel }).(pulumi.StringOutput)
 }
 
-func (o VirtualNetworkOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNetwork) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VirtualNetworkOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNetwork) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o VirtualNetworkOutput) Ipv6cidrBlocks() pulumi.StringArrayOutput {

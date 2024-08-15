@@ -6,7 +6,6 @@ package com.pulumi.oci.Psql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -74,13 +73,13 @@ public final class DbSystemPatchOperationArgs extends com.pulumi.resources.Resou
      * 
      */
     @Import(name="value")
-    private @Nullable Output<Map<String,Object>> value;
+    private @Nullable Output<Map<String,String>> value;
 
     /**
      * @return Specify instance details such as displayName, description or privateIp. Example: `{&#34;displayName&#34;: &#34;value&#34;}`.
      * 
      */
-    public Optional<Output<Map<String,Object>>> value() {
+    public Optional<Output<Map<String,String>>> value() {
         return Optional.ofNullable(this.value);
     }
 
@@ -188,7 +187,7 @@ public final class DbSystemPatchOperationArgs extends com.pulumi.resources.Resou
          * @return builder
          * 
          */
-        public Builder value(@Nullable Output<Map<String,Object>> value) {
+        public Builder value(@Nullable Output<Map<String,String>> value) {
             $.value = value;
             return this;
         }
@@ -199,7 +198,7 @@ public final class DbSystemPatchOperationArgs extends com.pulumi.resources.Resou
          * @return builder
          * 
          */
-        public Builder value(Map<String,Object> value) {
+        public Builder value(Map<String,String> value) {
             return value(Output.of(value));
         }
 

@@ -6,7 +6,6 @@ package com.pulumi.oci.DataIntegration.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceTaskPollRestCallConfigConfigValue;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +37,7 @@ public final class GetWorkspaceTaskPollRestCallConfig {
      * @return The headers for the REST call.
      * 
      */
-    private Map<String,Object> requestHeaders;
+    private Map<String,String> requestHeaders;
 
     private GetWorkspaceTaskPollRestCallConfig() {}
     /**
@@ -73,7 +72,7 @@ public final class GetWorkspaceTaskPollRestCallConfig {
      * @return The headers for the REST call.
      * 
      */
-    public Map<String,Object> requestHeaders() {
+    public Map<String,String> requestHeaders() {
         return this.requestHeaders;
     }
 
@@ -90,7 +89,7 @@ public final class GetWorkspaceTaskPollRestCallConfig {
         private String key;
         private String methodType;
         private String modelType;
-        private Map<String,Object> requestHeaders;
+        private Map<String,String> requestHeaders;
         public Builder() {}
         public Builder(GetWorkspaceTaskPollRestCallConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -137,7 +136,7 @@ public final class GetWorkspaceTaskPollRestCallConfig {
             return this;
         }
         @CustomType.Setter
-        public Builder requestHeaders(Map<String,Object> requestHeaders) {
+        public Builder requestHeaders(Map<String,String> requestHeaders) {
             if (requestHeaders == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceTaskPollRestCallConfig", "requestHeaders");
             }

@@ -673,7 +673,7 @@ func (o RemediationRecipeScmConfigurationPtrOutput) Username() pulumi.StringPtrO
 
 type RemediationRecipeVerifyConfiguration struct {
 	// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	AdditionalParameters map[string]string `pulumi:"additionalParameters"`
 	// (Updatable) The type of Build Service.
 	BuildServiceType string `pulumi:"buildServiceType"`
 	// (Updatable) The URL that locates the Jenkins pipeline.
@@ -707,7 +707,7 @@ type RemediationRecipeVerifyConfigurationInput interface {
 
 type RemediationRecipeVerifyConfigurationArgs struct {
 	// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	AdditionalParameters pulumi.StringMapInput `pulumi:"additionalParameters"`
 	// (Updatable) The type of Build Service.
 	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
 	// (Updatable) The URL that locates the Jenkins pipeline.
@@ -806,8 +806,8 @@ func (o RemediationRecipeVerifyConfigurationOutput) ToRemediationRecipeVerifyCon
 }
 
 // (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
-func (o RemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
-	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) map[string]interface{} { return v.AdditionalParameters }).(pulumi.MapOutput)
+func (o RemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v RemediationRecipeVerifyConfiguration) map[string]string { return v.AdditionalParameters }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The type of Build Service.
@@ -880,13 +880,13 @@ func (o RemediationRecipeVerifyConfigurationPtrOutput) Elem() RemediationRecipeV
 }
 
 // (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
-func (o RemediationRecipeVerifyConfigurationPtrOutput) AdditionalParameters() pulumi.MapOutput {
-	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) map[string]interface{} {
+func (o RemediationRecipeVerifyConfigurationPtrOutput) AdditionalParameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RemediationRecipeVerifyConfiguration) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.AdditionalParameters
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The type of Build Service.
@@ -2168,17 +2168,17 @@ type GetKnowledgebasesKnowledgeBaseCollectionItem struct {
 	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -2200,17 +2200,17 @@ type GetKnowledgebasesKnowledgeBaseCollectionItemArgs struct {
 	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only Knowledge Bases that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -2274,8 +2274,8 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -2284,8 +2284,8 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
@@ -2299,8 +2299,8 @@ func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) State() pulumi.Strin
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetKnowledgebasesKnowledgeBaseCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebasesKnowledgeBaseCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -2743,7 +2743,7 @@ func (o GetRemediationRecipeScmConfigurationArrayOutput) Index(i pulumi.IntInput
 
 type GetRemediationRecipeVerifyConfiguration struct {
 	// Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	AdditionalParameters map[string]string `pulumi:"additionalParameters"`
 	// The type of Build Service.
 	BuildServiceType string `pulumi:"buildServiceType"`
 	// The URL that locates the Jenkins pipeline.
@@ -2777,7 +2777,7 @@ type GetRemediationRecipeVerifyConfigurationInput interface {
 
 type GetRemediationRecipeVerifyConfigurationArgs struct {
 	// Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	AdditionalParameters pulumi.StringMapInput `pulumi:"additionalParameters"`
 	// The type of Build Service.
 	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
 	// The URL that locates the Jenkins pipeline.
@@ -2850,8 +2850,8 @@ func (o GetRemediationRecipeVerifyConfigurationOutput) ToGetRemediationRecipeVer
 }
 
 // Additional key-value pairs passed as parameters to the build service when running an experiment.
-func (o GetRemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) map[string]interface{} { return v.AdditionalParameters }).(pulumi.MapOutput)
+func (o GetRemediationRecipeVerifyConfigurationOutput) AdditionalParameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRecipeVerifyConfiguration) map[string]string { return v.AdditionalParameters }).(pulumi.StringMapOutput)
 }
 
 // The type of Build Service.
@@ -3125,13 +3125,13 @@ type GetRemediationRecipesRemediationRecipeCollectionItem struct {
 	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfigurations []GetRemediationRecipesRemediationRecipeCollectionItemDetectConfiguration `pulumi:"detectConfigurations"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
@@ -3145,7 +3145,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItem struct {
 	// A filter to return only Remediation Recipes that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -3169,13 +3169,13 @@ type GetRemediationRecipesRemediationRecipeCollectionItemArgs struct {
 	// A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfigurations GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArrayInput `pulumi:"detectConfigurations"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
@@ -3189,7 +3189,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemArgs struct {
 	// A filter to return only Remediation Recipes that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -3255,10 +3255,8 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) CompartmentI
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A configuration to define the constraints when detecting vulnerable dependencies.
@@ -3274,10 +3272,8 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) DisplayName(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
@@ -3315,10 +3311,8 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetRemediationRecipesRemediationRecipeCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -3794,7 +3788,7 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArra
 
 type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration struct {
 	// Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters map[string]interface{} `pulumi:"additionalParameters"`
+	AdditionalParameters map[string]string `pulumi:"additionalParameters"`
 	// The type of Build Service.
 	BuildServiceType string `pulumi:"buildServiceType"`
 	// The URL that locates the Jenkins pipeline.
@@ -3828,7 +3822,7 @@ type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationInpu
 
 type GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs struct {
 	// Additional key-value pairs passed as parameters to the build service when running an experiment.
-	AdditionalParameters pulumi.MapInput `pulumi:"additionalParameters"`
+	AdditionalParameters pulumi.StringMapInput `pulumi:"additionalParameters"`
 	// The type of Build Service.
 	BuildServiceType pulumi.StringInput `pulumi:"buildServiceType"`
 	// The URL that locates the Jenkins pipeline.
@@ -3901,10 +3895,10 @@ func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationO
 }
 
 // Additional key-value pairs passed as parameters to the build service when running an experiment.
-func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) AdditionalParameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) map[string]interface{} {
+func (o GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationOutput) AdditionalParameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration) map[string]string {
 		return v.AdditionalParameters
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The type of Build Service.
@@ -5533,11 +5527,11 @@ type GetRemediationRunsRemediationRunCollectionItem struct {
 	// The type of the current stage of the remediation run.
 	CurrentStageType string `pulumi:"currentStageType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// A filter to return only resources that match the specified Remediation Recipe identifier.
@@ -5549,7 +5543,7 @@ type GetRemediationRunsRemediationRunCollectionItem struct {
 	// A filter to return only Remediation Runs that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -5577,11 +5571,11 @@ type GetRemediationRunsRemediationRunCollectionItemArgs struct {
 	// The type of the current stage of the remediation run.
 	CurrentStageType pulumi.StringInput `pulumi:"currentStageType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only resources that match the specified Remediation Recipe identifier.
@@ -5593,7 +5587,7 @@ type GetRemediationRunsRemediationRunCollectionItemArgs struct {
 	// A filter to return only Remediation Runs that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -5666,8 +5660,8 @@ func (o GetRemediationRunsRemediationRunCollectionItemOutput) CurrentStageType()
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRemediationRunsRemediationRunCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -5676,8 +5670,8 @@ func (o GetRemediationRunsRemediationRunCollectionItemOutput) DisplayName() pulu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetRemediationRunsRemediationRunCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
@@ -5708,8 +5702,8 @@ func (o GetRemediationRunsRemediationRunCollectionItemOutput) State() pulumi.Str
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRemediationRunsRemediationRunCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetRemediationRunsRemediationRunCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRemediationRunsRemediationRunCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -7545,11 +7539,11 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	// Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
 	Configurations []GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id string `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
@@ -7575,7 +7569,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItem struct {
 	// A filter to return only Vulnerability Audits that match the specified lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -7610,11 +7604,11 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	// Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
 	Configurations GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only successful or failed Vulnerability Audits.
@@ -7640,7 +7634,7 @@ type GetVulnerabilityAuditsVulnerabilityAuditCollectionItemArgs struct {
 	// A filter to return only Vulnerability Audits that match the specified lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -7730,10 +7724,8 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) Configurat
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -7742,10 +7734,10 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]interface{} {
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
@@ -7821,10 +7813,8 @@ func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) State() pu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetVulnerabilityAuditsVulnerabilityAuditCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVulnerabilityAuditsVulnerabilityAuditCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

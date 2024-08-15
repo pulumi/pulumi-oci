@@ -27,7 +27,7 @@ type InstanceMaintenanceEvent struct {
 	pulumi.CustomResourceState
 
 	// Additional details of the maintenance in the form of json.
-	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
 	AlternativeResolutionAction pulumi.StringOutput `pulumi:"alternativeResolutionAction"`
 	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -47,7 +47,7 @@ type InstanceMaintenanceEvent struct {
 	// The creator of the maintenance event.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// It is the descriptive information about the maintenance taking place on the customer instance.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -55,7 +55,7 @@ type InstanceMaintenanceEvent struct {
 	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
 	EstimatedDuration pulumi.StringOutput `pulumi:"estimatedDuration"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
 	InstanceAction pulumi.StringOutput `pulumi:"instanceAction"`
 	// The OCID of the instance.
@@ -121,7 +121,7 @@ func GetInstanceMaintenanceEvent(ctx *pulumi.Context,
 // Input properties used for looking up and filtering InstanceMaintenanceEvent resources.
 type instanceMaintenanceEventState struct {
 	// Additional details of the maintenance in the form of json.
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
 	AlternativeResolutionAction *string `pulumi:"alternativeResolutionAction"`
 	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -141,7 +141,7 @@ type instanceMaintenanceEventState struct {
 	// The creator of the maintenance event.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// It is the descriptive information about the maintenance taking place on the customer instance.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -149,7 +149,7 @@ type instanceMaintenanceEventState struct {
 	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
 	EstimatedDuration *string `pulumi:"estimatedDuration"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
 	InstanceAction *string `pulumi:"instanceAction"`
 	// The OCID of the instance.
@@ -183,7 +183,7 @@ type instanceMaintenanceEventState struct {
 
 type InstanceMaintenanceEventState struct {
 	// Additional details of the maintenance in the form of json.
-	AdditionalDetails pulumi.MapInput
+	AdditionalDetails pulumi.StringMapInput
 	// (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
 	AlternativeResolutionAction pulumi.StringPtrInput
 	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -203,7 +203,7 @@ type InstanceMaintenanceEventState struct {
 	// The creator of the maintenance event.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// It is the descriptive information about the maintenance taking place on the customer instance.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -211,7 +211,7 @@ type InstanceMaintenanceEventState struct {
 	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
 	EstimatedDuration pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
 	InstanceAction pulumi.StringPtrInput
 	// The OCID of the instance.
@@ -257,11 +257,11 @@ type instanceMaintenanceEventArgs struct {
 	// In cases where the local storage will be lost, this parameter must be set or the request will fail.
 	CanDeleteLocalStorage *bool `pulumi:"canDeleteLocalStorage"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the instance maintenance event.
 	InstanceMaintenanceEventId string `pulumi:"instanceMaintenanceEventId"`
 	// (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
@@ -284,11 +284,11 @@ type InstanceMaintenanceEventArgs struct {
 	// In cases where the local storage will be lost, this parameter must be set or the request will fail.
 	CanDeleteLocalStorage pulumi.BoolPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the instance maintenance event.
 	InstanceMaintenanceEventId pulumi.StringInput
 	// (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
@@ -388,8 +388,8 @@ func (o InstanceMaintenanceEventOutput) ToInstanceMaintenanceEventOutputWithCont
 }
 
 // Additional details of the maintenance in the form of json.
-func (o InstanceMaintenanceEventOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o InstanceMaintenanceEventOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.StringMapOutput { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
@@ -432,8 +432,8 @@ func (o InstanceMaintenanceEventOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o InstanceMaintenanceEventOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o InstanceMaintenanceEventOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // It is the descriptive information about the maintenance taking place on the customer instance.
@@ -452,8 +452,8 @@ func (o InstanceMaintenanceEventOutput) EstimatedDuration() pulumi.StringOutput 
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o InstanceMaintenanceEventOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o InstanceMaintenanceEventOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceMaintenanceEvent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.

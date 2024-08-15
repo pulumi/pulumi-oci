@@ -29,10 +29,10 @@ __all__ = [
 class ScheduleResource(dict):
     def __init__(__self__, *,
                  id: str,
-                 metadata: Optional[Mapping[str, Any]] = None):
+                 metadata: Optional[Mapping[str, str]] = None):
         """
         :param str id: (Updatable) This is the resource OCID.
-        :param Mapping[str, Any] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
+        :param Mapping[str, str] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
                
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
@@ -50,7 +50,7 @@ class ScheduleResource(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
 
@@ -194,10 +194,10 @@ class ScheduleResourceFilterValue(dict):
 class GetScheduleResourceResult(dict):
     def __init__(__self__, *,
                  id: str,
-                 metadata: Mapping[str, Any]):
+                 metadata: Mapping[str, str]):
         """
         :param str id: This is the resource OCID.
-        :param Mapping[str, Any] metadata: This is additional information that helps to identity the resource for the schedule.
+        :param Mapping[str, str] metadata: This is additional information that helps to identity the resource for the schedule.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "metadata", metadata)
@@ -212,7 +212,7 @@ class GetScheduleResourceResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         This is additional information that helps to identity the resource for the schedule.
         """
@@ -354,17 +354,17 @@ class GetSchedulesScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
                  action: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  recurrence_details: str,
                  recurrence_type: str,
                  resource_filters: Sequence['outputs.GetSchedulesScheduleCollectionItemResourceFilterResult'],
                  resources: Sequence['outputs.GetSchedulesScheduleCollectionItemResourceResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_ends: str,
                  time_last_run: str,
@@ -374,17 +374,17 @@ class GetSchedulesScheduleCollectionItemResult(dict):
         """
         :param str action: This is the action that will be executed by the schedule.
         :param str compartment_id: This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: This is the description of the schedule.
         :param str display_name: This is a filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: This is the resource OCID.
         :param str recurrence_details: This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
         :param str recurrence_type: Type of recurrence of a schedule
         :param Sequence['GetSchedulesScheduleCollectionItemResourceFilterArgs'] resource_filters: This is a list of resources filters.  The schedule will be applied to resources matching all of them.
         :param Sequence['GetSchedulesScheduleCollectionItemResourceArgs'] resources: This is the list of resources to which the scheduled operation is applied.
         :param str state: This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_ends: This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
         :param str time_last_run: This is the date and time the schedule runs last time, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -430,7 +430,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -454,7 +454,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -510,7 +510,7 @@ class GetSchedulesScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -569,10 +569,10 @@ class GetSchedulesScheduleCollectionItemResult(dict):
 class GetSchedulesScheduleCollectionItemResourceResult(dict):
     def __init__(__self__, *,
                  id: str,
-                 metadata: Mapping[str, Any]):
+                 metadata: Mapping[str, str]):
         """
         :param str id: This is the resource OCID.
-        :param Mapping[str, Any] metadata: This is additional information that helps to identity the resource for the schedule.
+        :param Mapping[str, str] metadata: This is additional information that helps to identity the resource for the schedule.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "metadata", metadata)
@@ -587,7 +587,7 @@ class GetSchedulesScheduleCollectionItemResourceResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         This is additional information that helps to identity the resource for the schedule.
         """

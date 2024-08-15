@@ -1210,13 +1210,13 @@ type GetApplicationsApplication struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only applications with display names that match the display name string. Matching is exact.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only applications with the specified OCID.
 	Id string `pulumi:"id"`
 	// Define the image signature verification policy for an application.
@@ -1254,13 +1254,13 @@ type GetApplicationsApplicationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config pulumi.MapInput `pulumi:"config"`
+	Config pulumi.StringMapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only applications with display names that match the display name string. Matching is exact.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only applications with the specified OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Define the image signature verification policy for an application.
@@ -1340,13 +1340,13 @@ func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-func (o GetApplicationsApplicationOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only applications with display names that match the display name string. Matching is exact.
@@ -1355,8 +1355,8 @@ func (o GetApplicationsApplicationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only applications with the specified OCID.
@@ -2269,13 +2269,13 @@ type GetFunctionsFunction struct {
 	// The OCID of the compartment that contains the function.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
 	Id string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -2321,13 +2321,13 @@ type GetFunctionsFunctionArgs struct {
 	// The OCID of the compartment that contains the function.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config pulumi.MapInput `pulumi:"config"`
+	Config pulumi.StringMapInput `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only functions with display names that match the display name string. Matching is exact.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only functions with the specified OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -2418,13 +2418,13 @@ func (o GetFunctionsFunctionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-func (o GetFunctionsFunctionOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o GetFunctionsFunctionOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetFunctionsFunctionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetFunctionsFunctionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only functions with display names that match the display name string. Matching is exact.
@@ -2433,8 +2433,8 @@ func (o GetFunctionsFunctionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetFunctionsFunctionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFunctionsFunction) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetFunctionsFunctionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFunctionsFunction) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only functions with the specified OCID.
@@ -4117,13 +4117,13 @@ type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies []GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
 	Id string `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
@@ -4156,13 +4156,13 @@ type GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemArgs struc
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArrayInput `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
@@ -4239,10 +4239,10 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]interface{} {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -4258,10 +4258,10 @@ func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]interface{} {
+func (o GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The unique identifier (OCID) of the environment family. Can't be changed after creation.
@@ -6666,8 +6666,8 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem stru
 	// Cumulative delay hours
 	DelayInHours int `pulumi:"delayInHours"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName  string                 `pulumi:"displayName"`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	DisplayName  string            `pulumi:"displayName"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
@@ -6708,8 +6708,8 @@ type GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemArgs 
 	// Cumulative delay hours
 	DelayInHours pulumi.IntInput `pulumi:"delayInHours"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName  pulumi.StringInput `pulumi:"displayName"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation.
@@ -6805,10 +6805,10 @@ func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOu
 	}).(pulumi.StringOutput)
 }
 
-func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) map[string]interface{} {
+func (o GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // unique FusionEnvironment identifier
@@ -7465,11 +7465,11 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem struc
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
@@ -7505,11 +7505,11 @@ type GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemArgs s
 	// Compartment Identifier
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
@@ -7589,10 +7589,10 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]interface{} {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -7603,10 +7603,10 @@ func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]interface{} {
+func (o GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // unique FusionEnvironment identifier
@@ -8300,7 +8300,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	CompartmentId                           string                                                                                       `pulumi:"compartmentId"`
 	CreateFusionEnvironmentAdminUserDetails []GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// DNS prefix
@@ -8308,7 +8308,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItem struct {
 	// The IDCS domain created for the fusion instance
 	DomainId string `pulumi:"domainId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ID of the fusion environment family in which to list resources.
 	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
 	// Type of the FusionEnvironment.
@@ -8371,7 +8371,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	CompartmentId                           pulumi.StringInput                                                                                   `pulumi:"compartmentId"`
 	CreateFusionEnvironmentAdminUserDetails GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailArrayInput `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// DNS prefix
@@ -8379,7 +8379,7 @@ type GetFusionEnvironmentsFusionEnvironmentCollectionItemArgs struct {
 	// The IDCS domain created for the fusion instance
 	DomainId pulumi.StringInput `pulumi:"domainId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The ID of the fusion environment family in which to list resources.
 	FusionEnvironmentFamilyId pulumi.StringInput `pulumi:"fusionEnvironmentFamilyId"`
 	// Type of the FusionEnvironment.
@@ -8497,10 +8497,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) CreateFusion
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -8519,10 +8517,8 @@ func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) DomainId() p
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetFusionEnvironmentsFusionEnvironmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentsFusionEnvironmentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ID of the fusion environment family in which to list resources.
@@ -10634,9 +10630,9 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItem struct {
 	// Details about the required and optional Function configurations needed for proper performance of the PBF.
 	Configs []GetPbfListingVersionsPbfListingVersionsCollectionItemConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
@@ -10648,7 +10644,7 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
@@ -10674,9 +10670,9 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemArgs struct {
 	// Details about the required and optional Function configurations needed for proper performance of the PBF.
 	Configs GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArrayInput `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id pulumi.StringInput `pulumi:"id"`
 	// Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
@@ -10688,7 +10684,7 @@ type GetPbfListingVersionsPbfListingVersionsCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
@@ -10761,17 +10757,13 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) Configs() G
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation
@@ -10802,10 +10794,8 @@ func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) State() pul
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetPbfListingVersionsPbfListingVersionsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingVersionsPbfListingVersionsCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
@@ -11483,11 +11473,11 @@ func (o GetPbfListingsPbfListingsCollectionArrayOutput) Index(i pulumi.IntInput)
 
 type GetPbfListingsPbfListingsCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A filter to return only resources that match the entire PBF name given.
@@ -11497,7 +11487,7 @@ type GetPbfListingsPbfListingsCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the PbfListing was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
@@ -11519,11 +11509,11 @@ type GetPbfListingsPbfListingsCollectionItemInput interface {
 
 type GetPbfListingsPbfListingsCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only resources that match the entire PBF name given.
@@ -11533,7 +11523,7 @@ type GetPbfListingsPbfListingsCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the PbfListing was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The last time the PbfListing was updated. An RFC3339 formatted datetime string.
@@ -11594,8 +11584,8 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) ToGetPbfListingsPbfListin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetPbfListingsPbfListingsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short overview of the PBF Listing: the purpose of the PBF and and associated information.
@@ -11604,8 +11594,8 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) Description() pulumi.Stri
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetPbfListingsPbfListingsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -11631,8 +11621,8 @@ func (o GetPbfListingsPbfListingsCollectionItemOutput) State() pulumi.StringOutp
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPbfListingsPbfListingsCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetPbfListingsPbfListingsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPbfListingsPbfListingsCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the PbfListing was created. An RFC3339 formatted datetime string.

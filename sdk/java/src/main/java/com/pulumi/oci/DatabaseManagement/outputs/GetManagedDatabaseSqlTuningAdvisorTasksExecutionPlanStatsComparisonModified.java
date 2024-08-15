@@ -5,7 +5,6 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return A map contains the statistics for the SQL execution using the plan. The key of the map is the metric&#39;s name. The value of the map is the metric&#39;s value.
      * 
      */
-    private Map<String,Object> planStats;
+    private Map<String,String> planStats;
     /**
      * @return The status of the execution using the plan.
      * 
@@ -33,7 +32,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
      * @return A map contains the statistics for the SQL execution using the plan. The key of the map is the metric&#39;s name. The value of the map is the metric&#39;s value.
      * 
      */
-    public Map<String,Object> planStats() {
+    public Map<String,String> planStats() {
         return this.planStats;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> planStats;
+        private Map<String,String> planStats;
         private String planStatus;
         private String planType;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComp
         }
 
         @CustomType.Setter
-        public Builder planStats(Map<String,Object> planStats) {
+        public Builder planStats(Map<String,String> planStats) {
             if (planStats == null) {
               throw new MissingRequiredPropertyException("GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModified", "planStats");
             }

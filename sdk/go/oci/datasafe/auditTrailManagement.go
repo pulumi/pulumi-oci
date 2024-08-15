@@ -32,13 +32,13 @@ import (
 //			_, err := DataSafe.NewAuditTrailManagement(ctx, "test_audit_trail_management", &DataSafe.AuditTrailManagementArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				TargetId:      pulumi.Any(testTargetDatabase.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(auditTrailManagementDescription),
 //				DisplayName: pulumi.Any(auditTrailManagementDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsAutoPurgeEnabled: pulumi.Any(auditTrailManagementIsAutoPurgeEnabled),
 //			})
@@ -67,13 +67,13 @@ type AuditTrailManagement struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled pulumi.BoolOutput `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
@@ -89,7 +89,7 @@ type AuditTrailManagement struct {
 	// (Updatable) An optional property when set to true triggers Stop.
 	StopTrigger pulumi.BoolPtrOutput `pulumi:"stopTrigger"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target.
 	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
@@ -144,13 +144,13 @@ type auditTrailManagementState struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled *bool `pulumi:"isAutoPurgeEnabled"`
 	// Details about the current state of the audit trail in Data Safe.
@@ -166,7 +166,7 @@ type auditTrailManagementState struct {
 	// (Updatable) An optional property when set to true triggers Stop.
 	StopTrigger *bool `pulumi:"stopTrigger"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target.
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
@@ -192,13 +192,13 @@ type AuditTrailManagementState struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled pulumi.BoolPtrInput
 	// Details about the current state of the audit trail in Data Safe.
@@ -214,7 +214,7 @@ type AuditTrailManagementState struct {
 	// (Updatable) An optional property when set to true triggers Stop.
 	StopTrigger pulumi.BoolPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target.
 	TargetId pulumi.StringPtrInput
 	// The date and time the audit trail was created, in the format defined by RFC3339.
@@ -242,13 +242,13 @@ type auditTrailManagementArgs struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit trail.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled *bool `pulumi:"isAutoPurgeEnabled"`
 	// (Updatable) An optional property when set to true triggers Resume.
@@ -275,13 +275,13 @@ type AuditTrailManagementArgs struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit trail.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit trail. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
 	IsAutoPurgeEnabled pulumi.BoolPtrInput
 	// (Updatable) An optional property when set to true triggers Resume.
@@ -404,8 +404,8 @@ func (o AuditTrailManagementOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AuditTrailManagementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditTrailManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AuditTrailManagementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the audit trail.
@@ -419,8 +419,8 @@ func (o AuditTrailManagementOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AuditTrailManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditTrailManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AuditTrailManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -459,8 +459,8 @@ func (o AuditTrailManagementOutput) StopTrigger() pulumi.BoolPtrOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AuditTrailManagementOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditTrailManagement) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AuditTrailManagementOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditTrailManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target.

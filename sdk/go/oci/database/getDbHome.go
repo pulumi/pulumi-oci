@@ -71,12 +71,12 @@ type LookupDbHomeResult struct {
 	// The Oracle Database version.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name for the Database Home. The name does not need to be unique.
 	DisplayName          string `pulumi:"displayName"`
 	EnableDatabaseDelete bool   `pulumi:"enableDatabaseDelete"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
 	Id                   string `pulumi:"id"`
 	IsDesupportedVersion bool   `pulumi:"isDesupportedVersion"`
@@ -170,8 +170,8 @@ func (o LookupDbHomeResultOutput) DbVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupDbHomeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbHomeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDbHomeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-provided name for the Database Home. The name does not need to be unique.
@@ -184,8 +184,8 @@ func (o LookupDbHomeResultOutput) EnableDatabaseDelete() pulumi.BoolOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupDbHomeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbHomeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDbHomeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbHomeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.

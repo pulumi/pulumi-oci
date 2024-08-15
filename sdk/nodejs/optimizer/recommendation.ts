@@ -71,7 +71,7 @@ export class Recommendation extends pulumi.CustomResource {
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * The level of importance assigned to the recommendation.
      */
@@ -205,7 +205,7 @@ export interface RecommendationState {
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: any}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The level of importance assigned to the recommendation.
      */

@@ -66,11 +66,11 @@ type LookupNamespaceScheduledTaskResult struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
 	Id string `pulumi:"id"`
 	// Discriminator.
@@ -149,8 +149,8 @@ func (o LookupNamespaceScheduledTaskResultOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupNamespaceScheduledTaskResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name that is changeable and that does not have to be unique. Format: a leading alphanumeric, followed by zero or more alphanumerics, underscores, spaces, backslashes, or hyphens in any order). No trailing spaces allowed.
@@ -159,8 +159,8 @@ func (o LookupNamespaceScheduledTaskResultOutput) DisplayName() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupNamespaceScheduledTaskResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNamespaceScheduledTaskResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamespaceScheduledTaskResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.

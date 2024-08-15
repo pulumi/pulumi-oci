@@ -62,7 +62,7 @@ export class DrgRouteTableRouteRule extends pulumi.CustomResource {
     /**
      * Additional properties for the route, computed by the service.
      */
-    public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly attributes!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      *
@@ -164,7 +164,7 @@ export interface DrgRouteTableRouteRuleState {
     /**
      * Additional properties for the route, computed by the service.
      */
-    attributes?: pulumi.Input<{[key: string]: any}>;
+    attributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
      *

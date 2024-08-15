@@ -61,13 +61,13 @@ type GetMaskingPolicyHealthReportResult struct {
 	// The OCID of the compartment that contains the health report.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description string `pulumi:"description"`
 	// The display name of the health report.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                          string `pulumi:"id"`
 	MaskingPolicyHealthReportId string `pulumi:"maskingPolicyHealthReportId"`
@@ -127,8 +127,8 @@ func (o GetMaskingPolicyHealthReportResultOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetMaskingPolicyHealthReportResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMaskingPolicyHealthReportResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the masking health report.
@@ -142,8 +142,8 @@ func (o GetMaskingPolicyHealthReportResultOutput) DisplayName() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetMaskingPolicyHealthReportResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMaskingPolicyHealthReportResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

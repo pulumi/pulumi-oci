@@ -68,12 +68,12 @@ import (
 //					Username:             pulumi.Any(remediationRecipeVerifyConfigurationUsername),
 //					WorkflowName:         pulumi.Any(remediationRecipeVerifyConfigurationWorkflowName),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(remediationRecipeDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -98,13 +98,13 @@ type RemediationRecipe struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration RemediationRecipeDetectConfigurationOutput `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
 	IsRunTriggeredOnKbChange pulumi.BoolOutput `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -119,7 +119,7 @@ type RemediationRecipe struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -182,13 +182,13 @@ type remediationRecipeState struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration *RemediationRecipeDetectConfiguration `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
 	IsRunTriggeredOnKbChange *bool `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -203,7 +203,7 @@ type remediationRecipeState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -216,13 +216,13 @@ type RemediationRecipeState struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration RemediationRecipeDetectConfigurationPtrInput
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
 	IsRunTriggeredOnKbChange pulumi.BoolPtrInput
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -237,7 +237,7 @@ type RemediationRecipeState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -254,13 +254,13 @@ type remediationRecipeArgs struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration RemediationRecipeDetectConfiguration `pulumi:"detectConfiguration"`
 	// (Updatable) The name of the remediation recipe.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
 	IsRunTriggeredOnKbChange bool `pulumi:"isRunTriggeredOnKbChange"`
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -283,13 +283,13 @@ type RemediationRecipeArgs struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfiguration RemediationRecipeDetectConfigurationInput
 	// (Updatable) The name of the remediation recipe.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
 	IsRunTriggeredOnKbChange pulumi.BoolInput
 	// (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -400,8 +400,8 @@ func (o RemediationRecipeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o RemediationRecipeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o RemediationRecipeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A configuration to define the constraints when detecting vulnerable dependencies.
@@ -415,8 +415,8 @@ func (o RemediationRecipeOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o RemediationRecipeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RemediationRecipeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Boolean indicating if a run should be automatically triggered once the knowledge base is updated.
@@ -448,8 +448,8 @@ func (o RemediationRecipeOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o RemediationRecipeOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RemediationRecipe) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o RemediationRecipeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RemediationRecipe) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

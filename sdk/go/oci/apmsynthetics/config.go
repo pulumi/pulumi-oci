@@ -145,11 +145,11 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsIpv6:    pulumi.Any(monitorIsIpv6),
 //				IsRunNow:  pulumi.Any(monitorIsRunNow),
@@ -200,11 +200,11 @@ type Config struct {
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
 	IsIpv6 pulumi.BoolOutput `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
@@ -302,11 +302,11 @@ type configState struct {
 	// Name of the user that created the monitor.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
 	IsIpv6 *bool `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
@@ -360,11 +360,11 @@ type ConfigState struct {
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
 	IsIpv6 pulumi.BoolPtrInput
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
@@ -420,11 +420,11 @@ type configArgs struct {
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
 	IsIpv6 *bool `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
@@ -469,11 +469,11 @@ type ConfigArgs struct {
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
 	IsIpv6 pulumi.BoolPtrInput
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
@@ -620,8 +620,8 @@ func (o ConfigOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -630,8 +630,8 @@ func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) If enabled, domain name will resolve to an IPv6 address.

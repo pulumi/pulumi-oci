@@ -64,9 +64,9 @@ type BaselineableMetric struct {
 	// Created user id
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Is the metric created out of box, default false
 	IsOutOfBox pulumi.BoolOutput `pulumi:"isOutOfBox"`
 	// last Updated user id
@@ -85,7 +85,7 @@ type BaselineableMetric struct {
 	// The current lifecycle state of the metric extension
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// OCID of the tenancy
 	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// creation date
@@ -140,9 +140,9 @@ type baselineableMetricState struct {
 	// Created user id
 	CreatedBy *string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Is the metric created out of box, default false
 	IsOutOfBox *bool `pulumi:"isOutOfBox"`
 	// last Updated user id
@@ -161,7 +161,7 @@ type baselineableMetricState struct {
 	// The current lifecycle state of the metric extension
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// OCID of the tenancy
 	TenancyId *string `pulumi:"tenancyId"`
 	// creation date
@@ -178,9 +178,9 @@ type BaselineableMetricState struct {
 	// Created user id
 	CreatedBy pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Is the metric created out of box, default false
 	IsOutOfBox pulumi.BoolPtrInput
 	// last Updated user id
@@ -199,7 +199,7 @@ type BaselineableMetricState struct {
 	// The current lifecycle state of the metric extension
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// OCID of the tenancy
 	TenancyId pulumi.StringPtrInput
 	// creation date
@@ -352,13 +352,13 @@ func (o BaselineableMetricOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o BaselineableMetricOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BaselineableMetric) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BaselineableMetricOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o BaselineableMetricOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BaselineableMetric) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BaselineableMetricOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Is the metric created out of box, default false
@@ -400,8 +400,8 @@ func (o BaselineableMetricOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o BaselineableMetricOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BaselineableMetric) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o BaselineableMetricOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BaselineableMetric) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // OCID of the tenancy

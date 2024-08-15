@@ -43,14 +43,14 @@ namespace Pulumi.Oci.CapacityManagement.Inputs
         public Input<string> Selection { get; set; } = null!;
 
         [Input("value", required: true)]
-        private InputMap<object>? _value;
+        private InputMap<string>? _value;
 
         /// <summary>
         /// (Updatable)
         /// </summary>
-        public InputMap<object> Value
+        public InputMap<string> Value
         {
-            get => _value ?? (_value = new InputMap<object>());
+            get => _value ?? (_value = new InputMap<string>());
             set => _value = value;
         }
 

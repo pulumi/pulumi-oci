@@ -64,7 +64,7 @@ export interface GetOnPremiseVantagePointWorkerResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Unique name that can be edited. The name should not contain any confidential information.
      */
@@ -72,7 +72,7 @@ export interface GetOnPremiseVantagePointWorkerResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Geographical information of the On-premise VP worker.
      */

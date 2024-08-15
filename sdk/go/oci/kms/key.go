@@ -38,7 +38,7 @@ type Key struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion pulumi.StringOutput `pulumi:"currentKeyVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
 	DesiredState pulumi.StringOutput `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -48,7 +48,7 @@ type Key struct {
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayOutput `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
 	IsAutoRotationEnabled pulumi.BoolOutput `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -131,7 +131,7 @@ type keyState struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion *string `pulumi:"currentKeyVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
 	DesiredState *string `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -141,7 +141,7 @@ type keyState struct {
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails []KeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
 	IsAutoRotationEnabled *bool `pulumi:"isAutoRotationEnabled"`
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -183,7 +183,7 @@ type KeyState struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
 	DesiredState pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -193,7 +193,7 @@ type KeyState struct {
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails KeyExternalKeyReferenceDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
 	IsAutoRotationEnabled pulumi.BoolPtrInput
 	// A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -237,7 +237,7 @@ type keyArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
 	DesiredState *string `pulumi:"desiredState"`
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -245,7 +245,7 @@ type keyArgs struct {
 	// A reference to the key on external key manager.
 	ExternalKeyReference *KeyExternalKeyReference `pulumi:"externalKeyReference"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
 	IsAutoRotationEnabled *bool `pulumi:"isAutoRotationEnabled"`
 	// The cryptographic properties of a key.
@@ -274,7 +274,7 @@ type KeyArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the master encryption key.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
 	DesiredState pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -282,7 +282,7 @@ type KeyArgs struct {
 	// A reference to the key on external key manager.
 	ExternalKeyReference KeyExternalKeyReferencePtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
 	IsAutoRotationEnabled pulumi.BoolPtrInput
 	// The cryptographic properties of a key.
@@ -407,8 +407,8 @@ func (o KeyOutput) CurrentKeyVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o KeyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Key) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o KeyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
@@ -432,8 +432,8 @@ func (o KeyOutput) ExternalKeyReferenceDetails() KeyExternalKeyReferenceDetailAr
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o KeyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Key) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o KeyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Key) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A parameter specifying whether the auto key rotation is enabled or not.

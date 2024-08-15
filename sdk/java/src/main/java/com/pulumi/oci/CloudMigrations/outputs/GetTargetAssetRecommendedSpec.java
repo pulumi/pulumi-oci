@@ -12,7 +12,6 @@ import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecPreem
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecShapeConfig;
 import com.pulumi.oci.CloudMigrations.outputs.GetTargetAssetRecommendedSpecSourceDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +53,7 @@ public final class GetTargetAssetRecommendedSpec {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -69,7 +68,7 @@ public final class GetTargetAssetRecommendedSpec {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
@@ -154,7 +153,7 @@ public final class GetTargetAssetRecommendedSpec {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -175,7 +174,7 @@ public final class GetTargetAssetRecommendedSpec {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -246,10 +245,10 @@ public final class GetTargetAssetRecommendedSpec {
         private String compartmentId;
         private List<GetTargetAssetRecommendedSpecCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String faultDomain;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostnameLabel;
         private List<GetTargetAssetRecommendedSpecInstanceOption> instanceOptions;
         private String ipxeScript;
@@ -336,7 +335,7 @@ public final class GetTargetAssetRecommendedSpec {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "definedTags");
             }
@@ -360,7 +359,7 @@ public final class GetTargetAssetRecommendedSpec {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetTargetAssetRecommendedSpec", "freeformTags");
             }

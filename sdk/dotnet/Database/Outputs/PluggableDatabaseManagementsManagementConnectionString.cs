@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// All connection strings to use to connect to the pluggable database.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? AllConnectionStrings;
+        public readonly ImmutableDictionary<string, string>? AllConnectionStrings;
         /// <summary>
         /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
         /// 
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private PluggableDatabaseManagementsManagementConnectionString(
-            ImmutableDictionary<string, object>? allConnectionStrings,
+            ImmutableDictionary<string, string>? allConnectionStrings,
 
             bool enablePluggabledatabasemanagement,
 

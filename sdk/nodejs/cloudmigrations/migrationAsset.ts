@@ -101,7 +101,7 @@ export class MigrationAsset extends pulumi.CustomResource {
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly snapshots!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly snapshots!: pulumi.Output<{[key: string]: string}>;
     /**
      * OCID that is referenced to an asset for an inventory.
      */
@@ -263,7 +263,7 @@ export interface MigrationAssetState {
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    snapshots?: pulumi.Input<{[key: string]: any}>;
+    snapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * OCID that is referenced to an asset for an inventory.
      */

@@ -140,7 +140,7 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
         /// </summary>
-        public readonly ImmutableDictionary<string, object> MinCompatibleOdhVersionMap;
+        public readonly ImmutableDictionary<string, string> MinCompatibleOdhVersionMap;
         /// <summary>
         /// Version of the os patch.
         /// </summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.BigDataService
 
             string minBdsVersion,
 
-            ImmutableDictionary<string, object> minCompatibleOdhVersionMap,
+            ImmutableDictionary<string, string> minCompatibleOdhVersionMap,
 
             string osPatchVersion,
 

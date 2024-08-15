@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, string> AdditionalDetails;
         /// <summary>
         /// The optional single value query filter parameter on the entity display name.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGridResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, string> additionalDetails,
 
             string displayName,
 

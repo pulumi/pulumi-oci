@@ -30,7 +30,7 @@ type ResponderRecipe struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
@@ -44,7 +44,7 @@ type ResponderRecipe struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Owner of responder recipe
@@ -59,7 +59,7 @@ type ResponderRecipe struct {
 	// The current lifecycle state of the example
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the responder recipe was last updated. Format defined by RFC3339.
@@ -108,7 +108,7 @@ type responderRecipeState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
@@ -122,7 +122,7 @@ type responderRecipeState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Owner of responder recipe
@@ -137,7 +137,7 @@ type responderRecipeState struct {
 	// The current lifecycle state of the example
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the responder recipe was last updated. Format defined by RFC3339.
@@ -148,7 +148,7 @@ type ResponderRecipeState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
@@ -162,7 +162,7 @@ type ResponderRecipeState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Owner of responder recipe
@@ -177,7 +177,7 @@ type ResponderRecipeState struct {
 	// The current lifecycle state of the example
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the responder recipe was last updated. Format defined by RFC3339.
@@ -192,7 +192,7 @@ type responderRecipeArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
@@ -204,7 +204,7 @@ type responderRecipeArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules []ResponderRecipeResponderRule `pulumi:"responderRules"`
 	// The unique identifier of the source responder recipe
@@ -219,7 +219,7 @@ type ResponderRecipeArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Responder recipe description.
 	//
 	// Avoid entering confidential information.
@@ -231,7 +231,7 @@ type ResponderRecipeArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayInput
 	// The unique identifier of the source responder recipe
@@ -334,8 +334,8 @@ func (o ResponderRecipeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ResponderRecipeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ResponderRecipeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Responder recipe description.
@@ -362,8 +362,8 @@ func (o ResponderRecipeOutput) EffectiveResponderRules() ResponderRecipeEffectiv
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o ResponderRecipeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ResponderRecipeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -395,8 +395,8 @@ func (o ResponderRecipeOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ResponderRecipeOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ResponderRecipe) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ResponderRecipeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the responder recipe was created. Format defined by RFC3339.

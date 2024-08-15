@@ -61,13 +61,13 @@ type GetDetectionModelResult struct {
 	// The OCID for the model's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the Model.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the model that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -82,7 +82,7 @@ type GetDetectionModelResult struct {
 	// The state of the model.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Model was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Model was updated. An RFC3339 formatted datetime string.
@@ -133,8 +133,8 @@ func (o GetDetectionModelResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDetectionModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDetectionModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDetectionModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDetectionModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the Model.
@@ -148,8 +148,8 @@ func (o GetDetectionModelResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDetectionModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDetectionModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDetectionModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDetectionModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the model that is immutable on creation.
@@ -187,8 +187,8 @@ func (o GetDetectionModelResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDetectionModelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDetectionModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDetectionModelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDetectionModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Model was created. An RFC3339 formatted datetime string.

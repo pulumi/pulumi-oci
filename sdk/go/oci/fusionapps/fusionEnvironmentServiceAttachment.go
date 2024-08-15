@@ -57,11 +57,11 @@ type FusionEnvironmentServiceAttachment struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Service Attachment Display name, can be renamed
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringOutput `pulumi:"fusionEnvironmentId"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -125,11 +125,11 @@ type fusionEnvironmentServiceAttachmentState struct {
 	// Compartment Identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Service Attachment Display name, can be renamed
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId *string `pulumi:"fusionEnvironmentId"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -155,11 +155,11 @@ type FusionEnvironmentServiceAttachmentState struct {
 	// Compartment Identifier
 	CompartmentId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Service Attachment Display name, can be renamed
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringPtrInput
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -187,7 +187,7 @@ func (FusionEnvironmentServiceAttachmentState) ElementType() reflect.Type {
 
 type fusionEnvironmentServiceAttachmentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`
 	// The service instance OCID of the instance being attached
@@ -202,7 +202,7 @@ type fusionEnvironmentServiceAttachmentArgs struct {
 // The set of arguments for constructing a FusionEnvironmentServiceAttachment resource.
 type FusionEnvironmentServiceAttachmentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId pulumi.StringInput
 	// The service instance OCID of the instance being attached
@@ -307,8 +307,8 @@ func (o FusionEnvironmentServiceAttachmentOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o FusionEnvironmentServiceAttachmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Service Attachment Display name, can be renamed
@@ -317,8 +317,8 @@ func (o FusionEnvironmentServiceAttachmentOutput) DisplayName() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o FusionEnvironmentServiceAttachmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentServiceAttachmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironmentServiceAttachment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique FusionEnvironment identifier

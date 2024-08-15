@@ -35,7 +35,7 @@ type OccCapacityRequest struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover pulumi.StringOutput `pulumi:"dateExpectedCapacityHandover"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// A list of different resources requested by the user.
@@ -43,7 +43,7 @@ type OccCapacityRequest struct {
 	// (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -64,7 +64,7 @@ type OccCapacityRequest struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the capacity request was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the capacity request was updated.
@@ -132,7 +132,7 @@ type occCapacityRequestState struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover *string `pulumi:"dateExpectedCapacityHandover"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description *string `pulumi:"description"`
 	// A list of different resources requested by the user.
@@ -140,7 +140,7 @@ type occCapacityRequestState struct {
 	// (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -161,7 +161,7 @@ type occCapacityRequestState struct {
 	// The current lifecycle state of the resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the capacity request was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the capacity request was updated.
@@ -176,7 +176,7 @@ type OccCapacityRequestState struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Meaningful text about the capacity request.
 	Description pulumi.StringPtrInput
 	// A list of different resources requested by the user.
@@ -184,7 +184,7 @@ type OccCapacityRequestState struct {
 	// (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails pulumi.StringPtrInput
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -205,7 +205,7 @@ type OccCapacityRequestState struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the capacity request was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the capacity request was updated.
@@ -224,7 +224,7 @@ type occCapacityRequestArgs struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description *string `pulumi:"description"`
 	// A list of different resources requested by the user.
@@ -232,7 +232,7 @@ type occCapacityRequestArgs struct {
 	// (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -259,7 +259,7 @@ type OccCapacityRequestArgs struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Meaningful text about the capacity request.
 	Description pulumi.StringPtrInput
 	// A list of different resources requested by the user.
@@ -267,7 +267,7 @@ type OccCapacityRequestArgs struct {
 	// (Updatable) An user-friendly name for the capacity request. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails pulumi.StringPtrInput
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -388,8 +388,8 @@ func (o OccCapacityRequestOutput) DateExpectedCapacityHandover() pulumi.StringOu
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OccCapacityRequestOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccCapacityRequest) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OccCapacityRequestOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Meaningful text about the capacity request.
@@ -408,8 +408,8 @@ func (o OccCapacityRequestOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OccCapacityRequestOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccCapacityRequest) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OccCapacityRequestOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -456,8 +456,8 @@ func (o OccCapacityRequestOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OccCapacityRequestOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccCapacityRequest) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OccCapacityRequestOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccCapacityRequest) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the capacity request was created.

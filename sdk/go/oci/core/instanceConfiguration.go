@@ -33,12 +33,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Core.NewInstanceConfiguration(ctx, "test_instance_configuration", &Core.InstanceConfigurationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(instanceConfigurationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				InstanceDetails: &core.InstanceConfigurationInstanceDetailsArgs{
 //					InstanceType: pulumi.Any(instanceConfigurationInstanceDetailsInstanceType),
@@ -68,12 +68,12 @@ import (
 //								},
 //								ClusterPlacementGroupId: pulumi.Any(clusterPlacementGroupId),
 //								CompartmentId:           pulumi.Any(compartmentId),
-//								DefinedTags: pulumi.Map{
-//									"Operations.CostCenter": pulumi.Any("42"),
+//								DefinedTags: pulumi.StringMap{
+//									"Operations.CostCenter": pulumi.String("42"),
 //								},
 //								DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsDisplayName),
-//								FreeformTags: pulumi.Map{
-//									"Department": pulumi.Any("Finance"),
+//								FreeformTags: pulumi.StringMap{
+//									"Department": pulumi.String("Finance"),
 //								},
 //								IsAutoTuneEnabled: pulumi.Any(instanceConfigurationInstanceDetailsBlockVolumesCreateDetailsIsAutoTuneEnabled),
 //								KmsKeyId:          pulumi.Any(testKey.Id),
@@ -111,12 +111,12 @@ import (
 //							AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip),
 //							AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord),
 //							AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignPublicIp),
-//							DefinedTags: pulumi.Map{
-//								"Operations.CostCenter": pulumi.Any("42"),
+//							DefinedTags: pulumi.StringMap{
+//								"Operations.CostCenter": pulumi.String("42"),
 //							},
 //							DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsDisplayName),
-//							FreeformTags: pulumi.Map{
-//								"Department": pulumi.Any("Finance"),
+//							FreeformTags: pulumi.StringMap{
+//								"Department": pulumi.String("Finance"),
 //							},
 //							HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsHostnameLabel),
 //							Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
@@ -131,14 +131,14 @@ import (
 //							SubnetId:            pulumi.Any(testSubnet.Id),
 //						},
 //						DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
-//						DefinedTags: pulumi.Map{
-//							"Operations.CostCenter": pulumi.Any("42"),
+//						DefinedTags: pulumi.StringMap{
+//							"Operations.CostCenter": pulumi.String("42"),
 //						},
 //						DisplayName:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsDisplayName),
 //						ExtendedMetadata: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsExtendedMetadata),
 //						FaultDomain:      pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsFaultDomain),
-//						FreeformTags: pulumi.Map{
-//							"Department": pulumi.Any("Finance"),
+//						FreeformTags: pulumi.StringMap{
+//							"Department": pulumi.String("Finance"),
 //						},
 //						InstanceOptions: &core.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs{
 //							AreLegacyImdsEndpointsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled),
@@ -223,12 +223,12 @@ import (
 //										BackupPolicyId:          pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
 //										ClusterPlacementGroupId: pulumi.Any(clusterPlacementGroupId),
 //										CompartmentId:           pulumi.Any(compartmentId),
-//										DefinedTags: pulumi.Map{
-//											"Operations.CostCenter": pulumi.Any("42"),
+//										DefinedTags: pulumi.StringMap{
+//											"Operations.CostCenter": pulumi.String("42"),
 //										},
 //										DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsDisplayName),
-//										FreeformTags: pulumi.Map{
-//											"Department": pulumi.Any("Finance"),
+//										FreeformTags: pulumi.StringMap{
+//											"Department": pulumi.String("Finance"),
 //										},
 //										KmsKeyId:  pulumi.Any(testKey.Id),
 //										SizeInGbs: pulumi.Any(instanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSizeInGbs),
@@ -264,12 +264,12 @@ import (
 //									AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsAssignIpv6ip),
 //									AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPrivateDnsRecord),
 //									AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsAssignPublicIp),
-//									DefinedTags: pulumi.Map{
-//										"Operations.CostCenter": pulumi.Any("42"),
+//									DefinedTags: pulumi.StringMap{
+//										"Operations.CostCenter": pulumi.String("42"),
 //									},
 //									DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsDisplayName),
-//									FreeformTags: pulumi.Map{
-//										"Department": pulumi.Any("Finance"),
+//									FreeformTags: pulumi.StringMap{
+//										"Department": pulumi.String("Finance"),
 //									},
 //									HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsHostnameLabel),
 //									Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
@@ -284,14 +284,14 @@ import (
 //									SubnetId:            pulumi.Any(testSubnet.Id),
 //								},
 //								DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
-//								DefinedTags: pulumi.Map{
-//									"Operations.CostCenter": pulumi.Any("42"),
+//								DefinedTags: pulumi.StringMap{
+//									"Operations.CostCenter": pulumi.String("42"),
 //								},
 //								DisplayName:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsDisplayName),
 //								ExtendedMetadata: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsExtendedMetadata),
 //								FaultDomain:      pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsFaultDomain),
-//								FreeformTags: pulumi.Map{
-//									"Department": pulumi.Any("Finance"),
+//								FreeformTags: pulumi.StringMap{
+//									"Department": pulumi.String("Finance"),
 //								},
 //								InstanceOptions: &core.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs{
 //									AreLegacyImdsEndpointsDisabled: pulumi.Any(instanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsAreLegacyImdsEndpointsDisabled),
@@ -356,12 +356,12 @@ import (
 //										AssignIpv6ip:           pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignIpv6ip),
 //										AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord),
 //										AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsAssignPublicIp),
-//										DefinedTags: pulumi.Map{
-//											"Operations.CostCenter": pulumi.Any("42"),
+//										DefinedTags: pulumi.StringMap{
+//											"Operations.CostCenter": pulumi.String("42"),
 //										},
 //										DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsDisplayName),
-//										FreeformTags: pulumi.Map{
-//											"Department": pulumi.Any("Finance"),
+//										FreeformTags: pulumi.StringMap{
+//											"Department": pulumi.String("Finance"),
 //										},
 //										HostnameLabel: pulumi.Any(instanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsHostnameLabel),
 //										Ipv6addressIpv6subnetCidrPairDetails: core.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArray{
@@ -386,12 +386,12 @@ import (
 //							CreateVnicDetails: &core.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsArgs{
 //								AssignPrivateDnsRecord: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPrivateDnsRecord),
 //								AssignPublicIp:         pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsAssignPublicIp),
-//								DefinedTags: pulumi.Map{
-//									"Operations.CostCenter": pulumi.Any("42"),
+//								DefinedTags: pulumi.StringMap{
+//									"Operations.CostCenter": pulumi.String("42"),
 //								},
 //								DisplayName: pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsDisplayName),
-//								FreeformTags: pulumi.Map{
-//									"Department": pulumi.Any("Finance"),
+//								FreeformTags: pulumi.StringMap{
+//									"Department": pulumi.String("Finance"),
 //								},
 //								HostnameLabel:       pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsHostnameLabel),
 //								NsgIds:              pulumi.Any(instanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsNsgIds),
@@ -431,11 +431,11 @@ type InstanceConfiguration struct {
 	// Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
 	DeferredFields pulumi.StringArrayOutput `pulumi:"deferredFields"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.MapOutput                           `pulumi:"freeformTags"`
+	FreeformTags    pulumi.StringMapOutput                     `pulumi:"freeformTags"`
 	InstanceDetails InstanceConfigurationInstanceDetailsOutput `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
@@ -496,11 +496,11 @@ type instanceConfigurationState struct {
 	// Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
 	DeferredFields []string `pulumi:"deferredFields"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    map[string]interface{}                `pulumi:"freeformTags"`
+	FreeformTags    map[string]string                     `pulumi:"freeformTags"`
 	InstanceDetails *InstanceConfigurationInstanceDetails `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId *string `pulumi:"instanceId"`
@@ -529,11 +529,11 @@ type InstanceConfigurationState struct {
 	// Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
 	DeferredFields pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.MapInput
+	FreeformTags    pulumi.StringMapInput
 	InstanceDetails InstanceConfigurationInstanceDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringPtrInput
@@ -564,11 +564,11 @@ type instanceConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    map[string]interface{}                `pulumi:"freeformTags"`
+	FreeformTags    map[string]string                     `pulumi:"freeformTags"`
 	InstanceDetails *InstanceConfigurationInstanceDetails `pulumi:"instanceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId *string `pulumi:"instanceId"`
@@ -594,11 +594,11 @@ type InstanceConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags    pulumi.MapInput
+	FreeformTags    pulumi.StringMapInput
 	InstanceDetails InstanceConfigurationInstanceDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance to use to create the instance configuration.
 	InstanceId pulumi.StringPtrInput
@@ -717,8 +717,8 @@ func (o InstanceConfigurationOutput) DeferredFields() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o InstanceConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o InstanceConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -727,8 +727,8 @@ func (o InstanceConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o InstanceConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o InstanceConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o InstanceConfigurationOutput) InstanceDetails() InstanceConfigurationInstanceDetailsOutput {

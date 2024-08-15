@@ -61,11 +61,11 @@ type LookupProcessSetResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Name of the Process Set.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
 	Id           string `pulumi:"id"`
 	ProcessSetId string `pulumi:"processSetId"`
@@ -76,7 +76,7 @@ type LookupProcessSetResult struct {
 	// The current state of the Resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -127,8 +127,8 @@ func (o LookupProcessSetResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupProcessSetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProcessSetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProcessSetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProcessSetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Name of the Process Set.
@@ -137,8 +137,8 @@ func (o LookupProcessSetResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupProcessSetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProcessSetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProcessSetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProcessSetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
@@ -166,8 +166,8 @@ func (o LookupProcessSetResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupProcessSetResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProcessSetResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProcessSetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProcessSetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the process set was created. An RFC3339 formatted datetime string.

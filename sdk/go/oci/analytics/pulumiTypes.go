@@ -1341,7 +1341,7 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the vanity url.
 	Description string `pulumi:"description"`
 	// Email address receiving notifications.
@@ -1349,7 +1349,7 @@ type GetAnalyticsInstancesAnalyticsInstance struct {
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
 	FeatureSet string `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
@@ -1388,7 +1388,7 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the vanity url.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Email address receiving notifications.
@@ -1396,7 +1396,7 @@ type GetAnalyticsInstancesAnalyticsInstanceArgs struct {
 	// A filter to only return resources matching the feature set. Values are case-insensitive.
 	FeatureSet pulumi.StringInput `pulumi:"featureSet"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id              pulumi.StringInput `pulumi:"id"`
 	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
@@ -1482,8 +1482,8 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the vanity url.
@@ -1502,8 +1502,8 @@ func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FeatureSet() pulumi.String
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAnalyticsInstancesAnalyticsInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAnalyticsInstancesAnalyticsInstance) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Virtual Cloud Network OCID.

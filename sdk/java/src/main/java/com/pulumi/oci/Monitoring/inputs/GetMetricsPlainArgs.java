@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.GetMetricsFilter;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,13 +54,13 @@ public final class GetMetricsPlainArgs extends com.pulumi.resources.InvokeArgs {
      * 
      */
     @Import(name="dimensionFilters")
-    private @Nullable Map<String,Object> dimensionFilters;
+    private @Nullable Map<String,String> dimensionFilters;
 
     /**
      * @return Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    public Optional<Map<String,Object>> dimensionFilters() {
+    public Optional<Map<String,String>> dimensionFilters() {
         return Optional.ofNullable(this.dimensionFilters);
     }
 
@@ -195,7 +194,7 @@ public final class GetMetricsPlainArgs extends com.pulumi.resources.InvokeArgs {
          * @return builder
          * 
          */
-        public Builder dimensionFilters(@Nullable Map<String,Object> dimensionFilters) {
+        public Builder dimensionFilters(@Nullable Map<String,String> dimensionFilters) {
             $.dimensionFilters = dimensionFilters;
             return this;
         }

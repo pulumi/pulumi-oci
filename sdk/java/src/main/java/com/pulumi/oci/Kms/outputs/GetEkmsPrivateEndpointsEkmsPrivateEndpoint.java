@@ -6,7 +6,6 @@ package com.pulumi.oci.Kms.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +26,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Mutable name of the EKMS private endpoint
      * 
@@ -42,7 +41,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Unique identifier that is immutable
      * 
@@ -103,7 +102,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -124,7 +123,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -195,10 +194,10 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
     public static final class Builder {
         private String caBundle;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String externalKeyManagerIp;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private Integer port;
@@ -243,7 +242,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "definedTags");
             }
@@ -267,7 +266,7 @@ public final class GetEkmsPrivateEndpointsEkmsPrivateEndpoint {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetEkmsPrivateEndpointsEkmsPrivateEndpoint", "freeformTags");
             }

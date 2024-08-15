@@ -127,7 +127,7 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> Mapping[str, Any]:
+    def enc_properties(self) -> Mapping[str, str]:
         return pulumi.get(self, "enc_properties")
 
     @property
@@ -166,7 +166,7 @@ class GetConnectionResult:
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
+    def properties(self) -> Mapping[str, str]:
         """
         A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         """

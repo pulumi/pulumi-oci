@@ -35,11 +35,11 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(nodePoolName),
 //				NodeShape:     pulumi.Any(nodePoolNodeShape),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				InitialNodeLabels: containerengine.NodePoolInitialNodeLabelArray{
 //					&containerengine.NodePoolInitialNodeLabelArgs{
@@ -72,11 +72,11 @@ import (
 //						PodNsgIds:      pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds),
 //						PodSubnetIds:   pulumi.Any(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds),
 //					},
-//					DefinedTags: pulumi.Map{
-//						"Operations.CostCenter": pulumi.Any("42"),
+//					DefinedTags: pulumi.StringMap{
+//						"Operations.CostCenter": pulumi.String("42"),
 //					},
-//					FreeformTags: pulumi.Map{
-//						"Department": pulumi.Any("Finance"),
+//					FreeformTags: pulumi.StringMap{
+//						"Department": pulumi.String("Finance"),
 //					},
 //					NsgIds: pulumi.Any(nodePoolNodeConfigDetailsNsgIds),
 //				},
@@ -128,9 +128,9 @@ type NodePool struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels NodePoolInitialNodeLabelArrayOutput `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -152,7 +152,7 @@ type NodePool struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName pulumi.StringOutput `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata pulumi.MapOutput `pulumi:"nodeMetadata"`
+	NodeMetadata pulumi.StringMapOutput `pulumi:"nodeMetadata"`
 	// (Updatable) Node Pool Cycling Details
 	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsOutput `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -222,9 +222,9 @@ type nodePoolState struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []NodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -246,7 +246,7 @@ type nodePoolState struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName *string `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	NodeMetadata map[string]string `pulumi:"nodeMetadata"`
 	// (Updatable) Node Pool Cycling Details
 	NodePoolCyclingDetails *NodePoolNodePoolCyclingDetails `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -278,9 +278,9 @@ type NodePoolState struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels NodePoolInitialNodeLabelArrayInput
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -302,7 +302,7 @@ type NodePoolState struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName pulumi.StringPtrInput
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata pulumi.MapInput
+	NodeMetadata pulumi.StringMapInput
 	// (Updatable) Node Pool Cycling Details
 	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsPtrInput
 	// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -338,9 +338,9 @@ type nodePoolArgs struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels []NodePoolInitialNodeLabel `pulumi:"initialNodeLabels"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -360,7 +360,7 @@ type nodePoolArgs struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName *string `pulumi:"nodeImageName"`
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	NodeMetadata map[string]string `pulumi:"nodeMetadata"`
 	// (Updatable) Node Pool Cycling Details
 	NodePoolCyclingDetails *NodePoolNodePoolCyclingDetails `pulumi:"nodePoolCyclingDetails"`
 	// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -387,9 +387,9 @@ type NodePoolArgs struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
 	InitialNodeLabels NodePoolInitialNodeLabelArrayInput
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -409,7 +409,7 @@ type NodePoolArgs struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName pulumi.StringPtrInput
 	// (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata pulumi.MapInput
+	NodeMetadata pulumi.StringMapInput
 	// (Updatable) Node Pool Cycling Details
 	NodePoolCyclingDetails NodePoolNodePoolCyclingDetailsPtrInput
 	// (Updatable) The name of the node shape of the nodes in the node pool.
@@ -527,13 +527,13 @@ func (o NodePoolOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NodePoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NodePoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NodePoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NodePoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -581,8 +581,8 @@ func (o NodePoolOutput) NodeImageName() pulumi.StringOutput {
 }
 
 // (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-func (o NodePoolOutput) NodeMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *NodePool) pulumi.MapOutput { return v.NodeMetadata }).(pulumi.MapOutput)
+func (o NodePoolOutput) NodeMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringMapOutput { return v.NodeMetadata }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Node Pool Cycling Details

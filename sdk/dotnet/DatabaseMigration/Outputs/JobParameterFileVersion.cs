@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// A description to discribe the current parameter file version
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? SystemTags;
+        public readonly ImmutableDictionary<string, string>? SystemTags;
         /// <summary>
         /// The time the Migration Job was created. An RFC3339 formatted datetime string
         /// </summary>
@@ -52,11 +52,11 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
         [OutputConstructor]
         private JobParameterFileVersion(
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
             string? description,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             bool? isCurrent,
 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             string? name,
 
-            ImmutableDictionary<string, object>? systemTags,
+            ImmutableDictionary<string, string>? systemTags,
 
             string? timeCreated)
         {

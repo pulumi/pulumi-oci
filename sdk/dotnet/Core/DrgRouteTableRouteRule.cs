@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Core
         /// Additional properties for the route, computed by the service.
         /// </summary>
         [Output("attributes")]
-        public Output<ImmutableDictionary<string, object>> Attributes { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Attributes { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
@@ -199,14 +199,14 @@ namespace Pulumi.Oci.Core
     public sealed class DrgRouteTableRouteRuleState : global::Pulumi.ResourceArgs
     {
         [Input("attributes")]
-        private InputMap<object>? _attributes;
+        private InputMap<string>? _attributes;
 
         /// <summary>
         /// Additional properties for the route, computed by the service.
         /// </summary>
-        public InputMap<object> Attributes
+        public InputMap<string> Attributes
         {
-            get => _attributes ?? (_attributes = new InputMap<object>());
+            get => _attributes ?? (_attributes = new InputMap<string>());
             set => _attributes = value;
         }
 

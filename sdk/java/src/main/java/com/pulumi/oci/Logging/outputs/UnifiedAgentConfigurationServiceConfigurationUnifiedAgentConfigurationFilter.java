@@ -11,7 +11,6 @@ import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurat
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser;
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -95,7 +94,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * @return (Updatable) Parameters of the custom filter
      * 
      */
-    private @Nullable Map<String,Object> params;
+    private @Nullable Map<String,String> params;
     /**
      * @return (Updatable) Source parser object.
      * 
@@ -243,7 +242,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * @return (Updatable) Parameters of the custom filter
      * 
      */
-    public Map<String,Object> params() {
+    public Map<String,String> params() {
         return this.params == null ? Map.of() : this.params;
     }
     /**
@@ -329,7 +328,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
         private @Nullable List<String> keepKeys;
         private @Nullable String keyName;
         private String name;
-        private @Nullable Map<String,Object> params;
+        private @Nullable Map<String,String> params;
         private @Nullable UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser parser;
         private @Nullable List<UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList> recordLists;
         private @Nullable Boolean removeKeyNameField;
@@ -467,7 +466,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
             return this;
         }
         @CustomType.Setter
-        public Builder params(@Nullable Map<String,Object> params) {
+        public Builder params(@Nullable Map<String,String> params) {
 
             this.params = params;
             return this;

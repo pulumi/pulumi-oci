@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// Environment variables to set for the job.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> EnvironmentVariables;
+        public readonly ImmutableDictionary<string, string> EnvironmentVariables;
         /// <summary>
         /// The type of job.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         private GetJobJobConfigurationDetailResult(
             string commandLineArguments,
 
-            ImmutableDictionary<string, object> environmentVariables,
+            ImmutableDictionary<string, string> environmentVariables,
 
             string jobType,
 

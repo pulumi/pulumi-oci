@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Secrets
         /// <summary>
         /// Customer-provided contextual metadata for the secret.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The contents of the secret.
         /// </summary>
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Secrets
         private GetSecretbundleResult(
             string id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             ImmutableArray<Outputs.GetSecretbundleSecretBundleContentResult> secretBundleContents,
 

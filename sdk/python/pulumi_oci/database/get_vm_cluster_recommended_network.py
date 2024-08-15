@@ -88,7 +88,7 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -130,7 +130,7 @@ class GetVmClusterRecommendedNetworkResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -216,12 +216,12 @@ class AwaitableGetVmClusterRecommendedNetworkResult(GetVmClusterRecommendedNetwo
 
 def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
                                        db_servers: Optional[Sequence[str]] = None,
-                                       defined_tags: Optional[Mapping[str, Any]] = None,
+                                       defined_tags: Optional[Mapping[str, str]] = None,
                                        display_name: Optional[str] = None,
                                        dns: Optional[Sequence[str]] = None,
                                        dr_scan_listener_port_tcp: Optional[int] = None,
                                        exadata_infrastructure_id: Optional[str] = None,
-                                       freeform_tags: Optional[Mapping[str, Any]] = None,
+                                       freeform_tags: Optional[Mapping[str, str]] = None,
                                        networks: Optional[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]] = None,
                                        ntps: Optional[Sequence[str]] = None,
                                        scan_listener_port_tcp: Optional[int] = None,
@@ -235,12 +235,12 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param Sequence[str] db_servers: The list of Db server Ids to configure network.
-    :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
     :param int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
     :param Sequence[str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
     :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.
@@ -284,12 +284,12 @@ def get_vm_cluster_recommended_network(compartment_id: Optional[str] = None,
 @_utilities.lift_output_func(get_vm_cluster_recommended_network)
 def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.Input[str]] = None,
                                               db_servers: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
-                                              defined_tags: Optional[pulumi.Input[Optional[Mapping[str, Any]]]] = None,
+                                              defined_tags: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                                               display_name: Optional[pulumi.Input[str]] = None,
                                               dns: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               dr_scan_listener_port_tcp: Optional[pulumi.Input[Optional[int]]] = None,
                                               exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                                              freeform_tags: Optional[pulumi.Input[Optional[Mapping[str, Any]]]] = None,
+                                              freeform_tags: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                                               networks: Optional[pulumi.Input[Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']]]] = None,
                                               ntps: Optional[pulumi.Input[Optional[Sequence[str]]]] = None,
                                               scan_listener_port_tcp: Optional[pulumi.Input[Optional[int]]] = None,
@@ -303,12 +303,12 @@ def get_vm_cluster_recommended_network_output(compartment_id: Optional[pulumi.In
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param Sequence[str] db_servers: The list of Db server Ids to configure network.
-    :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+    :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
     :param str display_name: The user-friendly name for the VM cluster network. The name does not need to be unique.
     :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
     :param int dr_scan_listener_port_tcp: The DR SCAN TCPIP port. Default is 1521.
     :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-    :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+    :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
     :param Sequence[Union['GetVmClusterRecommendedNetworkNetworkArgs', 'GetVmClusterRecommendedNetworkNetworkArgsDict']] networks: List of parameters for generation of the client and backup networks.
     :param Sequence[str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
     :param int scan_listener_port_tcp: The SCAN TCPIP port. Default is 1521.

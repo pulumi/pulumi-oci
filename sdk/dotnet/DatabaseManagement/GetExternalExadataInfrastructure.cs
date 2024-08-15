@@ -104,7 +104,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, string> AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DiscoveryKey;
         /// <summary>
         /// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
         /// </summary>
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The timestamp of the creation of the Exadata resource.
         /// </summary>
@@ -184,7 +184,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetExternalExadataInfrastructureResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, string> additionalDetails,
 
             string compartmentId,
 
@@ -194,7 +194,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<string> dbSystemIds,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string discoveryKey,
 
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string externalExadataInfrastructureId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
             ImmutableArray<string> storageServerNames,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

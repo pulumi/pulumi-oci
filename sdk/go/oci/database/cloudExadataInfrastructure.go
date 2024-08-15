@@ -43,8 +43,8 @@ import (
 //					},
 //				},
 //				DefinedTags: pulumi.Any(cloudExadataInfrastructureDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				MaintenanceWindow: &database.CloudExadataInfrastructureMaintenanceWindowArgs{
 //					CustomActionTimeoutInMins: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
@@ -115,11 +115,11 @@ type CloudExadataInfrastructure struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations CloudExadataInfrastructureDefinedFileSystemConfigurationArrayOutput `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringOutput `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
@@ -156,7 +156,7 @@ type CloudExadataInfrastructure struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -232,11 +232,11 @@ type cloudExadataInfrastructureState struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations []CloudExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId *string `pulumi:"lastMaintenanceRunId"`
 	// Additional information about the current lifecycle state.
@@ -273,7 +273,7 @@ type cloudExadataInfrastructureState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -308,11 +308,11 @@ type CloudExadataInfrastructureState struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations CloudExadataInfrastructureDefinedFileSystemConfigurationArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
 	LastMaintenanceRunId pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
@@ -349,7 +349,7 @@ type CloudExadataInfrastructureState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubscriptionId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the cloud Exadata infrastructure resource was created.
 	TimeCreated pulumi.StringPtrInput
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -372,11 +372,11 @@ type cloudExadataInfrastructureArgs struct {
 	// (Updatable) Customer contacts.
 	CustomerContacts []CloudExadataInfrastructureCustomerContact `pulumi:"customerContacts"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow *CloudExadataInfrastructureMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// The shape of the cloud Exadata infrastructure resource.
@@ -403,11 +403,11 @@ type CloudExadataInfrastructureArgs struct {
 	// (Updatable) Customer contacts.
 	CustomerContacts CloudExadataInfrastructureCustomerContactArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindow CloudExadataInfrastructureMaintenanceWindowPtrInput
 	// The shape of the cloud Exadata infrastructure resource.
@@ -578,8 +578,8 @@ func (o CloudExadataInfrastructureOutput) DefinedFileSystemConfigurations() Clou
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o CloudExadataInfrastructureOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CloudExadataInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -588,8 +588,8 @@ func (o CloudExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CloudExadataInfrastructureOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CloudExadataInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -678,8 +678,8 @@ func (o CloudExadataInfrastructureOutput) SubscriptionId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o CloudExadataInfrastructureOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o CloudExadataInfrastructureOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the cloud Exadata infrastructure resource was created.

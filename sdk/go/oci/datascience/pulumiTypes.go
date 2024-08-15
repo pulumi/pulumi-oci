@@ -17,7 +17,7 @@ type JobJobConfigurationDetails struct {
 	// The arguments to pass to the job.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -39,7 +39,7 @@ type JobJobConfigurationDetailsArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -129,8 +129,8 @@ func (o JobJobConfigurationDetailsOutput) CommandLineArguments() pulumi.StringPt
 }
 
 // Environment variables to set for the job.
-func (o JobJobConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v JobJobConfigurationDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o JobJobConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v JobJobConfigurationDetails) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -178,13 +178,13 @@ func (o JobJobConfigurationDetailsPtrOutput) CommandLineArguments() pulumi.Strin
 }
 
 // Environment variables to set for the job.
-func (o JobJobConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *JobJobConfigurationDetails) map[string]interface{} {
+func (o JobJobConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JobJobConfigurationDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -1168,7 +1168,7 @@ type JobRunJobConfigurationOverrideDetails struct {
 	// The arguments to pass to the job.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -1190,7 +1190,7 @@ type JobRunJobConfigurationOverrideDetailsArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -1280,8 +1280,8 @@ func (o JobRunJobConfigurationOverrideDetailsOutput) CommandLineArguments() pulu
 }
 
 // Environment variables to set for the job.
-func (o JobRunJobConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v JobRunJobConfigurationOverrideDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o JobRunJobConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v JobRunJobConfigurationOverrideDetails) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -1329,13 +1329,13 @@ func (o JobRunJobConfigurationOverrideDetailsPtrOutput) CommandLineArguments() p
 }
 
 // Environment variables to set for the job.
-func (o JobRunJobConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *JobRunJobConfigurationOverrideDetails) map[string]interface{} {
+func (o JobRunJobConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JobRunJobConfigurationOverrideDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -3242,7 +3242,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationD
 	// (Updatable) The environment configuration type
 	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
 	// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort *int `pulumi:"healthCheckPort"`
 	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -3272,7 +3272,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationD
 	// (Updatable) The environment configuration type
 	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
 	// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort pulumi.IntPtrInput `pulumi:"healthCheckPort"`
 	// (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -3382,10 +3382,10 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurati
 }
 
 // (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]interface{} {
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
@@ -3471,13 +3471,13 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurati
 }
 
 // (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]interface{} {
+func (o ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfigurationDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
@@ -5729,7 +5729,7 @@ func (o NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeCo
 
 type NotebookSessionNotebookSessionRuntimeConfigDetails struct {
 	// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables map[string]string `pulumi:"customEnvironmentVariables"`
 	// (Updatable) Git configuration Details.
 	NotebookSessionGitConfigDetails *NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -5747,7 +5747,7 @@ type NotebookSessionNotebookSessionRuntimeConfigDetailsInput interface {
 
 type NotebookSessionNotebookSessionRuntimeConfigDetailsArgs struct {
 	// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables pulumi.StringMapInput `pulumi:"customEnvironmentVariables"`
 	// (Updatable) Git configuration Details.
 	NotebookSessionGitConfigDetails NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsPtrInput `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -5830,10 +5830,10 @@ func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) ToNotebookSess
 }
 
 // (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) CustomEnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]interface{} {
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]string {
 		return v.CustomEnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Git configuration Details.
@@ -5868,13 +5868,13 @@ func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) Elem() Note
 }
 
 // (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) CustomEnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]interface{} {
+func (o NotebookSessionNotebookSessionRuntimeConfigDetailsPtrOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NotebookSessionNotebookSessionRuntimeConfigDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.CustomEnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Git configuration Details.
@@ -6297,7 +6297,7 @@ type PipelineConfigurationDetails struct {
 	// (Updatable) The command line arguments to set for steps in the pipeline.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// (Updatable) Environment variables to set for steps in the pipeline.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 	// (Updatable) The type of pipeline.
@@ -6319,7 +6319,7 @@ type PipelineConfigurationDetailsArgs struct {
 	// (Updatable) The command line arguments to set for steps in the pipeline.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// (Updatable) Environment variables to set for steps in the pipeline.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 	// (Updatable) The type of pipeline.
@@ -6409,8 +6409,8 @@ func (o PipelineConfigurationDetailsOutput) CommandLineArguments() pulumi.String
 }
 
 // (Updatable) Environment variables to set for steps in the pipeline.
-func (o PipelineConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v PipelineConfigurationDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o PipelineConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineConfigurationDetails) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
@@ -6458,13 +6458,13 @@ func (o PipelineConfigurationDetailsPtrOutput) CommandLineArguments() pulumi.Str
 }
 
 // (Updatable) Environment variables to set for steps in the pipeline.
-func (o PipelineConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *PipelineConfigurationDetails) map[string]interface{} {
+func (o PipelineConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PipelineConfigurationDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
@@ -7037,7 +7037,7 @@ type PipelineRunConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -7059,7 +7059,7 @@ type PipelineRunConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -7123,8 +7123,8 @@ func (o PipelineRunConfigurationDetailOutput) CommandLineArguments() pulumi.Stri
 }
 
 // Environment variables to set for step.
-func (o PipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v PipelineRunConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o PipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineRunConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -7161,7 +7161,7 @@ type PipelineRunConfigurationOverrideDetails struct {
 	// The command line arguments to set for steps in the pipeline.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// Environment variables to set for steps in the pipeline.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -7183,7 +7183,7 @@ type PipelineRunConfigurationOverrideDetailsArgs struct {
 	// The command line arguments to set for steps in the pipeline.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for steps in the pipeline.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -7273,8 +7273,8 @@ func (o PipelineRunConfigurationOverrideDetailsOutput) CommandLineArguments() pu
 }
 
 // Environment variables to set for steps in the pipeline.
-func (o PipelineRunConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v PipelineRunConfigurationOverrideDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o PipelineRunConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineRunConfigurationOverrideDetails) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
@@ -7322,13 +7322,13 @@ func (o PipelineRunConfigurationOverrideDetailsPtrOutput) CommandLineArguments()
 }
 
 // Environment variables to set for steps in the pipeline.
-func (o PipelineRunConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *PipelineRunConfigurationOverrideDetails) map[string]interface{} {
+func (o PipelineRunConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PipelineRunConfigurationOverrideDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
@@ -7774,7 +7774,7 @@ type PipelineRunStepOverrideDetailStepConfigurationDetails struct {
 	// The command line arguments to set for step.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -7794,7 +7794,7 @@ type PipelineRunStepOverrideDetailStepConfigurationDetailsArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -7831,10 +7831,10 @@ func (o PipelineRunStepOverrideDetailStepConfigurationDetailsOutput) CommandLine
 }
 
 // Environment variables to set for step.
-func (o PipelineRunStepOverrideDetailStepConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepConfigurationDetails) map[string]interface{} {
+func (o PipelineRunStepOverrideDetailStepConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepConfigurationDetails) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -8544,7 +8544,7 @@ type PipelineStepDetailStepConfigurationDetails struct {
 	// (Updatable) The command line arguments to set for step.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
 	// (Updatable) Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// (Updatable) A time bound for the execution of the step.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -8564,7 +8564,7 @@ type PipelineStepDetailStepConfigurationDetailsArgs struct {
 	// (Updatable) The command line arguments to set for step.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
 	// (Updatable) Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// (Updatable) A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -8652,10 +8652,8 @@ func (o PipelineStepDetailStepConfigurationDetailsOutput) CommandLineArguments()
 }
 
 // (Updatable) Environment variables to set for step.
-func (o PipelineStepDetailStepConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v PipelineStepDetailStepConfigurationDetails) map[string]interface{} {
-		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+func (o PipelineStepDetailStepConfigurationDetailsOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepConfigurationDetails) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A time bound for the execution of the step.
@@ -8698,13 +8696,13 @@ func (o PipelineStepDetailStepConfigurationDetailsPtrOutput) CommandLineArgument
 }
 
 // (Updatable) Environment variables to set for step.
-func (o PipelineStepDetailStepConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v *PipelineStepDetailStepConfigurationDetails) map[string]interface{} {
+func (o PipelineStepDetailStepConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepConfigurationDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A time bound for the execution of the step.
@@ -9560,7 +9558,7 @@ type GetJobJobConfigurationDetail struct {
 	// The arguments to pass to the job.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -9582,7 +9580,7 @@ type GetJobJobConfigurationDetailArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -9646,8 +9644,8 @@ func (o GetJobJobConfigurationDetailOutput) CommandLineArguments() pulumi.String
 }
 
 // Environment variables to set for the job.
-func (o GetJobJobConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobJobConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetJobJobConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobJobConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -10351,7 +10349,7 @@ type GetJobRunJobConfigurationOverrideDetail struct {
 	// The arguments to pass to the job.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -10373,7 +10371,7 @@ type GetJobRunJobConfigurationOverrideDetailArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -10437,8 +10435,8 @@ func (o GetJobRunJobConfigurationOverrideDetailOutput) CommandLineArguments() pu
 }
 
 // Environment variables to set for the job.
-func (o GetJobRunJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobRunJobConfigurationOverrideDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetJobRunJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobRunJobConfigurationOverrideDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -11359,11 +11357,11 @@ type GetJobRunsJobRun struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// The job configuration details
@@ -11413,11 +11411,11 @@ type GetJobRunsJobRunArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The job configuration details
@@ -11515,8 +11513,8 @@ func (o GetJobRunsJobRunOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetJobRunsJobRunOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobRunsJobRun) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetJobRunsJobRunOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by its user-friendly name.
@@ -11525,8 +11523,8 @@ func (o GetJobRunsJobRunOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetJobRunsJobRunOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobRunsJobRun) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetJobRunsJobRunOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -11637,7 +11635,7 @@ type GetJobRunsJobRunJobConfigurationOverrideDetail struct {
 	// The arguments to pass to the job.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -11659,7 +11657,7 @@ type GetJobRunsJobRunJobConfigurationOverrideDetailArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -11723,10 +11721,10 @@ func (o GetJobRunsJobRunJobConfigurationOverrideDetailOutput) CommandLineArgumen
 }
 
 // Environment variables to set for the job.
-func (o GetJobRunsJobRunJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobRunsJobRunJobConfigurationOverrideDetail) map[string]interface{} {
+func (o GetJobRunsJobRunJobConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobRunsJobRunJobConfigurationOverrideDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -12887,15 +12885,15 @@ type GetJobsJob struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedJobRuns bool                   `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags          map[string]string `pulumi:"definedTags"`
+	DeleteRelatedJobRuns bool              `pulumi:"deleteRelatedJobRuns"`
 	// A short description of the job.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName   string `pulumi:"displayName"`
 	EmptyArtifact bool   `pulumi:"emptyArtifact"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id          string `pulumi:"id"`
 	JobArtifact string `pulumi:"jobArtifact"`
@@ -12940,15 +12938,15 @@ type GetJobsJobArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          pulumi.MapInput  `pulumi:"definedTags"`
-	DeleteRelatedJobRuns pulumi.BoolInput `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags          pulumi.StringMapInput `pulumi:"definedTags"`
+	DeleteRelatedJobRuns pulumi.BoolInput      `pulumi:"deleteRelatedJobRuns"`
 	// A short description of the job.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName   pulumi.StringInput `pulumi:"displayName"`
 	EmptyArtifact pulumi.BoolInput   `pulumi:"emptyArtifact"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id          pulumi.StringInput `pulumi:"id"`
 	JobArtifact pulumi.StringInput `pulumi:"jobArtifact"`
@@ -13050,8 +13048,8 @@ func (o GetJobsJobOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetJobsJobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobsJob) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetJobsJobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobsJob) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetJobsJobOutput) DeleteRelatedJobRuns() pulumi.BoolOutput {
@@ -13073,8 +13071,8 @@ func (o GetJobsJobOutput) EmptyArtifact() pulumi.BoolOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetJobsJobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobsJob) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetJobsJobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobsJob) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -13161,7 +13159,7 @@ type GetJobsJobJobConfigurationDetail struct {
 	// The arguments to pass to the job.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType string `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -13183,7 +13181,7 @@ type GetJobsJobJobConfigurationDetailArgs struct {
 	// The arguments to pass to the job.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for the job.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The type of job.
 	JobType pulumi.StringInput `pulumi:"jobType"`
 	// A time bound for the execution of the job. Timer starts when the job becomes active.
@@ -13247,8 +13245,8 @@ func (o GetJobsJobJobConfigurationDetailOutput) CommandLineArguments() pulumi.St
 }
 
 // Environment variables to set for the job.
-func (o GetJobsJobJobConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetJobsJobJobConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetJobsJobJobConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetJobsJobJobConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // The type of job.
@@ -14683,7 +14681,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfiguratio
 	// The environment configuration type
 	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
 	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort int `pulumi:"healthCheckPort"`
 	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -14713,7 +14711,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfiguratio
 	// The environment configuration type
 	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
 	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort pulumi.IntInput `pulumi:"healthCheckPort"`
 	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -14797,10 +14795,10 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigura
 }
 
 // Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]interface{} {
+func (o GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
@@ -16393,13 +16391,13 @@ type GetModelDeploymentsModelDeployment struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model deployment.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// Details about the state of the model deployment.
@@ -16438,13 +16436,13 @@ type GetModelDeploymentsModelDeploymentArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short description of the model deployment.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the state of the model deployment.
@@ -16533,8 +16531,8 @@ func (o GetModelDeploymentsModelDeploymentOutput) CreatedBy() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetModelDeploymentsModelDeploymentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetModelDeploymentsModelDeploymentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model deployment.
@@ -16548,8 +16546,8 @@ func (o GetModelDeploymentsModelDeploymentOutput) DisplayName() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetModelDeploymentsModelDeploymentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetModelDeploymentsModelDeploymentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -17071,7 +17069,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviron
 	// The environment configuration type
 	EnvironmentConfigurationType string `pulumi:"environmentConfigurationType"`
 	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort int `pulumi:"healthCheckPort"`
 	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -17101,7 +17099,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviron
 	// The environment configuration type
 	EnvironmentConfigurationType pulumi.StringInput `pulumi:"environmentConfigurationType"`
 	// Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
 	HealthCheckPort pulumi.IntInput `pulumi:"healthCheckPort"`
 	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
@@ -17185,10 +17183,10 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvi
 }
 
 // Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
-func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]interface{} {
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurationDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
@@ -18549,11 +18547,11 @@ type GetModelVersionSetsModelVersionSet struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model version set.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// A filter to return only resources that match the entire name given.
@@ -18563,7 +18561,7 @@ type GetModelVersionSetsModelVersionSet struct {
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -18587,11 +18585,11 @@ type GetModelVersionSetsModelVersionSetArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short description of the model version set.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only resources that match the entire name given.
@@ -18601,7 +18599,7 @@ type GetModelVersionSetsModelVersionSetArgs struct {
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -18670,8 +18668,8 @@ func (o GetModelVersionSetsModelVersionSetOutput) CreatedBy() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetModelVersionSetsModelVersionSetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetModelVersionSetsModelVersionSetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model version set.
@@ -18680,8 +18678,8 @@ func (o GetModelVersionSetsModelVersionSetOutput) Description() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetModelVersionSetsModelVersionSetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetModelVersionSetsModelVersionSetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -18705,8 +18703,8 @@ func (o GetModelVersionSetsModelVersionSetOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetModelVersionSetsModelVersionSetOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetModelVersionSetsModelVersionSetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelVersionSetsModelVersionSet) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
@@ -18859,14 +18857,14 @@ type GetModelsModel struct {
 	// An array of defined metadata details for the model.
 	DefinedMetadataLists []GetModelsModelDefinedMetadataList `pulumi:"definedMetadataLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	EmptyModel  bool   `pulumi:"emptyModel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
@@ -18907,14 +18905,14 @@ type GetModelsModelArgs struct {
 	// An array of defined metadata details for the model.
 	DefinedMetadataLists GetModelsModelDefinedMetadataListArrayInput `pulumi:"definedMetadataLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	EmptyModel  pulumi.BoolInput   `pulumi:"emptyModel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Input schema file content in String format
@@ -19018,8 +19016,8 @@ func (o GetModelsModelOutput) DefinedMetadataLists() GetModelsModelDefinedMetada
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetModelsModelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelsModel) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetModelsModelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelsModel) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model.
@@ -19037,8 +19035,8 @@ func (o GetModelsModelOutput) EmptyModel() pulumi.BoolOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetModelsModelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelsModel) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetModelsModelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelsModel) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -19871,7 +19869,7 @@ func (o GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShape
 
 type GetNotebookSessionNotebookSessionRuntimeConfigDetail struct {
 	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables map[string]string `pulumi:"customEnvironmentVariables"`
 	// Git configuration Details.
 	NotebookSessionGitConfigDetails []GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -19889,7 +19887,7 @@ type GetNotebookSessionNotebookSessionRuntimeConfigDetailInput interface {
 
 type GetNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
 	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables pulumi.StringMapInput `pulumi:"customEnvironmentVariables"`
 	// Git configuration Details.
 	NotebookSessionGitConfigDetails GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -19946,10 +19944,10 @@ func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) ToGetNoteboo
 }
 
 // Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]interface{} {
+func (o GetNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]string {
 		return v.CustomEnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Git configuration Details.
@@ -20694,11 +20692,11 @@ type GetNotebookSessionsNotebookSession struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// Details about the state of the notebook session.
@@ -20738,11 +20736,11 @@ type GetNotebookSessionsNotebookSessionArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the state of the notebook session.
@@ -20827,8 +20825,8 @@ func (o GetNotebookSessionsNotebookSessionOutput) CreatedBy() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNotebookSessionsNotebookSessionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNotebookSessionsNotebookSessionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by its user-friendly name.
@@ -20837,8 +20835,8 @@ func (o GetNotebookSessionsNotebookSessionOutput) DisplayName() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNotebookSessionsNotebookSessionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNotebookSessionsNotebookSessionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSession) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -21419,7 +21417,7 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNote
 
 type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail struct {
 	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables map[string]interface{} `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables map[string]string `pulumi:"customEnvironmentVariables"`
 	// Git configuration Details.
 	NotebookSessionGitConfigDetails []GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -21437,7 +21435,7 @@ type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailInput i
 
 type GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailArgs struct {
 	// Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-	CustomEnvironmentVariables pulumi.MapInput `pulumi:"customEnvironmentVariables"`
+	CustomEnvironmentVariables pulumi.StringMapInput `pulumi:"customEnvironmentVariables"`
 	// Git configuration Details.
 	NotebookSessionGitConfigDetails GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArrayInput `pulumi:"notebookSessionGitConfigDetails"`
 }
@@ -21494,10 +21492,10 @@ func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutp
 }
 
 // Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
-func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]interface{} {
+func (o GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailOutput) CustomEnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail) map[string]string {
 		return v.CustomEnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Git configuration Details.
@@ -21905,7 +21903,7 @@ type GetPipelineConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -21927,7 +21925,7 @@ type GetPipelineConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -21991,8 +21989,8 @@ func (o GetPipelineConfigurationDetailOutput) CommandLineArguments() pulumi.Stri
 }
 
 // Environment variables to set for step.
-func (o GetPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -22385,7 +22383,7 @@ type GetPipelineRunConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -22407,7 +22405,7 @@ type GetPipelineRunConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -22471,8 +22469,8 @@ func (o GetPipelineRunConfigurationDetailOutput) CommandLineArguments() pulumi.S
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -22509,7 +22507,7 @@ type GetPipelineRunConfigurationOverrideDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -22531,7 +22529,7 @@ type GetPipelineRunConfigurationOverrideDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -22595,10 +22593,8 @@ func (o GetPipelineRunConfigurationOverrideDetailOutput) CommandLineArguments() 
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) map[string]interface{} {
-		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+func (o GetPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunConfigurationOverrideDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -22984,7 +22980,7 @@ type GetPipelineRunStepOverrideDetailStepConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -23004,7 +23000,7 @@ type GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -23066,10 +23062,10 @@ func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) CommandLi
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]interface{} {
+func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -23514,12 +23510,12 @@ type GetPipelineRunsPipelineRun struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedJobRuns bool                   `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags          map[string]string `pulumi:"definedTags"`
+	DeleteRelatedJobRuns bool              `pulumi:"deleteRelatedJobRuns"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// Details of the state of the step run.
@@ -23540,7 +23536,7 @@ type GetPipelineRunsPipelineRun struct {
 	// Array of StepRun object for each step.
 	StepRuns []GetPipelineRunsPipelineRunStepRun `pulumi:"stepRuns"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeAccepted string `pulumi:"timeAccepted"`
 	// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -23572,12 +23568,12 @@ type GetPipelineRunsPipelineRunArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          pulumi.MapInput  `pulumi:"definedTags"`
-	DeleteRelatedJobRuns pulumi.BoolInput `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags          pulumi.StringMapInput `pulumi:"definedTags"`
+	DeleteRelatedJobRuns pulumi.BoolInput      `pulumi:"deleteRelatedJobRuns"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the state of the step run.
@@ -23598,7 +23594,7 @@ type GetPipelineRunsPipelineRunArgs struct {
 	// Array of StepRun object for each step.
 	StepRuns GetPipelineRunsPipelineRunStepRunArrayInput `pulumi:"stepRuns"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeAccepted pulumi.StringInput `pulumi:"timeAccepted"`
 	// The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -23685,8 +23681,8 @@ func (o GetPipelineRunsPipelineRunOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPipelineRunsPipelineRunOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPipelineRunsPipelineRunOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetPipelineRunsPipelineRunOutput) DeleteRelatedJobRuns() pulumi.BoolOutput {
@@ -23699,8 +23695,8 @@ func (o GetPipelineRunsPipelineRunOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPipelineRunsPipelineRunOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPipelineRunsPipelineRunOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -23757,8 +23753,8 @@ func (o GetPipelineRunsPipelineRunOutput) StepRuns() GetPipelineRunsPipelineRunS
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPipelineRunsPipelineRunOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetPipelineRunsPipelineRunOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRun) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -23805,7 +23801,7 @@ type GetPipelineRunsPipelineRunConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -23827,7 +23823,7 @@ type GetPipelineRunsPipelineRunConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -23891,10 +23887,8 @@ func (o GetPipelineRunsPipelineRunConfigurationDetailOutput) CommandLineArgument
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunsPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRunConfigurationDetail) map[string]interface{} {
-		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+func (o GetPipelineRunsPipelineRunConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -23931,7 +23925,7 @@ type GetPipelineRunsPipelineRunConfigurationOverrideDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -23953,7 +23947,7 @@ type GetPipelineRunsPipelineRunConfigurationOverrideDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -24017,10 +24011,10 @@ func (o GetPipelineRunsPipelineRunConfigurationOverrideDetailOutput) CommandLine
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunsPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRunConfigurationOverrideDetail) map[string]interface{} {
+func (o GetPipelineRunsPipelineRunConfigurationOverrideDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunConfigurationOverrideDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -24406,7 +24400,7 @@ type GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail struct 
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -24426,7 +24420,7 @@ type GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs str
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -24490,10 +24484,10 @@ func (o GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailOutpu
 }
 
 // Environment variables to set for step.
-func (o GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]interface{} {
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -25134,7 +25128,7 @@ type GetPipelineStepDetailStepConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -25154,7 +25148,7 @@ type GetPipelineStepDetailStepConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -25216,10 +25210,8 @@ func (o GetPipelineStepDetailStepConfigurationDetailOutput) CommandLineArguments
 }
 
 // Environment variables to set for step.
-func (o GetPipelineStepDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelineStepDetailStepConfigurationDetail) map[string]interface{} {
-		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+func (o GetPipelineStepDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -25739,14 +25731,14 @@ type GetPipelinesPipeline struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns bool                   `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DeleteRelatedPipelineRuns bool              `pulumi:"deleteRelatedPipelineRuns"`
 	// A short description of the step.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// The infrastructure configuration details of a pipeline or a step.
@@ -25763,7 +25755,7 @@ type GetPipelinesPipeline struct {
 	// Array of step details for each step.
 	StepDetails []GetPipelinesPipelineStepDetail `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -25789,14 +25781,14 @@ type GetPipelinesPipelineArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               pulumi.MapInput  `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns pulumi.BoolInput `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags               pulumi.StringMapInput `pulumi:"definedTags"`
+	DeleteRelatedPipelineRuns pulumi.BoolInput      `pulumi:"deleteRelatedPipelineRuns"`
 	// A short description of the step.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The infrastructure configuration details of a pipeline or a step.
@@ -25813,7 +25805,7 @@ type GetPipelinesPipelineArgs struct {
 	// Array of step details for each step.
 	StepDetails GetPipelinesPipelineStepDetailArrayInput `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -25887,8 +25879,8 @@ func (o GetPipelinesPipelineOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPipelinesPipelineOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelinesPipeline) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPipelinesPipelineOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipeline) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetPipelinesPipelineOutput) DeleteRelatedPipelineRuns() pulumi.BoolOutput {
@@ -25906,8 +25898,8 @@ func (o GetPipelinesPipelineOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPipelinesPipelineOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelinesPipeline) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPipelinesPipelineOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipeline) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -25954,8 +25946,8 @@ func (o GetPipelinesPipelineOutput) StepDetails() GetPipelinesPipelineStepDetail
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPipelinesPipelineOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelinesPipeline) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetPipelinesPipelineOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipeline) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -25992,7 +25984,7 @@ type GetPipelinesPipelineConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -26014,7 +26006,7 @@ type GetPipelinesPipelineConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
@@ -26078,8 +26070,8 @@ func (o GetPipelinesPipelineConfigurationDetailOutput) CommandLineArguments() pu
 }
 
 // Environment variables to set for step.
-func (o GetPipelinesPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelinesPipelineConfigurationDetail) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetPipelinesPipelineConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineConfigurationDetail) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -26776,7 +26768,7 @@ type GetPipelinesPipelineStepDetailStepConfigurationDetail struct {
 	// The command line arguments to set for step.
 	CommandLineArguments string `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes string `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -26796,7 +26788,7 @@ type GetPipelinesPipelineStepDetailStepConfigurationDetailArgs struct {
 	// The command line arguments to set for step.
 	CommandLineArguments pulumi.StringInput `pulumi:"commandLineArguments"`
 	// Environment variables to set for step.
-	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
 	// A time bound for the execution of the step.
 	MaximumRuntimeInMinutes pulumi.StringInput `pulumi:"maximumRuntimeInMinutes"`
 }
@@ -26858,10 +26850,10 @@ func (o GetPipelinesPipelineStepDetailStepConfigurationDetailOutput) CommandLine
 }
 
 // Environment variables to set for step.
-func (o GetPipelinesPipelineStepDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepConfigurationDetail) map[string]interface{} {
+func (o GetPipelinesPipelineStepDetailStepConfigurationDetailOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepConfigurationDetail) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A time bound for the execution of the step.
@@ -27279,7 +27271,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
 	// Resource types in the Data Science service such as notebooks.
 	DataScienceResourceType string `pulumi:"dataScienceResourceType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user friendly description. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
@@ -27287,7 +27279,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
 	// Accesing the Data Science resource using FQDN.
 	Fqdn string `pulumi:"fqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
 	Id string `pulumi:"id"`
 	// Details of the state of Data Science private endpoint.
@@ -27300,7 +27292,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpoint struct {
 	// The OCID of a subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -27326,7 +27318,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpointArgs struct {
 	// Resource types in the Data Science service such as notebooks.
 	DataScienceResourceType pulumi.StringInput `pulumi:"dataScienceResourceType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user friendly description. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
@@ -27334,7 +27326,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpointArgs struct {
 	// Accesing the Data Science resource using FQDN.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the state of Data Science private endpoint.
@@ -27347,7 +27339,7 @@ type GetPrivateEndpointsDataSciencePrivateEndpointArgs struct {
 	// The OCID of a subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -27421,8 +27413,8 @@ func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DataScienceResource
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user friendly description. Avoid entering confidential information.
@@ -27441,8 +27433,8 @@ func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) Fqdn() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a private endpoint.
@@ -27475,8 +27467,8 @@ func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SubnetId() pulumi.S
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsDataSciencePrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsDataSciencePrivateEndpoint) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
@@ -27727,19 +27719,19 @@ type GetProjectsProject struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the project.
 	Description string `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id string `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -27761,19 +27753,19 @@ type GetProjectsProjectArgs struct {
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short description of the project.
 	Description pulumi.StringInput `pulumi:"description"`
 	// <b>Filter</b> results by its user-friendly name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -27840,8 +27832,8 @@ func (o GetProjectsProjectOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetProjectsProjectOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProject) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProject) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the project.
@@ -27855,8 +27847,8 @@ func (o GetProjectsProjectOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetProjectsProjectOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProject) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProject) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
@@ -27870,8 +27862,8 @@ func (o GetProjectsProjectOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetProjectsProjectOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProject) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProject) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z

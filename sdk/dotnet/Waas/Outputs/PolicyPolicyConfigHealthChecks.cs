@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// 
         /// **Note:** The only currently-supported header fields are Host and User-Agent.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Headers;
+        public readonly ImmutableDictionary<string, string>? Headers;
         /// <summary>
         /// (Updatable) Number of successful health checks after which the server is marked up.
         /// </summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Waas.Outputs
 
             string? expectedResponseText,
 
-            ImmutableDictionary<string, object>? headers,
+            ImmutableDictionary<string, string>? headers,
 
             int? healthyThreshold,
 

@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestImportCon
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestImportedObject;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +35,7 @@ public final class GetWorkspaceImportRequestResult {
      * @return Contains key of the error
      * 
      */
-    private Map<String,Object> errorMessages;
+    private Map<String,String> errorMessages;
     /**
      * @return Name of the zip file from which objects will be imported.
      * 
@@ -127,7 +126,7 @@ public final class GetWorkspaceImportRequestResult {
      * @return Contains key of the error
      * 
      */
-    public Map<String,Object> errorMessages() {
+    public Map<String,String> errorMessages() {
         return this.errorMessages;
     }
     /**
@@ -236,7 +235,7 @@ public final class GetWorkspaceImportRequestResult {
         private Boolean areDataAssetReferencesIncluded;
         private String bucket;
         private String createdBy;
-        private Map<String,Object> errorMessages;
+        private Map<String,String> errorMessages;
         private String fileName;
         private String id;
         private List<GetWorkspaceImportRequestImportConflictResolution> importConflictResolutions;
@@ -301,7 +300,7 @@ public final class GetWorkspaceImportRequestResult {
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             if (errorMessages == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceImportRequestResult", "errorMessages");
             }

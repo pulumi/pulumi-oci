@@ -6,7 +6,6 @@ package com.pulumi.oci.DataCatalog.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +64,7 @@ public final class GetCatalogTypeResult {
      * @return A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the &#34;default&#34; category. Example: `{ &#34;properties&#34;: { &#34;default&#34;: { &#34;attributes:&#34;: [ { &#34;name&#34;: &#34;host&#34;, &#34;type&#34;: &#34;string&#34;, &#34;isRequired&#34;: true, &#34;isUpdatable&#34;: false }, ... ] } } }`
      * 
      */
-    private Map<String,Object> properties;
+    private Map<String,String> properties;
     /**
      * @return The current state of the type.
      * 
@@ -154,7 +153,7 @@ public final class GetCatalogTypeResult {
      * @return A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the &#34;default&#34; category. Example: `{ &#34;properties&#34;: { &#34;default&#34;: { &#34;attributes:&#34;: [ { &#34;name&#34;: &#34;host&#34;, &#34;type&#34;: &#34;string&#34;, &#34;isRequired&#34;: true, &#34;isUpdatable&#34;: false }, ... ] } } }`
      * 
      */
-    public Map<String,Object> properties() {
+    public Map<String,String> properties() {
         return this.properties;
     }
     /**
@@ -201,7 +200,7 @@ public final class GetCatalogTypeResult {
         private Boolean isTag;
         private String key;
         private String name;
-        private Map<String,Object> properties;
+        private Map<String,String> properties;
         private String state;
         private String typeCategory;
         private String typeKey;
@@ -308,7 +307,7 @@ public final class GetCatalogTypeResult {
             return this;
         }
         @CustomType.Setter
-        public Builder properties(Map<String,Object> properties) {
+        public Builder properties(Map<String,String> properties) {
             if (properties == null) {
               throw new MissingRequiredPropertyException("GetCatalogTypeResult", "properties");
             }

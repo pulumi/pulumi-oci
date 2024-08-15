@@ -61,7 +61,7 @@ type LookupDetectorRecipeResult struct {
 	// Compartment OCID of detector recipe
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for detector recipe detector rule
 	Description string `pulumi:"description"`
 	// Detector recipe for the rule
@@ -76,7 +76,7 @@ type LookupDetectorRecipeResult struct {
 	// List of effective detector rules for the detector type for recipe after applying defaults
 	EffectiveDetectorRules []GetDetectorRecipeEffectiveDetectorRule `pulumi:"effectiveDetectorRules"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID for detector recipe
 	Id string `pulumi:"id"`
 	// Owner of detector recipe
@@ -86,7 +86,7 @@ type LookupDetectorRecipeResult struct {
 	// The current lifecycle state of the resource
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// List of target IDs to which the recipe is attached
 	TargetIds []string `pulumi:"targetIds"`
 	// The date and time the detector recipe was created Format defined by RFC3339.
@@ -139,8 +139,8 @@ func (o LookupDetectorRecipeResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDetectorRecipeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDetectorRecipeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for detector recipe detector rule
@@ -180,8 +180,8 @@ func (o LookupDetectorRecipeResultOutput) EffectiveDetectorRules() GetDetectorRe
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDetectorRecipeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDetectorRecipeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID for detector recipe
@@ -205,8 +205,8 @@ func (o LookupDetectorRecipeResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDetectorRecipeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDetectorRecipeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectorRecipeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // List of target IDs to which the recipe is attached

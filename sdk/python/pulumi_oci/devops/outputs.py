@@ -1375,11 +1375,11 @@ class BuildRunBuildRunProgress(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 build_pipeline_stage_run_progress: Optional[Mapping[str, Any]] = None,
+                 build_pipeline_stage_run_progress: Optional[Mapping[str, str]] = None,
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param Mapping[str, Any] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
+        :param Mapping[str, str] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
         :param str time_finished: The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -1392,7 +1392,7 @@ class BuildRunBuildRunProgress(dict):
 
     @property
     @pulumi.getter(name="buildPipelineStageRunProgress")
-    def build_pipeline_stage_run_progress(self) -> Optional[Mapping[str, Any]]:
+    def build_pipeline_stage_run_progress(self) -> Optional[Mapping[str, str]]:
         """
         Map of stage OCIDs to build pipeline stage run progress model.
         """
@@ -4376,11 +4376,11 @@ class DeploymentDeploymentExecutionProgress(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Optional[Mapping[str, Any]] = None,
+                 deploy_stage_execution_progress: Optional[Mapping[str, str]] = None,
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Mapping[str, str] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -4393,7 +4393,7 @@ class DeploymentDeploymentExecutionProgress(dict):
 
     @property
     @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Optional[Mapping[str, Any]]:
+    def deploy_stage_execution_progress(self) -> Optional[Mapping[str, str]]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
@@ -5726,12 +5726,12 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
                  build_spec_file: str,
                  compartment_id: str,
                  connection_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deliver_artifact_collection: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionResult',
                  deploy_pipeline_id: str,
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image: str,
                  is_pass_all_parameters_enabled: bool,
@@ -5741,7 +5741,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
                  project_id: str,
                  stage_execution_timeout_in_seconds: int,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  wait_criteria: 'outputs.GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaResult'):
@@ -5754,12 +5754,12 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         :param str build_spec_file: The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str connection_type: The type of source provider.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param 'GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionArgs' deliver_artifact_collection: Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param str deploy_pipeline_id: A target deployment pipeline OCID that will run in this stage.
         :param str description: Optional description about the build stage.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str image: Image name for the build environment.
         :param bool is_pass_all_parameters_enabled: A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -5769,7 +5769,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
         :param str project_id: The OCID of the DevOps project.
         :param int stage_execution_timeout_in_seconds: Timeout for the build stage execution. Specify value in seconds.
         :param str state: A filter to return the stages that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param 'GetBuildPipelineStagesBuildPipelineStageCollectionItemWaitCriteriaArgs' wait_criteria: Specifies wait criteria for the Wait stage.
@@ -5868,7 +5868,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5908,7 +5908,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -5988,7 +5988,7 @@ class GetBuildPipelineStagesBuildPipelineStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6358,29 +6358,29 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
     def __init__(__self__, *,
                  build_pipeline_parameters: Sequence['outputs.GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence['GetBuildPipelinesBuildPipelineCollectionItemBuildPipelineParameterArgs'] build_pipeline_parameters: Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Optional description about the build pipeline.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str project_id: unique project identifier
         :param str state: A filter to return only build pipelines that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the build pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -6416,7 +6416,7 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6440,7 +6440,7 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -6480,7 +6480,7 @@ class GetBuildPipelinesBuildPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6982,11 +6982,11 @@ class GetBuildRunBuildRunArgumentItemResult(dict):
 @pulumi.output_type
 class GetBuildRunBuildRunProgressResult(dict):
     def __init__(__self__, *,
-                 build_pipeline_stage_run_progress: Mapping[str, Any],
+                 build_pipeline_stage_run_progress: Mapping[str, str],
                  time_finished: str,
                  time_started: str):
         """
-        :param Mapping[str, Any] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
+        :param Mapping[str, str] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
         :param str time_finished: The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -6996,7 +6996,7 @@ class GetBuildRunBuildRunProgressResult(dict):
 
     @property
     @pulumi.getter(name="buildPipelineStageRunProgress")
-    def build_pipeline_stage_run_progress(self) -> Mapping[str, Any]:
+    def build_pipeline_stage_run_progress(self) -> Mapping[str, str]:
         """
         Map of stage OCIDs to build pipeline stage run progress model.
         """
@@ -7358,14 +7358,14 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
                  build_run_sources: Sequence['outputs.GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceResult'],
                  commit_info: 'outputs.GetBuildRunsBuildRunSummaryCollectionItemCommitInfoResult',
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -7374,14 +7374,14 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
         :param Sequence['GetBuildRunsBuildRunSummaryCollectionItemBuildRunSourceArgs'] build_run_sources: The source from which the build run is triggered.
         :param 'GetBuildRunsBuildRunSummaryCollectionItemCommitInfoArgs' commit_info: Commit details that need to be used for the build run.
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str project_id: unique project identifier
         :param str state: A filter to return only build runs that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -7449,7 +7449,7 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -7465,7 +7465,7 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -7505,7 +7505,7 @@ class GetBuildRunsBuildRunSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -7951,15 +7951,15 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  base_url: str,
                  compartment_id: str,
                  connection_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  last_connection_validation_results: Sequence['outputs.GetConnectionsConnectionCollectionItemLastConnectionValidationResultResult'],
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  tls_verify_configs: Sequence['outputs.GetConnectionsConnectionCollectionItemTlsVerifyConfigResult'],
@@ -7970,15 +7970,15 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str base_url: The Base URL of the hosted BitbucketServer/Visual Builder Studio server.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str connection_type: A filter to return only resources that match the given connection type.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Optional description about the connection.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param Sequence['GetConnectionsConnectionCollectionItemLastConnectionValidationResultArgs'] last_connection_validation_results: The result of validating the credentials of a connection.
         :param str project_id: unique project identifier
         :param str state: A filter to return only connections that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param Sequence['GetConnectionsConnectionCollectionItemTlsVerifyConfigArgs'] tls_verify_configs: TLS configuration used by build service to verify TLS connection.
@@ -8045,7 +8045,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8069,7 +8069,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -8109,7 +8109,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -8429,33 +8429,33 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
     def __init__(__self__, *,
                  argument_substitution_mode: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_artifact_sources: Sequence['outputs.GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceResult'],
                  deploy_artifact_type: str,
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str argument_substitution_mode: Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArgs'] deploy_artifact_sources: Specifies source of an artifact.
         :param str deploy_artifact_type: Type of the deployment artifact.
         :param str description: Optional description about the artifact to be deployed.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
         :param str project_id: unique project identifier
         :param str state: A filter to return only DeployArtifacts that matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -8493,7 +8493,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8533,7 +8533,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -8573,7 +8573,7 @@ class GetDeployArtifactsDeployArtifactCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -8924,36 +8924,36 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
                  cluster_id: str,
                  compartment_id: str,
                  compute_instance_group_selectors: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_environment_type: str,
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  function_id: str,
                  id: str,
                  lifecycle_details: str,
                  network_channels: Sequence['outputs.GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelResult'],
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str cluster_id: The OCID of the Kubernetes cluster.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param Sequence['GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArgs'] compute_instance_group_selectors: A collection of selectors. The combination of instances matching the selectors are included in the instance group.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str deploy_environment_type: Deployment environment type.
         :param str description: Optional description about the deployment environment.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str function_id: The OCID of the Function.
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetDeployEnvironmentsDeployEnvironmentCollectionItemNetworkChannelArgs'] network_channels: Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
         :param str project_id: unique project identifier
         :param str state: A filter to return only DeployEnvironments that matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -9001,7 +9001,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -9033,7 +9033,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -9089,7 +9089,7 @@ class GetDeployEnvironmentsDeployEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -9538,34 +9538,34 @@ class GetDeployPipelinesDeployPipelineCollectionResult(dict):
 class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_pipeline_artifacts: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactResult'],
                  deploy_pipeline_environments: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentResult'],
                  deploy_pipeline_parameters: Sequence['outputs.GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterResult'],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArgs'] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param Sequence['GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineEnvironmentArgs'] deploy_pipeline_environments: List of all environments used in the pipeline.
         :param Sequence['GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineParameterArgs'] deploy_pipeline_parameters: Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
         :param str description: Optional description about the deployment pipeline.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str project_id: unique project identifier
         :param str state: A filter to return only DeployPipelines that matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -9595,7 +9595,7 @@ class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -9643,7 +9643,7 @@ class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -9683,7 +9683,7 @@ class GetDeployPipelinesDeployPipelineCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -10769,9 +10769,9 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  compute_instance_group_canary_deploy_stage_id: str,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: str,
                  compute_instance_group_deploy_environment_id: str,
-                 config: Mapping[str, Any],
+                 config: Mapping[str, str],
                  container_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_artifact_id: str,
                  deploy_artifact_ids: Sequence[str],
                  deploy_environment_id_a: str,
@@ -10784,7 +10784,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  display_name: str,
                  docker_image_deploy_artifact_id: str,
                  failure_policies: Sequence['outputs.GetDeployStagesDeployStageCollectionItemFailurePolicyResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  function_deploy_environment_id: str,
                  function_timeout_in_seconds: int,
                  green_backend_ips: Sequence['outputs.GetDeployStagesDeployStageCollectionItemGreenBackendIpResult'],
@@ -10821,7 +10821,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
                  should_skip_crds: bool,
                  should_skip_render_subchart_notes: bool,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  test_load_balancer_configs: Sequence['outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult'],
                  time_created: str,
                  time_updated: str,
@@ -10841,9 +10841,9 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str compute_instance_group_canary_deploy_stage_id: The OCID of an upstream compute instance group canary deployment stage ID in this pipeline.
         :param str compute_instance_group_canary_traffic_shift_deploy_stage_id: A compute instance group canary traffic shift stage OCID for load balancer.
         :param str compute_instance_group_deploy_environment_id: A compute instance group environment OCID for rolling deployment.
-        :param Mapping[str, Any] config: User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param Mapping[str, str] config: User provided key and value pair configuration, which is assigned through constants or parameter.
         :param Sequence['GetDeployStagesDeployStageCollectionItemContainerConfigArgs'] container_configs: Specifies the container configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str deploy_artifact_id: Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param Sequence[str] deploy_artifact_ids: The list of file artifact OCIDs to deploy.
         :param str deploy_environment_id_a: First compute instance group environment OCID for deployment.
@@ -10856,7 +10856,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str docker_image_deploy_artifact_id: A Docker image artifact OCID.
         :param Sequence['GetDeployStagesDeployStageCollectionItemFailurePolicyArgs'] failure_policies: Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str function_deploy_environment_id: Function environment OCID.
         :param int function_timeout_in_seconds: Timeout for execution of the Function. Value in seconds.
         :param Sequence['GetDeployStagesDeployStageCollectionItemGreenBackendIpArgs'] green_backend_ips: Collection of backend environment IP addresses.
@@ -10893,7 +10893,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
         :param bool should_skip_crds: If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         :param bool should_skip_render_subchart_notes: If set, renders subchart notes along with the parent. Set to false by default.
         :param str state: A filter to return only deployment stages that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArgs'] test_load_balancer_configs: Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         :param str time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11064,7 +11064,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def config(self) -> Mapping[str, Any]:
+    def config(self) -> Mapping[str, str]:
         """
         User provided key and value pair configuration, which is assigned through constants or parameter.
         """
@@ -11080,7 +11080,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -11184,7 +11184,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -11480,7 +11480,7 @@ class GetDeployStagesDeployStageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -12682,11 +12682,11 @@ class GetDeploymentDeploymentArgumentItemResult(dict):
 @pulumi.output_type
 class GetDeploymentDeploymentExecutionProgressResult(dict):
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Mapping[str, Any],
+                 deploy_stage_execution_progress: Mapping[str, str],
                  time_finished: str,
                  time_started: str):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Mapping[str, str] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -12696,7 +12696,7 @@ class GetDeploymentDeploymentExecutionProgressResult(dict):
 
     @property
     @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Mapping[str, Any]:
+    def deploy_stage_execution_progress(self) -> Mapping[str, str]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
@@ -12741,7 +12741,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 class GetDeploymentsDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_artifact_override_arguments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentResult'],
                  deploy_pipeline_artifacts: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactResult'],
                  deploy_pipeline_environments: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentResult'],
@@ -12752,19 +12752,19 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  deployment_execution_progresses: Sequence['outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult'],
                  deployment_type: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  previous_deployment_id: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  trigger_new_devops_deployment: bool):
         """
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeployPipelineArtifactArgs'] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeployPipelineEnvironmentArgs'] deploy_pipeline_environments: List of all environments used in the pipeline.
@@ -12775,13 +12775,13 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param Sequence['GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs'] deployment_execution_progresses: The execution progress details of a deployment.
         :param str deployment_type: Specifies type of Deployment
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
         :param str project_id: unique project identifier
         :param str state: A filter to return only Deployments that matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -12818,7 +12818,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -12906,7 +12906,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -12954,7 +12954,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -13358,11 +13358,11 @@ class GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemResult(dict):
 @pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(dict):
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Mapping[str, Any],
+                 deploy_stage_execution_progress: Mapping[str, str],
                  time_finished: str,
                  time_started: str):
         """
-        :param Mapping[str, Any] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param Mapping[str, str] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -13372,7 +13372,7 @@ class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressResult(di
 
     @property
     @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Mapping[str, Any]:
+    def deploy_stage_execution_progress(self) -> Mapping[str, str]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
@@ -13644,30 +13644,30 @@ class GetProjectsProjectCollectionResult(dict):
 class GetProjectsProjectCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  name: str,
                  namespace: str,
                  notification_configs: Sequence['outputs.GetProjectsProjectCollectionItemNotificationConfigResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Project description.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique identifier or OCID for listing a single resource by ID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str name: A filter to return only resources that match the entire name given.
         :param str namespace: Namespace associated with the project.
         :param Sequence['GetProjectsProjectCollectionItemNotificationConfigArgs'] notification_configs: Notification configuration for the project.
         :param str state: A filter to return only Projects that matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the project was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: Time the project was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -13695,7 +13695,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -13711,7 +13711,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -13767,7 +13767,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -13889,9 +13889,9 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
                  commit_count: int,
                  compartment_id: str,
                  default_branch: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  http_url: str,
                  id: str,
                  lifecycle_details: str,
@@ -13905,7 +13905,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
                  size_in_bytes: str,
                  ssh_url: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  trigger_build_events: Sequence[str]):
@@ -13914,9 +13914,9 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         :param int commit_count: The count of the commits present in the repository.
         :param str compartment_id: The OCID of the compartment in which to list resources.
         :param str default_branch: The default branch of the repository.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Details of the repository. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str http_url: HTTP URL that you use to git clone, pull and push.
         :param str id: The OCID of the repository. This value is unique and immutable.
         :param 'GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigArgs' mirror_repository_config: Configuration information for mirroring the repository.
@@ -13929,7 +13929,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
         :param str size_in_bytes: The size of the repository in bytes.
         :param str ssh_url: SSH URL that you use to git clone, pull and push.
         :param str state: A filter to return only resources whose lifecycle state matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param Sequence[str] trigger_build_events: Trigger build events supported for this repository: PUSH - Build is triggered when a push event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
@@ -13993,7 +13993,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -14009,7 +14009,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -14118,7 +14118,7 @@ class GetRepositoriesRepositoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -14222,12 +14222,12 @@ class GetRepositoriesRepositoryCollectionItemMirrorRepositoryConfigTriggerSchedu
 class GetRepositoryAuthorItemResult(dict):
     def __init__(__self__, *,
                  author_name: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any]):
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str]):
         """
         :param str author_name: Author name.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "author_name", author_name)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -14243,7 +14243,7 @@ class GetRepositoryAuthorItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -14251,7 +14251,7 @@ class GetRepositoryAuthorItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -14307,14 +14307,14 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionResult(dict):
 class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
     def __init__(__self__, *,
                  author_name: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
-                 system_tags: Mapping[str, Any]):
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
+                 system_tags: Mapping[str, str]):
         """
         :param str author_name: Author name.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "author_name", author_name)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -14331,7 +14331,7 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -14339,7 +14339,7 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -14347,7 +14347,7 @@ class GetRepositoryAuthorsRepositoryAuthorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -14402,8 +14402,8 @@ class GetRepositoryCommitsRepositoryCommitCollectionItemResult(dict):
                  commit_message: str,
                  committer_email: str,
                  committer_name: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  parent_commit_ids: Sequence[str],
                  time_created: str,
                  tree_id: str):
@@ -14480,12 +14480,12 @@ class GetRepositoryCommitsRepositoryCommitCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -14672,7 +14672,7 @@ class GetRepositoryDiffsDiffCollectionItemResult(dict):
     def __init__(__self__, *,
                  are_conflicts_in_file: bool,
                  changes: Sequence['outputs.GetRepositoryDiffsDiffCollectionItemChangeResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  is_binary: bool,
                  is_large: bool,
                  new_id: str,
@@ -14717,7 +14717,7 @@ class GetRepositoryDiffsDiffCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -15151,7 +15151,7 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionResult(dict):
 @pulumi.output_type
 class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(dict):
     def __init__(__self__, *,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  mirror_status: str,
                  time_completed: str,
                  time_enqueued: str,
@@ -15172,7 +15172,7 @@ class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -15285,8 +15285,8 @@ class GetRepositoryMirrorRepositoryConfigTriggerScheduleResult(dict):
 @pulumi.output_type
 class GetRepositoryPathItemResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  name: str,
                  path: str,
                  sha: str,
@@ -15294,8 +15294,8 @@ class GetRepositoryPathItemResult(dict):
                  submodule_git_url: str,
                  type: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str name: Name of file or directory.
         :param str path: Path to file or directory in a repository.
         :param str sha: SHA-1 checksum of blob or tree.
@@ -15314,7 +15314,7 @@ class GetRepositoryPathItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -15322,7 +15322,7 @@ class GetRepositoryPathItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -15431,24 +15431,24 @@ class GetRepositoryPathsRepositoryPathCollectionResult(dict):
 @pulumi.output_type
 class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  name: str,
                  path: str,
                  sha: str,
                  size_in_bytes: str,
                  submodule_git_url: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  type: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str name: Name of file or directory.
         :param str path: Path to file or directory in a repository.
         :param str sha: SHA-1 checksum of blob or tree.
         :param str size_in_bytes: Size of file or directory.
         :param str submodule_git_url: The git URL of the submodule.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str type: File or directory.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -15463,7 +15463,7 @@ class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -15471,7 +15471,7 @@ class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -15519,7 +15519,7 @@ class GetRepositoryPathsRepositoryPathCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -15589,16 +15589,16 @@ class GetRepositoryProtectedBranchesProtectedBranchCollectionResult(dict):
 class GetRepositoryProtectedBranchesProtectedBranchCollectionItemResult(dict):
     def __init__(__self__, *,
                  branch_name: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  protection_levels: Sequence[str],
-                 system_tags: Mapping[str, Any]):
+                 system_tags: Mapping[str, str]):
         """
         :param str branch_name: Branch name inside a repository.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param Sequence[str] protection_levels: Protection level to be added on the branch.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "branch_name", branch_name)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -15616,7 +15616,7 @@ class GetRepositoryProtectedBranchesProtectedBranchCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -15624,7 +15624,7 @@ class GetRepositoryProtectedBranchesProtectedBranchCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -15640,7 +15640,7 @@ class GetRepositoryProtectedBranchesProtectedBranchCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -15690,8 +15690,8 @@ class GetRepositoryRefsRepositoryRefCollectionResult(dict):
 class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
     def __init__(__self__, *,
                  commit_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  full_ref_name: str,
                  id: str,
                  object_id: str,
@@ -15700,8 +15700,8 @@ class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
                  repository_id: str):
         """
         :param str commit_id: Commit ID in a repository.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str full_ref_name: Unique full reference name inside a repository.
         :param str object_id: SHA-1 hash value of the object pointed to by the tag.
         :param str ref_name: A filter to return only resources that match the given reference name.
@@ -15728,7 +15728,7 @@ class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -15736,7 +15736,7 @@ class GetRepositoryRefsRepositoryRefCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -16192,16 +16192,16 @@ class GetTriggersTriggerCollectionItemResult(dict):
                  actions: Sequence['outputs.GetTriggersTriggerCollectionItemActionResult'],
                  compartment_id: str,
                  connection_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  project_id: str,
                  repository_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  trigger_source: str,
@@ -16209,16 +16209,16 @@ class GetTriggersTriggerCollectionItemResult(dict):
         """
         :param Sequence['GetTriggersTriggerCollectionItemActionArgs'] actions: The list of actions that are to be performed for this trigger.
         :param str compartment_id: The OCID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description about the trigger.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param str id: Unique trigger identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str project_id: unique project identifier
         :param str repository_id: The OCID of the DevOps code repository.
         :param str state: A filter to return only triggers that matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_updated: The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str trigger_source: Source of the trigger. Allowed values are, GITHUB and GITLAB.
@@ -16265,7 +16265,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -16289,7 +16289,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -16337,7 +16337,7 @@ class GetTriggersTriggerCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

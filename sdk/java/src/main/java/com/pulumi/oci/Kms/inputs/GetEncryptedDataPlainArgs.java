@@ -5,7 +5,6 @@ package com.pulumi.oci.Kms.inputs;
 
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,13 +21,13 @@ public final class GetEncryptedDataPlainArgs extends com.pulumi.resources.Invoke
      * 
      */
     @Import(name="associatedData")
-    private @Nullable Map<String,Object> associatedData;
+    private @Nullable Map<String,String> associatedData;
 
     /**
      * @return Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      * 
      */
-    public Optional<Map<String,Object>> associatedData() {
+    public Optional<Map<String,String>> associatedData() {
         return Optional.ofNullable(this.associatedData);
     }
 
@@ -110,7 +109,7 @@ public final class GetEncryptedDataPlainArgs extends com.pulumi.resources.Invoke
          * @return builder
          * 
          */
-        public Builder associatedData(@Nullable Map<String,Object> associatedData) {
+        public Builder associatedData(@Nullable Map<String,String> associatedData) {
             $.associatedData = associatedData;
             return this;
         }

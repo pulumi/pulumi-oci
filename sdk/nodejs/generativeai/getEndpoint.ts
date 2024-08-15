@@ -47,7 +47,7 @@ export interface GetEndpointResult {
     readonly compartmentId: string;
     readonly contentModerationConfigs: outputs.GenerativeAi.GetEndpointContentModerationConfig[];
     readonly dedicatedAiClusterId: string;
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * An optional description of the endpoint.
      */
@@ -57,7 +57,7 @@ export interface GetEndpointResult {
      */
     readonly displayName: string;
     readonly endpointId: string;
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly id: string;
     readonly lifecycleDetails: string;
     /**
@@ -68,7 +68,7 @@ export interface GetEndpointResult {
      * The current state of the endpoint.
      */
     readonly state: string;
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     readonly timeCreated: string;
     /**
      * The date and time that the endpoint was updated in the format of an RFC3339 datetime string.

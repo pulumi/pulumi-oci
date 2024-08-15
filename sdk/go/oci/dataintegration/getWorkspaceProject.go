@@ -69,7 +69,7 @@ type LookupWorkspaceProjectResult struct {
 	// The key of the aggregator object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceProjectMetadata `pulumi:"metadatas"`
 	// The type of the object.
@@ -149,8 +149,8 @@ func (o LookupWorkspaceProjectResultOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o LookupWorkspaceProjectResultOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceProjectResult) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o LookupWorkspaceProjectResultOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceProjectResult) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

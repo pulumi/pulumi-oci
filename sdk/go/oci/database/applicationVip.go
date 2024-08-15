@@ -63,9 +63,9 @@ type ApplicationVip struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
 	DbNodeId pulumi.StringOutput `pulumi:"dbNodeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel pulumi.StringOutput `pulumi:"hostnameLabel"`
 	// The application virtual IP (VIP) address.
@@ -129,9 +129,9 @@ type applicationVipState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
 	DbNodeId *string `pulumi:"dbNodeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// The application virtual IP (VIP) address.
@@ -157,9 +157,9 @@ type ApplicationVipState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
 	DbNodeId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname of the application virtual IP (VIP) address.
 	HostnameLabel pulumi.StringPtrInput
 	// The application virtual IP (VIP) address.
@@ -317,13 +317,13 @@ func (o ApplicationVipOutput) DbNodeId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ApplicationVipOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ApplicationVip) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ApplicationVipOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ApplicationVip) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ApplicationVipOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ApplicationVip) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ApplicationVipOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ApplicationVip) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname of the application virtual IP (VIP) address.

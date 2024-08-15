@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle;
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,16 +17,16 @@ import java.util.Objects;
 public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle> activeFsuCycles;
     private String compartmentId;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String displayName;
     private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String id;
     private String lifecycleDetails;
     private String serviceType;
     private String sourceMajorVersion;
     private String state;
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     private Integer targetCount;
     private String timeCreated;
     private String timeUpdated;
@@ -40,7 +39,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     public String compartmentId() {
         return this.compartmentId;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String displayName() {
@@ -49,7 +48,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     public List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries() {
         return this.fleetDiscoveries;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String id() {
@@ -67,7 +66,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     public String state() {
         return this.state;
     }
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public Integer targetCount() {
@@ -94,16 +93,16 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
     public static final class Builder {
         private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle> activeFsuCycles;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private List<GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery> fleetDiscoveries;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String serviceType;
         private String sourceMajorVersion;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private Integer targetCount;
         private String timeCreated;
         private String timeUpdated;
@@ -149,7 +148,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "definedTags");
             }
@@ -176,7 +175,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             return fleetDiscoveries(List.of(fleetDiscoveries));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "freeformTags");
             }
@@ -224,7 +223,7 @@ public final class GetFsuCollectionsFsuCollectionSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCollectionsFsuCollectionSummaryCollectionItem", "systemTags");
             }

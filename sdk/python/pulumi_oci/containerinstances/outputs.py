@@ -61,12 +61,12 @@ class GetContainerInstanceContainerResult(dict):
                  compartment_id: str,
                  container_id: str,
                  container_instance_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  exit_code: int,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  health_checks: Sequence['outputs.GetContainerInstanceContainerHealthCheckResult'],
                  image_url: str,
                  is_resource_principal_disabled: bool,
@@ -74,7 +74,7 @@ class GetContainerInstanceContainerResult(dict):
                  resource_configs: Sequence['outputs.GetContainerInstanceContainerResourceConfigResult'],
                  security_contexts: Sequence['outputs.GetContainerInstanceContainerSecurityContextResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_terminated: str,
                  time_updated: str,
@@ -85,13 +85,13 @@ class GetContainerInstanceContainerResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param str container_id: The OCID of the container.
         :param str container_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param str state: The current state of the container instance.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -165,7 +165,7 @@ class GetContainerInstanceContainerResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -181,7 +181,7 @@ class GetContainerInstanceContainerResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         return pulumi.get(self, "environment_variables")
 
     @property
@@ -199,7 +199,7 @@ class GetContainerInstanceContainerResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -248,7 +248,7 @@ class GetContainerInstanceContainerResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
@@ -1134,9 +1134,9 @@ class GetContainerInstanceShapesFilterResult(dict):
 @pulumi.output_type
 class GetContainerInstanceVnicResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  is_public_ip_assigned: bool,
                  nsg_ids: Sequence[str],
@@ -1145,9 +1145,9 @@ class GetContainerInstanceVnicResult(dict):
                  subnet_id: str,
                  vnic_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1163,7 +1163,7 @@ class GetContainerInstanceVnicResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -1179,7 +1179,7 @@ class GetContainerInstanceVnicResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1335,11 +1335,11 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
                  container_count: int,
                  container_restart_policy: str,
                  containers: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemDnsConfigResult'],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  graceful_shutdown_timeout_in_seconds: str,
                  id: str,
                  image_pull_secrets: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemImagePullSecretResult'],
@@ -1347,7 +1347,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
                  shape: str,
                  shape_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  vnics: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemVnicResult'],
@@ -1359,11 +1359,11 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         :param int container_count: The number of containers on the container instance.
         :param str container_restart_policy: The container restart policy is applied for all containers in container instance.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemContainerArgs'] containers: The containers on the container instance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemDnsConfigArgs'] dns_configs: DNS settings for containers.
         :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param str id: An OCID that cannot be changed.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemImagePullSecretArgs'] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
@@ -1371,7 +1371,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
         :param str shape: The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemShapeConfigArgs'] shape_configs: The shape configuration for a container instance. The shape configuration determines the resources thats are available to the container instance and its containers.
         :param str state: A filter to only return resources that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param Sequence['GetContainerInstancesContainerInstanceCollectionItemVnicArgs'] vnics: The virtual networks available to the containers in the container instance.
@@ -1444,7 +1444,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -1476,7 +1476,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1540,7 +1540,7 @@ class GetContainerInstancesContainerInstanceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
@@ -1596,12 +1596,12 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
                  compartment_id: str,
                  container_id: str,
                  container_instance_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  exit_code: int,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  health_checks: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckResult'],
                  image_url: str,
                  is_resource_principal_disabled: bool,
@@ -1609,7 +1609,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
                  resource_configs: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfigResult'],
                  security_contexts: Sequence['outputs.GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContextResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_terminated: str,
                  time_updated: str,
@@ -1619,13 +1619,13 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param str container_id: The OCID of the container.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str fault_domain: The fault domain to place the container instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
         :param str state: A filter to only return resources that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param str time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
@@ -1696,7 +1696,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -1712,7 +1712,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         return pulumi.get(self, "environment_variables")
 
     @property
@@ -1730,7 +1730,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1779,7 +1779,7 @@ class GetContainerInstancesContainerInstanceCollectionItemContainerResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
@@ -2228,9 +2228,9 @@ class GetContainerInstancesContainerInstanceCollectionItemShapeConfigResult(dict
 @pulumi.output_type
 class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  is_public_ip_assigned: bool,
                  nsg_ids: Sequence[str],
@@ -2239,9 +2239,9 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
                  subnet_id: str,
                  vnic_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str vnic_id: The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
         """
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2257,7 +2257,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -2273,7 +2273,7 @@ class GetContainerInstancesContainerInstanceCollectionItemVnicResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

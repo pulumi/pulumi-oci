@@ -12,7 +12,6 @@ import com.pulumi.oci.Kms.inputs.GeneratedKeyState;
 import com.pulumi.oci.Kms.outputs.GeneratedKeyKeyShape;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
@@ -79,14 +78,14 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      * 
      */
-    @Export(name="associatedData", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output</* @Nullable */ Map<String,Object>> associatedData;
+    @Export(name="associatedData", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> associatedData;
 
     /**
      * @return Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      * 
      */
-    public Output<Optional<Map<String,Object>>> associatedData() {
+    public Output<Optional<Map<String,String>>> associatedData() {
         return Codegen.optional(this.associatedData);
     }
     /**
@@ -166,8 +165,8 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    @Export(name="loggingContext", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output</* @Nullable */ Map<String,Object>> loggingContext;
+    @Export(name="loggingContext", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> loggingContext;
 
     /**
      * @return Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
@@ -176,7 +175,7 @@ public class GeneratedKey extends com.pulumi.resources.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<Optional<Map<String,Object>>> loggingContext() {
+    public Output<Optional<Map<String,String>>> loggingContext() {
         return Codegen.optional(this.loggingContext);
     }
     /**

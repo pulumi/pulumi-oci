@@ -66,7 +66,7 @@ export interface GetMetricsArgs {
     /**
      * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
-    dimensionFilters?: {[key: string]: any};
+    dimensionFilters?: {[key: string]: string};
     filters?: inputs.Monitoring.GetMetricsFilter[];
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
@@ -97,7 +97,7 @@ export interface GetMetricsResult {
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
-    readonly dimensionFilters?: {[key: string]: any};
+    readonly dimensionFilters?: {[key: string]: string};
     readonly filters?: outputs.Monitoring.GetMetricsFilter[];
     readonly groupBies?: string[];
     /**
@@ -170,7 +170,7 @@ export interface GetMetricsOutputArgs {
     /**
      * Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
-    dimensionFilters?: pulumi.Input<{[key: string]: any}>;
+    dimensionFilters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     filters?: pulumi.Input<pulumi.Input<inputs.Monitoring.GetMetricsFilterArgs>[]>;
     /**
      * Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.

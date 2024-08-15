@@ -151,7 +151,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// <summary>
         /// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Snapshots;
+        public readonly ImmutableDictionary<string, string> Snapshots;
         /// <summary>
         /// OCID that is referenced to an asset for an inventory.
         /// </summary>
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.CloudMigrations
 
             string snapShotBucketName,
 
-            ImmutableDictionary<string, object> snapshots,
+            ImmutableDictionary<string, string> snapshots,
 
             string sourceAssetId,
 

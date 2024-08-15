@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Kms
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
         [Output("associatedData")]
-        public Output<ImmutableDictionary<string, object>?> AssociatedData { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> AssociatedData { get; private set; } = null!;
 
         /// <summary>
         /// The encrypted data.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Kms
         /// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         /// </summary>
         [Output("loggingContext")]
-        public Output<ImmutableDictionary<string, object>?> LoggingContext { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> LoggingContext { get; private set; } = null!;
 
         /// <summary>
         /// The plaintext data to encrypt.
@@ -145,14 +145,14 @@ namespace Pulumi.Oci.Kms
     public sealed class EncryptedDataArgs : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
-        private InputMap<object>? _associatedData;
+        private InputMap<string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
-        public InputMap<object> AssociatedData
+        public InputMap<string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new InputMap<object>());
+            get => _associatedData ?? (_associatedData = new InputMap<string>());
             set => _associatedData = value;
         }
 
@@ -181,14 +181,14 @@ namespace Pulumi.Oci.Kms
         public Input<string>? KeyVersionId { get; set; }
 
         [Input("loggingContext")]
-        private InputMap<object>? _loggingContext;
+        private InputMap<string>? _loggingContext;
 
         /// <summary>
         /// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         /// </summary>
-        public InputMap<object> LoggingContext
+        public InputMap<string> LoggingContext
         {
-            get => _loggingContext ?? (_loggingContext = new InputMap<object>());
+            get => _loggingContext ?? (_loggingContext = new InputMap<string>());
             set => _loggingContext = value;
         }
 
@@ -211,14 +211,14 @@ namespace Pulumi.Oci.Kms
     public sealed class EncryptedDataState : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
-        private InputMap<object>? _associatedData;
+        private InputMap<string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
-        public InputMap<object> AssociatedData
+        public InputMap<string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new InputMap<object>());
+            get => _associatedData ?? (_associatedData = new InputMap<string>());
             set => _associatedData = value;
         }
 
@@ -253,14 +253,14 @@ namespace Pulumi.Oci.Kms
         public Input<string>? KeyVersionId { get; set; }
 
         [Input("loggingContext")]
-        private InputMap<object>? _loggingContext;
+        private InputMap<string>? _loggingContext;
 
         /// <summary>
         /// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         /// </summary>
-        public InputMap<object> LoggingContext
+        public InputMap<string> LoggingContext
         {
-            get => _loggingContext ?? (_loggingContext = new InputMap<object>());
+            get => _loggingContext ?? (_loggingContext = new InputMap<string>());
             set => _loggingContext = value;
         }
 

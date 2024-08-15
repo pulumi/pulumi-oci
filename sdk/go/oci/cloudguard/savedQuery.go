@@ -34,12 +34,12 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(savedQueryDisplayName),
 //				Query:         pulumi.Any(savedQueryQuery),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(savedQueryDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -64,7 +64,7 @@ type SavedQuery struct {
 	// (Updatable) Compartment OCID of the saved query
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the saved query
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Display name of the saved query
@@ -72,7 +72,7 @@ type SavedQuery struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The adhoc query expression that is run
 	//
 	// ** IMPORTANT **
@@ -81,7 +81,7 @@ type SavedQuery struct {
 	// The current lifecycle state of the resource
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the saved query was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the saved query was updated. Format defined by RFC3339.
@@ -130,7 +130,7 @@ type savedQueryState struct {
 	// (Updatable) Compartment OCID of the saved query
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the saved query
 	Description *string `pulumi:"description"`
 	// (Updatable) Display name of the saved query
@@ -138,7 +138,7 @@ type savedQueryState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The adhoc query expression that is run
 	//
 	// ** IMPORTANT **
@@ -147,7 +147,7 @@ type savedQueryState struct {
 	// The current lifecycle state of the resource
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the saved query was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the saved query was updated. Format defined by RFC3339.
@@ -158,7 +158,7 @@ type SavedQueryState struct {
 	// (Updatable) Compartment OCID of the saved query
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the saved query
 	Description pulumi.StringPtrInput
 	// (Updatable) Display name of the saved query
@@ -166,7 +166,7 @@ type SavedQueryState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The adhoc query expression that is run
 	//
 	// ** IMPORTANT **
@@ -175,7 +175,7 @@ type SavedQueryState struct {
 	// The current lifecycle state of the resource
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the saved query was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the saved query was updated. Format defined by RFC3339.
@@ -190,7 +190,7 @@ type savedQueryArgs struct {
 	// (Updatable) Compartment OCID of the saved query
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the saved query
 	Description *string `pulumi:"description"`
 	// (Updatable) Display name of the saved query
@@ -198,7 +198,7 @@ type savedQueryArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The adhoc query expression that is run
 	//
 	// ** IMPORTANT **
@@ -211,7 +211,7 @@ type SavedQueryArgs struct {
 	// (Updatable) Compartment OCID of the saved query
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the saved query
 	Description pulumi.StringPtrInput
 	// (Updatable) Display name of the saved query
@@ -219,7 +219,7 @@ type SavedQueryArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The adhoc query expression that is run
 	//
 	// ** IMPORTANT **
@@ -320,8 +320,8 @@ func (o SavedQueryOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o SavedQueryOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SavedQuery) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SavedQueryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SavedQuery) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the saved query
@@ -337,8 +337,8 @@ func (o SavedQueryOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o SavedQueryOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SavedQuery) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SavedQueryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SavedQuery) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The adhoc query expression that is run
@@ -355,8 +355,8 @@ func (o SavedQueryOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SavedQueryOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SavedQuery) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SavedQueryOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SavedQuery) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the saved query was created. Format defined by RFC3339.

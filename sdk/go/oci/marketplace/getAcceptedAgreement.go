@@ -64,11 +64,11 @@ type LookupAcceptedAgreementResult struct {
 	// The unique identifier for the compartment where the agreement was accepted.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A display name for the accepted agreement.
 	DisplayName string `pulumi:"displayName"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the acceptance of the agreement within a specific compartment.
 	Id string `pulumi:"id"`
 	// The unique identifier for the listing associated with the agreement.
@@ -133,8 +133,8 @@ func (o LookupAcceptedAgreementResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAcceptedAgreementResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAcceptedAgreementResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A display name for the accepted agreement.
@@ -143,8 +143,8 @@ func (o LookupAcceptedAgreementResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupAcceptedAgreementResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAcceptedAgreementResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAcceptedAgreementResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAcceptedAgreementResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the acceptance of the agreement within a specific compartment.

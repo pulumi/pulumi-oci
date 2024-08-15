@@ -74,9 +74,9 @@ type GetAutonomousVirtualMachineResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
 	DbServerId string `pulumi:"dbServerId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The allocated memory in GBs on the Autonomous Virtual Machine.
@@ -165,13 +165,13 @@ func (o GetAutonomousVirtualMachineResultOutput) DbServerId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetAutonomousVirtualMachineResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAutonomousVirtualMachineResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetAutonomousVirtualMachineResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAutonomousVirtualMachineResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAutonomousVirtualMachineResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

@@ -76,8 +76,8 @@ type LookupConnectionResult struct {
 	// A description of the connection.
 	Description string `pulumi:"description"`
 	// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName   string                 `pulumi:"displayName"`
-	EncProperties map[string]interface{} `pulumi:"encProperties"`
+	DisplayName   string            `pulumi:"displayName"`
+	EncProperties map[string]string `pulumi:"encProperties"`
 	// Unique external key of this object from the source system.
 	ExternalKey string   `pulumi:"externalKey"`
 	Fields      []string `pulumi:"fields"`
@@ -87,7 +87,7 @@ type LookupConnectionResult struct {
 	// Unique connection key that is immutable.
 	Key string `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// The current state of the connection.
 	State string `pulumi:"state"`
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -176,8 +176,8 @@ func (o LookupConnectionResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o LookupConnectionResultOutput) EncProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.EncProperties }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) EncProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.EncProperties }).(pulumi.StringMapOutput)
 }
 
 // Unique external key of this object from the source system.
@@ -204,8 +204,8 @@ func (o LookupConnectionResultOutput) Key() pulumi.StringOutput {
 }
 
 // A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-func (o LookupConnectionResultOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // The current state of the connection.

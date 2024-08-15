@@ -35,13 +35,13 @@ import (
 //			_, err := DataSafe.NewSecurityAssessment(ctx, "test_security_assessment", &DataSafe.SecurityAssessmentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(securityAssessmentDescription),
 //				DisplayName: pulumi.Any(securityAssessmentDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsAssessmentScheduled: pulumi.Any(securityAssessmentIsAssessmentScheduled),
 //				Schedule:              pulumi.Any(securityAssessmentSchedule),
@@ -68,13 +68,13 @@ type SecurityAssessment struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the security assessment.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds pulumi.StringArrayOutput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -102,7 +102,7 @@ type SecurityAssessment struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics SecurityAssessmentStatisticArrayOutput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target database on which security assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -163,13 +163,13 @@ type securityAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security assessment.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -197,7 +197,7 @@ type securityAssessmentState struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics []SecurityAssessmentStatistic `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target database on which security assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -223,13 +223,13 @@ type SecurityAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security assessment.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds pulumi.StringArrayInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -257,7 +257,7 @@ type SecurityAssessmentState struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics SecurityAssessmentStatisticArrayInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target database on which security assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -287,13 +287,13 @@ type securityAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the security assessment.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security assessment.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether the assessment is scheduled to run.
 	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -312,13 +312,13 @@ type SecurityAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the security assessment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the security assessment.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security assessment.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether the assessment is scheduled to run.
 	IsAssessmentScheduled pulumi.BoolPtrInput
 	// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -425,8 +425,8 @@ func (o SecurityAssessmentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o SecurityAssessmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SecurityAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the security assessment.
@@ -440,8 +440,8 @@ func (o SecurityAssessmentOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o SecurityAssessmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SecurityAssessmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -507,8 +507,8 @@ func (o SecurityAssessmentOutput) Statistics() SecurityAssessmentStatisticArrayO
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SecurityAssessmentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityAssessment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SecurityAssessmentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target database on which security assessment is to be run.

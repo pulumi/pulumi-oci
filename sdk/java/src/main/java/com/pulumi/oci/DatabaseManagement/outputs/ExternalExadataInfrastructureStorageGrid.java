@@ -5,7 +5,6 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -18,7 +17,7 @@ public final class ExternalExadataInfrastructureStorageGrid {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> additionalDetails;
+    private @Nullable Map<String,String> additionalDetails;
     /**
      * @return (Updatable) The name of the Exadata infrastructure.
      * 
@@ -75,7 +74,7 @@ public final class ExternalExadataInfrastructureStorageGrid {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
@@ -158,7 +157,7 @@ public final class ExternalExadataInfrastructureStorageGrid {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable Map<String,String> additionalDetails;
         private @Nullable String displayName;
         private @Nullable String id;
         private @Nullable String internalId;
@@ -186,7 +185,7 @@ public final class ExternalExadataInfrastructureStorageGrid {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(@Nullable Map<String,String> additionalDetails) {
 
             this.additionalDetails = additionalDetails;
             return this;

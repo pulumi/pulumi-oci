@@ -13,7 +13,6 @@ import com.pulumi.oci.Optimizer.outputs.RecommendationResourceCount;
 import com.pulumi.oci.Optimizer.outputs.RecommendationSupportedLevel;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -100,14 +99,14 @@ public class Recommendation extends com.pulumi.resources.CustomResource {
      * Additional metadata key/value pairs for the recommendation.
      * 
      */
-    @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> extendedMetadata;
+    @Export(name="extendedMetadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    public Output<Map<String,Object>> extendedMetadata() {
+    public Output<Map<String,String>> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**

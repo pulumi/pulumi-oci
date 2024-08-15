@@ -11,7 +11,6 @@ import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceAlias;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceCredential;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceDatabaseConnectionDetail;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceProperty;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -45,7 +44,7 @@ public final class GetMonitoredResourceResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Monitored resource display name.
      * 
@@ -61,7 +60,7 @@ public final class GetMonitoredResourceResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Monitored resource host name.
      * 
@@ -117,7 +116,7 @@ public final class GetMonitoredResourceResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -178,7 +177,7 @@ public final class GetMonitoredResourceResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -202,7 +201,7 @@ public final class GetMonitoredResourceResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -282,7 +281,7 @@ public final class GetMonitoredResourceResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -329,11 +328,11 @@ public final class GetMonitoredResourceResult {
         private String compartmentId;
         private List<GetMonitoredResourceCredential> credentials;
         private List<GetMonitoredResourceDatabaseConnectionDetail> databaseConnectionDetails;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String externalId;
         private String externalResourceId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostName;
         private String id;
         private String license;
@@ -345,7 +344,7 @@ public final class GetMonitoredResourceResult {
         private String resourceTimeZone;
         private String sourceType;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String tenantId;
         private String timeCreated;
         private String timeUpdated;
@@ -446,7 +445,7 @@ public final class GetMonitoredResourceResult {
             return databaseConnectionDetails(List.of(databaseConnectionDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceResult", "definedTags");
             }
@@ -478,7 +477,7 @@ public final class GetMonitoredResourceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceResult", "freeformTags");
             }
@@ -577,7 +576,7 @@ public final class GetMonitoredResourceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceResult", "systemTags");
             }

@@ -5,7 +5,6 @@ package com.pulumi.oci.ResourceScheduler.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetScheduleResource {
      * @return This is additional information that helps to identity the resource for the schedule.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
 
     private GetScheduleResource() {}
     /**
@@ -35,7 +34,7 @@ public final class GetScheduleResource {
      * @return This is additional information that helps to identity the resource for the schedule.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
 
@@ -49,7 +48,7 @@ public final class GetScheduleResource {
     @CustomType.Builder
     public static final class Builder {
         private String id;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         public Builder() {}
         public Builder(GetScheduleResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -66,7 +65,7 @@ public final class GetScheduleResource {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetScheduleResource", "metadata");
             }

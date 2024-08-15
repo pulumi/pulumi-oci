@@ -27,7 +27,7 @@ type ManagedDatabase struct {
 	pulumi.CustomResourceState
 
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -41,11 +41,11 @@ type ManagedDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates whether the Oracle Database is part of a cluster.
 	IsCluster pulumi.BoolOutput `pulumi:"isCluster"`
 	// A list of Managed Database Groups that the Managed Database belongs to.
@@ -64,7 +64,7 @@ type ManagedDatabase struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
 	StorageSystemId pulumi.StringOutput `pulumi:"storageSystemId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Managed Database was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The workload type of the Autonomous Database.
@@ -105,7 +105,7 @@ func GetManagedDatabase(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ManagedDatabase resources.
 type managedDatabaseState struct {
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -119,11 +119,11 @@ type managedDatabaseState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType *string `pulumi:"deploymentType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether the Oracle Database is part of a cluster.
 	IsCluster *bool `pulumi:"isCluster"`
 	// A list of Managed Database Groups that the Managed Database belongs to.
@@ -142,7 +142,7 @@ type managedDatabaseState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
 	StorageSystemId *string `pulumi:"storageSystemId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Managed Database was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The workload type of the Autonomous Database.
@@ -151,7 +151,7 @@ type managedDatabaseState struct {
 
 type ManagedDatabaseState struct {
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapInput
+	AdditionalDetails pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId pulumi.StringPtrInput
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -165,11 +165,11 @@ type ManagedDatabaseState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether the Oracle Database is part of a cluster.
 	IsCluster pulumi.BoolPtrInput
 	// A list of Managed Database Groups that the Managed Database belongs to.
@@ -188,7 +188,7 @@ type ManagedDatabaseState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the storage DB system.
 	StorageSystemId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the Managed Database was created.
 	TimeCreated pulumi.StringPtrInput
 	// The workload type of the Autonomous Database.
@@ -201,9 +201,9 @@ func (ManagedDatabaseState) ElementType() reflect.Type {
 
 type managedDatabaseArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	//
 	// ** IMPORTANT **
@@ -214,9 +214,9 @@ type managedDatabaseArgs struct {
 // The set of arguments for constructing a ManagedDatabase resource.
 type ManagedDatabaseArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	//
 	// ** IMPORTANT **
@@ -312,8 +312,8 @@ func (o ManagedDatabaseOutput) ToManagedDatabaseOutputWithContext(ctx context.Co
 }
 
 // The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o ManagedDatabaseOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedDatabase) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o ManagedDatabaseOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringMapOutput { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -347,8 +347,8 @@ func (o ManagedDatabaseOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ManagedDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ManagedDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The infrastructure used to deploy the Oracle Database.
@@ -357,8 +357,8 @@ func (o ManagedDatabaseOutput) DeploymentType() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ManagedDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ManagedDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates whether the Oracle Database is part of a cluster.
@@ -402,8 +402,8 @@ func (o ManagedDatabaseOutput) StorageSystemId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ManagedDatabaseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedDatabase) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ManagedDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Managed Database was created.

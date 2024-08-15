@@ -75,9 +75,9 @@ type GetObjectHeadResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The metadata of the object
-	Metadata  map[string]interface{} `pulumi:"metadata"`
-	Namespace string                 `pulumi:"namespace"`
-	Object    string                 `pulumi:"object"`
+	Metadata  map[string]string `pulumi:"metadata"`
+	Namespace string            `pulumi:"namespace"`
+	Object    string            `pulumi:"object"`
 	// The storage tier that the object is stored in.
 	// * `archival-state` - Archival state of an object. This field is set only for objects in Archive tier.
 	StorageTier string `pulumi:"storageTier"`
@@ -154,8 +154,8 @@ func (o GetObjectHeadResultOutput) Id() pulumi.StringOutput {
 }
 
 // The metadata of the object
-func (o GetObjectHeadResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetObjectHeadResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetObjectHeadResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetObjectHeadResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 func (o GetObjectHeadResultOutput) Namespace() pulumi.StringOutput {

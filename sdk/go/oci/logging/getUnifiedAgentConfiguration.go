@@ -63,13 +63,13 @@ type LookupUnifiedAgentConfigurationResult struct {
 	// State of unified agent service configuration.
 	ConfigurationState string `pulumi:"configurationState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Groups using the configuration.
 	GroupAssociations []GetUnifiedAgentConfigurationGroupAssociation `pulumi:"groupAssociations"`
 	// The OCID of the resource.
@@ -136,8 +136,8 @@ func (o LookupUnifiedAgentConfigurationResultOutput) ConfigurationState() pulumi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupUnifiedAgentConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -151,8 +151,8 @@ func (o LookupUnifiedAgentConfigurationResultOutput) DisplayName() pulumi.String
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupUnifiedAgentConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupUnifiedAgentConfigurationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupUnifiedAgentConfigurationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Groups using the configuration.

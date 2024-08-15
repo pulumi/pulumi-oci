@@ -34,16 +34,16 @@ import (
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				DisplayName:     pulumi.Any(fusionEnvironmentFamilyDisplayName),
 //				SubscriptionIds: pulumi.Any(fusionEnvironmentFamilySubscriptionIds),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				FamilyMaintenancePolicy: &fusionapps.FusionEnvironmentFamilyFamilyMaintenancePolicyArgs{
 //					ConcurrentMaintenance:      pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance),
 //					IsMonthlyPatchingEnabled:   pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled),
 //					QuarterlyUpgradeBeginTimes: pulumi.Any(fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -68,13 +68,13 @@ type FusionEnvironmentFamily struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicy FusionEnvironmentFamilyFamilyMaintenancePolicyOutput `pulumi:"familyMaintenancePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// When set to True, a subscription update is required for the environment family.
 	IsSubscriptionUpdateNeeded pulumi.BoolOutput `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -135,13 +135,13 @@ type fusionEnvironmentFamilyState struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicy *FusionEnvironmentFamilyFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// When set to True, a subscription update is required for the environment family.
 	IsSubscriptionUpdateNeeded *bool `pulumi:"isSubscriptionUpdateNeeded"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -164,13 +164,13 @@ type FusionEnvironmentFamilyState struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicy FusionEnvironmentFamilyFamilyMaintenancePolicyPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// When set to True, a subscription update is required for the environment family.
 	IsSubscriptionUpdateNeeded pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -197,13 +197,13 @@ type fusionEnvironmentFamilyArgs struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicy *FusionEnvironmentFamilyFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
 	//
 	// ** IMPORTANT **
@@ -217,13 +217,13 @@ type FusionEnvironmentFamilyArgs struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName pulumi.StringInput
 	// (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicy FusionEnvironmentFamilyFamilyMaintenancePolicyPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The list of the IDs of the applications subscriptions that are associated with the environment family.
 	//
 	// ** IMPORTANT **
@@ -325,8 +325,8 @@ func (o FusionEnvironmentFamilyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o FusionEnvironmentFamilyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentFamilyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
@@ -342,8 +342,8 @@ func (o FusionEnvironmentFamilyOutput) FamilyMaintenancePolicy() FusionEnvironme
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o FusionEnvironmentFamilyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentFamilyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironmentFamily) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // When set to True, a subscription update is required for the environment family.

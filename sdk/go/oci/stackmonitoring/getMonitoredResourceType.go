@@ -61,13 +61,13 @@ type LookupMonitoredResourceTypeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A friendly description.
 	Description string `pulumi:"description"`
 	// Monitored resource type display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// The metadata details for resource type.
@@ -84,7 +84,7 @@ type LookupMonitoredResourceTypeResult struct {
 	// Lifecycle state of the monitored resource type.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -135,8 +135,8 @@ func (o LookupMonitoredResourceTypeResultOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMonitoredResourceTypeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTypeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A friendly description.
@@ -150,8 +150,8 @@ func (o LookupMonitoredResourceTypeResultOutput) DisplayName() pulumi.StringOutp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMonitoredResourceTypeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTypeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -194,8 +194,8 @@ func (o LookupMonitoredResourceTypeResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMonitoredResourceTypeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTypeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTypeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

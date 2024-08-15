@@ -63,13 +63,13 @@ type LookupSensitiveDataModelResult struct {
 	// The OCID of the compartment that contains the sensitive data model.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description string `pulumi:"description"`
 	// The display name of the sensitive data model.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the sensitive data model.
 	Id string `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
@@ -88,7 +88,7 @@ type LookupSensitiveDataModelResult struct {
 	// The current state of the sensitive data model.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
 	TablesForDiscoveries []GetSensitiveDataModelTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
@@ -148,8 +148,8 @@ func (o LookupSensitiveDataModelResultOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSensitiveDataModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSensitiveDataModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the sensitive data model.
@@ -163,8 +163,8 @@ func (o LookupSensitiveDataModelResultOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupSensitiveDataModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSensitiveDataModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the sensitive data model.
@@ -212,8 +212,8 @@ func (o LookupSensitiveDataModelResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSensitiveDataModelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSensitiveDataModelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].

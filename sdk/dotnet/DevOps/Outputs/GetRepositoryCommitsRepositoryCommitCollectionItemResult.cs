@@ -37,8 +37,8 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// Name of who creates the commit.
         /// </summary>
         public readonly string CommitterName;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// An array of parent commit IDs of created commit.
         /// </summary>
@@ -66,9 +66,9 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string committerName,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             ImmutableArray<string> parentCommitIds,
 

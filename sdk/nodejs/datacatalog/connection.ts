@@ -86,7 +86,7 @@ export class Connection extends pulumi.CustomResource {
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    public readonly encProperties!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly encProperties!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Unique external key of this object from the source system.
      */
@@ -99,7 +99,7 @@ export class Connection extends pulumi.CustomResource {
      * Unique connection key that is immutable.
      */
     public /*out*/ readonly key!: pulumi.Output<string>;
-    public readonly properties!: pulumi.Output<{[key: string]: any}>;
+    public readonly properties!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the connection.
      */
@@ -232,7 +232,7 @@ export interface ConnectionState {
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    encProperties?: pulumi.Input<{[key: string]: any}>;
+    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Unique external key of this object from the source system.
      */
@@ -245,7 +245,7 @@ export interface ConnectionState {
      * Unique connection key that is immutable.
      */
     key?: pulumi.Input<string>;
-    properties?: pulumi.Input<{[key: string]: any}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the connection.
      */
@@ -303,12 +303,12 @@ export interface ConnectionArgs {
     /**
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
      */
-    encProperties?: pulumi.Input<{[key: string]: any}>;
+    encProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
      */
     isDefault?: pulumi.Input<boolean>;
-    properties: pulumi.Input<{[key: string]: any}>;
+    properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The key of the object type. Type key's can be found via the '/types' endpoint.
      *

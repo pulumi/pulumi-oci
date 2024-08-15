@@ -88,7 +88,7 @@ export class DataAsset extends pulumi.CustomResource {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
-    public readonly properties!: pulumi.Output<{[key: string]: any}>;
+    public readonly properties!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the data asset.
      */
@@ -214,7 +214,7 @@ export interface DataAssetState {
      * A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
      */
     lifecycleDetails?: pulumi.Input<string>;
-    properties?: pulumi.Input<{[key: string]: any}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the data asset.
      */
@@ -265,7 +265,7 @@ export interface DataAssetArgs {
      * (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
-    properties?: pulumi.Input<{[key: string]: any}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The key of the data asset type. This can be obtained via the '/types' endpoint.
      *

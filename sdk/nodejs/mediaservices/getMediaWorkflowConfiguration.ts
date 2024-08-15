@@ -51,7 +51,7 @@ export interface GetMediaWorkflowConfigurationResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Display name for the MediaWorkflowConfiguration. Avoid entering confidential information.
      */
@@ -59,7 +59,7 @@ export interface GetMediaWorkflowConfigurationResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Unique identifier that is immutable on creation.
      */
@@ -85,7 +85,7 @@ export interface GetMediaWorkflowConfigurationResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      */

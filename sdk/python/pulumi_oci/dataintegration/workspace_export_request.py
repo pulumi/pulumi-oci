@@ -177,7 +177,7 @@ class _WorkspaceExportRequestState:
                  are_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  exported_items: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
                  filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -198,7 +198,7 @@ class _WorkspaceExportRequestState:
         :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[str] created_by: Name of the user who initiated export request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: Contains key of the error
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceExportRequestExportedItemArgs']]] exported_items: The array of exported object details.
         :param pulumi.Input[str] file_name: Name of the exported zip file.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
@@ -296,14 +296,14 @@ class _WorkspaceExportRequestState:
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Contains key of the error
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @property
@@ -659,7 +659,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
             are_references_included: Optional[pulumi.Input[bool]] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             exported_items: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]]] = None,
             file_name: Optional[pulumi.Input[str]] = None,
             filters: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -685,7 +685,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         :param pulumi.Input[bool] are_references_included: This field controls if the references will be exported along with the objects
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be exported.
         :param pulumi.Input[str] created_by: Name of the user who initiated export request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: Contains key of the error
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict']]]] exported_items: The array of exported object details.
         :param pulumi.Input[str] file_name: Name of the exported zip file.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] filters: Filters for exported objects
@@ -757,7 +757,7 @@ class WorkspaceExportRequest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> pulumi.Output[Mapping[str, Any]]:
+    def error_messages(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Contains key of the error
         """

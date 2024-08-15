@@ -13,7 +13,6 @@ import com.pulumi.oci.Kms.outputs.GetKeyReplicaDetail;
 import com.pulumi.oci.Kms.outputs.GetKeyRestoreFromFile;
 import com.pulumi.oci.Kms.outputs.GetKeyRestoreFromObjectStore;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +39,7 @@ public final class GetKeyResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String desiredState;
     /**
      * @return A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -57,7 +56,7 @@ public final class GetKeyResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the key.
      * 
@@ -157,7 +156,7 @@ public final class GetKeyResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String desiredState() {
@@ -184,7 +183,7 @@ public final class GetKeyResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -304,12 +303,12 @@ public final class GetKeyResult {
         private List<GetKeyAutoKeyRotationDetail> autoKeyRotationDetails;
         private String compartmentId;
         private String currentKeyVersion;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String desiredState;
         private String displayName;
         private List<GetKeyExternalKeyReferenceDetail> externalKeyReferenceDetails;
         private List<GetKeyExternalKeyReference> externalKeyReferences;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isAutoRotationEnabled;
         private Boolean isPrimary;
@@ -384,7 +383,7 @@ public final class GetKeyResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetKeyResult", "definedTags");
             }
@@ -430,7 +429,7 @@ public final class GetKeyResult {
             return externalKeyReferences(List.of(externalKeyReferences));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetKeyResult", "freeformTags");
             }

@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetMetricsFilter;
 import com.pulumi.oci.Monitoring.outputs.GetMetricsMetric;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +23,7 @@ public final class GetMetricsResult {
      */
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
-    private @Nullable Map<String,Object> dimensionFilters;
+    private @Nullable Map<String,String> dimensionFilters;
     private @Nullable List<GetMetricsFilter> filters;
     private @Nullable List<String> groupBies;
     /**
@@ -64,7 +63,7 @@ public final class GetMetricsResult {
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
-    public Map<String,Object> dimensionFilters() {
+    public Map<String,String> dimensionFilters() {
         return this.dimensionFilters == null ? Map.of() : this.dimensionFilters;
     }
     public List<GetMetricsFilter> filters() {
@@ -120,7 +119,7 @@ public final class GetMetricsResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
-        private @Nullable Map<String,Object> dimensionFilters;
+        private @Nullable Map<String,String> dimensionFilters;
         private @Nullable List<GetMetricsFilter> filters;
         private @Nullable List<String> groupBies;
         private String id;
@@ -158,7 +157,7 @@ public final class GetMetricsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dimensionFilters(@Nullable Map<String,Object> dimensionFilters) {
+        public Builder dimensionFilters(@Nullable Map<String,String> dimensionFilters) {
 
             this.dimensionFilters = dimensionFilters;
             return this;

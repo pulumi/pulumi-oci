@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanMigrationPlanStatArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanStrategyArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationPlanTargetEnvironmentArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -26,13 +25,13 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="calculatedLimits")
-    private @Nullable Output<Map<String,Object>> calculatedLimits;
+    private @Nullable Output<Map<String,String>> calculatedLimits;
 
     /**
      * @return Limits of the resources that are needed for migration. Example: {&#34;BlockVolume&#34;: 2, &#34;VCN&#34;: 1}
      * 
      */
-    public Optional<Output<Map<String,Object>>> calculatedLimits() {
+    public Optional<Output<Map<String,String>>> calculatedLimits() {
         return Optional.ofNullable(this.calculatedLimits);
     }
 
@@ -56,13 +55,13 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -86,13 +85,13 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -206,13 +205,13 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
+    private @Nullable Output<Map<String,String>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> systemTags() {
+    public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
 
@@ -306,7 +305,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder calculatedLimits(@Nullable Output<Map<String,Object>> calculatedLimits) {
+        public Builder calculatedLimits(@Nullable Output<Map<String,String>> calculatedLimits) {
             $.calculatedLimits = calculatedLimits;
             return this;
         }
@@ -317,7 +316,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder calculatedLimits(Map<String,Object> calculatedLimits) {
+        public Builder calculatedLimits(Map<String,String> calculatedLimits) {
             return calculatedLimits(Output.of(calculatedLimits));
         }
 
@@ -348,7 +347,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -359,7 +358,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -390,7 +389,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -401,7 +400,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -578,7 +577,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
@@ -589,7 +588,7 @@ public final class MigrationPlanState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }
 

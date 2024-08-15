@@ -72,7 +72,7 @@ type VmClusterRemoveVirtualMachine struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers VmClusterRemoveVirtualMachineDbServerArrayOutput `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -80,7 +80,7 @@ type VmClusterRemoveVirtualMachine struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -167,7 +167,7 @@ type vmClusterRemoveVirtualMachineState struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers []VmClusterRemoveVirtualMachineDbServer `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -175,7 +175,7 @@ type vmClusterRemoveVirtualMachineState struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []VmClusterRemoveVirtualMachineFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion *string `pulumi:"giVersion"`
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -227,7 +227,7 @@ type VmClusterRemoveVirtualMachineState struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers VmClusterRemoveVirtualMachineDbServerArrayInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -235,7 +235,7 @@ type VmClusterRemoveVirtualMachineState struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArrayInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringPtrInput
 	// If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -423,8 +423,8 @@ func (o VmClusterRemoveVirtualMachineOutput) DbServers() VmClusterRemoveVirtualM
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o VmClusterRemoveVirtualMachineOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VmClusterRemoveVirtualMachineOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
@@ -445,8 +445,8 @@ func (o VmClusterRemoveVirtualMachineOutput) FileSystemConfigurationDetails() Vm
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o VmClusterRemoveVirtualMachineOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VmClusterRemoveVirtualMachineOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VmClusterRemoveVirtualMachine) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Oracle Grid Infrastructure software version for the VM cluster.

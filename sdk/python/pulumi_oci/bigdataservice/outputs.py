@@ -6636,11 +6636,11 @@ class GetBdsInstancesBdsInstanceResult(dict):
                  compartment_id: str,
                  compute_only_worker_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceComputeOnlyWorkerNodeResult'],
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  edge_nodes: Sequence['outputs.GetBdsInstancesBdsInstanceEdgeNodeResult'],
                  execute_bootstrap_script_trigger: int,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ignore_existing_nodes_shapes: Sequence[str],
                  is_cloud_sql_configured: bool,
@@ -6671,9 +6671,9 @@ class GetBdsInstancesBdsInstanceResult(dict):
         :param str cluster_version: Version of the Hadoop distribution.
         :param str compartment_id: The OCID of the compartment.
         :param str created_by: The user who created the cluster.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         :param str id: The OCID of the Big Data Service resource.
         :param bool is_cloud_sql_configured: Boolean flag specifying whether or not Cloud SQL should be configured.
         :param bool is_high_availability: Boolean flag specifying whether or not the cluster is highly available (HA)
@@ -6805,7 +6805,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -6831,7 +6831,7 @@ class GetBdsInstancesBdsInstanceResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         """

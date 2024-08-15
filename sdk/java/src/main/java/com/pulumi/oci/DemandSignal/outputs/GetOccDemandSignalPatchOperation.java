@@ -5,7 +5,6 @@ package com.pulumi.oci.DemandSignal.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetOccDemandSignalPatchOperation {
      * @return The Demand Signal Value.
      * 
      */
-    private Map<String,Object> value;
+    private Map<String,String> value;
 
     private GetOccDemandSignalPatchOperation() {}
     public String from() {
@@ -43,7 +42,7 @@ public final class GetOccDemandSignalPatchOperation {
      * @return The Demand Signal Value.
      * 
      */
-    public Map<String,Object> value() {
+    public Map<String,String> value() {
         return this.value;
     }
 
@@ -61,7 +60,7 @@ public final class GetOccDemandSignalPatchOperation {
         private String position;
         private String selectedItem;
         private String selection;
-        private Map<String,Object> value;
+        private Map<String,String> value;
         public Builder() {}
         public Builder(GetOccDemandSignalPatchOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -114,7 +113,7 @@ public final class GetOccDemandSignalPatchOperation {
             return this;
         }
         @CustomType.Setter
-        public Builder value(Map<String,Object> value) {
+        public Builder value(Map<String,String> value) {
             if (value == null) {
               throw new MissingRequiredPropertyException("GetOccDemandSignalPatchOperation", "value");
             }

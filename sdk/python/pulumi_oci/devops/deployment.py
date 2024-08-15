@@ -18,26 +18,26 @@ class DeploymentArgs:
     def __init__(__self__, *,
                  deploy_pipeline_id: pulumi.Input[str],
                  deployment_type: pulumi.Input[str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_override_arguments: Optional[pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs']] = None,
                  deployment_arguments: Optional[pulumi.Input['DeploymentDeploymentArgumentsArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
                  trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Deployment resource.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param pulumi.Input['DeploymentDeployStageOverrideArgumentsArgs'] deploy_stage_override_arguments: Specifies the list of arguments to be overriden per Stage at the time of deployment.
         :param pulumi.Input['DeploymentDeploymentArgumentsArgs'] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
         :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
                
@@ -92,14 +92,14 @@ class DeploymentArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -164,14 +164,14 @@ class DeploymentArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -207,7 +207,7 @@ class DeploymentArgs:
 class _DeploymentState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_override_arguments: Optional[pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs']] = None,
                  deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]]] = None,
                  deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]]] = None,
@@ -218,19 +218,19 @@ class _DeploymentState:
                  deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None):
         """
         Input properties used for looking up and filtering Deployment resources.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['DeploymentDeployArtifactOverrideArgumentsArgs'] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineArtifactArgs']]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeployPipelineEnvironmentArgs']]] deploy_pipeline_environments: List of all environments used in the pipeline.
@@ -241,12 +241,12 @@ class _DeploymentState:
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentDeploymentExecutionProgressArgs']]] deployment_execution_progresses: The execution progress details of a deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
         :param pulumi.Input[str] project_id: The OCID of a project.
         :param pulumi.Input[str] state: The current state of the deployment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
@@ -312,14 +312,14 @@ class _DeploymentState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -444,14 +444,14 @@ class _DeploymentState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -504,14 +504,14 @@ class _DeploymentState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -560,7 +560,7 @@ class Deployment(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -568,7 +568,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_arguments: Optional[pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
                  trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -587,7 +587,7 @@ class Deployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[str] deploy_pipeline_id: The OCID of a pipeline.
         :param pulumi.Input[str] deploy_stage_id: Specifies the OCID of the stage to be redeployed.
@@ -595,7 +595,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']] deployment_arguments: Specifies list of arguments passed along with the deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
         :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
                
@@ -637,7 +637,7 @@ class Deployment(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  deploy_stage_id: Optional[pulumi.Input[str]] = None,
@@ -645,7 +645,7 @@ class Deployment(pulumi.CustomResource):
                  deployment_arguments: Optional[pulumi.Input[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict']]] = None,
                  deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  previous_deployment_id: Optional[pulumi.Input[str]] = None,
                  trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
@@ -693,7 +693,7 @@ class Deployment(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             deploy_artifact_override_arguments: Optional[pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']]] = None,
             deploy_pipeline_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineArtifactArgs', 'DeploymentDeployPipelineArtifactArgsDict']]]]] = None,
             deploy_pipeline_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineEnvironmentArgs', 'DeploymentDeployPipelineEnvironmentArgsDict']]]]] = None,
@@ -704,12 +704,12 @@ class Deployment(pulumi.CustomResource):
             deployment_execution_progresses: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentExecutionProgressArgs', 'DeploymentDeploymentExecutionProgressArgsDict']]]]] = None,
             deployment_type: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             previous_deployment_id: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             trigger_new_devops_deployment: Optional[pulumi.Input[bool]] = None) -> 'Deployment':
@@ -721,7 +721,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict']] deploy_artifact_override_arguments: Specifies the list of artifact override arguments at the time of deployment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineArtifactArgs', 'DeploymentDeployPipelineArtifactArgsDict']]]] deploy_pipeline_artifacts: List of all artifacts used in the pipeline.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeployPipelineEnvironmentArgs', 'DeploymentDeployPipelineEnvironmentArgsDict']]]] deploy_pipeline_environments: List of all environments used in the pipeline.
@@ -732,12 +732,12 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentDeploymentExecutionProgressArgs', 'DeploymentDeploymentExecutionProgressArgsDict']]]] deployment_execution_progresses: The execution progress details of a deployment.
         :param pulumi.Input[str] deployment_type: (Updatable) Specifies type for this deployment.
         :param pulumi.Input[str] display_name: (Updatable) Deployment display name. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] previous_deployment_id: Specifies the OCID of the previous deployment to be redeployed.
         :param pulumi.Input[str] project_id: The OCID of a project.
         :param pulumi.Input[str] state: The current state of the deployment.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[bool] trigger_new_devops_deployment: A boolean specifying if a new deployment should be created on every apply. As long as this value is set to true in the config, every apply will trigger a new deployment to be created. The existing deployment resource will be replaced with the new one in the state file (deployment resources are never deleted, they persist as a store of records, but your state file will only track the latest one created with this resource block). 
@@ -783,7 +783,7 @@ class Deployment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -871,7 +871,7 @@ class Deployment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -911,7 +911,7 @@ class Deployment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

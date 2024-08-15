@@ -16,10 +16,10 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Outputs
         /// <summary>
         /// Collection of connection strings.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? AllConnectionStrings;
+        public readonly ImmutableDictionary<string, string>? AllConnectionStrings;
 
         [OutputConstructor]
-        private ShardedDatabaseConnectionString(ImmutableDictionary<string, object>? allConnectionStrings)
+        private ShardedDatabaseConnectionString(ImmutableDictionary<string, string>? allConnectionStrings)
         {
             AllConnectionStrings = allConnectionStrings;
         }

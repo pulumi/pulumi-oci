@@ -331,14 +331,14 @@ class OccCapacityRequestPatchOperationArgs:
                  from_: pulumi.Input[str],
                  operation: pulumi.Input[str],
                  selection: pulumi.Input[str],
-                 value: pulumi.Input[Mapping[str, Any]],
+                 value: pulumi.Input[Mapping[str, pulumi.Input[str]]],
                  position: Optional[pulumi.Input[str]] = None,
                  selected_item: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] from_: (Updatable)
         :param pulumi.Input[str] operation: (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
         :param pulumi.Input[str] selection: (Updatable)
-        :param pulumi.Input[Mapping[str, Any]] value: (Updatable)
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] value: (Updatable)
         :param pulumi.Input[str] position: (Updatable)
         :param pulumi.Input[str] selected_item: (Updatable)
         """
@@ -389,14 +389,14 @@ class OccCapacityRequestPatchOperationArgs:
 
     @property
     @pulumi.getter
-    def value(self) -> pulumi.Input[Mapping[str, Any]]:
+    def value(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
         """
         (Updatable)
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: pulumi.Input[Mapping[str, Any]]):
+    def value(self, value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
         pulumi.set(self, "value", value)
 
     @property

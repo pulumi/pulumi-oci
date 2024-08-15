@@ -23,11 +23,11 @@ class ContainerInstanceArgs:
                  shape_config: pulumi.Input['ContainerInstanceShapeConfigArgs'],
                  vnics: pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]],
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_config: Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
                  image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -41,11 +41,11 @@ class ContainerInstanceArgs:
         :param pulumi.Input['ContainerInstanceShapeConfigArgs'] shape_config: The size and amount of resources available to the container instance.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]] vnics: The networks available to containers on this container instance.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         :param pulumi.Input['ContainerInstanceDnsConfigArgs'] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] state: (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
@@ -170,14 +170,14 @@ class ContainerInstanceArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -218,14 +218,14 @@ class ContainerInstanceArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -291,18 +291,18 @@ class _ContainerInstanceState:
                  container_count: Optional[pulumi.Input[int]] = None,
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
                  containers: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_config: Optional[pulumi.Input['ContainerInstanceDnsConfigArgs']] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
                  image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  shape_config: Optional[pulumi.Input['ContainerInstanceShapeConfigArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  vnics: Optional[pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]]] = None,
@@ -315,11 +315,11 @@ class _ContainerInstanceState:
         :param pulumi.Input[int] container_count: The number of containers on the container instance.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceContainerArgs']]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         :param pulumi.Input['ContainerInstanceDnsConfigArgs'] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceImagePullSecretArgs']]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
@@ -330,7 +330,7 @@ class _ContainerInstanceState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input['ContainerInstanceVnicArgs']]] vnics: The networks available to containers on this container instance.
@@ -446,14 +446,14 @@ class _ContainerInstanceState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -494,14 +494,14 @@ class _ContainerInstanceState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -582,14 +582,14 @@ class _ContainerInstanceState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -664,11 +664,11 @@ class ContainerInstance(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
                  containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
                  image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -805,11 +805,11 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] shape: The shape of the container instance. The shape determines the resources available to the container instance.
@@ -971,11 +971,11 @@ class ContainerInstance(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  container_restart_policy: Optional[pulumi.Input[str]] = None,
                  containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
                  image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
@@ -1041,18 +1041,18 @@ class ContainerInstance(pulumi.CustomResource):
             container_count: Optional[pulumi.Input[int]] = None,
             container_restart_policy: Optional[pulumi.Input[str]] = None,
             containers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns_config: Optional[pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']]] = None,
             fault_domain: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             graceful_shutdown_timeout_in_seconds: Optional[pulumi.Input[str]] = None,
             image_pull_secrets: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             shape: Optional[pulumi.Input[str]] = None,
             shape_config: Optional[pulumi.Input[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             vnics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]]] = None,
@@ -1070,11 +1070,11 @@ class ContainerInstance(pulumi.CustomResource):
         :param pulumi.Input[int] container_count: The number of containers on the container instance.
         :param pulumi.Input[str] container_restart_policy: Container restart policy
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict']]]] containers: The containers to create on this container instance.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         :param pulumi.Input[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict']] dns_config: Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
         :param pulumi.Input[str] fault_domain: The fault domain where the container instance runs.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] graceful_shutdown_timeout_in_seconds: The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict']]]] image_pull_secrets: The image pulls secrets so you can access private registry to pull container images.
         :param pulumi.Input[str] lifecycle_details: A message that describes the current state of the container in more detail. Can be used to provide actionable information.
@@ -1085,7 +1085,7 @@ class ContainerInstance(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         :param pulumi.Input[str] time_created: The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict']]]] vnics: The networks available to containers on this container instance.
@@ -1164,7 +1164,7 @@ class ContainerInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         """
@@ -1196,7 +1196,7 @@ class ContainerInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1256,7 +1256,7 @@ class ContainerInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         """

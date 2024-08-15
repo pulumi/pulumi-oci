@@ -15883,13 +15883,13 @@ type GetBdsInstancesBdsInstance struct {
 	// The user who created the cluster.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName                   string                               `pulumi:"displayName"`
 	EdgeNodes                     []GetBdsInstancesBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	ExecuteBootstrapScriptTrigger int                                  `pulumi:"executeBootstrapScriptTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id                        string   `pulumi:"id"`
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
@@ -15958,13 +15958,13 @@ type GetBdsInstancesBdsInstanceArgs struct {
 	// The user who created the cluster.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName                   pulumi.StringInput                           `pulumi:"displayName"`
 	EdgeNodes                     GetBdsInstancesBdsInstanceEdgeNodeArrayInput `pulumi:"edgeNodes"`
 	ExecuteBootstrapScriptTrigger pulumi.IntInput                              `pulumi:"executeBootstrapScriptTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id                        pulumi.StringInput      `pulumi:"id"`
 	IgnoreExistingNodesShapes pulumi.StringArrayInput `pulumi:"ignoreExistingNodesShapes"`
@@ -16109,8 +16109,8 @@ func (o GetBdsInstancesBdsInstanceOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-func (o GetBdsInstancesBdsInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstance) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBdsInstancesBdsInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -16127,8 +16127,8 @@ func (o GetBdsInstancesBdsInstanceOutput) ExecuteBootstrapScriptTrigger() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-func (o GetBdsInstancesBdsInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBdsInstancesBdsInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBdsInstancesBdsInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstance) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Big Data Service resource.

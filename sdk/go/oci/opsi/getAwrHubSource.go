@@ -72,9 +72,9 @@ type LookupAwrHubSourceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Number of hours since last AWR snapshots import happened from the Source database.
 	HoursSinceLastImport float64 `pulumi:"hoursSinceLastImport"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
@@ -94,7 +94,7 @@ type LookupAwrHubSourceResult struct {
 	// Indicates the status of a source database in Operations Insights
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
@@ -180,13 +180,13 @@ func (o LookupAwrHubSourceResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAwrHubSourceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAwrHubSourceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAwrHubSourceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAwrHubSourceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Number of hours since last AWR snapshots import happened from the Source database.
@@ -235,8 +235,8 @@ func (o LookupAwrHubSourceResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAwrHubSourceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAwrHubSourceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAwrHubSourceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

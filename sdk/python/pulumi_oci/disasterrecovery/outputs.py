@@ -2210,12 +2210,12 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionResult(dict):
 class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dr_protection_group_id: str,
                  execution_duration_in_sec: int,
                  execution_options: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  group_executions: Sequence['outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult'],
                  id: str,
                  life_cycle_details: str,
@@ -2225,19 +2225,19 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
                  plan_execution_type: str,
                  plan_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_ended: str,
                  time_started: str,
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param int execution_duration_in_sec: The total duration in seconds taken to complete the step execution.  Example: `35`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArgs'] execution_options: The options for a plan execution.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param Sequence['GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArgs'] group_executions: A list of groups executed in this DR plan execution.
         :param str id: The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
         :param str life_cycle_details: A message describing the DR plan execution's current state in more detail.
@@ -2247,7 +2247,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
         :param str plan_execution_type: The type of the DR plan executed.
         :param str plan_id: The OCID of the DR plan.  Example: `ocid1.drplan.oc1..uniqueID`
         :param str state: A filter to return only DR plan executions that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_ended: The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_started: The date and time at which DR plan execution began. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -2285,7 +2285,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2325,7 +2325,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
@@ -2405,7 +2405,7 @@ class GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3144,33 +3144,33 @@ class GetDrPlansDrPlanCollectionResult(dict):
 class GetDrPlansDrPlanCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dr_protection_group_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  life_cycle_details: str,
                  peer_dr_protection_group_id: str,
                  peer_region: str,
                  plan_groups: Sequence['outputs.GetDrPlansDrPlanCollectionItemPlanGroupResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str):
         """
         :param str compartment_id: The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         :param str dr_protection_group_id: The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param str id: The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
         :param str life_cycle_details: A message describing the DR plan's current state in more detail.
         :param str peer_dr_protection_group_id: The OCID of the peer DR protection group associated with this plan's DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param str peer_region: The region of the peer DR protection group associated with this plan's DR protection group.  Example: `us-ashburn-1`
         :param Sequence['GetDrPlansDrPlanCollectionItemPlanGroupArgs'] plan_groups: The list of groups in this DR plan.
         :param str state: A filter to return only DR plans that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_updated: The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str type: The type of the DR plan.
@@ -3201,7 +3201,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3225,7 +3225,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
@@ -3281,7 +3281,7 @@ class GetDrPlansDrPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4260,10 +4260,10 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
     def __init__(__self__, *,
                  associations: Sequence['outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  disassociate_trigger: int,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  life_cycle_details: str,
                  lifecycle_sub_state: str,
@@ -4273,14 +4273,14 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
                  peer_region: str,
                  role: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
         :param str life_cycle_details: A message describing the DR protection group's current state in more detail.
         :param str lifecycle_sub_state: A filter to return only DR protection groups that match the given lifecycle sub-state.
@@ -4290,7 +4290,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
         :param str peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         :param str role: The DR protection group Role.
         :param str state: A filter to return only DR protection groups that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param str time_updated: The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
@@ -4328,7 +4328,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4349,7 +4349,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
@@ -4429,7 +4429,7 @@ class GetDrProtectionGroupsDrProtectionGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

@@ -17,10 +17,10 @@ class ConnectionArgs:
                  catalog_id: pulumi.Input[str],
                  data_asset_key: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 properties: pulumi.Input[Mapping[str, Any]],
+                 properties: pulumi.Input[Mapping[str, pulumi.Input[str]]],
                  type_key: pulumi.Input[str],
                  description: Optional[pulumi.Input[str]] = None,
-                 enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enc_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_default: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a Connection resource.
@@ -33,7 +33,7 @@ class ConnectionArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: (Updatable) A description of the connection.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         """
         pulumi.set(__self__, "catalog_id", catalog_id)
@@ -86,11 +86,11 @@ class ConnectionArgs:
 
     @property
     @pulumi.getter
-    def properties(self) -> pulumi.Input[Mapping[str, Any]]:
+    def properties(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: pulumi.Input[Mapping[str, Any]]):
+    def properties(self, value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
         pulumi.set(self, "properties", value)
 
     @property
@@ -123,14 +123,14 @@ class ConnectionArgs:
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         """
         return pulumi.get(self, "enc_properties")
 
     @enc_properties.setter
-    def enc_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def enc_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "enc_properties", value)
 
     @property
@@ -154,11 +154,11 @@ class _ConnectionState:
                  data_asset_key: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enc_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  external_key: Optional[pulumi.Input[str]] = None,
                  is_default: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_status_updated: Optional[pulumi.Input[str]] = None,
@@ -173,7 +173,7 @@ class _ConnectionState:
         :param pulumi.Input[str] data_asset_key: Unique data asset key.
         :param pulumi.Input[str] description: (Updatable) A description of the connection.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         :param pulumi.Input[str] external_key: Unique external key of this object from the source system.
         :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         :param pulumi.Input[str] key: Unique connection key that is immutable.
@@ -286,14 +286,14 @@ class _ConnectionState:
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def enc_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         """
         return pulumi.get(self, "enc_properties")
 
     @enc_properties.setter
-    def enc_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def enc_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "enc_properties", value)
 
     @property
@@ -334,11 +334,11 @@ class _ConnectionState:
 
     @property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties", value)
 
     @property
@@ -439,9 +439,9 @@ class Connection(pulumi.CustomResource):
                  data_asset_key: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enc_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_default: Optional[pulumi.Input[bool]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  type_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -480,7 +480,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] data_asset_key: Unique data asset key.
         :param pulumi.Input[str] description: (Updatable) A description of the connection.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         :param pulumi.Input[str] type_key: The key of the object type. Type key's can be found via the '/types' endpoint.
                
@@ -543,9 +543,9 @@ class Connection(pulumi.CustomResource):
                  data_asset_key: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enc_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_default: Optional[pulumi.Input[bool]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  type_key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -600,11 +600,11 @@ class Connection(pulumi.CustomResource):
             data_asset_key: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            enc_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            enc_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             external_key: Optional[pulumi.Input[str]] = None,
             is_default: Optional[pulumi.Input[bool]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_status_updated: Optional[pulumi.Input[str]] = None,
@@ -624,7 +624,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] data_asset_key: Unique data asset key.
         :param pulumi.Input[str] description: (Updatable) A description of the connection.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] enc_properties: (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         :param pulumi.Input[str] external_key: Unique external key of this object from the source system.
         :param pulumi.Input[bool] is_default: (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
         :param pulumi.Input[str] key: Unique connection key that is immutable.
@@ -705,7 +705,7 @@ class Connection(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def enc_properties(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         """
@@ -737,7 +737,7 @@ class Connection(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def properties(self) -> pulumi.Output[Mapping[str, Any]]:
+    def properties(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "properties")
 
     @property

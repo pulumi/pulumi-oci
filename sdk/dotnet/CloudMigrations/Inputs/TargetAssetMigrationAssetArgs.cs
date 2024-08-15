@@ -109,26 +109,26 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         public Input<string>? SnapShotBucketName { get; set; }
 
         [Input("snapshots")]
-        private InputMap<object>? _snapshots;
+        private InputMap<string>? _snapshots;
 
         /// <summary>
         /// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> Snapshots
+        public InputMap<string> Snapshots
         {
-            get => _snapshots ?? (_snapshots = new InputMap<object>());
+            get => _snapshots ?? (_snapshots = new InputMap<string>());
             set => _snapshots = value;
         }
 
         [Input("sourceAssetData")]
-        private InputMap<object>? _sourceAssetData;
+        private InputMap<string>? _sourceAssetData;
 
         /// <summary>
         /// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> SourceAssetData
+        public InputMap<string> SourceAssetData
         {
-            get => _sourceAssetData ?? (_sourceAssetData = new InputMap<object>());
+            get => _sourceAssetData ?? (_sourceAssetData = new InputMap<string>());
             set => _sourceAssetData = value;
         }
 

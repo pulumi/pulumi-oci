@@ -3937,7 +3937,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -3947,7 +3947,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	// The options for a plan execution.
 	ExecutionOptions []GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOption `pulumi:"executionOptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions []GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecution `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
@@ -3967,7 +3967,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItem struct {
 	// A filter to return only DR plan executions that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -3993,7 +3993,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -4003,7 +4003,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	// The options for a plan execution.
 	ExecutionOptions GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionArrayInput `pulumi:"executionOptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionArrayInput `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
@@ -4023,7 +4023,7 @@ type GetDrPlanExecutionsDrPlanExecutionCollectionItemArgs struct {
 	// A filter to return only DR plan executions that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -4091,8 +4091,8 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) CompartmentId() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -4118,8 +4118,8 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) ExecutionOptions
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A list of groups executed in this DR plan execution.
@@ -4172,8 +4172,8 @@ func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) State() pulumi.S
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDrPlanExecutionsDrPlanExecutionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlanExecutionsDrPlanExecutionCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -5736,13 +5736,13 @@ type GetDrPlansDrPlanCollectionItem struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
@@ -5756,7 +5756,7 @@ type GetDrPlansDrPlanCollectionItem struct {
 	// A filter to return only DR plans that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -5780,13 +5780,13 @@ type GetDrPlansDrPlanCollectionItemArgs struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The OCID of the DR protection group. Mandatory query param.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	DrProtectionGroupId pulumi.StringInput `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
@@ -5800,7 +5800,7 @@ type GetDrPlansDrPlanCollectionItemArgs struct {
 	// A filter to return only DR plans that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -5866,8 +5866,8 @@ func (o GetDrPlansDrPlanCollectionItemOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o GetDrPlansDrPlanCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
@@ -5881,8 +5881,8 @@ func (o GetDrPlansDrPlanCollectionItemOutput) DrProtectionGroupId() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o GetDrPlansDrPlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
@@ -5916,8 +5916,8 @@ func (o GetDrPlansDrPlanCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDrPlansDrPlanCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDrPlansDrPlanCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -8250,12 +8250,12 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
-	DisassociateTrigger int                    `pulumi:"disassociateTrigger"`
+	DefinedTags         map[string]string `pulumi:"definedTags"`
+	DisassociateTrigger int               `pulumi:"disassociateTrigger"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	Id string `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
@@ -8275,7 +8275,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItem struct {
 	// A filter to return only DR protection groups that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -8298,12 +8298,12 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	// The ID (OCID) of the compartment in which to list resources.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags         pulumi.MapInput `pulumi:"definedTags"`
-	DisassociateTrigger pulumi.IntInput `pulumi:"disassociateTrigger"`
+	DefinedTags         pulumi.StringMapInput `pulumi:"definedTags"`
+	DisassociateTrigger pulumi.IntInput       `pulumi:"disassociateTrigger"`
 	// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
@@ -8323,7 +8323,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemArgs struct {
 	// A filter to return only DR protection groups that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -8393,10 +8393,8 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) CompartmentI
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisassociateTrigger() pulumi.IntOutput {
@@ -8409,10 +8407,8 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) DisplayName(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -8465,10 +8461,8 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

@@ -97,7 +97,7 @@ class GetObjectHeadResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         The metadata of the object
         """

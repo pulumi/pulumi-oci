@@ -377,14 +377,14 @@ class OccCapacityRequestPatchOperation(dict):
                  from_: str,
                  operation: str,
                  selection: str,
-                 value: Mapping[str, Any],
+                 value: Mapping[str, str],
                  position: Optional[str] = None,
                  selected_item: Optional[str] = None):
         """
         :param str from_: (Updatable)
         :param str operation: (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
         :param str selection: (Updatable)
-        :param Mapping[str, Any] value: (Updatable)
+        :param Mapping[str, str] value: (Updatable)
         :param str position: (Updatable)
         :param str selected_item: (Updatable)
         """
@@ -423,7 +423,7 @@ class OccCapacityRequestPatchOperation(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         """
         (Updatable)
         """
@@ -496,33 +496,33 @@ class GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResu
     def __init__(__self__, *,
                  catalog_state: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  metadata_details: Sequence['outputs.GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailResult'],
                  namespace: str,
                  occ_customer_group_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str catalog_state: Filter the list of availability catalogs based on the catalog state.
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Text information about the availability catalog.
         :param str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the availability catalog to filter the list of availability catalogs.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param Sequence['GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArgs'] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param str namespace: The namespace by which we would filter the list.
         :param str occ_customer_group_id: The customer group ocid by which we would filter the list.
         :param str state: The current lifecycle state of the customer group.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the availability catalog was created.
         :param str time_updated: The time when the availability catalog was last updated.
         """
@@ -560,7 +560,7 @@ class GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResu
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -584,7 +584,7 @@ class GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResu
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -640,7 +640,7 @@ class GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResu
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1001,35 +1001,35 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
                  base64encoded_catalog_details: str,
                  catalog_state: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  details: Sequence['outputs.GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailResult'],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  metadata_details: Sequence['outputs.GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailResult'],
                  namespace: str,
                  occ_customer_group_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str catalog_state: Filter the list of availability catalogs based on the catalog state.
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Text information about the availability catalog.
         :param Sequence['GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemDetailArgs'] details: Details about capacity available for  different resources in catalog.
         :param str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the availability catalog to filter the list of availability catalogs.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param Sequence['GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemMetadataDetailArgs'] metadata_details: Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
         :param str namespace: The namespace by which we would filter the list.
         :param str occ_customer_group_id: The customer group OCID to which the availability catalog belongs.
         :param str state: The current lifecycle state of the resource.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the availability catalog was created.
         :param str time_updated: The time when the availability catalog was last updated.
         """
@@ -1074,7 +1074,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1106,7 +1106,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1162,7 +1162,7 @@ class GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1412,7 +1412,7 @@ class GetOccCapacityRequestPatchOperationResult(dict):
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "position", position)
@@ -1447,7 +1447,7 @@ class GetOccCapacityRequestPatchOperationResult(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         return pulumi.get(self, "value")
 
 
@@ -1496,11 +1496,11 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
                  availability_domain: str,
                  compartment_id: str,
                  date_expected_capacity_handover: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  details: Sequence['outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailResult'],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  namespace: str,
@@ -1510,18 +1510,18 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
                  region: str,
                  request_state: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str availability_domain: The availability domain (AD) for which the capacity request was made.
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
         :param str date_expected_capacity_handover: The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Meaningful text about the capacity request.
         :param Sequence['GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArgs'] details: A list of resources requested as part of this request
         :param str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param str namespace: The namespace by which we would filter the list.
@@ -1530,7 +1530,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
         :param str region: The name of the region for which the capacity request was made.
         :param str request_state: The different states the capacity request goes through.
         :param str state: The current lifecycle state of the resource.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the capacity request was created.
         :param str time_updated: The time when the capacity request was updated.
         """
@@ -1581,7 +1581,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1613,7 +1613,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1690,7 +1690,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1816,7 +1816,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationResult
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "position", position)
@@ -1851,7 +1851,7 @@ class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationResult
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         return pulumi.get(self, "value")
 
 
@@ -1961,29 +1961,29 @@ class GetOccCustomerGroupsOccCustomerGroupCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  customers_lists: Sequence['outputs.GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
         :param Sequence['GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArgs'] customers_lists: A list containing all the customers that belong to this customer group
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: The description about the customer group.
         :param str display_name: A filter to return only the resources that match the entire display name. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A query filter to return the list result based on the customer group OCID. This is done for users who have INSPECT permission but do not have READ permission.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
         :param str state: The current lifecycle state of the resource.
         :param str status: A query filter to return the list result based on status.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the customer group was created.
         :param str time_updated: The time when the customer group was last updated.
         """
@@ -2019,7 +2019,7 @@ class GetOccCustomerGroupsOccCustomerGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2043,7 +2043,7 @@ class GetOccCustomerGroupsOccCustomerGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2083,7 +2083,7 @@ class GetOccCustomerGroupsOccCustomerGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

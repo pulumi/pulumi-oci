@@ -35,13 +35,13 @@ import (
 //				Name:        pulumi.Any(workspaceApplicationName),
 //				WorkspaceId: pulumi.Any(testWorkspace.Id),
 //				ModelType:   pulumi.Any(workspaceApplicationModelType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(workspaceApplicationDescription),
 //				DisplayName: pulumi.Any(workspaceApplicationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Key:          pulumi.Any(workspaceApplicationKey),
 //				ModelVersion: pulumi.Any(workspaceApplicationModelVersion),
@@ -84,7 +84,7 @@ type WorkspaceApplication struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas WorkspaceApplicationDependentObjectMetadataArrayOutput `pulumi:"dependentObjectMetadatas"`
 	// (Updatable) Detailed description for the object.
@@ -92,13 +92,13 @@ type WorkspaceApplication struct {
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationMetadataArrayOutput `pulumi:"metadatas"`
 	// (Updatable) The type of the application.
@@ -178,7 +178,7 @@ type workspaceApplicationState struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas []WorkspaceApplicationDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
 	// (Updatable) Detailed description for the object.
@@ -186,13 +186,13 @@ type workspaceApplicationState struct {
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceApplicationMetadata `pulumi:"metadatas"`
 	// (Updatable) The type of the application.
@@ -234,7 +234,7 @@ type WorkspaceApplicationState struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas WorkspaceApplicationDependentObjectMetadataArrayInput
 	// (Updatable) Detailed description for the object.
@@ -242,13 +242,13 @@ type WorkspaceApplicationState struct {
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
 	// (Updatable) Currently not used on application creation. Reserved for future.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput
+	KeyMap pulumi.StringMapInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationMetadataArrayInput
 	// (Updatable) The type of the application.
@@ -290,13 +290,13 @@ func (WorkspaceApplicationState) ElementType() reflect.Type {
 
 type workspaceApplicationArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// (Updatable) Currently not used on application creation. Reserved for future.
@@ -325,13 +325,13 @@ type workspaceApplicationArgs struct {
 // The set of arguments for constructing a WorkspaceApplication resource.
 type WorkspaceApplicationArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringInput
 	// (Updatable) Currently not used on application creation. Reserved for future.
@@ -455,8 +455,8 @@ func (o WorkspaceApplicationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o WorkspaceApplicationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o WorkspaceApplicationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A list of dependent objects in this patch.
@@ -477,8 +477,8 @@ func (o WorkspaceApplicationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o WorkspaceApplicationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o WorkspaceApplicationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -492,8 +492,8 @@ func (o WorkspaceApplicationOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o WorkspaceApplicationOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplication) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
+func (o WorkspaceApplicationOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplication) pulumi.StringMapOutput { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

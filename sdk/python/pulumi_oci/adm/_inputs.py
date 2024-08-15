@@ -306,7 +306,7 @@ class RemediationRecipeScmConfigurationArgs:
 class RemediationRecipeVerifyConfigurationArgs:
     def __init__(__self__, *,
                  build_service_type: pulumi.Input[str],
-                 additional_parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 additional_parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  jenkins_url: Optional[pulumi.Input[str]] = None,
                  job_name: Optional[pulumi.Input[str]] = None,
                  pat_secret_id: Optional[pulumi.Input[str]] = None,
@@ -317,7 +317,7 @@ class RemediationRecipeVerifyConfigurationArgs:
                  workflow_name: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] build_service_type: (Updatable) The type of Build Service.
-        :param pulumi.Input[Mapping[str, Any]] additional_parameters: (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_parameters: (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
         :param pulumi.Input[str] jenkins_url: (Updatable) The URL that locates the Jenkins pipeline.
         :param pulumi.Input[str] job_name: (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
         :param pulumi.Input[str] pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
@@ -361,14 +361,14 @@ class RemediationRecipeVerifyConfigurationArgs:
 
     @property
     @pulumi.getter(name="additionalParameters")
-    def additional_parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def additional_parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
         """
         return pulumi.get(self, "additional_parameters")
 
     @additional_parameters.setter
-    def additional_parameters(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def additional_parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "additional_parameters", value)
 
     @property

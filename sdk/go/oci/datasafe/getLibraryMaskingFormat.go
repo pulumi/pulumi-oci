@@ -61,7 +61,7 @@ type GetLibraryMaskingFormatResult struct {
 	// The OCID of the compartment that contains the library masking format.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the format entry.
 	Description string `pulumi:"description"`
 	// The display name of the library masking format.
@@ -69,7 +69,7 @@ type GetLibraryMaskingFormatResult struct {
 	// An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries []GetLibraryMaskingFormatFormatEntry `pulumi:"formatEntries"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the library masking format.
 	Id string `pulumi:"id"`
 	// The OCID of the library masking format.
@@ -130,8 +130,8 @@ func (o GetLibraryMaskingFormatResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLibraryMaskingFormatResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetLibraryMaskingFormatResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the format entry.
@@ -150,8 +150,8 @@ func (o GetLibraryMaskingFormatResultOutput) FormatEntries() GetLibraryMaskingFo
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetLibraryMaskingFormatResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetLibraryMaskingFormatResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the library masking format.

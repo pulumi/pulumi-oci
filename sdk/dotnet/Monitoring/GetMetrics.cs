@@ -110,14 +110,14 @@ namespace Pulumi.Oci.Monitoring
         public bool? CompartmentIdInSubtree { get; set; }
 
         [Input("dimensionFilters")]
-        private Dictionary<string, object>? _dimensionFilters;
+        private Dictionary<string, string>? _dimensionFilters;
 
         /// <summary>
         /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
-        public Dictionary<string, object> DimensionFilters
+        public Dictionary<string, string> DimensionFilters
         {
-            get => _dimensionFilters ?? (_dimensionFilters = new Dictionary<string, object>());
+            get => _dimensionFilters ?? (_dimensionFilters = new Dictionary<string, string>());
             set => _dimensionFilters = value;
         }
 
@@ -182,14 +182,14 @@ namespace Pulumi.Oci.Monitoring
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
         [Input("dimensionFilters")]
-        private InputMap<object>? _dimensionFilters;
+        private InputMap<string>? _dimensionFilters;
 
         /// <summary>
         /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
-        public InputMap<object> DimensionFilters
+        public InputMap<string> DimensionFilters
         {
-            get => _dimensionFilters ?? (_dimensionFilters = new InputMap<object>());
+            get => _dimensionFilters ?? (_dimensionFilters = new InputMap<string>());
             set => _dimensionFilters = value;
         }
 
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
-        public readonly ImmutableDictionary<string, object>? DimensionFilters;
+        public readonly ImmutableDictionary<string, string>? DimensionFilters;
         public readonly ImmutableArray<Outputs.GetMetricsFilterResult> Filters;
         public readonly ImmutableArray<string> GroupBies;
         /// <summary>
@@ -278,7 +278,7 @@ namespace Pulumi.Oci.Monitoring
 
             bool? compartmentIdInSubtree,
 
-            ImmutableDictionary<string, object>? dimensionFilters,
+            ImmutableDictionary<string, string>? dimensionFilters,
 
             ImmutableArray<Outputs.GetMetricsFilterResult> filters,
 

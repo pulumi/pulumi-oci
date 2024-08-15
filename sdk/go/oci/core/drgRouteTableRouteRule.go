@@ -56,7 +56,7 @@ type DrgRouteTableRouteRule struct {
 	pulumi.CustomResourceState
 
 	// Additional properties for the route, computed by the service.
-	Attributes pulumi.MapOutput `pulumi:"attributes"`
+	Attributes pulumi.StringMapOutput `pulumi:"attributes"`
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	//
 	// Potential values:
@@ -128,7 +128,7 @@ func GetDrgRouteTableRouteRule(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
 type drgRouteTableRouteRuleState struct {
 	// Additional properties for the route, computed by the service.
-	Attributes map[string]interface{} `pulumi:"attributes"`
+	Attributes map[string]string `pulumi:"attributes"`
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	//
 	// Potential values:
@@ -159,7 +159,7 @@ type drgRouteTableRouteRuleState struct {
 
 type DrgRouteTableRouteRuleState struct {
 	// Additional properties for the route, computed by the service.
-	Attributes pulumi.MapInput
+	Attributes pulumi.StringMapInput
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	//
 	// Potential values:
@@ -323,8 +323,8 @@ func (o DrgRouteTableRouteRuleOutput) ToDrgRouteTableRouteRuleOutputWithContext(
 }
 
 // Additional properties for the route, computed by the service.
-func (o DrgRouteTableRouteRuleOutput) Attributes() pulumi.MapOutput {
-	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.MapOutput { return v.Attributes }).(pulumi.MapOutput)
+func (o DrgRouteTableRouteRuleOutput) Attributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DrgRouteTableRouteRule) pulumi.StringMapOutput { return v.Attributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.

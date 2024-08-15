@@ -61,11 +61,11 @@ type LookupMediaWorkflowResult struct {
 	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -81,7 +81,7 @@ type LookupMediaWorkflowResult struct {
 	// The current state of the MediaWorkflow.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks []GetMediaWorkflowTask `pulumi:"tasks"`
 	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
@@ -136,8 +136,8 @@ func (o LookupMediaWorkflowResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMediaWorkflowResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMediaWorkflowResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -146,8 +146,8 @@ func (o LookupMediaWorkflowResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMediaWorkflowResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMediaWorkflowResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -189,8 +189,8 @@ func (o LookupMediaWorkflowResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMediaWorkflowResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMediaWorkflowResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMediaWorkflowResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.

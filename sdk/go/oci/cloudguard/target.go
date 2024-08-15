@@ -35,12 +35,12 @@ import (
 //				DisplayName:        pulumi.Any(targetDisplayName),
 //				TargetResourceId:   pulumi.Any(testResource.Id),
 //				TargetResourceType: pulumi.Any(targetTargetResourceType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(targetDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				State: pulumi.Any(targetState),
 //				TargetDetectorRecipes: cloudguard.TargetTargetDetectorRecipeArray{
@@ -105,7 +105,7 @@ type Target struct {
 	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The target description.
 	//
 	// Avoid entering confidential information.
@@ -117,7 +117,7 @@ type Target struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -127,7 +127,7 @@ type Target struct {
 	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Details specific to the target type.
 	TargetDetails TargetTargetDetailArrayOutput `pulumi:"targetDetails"`
 	// (Updatable) List of detector recipes to attach to target
@@ -189,7 +189,7 @@ type targetState struct {
 	// Compartment OCID where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The target description.
 	//
 	// Avoid entering confidential information.
@@ -201,7 +201,7 @@ type targetState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -211,7 +211,7 @@ type targetState struct {
 	// (Updatable) The enablement state of the detector rule
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details specific to the target type.
 	TargetDetails []TargetTargetDetail `pulumi:"targetDetails"`
 	// (Updatable) List of detector recipes to attach to target
@@ -232,7 +232,7 @@ type TargetState struct {
 	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The target description.
 	//
 	// Avoid entering confidential information.
@@ -244,7 +244,7 @@ type TargetState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
 	// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -254,7 +254,7 @@ type TargetState struct {
 	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Details specific to the target type.
 	TargetDetails TargetTargetDetailArrayInput
 	// (Updatable) List of detector recipes to attach to target
@@ -279,7 +279,7 @@ type targetArgs struct {
 	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The target description.
 	//
 	// Avoid entering confidential information.
@@ -291,7 +291,7 @@ type targetArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The enablement state of the detector rule
 	State *string `pulumi:"state"`
 	// (Updatable) List of detector recipes to attach to target
@@ -309,7 +309,7 @@ type TargetArgs struct {
 	// Compartment OCID where the resource is created
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The target description.
 	//
 	// Avoid entering confidential information.
@@ -321,7 +321,7 @@ type TargetArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The enablement state of the detector rule
 	State pulumi.StringPtrInput
 	// (Updatable) List of detector recipes to attach to target
@@ -427,8 +427,8 @@ func (o TargetOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Target) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The target description.
@@ -448,8 +448,8 @@ func (o TargetOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o TargetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Target) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of inherited compartments
@@ -473,8 +473,8 @@ func (o TargetOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o TargetOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Target) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o TargetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Target) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details specific to the target type.

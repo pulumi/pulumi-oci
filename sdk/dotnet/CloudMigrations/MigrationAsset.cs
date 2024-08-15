@@ -108,7 +108,7 @@ namespace Pulumi.Oci.CloudMigrations
         /// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("snapshots")]
-        public Output<ImmutableDictionary<string, object>> Snapshots { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Snapshots { get; private set; } = null!;
 
         /// <summary>
         /// OCID that is referenced to an asset for an inventory.
@@ -351,14 +351,14 @@ namespace Pulumi.Oci.CloudMigrations
         public Input<string>? SnapShotBucketName { get; set; }
 
         [Input("snapshots")]
-        private InputMap<object>? _snapshots;
+        private InputMap<string>? _snapshots;
 
         /// <summary>
         /// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> Snapshots
+        public InputMap<string> Snapshots
         {
-            get => _snapshots ?? (_snapshots = new InputMap<object>());
+            get => _snapshots ?? (_snapshots = new InputMap<string>());
             set => _snapshots = value;
         }
 

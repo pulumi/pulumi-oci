@@ -191,9 +191,9 @@ class GetBastionsBastionResult(dict):
                  bastion_type: str,
                  client_cidr_block_allow_lists: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  dns_proxy_status: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  max_session_ttl_in_seconds: int,
@@ -203,7 +203,7 @@ class GetBastionsBastionResult(dict):
                  private_endpoint_ip_address: str,
                  state: str,
                  static_jump_host_ip_addresses: Sequence[str],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  target_subnet_id: str,
                  target_vcn_id: str,
                  time_created: str,
@@ -212,9 +212,9 @@ class GetBastionsBastionResult(dict):
         :param str bastion_type: The type of bastion.
         :param Sequence[str] client_cidr_block_allow_lists: A list of address ranges in CIDR notation that you want to allow to connect to sessions hosted by this bastion.
         :param str compartment_id: The unique identifier (OCID) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str dns_proxy_status: Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The unique identifier (OCID) of the bastion, which can't be changed after creation.
         :param str lifecycle_details: A message describing the current state in more detail.
         :param int max_session_ttl_in_seconds: The maximum amount of time that any session on the bastion can remain active.
@@ -224,7 +224,7 @@ class GetBastionsBastionResult(dict):
         :param str private_endpoint_ip_address: The private IP address of the created private endpoint.
         :param str state: The current state of the bastion.
         :param Sequence[str] static_jump_host_ip_addresses: A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str target_subnet_id: The unique identifier (OCID) of the subnet that the bastion connects to.
         :param str target_vcn_id: The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
         :param str time_created: The time the bastion was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -277,7 +277,7 @@ class GetBastionsBastionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -293,7 +293,7 @@ class GetBastionsBastionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -373,7 +373,7 @@ class GetBastionsBastionResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -587,7 +587,7 @@ class GetSessionsSessionResult(dict):
                  key_type: str,
                  lifecycle_details: str,
                  session_ttl_in_seconds: int,
-                 ssh_metadata: Mapping[str, Any],
+                 ssh_metadata: Mapping[str, str],
                  state: str,
                  target_resource_details: Sequence['outputs.GetSessionsSessionTargetResourceDetailResult'],
                  time_created: str,
@@ -603,7 +603,7 @@ class GetSessionsSessionResult(dict):
         :param str key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param str lifecycle_details: A message describing the current session state in more detail.
         :param int session_ttl_in_seconds: The amount of time the session can remain active.
-        :param Mapping[str, Any] ssh_metadata: The connection message for the session.
+        :param Mapping[str, str] ssh_metadata: The connection message for the session.
         :param str state: The current state of the session.
         :param Sequence['GetSessionsSessionTargetResourceDetailArgs'] target_resource_details: Details about a bastion session's target resource.
         :param str time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -707,7 +707,7 @@ class GetSessionsSessionResult(dict):
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Mapping[str, Any]:
+    def ssh_metadata(self) -> Mapping[str, str]:
         """
         The connection message for the session.
         """

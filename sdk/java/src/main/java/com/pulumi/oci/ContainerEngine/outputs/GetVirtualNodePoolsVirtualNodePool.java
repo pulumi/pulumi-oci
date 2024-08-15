@@ -11,7 +11,6 @@ import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePool
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolTaint;
 import com.pulumi.oci.ContainerEngine.outputs.GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Display name of the virtual node pool. This is a non-unique value.
      * 
@@ -43,7 +42,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the virtual node pool.
      * 
@@ -93,7 +92,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return A taint is a collection of &lt;key, value, effect&gt;. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
      * 
@@ -135,7 +134,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -149,7 +148,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -219,7 +218,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -265,9 +264,9 @@ public final class GetVirtualNodePoolsVirtualNodePool {
     public static final class Builder {
         private String clusterId;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetVirtualNodePoolsVirtualNodePoolInitialVirtualNodeLabel> initialVirtualNodeLabels;
         private String kubernetesVersion;
@@ -277,7 +276,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
         private List<GetVirtualNodePoolsVirtualNodePoolPodConfiguration> podConfigurations;
         private Integer size;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private List<GetVirtualNodePoolsVirtualNodePoolTaint> taints;
         private String timeCreated;
         private String timeUpdated;
@@ -325,7 +324,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "definedTags");
             }
@@ -341,7 +340,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "freeformTags");
             }
@@ -433,7 +432,7 @@ public final class GetVirtualNodePoolsVirtualNodePool {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetVirtualNodePoolsVirtualNodePool", "systemTags");
             }

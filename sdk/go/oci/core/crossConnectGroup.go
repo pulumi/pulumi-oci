@@ -47,12 +47,12 @@ import (
 //			_, err := Core.NewCrossConnectGroup(ctx, "test_cross_connect_group", &Core.CrossConnectGroupArgs{
 //				CompartmentId:         pulumi.Any(compartmentId),
 //				CustomerReferenceName: pulumi.Any(crossConnectGroupCustomerReferenceName),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(crossConnectGroupDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				MacsecProperties: &core.CrossConnectGroupMacsecPropertiesArgs{
 //					State:                       pulumi.Any(crossConnectGroupMacsecPropertiesState),
@@ -88,11 +88,11 @@ type CrossConnectGroup struct {
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
 	CustomerReferenceName pulumi.StringOutput `pulumi:"customerReferenceName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesOutput `pulumi:"macsecProperties"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -143,11 +143,11 @@ type crossConnectGroupState struct {
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
 	CustomerReferenceName *string `pulumi:"customerReferenceName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties *CrossConnectGroupMacsecProperties `pulumi:"macsecProperties"`
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -166,11 +166,11 @@ type CrossConnectGroupState struct {
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
 	CustomerReferenceName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesPtrInput
 	// The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -193,11 +193,11 @@ type crossConnectGroupArgs struct {
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
 	CustomerReferenceName *string `pulumi:"customerReferenceName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties *CrossConnectGroupMacsecProperties `pulumi:"macsecProperties"`
 }
@@ -209,11 +209,11 @@ type CrossConnectGroupArgs struct {
 	// (Updatable) A reference name or identifier for the physical fiber connection that this cross-connect group uses.
 	CustomerReferenceName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Properties used to configure MACsec (if capable).
 	MacsecProperties CrossConnectGroupMacsecPropertiesPtrInput
 }
@@ -316,8 +316,8 @@ func (o CrossConnectGroupOutput) CustomerReferenceName() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o CrossConnectGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CrossConnectGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CrossConnectGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -326,8 +326,8 @@ func (o CrossConnectGroupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CrossConnectGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CrossConnectGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CrossConnectGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CrossConnectGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Properties used to configure MACsec (if capable).

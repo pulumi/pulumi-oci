@@ -73,7 +73,7 @@ namespace Pulumi.Oci.DataIntegration
         /// Contains key of the error
         /// </summary>
         [Output("errorMessages")]
-        public Output<ImmutableDictionary<string, object>> ErrorMessages { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> ErrorMessages { get; private set; } = null!;
 
         /// <summary>
         /// The array of exported object details.
@@ -312,14 +312,14 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? CreatedBy { get; set; }
 
         [Input("errorMessages")]
-        private InputMap<object>? _errorMessages;
+        private InputMap<string>? _errorMessages;
 
         /// <summary>
         /// Contains key of the error
         /// </summary>
-        public InputMap<object> ErrorMessages
+        public InputMap<string> ErrorMessages
         {
-            get => _errorMessages ?? (_errorMessages = new InputMap<object>());
+            get => _errorMessages ?? (_errorMessages = new InputMap<string>());
             set => _errorMessages = value;
         }
 

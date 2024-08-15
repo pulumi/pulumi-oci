@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
+        public readonly ImmutableDictionary<string, string>? EnvironmentVariables;
         /// <summary>
         /// (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string environmentConfigurationType,
 
-            ImmutableDictionary<string, object>? environmentVariables,
+            ImmutableDictionary<string, string>? environmentVariables,
 
             int? healthCheckPort,
 

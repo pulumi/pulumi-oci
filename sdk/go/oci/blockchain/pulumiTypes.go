@@ -2526,14 +2526,14 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItem struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 	ComputeShape string `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Platform Instance Description
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
 	DisplayName     string `pulumi:"displayName"`
 	FederatedUserId string `pulumi:"federatedUserId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos []GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfo `pulumi:"hostOcpuUtilizationInfos"`
 	// unique identifier that is immutable on creation
@@ -2593,14 +2593,14 @@ type GetBlockchainPlatformsBlockchainPlatformCollectionItemArgs struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 	ComputeShape pulumi.StringInput `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Platform Instance Description
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
 	DisplayName     pulumi.StringInput `pulumi:"displayName"`
 	FederatedUserId pulumi.StringInput `pulumi:"federatedUserId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArrayInput `pulumi:"hostOcpuUtilizationInfos"`
 	// unique identifier that is immutable on creation
@@ -2713,10 +2713,8 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) ComputeSha
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBlockchainPlatformsBlockchainPlatformCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBlockchainPlatformsBlockchainPlatformCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Platform Instance Description
@@ -2734,10 +2732,10 @@ func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) FederatedU
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBlockchainPlatformsBlockchainPlatformCollectionItem) map[string]interface{} {
+func (o GetBlockchainPlatformsBlockchainPlatformCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBlockchainPlatformsBlockchainPlatformCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // List of OcpuUtilization for all hosts

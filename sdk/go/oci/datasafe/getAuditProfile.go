@@ -68,13 +68,13 @@ type LookupAuditProfileResult struct {
 	// The OCID of the compartment that contains the audit.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
 	// The display name of the audit profile.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id string `pulumi:"id"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
@@ -90,7 +90,7 @@ type LookupAuditProfileResult struct {
 	// The current state of the audit profile.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -162,8 +162,8 @@ func (o LookupAuditProfileResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAuditProfileResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditProfileResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAuditProfileResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditProfileResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the audit profile.
@@ -177,8 +177,8 @@ func (o LookupAuditProfileResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupAuditProfileResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditProfileResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAuditProfileResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditProfileResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit profile.
@@ -217,8 +217,8 @@ func (o LookupAuditProfileResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAuditProfileResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditProfileResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAuditProfileResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditProfileResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe target for which the audit profile is created.

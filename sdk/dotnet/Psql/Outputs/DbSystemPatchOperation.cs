@@ -27,7 +27,7 @@ namespace Pulumi.Oci.Psql.Outputs
         /// <summary>
         /// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Value;
+        public readonly ImmutableDictionary<string, string>? Value;
 
         [OutputConstructor]
         private DbSystemPatchOperation(
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Psql.Outputs
 
             string selection,
 
-            ImmutableDictionary<string, object>? value)
+            ImmutableDictionary<string, string>? value)
         {
             From = from;
             Operation = operation;

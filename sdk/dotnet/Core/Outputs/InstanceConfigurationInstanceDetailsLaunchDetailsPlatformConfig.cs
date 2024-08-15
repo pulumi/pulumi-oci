@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Instance Platform Configuration Configuration Map for flexible setting input.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? ConfigMap;
+        public readonly ImmutableDictionary<string, string>? ConfigMap;
         /// <summary>
         /// Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Core.Outputs
         private InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(
             bool? areVirtualInstructionsEnabled,
 
-            ImmutableDictionary<string, object>? configMap,
+            ImmutableDictionary<string, string>? configMap,
 
             bool? isAccessControlServiceEnabled,
 

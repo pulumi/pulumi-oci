@@ -70,7 +70,7 @@ type LookupBudgetResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the budget.
 	Description string `pulumi:"description"`
 	// The display name of the budget. Avoid entering confidential information.
@@ -80,7 +80,7 @@ type LookupBudgetResult struct {
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend float64 `pulumi:"forecastedSpend"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the budget.
 	Id string `pulumi:"id"`
 	// The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
@@ -177,8 +177,8 @@ func (o LookupBudgetResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupBudgetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBudgetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBudgetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBudgetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the budget.
@@ -202,8 +202,8 @@ func (o LookupBudgetResultOutput) ForecastedSpend() pulumi.Float64Output {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupBudgetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBudgetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBudgetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBudgetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the budget.

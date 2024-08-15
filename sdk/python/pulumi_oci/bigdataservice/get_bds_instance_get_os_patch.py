@@ -80,7 +80,7 @@ class GetBdsInstanceGetOsPatchResult:
 
     @property
     @pulumi.getter(name="minCompatibleOdhVersionMap")
-    def min_compatible_odh_version_map(self) -> Mapping[str, Any]:
+    def min_compatible_odh_version_map(self) -> Mapping[str, str]:
         """
         Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
         """

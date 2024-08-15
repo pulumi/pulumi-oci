@@ -2563,17 +2563,17 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionArrayOutput)
 
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
+	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString string `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 	Id string `pulumi:"id"`
 	// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
@@ -2593,7 +2593,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem struct {
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
@@ -2621,17 +2621,17 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemInput inter
 
 type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct {
 	// The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties pulumi.MapInput `pulumi:"advancedProperties"`
+	AdvancedProperties pulumi.StringMapInput `pulumi:"advancedProperties"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The connect descriptor or Easy Connect Naming method used to connect to the database.
 	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
@@ -2651,7 +2651,7 @@ type GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemArgs struct
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
@@ -2718,10 +2718,10 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 }
 
 // The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) AdvancedProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) AdvancedProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]string {
 		return v.AdvancedProperties
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -2739,10 +2739,10 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire specified display name.
@@ -2751,10 +2751,10 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
@@ -2817,10 +2817,10 @@ func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) 
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the Database Tools connection was created. An RFC3339 formatted datetime string.
@@ -4012,13 +4012,13 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem 
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the Database Tools Endpoint Service.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4028,7 +4028,7 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem 
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
@@ -4050,13 +4050,13 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemA
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the Database Tools Endpoint Service.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4066,7 +4066,7 @@ type GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemA
 	// A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
@@ -4132,10 +4132,10 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A description of the Database Tools Endpoint Service.
@@ -4153,10 +4153,10 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
@@ -4186,10 +4186,10 @@ func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionIt
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
@@ -4759,7 +4759,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the Database Tools private endpoint.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire specified display name.
@@ -4769,7 +4769,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId string `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4789,7 +4789,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem 
 	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
@@ -4815,7 +4815,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the Database Tools private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire specified display name.
@@ -4825,7 +4825,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	// A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
 	EndpointServiceId pulumi.StringInput `pulumi:"endpointServiceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4845,7 +4845,7 @@ type GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemA
 	// A filter to return only resources their `subnetId` matches the specified `subnetId`.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
@@ -4920,10 +4920,10 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A description of the Database Tools private endpoint.
@@ -4955,10 +4955,10 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
@@ -5023,10 +5023,10 @@ func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionIt
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string

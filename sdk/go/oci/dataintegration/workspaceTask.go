@@ -47,7 +47,7 @@ type WorkspaceTask struct {
 	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceTaskMetadataArrayOutput `pulumi:"metadatas"`
 	// (Updatable) The type of the task.
@@ -148,7 +148,7 @@ type workspaceTaskState struct {
 	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceTaskMetadata `pulumi:"metadatas"`
 	// (Updatable) The type of the task.
@@ -208,7 +208,7 @@ type WorkspaceTaskState struct {
 	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput
+	KeyMap pulumi.StringMapInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceTaskMetadataArrayInput
 	// (Updatable) The type of the task.
@@ -497,8 +497,8 @@ func (o WorkspaceTaskOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o WorkspaceTaskOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceTask) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
+func (o WorkspaceTaskOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceTask) pulumi.StringMapOutput { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

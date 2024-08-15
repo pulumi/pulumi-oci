@@ -43,12 +43,12 @@ import (
 //				FusionEnvironmentFamilyId: pulumi.Any(testFusionEnvironmentFamily.Id),
 //				FusionEnvironmentType:     pulumi.Any(fusionEnvironmentFusionEnvironmentType),
 //				AdditionalLanguagePacks:   pulumi.Any(fusionEnvironmentAdditionalLanguagePacks),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DnsPrefix: pulumi.Any(fusionEnvironmentDnsPrefix),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				KmsKeyId: pulumi.Any(testKey.Id),
 //				MaintenancePolicy: &fusionapps.FusionEnvironmentMaintenancePolicyArgs{
@@ -96,7 +96,7 @@ type FusionEnvironment struct {
 	// The credentials for the Fusion Applications service administrator.
 	CreateFusionEnvironmentAdminUserDetails FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutput `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// DNS prefix.
@@ -104,7 +104,7 @@ type FusionEnvironment struct {
 	// The IDCS domain created for the fusion instance
 	DomainId pulumi.StringOutput `pulumi:"domainId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
 	FusionEnvironmentFamilyId pulumi.StringOutput `pulumi:"fusionEnvironmentFamilyId"`
 	// The type of environment. Valid values are Production, Test, or Development.
@@ -199,7 +199,7 @@ type fusionEnvironmentState struct {
 	// The credentials for the Fusion Applications service administrator.
 	CreateFusionEnvironmentAdminUserDetails *FusionEnvironmentCreateFusionEnvironmentAdminUserDetails `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// DNS prefix.
@@ -207,7 +207,7 @@ type fusionEnvironmentState struct {
 	// The IDCS domain created for the fusion instance
 	DomainId *string `pulumi:"domainId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
 	FusionEnvironmentFamilyId *string `pulumi:"fusionEnvironmentFamilyId"`
 	// The type of environment. Valid values are Production, Test, or Development.
@@ -258,7 +258,7 @@ type FusionEnvironmentState struct {
 	// The credentials for the Fusion Applications service administrator.
 	CreateFusionEnvironmentAdminUserDetails FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// DNS prefix.
@@ -266,7 +266,7 @@ type FusionEnvironmentState struct {
 	// The IDCS domain created for the fusion instance
 	DomainId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
 	FusionEnvironmentFamilyId pulumi.StringPtrInput
 	// The type of environment. Valid values are Production, Test, or Development.
@@ -319,13 +319,13 @@ type fusionEnvironmentArgs struct {
 	// The credentials for the Fusion Applications service administrator.
 	CreateFusionEnvironmentAdminUserDetails FusionEnvironmentCreateFusionEnvironmentAdminUserDetails `pulumi:"createFusionEnvironmentAdminUserDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName string `pulumi:"displayName"`
 	// DNS prefix.
 	DnsPrefix *string `pulumi:"dnsPrefix"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
 	FusionEnvironmentFamilyId string `pulumi:"fusionEnvironmentFamilyId"`
 	// The type of environment. Valid values are Production, Test, or Development.
@@ -347,13 +347,13 @@ type FusionEnvironmentArgs struct {
 	// The credentials for the Fusion Applications service administrator.
 	CreateFusionEnvironmentAdminUserDetails FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) FusionEnvironment Identifier can be renamed.
 	DisplayName pulumi.StringInput
 	// DNS prefix.
 	DnsPrefix pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
 	FusionEnvironmentFamilyId pulumi.StringInput
 	// The type of environment. Valid values are Production, Test, or Development.
@@ -476,8 +476,8 @@ func (o FusionEnvironmentOutput) CreateFusionEnvironmentAdminUserDetails() Fusio
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o FusionEnvironmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) FusionEnvironment Identifier can be renamed.
@@ -496,8 +496,8 @@ func (o FusionEnvironmentOutput) DomainId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o FusionEnvironmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FusionEnvironment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o FusionEnvironmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FusionEnvironment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.

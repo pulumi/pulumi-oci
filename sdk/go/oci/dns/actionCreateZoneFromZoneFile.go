@@ -62,13 +62,13 @@ type ActionCreateZoneFromZoneFile struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails pulumi.StringOutput `pulumi:"createZoneFromZoneFileDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ActionCreateZoneFromZoneFileExternalDownstreamArrayOutput `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters ActionCreateZoneFromZoneFileExternalMasterArrayOutput `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// The name of the zone.
@@ -139,13 +139,13 @@ type actionCreateZoneFromZoneFileState struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails *string `pulumi:"createZoneFromZoneFileDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ActionCreateZoneFromZoneFileExternalDownstream `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters []ActionCreateZoneFromZoneFileExternalMaster `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
 	// The name of the zone.
@@ -181,13 +181,13 @@ type ActionCreateZoneFromZoneFileState struct {
 	// The zone file contents.
 	CreateZoneFromZoneFileDetails pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ActionCreateZoneFromZoneFileExternalDownstreamArrayInput
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters ActionCreateZoneFromZoneFileExternalMasterArrayInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
 	// The name of the zone.
@@ -348,8 +348,8 @@ func (o ActionCreateZoneFromZoneFileOutput) CreateZoneFromZoneFileDetails() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ActionCreateZoneFromZoneFileOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ActionCreateZoneFromZoneFileOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -367,8 +367,8 @@ func (o ActionCreateZoneFromZoneFileOutput) ExternalMasters() ActionCreateZoneFr
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ActionCreateZoneFromZoneFileOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ActionCreateZoneFromZoneFileOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ActionCreateZoneFromZoneFile) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.

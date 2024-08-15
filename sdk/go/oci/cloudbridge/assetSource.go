@@ -43,13 +43,13 @@ import (
 //				VcenterEndpoint:               pulumi.Any(assetSourceVcenterEndpoint),
 //				AreHistoricalMetricsCollected: pulumi.Any(assetSourceAreHistoricalMetricsCollected),
 //				AreRealtimeMetricsCollected:   pulumi.Any(assetSourceAreRealtimeMetricsCollected),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DiscoveryScheduleId: pulumi.Any(testDiscoverySchedule.Id),
 //				DisplayName:         pulumi.Any(assetSourceDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				ReplicationCredentials: &cloudbridge.AssetSourceReplicationCredentialsArgs{
 //					SecretId: pulumi.Any(testSecret.Id),
@@ -85,7 +85,7 @@ type AssetSource struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Credentials for an asset source.
 	DiscoveryCredentials AssetSourceDiscoveryCredentialsOutput `pulumi:"discoveryCredentials"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be attached to the created asset.
@@ -95,7 +95,7 @@ type AssetSource struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringOutput `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringOutput `pulumi:"inventoryId"`
 	// The detailed state of the asset source.
@@ -105,7 +105,7 @@ type AssetSource struct {
 	// The current state of the asset source.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the asset source was created in the RFC3339 format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The point in time that the asset source was last updated in the RFC3339 format.
@@ -179,7 +179,7 @@ type assetSourceState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Credentials for an asset source.
 	DiscoveryCredentials *AssetSourceDiscoveryCredentials `pulumi:"discoveryCredentials"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be attached to the created asset.
@@ -189,7 +189,7 @@ type assetSourceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId *string `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId *string `pulumi:"inventoryId"`
 	// The detailed state of the asset source.
@@ -199,7 +199,7 @@ type assetSourceState struct {
 	// The current state of the asset source.
 	State *string `pulumi:"state"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the asset source was created in the RFC3339 format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The point in time that the asset source was last updated in the RFC3339 format.
@@ -223,7 +223,7 @@ type AssetSourceState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Credentials for an asset source.
 	DiscoveryCredentials AssetSourceDiscoveryCredentialsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be attached to the created asset.
@@ -233,7 +233,7 @@ type AssetSourceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringPtrInput
 	// The detailed state of the asset source.
@@ -243,7 +243,7 @@ type AssetSourceState struct {
 	// The current state of the asset source.
 	State pulumi.StringPtrInput
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the asset source was created in the RFC3339 format.
 	TimeCreated pulumi.StringPtrInput
 	// The point in time that the asset source was last updated in the RFC3339 format.
@@ -271,7 +271,7 @@ type assetSourceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Credentials for an asset source.
 	DiscoveryCredentials AssetSourceDiscoveryCredentials `pulumi:"discoveryCredentials"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be attached to the created asset.
@@ -281,13 +281,13 @@ type assetSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId string `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId string `pulumi:"inventoryId"`
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials *AssetSourceReplicationCredentials `pulumi:"replicationCredentials"`
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Asset source type.
 	Type string `pulumi:"type"`
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
@@ -308,7 +308,7 @@ type AssetSourceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Credentials for an asset source.
 	DiscoveryCredentials AssetSourceDiscoveryCredentialsInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be attached to the created asset.
@@ -318,13 +318,13 @@ type AssetSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
 	EnvironmentId pulumi.StringInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
 	InventoryId pulumi.StringInput
 	// (Updatable) Credentials for an asset source.
 	ReplicationCredentials AssetSourceReplicationCredentialsPtrInput
 	// (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Asset source type.
 	Type pulumi.StringInput
 	// (Updatable) Endpoint for VMware asset discovery and replication in the form of ```https://<host>:<port>/sdk```
@@ -442,8 +442,8 @@ func (o AssetSourceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o AssetSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AssetSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AssetSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Credentials for an asset source.
@@ -467,8 +467,8 @@ func (o AssetSourceOutput) EnvironmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o AssetSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AssetSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AssetSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
@@ -492,8 +492,8 @@ func (o AssetSourceOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o AssetSourceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AssetSource) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AssetSourceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AssetSource) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the asset source was created in the RFC3339 format.

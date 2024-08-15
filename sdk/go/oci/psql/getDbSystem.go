@@ -73,14 +73,14 @@ type LookupDbSystemResult struct {
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the database instance node.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the database instance node. Avoid entering confidential information.
 	DisplayName    string  `pulumi:"displayName"`
 	ExcludedFields *string `pulumi:"excludedFields"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the database instance node. Immutable on creation.
 	Id string `pulumi:"id"`
 	// Count of instances, or nodes, in the database system.
@@ -108,7 +108,7 @@ type LookupDbSystemResult struct {
 	// Storage details of the database system.
 	StorageDetails []GetDbSystemStorageDetail `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -190,8 +190,8 @@ func (o LookupDbSystemResultOutput) DbVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDbSystemResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDbSystemResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the database instance node.
@@ -209,8 +209,8 @@ func (o LookupDbSystemResultOutput) ExcludedFields() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDbSystemResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDbSystemResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for the database instance node. Immutable on creation.
@@ -282,8 +282,8 @@ func (o LookupDbSystemResultOutput) StorageDetails() GetDbSystemStorageDetailArr
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDbSystemResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbSystemResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDbSystemResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of the database system.

@@ -5,7 +5,6 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -37,13 +36,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * 
      */
     @Import(name="params")
-    private @Nullable Output<Map<String,Object>> params;
+    private @Nullable Output<Map<String,String>> params;
 
     /**
      * @return (Updatable) Parameters in the custom section
      * 
      */
-    public Optional<Output<Map<String,Object>>> params() {
+    public Optional<Output<Map<String,String>>> params() {
         return Optional.ofNullable(this.params);
     }
 
@@ -99,7 +98,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
          * @return builder
          * 
          */
-        public Builder params(@Nullable Output<Map<String,Object>> params) {
+        public Builder params(@Nullable Output<Map<String,String>> params) {
             $.params = params;
             return this;
         }
@@ -110,7 +109,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
          * @return builder
          * 
          */
-        public Builder params(Map<String,Object> params) {
+        public Builder params(Map<String,String> params) {
             return params(Output.of(params));
         }
 

@@ -48,11 +48,11 @@ import (
 //				OnsTopicId:                   pulumi.Any(testOnsTopic.Id),
 //				AreChildCompartmentsIncluded: pulumi.Any(newsReportAreChildCompartmentsIncluded),
 //				DayOfWeek:                    pulumi.Any(newsReportDayOfWeek),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Status: pulumi.Any(newsReportStatus),
 //			})
@@ -84,11 +84,11 @@ type NewsReport struct {
 	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek pulumi.StringOutput `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the news report.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
@@ -107,7 +107,7 @@ type NewsReport struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -171,11 +171,11 @@ type newsReportState struct {
 	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the news report.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Language of the news report.
@@ -194,7 +194,7 @@ type newsReportState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -211,11 +211,11 @@ type NewsReportState struct {
 	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the news report.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Language of the news report.
@@ -234,7 +234,7 @@ type NewsReportState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -255,11 +255,11 @@ type newsReportArgs struct {
 	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek *string `pulumi:"dayOfWeek"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the news report.
 	Description string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Language of the news report.
 	Locale string `pulumi:"locale"`
 	// (Updatable) The news report name.
@@ -286,11 +286,11 @@ type NewsReportArgs struct {
 	// (Updatable) Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the news report.
 	Description pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Language of the news report.
 	Locale pulumi.StringInput
 	// (Updatable) The news report name.
@@ -414,8 +414,8 @@ func (o NewsReportOutput) DayOfWeek() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o NewsReportOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NewsReportOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the news report.
@@ -424,8 +424,8 @@ func (o NewsReportOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o NewsReportOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NewsReportOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -467,8 +467,8 @@ func (o NewsReportOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o NewsReportOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NewsReport) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o NewsReportOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NewsReport) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.

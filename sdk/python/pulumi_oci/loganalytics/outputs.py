@@ -1067,10 +1067,10 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
                  are_logs_collected: bool,
                  cloud_resource_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  entity_type_internal_name: str,
                  entity_type_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname: str,
                  id: str,
                  lifecycle_details: str,
@@ -1080,7 +1080,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
                  metadatas: Sequence['outputs.GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataResult'],
                  name: str,
                  namespace: str,
-                 properties: Mapping[str, Any],
+                 properties: Mapping[str, str],
                  source_id: str,
                  state: str,
                  time_created: str,
@@ -1091,10 +1091,10 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         :param bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param str cloud_resource_id: A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str entity_type_internal_name: Internal name for the log analytics entity type.
         :param str entity_type_name: A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str hostname: A filter to return only log analytics entities whose hostname matches the entire hostname given.
         :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         :param str lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -1104,7 +1104,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
         :param Sequence['GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemMetadataArgs'] metadatas: Details of entity metadata information.
         :param str name: A filter to return only log analytics entities whose name matches the entire name given. The match is case-insensitive.
         :param str namespace: The Logging Analytics namespace used for the request.
-        :param Mapping[str, Any] properties: The name/value pairs for parameter values to be used in file patterns specified in log sources.
+        :param Mapping[str, str] properties: The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param str source_id: A filter to return only log analytics entities whose sourceId matches the sourceId given.
         :param str state: A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
@@ -1162,7 +1162,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1186,7 +1186,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1266,7 +1266,7 @@ class GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
+    def properties(self) -> Mapping[str, str]:
         """
         The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """
@@ -1537,10 +1537,10 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
                  are_logs_collected: bool,
                  cloud_resource_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  entity_type_internal_name: str,
                  entity_type_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  management_agent_id: str,
@@ -1554,10 +1554,10 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
         :param bool are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param str cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param str compartment_id: Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str entity_type_internal_name: Internal name for the log analytics entity type.
         :param str entity_type_name: Log analytics entity type name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         :param str lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         :param str management_agent_id: The OCID of the Management Agent.
@@ -1611,7 +1611,7 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1635,7 +1635,7 @@ class GetLogAnalyticsEntityTopologyItemNodeItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1757,20 +1757,20 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionResult(dict):
 class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  namespace: str,
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description for this resource.
         :param str display_name: A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         :param str namespace: The Logging Analytics namespace used for the request.
         :param str time_created: The date and time the resource was created, in the format defined by RFC3339.
@@ -1796,7 +1796,7 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(di
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1820,7 +1820,7 @@ class GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemResult(di
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1943,10 +1943,10 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
                  char_encoding: str,
                  collection_type: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  entity_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  is_force_historic_collection: bool,
@@ -1973,10 +1973,10 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
         :param str char_encoding: An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
         :param str collection_type: The type of collection. Supported collection types: LIVE, HISTORIC, HISTORIC_LIVE
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
         :param str entity_id: Logging Analytics entity OCID to associate the processed logs with.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
         :param bool is_enabled: Whether or not this rule is currently enabled.
         :param bool is_force_historic_collection: Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -2056,7 +2056,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2080,7 +2080,7 @@ class GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollec
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2799,12 +2799,12 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
     def __init__(__self__, *,
                  compartment_id: str,
                  condition_kind: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  field_name: str,
                  field_value: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  state: str,
@@ -2813,12 +2813,12 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str condition_kind: The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description for this resource.
         :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
         :param str field_name: The field name used for filtering. Only rules using the specified field name will be returned.
         :param str field_value: The field value used for filtering. Only rules using the specified field value will be returned.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         :param bool is_enabled: A flag indicating whether or not the ingest time rule is enabled.
         :param str state: The rule lifecycle state used for filtering. Currently supported values are ACTIVE and DELETED.
@@ -2857,7 +2857,7 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2897,7 +2897,7 @@ class GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3135,10 +3135,10 @@ class GetNamespaceRulesRuleSummaryCollectionResult(dict):
 class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  kind: str,
@@ -3150,10 +3150,10 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description for this resource.
         :param str display_name: A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
         :param bool is_enabled: A flag indicating whether or not the ingest time rule or scheduled task is enabled.
         :param str kind: The rule kind used for filtering. Only rules of the specified kind will be returned.
@@ -3189,7 +3189,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3213,7 +3213,7 @@ class GetNamespaceRulesRuleSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3567,9 +3567,9 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
     def __init__(__self__, *,
                  actions: Sequence['outputs.GetNamespaceScheduledTasksScheduledTaskCollectionItemActionResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  kind: str,
                  namespace: str,
@@ -3586,9 +3586,9 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
         """
         :param Sequence['GetNamespaceScheduledTasksScheduledTaskCollectionItemActionArgs'] actions: Action for scheduled task.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
         :param str namespace: The Logging Analytics namespace used for the request.
         :param str num_occurrences: Number of execution occurrences.
@@ -3638,7 +3638,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3654,7 +3654,7 @@ class GetNamespaceScheduledTasksScheduledTaskCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

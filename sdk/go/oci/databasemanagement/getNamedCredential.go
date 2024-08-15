@@ -65,11 +65,11 @@ type LookupNamedCredentialResult struct {
 	// The details of the named credential.
 	Contents []GetNamedCredentialContent `pulumi:"contents"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The information specified by the user about the named credential.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
 	Id string `pulumi:"id"`
 	// The details of the lifecycle state.
@@ -82,7 +82,7 @@ type LookupNamedCredentialResult struct {
 	// The current lifecycle state of the named credential.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the named credential was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the named credential was last updated.
@@ -145,8 +145,8 @@ func (o LookupNamedCredentialResultOutput) Contents() GetNamedCredentialContentA
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupNamedCredentialResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNamedCredentialResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The information specified by the user about the named credential.
@@ -155,8 +155,8 @@ func (o LookupNamedCredentialResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupNamedCredentialResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNamedCredentialResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the named credential.
@@ -189,8 +189,8 @@ func (o LookupNamedCredentialResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupNamedCredentialResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupNamedCredentialResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamedCredentialResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the named credential was created.

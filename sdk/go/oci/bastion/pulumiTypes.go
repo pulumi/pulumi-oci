@@ -421,11 +421,11 @@ type GetBastionsBastion struct {
 	// The unique identifier (OCID) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus string `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail.
@@ -445,7 +445,7 @@ type GetBastionsBastion struct {
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses []string `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
 	TargetSubnetId string `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
@@ -475,11 +475,11 @@ type GetBastionsBastionArgs struct {
 	// The unique identifier (OCID) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus pulumi.StringInput `pulumi:"dnsProxyStatus"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique identifier (OCID) of the bastion, which can't be changed after creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail.
@@ -499,7 +499,7 @@ type GetBastionsBastionArgs struct {
 	// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayInput `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
 	TargetSubnetId pulumi.StringInput `pulumi:"targetSubnetId"`
 	// The unique identifier (OCID) of the virtual cloud network (VCN) that the bastion connects to.
@@ -577,8 +577,8 @@ func (o GetBastionsBastionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBastionsBastionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBastionsBastion) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBastionsBastionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBastionsBastion) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
@@ -587,8 +587,8 @@ func (o GetBastionsBastionOutput) DnsProxyStatus() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetBastionsBastionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBastionsBastion) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBastionsBastionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBastionsBastion) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier (OCID) of the bastion, which can't be changed after creation.
@@ -637,8 +637,8 @@ func (o GetBastionsBastionOutput) StaticJumpHostIpAddresses() pulumi.StringArray
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBastionsBastionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBastionsBastion) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetBastionsBastionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBastionsBastion) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier (OCID) of the subnet that the bastion connects to.
@@ -1166,7 +1166,7 @@ type GetSessionsSession struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds int `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
-	SshMetadata map[string]interface{} `pulumi:"sshMetadata"`
+	SshMetadata map[string]string `pulumi:"sshMetadata"`
 	// The current state of the session.
 	State string `pulumi:"state"`
 	// Details about a bastion session's target resource.
@@ -1210,7 +1210,7 @@ type GetSessionsSessionArgs struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds pulumi.IntInput `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
-	SshMetadata pulumi.MapInput `pulumi:"sshMetadata"`
+	SshMetadata pulumi.StringMapInput `pulumi:"sshMetadata"`
 	// The current state of the session.
 	State pulumi.StringInput `pulumi:"state"`
 	// Details about a bastion session's target resource.
@@ -1323,8 +1323,8 @@ func (o GetSessionsSessionOutput) SessionTtlInSeconds() pulumi.IntOutput {
 }
 
 // The connection message for the session.
-func (o GetSessionsSessionOutput) SshMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSessionsSession) map[string]interface{} { return v.SshMetadata }).(pulumi.MapOutput)
+func (o GetSessionsSessionOutput) SshMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSessionsSession) map[string]string { return v.SshMetadata }).(pulumi.StringMapOutput)
 }
 
 // The current state of the session.

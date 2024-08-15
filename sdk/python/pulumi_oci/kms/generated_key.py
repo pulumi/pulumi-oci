@@ -20,16 +20,16 @@ class GeneratedKeyArgs:
                  include_plaintext_key: pulumi.Input[bool],
                  key_id: pulumi.Input[str],
                  key_shape: pulumi.Input['GeneratedKeyKeyShapeArgs'],
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a GeneratedKey resource.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
                
                
                ** IMPORTANT **
@@ -94,19 +94,19 @@ class GeneratedKeyArgs:
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
 
@@ -117,31 +117,31 @@ class GeneratedKeyArgs:
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "logging_context", value)
 
 
 @pulumi.input_type
 class _GeneratedKeyState:
     def __init__(__self__, *,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ciphertext: Optional[pulumi.Input[str]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  include_plaintext_key: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_shape: Optional[pulumi.Input['GeneratedKeyKeyShapeArgs']] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  plaintext: Optional[pulumi.Input[str]] = None,
                  plaintext_checksum: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering GeneratedKey resources.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] ciphertext: The encrypted data encryption key generated from a master encryption key.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input['GeneratedKeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
                
                
                ** IMPORTANT **
@@ -170,14 +170,14 @@ class _GeneratedKeyState:
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @property
@@ -242,7 +242,7 @@ class _GeneratedKeyState:
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
 
@@ -253,7 +253,7 @@ class _GeneratedKeyState:
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "logging_context", value)
 
     @property
@@ -286,12 +286,12 @@ class GeneratedKey(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  include_plaintext_key: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         This resource provides the Generated Key resource in Oracle Cloud Infrastructure Kms service.
@@ -323,12 +323,12 @@ class GeneratedKey(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
                
                
                ** IMPORTANT **
@@ -383,12 +383,12 @@ class GeneratedKey(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  include_plaintext_key: Optional[pulumi.Input[bool]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -425,13 +425,13 @@ class GeneratedKey(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             ciphertext: Optional[pulumi.Input[str]] = None,
             crypto_endpoint: Optional[pulumi.Input[str]] = None,
             include_plaintext_key: Optional[pulumi.Input[bool]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             key_shape: Optional[pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']]] = None,
-            logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             plaintext: Optional[pulumi.Input[str]] = None,
             plaintext_checksum: Optional[pulumi.Input[str]] = None) -> 'GeneratedKey':
         """
@@ -441,13 +441,13 @@ class GeneratedKey(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] ciphertext: The encrypted data encryption key generated from a master encryption key.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[bool] include_plaintext_key: If true, the generated key is also returned unencrypted.
         :param pulumi.Input[str] key_id: The OCID of the master encryption key to encrypt the generated data encryption key with.
         :param pulumi.Input[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
                
                
                ** IMPORTANT **
@@ -472,7 +472,7 @@ class GeneratedKey(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def associated_data(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
@@ -520,7 +520,7 @@ class GeneratedKey(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def logging_context(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
 

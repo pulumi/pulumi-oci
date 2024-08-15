@@ -70,7 +70,7 @@ export interface GetSecretbundleResult {
     /**
      * Customer-provided contextual metadata for the secret.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata: {[key: string]: string};
     /**
      * The contents of the secret.
      */

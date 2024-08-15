@@ -21,10 +21,10 @@ class InstanceArgs:
                  tenancy_id: pulumi.Input[str],
                  tenancy_name: pulumi.Input[str],
                  add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dr_region: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
                  instance_license_type: Optional[pulumi.Input[str]] = None,
                  instance_usage_type: Optional[pulumi.Input[str]] = None,
@@ -40,10 +40,10 @@ class InstanceArgs:
         :param pulumi.Input[str] tenancy_id: Tenancy Identifier
         :param pulumi.Input[str] tenancy_name: Tenancy Name
         :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
         :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
         :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
         :param pulumi.Input[str] instance_usage_type: (Updatable) Instance type based on its usage
@@ -170,14 +170,14 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -206,14 +206,14 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -299,10 +299,10 @@ class _InstanceState:
                  add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  admin_email: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dr_region: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  guid: Optional[pulumi.Input[str]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  idcs_tenancy: Optional[pulumi.Input[str]] = None,
@@ -312,10 +312,10 @@ class _InstanceState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  object_storage_namespace: Optional[pulumi.Input[str]] = None,
-                 service: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 service: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  state_message: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
                  tenancy_name: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -327,10 +327,10 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
         :param pulumi.Input[str] admin_email: Admin Email for Notification
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
         :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
         :param pulumi.Input[str] idcs_tenancy: IDCS Tenancy Identifier
@@ -340,10 +340,10 @@ class _InstanceState:
         :param pulumi.Input[str] lifecycle_details: Details of the current state of the instance lifecycle
         :param pulumi.Input[str] name: OceInstance Name
         :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[Mapping[str, Any]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         :param pulumi.Input[str] state: The current state of the instance lifecycle.
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] tenancy_id: Tenancy Identifier
         :param pulumi.Input[str] tenancy_name: Tenancy Name
         :param pulumi.Input[str] time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
@@ -446,14 +446,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -482,14 +482,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -602,14 +602,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter
-    def service(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def service(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         """
         return pulumi.get(self, "service")
 
     @service.setter
-    def service(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def service(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "service", value)
 
     @property
@@ -638,14 +638,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -733,10 +733,10 @@ class Instance(pulumi.CustomResource):
                  add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  admin_email: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dr_region: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
                  instance_license_type: Optional[pulumi.Input[str]] = None,
@@ -796,10 +796,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
         :param pulumi.Input[str] admin_email: Admin Email for Notification
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
         :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
         :param pulumi.Input[str] instance_access_type: Flag indicating whether the instance access is private or public
         :param pulumi.Input[str] instance_license_type: (Updatable) Flag indicating whether the instance license is new cloud or bring your own license
@@ -882,10 +882,10 @@ class Instance(pulumi.CustomResource):
                  add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  admin_email: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dr_region: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idcs_access_token: Optional[pulumi.Input[str]] = None,
                  instance_access_type: Optional[pulumi.Input[str]] = None,
                  instance_license_type: Optional[pulumi.Input[str]] = None,
@@ -958,10 +958,10 @@ class Instance(pulumi.CustomResource):
             add_on_features: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             admin_email: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             dr_region: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             guid: Optional[pulumi.Input[str]] = None,
             idcs_access_token: Optional[pulumi.Input[str]] = None,
             idcs_tenancy: Optional[pulumi.Input[str]] = None,
@@ -971,10 +971,10 @@ class Instance(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             object_storage_namespace: Optional[pulumi.Input[str]] = None,
-            service: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            service: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             state_message: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
             tenancy_name: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -991,10 +991,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] add_on_features: (Updatable) a list of add-on features for the ocm instance
         :param pulumi.Input[str] admin_email: Admin Email for Notification
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) OceInstance description
         :param pulumi.Input[str] dr_region: (Updatable) disaster recovery paired ragion name
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] guid: Unique GUID identifier that is immutable on creation
         :param pulumi.Input[str] idcs_access_token: Identity Cloud Service access token identifying a stripe and service administrator user
         :param pulumi.Input[str] idcs_tenancy: IDCS Tenancy Identifier
@@ -1004,10 +1004,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details of the current state of the instance lifecycle
         :param pulumi.Input[str] name: OceInstance Name
         :param pulumi.Input[str] object_storage_namespace: Object Storage Namespace of Tenancy
-        :param pulumi.Input[Mapping[str, Any]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         :param pulumi.Input[str] state: The current state of the instance lifecycle.
         :param pulumi.Input[str] state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] tenancy_id: Tenancy Identifier
         :param pulumi.Input[str] tenancy_name: Tenancy Name
         :param pulumi.Input[str] time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
@@ -1077,7 +1077,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1101,7 +1101,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1181,7 +1181,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def service(self) -> pulumi.Output[Mapping[str, Any]]:
+    def service(self) -> pulumi.Output[Mapping[str, str]]:
         """
         SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         """
@@ -1205,7 +1205,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

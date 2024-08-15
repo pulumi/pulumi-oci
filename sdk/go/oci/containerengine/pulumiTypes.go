@@ -1744,9 +1744,9 @@ func (o ClusterOptionsKubernetesNetworkConfigPtrOutput) ServicesCidr() pulumi.St
 
 type ClusterOptionsPersistentVolumeConfig struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // ClusterOptionsPersistentVolumeConfigInput is an input type that accepts ClusterOptionsPersistentVolumeConfigArgs and ClusterOptionsPersistentVolumeConfigOutput values.
@@ -1762,9 +1762,9 @@ type ClusterOptionsPersistentVolumeConfigInput interface {
 
 type ClusterOptionsPersistentVolumeConfigArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (ClusterOptionsPersistentVolumeConfigArgs) ElementType() reflect.Type {
@@ -1845,13 +1845,13 @@ func (o ClusterOptionsPersistentVolumeConfigOutput) ToClusterOptionsPersistentVo
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterOptionsPersistentVolumeConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterOptionsPersistentVolumeConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterOptionsPersistentVolumeConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterOptionsPersistentVolumeConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ClusterOptionsPersistentVolumeConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type ClusterOptionsPersistentVolumeConfigPtrOutput struct{ *pulumi.OutputState }
@@ -1879,30 +1879,30 @@ func (o ClusterOptionsPersistentVolumeConfigPtrOutput) Elem() ClusterOptionsPers
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterOptionsPersistentVolumeConfigPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterOptionsPersistentVolumeConfig) map[string]interface{} {
+func (o ClusterOptionsPersistentVolumeConfigPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterOptionsPersistentVolumeConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterOptionsPersistentVolumeConfigPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterOptionsPersistentVolumeConfig) map[string]interface{} {
+func (o ClusterOptionsPersistentVolumeConfigPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterOptionsPersistentVolumeConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type ClusterOptionsServiceLbConfig struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // ClusterOptionsServiceLbConfigInput is an input type that accepts ClusterOptionsServiceLbConfigArgs and ClusterOptionsServiceLbConfigOutput values.
@@ -1918,9 +1918,9 @@ type ClusterOptionsServiceLbConfigInput interface {
 
 type ClusterOptionsServiceLbConfigArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (ClusterOptionsServiceLbConfigArgs) ElementType() reflect.Type {
@@ -2001,13 +2001,13 @@ func (o ClusterOptionsServiceLbConfigOutput) ToClusterOptionsServiceLbConfigPtrO
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterOptionsServiceLbConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterOptionsServiceLbConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterOptionsServiceLbConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterOptionsServiceLbConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ClusterOptionsServiceLbConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type ClusterOptionsServiceLbConfigPtrOutput struct{ *pulumi.OutputState }
@@ -2035,23 +2035,23 @@ func (o ClusterOptionsServiceLbConfigPtrOutput) Elem() ClusterOptionsServiceLbCo
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterOptionsServiceLbConfigPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterOptionsServiceLbConfig) map[string]interface{} {
+func (o ClusterOptionsServiceLbConfigPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterOptionsServiceLbConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterOptionsServiceLbConfigPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterOptionsServiceLbConfig) map[string]interface{} {
+func (o ClusterOptionsServiceLbConfigPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterOptionsServiceLbConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type ContainerInstanceContainer struct {
@@ -2071,18 +2071,18 @@ type ContainerInstanceContainer struct {
 	ContainerId         *string `pulumi:"containerId"`
 	ContainerInstanceId *string `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
 	// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
-	ExitCode             *int                   `pulumi:"exitCode"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	ExitCode             *int              `pulumi:"exitCode"`
 	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
 	HealthChecks []ContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
 	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
@@ -2107,7 +2107,7 @@ type ContainerInstanceContainer struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    *string `pulumi:"timeCreated"`
 	TimeTerminated *string `pulumi:"timeTerminated"`
@@ -2147,18 +2147,18 @@ type ContainerInstanceContainerArgs struct {
 	ContainerId         pulumi.StringPtrInput `pulumi:"containerId"`
 	ContainerInstanceId pulumi.StringPtrInput `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 	//
 	// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
-	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
-	ExitCode             pulumi.IntPtrInput `pulumi:"exitCode"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	ExitCode             pulumi.IntPtrInput    `pulumi:"exitCode"`
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
 	HealthChecks ContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	// A URL identifying the image that the container runs in, such as docker.io/library/busybox:latest. If you do not provide a tag, the tag will default to latest.
@@ -2183,7 +2183,7 @@ type ContainerInstanceContainerArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringPtrInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringPtrInput `pulumi:"timeTerminated"`
@@ -2280,8 +2280,8 @@ func (o ContainerInstanceContainerOutput) ContainerInstanceId() pulumi.StringPtr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o ContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ContainerInstanceContainerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
@@ -2292,8 +2292,8 @@ func (o ContainerInstanceContainerOutput) DisplayName() pulumi.StringPtrOutput {
 // A map of additional environment variables to set in the environment of the container's ENTRYPOINT process. These variables are in addition to any variables already defined in the container's image.
 //
 // The total size of all environment variables combined, name and values, must be 64 KB or smaller.
-func (o ContainerInstanceContainerOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o ContainerInstanceContainerOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 func (o ContainerInstanceContainerOutput) ExitCode() pulumi.IntPtrOutput {
@@ -2306,8 +2306,8 @@ func (o ContainerInstanceContainerOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ContainerInstanceContainerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ContainerInstanceContainerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
@@ -2357,8 +2357,8 @@ func (o ContainerInstanceContainerOutput) State() pulumi.StringPtrOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-func (o ContainerInstanceContainerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceContainer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o ContainerInstanceContainerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceContainer) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -3936,11 +3936,11 @@ func (o ContainerInstanceShapeConfigPtrOutput) ProcessorDescription() pulumi.Str
 
 type ContainerInstanceVnic struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the VNIC's primary private IP. Used for DNS.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// Whether the VNIC should be assigned a public IP address.
@@ -3970,11 +3970,11 @@ type ContainerInstanceVnicInput interface {
 
 type ContainerInstanceVnicArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The hostname for the VNIC's primary private IP. Used for DNS.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// Whether the VNIC should be assigned a public IP address.
@@ -4043,8 +4043,8 @@ func (o ContainerInstanceVnicOutput) ToContainerInstanceVnicOutputWithContext(ct
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o ContainerInstanceVnicOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ContainerInstanceVnicOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
@@ -4053,8 +4053,8 @@ func (o ContainerInstanceVnicOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ContainerInstanceVnicOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ContainerInstanceVnic) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ContainerInstanceVnicOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ContainerInstanceVnic) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the VNIC's primary private IP. Used for DNS.
@@ -4461,13 +4461,13 @@ type NodePoolNode struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors []NodePoolNodeError `pulumi:"errors"`
 	// The fault domain of this node.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
 	Id *string `pulumi:"id"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -4503,13 +4503,13 @@ type NodePoolNodeArgs struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors NodePoolNodeErrorArrayInput `pulumi:"errors"`
 	// The fault domain of this node.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// (Updatable) The version of Kubernetes to install on the nodes in the node pool.
@@ -4587,8 +4587,8 @@ func (o NodePoolNodeOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NodePoolNodeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v NodePoolNode) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NodePoolNodeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolNode) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An error that may be associated with the node.
@@ -4602,8 +4602,8 @@ func (o NodePoolNodeOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v NodePoolNode) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NodePoolNodeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolNode) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the compute instance backing this node.
@@ -4673,9 +4673,9 @@ func (o NodePoolNodeArrayOutput) Index(i pulumi.IntInput) NodePoolNodeOutput {
 
 type NodePoolNodeConfigDetails struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled *bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
@@ -4705,9 +4705,9 @@ type NodePoolNodeConfigDetailsInput interface {
 
 type NodePoolNodeConfigDetailsArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled pulumi.BoolPtrInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// (Updatable) The OCID of the Key Management Service key assigned to the boot volume.
@@ -4802,13 +4802,13 @@ func (o NodePoolNodeConfigDetailsOutput) ToNodePoolNodeConfigDetailsPtrOutputWit
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NodePoolNodeConfigDetailsOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v NodePoolNodeConfigDetails) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NodePoolNodeConfigDetailsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NodePoolNodeConfigDetailsOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v NodePoolNodeConfigDetails) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NodePoolNodeConfigDetailsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolNodeConfigDetails) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -4872,23 +4872,23 @@ func (o NodePoolNodeConfigDetailsPtrOutput) Elem() NodePoolNodeConfigDetailsOutp
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NodePoolNodeConfigDetailsPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NodePoolNodeConfigDetails) map[string]interface{} {
+func (o NodePoolNodeConfigDetailsPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NodePoolNodeConfigDetailsPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NodePoolNodeConfigDetails) map[string]interface{} {
+func (o NodePoolNodeConfigDetailsPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePoolNodeConfigDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -6986,12 +6986,12 @@ func (o VirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) VirtualNodePoo
 
 type VirtualNodePoolVirtualNodeTags struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // VirtualNodePoolVirtualNodeTagsInput is an input type that accepts VirtualNodePoolVirtualNodeTagsArgs and VirtualNodePoolVirtualNodeTagsOutput values.
@@ -7007,12 +7007,12 @@ type VirtualNodePoolVirtualNodeTagsInput interface {
 
 type VirtualNodePoolVirtualNodeTagsArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (VirtualNodePoolVirtualNodeTagsArgs) ElementType() reflect.Type {
@@ -7093,16 +7093,16 @@ func (o VirtualNodePoolVirtualNodeTagsOutput) ToVirtualNodePoolVirtualNodeTagsPt
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o VirtualNodePoolVirtualNodeTagsOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VirtualNodePoolVirtualNodeTagsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VirtualNodePoolVirtualNodeTagsOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VirtualNodePoolVirtualNodeTagsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v VirtualNodePoolVirtualNodeTags) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type VirtualNodePoolVirtualNodeTagsPtrOutput struct{ *pulumi.OutputState }
@@ -7130,26 +7130,26 @@ func (o VirtualNodePoolVirtualNodeTagsPtrOutput) Elem() VirtualNodePoolVirtualNo
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o VirtualNodePoolVirtualNodeTagsPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]interface{} {
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o VirtualNodePoolVirtualNodeTagsPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]interface{} {
+func (o VirtualNodePoolVirtualNodeTagsPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNodePoolVirtualNodeTags) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetAddonAddonError struct {
@@ -7379,11 +7379,11 @@ type GetAddonOptionsAddonOption struct {
 	// Addon definition schema version to validate addon.
 	AddonSchemaVersion string `pulumi:"addonSchemaVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Information about the addon version.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Is it an essential addon for cluster operation or not.
 	IsEssential bool `pulumi:"isEssential"`
 	// Name of the addon and it would be unique.
@@ -7391,7 +7391,7 @@ type GetAddonOptionsAddonOption struct {
 	// The life cycle state of the addon.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the work request was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The resources this work request affects.
@@ -7415,11 +7415,11 @@ type GetAddonOptionsAddonOptionArgs struct {
 	// Addon definition schema version to validate addon.
 	AddonSchemaVersion pulumi.StringInput `pulumi:"addonSchemaVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Information about the addon version.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Is it an essential addon for cluster operation or not.
 	IsEssential pulumi.BoolInput `pulumi:"isEssential"`
 	// Name of the addon and it would be unique.
@@ -7427,7 +7427,7 @@ type GetAddonOptionsAddonOptionArgs struct {
 	// The life cycle state of the addon.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the work request was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The resources this work request affects.
@@ -7496,8 +7496,8 @@ func (o GetAddonOptionsAddonOptionOutput) AddonSchemaVersion() pulumi.StringOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetAddonOptionsAddonOptionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAddonOptionsAddonOptionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Information about the addon version.
@@ -7506,8 +7506,8 @@ func (o GetAddonOptionsAddonOptionOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetAddonOptionsAddonOptionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAddonOptionsAddonOptionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Is it an essential addon for cluster operation or not.
@@ -7526,8 +7526,8 @@ func (o GetAddonOptionsAddonOptionOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAddonOptionsAddonOptionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAddonOptionsAddonOptionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAddonOptionsAddonOption) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the work request was created.
@@ -8756,9 +8756,9 @@ type GetClusterWorkloadMappingsWorkloadMapping struct {
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
 	Id string `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
@@ -8788,9 +8788,9 @@ type GetClusterWorkloadMappingsWorkloadMappingArgs struct {
 	// The OCID of the cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
@@ -8862,13 +8862,13 @@ func (o GetClusterWorkloadMappingsWorkloadMappingOutput) ClusterId() pulumi.Stri
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetClusterWorkloadMappingsWorkloadMappingOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetClusterWorkloadMappingsWorkloadMappingOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClusterWorkloadMappingsWorkloadMapping) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ocid of the workloadMapping.
@@ -8929,13 +8929,13 @@ type GetClustersCluster struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfigs []GetClustersClusterEndpointConfig `pulumi:"endpointConfigs"`
 	// Endpoints served up by the cluster masters.
 	Endpoints []GetClustersClusterEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the cluster.
 	Id string `pulumi:"id"`
 	// The image verification policy for signature validation.
@@ -8979,13 +8979,13 @@ type GetClustersClusterArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfigs GetClustersClusterEndpointConfigArrayInput `pulumi:"endpointConfigs"`
 	// Endpoints served up by the cluster masters.
 	Endpoints GetClustersClusterEndpointArrayInput `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the cluster.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The image verification policy for signature validation.
@@ -9079,8 +9079,8 @@ func (o GetClustersClusterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetClustersClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersCluster) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersCluster) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The network configuration for access to the Cluster control plane.
@@ -9094,8 +9094,8 @@ func (o GetClustersClusterOutput) Endpoints() GetClustersClusterEndpointArrayOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetClustersClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersCluster) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersCluster) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the cluster.
@@ -10351,9 +10351,9 @@ func (o GetClustersClusterOptionKubernetesNetworkConfigArrayOutput) Index(i pulu
 
 type GetClustersClusterOptionPersistentVolumeConfig struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // GetClustersClusterOptionPersistentVolumeConfigInput is an input type that accepts GetClustersClusterOptionPersistentVolumeConfigArgs and GetClustersClusterOptionPersistentVolumeConfigOutput values.
@@ -10369,9 +10369,9 @@ type GetClustersClusterOptionPersistentVolumeConfigInput interface {
 
 type GetClustersClusterOptionPersistentVolumeConfigArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (GetClustersClusterOptionPersistentVolumeConfigArgs) ElementType() reflect.Type {
@@ -10426,13 +10426,13 @@ func (o GetClustersClusterOptionPersistentVolumeConfigOutput) ToGetClustersClust
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetClustersClusterOptionPersistentVolumeConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionPersistentVolumeConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOptionPersistentVolumeConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionPersistentVolumeConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetClustersClusterOptionPersistentVolumeConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionPersistentVolumeConfig) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOptionPersistentVolumeConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionPersistentVolumeConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type GetClustersClusterOptionPersistentVolumeConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10457,9 +10457,9 @@ func (o GetClustersClusterOptionPersistentVolumeConfigArrayOutput) Index(i pulum
 
 type GetClustersClusterOptionServiceLbConfig struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // GetClustersClusterOptionServiceLbConfigInput is an input type that accepts GetClustersClusterOptionServiceLbConfigArgs and GetClustersClusterOptionServiceLbConfigOutput values.
@@ -10475,9 +10475,9 @@ type GetClustersClusterOptionServiceLbConfigInput interface {
 
 type GetClustersClusterOptionServiceLbConfigArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (GetClustersClusterOptionServiceLbConfigArgs) ElementType() reflect.Type {
@@ -10532,13 +10532,13 @@ func (o GetClustersClusterOptionServiceLbConfigOutput) ToGetClustersClusterOptio
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetClustersClusterOptionServiceLbConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionServiceLbConfig) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOptionServiceLbConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionServiceLbConfig) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetClustersClusterOptionServiceLbConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterOptionServiceLbConfig) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetClustersClusterOptionServiceLbConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterOptionServiceLbConfig) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type GetClustersClusterOptionServiceLbConfigArrayOutput struct{ *pulumi.OutputState }
@@ -10780,13 +10780,13 @@ type GetNodePoolNode struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors []GetNodePoolNodeError `pulumi:"errors"`
 	// The fault domain of this node.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
 	Id string `pulumi:"id"`
 	// The version of Kubernetes this node is running.
@@ -10822,13 +10822,13 @@ type GetNodePoolNodeArgs struct {
 	// The name of the availability domain in which this node is placed.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// An error that may be associated with the node.
 	Errors GetNodePoolNodeErrorArrayInput `pulumi:"errors"`
 	// The fault domain of this node.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The version of Kubernetes this node is running.
@@ -10906,8 +10906,8 @@ func (o GetNodePoolNodeOutput) AvailabilityDomain() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNodePoolNodeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolNode) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNodePoolNodeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolNode) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An error that may be associated with the node.
@@ -10921,8 +10921,8 @@ func (o GetNodePoolNodeOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolNode) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNodePoolNodeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolNode) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the compute instance backing this node.
@@ -10992,9 +10992,9 @@ func (o GetNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoolNodeOutp
 
 type GetNodePoolNodeConfigDetail struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
@@ -11022,9 +11022,9 @@ type GetNodePoolNodeConfigDetailInput interface {
 
 type GetNodePoolNodeConfigDetailArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
@@ -11091,13 +11091,13 @@ func (o GetNodePoolNodeConfigDetailOutput) ToGetNodePoolNodeConfigDetailOutputWi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolNodeConfigDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -12524,9 +12524,9 @@ type GetNodePoolsNodePool struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the node pool.
 	Id string `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -12550,7 +12550,7 @@ type GetNodePoolsNodePool struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	NodeMetadata map[string]string `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails []GetNodePoolsNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
 	NodePoolId             string                                      `pulumi:"nodePoolId"`
@@ -12590,9 +12590,9 @@ type GetNodePoolsNodePoolArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the node pool.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -12616,7 +12616,7 @@ type GetNodePoolsNodePoolArgs struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName pulumi.StringInput `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata pulumi.MapInput `pulumi:"nodeMetadata"`
+	NodeMetadata pulumi.StringMapInput `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails GetNodePoolsNodePoolNodePoolCyclingDetailArrayInput `pulumi:"nodePoolCyclingDetails"`
 	NodePoolId             pulumi.StringInput                                  `pulumi:"nodePoolId"`
@@ -12701,13 +12701,13 @@ func (o GetNodePoolsNodePoolOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNodePoolsNodePoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNodePoolsNodePoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the node pool.
@@ -12762,8 +12762,8 @@ func (o GetNodePoolsNodePoolOutput) NodeImageName() pulumi.StringOutput {
 }
 
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-func (o GetNodePoolsNodePoolOutput) NodeMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]interface{} { return v.NodeMetadata }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolOutput) NodeMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]string { return v.NodeMetadata }).(pulumi.StringMapOutput)
 }
 
 // Node Pool Cycling Details
@@ -12951,11 +12951,11 @@ type GetNodePoolsNodePoolNode struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{}          `pulumi:"definedTags"`
+	DefinedTags map[string]string               `pulumi:"definedTags"`
 	Errors      []GetNodePoolsNodePoolNodeError `pulumi:"errors"`
 	FaultDomain string                          `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the node pool.
 	Id string `pulumi:"id"`
 	// The version of Kubernetes running on the nodes in the node pool.
@@ -12988,11 +12988,11 @@ type GetNodePoolsNodePoolNodeArgs struct {
 	// The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput                         `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput                   `pulumi:"definedTags"`
 	Errors      GetNodePoolsNodePoolNodeErrorArrayInput `pulumi:"errors"`
 	FaultDomain pulumi.StringInput                      `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the node pool.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The version of Kubernetes running on the nodes in the node pool.
@@ -13067,8 +13067,8 @@ func (o GetNodePoolsNodePoolNodeOutput) AvailabilityDomain() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNodePoolsNodePoolNodeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolNodeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetNodePoolsNodePoolNodeOutput) Errors() GetNodePoolsNodePoolNodeErrorArrayOutput {
@@ -13080,8 +13080,8 @@ func (o GetNodePoolsNodePoolNodeOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNodePoolsNodePoolNodeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolNodeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the node pool.
@@ -13148,9 +13148,9 @@ func (o GetNodePoolsNodePoolNodeArrayOutput) Index(i pulumi.IntInput) GetNodePoo
 
 type GetNodePoolsNodePoolNodeConfigDetail struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
@@ -13178,9 +13178,9 @@ type GetNodePoolsNodePoolNodeConfigDetailInput interface {
 
 type GetNodePoolsNodePoolNodeConfigDetailArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// The OCID of the Key Management Service key assigned to the boot volume.
@@ -13247,13 +13247,13 @@ func (o GetNodePoolsNodePoolNodeConfigDetailOutput) ToGetNodePoolsNodePoolNodeCo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNodePoolsNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNodePoolsNodePoolNodeConfigDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNodeConfigDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
@@ -15498,9 +15498,9 @@ func (o GetVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntInput) GetVirtualN
 
 type GetVirtualNodePoolVirtualNodeTag struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // GetVirtualNodePoolVirtualNodeTagInput is an input type that accepts GetVirtualNodePoolVirtualNodeTagArgs and GetVirtualNodePoolVirtualNodeTagOutput values.
@@ -15516,9 +15516,9 @@ type GetVirtualNodePoolVirtualNodeTagInput interface {
 
 type GetVirtualNodePoolVirtualNodeTagArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (GetVirtualNodePoolVirtualNodeTagArgs) ElementType() reflect.Type {
@@ -15573,13 +15573,13 @@ func (o GetVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNodePoolVirtualNodeT
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolVirtualNodeTag) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type GetVirtualNodePoolVirtualNodeTagArrayOutput struct{ *pulumi.OutputState }
@@ -15717,11 +15717,11 @@ type GetVirtualNodePoolsVirtualNodePool struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
 	Id string `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
@@ -15741,7 +15741,7 @@ type GetVirtualNodePoolsVirtualNodePool struct {
 	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []GetVirtualNodePoolsVirtualNodePoolTaint `pulumi:"taints"`
 	// The time the virtual node pool was created.
@@ -15770,11 +15770,11 @@ type GetVirtualNodePoolsVirtualNodePoolArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
@@ -15794,7 +15794,7 @@ type GetVirtualNodePoolsVirtualNodePoolArgs struct {
 	// A virtual node pool lifecycle state to filter on. Can have multiple parameters of this name.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints GetVirtualNodePoolsVirtualNodePoolTaintArrayInput `pulumi:"taints"`
 	// The time the virtual node pool was created.
@@ -15868,8 +15868,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Display name of the virtual node pool. This is a non-unique value.
@@ -15878,8 +15878,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) DisplayName() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the virtual node pool.
@@ -15934,8 +15934,8 @@ func (o GetVirtualNodePoolsVirtualNodePoolOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetVirtualNodePoolsVirtualNodePoolOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePool) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
@@ -16437,9 +16437,9 @@ func (o GetVirtualNodePoolsVirtualNodePoolTaintArrayOutput) Index(i pulumi.IntIn
 
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput is an input type that accepts GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs and GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput values.
@@ -16455,9 +16455,9 @@ type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagInput interface {
 
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArgs) ElementType() reflect.Type {
@@ -16512,13 +16512,13 @@ func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) ToGetVirtualNode
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVirtualNodePoolsVirtualNodePoolVirtualNodeTag) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type GetVirtualNodePoolsVirtualNodePoolVirtualNodeTagArrayOutput struct{ *pulumi.OutputState }

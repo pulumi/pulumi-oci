@@ -74,11 +74,11 @@ type LookupCertificateResult struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificateCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the certificate.
 	Id string `pulumi:"id"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
@@ -181,8 +181,8 @@ func (o LookupCertificateResultOutput) CurrentVersions() GetCertificateCurrentVe
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupCertificateResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCertificateResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A brief description of the certificate. Avoid entering confidential information.
@@ -191,8 +191,8 @@ func (o LookupCertificateResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupCertificateResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCertificateResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the certificate.

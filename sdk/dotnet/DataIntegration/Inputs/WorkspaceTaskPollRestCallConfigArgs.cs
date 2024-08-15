@@ -37,14 +37,14 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? ModelType { get; set; }
 
         [Input("requestHeaders")]
-        private InputMap<object>? _requestHeaders;
+        private InputMap<string>? _requestHeaders;
 
         /// <summary>
         /// (Updatable) The headers for the REST call.
         /// </summary>
-        public InputMap<object> RequestHeaders
+        public InputMap<string> RequestHeaders
         {
-            get => _requestHeaders ?? (_requestHeaders = new InputMap<object>());
+            get => _requestHeaders ?? (_requestHeaders = new InputMap<string>());
             set => _requestHeaders = value;
         }
 

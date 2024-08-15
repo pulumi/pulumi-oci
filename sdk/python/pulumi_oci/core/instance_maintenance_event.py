@@ -17,9 +17,9 @@ class InstanceMaintenanceEventArgs:
                  instance_maintenance_event_id: pulumi.Input[str],
                  alternative_resolution_action: Optional[pulumi.Input[str]] = None,
                  can_delete_local_storage: Optional[pulumi.Input[bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_window_start: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a InstanceMaintenanceEvent resource.
@@ -30,9 +30,9 @@ class InstanceMaintenanceEventArgs:
                For Instances that have local storage, this must be set to true to verify that the local storage will be deleted during the migration. For instances without, this parameter has no effect.
                
                In cases where the local storage will be lost, this parameter must be set or the request will fail.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] time_window_start: (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
                
                The timeWindowEnd is automatically calculated based on the maintenanceReason and the instanceAction.
@@ -97,14 +97,14 @@ class InstanceMaintenanceEventArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -121,14 +121,14 @@ class InstanceMaintenanceEventArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -153,7 +153,7 @@ class InstanceMaintenanceEventArgs:
 @pulumi.input_type
 class _InstanceMaintenanceEventState:
     def __init__(__self__, *,
-                 additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  alternative_resolution_action: Optional[pulumi.Input[str]] = None,
                  alternative_resolution_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  can_delete_local_storage: Optional[pulumi.Input[bool]] = None,
@@ -161,11 +161,11 @@ class _InstanceMaintenanceEventState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  correlation_token: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  estimated_duration: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_action: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
@@ -180,7 +180,7 @@ class _InstanceMaintenanceEventState:
                  time_window_start: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering InstanceMaintenanceEvent resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: Additional details of the maintenance in the form of json.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_details: Additional details of the maintenance in the form of json.
         :param pulumi.Input[str] alternative_resolution_action: (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_resolution_actions: These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
         :param pulumi.Input[bool] can_delete_local_storage: (Updatable) This field is only applicable when setting the alternativeResolutionAction.
@@ -192,11 +192,11 @@ class _InstanceMaintenanceEventState:
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the instance.
         :param pulumi.Input[str] correlation_token: A unique identifier that will group Instances that have a relationship with one another and must be scheduled together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance perspective will have a matching correlationToken.
         :param pulumi.Input[str] created_by: The creator of the maintenance event.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: It is the descriptive information about the maintenance taking place on the customer instance.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] estimated_duration: This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_action: This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] instance_maintenance_event_id: The OCID of the instance maintenance event.
@@ -269,14 +269,14 @@ class _InstanceMaintenanceEventState:
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def additional_details(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional details of the maintenance in the form of json.
         """
         return pulumi.get(self, "additional_details")
 
     @additional_details.setter
-    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def additional_details(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "additional_details", value)
 
     @property
@@ -369,14 +369,14 @@ class _InstanceMaintenanceEventState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -417,14 +417,14 @@ class _InstanceMaintenanceEventState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -585,9 +585,9 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternative_resolution_action: Optional[pulumi.Input[str]] = None,
                  can_delete_local_storage: Optional[pulumi.Input[bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
                  time_window_start: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -612,9 +612,9 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
                For Instances that have local storage, this must be set to true to verify that the local storage will be deleted during the migration. For instances without, this parameter has no effect.
                
                In cases where the local storage will be lost, this parameter must be set or the request will fail.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_maintenance_event_id: The OCID of the instance maintenance event.
         :param pulumi.Input[str] time_window_start: (Updatable) The beginning of the time window when Maintenance is scheduled to begin. The Maintenance will not begin before this time.
                
@@ -660,9 +660,9 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alternative_resolution_action: Optional[pulumi.Input[str]] = None,
                  can_delete_local_storage: Optional[pulumi.Input[bool]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
                  time_window_start: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -711,7 +711,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_details: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            additional_details: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             alternative_resolution_action: Optional[pulumi.Input[str]] = None,
             alternative_resolution_actions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             can_delete_local_storage: Optional[pulumi.Input[bool]] = None,
@@ -719,11 +719,11 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             correlation_token: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             estimated_duration: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             instance_action: Optional[pulumi.Input[str]] = None,
             instance_id: Optional[pulumi.Input[str]] = None,
             instance_maintenance_event_id: Optional[pulumi.Input[str]] = None,
@@ -743,7 +743,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_details: Additional details of the maintenance in the form of json.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_details: Additional details of the maintenance in the form of json.
         :param pulumi.Input[str] alternative_resolution_action: (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] alternative_resolution_actions: These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
         :param pulumi.Input[bool] can_delete_local_storage: (Updatable) This field is only applicable when setting the alternativeResolutionAction.
@@ -755,11 +755,11 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the instance.
         :param pulumi.Input[str] correlation_token: A unique identifier that will group Instances that have a relationship with one another and must be scheduled together for the Maintenance to proceed. Any Instances that have a relationship with one another from a Maintenance perspective will have a matching correlationToken.
         :param pulumi.Input[str] created_by: The creator of the maintenance event.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: It is the descriptive information about the maintenance taking place on the customer instance.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] estimated_duration: This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] instance_action: This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
         :param pulumi.Input[str] instance_id: The OCID of the instance.
         :param pulumi.Input[str] instance_maintenance_event_id: The OCID of the instance maintenance event.
@@ -812,7 +812,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> pulumi.Output[Mapping[str, Any]]:
+    def additional_details(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Additional details of the maintenance in the form of json.
         """
@@ -880,7 +880,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -912,7 +912,7 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """

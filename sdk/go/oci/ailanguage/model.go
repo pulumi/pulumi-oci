@@ -42,13 +42,13 @@ import (
 //					Version:      pulumi.Any(modelModelDetailsVersion),
 //				},
 //				ProjectId: pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(modelDescription),
 //				DisplayName: pulumi.Any(modelDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				TestStrategy: &ailanguage.ModelTestStrategyArgs{
 //					StrategyType: pulumi.Any(modelTestStrategyStrategyType),
@@ -106,7 +106,7 @@ type Model struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the a model.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
@@ -114,7 +114,7 @@ type Model struct {
 	// model training results of different models
 	EvaluationResults ModelEvaluationResultArrayOutput `pulumi:"evaluationResults"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Possible model types
@@ -124,7 +124,7 @@ type Model struct {
 	// The state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Possible strategy as testing and validation(optional) dataset.
 	TestStrategy ModelTestStrategyOutput `pulumi:"testStrategy"`
 	// The time the the model was created. An RFC3339 formatted datetime string.
@@ -182,7 +182,7 @@ type modelState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the a model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
@@ -190,7 +190,7 @@ type modelState struct {
 	// model training results of different models
 	EvaluationResults []ModelEvaluationResult `pulumi:"evaluationResults"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Possible model types
@@ -200,7 +200,7 @@ type modelState struct {
 	// The state of the model.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Possible strategy as testing and validation(optional) dataset.
 	TestStrategy *ModelTestStrategy `pulumi:"testStrategy"`
 	// The time the the model was created. An RFC3339 formatted datetime string.
@@ -217,7 +217,7 @@ type ModelState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the a model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
@@ -225,7 +225,7 @@ type ModelState struct {
 	// model training results of different models
 	EvaluationResults ModelEvaluationResultArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Possible model types
@@ -235,7 +235,7 @@ type ModelState struct {
 	// The state of the model.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Possible strategy as testing and validation(optional) dataset.
 	TestStrategy ModelTestStrategyPtrInput
 	// The time the the model was created. An RFC3339 formatted datetime string.
@@ -256,13 +256,13 @@ type modelArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the a model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Possible model types
 	ModelDetails ModelModelDetails `pulumi:"modelDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -278,13 +278,13 @@ type ModelArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the a model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Possible model types
 	ModelDetails ModelModelDetailsInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
@@ -388,8 +388,8 @@ func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ModelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ModelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description of the a model.
@@ -408,8 +408,8 @@ func (o ModelOutput) EvaluationResults() ModelEvaluationResultArrayOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ModelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -433,8 +433,8 @@ func (o ModelOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ModelOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ModelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Possible strategy as testing and validation(optional) dataset.

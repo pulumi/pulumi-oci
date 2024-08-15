@@ -18,7 +18,6 @@ import com.pulumi.oci.FleetSoftwareUpdate.outputs.FsuCycleStageActionSchedule;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -50,10 +49,10 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     @Export(name="diagnosticsCollection", refs={FsuCycleDiagnosticsCollection.class}, tree="[0]")
@@ -74,10 +73,10 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
     public Output<String> executingFsuActionId() {
         return this.executingFsuActionId;
     }
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     @Export(name="fsuCollectionId", refs={String.class}, tree="[0]")
@@ -146,10 +145,10 @@ public class FsuCycle extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
 
-    public Output<Map<String,Object>> systemTags() {
+    public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
     @Export(name="timeCreated", refs={String.class}, tree="[0]")

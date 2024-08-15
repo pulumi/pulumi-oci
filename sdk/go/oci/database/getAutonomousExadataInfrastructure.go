@@ -67,13 +67,13 @@ type LookupAutonomousExadataInfrastructureResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	CreateAsync   bool   `pulumi:"createAsync"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Autonomous Exadata Infrastructure.
 	DisplayName string `pulumi:"displayName"`
 	// The domain name for the Autonomous Exadata Infrastructure.
 	Domain string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The host name for the Autonomous Exadata Infrastructure node.
 	Hostname string `pulumi:"hostname"`
 	// The OCID of the Autonomous Exadata Infrastructure.
@@ -165,8 +165,8 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) CreateAsync() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupAutonomousExadataInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Autonomous Exadata Infrastructure.
@@ -180,8 +180,8 @@ func (o LookupAutonomousExadataInfrastructureResultOutput) Domain() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupAutonomousExadataInfrastructureResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAutonomousExadataInfrastructureResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousExadataInfrastructureResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The host name for the Autonomous Exadata Infrastructure node.

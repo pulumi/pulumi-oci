@@ -62,13 +62,13 @@ type LookupDrProtectionGroupResult struct {
 	// The OCID of the compartment containing the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
-	DisassociateTrigger int                    `pulumi:"disassociateTrigger"`
+	DefinedTags         map[string]string `pulumi:"definedTags"`
+	DisassociateTrigger int               `pulumi:"disassociateTrigger"`
 	// The display name of the DR protection group.  Example: `EBS PHX Group`
 	DisplayName         string `pulumi:"displayName"`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
 	Id string `pulumi:"id"`
 	// A message describing the DR protection group's current state in more detail.
@@ -88,7 +88,7 @@ type LookupDrProtectionGroupResult struct {
 	// The current state of the DR protection group.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -143,8 +143,8 @@ func (o LookupDrProtectionGroupResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDrProtectionGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDrProtectionGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDrProtectionGroupResultOutput) DisassociateTrigger() pulumi.IntOutput {
@@ -161,8 +161,8 @@ func (o LookupDrProtectionGroupResultOutput) DrProtectionGroupId() pulumi.String
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o LookupDrProtectionGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDrProtectionGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
@@ -211,8 +211,8 @@ func (o LookupDrProtectionGroupResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDrProtectionGroupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDrProtectionGroupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrProtectionGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

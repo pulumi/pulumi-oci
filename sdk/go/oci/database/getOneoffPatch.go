@@ -63,12 +63,12 @@ type LookupOneoffPatchResult struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// One-off patch name.
 	DisplayName                string `pulumi:"displayName"`
 	DownloadOneoffPatchTrigger int    `pulumi:"downloadOneoffPatchTrigger"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
 	Id string `pulumi:"id"`
 	// Detailed message for the lifecycle state.
@@ -141,8 +141,8 @@ func (o LookupOneoffPatchResultOutput) DbVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupOneoffPatchResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOneoffPatchResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // One-off patch name.
@@ -155,8 +155,8 @@ func (o LookupOneoffPatchResultOutput) DownloadOneoffPatchTrigger() pulumi.IntOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupOneoffPatchResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOneoffPatchResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOneoffPatchResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOneoffPatchResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.

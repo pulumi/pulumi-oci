@@ -6,7 +6,6 @@ package com.pulumi.oci.Secrets.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Secrets.outputs.GetSecretbundleSecretBundleContent;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,7 @@ public final class GetSecretbundleResult {
      * @return Customer-provided contextual metadata for the secret.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The contents of the secret.
      * 
@@ -81,7 +80,7 @@ public final class GetSecretbundleResult {
      * @return Customer-provided contextual metadata for the secret.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -157,7 +156,7 @@ public final class GetSecretbundleResult {
     @CustomType.Builder
     public static final class Builder {
         private String id;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private List<GetSecretbundleSecretBundleContent> secretBundleContents;
         private String secretId;
         private @Nullable String secretVersionName;
@@ -194,7 +193,7 @@ public final class GetSecretbundleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetSecretbundleResult", "metadata");
             }

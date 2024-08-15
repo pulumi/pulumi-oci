@@ -38,11 +38,11 @@ import (
 //				AdminPassword:      pulumi.Any(mysqlDbSystemAdminPassword),
 //				AdminUsername:      pulumi.Any(mysqlDbSystemAdminUsername),
 //				BackupPolicy: &mysql.MysqlDbSystemBackupPolicyArgs{
-//					DefinedTags: pulumi.Map{
-//						"foo-namespace.bar-key": pulumi.Any("value"),
+//					DefinedTags: pulumi.StringMap{
+//						"foo-namespace.bar-key": pulumi.String("value"),
 //					},
-//					FreeformTags: pulumi.Map{
-//						"bar-key": pulumi.Any("value"),
+//					FreeformTags: pulumi.StringMap{
+//						"bar-key": pulumi.String("value"),
 //					},
 //					IsEnabled: pulumi.Any(mysqlDbSystemBackupPolicyIsEnabled),
 //					PitrPolicy: &mysql.MysqlDbSystemBackupPolicyPitrPolicyArgs{
@@ -55,8 +55,8 @@ import (
 //				CrashRecovery:       pulumi.Any(mysqlDbSystemCrashRecovery),
 //				DataStorageSizeInGb: pulumi.Any(mysqlDbSystemDataStorageSizeInGb),
 //				DatabaseManagement:  pulumi.Any(mysqlDbSystemDatabaseManagement),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DeletionPolicies: mysql.MysqlDbSystemDeletionPolicyArray{
 //					&mysql.MysqlDbSystemDeletionPolicyArgs{
@@ -68,8 +68,8 @@ import (
 //				Description: pulumi.Any(mysqlDbSystemDescription),
 //				DisplayName: pulumi.Any(mysqlDbSystemDisplayName),
 //				FaultDomain: pulumi.Any(mysqlDbSystemFaultDomain),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				HostnameLabel:     pulumi.Any(mysqlDbSystemHostnameLabel),
 //				IpAddress:         pulumi.Any(mysqlDbSystemIpAddress),
@@ -134,7 +134,7 @@ type MysqlDbSystem struct {
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringOutput `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies MysqlDbSystemDeletionPolicyArrayOutput `pulumi:"deletionPolicies"`
 	// (Updatable) User-provided data about the DB System.
@@ -150,7 +150,7 @@ type MysqlDbSystem struct {
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayOutput `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -277,7 +277,7 @@ type mysqlDbSystemState struct {
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies []MysqlDbSystemDeletionPolicy `pulumi:"deletionPolicies"`
 	// (Updatable) User-provided data about the DB System.
@@ -293,7 +293,7 @@ type mysqlDbSystemState struct {
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []MysqlDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -372,7 +372,7 @@ type MysqlDbSystemState struct {
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies MysqlDbSystemDeletionPolicyArrayInput
 	// (Updatable) User-provided data about the DB System.
@@ -388,7 +388,7 @@ type MysqlDbSystemState struct {
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters MysqlDbSystemHeatWaveClusterArrayInput
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
@@ -467,7 +467,7 @@ type mysqlDbSystemArgs struct {
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies []MysqlDbSystemDeletionPolicy `pulumi:"deletionPolicies"`
 	// (Updatable) User-provided data about the DB System.
@@ -481,7 +481,7 @@ type mysqlDbSystemArgs struct {
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
@@ -545,7 +545,7 @@ type MysqlDbSystemArgs struct {
 	// (Updatable) Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
 	DeletionPolicies MysqlDbSystemDeletionPolicyArrayInput
 	// (Updatable) User-provided data about the DB System.
@@ -559,7 +559,7 @@ type MysqlDbSystemArgs struct {
 	// For a standalone DB System, this defines the fault domain in which the DB System is placed.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname for the primary endpoint of the DB System. Used for DNS.
 	//
 	// The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
@@ -745,8 +745,8 @@ func (o MysqlDbSystemOutput) DatabaseManagement() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlDbSystemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -779,8 +779,8 @@ func (o MysqlDbSystemOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlDbSystemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlDbSystem) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystem) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A summary of a HeatWave cluster.

@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +64,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
      * 
      */
     @Import(name="headers")
-    private @Nullable Output<Map<String,Object>> headers;
+    private @Nullable Output<Map<String,String>> headers;
 
     /**
      * @return (Updatable) HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
@@ -73,7 +72,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
      * **Note:** The only currently-supported header fields are Host and User-Agent.
      * 
      */
-    public Optional<Output<Map<String,Object>>> headers() {
+    public Optional<Output<Map<String,String>>> headers() {
         return Optional.ofNullable(this.headers);
     }
 
@@ -303,7 +302,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
          * @return builder
          * 
          */
-        public Builder headers(@Nullable Output<Map<String,Object>> headers) {
+        public Builder headers(@Nullable Output<Map<String,String>> headers) {
             $.headers = headers;
             return this;
         }
@@ -316,7 +315,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
          * @return builder
          * 
          */
-        public Builder headers(Map<String,Object> headers) {
+        public Builder headers(Map<String,String> headers) {
             return headers(Output.of(headers));
         }
 

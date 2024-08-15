@@ -77,13 +77,13 @@ type GetDbServerResult struct {
 	// The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	DbServerPatchingDetails []GetDbServerDbServerPatchingDetail `pulumi:"dbServerPatchingDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Db server. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -186,8 +186,8 @@ func (o GetDbServerResultOutput) DbServerPatchingDetails() GetDbServerDbServerPa
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetDbServerResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbServerResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDbServerResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbServerResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Db server. The name does not need to be unique.
@@ -201,8 +201,8 @@ func (o GetDbServerResultOutput) ExadataInfrastructureId() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetDbServerResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbServerResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDbServerResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbServerResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

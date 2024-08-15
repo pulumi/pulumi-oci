@@ -62,7 +62,7 @@ type LookupCaptureFilterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
@@ -70,7 +70,7 @@ type LookupCaptureFilterResult struct {
 	// The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules []GetCaptureFilterFlowLogCaptureFilterRule `pulumi:"flowLogCaptureFilterRules"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
 	// The capture filter's current administrative state.
@@ -129,8 +129,8 @@ func (o LookupCaptureFilterResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupCaptureFilterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCaptureFilterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -151,8 +151,8 @@ func (o LookupCaptureFilterResultOutput) FlowLogCaptureFilterRules() GetCaptureF
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupCaptureFilterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCaptureFilterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCaptureFilterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCaptureFilterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).

@@ -64,7 +64,7 @@ export interface GetCategoryResult {
     /**
      * Additional metadata key/value pairs for the category.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */

@@ -65,12 +65,12 @@ type LookupGroupResult struct {
 	// The OCID of the tenancy containing the group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the group. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	GroupId      string                 `pulumi:"groupId"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	GroupId      string            `pulumi:"groupId"`
 	// The OCID of the group.
 	Id string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -127,8 +127,8 @@ func (o LookupGroupResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the group. Does not have to be unique, and it's changeable.
@@ -137,8 +137,8 @@ func (o LookupGroupResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupGroupResultOutput) GroupId() pulumi.StringOutput {

@@ -61,13 +61,13 @@ type LookupTargetAlertPolicyAssociationResult struct {
 	// The OCID of the compartment that contains the policy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
 	Description string `pulumi:"description"`
 	// The display name of the target-alert policy association.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id string `pulumi:"id"`
 	// Indicates if the target-alert policy association is enabled or disabled by user.
@@ -79,8 +79,8 @@ type LookupTargetAlertPolicyAssociationResult struct {
 	// The current state of the target-alert policy association.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags                     map[string]interface{} `pulumi:"systemTags"`
-	TargetAlertPolicyAssociationId string                 `pulumi:"targetAlertPolicyAssociationId"`
+	SystemTags                     map[string]string `pulumi:"systemTags"`
+	TargetAlertPolicyAssociationId string            `pulumi:"targetAlertPolicyAssociationId"`
 	// The OCID of the target on which alert policy is to be applied.
 	TargetId string `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -133,8 +133,8 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupTargetAlertPolicyAssociationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Describes the target-alert policy association.
@@ -148,8 +148,8 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) DisplayName() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupTargetAlertPolicyAssociationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target-alert policy association.
@@ -178,8 +178,8 @@ func (o LookupTargetAlertPolicyAssociationResultOutput) State() pulumi.StringOut
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupTargetAlertPolicyAssociationResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupTargetAlertPolicyAssociationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetAlertPolicyAssociationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupTargetAlertPolicyAssociationResultOutput) TargetAlertPolicyAssociationId() pulumi.StringOutput {

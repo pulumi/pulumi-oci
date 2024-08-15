@@ -115,7 +115,7 @@ type GetObjectResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The top-level namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -265,8 +265,8 @@ func (o GetObjectResultOutput) Id() pulumi.StringOutput {
 }
 
 // Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
-func (o GetObjectResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetObjectResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetObjectResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetObjectResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The top-level namespace used for the request.

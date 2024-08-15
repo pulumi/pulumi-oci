@@ -35,13 +35,13 @@ import (
 //				Type:          pulumi.Any(dedicatedAiClusterType),
 //				UnitCount:     pulumi.Any(dedicatedAiClusterUnitCount),
 //				UnitShape:     pulumi.Any(dedicatedAiClusterUnitShape),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(dedicatedAiClusterDescription),
 //				DisplayName: pulumi.Any(dedicatedAiClusterDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -68,19 +68,19 @@ type DedicatedAiCluster struct {
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the dedicated AI cluster.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state with detail that can provide actionable information.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the dedicated AI cluster.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
@@ -157,19 +157,19 @@ type dedicatedAiClusterState struct {
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the dedicated AI cluster.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state with detail that can provide actionable information.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the dedicated AI cluster.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
@@ -205,19 +205,19 @@ type DedicatedAiClusterState struct {
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the dedicated AI cluster.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state with detail that can provide actionable information.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the dedicated AI cluster.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
@@ -255,13 +255,13 @@ type dedicatedAiClusterArgs struct {
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the dedicated AI cluster.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
 	//
 	// Allowed values are:
@@ -292,13 +292,13 @@ type DedicatedAiClusterArgs struct {
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the dedicated AI cluster.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
 	//
 	// Allowed values are:
@@ -422,8 +422,8 @@ func (o DedicatedAiClusterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o DedicatedAiClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DedicatedAiClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional description of the dedicated AI cluster.
@@ -437,8 +437,8 @@ func (o DedicatedAiClusterOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DedicatedAiClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DedicatedAiClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state with detail that can provide actionable information.
@@ -452,8 +452,8 @@ func (o DedicatedAiClusterOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DedicatedAiClusterOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DedicatedAiClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the dedicated AI cluster was created, in the format defined by RFC 3339

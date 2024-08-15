@@ -209,10 +209,10 @@ class _WorkspaceApplicationPatchState:
                  application_version: Optional[pulumi.Input[int]] = None,
                  dependent_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
@@ -233,10 +233,10 @@ class _WorkspaceApplicationPatchState:
         :param pulumi.Input[int] application_version: The application version of the patch.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchDependentObjectMetadataArgs']]] dependent_object_metadatas: List of dependent objects in this patch.
         :param pulumi.Input[str] description: Detailed description for the object.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: The errors encountered while applying the patch, if any.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: The errors encountered while applying the patch, if any.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: The object's key.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The object type.
         :param pulumi.Input[str] model_version: The object's model version.
@@ -351,14 +351,14 @@ class _WorkspaceApplicationPatchState:
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The errors encountered while applying the patch, if any.
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @property
@@ -387,14 +387,14 @@ class _WorkspaceApplicationPatchState:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "key_map", value)
 
     @property
@@ -766,10 +766,10 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
             application_version: Optional[pulumi.Input[int]] = None,
             dependent_object_metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchDependentObjectMetadataArgs', 'WorkspaceApplicationPatchDependentObjectMetadataArgsDict']]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             identifier: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchMetadataArgs', 'WorkspaceApplicationPatchMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
@@ -795,10 +795,10 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         :param pulumi.Input[int] application_version: The application version of the patch.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchDependentObjectMetadataArgs', 'WorkspaceApplicationPatchDependentObjectMetadataArgsDict']]]] dependent_object_metadatas: List of dependent objects in this patch.
         :param pulumi.Input[str] description: Detailed description for the object.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: The errors encountered while applying the patch, if any.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: The errors encountered while applying the patch, if any.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: The object's key.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchMetadataArgs', 'WorkspaceApplicationPatchMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The object type.
         :param pulumi.Input[str] model_version: The object's model version.
@@ -880,7 +880,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> pulumi.Output[Mapping[str, Any]]:
+    def error_messages(self) -> pulumi.Output[Mapping[str, str]]:
         """
         The errors encountered while applying the patch, if any.
         """
@@ -904,7 +904,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
+    def key_map(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

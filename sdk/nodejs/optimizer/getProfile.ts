@@ -55,7 +55,7 @@ export interface GetProfileResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Text describing the profile. Avoid entering confidential information.
      */
@@ -63,7 +63,7 @@ export interface GetProfileResult {
     /**
      * Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The unique OCID of the profile.
      */
@@ -81,7 +81,7 @@ export interface GetProfileResult {
      * The profile's current state.
      */
     readonly state: string;
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * Optional. The compartments specified in the profile override for a recommendation.
      */

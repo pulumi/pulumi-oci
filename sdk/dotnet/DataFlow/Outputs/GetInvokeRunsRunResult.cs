@@ -41,7 +41,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Configuration;
+        public readonly ImmutableDictionary<string, string> Configuration;
         /// <summary>
         /// The data read by the run in bytes.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The query parameter for the Spark application name.
         /// </summary>
@@ -85,7 +85,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The ID of a run.
         /// </summary>
@@ -208,13 +208,13 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> configuration,
+            ImmutableDictionary<string, string> configuration,
 
             string dataReadInBytes,
 
             string dataWrittenInBytes,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
 
             string fileUri,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

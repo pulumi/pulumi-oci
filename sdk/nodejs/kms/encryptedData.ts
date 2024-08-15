@@ -62,7 +62,7 @@ export class EncryptedData extends pulumi.CustomResource {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    public readonly associatedData!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly associatedData!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The encrypted data.
      */
@@ -86,7 +86,7 @@ export class EncryptedData extends pulumi.CustomResource {
     /**
      * Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
      */
-    public readonly loggingContext!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly loggingContext!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The plaintext data to encrypt.
      *
@@ -149,7 +149,7 @@ export interface EncryptedDataState {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The encrypted data.
      */
@@ -173,7 +173,7 @@ export interface EncryptedDataState {
     /**
      * Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
      */
-    loggingContext?: pulumi.Input<{[key: string]: any}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The plaintext data to encrypt.
      *
@@ -191,7 +191,7 @@ export interface EncryptedDataArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
@@ -211,7 +211,7 @@ export interface EncryptedDataArgs {
     /**
      * Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
      */
-    loggingContext?: pulumi.Input<{[key: string]: any}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The plaintext data to encrypt.
      *

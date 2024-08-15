@@ -61,13 +61,13 @@ type LookupReplicationScheduleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule exists.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A name of the replication schedule.
 	DisplayName string `pulumi:"displayName"`
 	// Recurrence specification for the replication schedule execution.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
 	Id string `pulumi:"id"`
 	// The detailed state of the replication schedule.
@@ -76,7 +76,7 @@ type LookupReplicationScheduleResult struct {
 	// Current state of the replication schedule.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -127,8 +127,8 @@ func (o LookupReplicationScheduleResultOutput) CompartmentId() pulumi.StringOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupReplicationScheduleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReplicationScheduleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A name of the replication schedule.
@@ -142,8 +142,8 @@ func (o LookupReplicationScheduleResultOutput) ExecutionRecurrences() pulumi.Str
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o LookupReplicationScheduleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReplicationScheduleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
@@ -166,8 +166,8 @@ func (o LookupReplicationScheduleResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupReplicationScheduleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupReplicationScheduleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationScheduleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the replication schedule was created in RFC3339 format.

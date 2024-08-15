@@ -766,12 +766,12 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	DeletionSchedule string                 `pulumi:"deletionSchedule"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	DeletionSchedule string            `pulumi:"deletionSchedule"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates the protection status of the database.
 	Health string `pulumi:"health"`
 	// A message describing the current health of the protected database.
@@ -796,7 +796,7 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItem struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -826,12 +826,12 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags      pulumi.MapInput    `pulumi:"definedTags"`
-	DeletionSchedule pulumi.StringInput `pulumi:"deletionSchedule"`
+	DefinedTags      pulumi.StringMapInput `pulumi:"definedTags"`
+	DeletionSchedule pulumi.StringInput    `pulumi:"deletionSchedule"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Indicates the protection status of the database.
 	Health pulumi.StringInput `pulumi:"health"`
 	// A message describing the current health of the protected database.
@@ -856,7 +856,7 @@ type GetProtectedDatabasesProtectedDatabaseCollectionItemArgs struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -937,10 +937,8 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DbUniqueName
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DeletionSchedule() pulumi.StringOutput {
@@ -953,10 +951,8 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) DisplayName(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates the protection status of the database.
@@ -1023,10 +1019,8 @@ func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetProtectedDatabasesProtectedDatabaseCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectedDatabasesProtectedDatabaseCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -1554,11 +1548,11 @@ type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	// The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The protection policy OCID.
 	Id string `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
@@ -1570,7 +1564,7 @@ type GetProtectionPoliciesProtectionPolicyCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
@@ -1594,11 +1588,11 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	// The compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The protection policy OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
@@ -1610,7 +1604,7 @@ type GetProtectionPoliciesProtectionPolicyCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
@@ -1679,10 +1673,8 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) CompartmentId
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire 'displayname' given.
@@ -1691,10 +1683,8 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) DisplayName()
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The protection policy OCID.
@@ -1723,10 +1713,8 @@ func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) State() pulum
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetProtectionPoliciesProtectionPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProtectionPoliciesProtectionPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
@@ -1965,11 +1953,11 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	// The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The recovery service subnet OCID.
 	Id string `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
@@ -1985,7 +1973,7 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem struct {
 	// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
 	Subnets []string `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -2009,11 +1997,11 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	// The compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire 'displayname' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The recovery service subnet OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Detailed description about the current lifecycle state of the recovery service subnet. For example, it can be used to provide actionable information for a resource in a Failed state
@@ -2029,7 +2017,7 @@ type GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemArgs struct {
 	// A list of OCIDs of all the subnets associated with the Recovery Service subnet.
 	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.
@@ -2095,10 +2083,10 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Comp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]interface{} {
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire 'displayname' given.
@@ -2107,10 +2095,10 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Disp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]interface{} {
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The recovery service subnet OCID.
@@ -2146,10 +2134,10 @@ func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) Subn
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]interface{} {
+func (o GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRecoveryServiceSubnetsRecoveryServiceSubnetCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the last created time for a recovery service subnet. For example: '2020-05-22T21:10:29.600Z'.

@@ -5,7 +5,6 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private Map<String,Object> deployStageExecutionProgress;
+    private Map<String,String> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -33,7 +32,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public Map<String,Object> deployStageExecutionProgress() {
+    public Map<String,String> deployStageExecutionProgress() {
         return this.deployStageExecutionProgress;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> deployStageExecutionProgress;
+        private Map<String,String> deployStageExecutionProgress;
         private String timeFinished;
         private String timeStarted;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
+        public Builder deployStageExecutionProgress(Map<String,String> deployStageExecutionProgress) {
             if (deployStageExecutionProgress == null) {
               throw new MissingRequiredPropertyException("GetDeploymentDeploymentExecutionProgress", "deployStageExecutionProgress");
             }

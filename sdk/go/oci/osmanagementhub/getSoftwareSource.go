@@ -71,13 +71,13 @@ type LookupSoftwareSourceResult struct {
 	// Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilters []GetSoftwareSourceCustomSoftwareSourceFilter `pulumi:"customSoftwareSourceFilters"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User-specified description for the software source.
 	Description string `pulumi:"description"`
 	// User-friendly name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
 	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
@@ -121,7 +121,7 @@ type LookupSoftwareSourceResult struct {
 	// The current state of the software source.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
 	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
@@ -203,8 +203,8 @@ func (o LookupSoftwareSourceResultOutput) CustomSoftwareSourceFilters() GetSoftw
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSoftwareSourceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSoftwareSourceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User-specified description for the software source.
@@ -218,8 +218,8 @@ func (o LookupSoftwareSourceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupSoftwareSourceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSoftwareSourceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Fingerprint of the GPG key for this software source.
@@ -322,8 +322,8 @@ func (o LookupSoftwareSourceResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSoftwareSourceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSoftwareSourceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSoftwareSourceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

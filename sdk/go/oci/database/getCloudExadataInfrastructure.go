@@ -86,11 +86,11 @@ type LookupCloudExadataInfrastructureResult struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations []GetCloudExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -126,7 +126,7 @@ type LookupCloudExadataInfrastructureResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -245,8 +245,8 @@ func (o LookupCloudExadataInfrastructureResultOutput) DefinedFileSystemConfigura
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupCloudExadataInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCloudExadataInfrastructureResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
@@ -255,8 +255,8 @@ func (o LookupCloudExadataInfrastructureResultOutput) DisplayName() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupCloudExadataInfrastructureResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCloudExadataInfrastructureResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
@@ -347,8 +347,8 @@ func (o LookupCloudExadataInfrastructureResultOutput) SubscriptionId() pulumi.St
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupCloudExadataInfrastructureResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupCloudExadataInfrastructureResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the cloud Exadata infrastructure resource was created.

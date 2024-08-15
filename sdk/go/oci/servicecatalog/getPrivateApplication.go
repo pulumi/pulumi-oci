@@ -61,11 +61,11 @@ type LookupPrivateApplicationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the private application resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name used to refer to the uploaded data.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the private application in Marketplace.
 	Id                    string `pulumi:"id"`
 	LogoFileBase64encoded string `pulumi:"logoFileBase64encoded"`
@@ -131,8 +131,8 @@ func (o LookupPrivateApplicationResultOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupPrivateApplicationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPrivateApplicationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPrivateApplicationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPrivateApplicationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The name used to refer to the uploaded data.
@@ -141,8 +141,8 @@ func (o LookupPrivateApplicationResultOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupPrivateApplicationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPrivateApplicationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPrivateApplicationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPrivateApplicationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the private application in Marketplace.

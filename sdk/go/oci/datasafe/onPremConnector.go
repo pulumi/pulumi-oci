@@ -32,13 +32,13 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.NewOnPremConnector(ctx, "test_on_prem_connector", &DataSafe.OnPremConnectorArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(onPremConnectorDescription),
 //				DisplayName: pulumi.Any(onPremConnectorDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -67,7 +67,7 @@ type OnPremConnector struct {
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringOutput `pulumi:"createdVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
@@ -76,13 +76,13 @@ type OnPremConnector struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the on-premises connector.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the on-premises connector.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -127,7 +127,7 @@ type onPremConnectorState struct {
 	// Created version of the on-premises connector.
 	CreatedVersion *string `pulumi:"createdVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
@@ -136,13 +136,13 @@ type onPremConnectorState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the on-premises connector.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the on-premises connector.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -155,7 +155,7 @@ type OnPremConnectorState struct {
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
@@ -164,13 +164,13 @@ type OnPremConnectorState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the on-premises connector.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the on-premises connector.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 }
@@ -183,7 +183,7 @@ type onPremConnectorArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the on-premises connector.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
@@ -192,7 +192,7 @@ type onPremConnectorArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a OnPremConnector resource.
@@ -200,7 +200,7 @@ type OnPremConnectorArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the on-premises connector.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the on-premises connector. The name does not have to be unique, and it's changeable.
@@ -209,7 +209,7 @@ type OnPremConnectorArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (OnPremConnectorArgs) ElementType() reflect.Type {
@@ -315,8 +315,8 @@ func (o OnPremConnectorOutput) CreatedVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o OnPremConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OnPremConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the on-premises connector.
@@ -333,8 +333,8 @@ func (o OnPremConnectorOutput) DisplayName() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OnPremConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OnPremConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the on-premises connector.
@@ -348,8 +348,8 @@ func (o OnPremConnectorOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OnPremConnectorOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremConnector) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OnPremConnectorOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremConnector) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

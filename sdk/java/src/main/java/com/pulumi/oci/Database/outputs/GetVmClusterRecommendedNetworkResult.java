@@ -10,7 +10,6 @@ import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkNetwork;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkScan;
 import com.pulumi.oci.Database.outputs.GetVmClusterRecommendedNetworkVmNetwork;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +29,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The user-friendly name for the Exadata Cloud{@literal @}Customer VM cluster network. The name does not need to be unique.
      * 
@@ -52,7 +51,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -100,7 +99,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -134,7 +133,7 @@ public final class GetVmClusterRecommendedNetworkResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -194,13 +193,13 @@ public final class GetVmClusterRecommendedNetworkResult {
     public static final class Builder {
         private String compartmentId;
         private @Nullable List<String> dbServers;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private List<String> dns;
         private @Nullable Integer drScanListenerPortTcp;
         private List<GetVmClusterRecommendedNetworkDrScan> drScans;
         private String exadataInfrastructureId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetVmClusterRecommendedNetworkNetwork> networks;
         private List<String> ntps;
@@ -247,7 +246,7 @@ public final class GetVmClusterRecommendedNetworkResult {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "definedTags");
             }
@@ -299,7 +298,7 @@ public final class GetVmClusterRecommendedNetworkResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetVmClusterRecommendedNetworkResult", "freeformTags");
             }

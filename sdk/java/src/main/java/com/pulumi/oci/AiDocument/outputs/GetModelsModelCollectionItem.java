@@ -12,7 +12,6 @@ import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemTrainingDat
 import com.pulumi.oci.AiDocument.outputs.GetModelsModelCollectionItemValidationDataset;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ public final class GetModelsModelCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return An optional description of the model.
      * 
@@ -49,7 +48,7 @@ public final class GetModelsModelCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The filter to find the model with the given identifier.
      * 
@@ -114,7 +113,7 @@ public final class GetModelsModelCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The tenancy id of the model.
      * 
@@ -170,7 +169,7 @@ public final class GetModelsModelCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -191,7 +190,7 @@ public final class GetModelsModelCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -282,7 +281,7 @@ public final class GetModelsModelCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -346,10 +345,10 @@ public final class GetModelsModelCollectionItem {
     public static final class Builder {
         private String compartmentId;
         private List<GetModelsModelCollectionItemComponentModel> componentModels;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isComposedModel;
         private Boolean isQuickMode;
@@ -362,7 +361,7 @@ public final class GetModelsModelCollectionItem {
         private String modelVersion;
         private String projectId;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String tenancyId;
         private List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
         private String timeCreated;
@@ -421,7 +420,7 @@ public final class GetModelsModelCollectionItem {
             return componentModels(List.of(componentModels));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "definedTags");
             }
@@ -445,7 +444,7 @@ public final class GetModelsModelCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "freeformTags");
             }
@@ -555,7 +554,7 @@ public final class GetModelsModelCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetModelsModelCollectionItem", "systemTags");
             }

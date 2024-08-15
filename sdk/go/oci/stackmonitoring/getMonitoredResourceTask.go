@@ -61,9 +61,9 @@ type LookupMonitoredResourceTaskResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id                      string `pulumi:"id"`
 	MonitoredResourceTaskId string `pulumi:"monitoredResourceTaskId"`
@@ -72,7 +72,7 @@ type LookupMonitoredResourceTaskResult struct {
 	// The current state of the stack monitoring resource task.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The request details for the performing the task.
 	TaskDetails []GetMonitoredResourceTaskTaskDetail `pulumi:"taskDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
@@ -129,13 +129,13 @@ func (o LookupMonitoredResourceTaskResultOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMonitoredResourceTaskResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTaskResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMonitoredResourceTaskResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTaskResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -158,8 +158,8 @@ func (o LookupMonitoredResourceTaskResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMonitoredResourceTaskResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceTaskResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceTaskResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The request details for the performing the task.

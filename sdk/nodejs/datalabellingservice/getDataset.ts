@@ -47,7 +47,7 @@ export interface GetDatasetResult {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    readonly additionalProperties: {[key: string]: any};
+    readonly additionalProperties: {[key: string]: string};
     /**
      * The annotation format name required for labeling records.
      */
@@ -68,7 +68,7 @@ export interface GetDatasetResult {
     /**
      * The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A user provided description of the dataset
      */
@@ -80,7 +80,7 @@ export interface GetDatasetResult {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The OCID of the Dataset.
      */

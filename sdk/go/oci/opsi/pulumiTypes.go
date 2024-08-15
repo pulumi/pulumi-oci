@@ -945,19 +945,19 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Database Deployment Type
 	DeploymentType *string `pulumi:"deploymentType"`
 	// Source of the database entity.
 	EntitySource *string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// Database service name used for connection requests.
 	ServiceName *string `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // ExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs and ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput values.
@@ -985,19 +985,19 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId pulumi.StringPtrInput `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Database Deployment Type
 	DeploymentType pulumi.StringPtrInput `pulumi:"deploymentType"`
 	// Source of the database entity.
 	EntitySource pulumi.StringPtrInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput `pulumi:"opsiPrivateEndpointId"`
 	// Database service name used for connection requests.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
@@ -1086,10 +1086,10 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPrivat
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Database Deployment Type
@@ -1103,10 +1103,10 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) EntitySou
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -1122,10 +1122,8 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) ServiceNa
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
@@ -3337,9 +3335,9 @@ type GetAwrHubSourcesAwrHubSourceSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Number of hours since last AWR snapshots import happened from the Source database.
 	HoursSinceLastImport float64 `pulumi:"hoursSinceLastImport"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
@@ -3359,7 +3357,7 @@ type GetAwrHubSourcesAwrHubSourceSummaryCollectionItem struct {
 	// Resource Status
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
@@ -3397,9 +3395,9 @@ type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Number of hours since last AWR snapshots import happened from the Source database.
 	HoursSinceLastImport pulumi.Float64Input `pulumi:"hoursSinceLastImport"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
@@ -3419,7 +3417,7 @@ type GetAwrHubSourcesAwrHubSourceSummaryCollectionItemArgs struct {
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
@@ -3514,15 +3512,13 @@ func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) CompartmentId()
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Number of hours since last AWR snapshots import happened from the Source database.
@@ -3571,8 +3567,8 @@ func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) Status() pulumi
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAwrHubSourcesAwrHubSourceSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubSourcesAwrHubSourceSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
@@ -3829,11 +3825,11 @@ type GetAwrHubsAwrHubSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Dst Time Zone Version of the AWR Hub
 	HubDstTimezoneVersion string `pulumi:"hubDstTimezoneVersion"`
 	// Unique Awr Hub identifier
@@ -3847,7 +3843,7 @@ type GetAwrHubsAwrHubSummaryCollectionItem struct {
 	// Lifecycle states
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -3871,11 +3867,11 @@ type GetAwrHubsAwrHubSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Dst Time Zone Version of the AWR Hub
 	HubDstTimezoneVersion pulumi.StringInput `pulumi:"hubDstTimezoneVersion"`
 	// Unique Awr Hub identifier
@@ -3889,7 +3885,7 @@ type GetAwrHubsAwrHubSummaryCollectionItemArgs struct {
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -3958,8 +3954,8 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) CompartmentId() pulumi.Stri
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name.
@@ -3968,8 +3964,8 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) DisplayName() pulumi.String
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Dst Time Zone Version of the AWR Hub
@@ -4003,8 +3999,8 @@ func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) State() pulumi.StringOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAwrHubsAwrHubSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAwrHubsAwrHubSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
@@ -4787,8 +4783,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	DatabaseVersion      string `pulumi:"databaseVersion"`
 	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DefinedTags    map[string]string `pulumi:"definedTags"`
+	DeploymentType string            `pulumi:"deploymentType"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -4806,7 +4802,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
@@ -4830,7 +4826,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// Resource Status
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -4873,8 +4869,8 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	DatabaseVersion      pulumi.StringInput `pulumi:"databaseVersion"`
 	DbmPrivateEndpointId pulumi.StringInput `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.StringMapInput `pulumi:"definedTags"`
+	DeploymentType pulumi.StringInput    `pulumi:"deploymentType"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -4892,7 +4888,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
@@ -4916,7 +4912,7 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -5042,8 +5038,8 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DbmPrivateEndpo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) DeploymentType() pulumi.StringOutput {
@@ -5095,10 +5091,8 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ExadataInsightI
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5157,8 +5151,8 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Status() pulumi
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the database insight was first enabled. An RFC3339 formatted datetime string
@@ -5942,13 +5936,13 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of Enterprise Manager Bridge
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Enterprise Manager bridge identifier
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -5962,7 +5956,7 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem struct {
 	// Lifecycle states
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
@@ -5984,13 +5978,13 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs struct
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of Enterprise Manager Bridge
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique Enterprise Manager bridge identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -6004,7 +5998,7 @@ type GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemArgs struct
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
@@ -6070,10 +6064,10 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]interface{} {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description of Enterprise Manager Bridge
@@ -6087,10 +6081,10 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]interface{} {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique Enterprise Manager bridge identifier
@@ -6132,10 +6126,10 @@ func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) 
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]interface{} {
+func (o GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
@@ -6406,16 +6400,16 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	DatabaseResourceType string                                                                       `pulumi:"databaseResourceType"`
 	DbmPrivateEndpointId string                                                                       `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DefinedTags    map[string]string `pulumi:"definedTags"`
+	DeploymentType string            `pulumi:"deploymentType"`
 	// Source of the Exadata system.
 	EntitySource string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           string                 `pulumi:"serviceName"`
+	FreeformTags          map[string]string `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId string            `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           string            `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs and GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput values.
@@ -6438,16 +6432,16 @@ type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	DatabaseResourceType pulumi.StringInput                                                                   `pulumi:"databaseResourceType"`
 	DbmPrivateEndpointId pulumi.StringInput                                                                   `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.StringMapInput `pulumi:"definedTags"`
+	DeploymentType pulumi.StringInput    `pulumi:"deploymentType"`
 	// Source of the Exadata system.
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	FreeformTags          pulumi.StringMapInput `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringInput    `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringInput    `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
@@ -6535,10 +6529,10 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DbmPri
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
@@ -6551,10 +6545,10 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Entity
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
@@ -6568,10 +6562,10 @@ func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Servic
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
@@ -7046,7 +7040,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -7076,7 +7070,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
 	ExadataType string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id                string `pulumi:"id"`
 	IsAutoSyncEnabled bool   `pulumi:"isAutoSyncEnabled"`
@@ -7090,7 +7084,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItem struct {
 	// Resource Status
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -7112,7 +7106,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -7142,7 +7136,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	// Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
 	ExadataType pulumi.StringInput `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id                pulumi.StringInput `pulumi:"id"`
 	IsAutoSyncEnabled pulumi.BoolInput   `pulumi:"isAutoSyncEnabled"`
@@ -7156,7 +7150,7 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemArgs struct {
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -7220,10 +7214,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Compartment
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique Enterprise Manager bridge identifier
@@ -7311,10 +7303,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) ExadataType
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -7353,10 +7343,8 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) Status() pu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
@@ -7529,16 +7517,16 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 	DatabaseResourceType string                                                                                                           `pulumi:"databaseResourceType"`
 	DbmPrivateEndpointId string                                                                                                           `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DefinedTags    map[string]string `pulumi:"definedTags"`
+	DeploymentType string            `pulumi:"deploymentType"`
 	// Source of the Exadata system.
 	EntitySource string `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId string                 `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           string                 `pulumi:"serviceName"`
+	FreeformTags          map[string]string `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId string            `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           string            `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailInput is an input type that accepts GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs and GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput values.
@@ -7561,16 +7549,16 @@ type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailM
 	DatabaseResourceType pulumi.StringInput                                                                                                       `pulumi:"databaseResourceType"`
 	DbmPrivateEndpointId pulumi.StringInput                                                                                                       `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    pulumi.MapInput    `pulumi:"definedTags"`
-	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
+	DefinedTags    pulumi.StringMapInput `pulumi:"definedTags"`
+	DeploymentType pulumi.StringInput    `pulumi:"deploymentType"`
 	// Source of the Exadata system.
 	EntitySource pulumi.StringInput `pulumi:"entitySource"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags          pulumi.MapInput    `pulumi:"freeformTags"`
-	OpsiPrivateEndpointId pulumi.StringInput `pulumi:"opsiPrivateEndpointId"`
-	ServiceName           pulumi.StringInput `pulumi:"serviceName"`
+	FreeformTags          pulumi.StringMapInput `pulumi:"freeformTags"`
+	OpsiPrivateEndpointId pulumi.StringInput    `pulumi:"opsiPrivateEndpointId"`
+	ServiceName           pulumi.StringInput    `pulumi:"serviceName"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArgs) ElementType() reflect.Type {
@@ -7662,10 +7650,10 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) DeploymentType() pulumi.StringOutput {
@@ -7682,10 +7670,10 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) OpsiPrivateEndpointId() pulumi.StringOutput {
@@ -7701,10 +7689,10 @@ func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDeta
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]interface{} {
+func (o GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetail) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailArrayOutput struct{ *pulumi.OutputState }
@@ -8393,7 +8381,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId string `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -8411,7 +8399,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
 	HostDisplayName string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
@@ -8437,7 +8425,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	// Resource Status
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
@@ -8461,7 +8449,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId pulumi.StringInput `pulumi:"computeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Unique Enterprise Manager bridge identifier
 	EnterpriseManagerBridgeId pulumi.StringInput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -8479,7 +8467,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId pulumi.StringInput `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
 	HostDisplayName pulumi.StringInput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
@@ -8505,7 +8493,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
@@ -8574,8 +8562,8 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ComputeId() pulum
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique Enterprise Manager bridge identifier
@@ -8623,8 +8611,8 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) ExadataInsightId(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the host. The name does not have to be unique.
@@ -8688,8 +8676,8 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) Status() pulumi.S
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the host insight was first enabled. An RFC3339 formatted datetime string
@@ -9636,11 +9624,11 @@ type GetNewsReportsNewsReportCollectionItem struct {
 	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek string `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the news report.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -9658,7 +9646,7 @@ type GetNewsReportsNewsReportCollectionItem struct {
 	// Resource Status
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -9686,11 +9674,11 @@ type GetNewsReportsNewsReportCollectionItemArgs struct {
 	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the news report.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -9708,7 +9696,7 @@ type GetNewsReportsNewsReportCollectionItemArgs struct {
 	// Resource Status
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -9789,8 +9777,8 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) DayOfWeek() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetNewsReportsNewsReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the news report.
@@ -9799,8 +9787,8 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) Description() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetNewsReportsNewsReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
@@ -9844,8 +9832,8 @@ func (o GetNewsReportsNewsReportCollectionItemOutput) Status() pulumi.StringOutp
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetNewsReportsNewsReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetNewsReportsNewsReportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNewsReportsNewsReportCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.
@@ -10247,13 +10235,13 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
 	Id string `pulumi:"id"`
 	// The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
@@ -10271,7 +10259,7 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -10293,13 +10281,13 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
@@ -10317,7 +10305,7 @@ type GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColle
 	// The OCID of the subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
@@ -10383,10 +10371,10 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The description of the private endpoint.
@@ -10404,10 +10392,10 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Private service accessed database.
@@ -10467,10 +10455,10 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -10718,9 +10706,9 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse User identifier
 	Id string `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
@@ -10738,7 +10726,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	// Lifecycle states
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -10762,9 +10750,9 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringInput `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique Operations Insights Warehouse User identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
@@ -10782,7 +10770,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -10855,17 +10843,17 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique Operations Insights Warehouse User identifier
@@ -10925,10 +10913,10 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
@@ -11175,13 +11163,13 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed float64 `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId string `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Ops Insights Warehouse identifier
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -11195,7 +11183,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs float64 `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -11223,13 +11211,13 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64Input `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId pulumi.StringInput `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique Ops Insights Warehouse identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -11243,7 +11231,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs pulumi.Float64Input `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -11325,10 +11313,10 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name.
@@ -11346,10 +11334,10 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique Ops Insights Warehouse identifier
@@ -11395,10 +11383,10 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]interface{} {
+func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string
@@ -12711,13 +12699,13 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItem struct {
 	ConfigItems                   []GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItem `pulumi:"configItems"`
 	ConfigItemsApplicableContexts []string                                                          `pulumi:"configItemsApplicableContexts"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of OPSI configuration.
 	Description string `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -12728,7 +12716,7 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItem struct {
 	// Filter to return based on Lifecycle state of OPSI configuration.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -12755,13 +12743,13 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs struct {
 	ConfigItems                   GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArrayInput `pulumi:"configItems"`
 	ConfigItemsApplicableContexts pulumi.StringArrayInput                                                   `pulumi:"configItemsApplicableContexts"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of OPSI configuration.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Filter to return based on resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -12772,7 +12760,7 @@ type GetOpsiConfigurationsOpsiConfigurationsCollectionItemArgs struct {
 	// Filter to return based on Lifecycle state of OPSI configuration.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -12859,10 +12847,8 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) ConfigItems
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of OPSI configuration.
@@ -12876,10 +12862,8 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) DisplayName
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
@@ -12907,10 +12891,8 @@ func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) State() pul
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetOpsiConfigurationsOpsiConfigurationsCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpsiConfigurationsOpsiConfigurationsCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

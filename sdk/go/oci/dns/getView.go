@@ -66,11 +66,11 @@ type LookupViewResult struct {
 	// The OCID of the owning compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the view.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the view.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -133,8 +133,8 @@ func (o LookupViewResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupViewResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupViewResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupViewResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupViewResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the view.
@@ -143,8 +143,8 @@ func (o LookupViewResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupViewResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupViewResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupViewResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupViewResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the view.

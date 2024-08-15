@@ -37,13 +37,13 @@ import (
 //				EndDate:       pulumi.Any(auditArchiveRetrievalEndDate),
 //				StartDate:     pulumi.Any(auditArchiveRetrievalStartDate),
 //				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(auditArchiveRetrievalDescription),
 //				DisplayName: pulumi.Any(auditArchiveRetrievalDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -70,7 +70,7 @@ type AuditArchiveRetrieval struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the archive retrieval.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -80,7 +80,7 @@ type AuditArchiveRetrieval struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo pulumi.StringOutput `pulumi:"errorInfo"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the archive retrieval.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Start month of the archive retrieval, in the format defined by RFC3339.
@@ -88,7 +88,7 @@ type AuditArchiveRetrieval struct {
 	// The current state of the archive retrieval.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
 	//
 	// ** IMPORTANT **
@@ -149,7 +149,7 @@ type auditArchiveRetrievalState struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the archive retrieval.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -159,7 +159,7 @@ type auditArchiveRetrievalState struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo *string `pulumi:"errorInfo"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the archive retrieval.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Start month of the archive retrieval, in the format defined by RFC3339.
@@ -167,7 +167,7 @@ type auditArchiveRetrievalState struct {
 	// The current state of the archive retrieval.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
 	//
 	// ** IMPORTANT **
@@ -187,7 +187,7 @@ type AuditArchiveRetrievalState struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the archive retrieval.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -197,7 +197,7 @@ type AuditArchiveRetrievalState struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the archive retrieval.
 	LifecycleDetails pulumi.StringPtrInput
 	// Start month of the archive retrieval, in the format defined by RFC3339.
@@ -205,7 +205,7 @@ type AuditArchiveRetrievalState struct {
 	// The current state of the archive retrieval.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target associated with the archive retrieval.
 	//
 	// ** IMPORTANT **
@@ -227,7 +227,7 @@ type auditArchiveRetrievalArgs struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the archive retrieval.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -235,7 +235,7 @@ type auditArchiveRetrievalArgs struct {
 	// End month of the archive retrieval, in the format defined by RFC3339.
 	EndDate string `pulumi:"endDate"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Start month of the archive retrieval, in the format defined by RFC3339.
 	StartDate string `pulumi:"startDate"`
 	// The OCID of the target associated with the archive retrieval.
@@ -250,7 +250,7 @@ type AuditArchiveRetrievalArgs struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the archive retrieval.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -258,7 +258,7 @@ type AuditArchiveRetrievalArgs struct {
 	// End month of the archive retrieval, in the format defined by RFC3339.
 	EndDate pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Start month of the archive retrieval, in the format defined by RFC3339.
 	StartDate pulumi.StringInput
 	// The OCID of the target associated with the archive retrieval.
@@ -366,8 +366,8 @@ func (o AuditArchiveRetrievalOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AuditArchiveRetrievalOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AuditArchiveRetrievalOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the archive retrieval.
@@ -391,8 +391,8 @@ func (o AuditArchiveRetrievalOutput) ErrorInfo() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AuditArchiveRetrievalOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AuditArchiveRetrievalOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the archive retrieval.
@@ -411,8 +411,8 @@ func (o AuditArchiveRetrievalOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AuditArchiveRetrievalOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AuditArchiveRetrievalOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditArchiveRetrieval) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target associated with the archive retrieval.

@@ -9,7 +9,6 @@ import com.pulumi.oci.Optimizer.outputs.GetProfileLevelsConfiguration;
 import com.pulumi.oci.Optimizer.outputs.GetProfileTargetCompartment;
 import com.pulumi.oci.Optimizer.outputs.GetProfileTargetTag;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +30,7 @@ public final class GetProfileResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Text describing the profile. Avoid entering confidential information.
      * 
@@ -41,7 +40,7 @@ public final class GetProfileResult {
      * @return Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The unique OCID of the profile.
      * 
@@ -63,7 +62,7 @@ public final class GetProfileResult {
      * 
      */
     private String state;
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Optional. The compartments specified in the profile override for a recommendation.
      * 
@@ -104,7 +103,7 @@ public final class GetProfileResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -118,7 +117,7 @@ public final class GetProfileResult {
      * @return Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -152,7 +151,7 @@ public final class GetProfileResult {
     public String state() {
         return this.state;
     }
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -195,15 +194,15 @@ public final class GetProfileResult {
     public static final class Builder {
         private Integer aggregationIntervalInDays;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetProfileLevelsConfiguration> levelsConfigurations;
         private String name;
         private String profileId;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private List<GetProfileTargetCompartment> targetCompartments;
         private List<GetProfileTargetTag> targetTags;
         private String timeCreated;
@@ -245,7 +244,7 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "definedTags");
             }
@@ -261,7 +260,7 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "freeformTags");
             }
@@ -312,7 +311,7 @@ public final class GetProfileResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetProfileResult", "systemTags");
             }

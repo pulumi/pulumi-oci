@@ -62,13 +62,13 @@ type LookupCustomProtectionRuleResult struct {
 	CompartmentId          string `pulumi:"compartmentId"`
 	CustomProtectionRuleId string `pulumi:"customProtectionRuleId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the custom protection rule.
 	Description string `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id string `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
@@ -129,8 +129,8 @@ func (o LookupCustomProtectionRuleResultOutput) CustomProtectionRuleId() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupCustomProtectionRuleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCustomProtectionRuleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the custom protection rule.
@@ -144,8 +144,8 @@ func (o LookupCustomProtectionRuleResultOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupCustomProtectionRuleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCustomProtectionRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCustomProtectionRuleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCustomProtectionRuleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.

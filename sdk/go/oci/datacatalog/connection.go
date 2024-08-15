@@ -70,14 +70,14 @@ type Connection struct {
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-	EncProperties pulumi.MapOutput `pulumi:"encProperties"`
+	EncProperties pulumi.StringMapOutput `pulumi:"encProperties"`
 	// Unique external key of this object from the source system.
 	ExternalKey pulumi.StringOutput `pulumi:"externalKey"`
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
 	IsDefault pulumi.BoolOutput `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key        pulumi.StringOutput `pulumi:"key"`
-	Properties pulumi.MapOutput    `pulumi:"properties"`
+	Key        pulumi.StringOutput    `pulumi:"key"`
+	Properties pulumi.StringMapOutput `pulumi:"properties"`
 	// The current state of the connection.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -120,7 +120,7 @@ func NewConnection(ctx *pulumi.Context,
 		return nil, errors.New("invalid value for required argument 'TypeKey'")
 	}
 	if args.EncProperties != nil {
-		args.EncProperties = pulumi.ToSecret(args.EncProperties).(pulumi.MapInput)
+		args.EncProperties = pulumi.ToSecret(args.EncProperties).(pulumi.StringMapInput)
 	}
 	secrets := pulumi.AdditionalSecretOutputs([]string{
 		"encProperties",
@@ -160,14 +160,14 @@ type connectionState struct {
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-	EncProperties map[string]interface{} `pulumi:"encProperties"`
+	EncProperties map[string]string `pulumi:"encProperties"`
 	// Unique external key of this object from the source system.
 	ExternalKey *string `pulumi:"externalKey"`
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
 	IsDefault *bool `pulumi:"isDefault"`
 	// Unique connection key that is immutable.
-	Key        *string                `pulumi:"key"`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Key        *string           `pulumi:"key"`
+	Properties map[string]string `pulumi:"properties"`
 	// The current state of the connection.
 	State *string `pulumi:"state"`
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -199,14 +199,14 @@ type ConnectionState struct {
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-	EncProperties pulumi.MapInput
+	EncProperties pulumi.StringMapInput
 	// Unique external key of this object from the source system.
 	ExternalKey pulumi.StringPtrInput
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
 	IsDefault pulumi.BoolPtrInput
 	// Unique connection key that is immutable.
 	Key        pulumi.StringPtrInput
-	Properties pulumi.MapInput
+	Properties pulumi.StringMapInput
 	// The current state of the connection.
 	State pulumi.StringPtrInput
 	// The date and time the connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -240,10 +240,10 @@ type connectionArgs struct {
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-	EncProperties map[string]interface{} `pulumi:"encProperties"`
+	EncProperties map[string]string `pulumi:"encProperties"`
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
-	IsDefault  *bool                  `pulumi:"isDefault"`
-	Properties map[string]interface{} `pulumi:"properties"`
+	IsDefault  *bool             `pulumi:"isDefault"`
+	Properties map[string]string `pulumi:"properties"`
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
 	//
 	// ** IMPORTANT **
@@ -262,10 +262,10 @@ type ConnectionArgs struct {
 	// (Updatable) A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-	EncProperties pulumi.MapInput
+	EncProperties pulumi.StringMapInput
 	// (Updatable) Indicates whether this connection is the default connection. The first connection of a data asset defaults to being the default, subsequent connections default to not being the default. If a default connection already exists, then trying to create a connection as the default will fail. In this case the default connection would need to be updated not to be the default and then the new connection can then be created as the default.
 	IsDefault  pulumi.BoolPtrInput
-	Properties pulumi.MapInput
+	Properties pulumi.StringMapInput
 	// The key of the object type. Type key's can be found via the '/types' endpoint.
 	//
 	// ** IMPORTANT **
@@ -386,8 +386,8 @@ func (o ConnectionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
-func (o ConnectionOutput) EncProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.EncProperties }).(pulumi.MapOutput)
+func (o ConnectionOutput) EncProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.EncProperties }).(pulumi.StringMapOutput)
 }
 
 // Unique external key of this object from the source system.
@@ -405,8 +405,8 @@ func (o ConnectionOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
 
-func (o ConnectionOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.Properties }).(pulumi.MapOutput)
+func (o ConnectionOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // The current state of the connection.

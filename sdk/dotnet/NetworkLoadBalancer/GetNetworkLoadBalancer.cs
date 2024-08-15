@@ -106,7 +106,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
         /// </summary>
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// OCID of the reserved public IP address created with the virtual cloud network.
         /// </summary>
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// <summary>
         /// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
         /// </summary>
@@ -179,11 +179,11 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
 
             string subnetIpv6cidr,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

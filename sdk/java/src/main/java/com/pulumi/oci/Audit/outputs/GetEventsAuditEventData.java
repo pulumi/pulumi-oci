@@ -9,7 +9,6 @@ import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataIdentity;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataRequest;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataResponse;
 import com.pulumi.oci.Audit.outputs.GetEventsAuditEventDataStateChange;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public final class GetEventsAuditEventData {
      * @return A container object for attribues unique to the resource emitting the event.
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private Map<String,String> additionalDetails;
     /**
      * @return The availability domain where the resource resides.
      * 
@@ -41,7 +40,7 @@ public final class GetEventsAuditEventData {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
      * 
@@ -56,7 +55,7 @@ public final class GetEventsAuditEventData {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A container object for identity attributes.
      * 
@@ -93,7 +92,7 @@ public final class GetEventsAuditEventData {
      * @return A container object for attribues unique to the resource emitting the event.
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails;
     }
     /**
@@ -121,7 +120,7 @@ public final class GetEventsAuditEventData {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -142,7 +141,7 @@ public final class GetEventsAuditEventData {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -197,14 +196,14 @@ public final class GetEventsAuditEventData {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
+        private Map<String,String> additionalDetails;
         private String availabilityDomain;
         private String compartmentId;
         private String compartmentName;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String eventGroupingId;
         private String eventName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private List<GetEventsAuditEventDataIdentity> identities;
         private List<GetEventsAuditEventDataRequest> requests;
         private String resourceId;
@@ -231,7 +230,7 @@ public final class GetEventsAuditEventData {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(Map<String,String> additionalDetails) {
             if (additionalDetails == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventData", "additionalDetails");
             }
@@ -263,7 +262,7 @@ public final class GetEventsAuditEventData {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventData", "definedTags");
             }
@@ -287,7 +286,7 @@ public final class GetEventsAuditEventData {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventData", "freeformTags");
             }

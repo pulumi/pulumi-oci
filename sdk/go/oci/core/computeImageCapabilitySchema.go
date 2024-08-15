@@ -16,49 +16,6 @@ import (
 //
 // Creates compute image capability schema.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := Core.NewComputeImageCapabilitySchema(ctx, "test_compute_image_capability_schema", &Core.ComputeImageCapabilitySchemaArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				ComputeGlobalImageCapabilitySchemaVersionName: pulumi.Any(computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName),
-//				ImageId: pulumi.Any(testImage.Id),
-//				SchemaData: pulumi.Map{
-//					pulumi.Any(map[string]interface{}{
-//						"descriptorType": computeImageCapabilitySchemaSchemaDataDescriptorType,
-//						"source":         computeImageCapabilitySchemaSchemaDataSource,
-//						"defaultValue":   computeImageCapabilitySchemaSchemaDataDefaultValue,
-//						"values":         computeImageCapabilitySchemaSchemaDataValues,
-//					}),
-//				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
-//				},
-//				DisplayName: pulumi.Any(computeImageCapabilitySchemaDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
@@ -76,15 +33,15 @@ type ComputeImageCapabilitySchema struct {
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName pulumi.StringOutput `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The ocid of the image
 	ImageId pulumi.StringOutput `pulumi:"imageId"`
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-	SchemaData pulumi.MapOutput `pulumi:"schemaData"`
+	SchemaData pulumi.StringMapOutput `pulumi:"schemaData"`
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -138,15 +95,15 @@ type computeImageCapabilitySchemaState struct {
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName *string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ocid of the image
 	ImageId *string `pulumi:"imageId"`
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-	SchemaData map[string]interface{} `pulumi:"schemaData"`
+	SchemaData map[string]string `pulumi:"schemaData"`
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -159,15 +116,15 @@ type ComputeImageCapabilitySchemaState struct {
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The ocid of the image
 	ImageId pulumi.StringPtrInput
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-	SchemaData pulumi.MapInput
+	SchemaData pulumi.StringMapInput
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -182,15 +139,15 @@ type computeImageCapabilitySchemaArgs struct {
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ocid of the image
 	ImageId string `pulumi:"imageId"`
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-	SchemaData map[string]interface{} `pulumi:"schemaData"`
+	SchemaData map[string]string `pulumi:"schemaData"`
 }
 
 // The set of arguments for constructing a ComputeImageCapabilitySchema resource.
@@ -200,15 +157,15 @@ type ComputeImageCapabilitySchemaArgs struct {
 	// The name of the compute global image capability schema version
 	ComputeGlobalImageCapabilitySchemaVersionName pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The ocid of the image
 	ImageId pulumi.StringInput
 	// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-	SchemaData pulumi.MapInput
+	SchemaData pulumi.StringMapInput
 }
 
 func (ComputeImageCapabilitySchemaArgs) ElementType() reflect.Type {
@@ -318,8 +275,8 @@ func (o ComputeImageCapabilitySchemaOutput) ComputeGlobalImageCapabilitySchemaVe
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ComputeImageCapabilitySchemaOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ComputeImageCapabilitySchemaOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -328,8 +285,8 @@ func (o ComputeImageCapabilitySchemaOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ComputeImageCapabilitySchemaOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ComputeImageCapabilitySchemaOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ocid of the image
@@ -338,8 +295,8 @@ func (o ComputeImageCapabilitySchemaOutput) ImageId() pulumi.StringOutput {
 }
 
 // (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
-func (o ComputeImageCapabilitySchemaOutput) SchemaData() pulumi.MapOutput {
-	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.MapOutput { return v.SchemaData }).(pulumi.MapOutput)
+func (o ComputeImageCapabilitySchemaOutput) SchemaData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ComputeImageCapabilitySchema) pulumi.StringMapOutput { return v.SchemaData }).(pulumi.StringMapOutput)
 }
 
 // The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

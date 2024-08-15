@@ -67,11 +67,11 @@ type LookupNewsReportResult struct {
 	// Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
 	DayOfWeek string `pulumi:"dayOfWeek"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the news report.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -90,7 +90,7 @@ type LookupNewsReportResult struct {
 	// Indicates the status of a news report in Ops Insights.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the news report was first enabled. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the news report was updated. An RFC3339 formatted datetime string.
@@ -156,8 +156,8 @@ func (o LookupNewsReportResultOutput) DayOfWeek() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupNewsReportResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNewsReportResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the news report.
@@ -166,8 +166,8 @@ func (o LookupNewsReportResultOutput) Description() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupNewsReportResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNewsReportResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
@@ -215,8 +215,8 @@ func (o LookupNewsReportResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupNewsReportResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNewsReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupNewsReportResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNewsReportResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the news report was first enabled. An RFC3339 formatted datetime string.

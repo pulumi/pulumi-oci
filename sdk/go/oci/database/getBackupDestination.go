@@ -66,11 +66,11 @@ type LookupBackupDestinationResult struct {
 	// For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
 	ConnectionString string `pulumi:"connectionString"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name of the backup destination.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
 	Id string `pulumi:"id"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
@@ -156,8 +156,8 @@ func (o LookupBackupDestinationResultOutput) ConnectionString() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupBackupDestinationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBackupDestinationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-provided name of the backup destination.
@@ -166,8 +166,8 @@ func (o LookupBackupDestinationResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupBackupDestinationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBackupDestinationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBackupDestinationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupDestinationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.

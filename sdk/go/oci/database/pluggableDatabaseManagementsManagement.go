@@ -64,14 +64,14 @@ type PluggableDatabaseManagementsManagement struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetailsOutput `pulumi:"credentialDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement pulumi.BoolOutput `pulumi:"enablePluggabledatabasemanagement"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted pulumi.BoolOutput `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
@@ -156,14 +156,14 @@ type pluggableDatabaseManagementsManagementState struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails *PluggableDatabaseManagementsManagementCredentialDetails `pulumi:"credentialDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement *bool `pulumi:"enablePluggabledatabasemanagement"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted *bool `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
@@ -204,14 +204,14 @@ type PluggableDatabaseManagementsManagementState struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetailsPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnablePluggabledatabasemanagement pulumi.BoolPtrInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted pulumi.BoolPtrInput
 	// Detailed message for the lifecycle state.
@@ -407,8 +407,8 @@ func (o PluggableDatabaseManagementsManagementOutput) CredentialDetails() Plugga
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o PluggableDatabaseManagementsManagementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PluggableDatabaseManagementsManagementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -422,8 +422,8 @@ func (o PluggableDatabaseManagementsManagementOutput) EnablePluggabledatabaseman
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o PluggableDatabaseManagementsManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PluggableDatabaseManagementsManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabaseManagementsManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.

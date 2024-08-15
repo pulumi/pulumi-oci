@@ -57,7 +57,7 @@ export interface GetControlAssignmentResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * description containing reason for releasing of OperatorControl.
      */
@@ -73,7 +73,7 @@ export interface GetControlAssignmentResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The OCID of the operator control assignment.
      */

@@ -1194,7 +1194,7 @@ type GetCategoriesCategoryCollectionItem struct {
 	// The estimated cost savings, in dollars, for the category.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID of the category.
 	Id string `pulumi:"id"`
 	// Optional. A filter that returns results that match the name specified.
@@ -1232,7 +1232,7 @@ type GetCategoriesCategoryCollectionItemArgs struct {
 	// The estimated cost savings, in dollars, for the category.
 	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
-	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
 	// The unique OCID of the category.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Optional. A filter that returns results that match the name specified.
@@ -1321,8 +1321,8 @@ func (o GetCategoriesCategoryCollectionItemOutput) EstimatedCostSaving() pulumi.
 }
 
 // Additional metadata key/value pairs for the category.
-func (o GetCategoriesCategoryCollectionItemOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o GetCategoriesCategoryCollectionItemOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCategoriesCategoryCollectionItem) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID of the category.
@@ -2494,11 +2494,11 @@ type GetHistoriesHistoryCollectionItem struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation history.
 	Id string `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -2542,11 +2542,11 @@ type GetHistoriesHistoryCollectionItemArgs struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation history.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -2644,8 +2644,8 @@ func (o GetHistoriesHistoryCollectionItemOutput) EstimatedCostSaving() pulumi.Fl
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o GetHistoriesHistoryCollectionItemOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID associated with the recommendation history.
@@ -2654,8 +2654,8 @@ func (o GetHistoriesHistoryCollectionItemOutput) Id() pulumi.StringOutput {
 }
 
 // Custom metadata key/value pairs for the resource action.
-func (o GetHistoriesHistoryCollectionItemOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetHistoriesHistoryCollectionItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHistoriesHistoryCollectionItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.
@@ -4331,11 +4331,11 @@ type GetProfilesProfileCollectionItem struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
 	Id string `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
@@ -4343,8 +4343,8 @@ type GetProfilesProfileCollectionItem struct {
 	// Optional. A filter that returns results that match the name specified.
 	Name string `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State      string                 `pulumi:"state"`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	State      string            `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments []GetProfilesProfileCollectionItemTargetCompartment `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -4372,11 +4372,11 @@ type GetProfilesProfileCollectionItemArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Text describing the profile. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique OCID of the profile.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A list of configuration levels for each recommendation.
@@ -4384,8 +4384,8 @@ type GetProfilesProfileCollectionItemArgs struct {
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringInput `pulumi:"name"`
 	// A filter that returns results that match the lifecycle state specified.
-	State      pulumi.StringInput `pulumi:"state"`
-	SystemTags pulumi.MapInput    `pulumi:"systemTags"`
+	State      pulumi.StringInput    `pulumi:"state"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments GetProfilesProfileCollectionItemTargetCompartmentArrayInput `pulumi:"targetCompartments"`
 	// Optional. The tags specified in the profile override for a recommendation.
@@ -4458,8 +4458,8 @@ func (o GetProfilesProfileCollectionItemOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetProfilesProfileCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetProfilesProfileCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Text describing the profile. Avoid entering confidential information.
@@ -4468,8 +4468,8 @@ func (o GetProfilesProfileCollectionItemOutput) Description() pulumi.StringOutpu
 }
 
 // Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o GetProfilesProfileCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetProfilesProfileCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID of the profile.
@@ -4494,8 +4494,8 @@ func (o GetProfilesProfileCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProfilesProfileCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o GetProfilesProfileCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetProfilesProfileCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProfilesProfileCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Optional. The compartments specified in the profile override for a recommendation.
@@ -6545,7 +6545,7 @@ type GetRecommendationsRecommendationCollectionItem struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
 	Id string `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
@@ -6592,7 +6592,7 @@ type GetRecommendationsRecommendationCollectionItemArgs struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
@@ -6690,10 +6690,8 @@ func (o GetRecommendationsRecommendationCollectionItemOutput) EstimatedCostSavin
 }
 
 // Additional metadata key/value pairs for the recommendation.
-func (o GetRecommendationsRecommendationCollectionItemOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) map[string]interface{} {
-		return v.ExtendedMetadata
-	}).(pulumi.MapOutput)
+func (o GetRecommendationsRecommendationCollectionItemOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRecommendationsRecommendationCollectionItem) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID associated with the recommendation.
@@ -7413,11 +7411,11 @@ type GetResourceActionsResourceActionCollectionItem struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
 	Id string `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -7464,11 +7462,11 @@ type GetResourceActionsResourceActionCollectionItemArgs struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving pulumi.Float64Input `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.MapInput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapInput `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Optional. A filter that returns results that match the name specified.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -7571,10 +7569,8 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) EstimatedCostSavin
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o GetResourceActionsResourceActionCollectionItemOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) map[string]interface{} {
-		return v.ExtendedMetadata
-	}).(pulumi.MapOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID associated with the resource action.
@@ -7583,8 +7579,8 @@ func (o GetResourceActionsResourceActionCollectionItemOutput) Id() pulumi.String
 }
 
 // Custom metadata key/value pairs for the resource action.
-func (o GetResourceActionsResourceActionCollectionItemOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetResourceActionsResourceActionCollectionItemOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceActionsResourceActionCollectionItem) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Optional. A filter that returns results that match the name specified.

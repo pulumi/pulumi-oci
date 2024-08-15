@@ -80,14 +80,14 @@ namespace Pulumi.Oci.Kms
     public sealed class GetEncryptedDataArgs : global::Pulumi.InvokeArgs
     {
         [Input("associatedData")]
-        private Dictionary<string, object>? _associatedData;
+        private Dictionary<string, string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
         /// </summary>
-        public Dictionary<string, object> AssociatedData
+        public Dictionary<string, string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new Dictionary<string, object>());
+            get => _associatedData ?? (_associatedData = new Dictionary<string, string>());
             set => _associatedData = value;
         }
 
@@ -118,14 +118,14 @@ namespace Pulumi.Oci.Kms
     public sealed class GetEncryptedDataInvokeArgs : global::Pulumi.InvokeArgs
     {
         [Input("associatedData")]
-        private InputMap<object>? _associatedData;
+        private InputMap<string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
         /// </summary>
-        public InputMap<object> AssociatedData
+        public InputMap<string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new InputMap<object>());
+            get => _associatedData ?? (_associatedData = new InputMap<string>());
             set => _associatedData = value;
         }
 
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Kms
     [OutputType]
     public sealed class GetEncryptedDataResult
     {
-        public readonly ImmutableDictionary<string, object>? AssociatedData;
+        public readonly ImmutableDictionary<string, string>? AssociatedData;
         /// <summary>
         /// The encrypted data.
         /// </summary>
@@ -172,7 +172,7 @@ namespace Pulumi.Oci.Kms
 
         [OutputConstructor]
         private GetEncryptedDataResult(
-            ImmutableDictionary<string, object>? associatedData,
+            ImmutableDictionary<string, string>? associatedData,
 
             string ciphertext,
 

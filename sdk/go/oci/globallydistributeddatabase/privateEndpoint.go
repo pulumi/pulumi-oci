@@ -34,12 +34,12 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(privateEndpointDisplayName),
 //				SubnetId:      pulumi.Any(testSubnet.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(privateEndpointDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				NsgIds: pulumi.Any(privateEndpointNsgIds),
 //			})
@@ -65,13 +65,13 @@ type PrivateEndpoint struct {
 	// (Updatable) Identifier of the compartment where private endpoint is to be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) PrivateEndpoint description.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Private endpoint display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Detailed message for the lifecycle state.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
@@ -88,7 +88,7 @@ type PrivateEndpoint struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
@@ -139,13 +139,13 @@ type privateEndpointState struct {
 	// (Updatable) Identifier of the compartment where private endpoint is to be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) PrivateEndpoint description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Private endpoint display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Detailed message for the lifecycle state.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
@@ -162,7 +162,7 @@ type privateEndpointState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
@@ -175,13 +175,13 @@ type PrivateEndpointState struct {
 	// (Updatable) Identifier of the compartment where private endpoint is to be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) PrivateEndpoint description.
 	Description pulumi.StringPtrInput
 	// (Updatable) Private endpoint display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Detailed message for the lifecycle state.
 	LifecycleStateDetails pulumi.StringPtrInput
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
@@ -198,7 +198,7 @@ type PrivateEndpointState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
@@ -215,13 +215,13 @@ type privateEndpointArgs struct {
 	// (Updatable) Identifier of the compartment where private endpoint is to be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) PrivateEndpoint description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Private endpoint display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// Identifier of the customer subnet against which private endpoint is to be created.
@@ -236,13 +236,13 @@ type PrivateEndpointArgs struct {
 	// (Updatable) Identifier of the compartment where private endpoint is to be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) PrivateEndpoint description.
 	Description pulumi.StringPtrInput
 	// (Updatable) Private endpoint display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayInput
 	// Identifier of the customer subnet against which private endpoint is to be created.
@@ -345,8 +345,8 @@ func (o PrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o PrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) PrivateEndpoint description.
@@ -360,8 +360,8 @@ func (o PrivateEndpointOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o PrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Detailed message for the lifecycle state.
@@ -398,8 +398,8 @@ func (o PrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o PrivateEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o PrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PrivateEndpoint) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string

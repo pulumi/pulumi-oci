@@ -6,7 +6,6 @@ package com.pulumi.oci.ResourceScheduler.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -40,7 +39,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="metadata")
-    private @Nullable Output<Map<String,Object>> metadata;
+    private @Nullable Output<Map<String,String>> metadata;
 
     /**
      * @return (Updatable) This is additional information that helps to identity the resource for the schedule.
@@ -48,7 +47,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
-    public Optional<Output<Map<String,Object>>> metadata() {
+    public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
@@ -106,7 +105,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder metadata(@Nullable Output<Map<String,Object>> metadata) {
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
             $.metadata = metadata;
             return this;
         }
@@ -119,7 +118,7 @@ public final class ScheduleResourceArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
         }
 

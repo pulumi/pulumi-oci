@@ -46,12 +46,12 @@ import (
 //				DisplayName:       pulumi.Any(alarmSuppressionDisplayName),
 //				TimeSuppressFrom:  pulumi.Any(alarmSuppressionTimeSuppressFrom),
 //				TimeSuppressUntil: pulumi.Any(alarmSuppressionTimeSuppressUntil),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(alarmSuppressionDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -78,7 +78,7 @@ type AlarmSuppression struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
@@ -88,11 +88,11 @@ type AlarmSuppression struct {
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
 	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-	Dimensions pulumi.MapOutput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapOutput `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -158,7 +158,7 @@ type alarmSuppressionState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
@@ -168,11 +168,11 @@ type alarmSuppressionState struct {
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
 	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State *string `pulumi:"state"`
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -194,7 +194,7 @@ type AlarmSuppressionState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId pulumi.StringPtrInput
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
@@ -204,11 +204,11 @@ type AlarmSuppressionState struct {
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
 	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-	Dimensions pulumi.MapInput
+	Dimensions pulumi.StringMapInput
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
 	State pulumi.StringPtrInput
 	// The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -232,7 +232,7 @@ type alarmSuppressionArgs struct {
 	// The target of the alarm suppression.
 	AlarmSuppressionTarget AlarmSuppressionAlarmSuppressionTarget `pulumi:"alarmSuppressionTarget"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
@@ -242,11 +242,11 @@ type alarmSuppressionArgs struct {
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
 	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeSuppressFrom string `pulumi:"timeSuppressFrom"`
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
@@ -261,7 +261,7 @@ type AlarmSuppressionArgs struct {
 	// The target of the alarm suppression.
 	AlarmSuppressionTarget AlarmSuppressionAlarmSuppressionTargetInput
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// Oracle recommends including tracking information for the event or associated work, such as a ticket number.
@@ -271,11 +271,11 @@ type AlarmSuppressionArgs struct {
 	// A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 	//
 	// The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-	Dimensions pulumi.MapInput
+	Dimensions pulumi.StringMapInput
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
 	TimeSuppressFrom pulumi.StringInput
 	// The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z`
@@ -385,8 +385,8 @@ func (o AlarmSuppressionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-func (o AlarmSuppressionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlarmSuppression) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AlarmSuppressionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -401,8 +401,8 @@ func (o AlarmSuppressionOutput) Description() pulumi.StringOutput {
 // A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 //
 // The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
-func (o AlarmSuppressionOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlarmSuppression) pulumi.MapOutput { return v.Dimensions }).(pulumi.MapOutput)
+func (o AlarmSuppressionOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringMapOutput { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -411,8 +411,8 @@ func (o AlarmSuppressionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-func (o AlarmSuppressionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlarmSuppression) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AlarmSuppressionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlarmSuppression) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The current lifecycle state of the alarm suppression.  Example: `DELETED`

@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +41,7 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="headers")
-    private @Nullable Output<Map<String,Object>> headers;
+    private @Nullable Output<Map<String,String>> headers;
 
     /**
      * @return A dictionary of HTTP request headers.
@@ -50,7 +49,7 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
-    public Optional<Output<Map<String,Object>>> headers() {
+    public Optional<Output<Map<String,String>>> headers() {
         return Optional.ofNullable(this.headers);
     }
 
@@ -226,7 +225,7 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder headers(@Nullable Output<Map<String,Object>> headers) {
+        public Builder headers(@Nullable Output<Map<String,String>> headers) {
             $.headers = headers;
             return this;
         }
@@ -239,7 +238,7 @@ public final class HttpProbeArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder headers(Map<String,Object> headers) {
+        public Builder headers(Map<String,String> headers) {
             return headers(Output.of(headers));
         }
 

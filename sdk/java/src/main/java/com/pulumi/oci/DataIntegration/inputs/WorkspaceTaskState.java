@@ -20,7 +20,6 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskRegistryMetadataArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -188,13 +187,13 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="keyMap")
-    private @Nullable Output<Map<String,Object>> keyMap;
+    private @Nullable Output<Map<String,String>> keyMap;
 
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Optional<Output<Map<String,Object>>> keyMap() {
+    public Optional<Output<Map<String,String>>> keyMap() {
         return Optional.ofNullable(this.keyMap);
     }
 
@@ -720,7 +719,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder keyMap(@Nullable Output<Map<String,Object>> keyMap) {
+        public Builder keyMap(@Nullable Output<Map<String,String>> keyMap) {
             $.keyMap = keyMap;
             return this;
         }
@@ -731,7 +730,7 @@ public final class WorkspaceTaskState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             return keyMap(Output.of(keyMap));
         }
 

@@ -126,7 +126,7 @@ class _SessionState:
                  key_type: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-                 ssh_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 ssh_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  target_resource_details: Optional[pulumi.Input['SessionTargetResourceDetailsArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -142,7 +142,7 @@ class _SessionState:
         :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[str] lifecycle_details: A message describing the current session state in more detail.
         :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[Mapping[str, Any]] ssh_metadata: The connection message for the session.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] ssh_metadata: The connection message for the session.
         :param pulumi.Input[str] state: The current state of the session.
         :param pulumi.Input['SessionTargetResourceDetailsArgs'] target_resource_details: Details about a bastion session's target resource.
         :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -287,14 +287,14 @@ class _SessionState:
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def ssh_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The connection message for the session.
         """
         return pulumi.get(self, "ssh_metadata")
 
     @ssh_metadata.setter
-    def ssh_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def ssh_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "ssh_metadata", value)
 
     @property
@@ -516,7 +516,7 @@ class Session(pulumi.CustomResource):
             key_type: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             session_ttl_in_seconds: Optional[pulumi.Input[int]] = None,
-            ssh_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            ssh_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             target_resource_details: Optional[pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -537,7 +537,7 @@ class Session(pulumi.CustomResource):
         :param pulumi.Input[str] key_type: The type of the key used to connect to the session. PUB is a standard public key in OpenSSH format.
         :param pulumi.Input[str] lifecycle_details: A message describing the current session state in more detail.
         :param pulumi.Input[int] session_ttl_in_seconds: The amount of time the session can remain active.
-        :param pulumi.Input[Mapping[str, Any]] ssh_metadata: The connection message for the session.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] ssh_metadata: The connection message for the session.
         :param pulumi.Input[str] state: The current state of the session.
         :param pulumi.Input[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict']] target_resource_details: Details about a bastion session's target resource.
         :param pulumi.Input[str] time_created: The time the session was created. Format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2020-01-25T21:10:29.600Z`
@@ -637,7 +637,7 @@ class Session(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def ssh_metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         The connection message for the session.
         """

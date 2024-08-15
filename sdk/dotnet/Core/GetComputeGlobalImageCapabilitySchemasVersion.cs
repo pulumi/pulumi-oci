@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// The map of each capability name to its ImageCapabilityDescriptor.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SchemaData;
+        public readonly ImmutableDictionary<string, string> SchemaData;
         /// <summary>
         /// The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Core
 
             string name,
 
-            ImmutableDictionary<string, object> schemaData,
+            ImmutableDictionary<string, string> schemaData,
 
             string timeCreated)
         {

@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudMigrations.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -216,13 +215,13 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="snapshots")
-    private @Nullable Output<Map<String,Object>> snapshots;
+    private @Nullable Output<Map<String,String>> snapshots;
 
     /**
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> snapshots() {
+    public Optional<Output<Map<String,String>>> snapshots() {
         return Optional.ofNullable(this.snapshots);
     }
 
@@ -656,7 +655,7 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder snapshots(@Nullable Output<Map<String,Object>> snapshots) {
+        public Builder snapshots(@Nullable Output<Map<String,String>> snapshots) {
             $.snapshots = snapshots;
             return this;
         }
@@ -667,7 +666,7 @@ public final class MigrationAssetState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder snapshots(Map<String,Object> snapshots) {
+        public Builder snapshots(Map<String,String> snapshots) {
             return snapshots(Output.of(snapshots));
         }
 

@@ -33,11 +33,11 @@ import (
 //			_, err := CloudMigrations.NewMigration(ctx, "test_migration", &CloudMigrations.MigrationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(migrationDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsCompleted:           pulumi.Any(migrationIsCompleted),
 //				ReplicationScheduleId: pulumi.Any(testReplicationSchedule.Id),
@@ -64,11 +64,11 @@ type Migration struct {
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Migration identifier
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted pulumi.BoolOutput `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -81,7 +81,7 @@ type Migration struct {
 	// The current state of migration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -127,11 +127,11 @@ type migrationState struct {
 	// (Updatable) Compartment identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Migration identifier
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted *bool `pulumi:"isCompleted"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -144,7 +144,7 @@ type migrationState struct {
 	// The current state of migration.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -155,11 +155,11 @@ type MigrationState struct {
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Migration identifier
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -172,7 +172,7 @@ type MigrationState struct {
 	// The current state of migration.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -187,11 +187,11 @@ type migrationArgs struct {
 	// (Updatable) Compartment identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Migration identifier
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted *bool `pulumi:"isCompleted"`
 	// (Updatable) Replication schedule identifier
@@ -206,11 +206,11 @@ type MigrationArgs struct {
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Migration identifier
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether migration is marked as complete.
 	IsCompleted pulumi.BoolPtrInput
 	// (Updatable) Replication schedule identifier
@@ -313,8 +313,8 @@ func (o MigrationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MigrationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MigrationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Migration identifier
@@ -323,8 +323,8 @@ func (o MigrationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o MigrationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MigrationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Indicates whether migration is marked as complete.
@@ -351,8 +351,8 @@ func (o MigrationOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MigrationOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MigrationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the migration project was created. An RFC3339 formatted datetime string

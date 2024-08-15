@@ -173,7 +173,7 @@ class _WorkspaceProjectState:
                  description: Optional[pulumi.Input[str]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
@@ -189,7 +189,7 @@ class _WorkspaceProjectState:
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
@@ -271,14 +271,14 @@ class _WorkspaceProjectState:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "key_map", value)
 
     @property
@@ -575,7 +575,7 @@ class WorkspaceProject(pulumi.CustomResource):
             description: Optional[pulumi.Input[str]] = None,
             identifier: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
@@ -596,7 +596,7 @@ class WorkspaceProject(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
@@ -657,7 +657,7 @@ class WorkspaceProject(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
+    def key_map(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

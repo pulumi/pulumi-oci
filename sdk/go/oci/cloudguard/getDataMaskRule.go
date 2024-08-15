@@ -66,13 +66,13 @@ type LookupDataMaskRuleResult struct {
 	// The current status of the data mask rule
 	DataMaskRuleStatus string `pulumi:"dataMaskRuleStatus"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The data mask rule description
 	Description string `pulumi:"description"`
 	// Data mask rule display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IAM Group ID associated with the data mask rule
 	IamGroupId string `pulumi:"iamGroupId"`
 	// Unique identifier that can't be changed after creation
@@ -82,7 +82,7 @@ type LookupDataMaskRuleResult struct {
 	// The current lifecycle state of the data mask rule
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelecteds []GetDataMaskRuleTargetSelected `pulumi:"targetSelecteds"`
 	// The date and time the target was created. Format defined by RFC3339.
@@ -149,8 +149,8 @@ func (o LookupDataMaskRuleResultOutput) DataMaskRuleStatus() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDataMaskRuleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDataMaskRuleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The data mask rule description
@@ -164,8 +164,8 @@ func (o LookupDataMaskRuleResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDataMaskRuleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDataMaskRuleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // IAM Group ID associated with the data mask rule
@@ -189,8 +189,8 @@ func (o LookupDataMaskRuleResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDataMaskRuleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDataMaskRuleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataMaskRuleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).

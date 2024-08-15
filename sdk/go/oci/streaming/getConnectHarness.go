@@ -62,9 +62,9 @@ type LookupConnectHarnessResult struct {
 	CompartmentId    string `pulumi:"compartmentId"`
 	ConnectHarnessId string `pulumi:"connectHarnessId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the connect harness.
 	Id string `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
@@ -125,13 +125,13 @@ func (o LookupConnectHarnessResultOutput) ConnectHarnessId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-func (o LookupConnectHarnessResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupConnectHarnessResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupConnectHarnessResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectHarnessResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupConnectHarnessResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectHarnessResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the connect harness.

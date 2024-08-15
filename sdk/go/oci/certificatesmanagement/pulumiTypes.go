@@ -4514,11 +4514,11 @@ type GetCaBundlesCaBundleCollectionItem struct {
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the CA bundle.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the CA bundle.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the CA bundle.
@@ -4547,11 +4547,11 @@ type GetCaBundlesCaBundleCollectionItemArgs struct {
 	// A filter that returns only resources that match the given compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A brief description of the CA bundle.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the CA bundle.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state of the CA bundle.
@@ -4625,8 +4625,8 @@ func (o GetCaBundlesCaBundleCollectionItemOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetCaBundlesCaBundleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A brief description of the CA bundle.
@@ -4635,8 +4635,8 @@ func (o GetCaBundlesCaBundleCollectionItemOutput) Description() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetCaBundlesCaBundleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCaBundlesCaBundleCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCaBundlesCaBundleCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the CA bundle.
@@ -4902,11 +4902,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItem struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions []GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersion `pulumi:"currentVersions"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the CA.
 	Id string `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -4953,11 +4953,11 @@ type GetCertificateAuthoritiesCertificateAuthorityCollectionItemArgs struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions GetCertificateAuthoritiesCertificateAuthorityCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the CA.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -5069,10 +5069,10 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Curre
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) map[string]interface{} {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A brief description of the CA.
@@ -5081,10 +5081,10 @@ func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) Descr
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) map[string]interface{} {
+func (o GetCertificateAuthoritiesCertificateAuthorityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificateAuthoritiesCertificateAuthorityCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the CA.
@@ -12136,11 +12136,11 @@ type GetCertificatesCertificateCollectionItem struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []GetCertificatesCertificateCollectionItemCurrentVersion `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the certificate.
 	Id string `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -12189,11 +12189,11 @@ type GetCertificatesCertificateCollectionItemArgs struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions GetCertificatesCertificateCollectionItemCurrentVersionArrayInput `pulumi:"currentVersions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A brief description of the certificate. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the certificate.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The OCID of the certificate authority (CA). If the parameter is set to null, the service lists all CAs.
@@ -12310,8 +12310,8 @@ func (o GetCertificatesCertificateCollectionItemOutput) CurrentVersions() GetCer
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetCertificatesCertificateCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A brief description of the certificate. Avoid entering confidential information.
@@ -12320,8 +12320,8 @@ func (o GetCertificatesCertificateCollectionItemOutput) Description() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetCertificatesCertificateCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCertificatesCertificateCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificatesCertificateCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the certificate.

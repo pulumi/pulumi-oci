@@ -32,7 +32,7 @@ class ShardedDatabaseCatalogDetailArgs:
                  container_database_id: Optional[pulumi.Input[str]] = None,
                  container_database_parent_id: Optional[pulumi.Input[str]] = None,
                  encryption_key_details: Optional[pulumi.Input['ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  shard_group: Optional[pulumi.Input[str]] = None,
@@ -50,7 +50,7 @@ class ShardedDatabaseCatalogDetailArgs:
         :param pulumi.Input[str] container_database_id: Identifier of the underlying container database.
         :param pulumi.Input[str] container_database_parent_id: Identifier of the underlying container database parent.
         :param pulumi.Input['ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs'] encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-        :param pulumi.Input[Mapping[str, Any]] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Additional metadata related to shard's underlying supporting resource.
         :param pulumi.Input[str] name: Name of the shard.
         :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] shard_group: Name of the shard-group to which the shard belongs.
@@ -188,14 +188,14 @@ class ShardedDatabaseCatalogDetailArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -351,23 +351,23 @@ class ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs:
 @pulumi.input_type
 class ShardedDatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: Collection of connection strings.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: Collection of connection strings.
         """
         if all_connection_strings is not None:
             pulumi.set(__self__, "all_connection_strings", all_connection_strings)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Collection of connection strings.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
 
@@ -376,7 +376,7 @@ class ShardedDatabaseGsmArgs:
     def __init__(__self__, *,
                  compute_count: Optional[pulumi.Input[float]] = None,
                  data_storage_size_in_gbs: Optional[pulumi.Input[float]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  status: Optional[pulumi.Input[str]] = None,
                  supporting_resource_id: Optional[pulumi.Input[str]] = None,
@@ -386,7 +386,7 @@ class ShardedDatabaseGsmArgs:
         """
         :param pulumi.Input[float] compute_count: The compute amount available to the underlying autonomous database associated with shard.
         :param pulumi.Input[float] data_storage_size_in_gbs: The data disk group size to be allocated in GBs.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Additional metadata related to shard's underlying supporting resource.
         :param pulumi.Input[str] name: Name of the shard.
         :param pulumi.Input[str] status: Status of shard or catalog or gsm for the sharded database.
         :param pulumi.Input[str] supporting_resource_id: Identifier of the underlying supporting resource.
@@ -439,14 +439,14 @@ class ShardedDatabaseGsmArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -585,7 +585,7 @@ class ShardedDatabaseShardDetailArgs:
                  container_database_id: Optional[pulumi.Input[str]] = None,
                  container_database_parent_id: Optional[pulumi.Input[str]] = None,
                  encryption_key_details: Optional[pulumi.Input['ShardedDatabaseShardDetailEncryptionKeyDetailsArgs']] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  peer_cloud_autonomous_vm_cluster_id: Optional[pulumi.Input[str]] = None,
                  shard_group: Optional[pulumi.Input[str]] = None,
@@ -604,7 +604,7 @@ class ShardedDatabaseShardDetailArgs:
         :param pulumi.Input[str] container_database_id: Identifier of the underlying container database.
         :param pulumi.Input[str] container_database_parent_id: Identifier of the underlying container database parent.
         :param pulumi.Input['ShardedDatabaseShardDetailEncryptionKeyDetailsArgs'] encryption_key_details: Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
-        :param pulumi.Input[Mapping[str, Any]] metadata: Additional metadata related to shard's underlying supporting resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Additional metadata related to shard's underlying supporting resource.
         :param pulumi.Input[str] name: Name of the shard.
         :param pulumi.Input[str] peer_cloud_autonomous_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
         :param pulumi.Input[str] shard_group: Name of the shard-group to which the shard belongs.
@@ -745,14 +745,14 @@ class ShardedDatabaseShardDetailArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional metadata related to shard's underlying supporting resource.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property

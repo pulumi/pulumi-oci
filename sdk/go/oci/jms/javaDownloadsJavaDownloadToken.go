@@ -38,11 +38,11 @@ import (
 //				JavaVersion:   pulumi.Any(javaDownloadTokenJavaVersion),
 //				LicenseTypes:  pulumi.Any(javaDownloadTokenLicenseType),
 //				TimeExpires:   pulumi.Any(javaDownloadTokenTimeExpires),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsDefault: pulumi.Any(javaDownloadTokenIsDefault),
 //			})
@@ -66,13 +66,13 @@ type JavaDownloadsJavaDownloadToken struct {
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaDownloadTokenCreatedByArrayOutput `pulumi:"createdBies"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User provided description of the JavaDownloadToken.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User provided display name of the JavaDownloadToken.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The token default attribute.
 	IsDefault pulumi.BoolOutput `pulumi:"isDefault"`
 	// The Java version associated with the token.
@@ -86,7 +86,7 @@ type JavaDownloadsJavaDownloadToken struct {
 	// The current state of the JavaDownloadToken.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) Expiry time of the token.
@@ -155,13 +155,13 @@ type javaDownloadsJavaDownloadTokenState struct {
 	// An authorized principal.
 	CreatedBies []JavaDownloadsJavaDownloadTokenCreatedBy `pulumi:"createdBies"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided description of the JavaDownloadToken.
 	Description *string `pulumi:"description"`
 	// (Updatable) User provided display name of the JavaDownloadToken.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The token default attribute.
 	IsDefault *bool `pulumi:"isDefault"`
 	// The Java version associated with the token.
@@ -175,7 +175,7 @@ type javaDownloadsJavaDownloadTokenState struct {
 	// The current state of the JavaDownloadToken.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) Expiry time of the token.
@@ -197,13 +197,13 @@ type JavaDownloadsJavaDownloadTokenState struct {
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaDownloadTokenCreatedByArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided description of the JavaDownloadToken.
 	Description pulumi.StringPtrInput
 	// (Updatable) User provided display name of the JavaDownloadToken.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The token default attribute.
 	IsDefault pulumi.BoolPtrInput
 	// The Java version associated with the token.
@@ -217,7 +217,7 @@ type JavaDownloadsJavaDownloadTokenState struct {
 	// The current state of the JavaDownloadToken.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) Expiry time of the token.
@@ -241,13 +241,13 @@ type javaDownloadsJavaDownloadTokenArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided description of the JavaDownloadToken.
 	Description string `pulumi:"description"`
 	// (Updatable) User provided display name of the JavaDownloadToken.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The token default attribute.
 	IsDefault *bool `pulumi:"isDefault"`
 	// The Java version associated with the token.
@@ -266,13 +266,13 @@ type JavaDownloadsJavaDownloadTokenArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided description of the JavaDownloadToken.
 	Description pulumi.StringInput
 	// (Updatable) User provided display name of the JavaDownloadToken.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The token default attribute.
 	IsDefault pulumi.BoolPtrInput
 	// The Java version associated with the token.
@@ -386,8 +386,8 @@ func (o JavaDownloadsJavaDownloadTokenOutput) CreatedBies() JavaDownloadsJavaDow
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-func (o JavaDownloadsJavaDownloadTokenOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadTokenOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User provided description of the JavaDownloadToken.
@@ -401,8 +401,8 @@ func (o JavaDownloadsJavaDownloadTokenOutput) DisplayName() pulumi.StringOutput 
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-func (o JavaDownloadsJavaDownloadTokenOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadTokenOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The token default attribute.
@@ -438,8 +438,8 @@ func (o JavaDownloadsJavaDownloadTokenOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o JavaDownloadsJavaDownloadTokenOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadTokenOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadToken) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.

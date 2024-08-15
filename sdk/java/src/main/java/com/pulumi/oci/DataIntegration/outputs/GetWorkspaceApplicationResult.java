@@ -12,7 +12,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPublishedOb
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationRegistryMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationSourceApplicationInfo;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +38,7 @@ public final class GetWorkspaceApplicationResult {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A list of dependent objects in this patch.
      * 
@@ -59,7 +58,7 @@ public final class GetWorkspaceApplicationResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return OCID of the resource that is used to uniquely identify the application
      * 
@@ -79,7 +78,7 @@ public final class GetWorkspaceApplicationResult {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private Map<String,String> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
@@ -178,7 +177,7 @@ public final class GetWorkspaceApplicationResult {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -206,7 +205,7 @@ public final class GetWorkspaceApplicationResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -234,7 +233,7 @@ public final class GetWorkspaceApplicationResult {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Map<String,Object> keyMap() {
+    public Map<String,String> keyMap() {
         return this.keyMap;
     }
     /**
@@ -351,15 +350,15 @@ public final class GetWorkspaceApplicationResult {
         private String applicationKey;
         private Integer applicationVersion;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private List<GetWorkspaceApplicationDependentObjectMetadata> dependentObjectMetadatas;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String identifier;
         private String key;
-        private Map<String,Object> keyMap;
+        private Map<String,String> keyMap;
         private List<GetWorkspaceApplicationMetadata> metadatas;
         private String modelType;
         private String modelVersion;
@@ -432,7 +431,7 @@ public final class GetWorkspaceApplicationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "definedTags");
             }
@@ -467,7 +466,7 @@ public final class GetWorkspaceApplicationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "freeformTags");
             }
@@ -499,7 +498,7 @@ public final class GetWorkspaceApplicationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             if (keyMap == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationResult", "keyMap");
             }

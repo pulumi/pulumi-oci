@@ -2821,7 +2821,7 @@ func (o BuildRunBuildRunArgumentsItemArrayOutput) Index(i pulumi.IntInput) Build
 
 type BuildRunBuildRunProgress struct {
 	// Map of stage OCIDs to build pipeline stage run progress model.
-	BuildPipelineStageRunProgress map[string]interface{} `pulumi:"buildPipelineStageRunProgress"`
+	BuildPipelineStageRunProgress map[string]string `pulumi:"buildPipelineStageRunProgress"`
 	// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished *string `pulumi:"timeFinished"`
 	// The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -2841,7 +2841,7 @@ type BuildRunBuildRunProgressInput interface {
 
 type BuildRunBuildRunProgressArgs struct {
 	// Map of stage OCIDs to build pipeline stage run progress model.
-	BuildPipelineStageRunProgress pulumi.MapInput `pulumi:"buildPipelineStageRunProgress"`
+	BuildPipelineStageRunProgress pulumi.StringMapInput `pulumi:"buildPipelineStageRunProgress"`
 	// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -2900,8 +2900,8 @@ func (o BuildRunBuildRunProgressOutput) ToBuildRunBuildRunProgressOutputWithCont
 }
 
 // Map of stage OCIDs to build pipeline stage run progress model.
-func (o BuildRunBuildRunProgressOutput) BuildPipelineStageRunProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v BuildRunBuildRunProgress) map[string]interface{} { return v.BuildPipelineStageRunProgress }).(pulumi.MapOutput)
+func (o BuildRunBuildRunProgressOutput) BuildPipelineStageRunProgress() pulumi.StringMapOutput {
+	return o.ApplyT(func(v BuildRunBuildRunProgress) map[string]string { return v.BuildPipelineStageRunProgress }).(pulumi.StringMapOutput)
 }
 
 // The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11272,7 +11272,7 @@ func (o DeploymentDeploymentArgumentsItemArrayOutput) Index(i pulumi.IntInput) D
 
 type DeploymentDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress map[string]string `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished *string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11292,7 +11292,7 @@ type DeploymentDeploymentExecutionProgressInput interface {
 
 type DeploymentDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress pulumi.StringMapInput `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringPtrInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -11351,10 +11351,8 @@ func (o DeploymentDeploymentExecutionProgressOutput) ToDeploymentDeploymentExecu
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o DeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v DeploymentDeploymentExecutionProgress) map[string]interface{} {
-		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+func (o DeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DeploymentDeploymentExecutionProgress) map[string]string { return v.DeployStageExecutionProgress }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -15326,7 +15324,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 	// The type of source provider.
 	ConnectionType string `pulumi:"connectionType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollection `pulumi:"deliverArtifactCollection"`
 	// A target deployment pipeline OCID that will run in this stage.
@@ -15336,7 +15334,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// Image name for the build environment.
@@ -15356,7 +15354,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItem struct {
 	// A filter to return the stages that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -15394,7 +15392,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs struct {
 	// The type of source provider.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection GetBuildPipelineStagesBuildPipelineStageCollectionItemDeliverArtifactCollectionInput `pulumi:"deliverArtifactCollection"`
 	// A target deployment pipeline OCID that will run in this stage.
@@ -15404,7 +15402,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Image name for the build environment.
@@ -15424,7 +15422,7 @@ type GetBuildPipelineStagesBuildPipelineStageCollectionItemArgs struct {
 	// A filter to return the stages that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -15531,10 +15529,8 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) Connection
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies an array of artifacts that need to be pushed to the artifactory stores.
@@ -15560,10 +15556,10 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]interface{} {
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -15618,10 +15614,8 @@ func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) State() pu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetBuildPipelineStagesBuildPipelineStageCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelineStagesBuildPipelineStageCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -16660,13 +16654,13 @@ type GetBuildPipelinesBuildPipelineCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Optional description about the build pipeline.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -16676,7 +16670,7 @@ type GetBuildPipelinesBuildPipelineCollectionItem struct {
 	// A filter to return only build pipelines that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the build pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -16700,13 +16694,13 @@ type GetBuildPipelinesBuildPipelineCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Optional description about the build pipeline.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -16716,7 +16710,7 @@ type GetBuildPipelinesBuildPipelineCollectionItemArgs struct {
 	// A filter to return only build pipelines that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the build pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -16787,8 +16781,8 @@ func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Optional description about the build pipeline.
@@ -16802,8 +16796,8 @@ func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -16827,8 +16821,8 @@ func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) State() pulumi.Strin
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetBuildPipelinesBuildPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildPipelinesBuildPipelineCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the build pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -18424,7 +18418,7 @@ func (o GetBuildRunBuildRunArgumentItemArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetBuildRunBuildRunProgress struct {
 	// Map of stage OCIDs to build pipeline stage run progress model.
-	BuildPipelineStageRunProgress map[string]interface{} `pulumi:"buildPipelineStageRunProgress"`
+	BuildPipelineStageRunProgress map[string]string `pulumi:"buildPipelineStageRunProgress"`
 	// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished string `pulumi:"timeFinished"`
 	// The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -18444,7 +18438,7 @@ type GetBuildRunBuildRunProgressInput interface {
 
 type GetBuildRunBuildRunProgressArgs struct {
 	// Map of stage OCIDs to build pipeline stage run progress model.
-	BuildPipelineStageRunProgress pulumi.MapInput `pulumi:"buildPipelineStageRunProgress"`
+	BuildPipelineStageRunProgress pulumi.StringMapInput `pulumi:"buildPipelineStageRunProgress"`
 	// The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -18503,8 +18497,8 @@ func (o GetBuildRunBuildRunProgressOutput) ToGetBuildRunBuildRunProgressOutputWi
 }
 
 // Map of stage OCIDs to build pipeline stage run progress model.
-func (o GetBuildRunBuildRunProgressOutput) BuildPipelineStageRunProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildRunBuildRunProgress) map[string]interface{} { return v.BuildPipelineStageRunProgress }).(pulumi.MapOutput)
+func (o GetBuildRunBuildRunProgressOutput) BuildPipelineStageRunProgress() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildRunBuildRunProgress) map[string]string { return v.BuildPipelineStageRunProgress }).(pulumi.StringMapOutput)
 }
 
 // The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -19657,11 +19651,11 @@ type GetBuildRunsBuildRunSummaryCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -19671,7 +19665,7 @@ type GetBuildRunsBuildRunSummaryCollectionItem struct {
 	// A filter to return only build runs that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -19702,11 +19696,11 @@ type GetBuildRunsBuildRunSummaryCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -19716,7 +19710,7 @@ type GetBuildRunsBuildRunSummaryCollectionItemArgs struct {
 	// A filter to return only build runs that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the build run was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -19812,8 +19806,8 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) CompartmentId() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -19822,8 +19816,8 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) DisplayName() pulumi.St
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -19847,8 +19841,8 @@ func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) State() pulumi.StringOu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetBuildRunsBuildRunSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBuildRunsBuildRunSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the build run was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -21236,13 +21230,13 @@ type GetConnectionsConnectionCollectionItem struct {
 	// A filter to return only resources that match the given connection type.
 	ConnectionType string `pulumi:"connectionType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Optional description about the connection.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// The result of validating the credentials of a connection.
@@ -21252,7 +21246,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	// A filter to return only connections that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -21286,13 +21280,13 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// A filter to return only resources that match the given connection type.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Optional description about the connection.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The result of validating the credentials of a connection.
@@ -21302,7 +21296,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// A filter to return only connections that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the connection was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -21390,8 +21384,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.St
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Optional description about the connection.
@@ -21405,8 +21399,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -21432,8 +21426,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) State() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the connection was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -22219,7 +22213,7 @@ type GetDeployArtifactsDeployArtifactCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies source of an artifact.
 	DeployArtifactSources []GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSource `pulumi:"deployArtifactSources"`
 	// Type of the deployment artifact.
@@ -22229,7 +22223,7 @@ type GetDeployArtifactsDeployArtifactCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
@@ -22239,7 +22233,7 @@ type GetDeployArtifactsDeployArtifactCollectionItem struct {
 	// A filter to return only DeployArtifacts that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -22263,7 +22257,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Specifies source of an artifact.
 	DeployArtifactSources GetDeployArtifactsDeployArtifactCollectionItemDeployArtifactSourceArrayInput `pulumi:"deployArtifactSources"`
 	// Type of the deployment artifact.
@@ -22273,7 +22267,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
@@ -22283,7 +22277,7 @@ type GetDeployArtifactsDeployArtifactCollectionItemArgs struct {
 	// A filter to return only DeployArtifacts that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -22352,8 +22346,8 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) CompartmentId() pu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies source of an artifact.
@@ -22379,8 +22373,8 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) DisplayName() pulu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -22404,8 +22398,8 @@ func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) State() pulumi.Str
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDeployArtifactsDeployArtifactCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployArtifactsDeployArtifactCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -23315,7 +23309,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItem struct {
 	// A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors []GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelector `pulumi:"computeInstanceGroupSelectors"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Deployment environment type.
 	DeployEnvironmentType string `pulumi:"deployEnvironmentType"`
 	// Optional description about the deployment environment.
@@ -23323,7 +23317,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Function.
 	FunctionId string `pulumi:"functionId"`
 	// Unique identifier or OCID for listing a single resource by ID.
@@ -23337,7 +23331,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItem struct {
 	// A filter to return only DeployEnvironments that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -23363,7 +23357,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs struct {
 	// A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors GetDeployEnvironmentsDeployEnvironmentCollectionItemComputeInstanceGroupSelectorArrayInput `pulumi:"computeInstanceGroupSelectors"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Deployment environment type.
 	DeployEnvironmentType pulumi.StringInput `pulumi:"deployEnvironmentType"`
 	// Optional description about the deployment environment.
@@ -23371,7 +23365,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Function.
 	FunctionId pulumi.StringInput `pulumi:"functionId"`
 	// Unique identifier or OCID for listing a single resource by ID.
@@ -23385,7 +23379,7 @@ type GetDeployEnvironmentsDeployEnvironmentCollectionItemArgs struct {
 	// A filter to return only DeployEnvironments that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -23461,10 +23455,8 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) ComputeInsta
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Deployment environment type.
@@ -23483,10 +23475,8 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) DisplayName(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Function.
@@ -23522,10 +23512,8 @@ func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetDeployEnvironmentsDeployEnvironmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployEnvironmentsDeployEnvironmentCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -25179,7 +25167,7 @@ type GetDeployPipelinesDeployPipelineCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// List of all artifacts used in the pipeline.
 	DeployPipelineArtifacts []GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifact `pulumi:"deployPipelineArtifacts"`
 	// List of all environments used in the pipeline.
@@ -25191,7 +25179,7 @@ type GetDeployPipelinesDeployPipelineCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -25201,7 +25189,7 @@ type GetDeployPipelinesDeployPipelineCollectionItem struct {
 	// A filter to return only DeployPipelines that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -25223,7 +25211,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// List of all artifacts used in the pipeline.
 	DeployPipelineArtifacts GetDeployPipelinesDeployPipelineCollectionItemDeployPipelineArtifactArrayInput `pulumi:"deployPipelineArtifacts"`
 	// List of all environments used in the pipeline.
@@ -25235,7 +25223,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -25245,7 +25233,7 @@ type GetDeployPipelinesDeployPipelineCollectionItemArgs struct {
 	// A filter to return only DeployPipelines that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -25309,8 +25297,8 @@ func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) CompartmentId() pu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // List of all artifacts used in the pipeline.
@@ -25345,8 +25333,8 @@ func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) DisplayName() pulu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -25370,8 +25358,8 @@ func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) State() pulumi.Str
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDeployPipelinesDeployPipelineCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployPipelinesDeployPipelineCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -29045,11 +29033,11 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	// A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Specifies the container configuration.
 	ContainerConfigs []GetDeployStagesDeployStageCollectionItemContainerConfig `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId string `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
@@ -29075,7 +29063,7 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	// Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicies []GetDeployStagesDeployStageCollectionItemFailurePolicy `pulumi:"failurePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Function environment OCID.
 	FunctionDeployEnvironmentId string `pulumi:"functionDeployEnvironmentId"`
 	// Timeout for execution of the Function. Value in seconds.
@@ -29149,7 +29137,7 @@ type GetDeployStagesDeployStageCollectionItem struct {
 	// A filter to return only deployment stages that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfigs []GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig `pulumi:"testLoadBalancerConfigs"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -29201,11 +29189,11 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	// A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringInput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config pulumi.MapInput `pulumi:"config"`
+	Config pulumi.StringMapInput `pulumi:"config"`
 	// Specifies the container configuration.
 	ContainerConfigs GetDeployStagesDeployStageCollectionItemContainerConfigArrayInput `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringInput `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
@@ -29231,7 +29219,7 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	// Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicies GetDeployStagesDeployStageCollectionItemFailurePolicyArrayInput `pulumi:"failurePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Function environment OCID.
 	FunctionDeployEnvironmentId pulumi.StringInput `pulumi:"functionDeployEnvironmentId"`
 	// Timeout for execution of the Function. Value in seconds.
@@ -29305,7 +29293,7 @@ type GetDeployStagesDeployStageCollectionItemArgs struct {
 	// A filter to return only deployment stages that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfigs GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigArrayInput `pulumi:"testLoadBalancerConfigs"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -29445,8 +29433,8 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ComputeInstanceGroupDepl
 }
 
 // User provided key and value pair configuration, which is assigned through constants or parameter.
-func (o GetDeployStagesDeployStageCollectionItemOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o GetDeployStagesDeployStageCollectionItemOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Specifies the container configuration.
@@ -29457,8 +29445,8 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) ContainerConfigs() GetDe
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeployStagesDeployStageCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDeployStagesDeployStageCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -29526,8 +29514,8 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) FailurePolicies() GetDep
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetDeployStagesDeployStageCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDeployStagesDeployStageCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Function environment OCID.
@@ -29727,8 +29715,8 @@ func (o GetDeployStagesDeployStageCollectionItemOutput) State() pulumi.StringOut
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDeployStagesDeployStageCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDeployStagesDeployStageCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeployStagesDeployStageCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
@@ -33723,7 +33711,7 @@ func (o GetDeploymentDeploymentArgumentItemArrayOutput) Index(i pulumi.IntInput)
 
 type GetDeploymentDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress map[string]string `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -33743,7 +33731,7 @@ type GetDeploymentDeploymentExecutionProgressInput interface {
 
 type GetDeploymentDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress pulumi.StringMapInput `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -33802,10 +33790,10 @@ func (o GetDeploymentDeploymentExecutionProgressOutput) ToGetDeploymentDeploymen
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o GetDeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgress) map[string]interface{} {
+func (o GetDeploymentDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentDeploymentExecutionProgress) map[string]string {
 		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -33939,7 +33927,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies the list of artifact override arguments at the time of deployment.
 	DeployArtifactOverrideArguments []GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgument `pulumi:"deployArtifactOverrideArguments"`
 	// List of all artifacts used in the pipeline.
@@ -33961,7 +33949,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -33973,7 +33961,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	// A filter to return only Deployments that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -33996,7 +33984,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Specifies the list of artifact override arguments at the time of deployment.
 	DeployArtifactOverrideArguments GetDeploymentsDeploymentCollectionItemDeployArtifactOverrideArgumentArrayInput `pulumi:"deployArtifactOverrideArguments"`
 	// List of all artifacts used in the pipeline.
@@ -34018,7 +34006,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -34030,7 +34018,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	// A filter to return only Deployments that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the deployment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -34095,8 +34083,8 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeploymentsDeploymentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDeploymentsDeploymentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the list of artifact override arguments at the time of deployment.
@@ -34162,8 +34150,8 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetDeploymentsDeploymentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDeploymentsDeploymentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -34192,8 +34180,8 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) State() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDeploymentsDeploymentCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDeploymentsDeploymentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -35727,7 +35715,7 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentArgumentItemArrayOutput)
 
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress map[string]interface{} `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress map[string]string `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished string `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -35747,7 +35735,7 @@ type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressInput inte
 
 type GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressArgs struct {
 	// Map of stage OCIDs to deploy stage execution progress model.
-	DeployStageExecutionProgress pulumi.MapInput `pulumi:"deployStageExecutionProgress"`
+	DeployStageExecutionProgress pulumi.StringMapInput `pulumi:"deployStageExecutionProgress"`
 	// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
 	// Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -35806,10 +35794,10 @@ func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput)
 }
 
 // Map of stage OCIDs to deploy stage execution progress model.
-func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress) map[string]interface{} {
+func (o GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressOutput) DeployStageExecutionProgress() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress) map[string]string {
 		return v.DeployStageExecutionProgress
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -36712,11 +36700,11 @@ type GetProjectsProjectCollectionItem struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Project description.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -36730,7 +36718,7 @@ type GetProjectsProjectCollectionItem struct {
 	// A filter to return only Projects that matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the project was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the project was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -36752,11 +36740,11 @@ type GetProjectsProjectCollectionItemArgs struct {
 	// The OCID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Project description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier or OCID for listing a single resource by ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -36770,7 +36758,7 @@ type GetProjectsProjectCollectionItemArgs struct {
 	// A filter to return only Projects that matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time the project was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time the project was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -36834,8 +36822,8 @@ func (o GetProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetProjectsProjectCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Project description.
@@ -36844,8 +36832,8 @@ func (o GetProjectsProjectCollectionItemOutput) Description() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetProjectsProjectCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier or OCID for listing a single resource by ID.
@@ -36881,8 +36869,8 @@ func (o GetProjectsProjectCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetProjectsProjectCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetProjectsProjectCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the project was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -37331,11 +37319,11 @@ type GetRepositoriesRepositoryCollectionItem struct {
 	// The default branch of the repository.
 	DefaultBranch string `pulumi:"defaultBranch"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Details of the repository. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl string `pulumi:"httpUrl"`
 	// The OCID of the repository. This value is unique and immutable.
@@ -37362,7 +37350,7 @@ type GetRepositoriesRepositoryCollectionItem struct {
 	// A filter to return only resources whose lifecycle state matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -37392,11 +37380,11 @@ type GetRepositoriesRepositoryCollectionItemArgs struct {
 	// The default branch of the repository.
 	DefaultBranch pulumi.StringInput `pulumi:"defaultBranch"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Details of the repository. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl pulumi.StringInput `pulumi:"httpUrl"`
 	// The OCID of the repository. This value is unique and immutable.
@@ -37423,7 +37411,7 @@ type GetRepositoriesRepositoryCollectionItemArgs struct {
 	// A filter to return only resources whose lifecycle state matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -37504,8 +37492,8 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) DefaultBranch() pulumi.St
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoriesRepositoryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Details of the repository. Avoid entering confidential information.
@@ -37514,8 +37502,8 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) Description() pulumi.Stri
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoriesRepositoryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // HTTP URL that you use to git clone, pull and push.
@@ -37585,8 +37573,8 @@ func (o GetRepositoriesRepositoryCollectionItemOutput) State() pulumi.StringOutp
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRepositoriesRepositoryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetRepositoriesRepositoryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoriesRepositoryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -37765,9 +37753,9 @@ type GetRepositoryAuthorItem struct {
 	// Author name.
 	AuthorName string `pulumi:"authorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // GetRepositoryAuthorItemInput is an input type that accepts GetRepositoryAuthorItemArgs and GetRepositoryAuthorItemOutput values.
@@ -37785,9 +37773,9 @@ type GetRepositoryAuthorItemArgs struct {
 	// Author name.
 	AuthorName pulumi.StringInput `pulumi:"authorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 }
 
 func (GetRepositoryAuthorItemArgs) ElementType() reflect.Type {
@@ -37847,13 +37835,13 @@ func (o GetRepositoryAuthorItemOutput) AuthorName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryAuthorItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRepositoryAuthorItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryAuthorItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoryAuthorItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 type GetRepositoryAuthorItemArrayOutput struct{ *pulumi.OutputState }
@@ -38085,11 +38073,11 @@ type GetRepositoryAuthorsRepositoryAuthorCollectionItem struct {
 	// Author name.
 	AuthorName string `pulumi:"authorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetRepositoryAuthorsRepositoryAuthorCollectionItemInput is an input type that accepts GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs and GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput values.
@@ -38107,11 +38095,11 @@ type GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs struct {
 	// Author name.
 	AuthorName pulumi.StringInput `pulumi:"authorName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetRepositoryAuthorsRepositoryAuthorCollectionItemArgs) ElementType() reflect.Type {
@@ -38171,22 +38159,18 @@ func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) AuthorName() p
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetRepositoryAuthorsRepositoryAuthorCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryAuthorsRepositoryAuthorCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type GetRepositoryAuthorsRepositoryAuthorCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -38423,9 +38407,9 @@ type GetRepositoryCommitsRepositoryCommitCollectionItem struct {
 	// Email of who creates the commit.
 	CommitterEmail string `pulumi:"committerEmail"`
 	// Name of who creates the commit.
-	CommitterName string                 `pulumi:"committerName"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
-	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
+	CommitterName string            `pulumi:"committerName"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	FreeformTags  map[string]string `pulumi:"freeformTags"`
 	// An array of parent commit IDs of created commit.
 	ParentCommitIds []string `pulumi:"parentCommitIds"`
 	// The time at which commit was created.
@@ -38457,9 +38441,9 @@ type GetRepositoryCommitsRepositoryCommitCollectionItemArgs struct {
 	// Email of who creates the commit.
 	CommitterEmail pulumi.StringInput `pulumi:"committerEmail"`
 	// Name of who creates the commit.
-	CommitterName pulumi.StringInput `pulumi:"committerName"`
-	DefinedTags   pulumi.MapInput    `pulumi:"definedTags"`
-	FreeformTags  pulumi.MapInput    `pulumi:"freeformTags"`
+	CommitterName pulumi.StringInput    `pulumi:"committerName"`
+	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
+	FreeformTags  pulumi.StringMapInput `pulumi:"freeformTags"`
 	// An array of parent commit IDs of created commit.
 	ParentCommitIds pulumi.StringArrayInput `pulumi:"parentCommitIds"`
 	// The time at which commit was created.
@@ -38549,16 +38533,12 @@ func (o GetRepositoryCommitsRepositoryCommitCollectionItemOutput) CommitterName(
 	return o.ApplyT(func(v GetRepositoryCommitsRepositoryCommitCollectionItem) string { return v.CommitterName }).(pulumi.StringOutput)
 }
 
-func (o GetRepositoryCommitsRepositoryCommitCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryCommitsRepositoryCommitCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetRepositoryCommitsRepositoryCommitCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryCommitsRepositoryCommitCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-func (o GetRepositoryCommitsRepositoryCommitCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryCommitsRepositoryCommitCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetRepositoryCommitsRepositoryCommitCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryCommitsRepositoryCommitCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // An array of parent commit IDs of created commit.
@@ -39058,7 +39038,7 @@ type GetRepositoryDiffsDiffCollectionItem struct {
 	AreConflictsInFile bool `pulumi:"areConflictsInFile"`
 	// List of changed section in the file.
 	Changes      []GetRepositoryDiffsDiffCollectionItemChange `pulumi:"changes"`
-	FreeformTags map[string]interface{}                       `pulumi:"freeformTags"`
+	FreeformTags map[string]string                            `pulumi:"freeformTags"`
 	// Indicates whether the file is binary.
 	IsBinary bool `pulumi:"isBinary"`
 	// Indicates whether the file is large.
@@ -39089,7 +39069,7 @@ type GetRepositoryDiffsDiffCollectionItemArgs struct {
 	AreConflictsInFile pulumi.BoolInput `pulumi:"areConflictsInFile"`
 	// List of changed section in the file.
 	Changes      GetRepositoryDiffsDiffCollectionItemChangeArrayInput `pulumi:"changes"`
-	FreeformTags pulumi.MapInput                                      `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput                                `pulumi:"freeformTags"`
 	// Indicates whether the file is binary.
 	IsBinary pulumi.BoolInput `pulumi:"isBinary"`
 	// Indicates whether the file is large.
@@ -39167,8 +39147,8 @@ func (o GetRepositoryDiffsDiffCollectionItemOutput) Changes() GetRepositoryDiffs
 	}).(GetRepositoryDiffsDiffCollectionItemChangeArrayOutput)
 }
 
-func (o GetRepositoryDiffsDiffCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryDiffsDiffCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoryDiffsDiffCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryDiffsDiffCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates whether the file is binary.
@@ -40368,7 +40348,7 @@ func (o GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionArrayOutput) I
 }
 
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem struct {
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
 	MirrorStatus  string `pulumi:"mirrorStatus"`
 	TimeCompleted string `pulumi:"timeCompleted"`
@@ -40392,7 +40372,7 @@ type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemInput interfa
 }
 
 type GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemArgs struct {
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
 	MirrorStatus  pulumi.StringInput `pulumi:"mirrorStatus"`
 	TimeCompleted pulumi.StringInput `pulumi:"timeCompleted"`
@@ -40455,10 +40435,10 @@ func (o GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemOutput) To
 	return o
 }
 
-func (o GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem) map[string]interface{} {
+func (o GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
@@ -40730,9 +40710,9 @@ func (o GetRepositoryMirrorRepositoryConfigTriggerScheduleArrayOutput) Index(i p
 
 type GetRepositoryPathItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Name of file or directory.
 	Name string `pulumi:"name"`
 	// Path to file or directory in a repository.
@@ -40760,9 +40740,9 @@ type GetRepositoryPathItemInput interface {
 
 type GetRepositoryPathItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Name of file or directory.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Path to file or directory in a repository.
@@ -40829,13 +40809,13 @@ func (o GetRepositoryPathItemOutput) ToGetRepositoryPathItemOutputWithContext(ct
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryPathItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryPathItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRepositoryPathItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryPathItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryPathItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryPathItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoryPathItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryPathItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Name of file or directory.
@@ -41098,9 +41078,9 @@ func (o GetRepositoryPathsRepositoryPathCollectionArrayOutput) Index(i pulumi.In
 
 type GetRepositoryPathsRepositoryPathCollectionItem struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Name of file or directory.
 	Name string `pulumi:"name"`
 	// Path to file or directory in a repository.
@@ -41112,7 +41092,7 @@ type GetRepositoryPathsRepositoryPathCollectionItem struct {
 	// The git URL of the submodule.
 	SubmoduleGitUrl string `pulumi:"submoduleGitUrl"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// File or directory.
 	Type string `pulumi:"type"`
 }
@@ -41130,9 +41110,9 @@ type GetRepositoryPathsRepositoryPathCollectionItemInput interface {
 
 type GetRepositoryPathsRepositoryPathCollectionItemArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Name of file or directory.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Path to file or directory in a repository.
@@ -41144,7 +41124,7 @@ type GetRepositoryPathsRepositoryPathCollectionItemArgs struct {
 	// The git URL of the submodule.
 	SubmoduleGitUrl pulumi.StringInput `pulumi:"submoduleGitUrl"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// File or directory.
 	Type pulumi.StringInput `pulumi:"type"`
 }
@@ -41201,13 +41181,13 @@ func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) ToGetRepositoryPat
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Name of file or directory.
@@ -41236,8 +41216,8 @@ func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) SubmoduleGitUrl() 
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetRepositoryPathsRepositoryPathCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryPathsRepositoryPathCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // File or directory.
@@ -41477,13 +41457,13 @@ type GetRepositoryProtectedBranchesProtectedBranchCollectionItem struct {
 	// Branch name inside a repository.
 	BranchName string `pulumi:"branchName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Protection level to be added on the branch.
 	ProtectionLevels []string `pulumi:"protectionLevels"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetRepositoryProtectedBranchesProtectedBranchCollectionItemInput is an input type that accepts GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs and GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput values.
@@ -41501,13 +41481,13 @@ type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs struct {
 	// Branch name inside a repository.
 	BranchName pulumi.StringInput `pulumi:"branchName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Protection level to be added on the branch.
 	ProtectionLevels pulumi.StringArrayInput `pulumi:"protectionLevels"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetRepositoryProtectedBranchesProtectedBranchCollectionItemArgs) ElementType() reflect.Type {
@@ -41567,17 +41547,17 @@ func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) Branc
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Protection level to be added on the branch.
@@ -41588,10 +41568,10 @@ func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) Prote
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]interface{} {
+func (o GetRepositoryProtectedBranchesProtectedBranchCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryProtectedBranchesProtectedBranchCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetRepositoryProtectedBranchesProtectedBranchCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -41820,9 +41800,9 @@ type GetRepositoryRefsRepositoryRefCollectionItem struct {
 	// Commit ID in a repository.
 	CommitId string `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
 	FullRefName string `pulumi:"fullRefName"`
 	Id          string `pulumi:"id"`
@@ -41851,9 +41831,9 @@ type GetRepositoryRefsRepositoryRefCollectionItemArgs struct {
 	// Commit ID in a repository.
 	CommitId pulumi.StringInput `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
 	FullRefName pulumi.StringInput `pulumi:"fullRefName"`
 	Id          pulumi.StringInput `pulumi:"id"`
@@ -41924,13 +41904,13 @@ func (o GetRepositoryRefsRepositoryRefCollectionItemOutput) CommitId() pulumi.St
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetRepositoryRefsRepositoryRefCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryRefsRepositoryRefCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRepositoryRefsRepositoryRefCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryRefsRepositoryRefCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetRepositoryRefsRepositoryRefCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRepositoryRefsRepositoryRefCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRepositoryRefsRepositoryRefCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRepositoryRefsRepositoryRefCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique full reference name inside a repository.
@@ -43390,13 +43370,13 @@ type GetTriggersTriggerCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	ConnectionId  string `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description about the trigger.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique trigger identifier.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -43408,7 +43388,7 @@ type GetTriggersTriggerCollectionItem struct {
 	// A filter to return only triggers that matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -43437,13 +43417,13 @@ type GetTriggersTriggerCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	ConnectionId  pulumi.StringInput `pulumi:"connectionId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description about the trigger.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique trigger identifier.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -43455,7 +43435,7 @@ type GetTriggersTriggerCollectionItemArgs struct {
 	// A filter to return only triggers that matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the trigger was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -43532,8 +43512,8 @@ func (o GetTriggersTriggerCollectionItemOutput) ConnectionId() pulumi.StringOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTriggersTriggerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTriggersTriggerCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description about the trigger.
@@ -43547,8 +43527,8 @@ func (o GetTriggersTriggerCollectionItemOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o GetTriggersTriggerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTriggersTriggerCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique trigger identifier.
@@ -43577,8 +43557,8 @@ func (o GetTriggersTriggerCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetTriggersTriggerCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetTriggersTriggerCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTriggersTriggerCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the trigger was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

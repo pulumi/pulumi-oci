@@ -59,7 +59,7 @@ type LookupExternalDbNodeArgs struct {
 // A collection of values returned by getExternalDbNode.
 type LookupExternalDbNodeResult struct {
 	// The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external DB node.
@@ -67,7 +67,7 @@ type LookupExternalDbNodeResult struct {
 	// The number of CPU cores available on the DB node.
 	CpuCoreCount float64 `pulumi:"cpuCoreCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the external DB node. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Name of the domain.
@@ -78,7 +78,7 @@ type LookupExternalDbNodeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the DB node is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The host name for the DB node.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB node.
@@ -90,7 +90,7 @@ type LookupExternalDbNodeResult struct {
 	// The current lifecycle state of the external DB node.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external DB node was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external DB node was last updated.
@@ -136,8 +136,8 @@ func (o LookupExternalDbNodeResultOutput) ToLookupExternalDbNodeResultOutputWith
 }
 
 // The additional details of the external DB node defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o LookupExternalDbNodeResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupExternalDbNodeResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -156,8 +156,8 @@ func (o LookupExternalDbNodeResultOutput) CpuCoreCount() pulumi.Float64Output {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupExternalDbNodeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExternalDbNodeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the external DB node. The name does not have to be unique.
@@ -185,8 +185,8 @@ func (o LookupExternalDbNodeResultOutput) ExternalDbSystemId() pulumi.StringOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupExternalDbNodeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExternalDbNodeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The host name for the DB node.
@@ -215,8 +215,8 @@ func (o LookupExternalDbNodeResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExternalDbNodeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExternalDbNodeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalDbNodeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external DB node was created.

@@ -61,18 +61,18 @@ type GetKnowledgebaseResult struct {
 	// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name of the knowledge base.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	Id              string `pulumi:"id"`
 	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// The current lifecycle state of the knowledge base.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -123,8 +123,8 @@ func (o GetKnowledgebaseResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetKnowledgebaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetKnowledgebaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the knowledge base.
@@ -133,8 +133,8 @@ func (o GetKnowledgebaseResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetKnowledgebaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetKnowledgebaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
@@ -152,8 +152,8 @@ func (o GetKnowledgebaseResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetKnowledgebaseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetKnowledgebaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKnowledgebaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

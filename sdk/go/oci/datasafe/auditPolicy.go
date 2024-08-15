@@ -35,13 +35,13 @@ type AuditPolicy struct {
 	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
 	IsDataSafeServiceAccountExcluded pulumi.BoolOutput `pulumi:"isDataSafeServiceAccountExcluded"`
 	// Details about the current state of the audit policy in Data Safe.
@@ -56,7 +56,7 @@ type AuditPolicy struct {
 	// The current state of the audit policy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target for which the audit policy is created.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The time the the audit policy was created, in the format defined by RFC3339.
@@ -111,13 +111,13 @@ type auditPolicyState struct {
 	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
 	IsDataSafeServiceAccountExcluded *bool `pulumi:"isDataSafeServiceAccountExcluded"`
 	// Details about the current state of the audit policy in Data Safe.
@@ -132,7 +132,7 @@ type auditPolicyState struct {
 	// The current state of the audit policy.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target for which the audit policy is created.
 	TargetId *string `pulumi:"targetId"`
 	// The time the the audit policy was created, in the format defined by RFC3339.
@@ -155,13 +155,13 @@ type AuditPolicyState struct {
 	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
 	IsDataSafeServiceAccountExcluded pulumi.BoolPtrInput
 	// Details about the current state of the audit policy in Data Safe.
@@ -176,7 +176,7 @@ type AuditPolicyState struct {
 	// The current state of the audit policy.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target for which the audit policy is created.
 	TargetId pulumi.StringPtrInput
 	// The time the the audit policy was created, in the format defined by RFC3339.
@@ -199,13 +199,13 @@ type auditPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger *int `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
@@ -222,13 +222,13 @@ type AuditPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the audit policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Provision. Could be set to any integer value.
 	ProvisionTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Retrieve From Target. Could be set to any integer value.
@@ -346,8 +346,8 @@ func (o AuditPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AuditPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AuditPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the audit policy.
@@ -361,8 +361,8 @@ func (o AuditPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AuditPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AuditPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
@@ -394,8 +394,8 @@ func (o AuditPolicyOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AuditPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AuditPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target for which the audit policy is created.

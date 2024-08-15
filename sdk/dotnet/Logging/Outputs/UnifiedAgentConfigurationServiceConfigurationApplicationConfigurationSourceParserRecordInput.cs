@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// (Updatable) Dimensions to be added for metrics.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Dimensions;
+        public readonly ImmutableDictionary<string, string>? Dimensions;
         /// <summary>
         /// (Updatable) Namespace to emit metrics.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
         [OutputConstructor]
         private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput(
-            ImmutableDictionary<string, object>? dimensions,
+            ImmutableDictionary<string, string>? dimensions,
 
             string? @namespace,
 

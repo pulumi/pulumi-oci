@@ -34,14 +34,14 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string> Selection { get; set; } = null!;
 
         [Input("value")]
-        private InputMap<object>? _value;
+        private InputMap<string>? _value;
 
         /// <summary>
         /// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         /// </summary>
-        public InputMap<object> Value
+        public InputMap<string> Value
         {
-            get => _value ?? (_value = new InputMap<object>());
+            get => _value ?? (_value = new InputMap<string>());
             set => _value = value;
         }
 

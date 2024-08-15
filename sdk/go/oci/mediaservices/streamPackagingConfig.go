@@ -35,15 +35,15 @@ import (
 //				DistributionChannelId: pulumi.Any(testChannel.Id),
 //				SegmentTimeInSeconds:  pulumi.Any(streamPackagingConfigSegmentTimeInSeconds),
 //				StreamPackagingFormat: pulumi.Any(streamPackagingConfigStreamPackagingFormat),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Encryption: &mediaservices.StreamPackagingConfigEncryptionArgs{
 //					Algorithm: pulumi.Any(streamPackagingConfigEncryptionAlgorithm),
 //					KmsKeyId:  pulumi.Any(testKey.Id),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Locks: mediaservices.StreamPackagingConfigLockArray{
 //					&mediaservices.StreamPackagingConfigLockArgs{
@@ -77,7 +77,7 @@ type StreamPackagingConfig struct {
 	// The compartment ID of the lock.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
@@ -85,8 +85,8 @@ type StreamPackagingConfig struct {
 	// The encryption used by the stream packaging configuration.
 	Encryption StreamPackagingConfigEncryptionOutput `pulumi:"encryption"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
-	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks StreamPackagingConfigLockArrayOutput `pulumi:"locks"`
 	// The duration in seconds for each fragment.
@@ -99,7 +99,7 @@ type StreamPackagingConfig struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat pulumi.StringOutput `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -151,7 +151,7 @@ type streamPackagingConfigState struct {
 	// The compartment ID of the lock.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
@@ -159,8 +159,8 @@ type streamPackagingConfigState struct {
 	// The encryption used by the stream packaging configuration.
 	Encryption *StreamPackagingConfigEncryption `pulumi:"encryption"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []StreamPackagingConfigLock `pulumi:"locks"`
 	// The duration in seconds for each fragment.
@@ -173,7 +173,7 @@ type streamPackagingConfigState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat *string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -184,7 +184,7 @@ type StreamPackagingConfigState struct {
 	// The compartment ID of the lock.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
@@ -192,7 +192,7 @@ type StreamPackagingConfigState struct {
 	// The encryption used by the stream packaging configuration.
 	Encryption StreamPackagingConfigEncryptionPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapInput
+	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// Locks associated with this resource.
 	Locks StreamPackagingConfigLockArrayInput
@@ -206,7 +206,7 @@ type StreamPackagingConfigState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StreamPackagingFormat pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -219,7 +219,7 @@ func (StreamPackagingConfigState) ElementType() reflect.Type {
 
 type streamPackagingConfigArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
@@ -227,8 +227,8 @@ type streamPackagingConfigArgs struct {
 	// The encryption used by the stream packaging configuration.
 	Encryption *StreamPackagingConfigEncryption `pulumi:"encryption"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []StreamPackagingConfigLock `pulumi:"locks"`
 	// The duration in seconds for each fragment.
@@ -243,7 +243,7 @@ type streamPackagingConfigArgs struct {
 // The set of arguments for constructing a StreamPackagingConfig resource.
 type StreamPackagingConfigArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// Unique identifier of the Distribution Channel that this stream packaging configuration belongs to.
@@ -251,7 +251,7 @@ type StreamPackagingConfigArgs struct {
 	// The encryption used by the stream packaging configuration.
 	Encryption StreamPackagingConfigEncryptionPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapInput
+	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// Locks associated with this resource.
 	Locks StreamPackagingConfigLockArrayInput
@@ -357,8 +357,8 @@ func (o StreamPackagingConfigOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o StreamPackagingConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o StreamPackagingConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The name of the stream Packaging Configuration. Avoid entering confidential information.
@@ -377,8 +377,8 @@ func (o StreamPackagingConfigOutput) Encryption() StreamPackagingConfigEncryptio
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o StreamPackagingConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o StreamPackagingConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o StreamPackagingConfigOutput) IsLockOverride() pulumi.BoolOutput {
@@ -409,8 +409,8 @@ func (o StreamPackagingConfigOutput) StreamPackagingFormat() pulumi.StringOutput
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o StreamPackagingConfigOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o StreamPackagingConfigOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.

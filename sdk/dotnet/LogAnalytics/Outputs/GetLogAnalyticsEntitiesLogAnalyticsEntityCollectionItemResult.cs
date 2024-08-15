@@ -28,7 +28,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Internal name for the log analytics entity type.
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A filter to return only log analytics entities whose hostname matches the entire hostname given.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// <summary>
         /// The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
         /// A filter to return only log analytics entities whose sourceId matches the sourceId given.
         /// </summary>
@@ -114,13 +114,13 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string entityTypeInternalName,
 
             string entityTypeName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string hostname,
 
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
 
             string @namespace,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, string> properties,
 
             string sourceId,
 

@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectParentRef;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceProjectRegistryMetadata;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +36,7 @@ public final class GetWorkspaceProjectResult {
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private Map<String,String> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
@@ -106,7 +105,7 @@ public final class GetWorkspaceProjectResult {
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Map<String,Object> keyMap() {
+    public Map<String,String> keyMap() {
         return this.keyMap;
     }
     /**
@@ -181,7 +180,7 @@ public final class GetWorkspaceProjectResult {
         private String id;
         private String identifier;
         private String key;
-        private Map<String,Object> keyMap;
+        private Map<String,String> keyMap;
         private List<GetWorkspaceProjectMetadata> metadatas;
         private String modelType;
         private String modelVersion;
@@ -245,7 +244,7 @@ public final class GetWorkspaceProjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             if (keyMap == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceProjectResult", "keyMap");
             }

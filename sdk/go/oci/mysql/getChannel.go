@@ -64,14 +64,14 @@ type LookupChannelResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User provided description of the Channel.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Id           string            `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
@@ -136,8 +136,8 @@ func (o LookupChannelResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupChannelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupChannelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupChannelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupChannelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User provided description of the Channel.
@@ -151,8 +151,8 @@ func (o LookupChannelResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupChannelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupChannelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupChannelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupChannelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupChannelResultOutput) Id() pulumi.StringOutput {

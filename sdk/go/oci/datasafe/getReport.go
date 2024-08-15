@@ -61,13 +61,13 @@ type LookupReportResult struct {
 	// The OCID of the compartment containing the report.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description string `pulumi:"description"`
 	// Name of the report.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
 	// Details about the current state of the report in Data Safe.
@@ -80,7 +80,7 @@ type LookupReportResult struct {
 	// The current state of the audit report.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
 	// The type of the audit report.
@@ -131,8 +131,8 @@ func (o LookupReportResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupReportResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies a description of the report.
@@ -146,8 +146,8 @@ func (o LookupReportResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupReportResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the report.
@@ -180,8 +180,8 @@ func (o LookupReportResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupReportResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupReportResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the date and time the report was generated.

@@ -68,11 +68,11 @@ type LookupClusterPlacementGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the cluster placement group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the cluster placement group.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
@@ -85,7 +85,7 @@ type LookupClusterPlacementGroupResult struct {
 	// The current state of the ClusterPlacementGroup.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -155,8 +155,8 @@ func (o LookupClusterPlacementGroupResultOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupClusterPlacementGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupClusterPlacementGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the cluster placement group.
@@ -165,8 +165,8 @@ func (o LookupClusterPlacementGroupResultOutput) Description() pulumi.StringOutp
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupClusterPlacementGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupClusterPlacementGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group.
@@ -201,8 +201,8 @@ func (o LookupClusterPlacementGroupResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupClusterPlacementGroupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupClusterPlacementGroupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterPlacementGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

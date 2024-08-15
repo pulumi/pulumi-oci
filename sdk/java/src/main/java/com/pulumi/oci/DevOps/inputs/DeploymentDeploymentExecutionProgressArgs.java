@@ -5,7 +5,6 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,13 +21,13 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
      * 
      */
     @Import(name="deployStageExecutionProgress")
-    private @Nullable Output<Map<String,Object>> deployStageExecutionProgress;
+    private @Nullable Output<Map<String,String>> deployStageExecutionProgress;
 
     /**
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public Optional<Output<Map<String,Object>>> deployStageExecutionProgress() {
+    public Optional<Output<Map<String,String>>> deployStageExecutionProgress() {
         return Optional.ofNullable(this.deployStageExecutionProgress);
     }
 
@@ -94,7 +93,7 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
          * @return builder
          * 
          */
-        public Builder deployStageExecutionProgress(@Nullable Output<Map<String,Object>> deployStageExecutionProgress) {
+        public Builder deployStageExecutionProgress(@Nullable Output<Map<String,String>> deployStageExecutionProgress) {
             $.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;
         }
@@ -105,7 +104,7 @@ public final class DeploymentDeploymentExecutionProgressArgs extends com.pulumi.
          * @return builder
          * 
          */
-        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
+        public Builder deployStageExecutionProgress(Map<String,String> deployStageExecutionProgress) {
             return deployStageExecutionProgress(Output.of(deployStageExecutionProgress));
         }
 

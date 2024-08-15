@@ -61,7 +61,7 @@ type LookupDrPlanExecutionResult struct {
 	// The OCID of the compartment containing this DR plan execution.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
 	DisplayName       string `pulumi:"displayName"`
 	DrPlanExecutionId string `pulumi:"drPlanExecutionId"`
@@ -72,7 +72,7 @@ type LookupDrPlanExecutionResult struct {
 	// The options for a plan execution.
 	ExecutionOptions []GetDrPlanExecutionExecutionOption `pulumi:"executionOptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A list of groups executed in this DR plan execution.
 	GroupExecutions []GetDrPlanExecutionGroupExecution `pulumi:"groupExecutions"`
 	// The OCID of the DR plan execution.  Example: `ocid1.drplanexecution.oc1..uniqueID`
@@ -92,7 +92,7 @@ type LookupDrPlanExecutionResult struct {
 	// The current state of the DR plan execution.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time at which DR plan execution succeeded, failed, was paused, or was canceled. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -147,8 +147,8 @@ func (o LookupDrPlanExecutionResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDrPlanExecutionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDrPlanExecutionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the step execution.  Example: `DATABASE_SWITCHOVER`
@@ -176,8 +176,8 @@ func (o LookupDrPlanExecutionResultOutput) ExecutionOptions() GetDrPlanExecution
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o LookupDrPlanExecutionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDrPlanExecutionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A list of groups executed in this DR plan execution.
@@ -226,8 +226,8 @@ func (o LookupDrPlanExecutionResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDrPlanExecutionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDrPlanExecutionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanExecutionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

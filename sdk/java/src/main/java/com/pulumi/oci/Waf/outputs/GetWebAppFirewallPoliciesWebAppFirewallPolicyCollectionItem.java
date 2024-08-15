@@ -11,7 +11,6 @@ import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyC
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestRateLimiting;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl;
 import com.pulumi.oci.Waf.outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -43,7 +42,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -88,7 +87,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
      * 
@@ -119,7 +118,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -133,7 +132,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -196,7 +195,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -225,9 +224,9 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
     public static final class Builder {
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemAction> actions;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControl> requestAccessControls;
@@ -236,7 +235,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControl> responseAccessControls;
         private List<GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtection> responseProtections;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -280,7 +279,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem", "definedTags");
             }
@@ -296,7 +295,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem", "freeformTags");
             }
@@ -383,7 +382,7 @@ public final class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem", "systemTags");
             }

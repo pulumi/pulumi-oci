@@ -24,7 +24,7 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Outputs
         /// <summary>
         /// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// Name of the shard.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Outputs
 
             double dataStorageSizeInGbs,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string name,
 

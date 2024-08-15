@@ -2770,7 +2770,7 @@ type GetClustersClusterCollectionItem struct {
 	// Datastores used for the Cluster.
 	Datastores []GetClustersClusterCollectionItemDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -2778,7 +2778,7 @@ type GetClustersClusterCollectionItem struct {
 	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
 	Id string `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -2835,7 +2835,7 @@ type GetClustersClusterCollectionItemArgs struct {
 	// Datastores used for the Cluster.
 	Datastores GetClustersClusterCollectionItemDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -2843,7 +2843,7 @@ type GetClustersClusterCollectionItemArgs struct {
 	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	EsxiSoftwareVersion pulumi.StringInput `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -2956,8 +2956,8 @@ func (o GetClustersClusterCollectionItemOutput) Datastores() GetClustersClusterC
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetClustersClusterCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetClustersClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -2976,8 +2976,8 @@ func (o GetClustersClusterCollectionItemOutput) EsxiSoftwareVersion() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetClustersClusterCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetClustersClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersClusterCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
@@ -3730,7 +3730,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -3740,7 +3740,7 @@ type GetExsiHostsEsxiHostCollection struct {
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
 	FailedEsxiHostId string `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
@@ -3818,7 +3818,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku pulumi.StringInput `pulumi:"currentSku"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The version of ESXi software that Oracle Cloud VMware Solution installed on the ESXi hosts.
@@ -3828,7 +3828,7 @@ type GetExsiHostsEsxiHostCollectionArgs struct {
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
 	FailedEsxiHostId pulumi.StringInput `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate pulumi.StringInput `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
@@ -3972,8 +3972,8 @@ func (o GetExsiHostsEsxiHostCollectionOutput) CurrentSku() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetExsiHostsEsxiHostCollectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -3994,8 +3994,8 @@ func (o GetExsiHostsEsxiHostCollectionOutput) FailedEsxiHostId() pulumi.StringOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetExsiHostsEsxiHostCollectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetExsiHostsEsxiHostCollectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExsiHostsEsxiHostCollection) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
@@ -5421,7 +5421,7 @@ type GetSddcsSddcCollection struct {
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores []GetSddcsSddcCollectionDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// (**Deprecated**) The number of ESXi hosts in the SDDC.
@@ -5431,8 +5431,8 @@ type GetSddcsSddcCollection struct {
 	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	HcxAction    string                 `pulumi:"hcxAction"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	HcxAction    string            `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	HcxFqdn string `pulumi:"hcxFqdn"`
 	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
@@ -5563,7 +5563,7 @@ type GetSddcsSddcCollectionArgs struct {
 	// Deprecated: The 'datastores' field has been deprecated. Please use 'initial_configuration' instead.
 	Datastores GetSddcsSddcCollectionDatastoreArrayInput `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// (**Deprecated**) The number of ESXi hosts in the SDDC.
@@ -5573,8 +5573,8 @@ type GetSddcsSddcCollectionArgs struct {
 	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	EsxiSoftwareVersion pulumi.StringInput `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
-	HcxAction    pulumi.StringInput `pulumi:"hcxAction"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	HcxAction    pulumi.StringInput    `pulumi:"hcxAction"`
 	// The FQDN for HCX Manager.  Example: `hcx-my-sddc.sddc.us-phoenix-1.oraclecloud.com`
 	HcxFqdn pulumi.StringInput `pulumi:"hcxFqdn"`
 	// Deprecated: The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead.
@@ -5762,8 +5762,8 @@ func (o GetSddcsSddcCollectionOutput) Datastores() GetSddcsSddcCollectionDatasto
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSddcsSddcCollectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSddcsSddcCollectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -5784,8 +5784,8 @@ func (o GetSddcsSddcCollectionOutput) EsxiSoftwareVersion() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetSddcsSddcCollectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSddcsSddcCollectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSddcsSddcCollection) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetSddcsSddcCollectionOutput) HcxAction() pulumi.StringOutput {

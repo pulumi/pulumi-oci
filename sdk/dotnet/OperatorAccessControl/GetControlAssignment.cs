@@ -112,7 +112,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// description containing reason for releasing of OperatorControl.
         /// </summary>
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the operator control assignment.
         /// </summary>
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string detachmentDescription,
 
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string errorMessage,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

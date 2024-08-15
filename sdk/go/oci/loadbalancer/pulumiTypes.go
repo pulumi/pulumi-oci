@@ -7638,11 +7638,11 @@ type GetLoadBalancersLoadBalancer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
@@ -7668,7 +7668,7 @@ type GetLoadBalancersLoadBalancer struct {
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetIds []string `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -7688,11 +7688,11 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the load balancers to list.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Ocid of the Reserved IP/Public Ip created with VCN.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of IP addresses.
@@ -7718,7 +7718,7 @@ type GetLoadBalancersLoadBalancerArgs struct {
 	// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -7780,8 +7780,8 @@ func (o GetLoadBalancersLoadBalancerOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLoadBalancersLoadBalancerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetLoadBalancersLoadBalancerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
@@ -7790,8 +7790,8 @@ func (o GetLoadBalancersLoadBalancerOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetLoadBalancersLoadBalancerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetLoadBalancersLoadBalancerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Ocid of the Reserved IP/Public Ip created with VCN.
@@ -7857,8 +7857,8 @@ func (o GetLoadBalancersLoadBalancerOutput) SubnetIds() pulumi.StringArrayOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetLoadBalancersLoadBalancerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetLoadBalancersLoadBalancerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLoadBalancersLoadBalancer) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`

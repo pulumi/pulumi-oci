@@ -33,13 +33,13 @@ import (
 //			_, err := AiLanguage.NewEndpoint(ctx, "test_endpoint", &AiLanguage.EndpointArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ModelId:       pulumi.Any(testModel.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(endpointDescription),
 //				DisplayName: pulumi.Any(endpointDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				InferenceUnits: pulumi.Any(endpointInferenceUnits),
 //			})
@@ -65,13 +65,13 @@ type Endpoint struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the an endpoint.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
 	InferenceUnits pulumi.IntOutput `pulumi:"inferenceUnits"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -86,7 +86,7 @@ type Endpoint struct {
 	// The state of the endpoint.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
@@ -132,13 +132,13 @@ type endpointState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the an endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
 	InferenceUnits *int `pulumi:"inferenceUnits"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -153,7 +153,7 @@ type endpointState struct {
 	// The state of the endpoint.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
@@ -164,13 +164,13 @@ type EndpointState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the an endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
 	InferenceUnits pulumi.IntPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in failed state.
@@ -185,7 +185,7 @@ type EndpointState struct {
 	// The state of the endpoint.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
@@ -200,13 +200,13 @@ type endpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the an endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
 	InferenceUnits *int `pulumi:"inferenceUnits"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
@@ -221,13 +221,13 @@ type EndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the an endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
 	InferenceUnits pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
@@ -330,8 +330,8 @@ func (o EndpointOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o EndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o EndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description of the an endpoint.
@@ -345,8 +345,8 @@ func (o EndpointOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o EndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o EndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
@@ -378,8 +378,8 @@ func (o EndpointOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o EndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Endpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o EndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Endpoint) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the endpoint was created. An RFC3339 formatted datetime string.

@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * @return HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
      */
-    private Map<String,Object> headers;
+    private Map<String,String> headers;
     /**
      * @return Number of successful health checks after which the server is marked up.
      * 
@@ -101,7 +100,7 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
      * @return HTTP header fields to include in health check requests, expressed as `&#34;name&#34;: &#34;value&#34;` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy&#39;s protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value &#34;waf health checks&#34;.
      * 
      */
-    public Map<String,Object> headers() {
+    public Map<String,String> headers() {
         return this.headers;
     }
     /**
@@ -175,7 +174,7 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
     public static final class Builder {
         private List<String> expectedResponseCodeGroups;
         private String expectedResponseText;
-        private Map<String,Object> headers;
+        private Map<String,String> headers;
         private Integer healthyThreshold;
         private Integer intervalInSeconds;
         private Boolean isEnabled;
@@ -220,7 +219,7 @@ public final class GetWaasPolicyPolicyConfigHealthChecks {
             return this;
         }
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
+        public Builder headers(Map<String,String> headers) {
             if (headers == null) {
               throw new MissingRequiredPropertyException("GetWaasPolicyPolicyConfigHealthChecks", "headers");
             }

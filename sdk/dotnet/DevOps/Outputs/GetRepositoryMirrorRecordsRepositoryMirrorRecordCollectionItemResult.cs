@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     [OutputType]
     public sealed class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult
     {
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemResult(
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string mirrorStatus,
 

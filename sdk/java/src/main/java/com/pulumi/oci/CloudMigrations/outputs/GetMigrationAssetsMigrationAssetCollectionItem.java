@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -79,7 +78,7 @@ public final class GetMigrationAssetsMigrationAssetCollectionItem {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> snapshots;
+    private Map<String,String> snapshots;
     /**
      * @return OCID that is referenced to an asset for an inventory.
      * 
@@ -206,7 +205,7 @@ public final class GetMigrationAssetsMigrationAssetCollectionItem {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> snapshots() {
+    public Map<String,String> snapshots() {
         return this.snapshots;
     }
     /**
@@ -275,7 +274,7 @@ public final class GetMigrationAssetsMigrationAssetCollectionItem {
         private String replicationCompartmentId;
         private String replicationScheduleId;
         private String snapShotBucketName;
-        private Map<String,Object> snapshots;
+        private Map<String,String> snapshots;
         private String sourceAssetId;
         private String state;
         private String tenancyId;
@@ -430,7 +429,7 @@ public final class GetMigrationAssetsMigrationAssetCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder snapshots(Map<String,Object> snapshots) {
+        public Builder snapshots(Map<String,String> snapshots) {
             if (snapshots == null) {
               throw new MissingRequiredPropertyException("GetMigrationAssetsMigrationAssetCollectionItem", "snapshots");
             }

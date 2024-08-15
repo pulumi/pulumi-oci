@@ -68,7 +68,7 @@ type GetCategoryResult struct {
 	// The estimated cost savings, in dollars, for the category.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the category.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The name assigned to the category.
@@ -148,8 +148,8 @@ func (o GetCategoryResultOutput) EstimatedCostSaving() pulumi.Float64Output {
 }
 
 // Additional metadata key/value pairs for the category.
-func (o GetCategoryResultOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCategoryResult) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o GetCategoryResultOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCategoryResult) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

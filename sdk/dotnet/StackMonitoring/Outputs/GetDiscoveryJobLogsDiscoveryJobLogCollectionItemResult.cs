@@ -28,7 +28,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// Time the Job log was created
         /// </summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             string logType,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated)
         {

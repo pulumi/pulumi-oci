@@ -6,7 +6,6 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -38,13 +37,13 @@ public final class JobRunJobConfigurationOverrideDetailsArgs extends com.pulumi.
      * 
      */
     @Import(name="environmentVariables")
-    private @Nullable Output<Map<String,Object>> environmentVariables;
+    private @Nullable Output<Map<String,String>> environmentVariables;
 
     /**
      * @return Environment variables to set for the job.
      * 
      */
-    public Optional<Output<Map<String,Object>>> environmentVariables() {
+    public Optional<Output<Map<String,String>>> environmentVariables() {
         return Optional.ofNullable(this.environmentVariables);
     }
 
@@ -132,7 +131,7 @@ public final class JobRunJobConfigurationOverrideDetailsArgs extends com.pulumi.
          * @return builder
          * 
          */
-        public Builder environmentVariables(@Nullable Output<Map<String,Object>> environmentVariables) {
+        public Builder environmentVariables(@Nullable Output<Map<String,String>> environmentVariables) {
             $.environmentVariables = environmentVariables;
             return this;
         }
@@ -143,7 +142,7 @@ public final class JobRunJobConfigurationOverrideDetailsArgs extends com.pulumi.
          * @return builder
          * 
          */
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(Map<String,String> environmentVariables) {
             return environmentVariables(Output.of(environmentVariables));
         }
 

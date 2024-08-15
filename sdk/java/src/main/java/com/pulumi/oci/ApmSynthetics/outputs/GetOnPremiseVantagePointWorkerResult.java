@@ -9,7 +9,6 @@ import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointWorkerIdenti
 import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointWorkerMonitorList;
 import com.pulumi.oci.ApmSynthetics.outputs.GetOnPremiseVantagePointWorkerVersionDetail;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +26,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Unique name that can be edited. The name should not contain any confidential information.
      * 
@@ -37,7 +36,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Geographical information of the On-premise VP worker.
      * 
@@ -137,7 +136,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -151,7 +150,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -287,9 +286,9 @@ public final class GetOnPremiseVantagePointWorkerResult {
     public static final class Builder {
         private String apmDomainId;
         private String configurationDetails;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String geoInfo;
         private String id;
         private List<GetOnPremiseVantagePointWorkerIdentityInfo> identityInfos;
@@ -355,7 +354,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetOnPremiseVantagePointWorkerResult", "definedTags");
             }
@@ -371,7 +370,7 @@ public final class GetOnPremiseVantagePointWorkerResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetOnPremiseVantagePointWorkerResult", "freeformTags");
             }

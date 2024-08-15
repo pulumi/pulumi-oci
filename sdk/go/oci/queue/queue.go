@@ -38,11 +38,11 @@ import (
 //				DeadLetterQueueDeliveryCount: pulumi.Any(queueDeadLetterQueueDeliveryCount),
 //				PurgeTrigger:                 pulumi.Any(purgeTrigger),
 //				PurgeType:                    pulumi.Any(purgeType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				RetentionInSeconds:  pulumi.Any(queueRetentionInSeconds),
 //				TimeoutInSeconds:    pulumi.Any(queueTimeoutInSeconds),
@@ -76,11 +76,11 @@ type Queue struct {
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntOutput `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
@@ -97,7 +97,7 @@ type Queue struct {
 	// The current state of the queue.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -153,11 +153,11 @@ type queueState struct {
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount *int `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name of the queue.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Any additional details about the current state of the queue.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
@@ -174,7 +174,7 @@ type queueState struct {
 	// The current state of the queue.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -195,11 +195,11 @@ type QueueState struct {
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringPtrInput
 	// The endpoint to use to consume or publish messages in the queue.
@@ -216,7 +216,7 @@ type QueueState struct {
 	// The current state of the queue.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated pulumi.StringPtrInput
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -241,11 +241,11 @@ type queueArgs struct {
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount *int `pulumi:"deadLetterQueueDeliveryCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name of the queue.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
 	PurgeTrigger *int `pulumi:"purgeTrigger"`
 	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
@@ -272,11 +272,11 @@ type QueueArgs struct {
 	// (Updatable) The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name of the queue.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
 	PurgeTrigger pulumi.IntPtrInput
 	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
@@ -400,8 +400,8 @@ func (o QueueOutput) DeadLetterQueueDeliveryCount() pulumi.IntOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o QueueOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o QueueOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The user-friendly name of the queue.
@@ -410,8 +410,8 @@ func (o QueueOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o QueueOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o QueueOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Any additional details about the current state of the queue.
@@ -448,8 +448,8 @@ func (o QueueOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o QueueOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Queue) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o QueueOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Queue) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`

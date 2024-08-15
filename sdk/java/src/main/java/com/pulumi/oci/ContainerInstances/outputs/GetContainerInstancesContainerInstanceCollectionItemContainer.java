@@ -11,7 +11,6 @@ import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerI
 import com.pulumi.oci.ContainerInstances.outputs.GetContainerInstancesContainerInstanceCollectionItemContainerVolumeMount;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -41,13 +40,13 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
     private String displayName;
-    private Map<String,Object> environmentVariables;
+    private Map<String,String> environmentVariables;
     private Integer exitCode;
     /**
      * @return The fault domain to place the container instance.
@@ -58,7 +57,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
     private String imageUrl;
     private Boolean isResourcePrincipalDisabled;
@@ -78,7 +77,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -128,7 +127,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -138,7 +137,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
     public String displayName() {
         return this.displayName;
     }
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables;
     }
     public Integer exitCode() {
@@ -155,7 +154,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks() {
@@ -191,7 +190,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -233,12 +232,12 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         private String compartmentId;
         private String containerId;
         private String containerInstanceId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> environmentVariables;
+        private Map<String,String> environmentVariables;
         private Integer exitCode;
         private String faultDomain;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private List<GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck> healthChecks;
         private String imageUrl;
         private Boolean isResourcePrincipalDisabled;
@@ -246,7 +245,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
         private List<GetContainerInstancesContainerInstanceCollectionItemContainerResourceConfig> resourceConfigs;
         private List<GetContainerInstancesContainerInstanceCollectionItemContainerSecurityContext> securityContexts;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeTerminated;
         private String timeUpdated;
@@ -337,7 +336,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "definedTags");
             }
@@ -353,7 +352,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(Map<String,String> environmentVariables) {
             if (environmentVariables == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "environmentVariables");
             }
@@ -377,7 +376,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "freeformTags");
             }
@@ -450,7 +449,7 @@ public final class GetContainerInstancesContainerInstanceCollectionItemContainer
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetContainerInstancesContainerInstanceCollectionItemContainer", "systemTags");
             }

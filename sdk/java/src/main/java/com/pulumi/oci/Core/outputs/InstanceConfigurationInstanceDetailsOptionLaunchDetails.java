@@ -14,7 +14,6 @@ import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOptionLau
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetails;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -67,7 +66,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -77,7 +76,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private @Nullable Map<String,Object> extendedMetadata;
+    private @Nullable Map<String,String> extendedMetadata;
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
@@ -87,7 +86,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
      * 
@@ -121,7 +120,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    private @Nullable Map<String,Object> metadata;
+    private @Nullable Map<String,String> metadata;
     /**
      * @return The platform configuration requested for the instance.
      * 
@@ -212,7 +211,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -226,7 +225,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
     }
     /**
@@ -240,7 +239,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -286,7 +285,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
@@ -347,17 +346,17 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         private @Nullable String compartmentId;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails createVnicDetails;
         private @Nullable String dedicatedVmHostId;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
-        private @Nullable Map<String,Object> extendedMetadata;
+        private @Nullable Map<String,String> extendedMetadata;
         private @Nullable String faultDomain;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions instanceOptions;
         private @Nullable String ipxeScript;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String launchMode;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions launchOptions;
-        private @Nullable Map<String,Object> metadata;
+        private @Nullable Map<String,String> metadata;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig platformConfig;
         private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
         private @Nullable String preferredMaintenanceAction;
@@ -443,7 +442,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -455,7 +454,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(@Nullable Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(@Nullable Map<String,String> extendedMetadata) {
 
             this.extendedMetadata = extendedMetadata;
             return this;
@@ -467,7 +466,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -503,7 +502,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(@Nullable Map<String,Object> metadata) {
+        public Builder metadata(@Nullable Map<String,String> metadata) {
 
             this.metadata = metadata;
             return this;

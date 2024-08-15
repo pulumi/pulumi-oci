@@ -49,13 +49,13 @@ import (
 //					SubnetId: pulumi.Any(testSubnet.Id),
 //				},
 //				ProjectId: pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(jobDescription),
 //				DisplayName: pulumi.Any(jobDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				JobEnvironmentConfigurationDetails: &datascience.JobJobEnvironmentConfigurationDetailsArgs{
 //					Image:              pulumi.Any(jobJobEnvironmentConfigurationDetailsImage),
@@ -117,7 +117,7 @@ type Job struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedJobRuns"`
 	// (Updatable) A short description of the job.
@@ -126,7 +126,7 @@ type Job struct {
 	DisplayName   pulumi.StringOutput `pulumi:"displayName"`
 	EmptyArtifact pulumi.BoolOutput   `pulumi:"emptyArtifact"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact pulumi.StringPtrOutput `pulumi:"jobArtifact"`
 	// The job configuration details
@@ -205,7 +205,7 @@ type jobState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns *bool `pulumi:"deleteRelatedJobRuns"`
 	// (Updatable) A short description of the job.
@@ -214,7 +214,7 @@ type jobState struct {
 	DisplayName   *string `pulumi:"displayName"`
 	EmptyArtifact *bool   `pulumi:"emptyArtifact"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
@@ -252,7 +252,7 @@ type JobState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns pulumi.BoolPtrInput
 	// (Updatable) A short description of the job.
@@ -261,7 +261,7 @@ type JobState struct {
 	DisplayName   pulumi.StringPtrInput
 	EmptyArtifact pulumi.BoolPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact pulumi.StringPtrInput
 	// The job configuration details
@@ -299,7 +299,7 @@ type jobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns *bool `pulumi:"deleteRelatedJobRuns"`
 	// (Updatable) A short description of the job.
@@ -307,7 +307,7 @@ type jobArgs struct {
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact *string `pulumi:"jobArtifact"`
 	// The job configuration details
@@ -336,7 +336,7 @@ type JobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Delete all related JobRuns upon deletion of the Job.
 	DeleteRelatedJobRuns pulumi.BoolPtrInput
 	// (Updatable) A short description of the job.
@@ -344,7 +344,7 @@ type JobArgs struct {
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.
 	JobArtifact pulumi.StringPtrInput
 	// The job configuration details
@@ -480,8 +480,8 @@ func (o JobOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o JobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Job) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o JobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Delete all related JobRuns upon deletion of the Job.
@@ -504,8 +504,8 @@ func (o JobOutput) EmptyArtifact() pulumi.BoolOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o JobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Job) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o JobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Job) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The job artifact to upload. This can be done in a separate step or from cli/sdk. The Job will remain in "Creating" state until its artifact is uploaded.

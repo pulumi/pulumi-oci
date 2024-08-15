@@ -116,7 +116,7 @@ class GetWorkspaceFolderResult:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

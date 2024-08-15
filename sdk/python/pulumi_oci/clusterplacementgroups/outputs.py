@@ -202,16 +202,16 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult(dict):
                  capabilities: Sequence['outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityResult'],
                  cluster_placement_group_type: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  name: str,
                  opc_dry_run: bool,
                  placement_instructions: Sequence['outputs.GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -219,15 +219,15 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult(dict):
         :param Sequence['GetClusterPlacementGroupsClusterPlacementGroupCollectionItemCapabilityArgs'] capabilities: A list of resources that you can create in a cluster placement group.
         :param str cluster_placement_group_type: The type of cluster placement group.
         :param str compartment_id: A filter to return only the resources that match the specified compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the cluster placement group.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only the resources that match the specified unique cluster placement group identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
         :param str name: A filter to return only the resources that match the entire display name specified.
         :param Sequence['GetClusterPlacementGroupsClusterPlacementGroupCollectionItemPlacementInstructionArgs'] placement_instructions: Details that inform cluster placement group provisioning.
         :param str state: A filter to return only the resources that match the specified lifecycle state.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
@@ -282,7 +282,7 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -298,7 +298,7 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -351,7 +351,7 @@ class GetClusterPlacementGroupsClusterPlacementGroupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

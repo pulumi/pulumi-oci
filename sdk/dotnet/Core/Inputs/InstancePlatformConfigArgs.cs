@@ -19,14 +19,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? AreVirtualInstructionsEnabled { get; set; }
 
         [Input("configMap")]
-        private InputMap<object>? _configMap;
+        private InputMap<string>? _configMap;
 
         /// <summary>
         /// Instance Platform Configuration Configuration Map for flexible setting input.
         /// </summary>
-        public InputMap<object> ConfigMap
+        public InputMap<string> ConfigMap
         {
-            get => _configMap ?? (_configMap = new InputMap<object>());
+            get => _configMap ?? (_configMap = new InputMap<string>());
             set => _configMap = value;
         }
 

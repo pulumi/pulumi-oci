@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail;
 import com.pulumi.oci.CapacityManagement.outputs.GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Meaningful text about the capacity request.
      * 
@@ -54,7 +53,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
      * 
@@ -100,7 +99,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time when the capacity request was created.
      * 
@@ -138,7 +137,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -166,7 +165,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -232,7 +231,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -262,11 +261,11 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
         private String availabilityDomain;
         private String compartmentId;
         private String dateExpectedCapacityHandover;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private List<GetOccCapacityRequestsOccCapacityRequestCollectionItemDetail> details;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String namespace;
@@ -276,7 +275,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
         private String region;
         private String requestState;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -329,7 +328,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItem", "definedTags");
             }
@@ -364,7 +363,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItem", "freeformTags");
             }
@@ -447,7 +446,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItem", "systemTags");
             }

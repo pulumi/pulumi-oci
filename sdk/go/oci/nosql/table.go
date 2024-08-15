@@ -35,8 +35,8 @@ import (
 //				DdlStatement:  pulumi.Any(tableDdlStatement),
 //				Name:          pulumi.Any(tableName),
 //				DefinedTags:   pulumi.Any(tableDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsAutoReclaimable: pulumi.Any(tableIsAutoReclaimable),
 //				TableLimits: &nosql.TableTableLimitsArgs{
@@ -70,9 +70,9 @@ type Table struct {
 	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
 	DdlStatement pulumi.StringOutput `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable pulumi.BoolOutput `pulumi:"isAutoReclaimable"`
 	// True if this table is currently a member of a replication set.
@@ -92,7 +92,7 @@ type Table struct {
 	// The state of a table.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits TableTableLimitsOutput `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
@@ -144,9 +144,9 @@ type tableState struct {
 	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
 	DdlStatement *string `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable *bool `pulumi:"isAutoReclaimable"`
 	// True if this table is currently a member of a replication set.
@@ -166,7 +166,7 @@ type tableState struct {
 	// The state of a table.
 	State *string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits *TableTableLimits `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
@@ -183,9 +183,9 @@ type TableState struct {
 	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
 	DdlStatement pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable pulumi.BoolPtrInput
 	// True if this table is currently a member of a replication set.
@@ -205,7 +205,7 @@ type TableState struct {
 	// The state of a table.
 	State pulumi.StringPtrInput
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.
 	TableLimits TableTableLimitsPtrInput
 	// The time the the table was created. An RFC3339 formatted datetime string.
@@ -226,9 +226,9 @@ type tableArgs struct {
 	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
 	DdlStatement string `pulumi:"ddlStatement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable *bool `pulumi:"isAutoReclaimable"`
 	// Table name.
@@ -244,9 +244,9 @@ type TableArgs struct {
 	// (Updatable) Complete CREATE TABLE DDL statement. When update ddl_statement, it should be ALTER TABLE DDL statement.
 	DdlStatement pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// True if table can be reclaimed after an idle period.
 	IsAutoReclaimable pulumi.BoolPtrInput
 	// Table name.
@@ -353,13 +353,13 @@ func (o TableOutput) DdlStatement() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o TableOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Table) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TableOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Table) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o TableOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Table) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TableOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Table) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // True if table can be reclaimed after an idle period.
@@ -408,8 +408,8 @@ func (o TableOutput) State() pulumi.StringOutput {
 }
 
 // Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-func (o TableOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Table) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o TableOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Table) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Throughput and storage limits configuration of a table. It is required for top level table, must be null for child table as child table shares its top parent table's limits.

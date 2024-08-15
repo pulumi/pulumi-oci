@@ -42,12 +42,12 @@ import (
 //				IsEnabled:     pulumi.Any(configIsEnabled),
 //				ResourceType:  pulumi.Any(configResourceType),
 //				License:       pulumi.Any(configLicense),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(configDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -74,11 +74,11 @@ type Config struct {
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// (Updatable) License edition.
@@ -91,7 +91,7 @@ type Config struct {
 	// The current state of the configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Config was updated.
@@ -139,11 +139,11 @@ type configState struct {
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
 	ConfigType *string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) License edition.
@@ -156,7 +156,7 @@ type configState struct {
 	// The current state of the configuration.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Config was updated.
@@ -169,11 +169,11 @@ type ConfigState struct {
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
 	ConfigType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// (Updatable) License edition.
@@ -186,7 +186,7 @@ type ConfigState struct {
 	// The current state of the configuration.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the Config was updated.
@@ -203,11 +203,11 @@ type configArgs struct {
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the configuration.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) License edition.
@@ -226,11 +226,11 @@ type ConfigArgs struct {
 	// The type of configuration. The only valid value is `"AUTO_PROMOTE"`.
 	ConfigType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the configuration.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// (Updatable) License edition.
@@ -340,8 +340,8 @@ func (o ConfigOutput) ConfigType() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The display name of the configuration.
@@ -350,8 +350,8 @@ func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) True if enterprise extensibility is enabled, false if it is not enabled.
@@ -378,8 +378,8 @@ func (o ConfigOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ConfigOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ConfigOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the configuration was created. An RFC3339 formatted datetime string.

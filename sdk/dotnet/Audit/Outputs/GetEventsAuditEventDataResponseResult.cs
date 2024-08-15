@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// The headers of the response.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Headers;
+        public readonly ImmutableDictionary<string, string> Headers;
         /// <summary>
         /// A friendly description of what happened during the operation. Use this for troubleshooting.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Payload;
+        public readonly ImmutableDictionary<string, string> Payload;
         /// <summary>
         /// The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
         /// </summary>
@@ -36,11 +36,11 @@ namespace Pulumi.Oci.Audit.Outputs
 
         [OutputConstructor]
         private GetEventsAuditEventDataResponseResult(
-            ImmutableDictionary<string, object> headers,
+            ImmutableDictionary<string, string> headers,
 
             string message,
 
-            ImmutableDictionary<string, object> payload,
+            ImmutableDictionary<string, string> payload,
 
             string responseTime,
 

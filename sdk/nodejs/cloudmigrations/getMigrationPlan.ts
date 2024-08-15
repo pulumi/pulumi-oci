@@ -47,7 +47,7 @@ export interface GetMigrationPlanResult {
     /**
      * Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
      */
-    readonly calculatedLimits: {[key: string]: any};
+    readonly calculatedLimits: {[key: string]: string};
     /**
      * The OCID of the compartment containing the migration plan.
      */
@@ -55,7 +55,7 @@ export interface GetMigrationPlanResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -63,7 +63,7 @@ export interface GetMigrationPlanResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The unique Oracle ID (OCID) that is immutable on creation.
      */
@@ -100,7 +100,7 @@ export interface GetMigrationPlanResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * List of target environments.
      */

@@ -81,7 +81,7 @@ export class WorkspaceExportRequest extends pulumi.CustomResource {
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
     /**
      * The array of exported object details.
      */
@@ -231,7 +231,7 @@ export interface WorkspaceExportRequestState {
     /**
      * Contains key of the error
      */
-    errorMessages?: pulumi.Input<{[key: string]: any}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The array of exported object details.
      */

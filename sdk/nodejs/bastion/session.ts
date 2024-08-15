@@ -111,7 +111,7 @@ export class Session extends pulumi.CustomResource {
     /**
      * The connection message for the session.
      */
-    public /*out*/ readonly sshMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly sshMetadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the session.
      */
@@ -230,7 +230,7 @@ export interface SessionState {
     /**
      * The connection message for the session.
      */
-    sshMetadata?: pulumi.Input<{[key: string]: any}>;
+    sshMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the session.
      */

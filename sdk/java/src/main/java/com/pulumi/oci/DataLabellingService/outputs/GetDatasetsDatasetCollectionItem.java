@@ -10,7 +10,6 @@ import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionI
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.GetDatasetsDatasetCollectionItemLabelSet;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalProperties;
+    private Map<String,String> additionalProperties;
     /**
      * @return A filter to return only resources that match the entire annotation format given.
      * 
@@ -47,7 +46,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user provided description of the dataset
      * 
@@ -62,7 +61,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Unique Dataset OCID
      * 
@@ -119,7 +118,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> additionalProperties() {
+    public Map<String,String> additionalProperties() {
         return this.additionalProperties;
     }
     /**
@@ -154,7 +153,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -175,7 +174,7 @@ public final class GetDatasetsDatasetCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -258,15 +257,15 @@ public final class GetDatasetsDatasetCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalProperties;
+        private Map<String,String> additionalProperties;
         private String annotationFormat;
         private String compartmentId;
         private List<GetDatasetsDatasetCollectionItemDatasetFormatDetail> datasetFormatDetails;
         private List<GetDatasetsDatasetCollectionItemDatasetSourceDetail> datasetSourceDetails;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetDatasetsDatasetCollectionItemInitialImportDatasetConfiguration> initialImportDatasetConfigurations;
         private List<GetDatasetsDatasetCollectionItemInitialRecordGenerationConfiguration> initialRecordGenerationConfigurations;
@@ -302,7 +301,7 @@ public final class GetDatasetsDatasetCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder additionalProperties(Map<String,Object> additionalProperties) {
+        public Builder additionalProperties(Map<String,String> additionalProperties) {
             if (additionalProperties == null) {
               throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "additionalProperties");
             }
@@ -348,7 +347,7 @@ public final class GetDatasetsDatasetCollectionItem {
             return datasetSourceDetails(List.of(datasetSourceDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "definedTags");
             }
@@ -372,7 +371,7 @@ public final class GetDatasetsDatasetCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDatasetsDatasetCollectionItem", "freeformTags");
             }

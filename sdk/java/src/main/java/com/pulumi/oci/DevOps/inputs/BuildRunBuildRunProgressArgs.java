@@ -5,7 +5,6 @@ package com.pulumi.oci.DevOps.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,13 +21,13 @@ public final class BuildRunBuildRunProgressArgs extends com.pulumi.resources.Res
      * 
      */
     @Import(name="buildPipelineStageRunProgress")
-    private @Nullable Output<Map<String,Object>> buildPipelineStageRunProgress;
+    private @Nullable Output<Map<String,String>> buildPipelineStageRunProgress;
 
     /**
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    public Optional<Output<Map<String,Object>>> buildPipelineStageRunProgress() {
+    public Optional<Output<Map<String,String>>> buildPipelineStageRunProgress() {
         return Optional.ofNullable(this.buildPipelineStageRunProgress);
     }
 
@@ -94,7 +93,7 @@ public final class BuildRunBuildRunProgressArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder buildPipelineStageRunProgress(@Nullable Output<Map<String,Object>> buildPipelineStageRunProgress) {
+        public Builder buildPipelineStageRunProgress(@Nullable Output<Map<String,String>> buildPipelineStageRunProgress) {
             $.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
             return this;
         }
@@ -105,7 +104,7 @@ public final class BuildRunBuildRunProgressArgs extends com.pulumi.resources.Res
          * @return builder
          * 
          */
-        public Builder buildPipelineStageRunProgress(Map<String,Object> buildPipelineStageRunProgress) {
+        public Builder buildPipelineStageRunProgress(Map<String,String> buildPipelineStageRunProgress) {
             return buildPipelineStageRunProgress(Output.of(buildPipelineStageRunProgress));
         }
 

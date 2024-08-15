@@ -69,14 +69,14 @@ type LookupMonitoredResourceResult struct {
 	// Connection details for the database.
 	DatabaseConnectionDetails []GetMonitoredResourceDatabaseConnectionDetail `pulumi:"databaseConnectionDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Monitored resource display name.
 	DisplayName string `pulumi:"displayName"`
 	// The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
 	ExternalId         string `pulumi:"externalId"`
 	ExternalResourceId string `pulumi:"externalResourceId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Monitored resource host name.
 	HostName string `pulumi:"hostName"`
 	// Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -99,7 +99,7 @@ type LookupMonitoredResourceResult struct {
 	// Lifecycle state of the monitored resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId string `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -183,8 +183,8 @@ func (o LookupMonitoredResourceResultOutput) DatabaseConnectionDetails() GetMoni
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMonitoredResourceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource display name.
@@ -202,8 +202,8 @@ func (o LookupMonitoredResourceResultOutput) ExternalResourceId() pulumi.StringO
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMonitoredResourceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Monitored resource host name.
@@ -261,8 +261,8 @@ func (o LookupMonitoredResourceResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMonitoredResourceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMonitoredResourceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMonitoredResourceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

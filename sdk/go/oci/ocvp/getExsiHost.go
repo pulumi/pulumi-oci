@@ -81,7 +81,7 @@ type GetExsiHostResult struct {
 	// Deprecated: The 'current_sku' field has been deprecated. It is no longer supported.
 	CurrentSku string `pulumi:"currentSku"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	EsxiHostId  string `pulumi:"esxiHostId"`
@@ -92,7 +92,7 @@ type GetExsiHostResult struct {
 	// Deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.
 	FailedEsxiHostId string `pulumi:"failedEsxiHostId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`
 	GracePeriodEndDate string `pulumi:"gracePeriodEndDate"`
 	// The OCPU count of the ESXi host.
@@ -223,8 +223,8 @@ func (o GetExsiHostResultOutput) CurrentSku() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetExsiHostResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExsiHostResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetExsiHostResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExsiHostResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A descriptive name for the ESXi host. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -249,8 +249,8 @@ func (o GetExsiHostResultOutput) FailedEsxiHostId() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetExsiHostResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExsiHostResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetExsiHostResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExsiHostResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time when the new esxi host should start billing cycle. [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2021-07-25T21:10:29.600Z`

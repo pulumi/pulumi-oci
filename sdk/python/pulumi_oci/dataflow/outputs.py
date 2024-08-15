@@ -1326,8 +1326,8 @@ class GetApplicationsApplicationResult(dict):
                  arguments: Sequence[str],
                  class_name: str,
                  compartment_id: str,
-                 configuration: Mapping[str, Any],
-                 defined_tags: Mapping[str, Any],
+                 configuration: Mapping[str, str],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  driver_shape: str,
@@ -1336,7 +1336,7 @@ class GetApplicationsApplicationResult(dict):
                  executor_shape: str,
                  executor_shape_configs: Sequence['outputs.GetApplicationsApplicationExecutorShapeConfigResult'],
                  file_uri: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  idle_timeout_in_minutes: str,
                  language: str,
@@ -1361,8 +1361,8 @@ class GetApplicationsApplicationResult(dict):
         :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param str class_name: The class for the application.
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A user-friendly description.
         :param str display_name: The query parameter for the Spark application name.
         :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
@@ -1371,7 +1371,7 @@ class GetApplicationsApplicationResult(dict):
         :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param Sequence['GetApplicationsApplicationExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The application ID.
         :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param str language: The Spark language.
@@ -1468,7 +1468,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter
-    def configuration(self) -> Mapping[str, Any]:
+    def configuration(self) -> Mapping[str, str]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
@@ -1476,7 +1476,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1548,7 +1548,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2007,10 +2007,10 @@ class GetInvokeRunsRunResult(dict):
                  asynchronous: bool,
                  class_name: str,
                  compartment_id: str,
-                 configuration: Mapping[str, Any],
+                 configuration: Mapping[str, str],
                  data_read_in_bytes: str,
                  data_written_in_bytes: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  driver_shape: str,
                  driver_shape_configs: Sequence['outputs.GetInvokeRunsRunDriverShapeConfigResult'],
@@ -2018,7 +2018,7 @@ class GetInvokeRunsRunResult(dict):
                  executor_shape: str,
                  executor_shape_configs: Sequence['outputs.GetInvokeRunsRunExecutorShapeConfigResult'],
                  file_uri: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  idle_timeout_in_minutes: str,
                  language: str,
@@ -2053,10 +2053,10 @@ class GetInvokeRunsRunResult(dict):
         :param Sequence[str] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param str class_name: The class for the application.
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param Mapping[str, str] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param str data_read_in_bytes: The data read by the run in bytes.
         :param str data_written_in_bytes: The data written by the run in bytes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The query parameter for the Spark application name.
         :param str driver_shape: The VM shape for the driver. Sets the driver cores and memory.
         :param Sequence['GetInvokeRunsRunDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -2064,7 +2064,7 @@ class GetInvokeRunsRunResult(dict):
         :param str executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param Sequence['GetInvokeRunsRunExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The ID of a run.
         :param str idle_timeout_in_minutes: The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param str language: The Spark language.
@@ -2194,7 +2194,7 @@ class GetInvokeRunsRunResult(dict):
 
     @property
     @pulumi.getter
-    def configuration(self) -> Mapping[str, Any]:
+    def configuration(self) -> Mapping[str, str]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
@@ -2218,7 +2218,7 @@ class GetInvokeRunsRunResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2282,7 +2282,7 @@ class GetInvokeRunsRunResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2884,10 +2884,10 @@ class GetPoolsPoolCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  configurations: Sequence['outputs.GetPoolsPoolCollectionItemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  idle_timeout_in_minutes: int,
                  lifecycle_details: str,
@@ -2901,10 +2901,10 @@ class GetPoolsPoolCollectionItemResult(dict):
         """
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetPoolsPoolCollectionItemConfigurationArgs'] configurations: List of PoolConfig items.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A user-friendly description. Avoid entering confidential information.
         :param str display_name: The query parameter for the Spark application name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of a pool. Unique Id to indentify a dataflow pool resource.
         :param int idle_timeout_in_minutes: Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
         :param str lifecycle_details: The detailed messages about the lifecycle state.
@@ -2951,7 +2951,7 @@ class GetPoolsPoolCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2975,7 +2975,7 @@ class GetPoolsPoolCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -3356,11 +3356,11 @@ class GetPrivateEndpointsPrivateEndpointCollectionResult(dict):
 class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  dns_zones: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  max_host_count: int,
@@ -3374,11 +3374,11 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A user-friendly description. Avoid entering confidential information.
         :param str display_name: The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
         :param Sequence[str] dns_zones: An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of a private endpoint.
         :param str lifecycle_details: The detailed messages about the lifecycle state.
         :param int max_host_count: The maximum number of hosts to be accessed through the private endpoint. This value is used to calculate the relevant CIDR block and should be a multiple of 256.  If the value is not a multiple of 256, it is rounded up to the next multiple of 256. For example, 300 is rounded up to 512.
@@ -3419,7 +3419,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3451,7 +3451,7 @@ class GetPrivateEndpointsPrivateEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -4196,14 +4196,14 @@ class GetSqlEndpointsSqlEndpointCollectionResult(dict):
 class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  driver_shape: str,
                  driver_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigResult'],
                  executor_shape: str,
                  executor_shape_configs: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  jdbc_endpoint_url: str,
                  lake_id: str,
@@ -4212,24 +4212,24 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
                  metastore_id: str,
                  min_executor_count: int,
                  network_configurations: Sequence['outputs.GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationResult'],
-                 spark_advanced_configurations: Mapping[str, Any],
+                 spark_advanced_configurations: Mapping[str, str],
                  sql_endpoint_version: str,
                  state: str,
                  state_message: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  warehouse_bucket_uri: str):
         """
         :param str compartment_id: The OCID of the compartment in which to query resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the SQL Endpoint.
         :param str display_name: The query parameter for the Spark application name.
         :param str driver_shape: The shape of the SQL Endpoint driver instance.
         :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemDriverShapeConfigArgs'] driver_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param str executor_shape: The shape of the SQL Endpoint executor instance.
         :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArgs'] executor_shape_configs: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The provision identifier that is immutable on creation.
         :param str jdbc_endpoint_url: The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
         :param str lake_id: The OCID of Oracle Cloud Infrastructure Lake.
@@ -4238,11 +4238,11 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
         :param str metastore_id: The OCID of Oracle Cloud Infrastructure Hive Metastore.
         :param int min_executor_count: The minimum number of executors.
         :param Sequence['GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArgs'] network_configurations: The network configuration of a SQL Endpoint.
-        :param Mapping[str, Any] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param Mapping[str, str] spark_advanced_configurations: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param str sql_endpoint_version: The version of SQL Endpoint.
         :param str state: A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
         :param str state_message: A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
         :param str warehouse_bucket_uri: The warehouse bucket URI. It is a Oracle Cloud Infrastructure Object Storage bucket URI as defined here https://docs.oracle.com/en/cloud/paas/atp-cloud/atpud/object-storage-uris.html
@@ -4283,7 +4283,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4339,7 +4339,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -4411,7 +4411,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="sparkAdvancedConfigurations")
-    def spark_advanced_configurations(self) -> Mapping[str, Any]:
+    def spark_advanced_configurations(self) -> Mapping[str, str]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
@@ -4443,7 +4443,7 @@ class GetSqlEndpointsSqlEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """

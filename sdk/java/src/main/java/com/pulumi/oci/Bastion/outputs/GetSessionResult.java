@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Bastion.outputs.GetSessionKeyDetail;
 import com.pulumi.oci.Bastion.outputs.GetSessionTargetResourceDetail;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -71,7 +70,7 @@ public final class GetSessionResult {
      * @return The connection message for the session.
      * 
      */
-    private Map<String,Object> sshMetadata;
+    private Map<String,String> sshMetadata;
     /**
      * @return The current state of the session.
      * 
@@ -171,7 +170,7 @@ public final class GetSessionResult {
      * @return The connection message for the session.
      * 
      */
-    public Map<String,Object> sshMetadata() {
+    public Map<String,String> sshMetadata() {
         return this.sshMetadata;
     }
     /**
@@ -223,7 +222,7 @@ public final class GetSessionResult {
         private String lifecycleDetails;
         private String sessionId;
         private Integer sessionTtlInSeconds;
-        private Map<String,Object> sshMetadata;
+        private Map<String,String> sshMetadata;
         private String state;
         private List<GetSessionTargetResourceDetail> targetResourceDetails;
         private String timeCreated;
@@ -341,7 +340,7 @@ public final class GetSessionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sshMetadata(Map<String,Object> sshMetadata) {
+        public Builder sshMetadata(Map<String,String> sshMetadata) {
             if (sshMetadata == null) {
               throw new MissingRequiredPropertyException("GetSessionResult", "sshMetadata");
             }

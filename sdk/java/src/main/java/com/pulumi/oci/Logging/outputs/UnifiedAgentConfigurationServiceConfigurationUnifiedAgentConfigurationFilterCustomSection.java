@@ -4,7 +4,6 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * @return (Updatable) Parameters in the custom section
      * 
      */
-    private @Nullable Map<String,Object> params;
+    private @Nullable Map<String,String> params;
 
     private UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection() {}
     /**
@@ -36,7 +35,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * @return (Updatable) Parameters in the custom section
      * 
      */
-    public Map<String,Object> params() {
+    public Map<String,String> params() {
         return this.params == null ? Map.of() : this.params;
     }
 
@@ -50,7 +49,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String name;
-        private @Nullable Map<String,Object> params;
+        private @Nullable Map<String,String> params;
         public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,7 +64,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
             return this;
         }
         @CustomType.Setter
-        public Builder params(@Nullable Map<String,Object> params) {
+        public Builder params(@Nullable Map<String,String> params) {
 
             this.params = params;
             return this;

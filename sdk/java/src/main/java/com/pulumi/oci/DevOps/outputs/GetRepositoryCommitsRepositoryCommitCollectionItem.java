@@ -5,7 +5,6 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,8 +42,8 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
      * 
      */
     private String committerName;
-    private Map<String,Object> definedTags;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> definedTags;
+    private Map<String,String> freeformTags;
     /**
      * @return An array of parent commit IDs of created commit.
      * 
@@ -104,10 +103,10 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
     public String committerName() {
         return this.committerName;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -147,8 +146,8 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
         private String commitMessage;
         private String committerEmail;
         private String committerName;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private List<String> parentCommitIds;
         private String timeCreated;
         private String treeId;
@@ -217,7 +216,7 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetRepositoryCommitsRepositoryCommitCollectionItem", "definedTags");
             }
@@ -225,7 +224,7 @@ public final class GetRepositoryCommitsRepositoryCommitCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetRepositoryCommitsRepositoryCommitCollectionItem", "freeformTags");
             }

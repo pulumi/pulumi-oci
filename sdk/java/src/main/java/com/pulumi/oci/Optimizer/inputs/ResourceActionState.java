@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Optimizer.inputs.ResourceActionActionArgs;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -100,13 +99,13 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="extendedMetadata")
-    private @Nullable Output<Map<String,Object>> extendedMetadata;
+    private @Nullable Output<Map<String,String>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Optional<Output<Map<String,Object>>> extendedMetadata() {
+    public Optional<Output<Map<String,String>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
 
@@ -115,13 +114,13 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="metadata")
-    private @Nullable Output<Map<String,Object>> metadata;
+    private @Nullable Output<Map<String,String>> metadata;
 
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    public Optional<Output<Map<String,Object>>> metadata() {
+    public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
@@ -462,7 +461,7 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder extendedMetadata(@Nullable Output<Map<String,Object>> extendedMetadata) {
+        public Builder extendedMetadata(@Nullable Output<Map<String,String>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
@@ -473,7 +472,7 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }
 
@@ -483,7 +482,7 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder metadata(@Nullable Output<Map<String,Object>> metadata) {
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
             $.metadata = metadata;
             return this;
         }
@@ -494,7 +493,7 @@ public final class ResourceActionState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
         }
 

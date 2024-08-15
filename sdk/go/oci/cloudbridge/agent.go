@@ -37,11 +37,11 @@ import (
 //				DisplayName:   pulumi.Any(agentDisplayName),
 //				EnvironmentId: pulumi.Any(testEnvironment.Id),
 //				OsVersion:     pulumi.Any(agentOsVersion),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -72,13 +72,13 @@ type Agent struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Agent identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Environment identifier.
 	EnvironmentId pulumi.StringOutput `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
 	HeartBeatStatus pulumi.StringOutput `pulumi:"heartBeatStatus"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -93,7 +93,7 @@ type Agent struct {
 	// The current state of the Agent.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
@@ -161,13 +161,13 @@ type agentState struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Agent identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// Environment identifier.
 	EnvironmentId *string `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
 	HeartBeatStatus *string `pulumi:"heartBeatStatus"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -182,7 +182,7 @@ type agentState struct {
 	// The current state of the Agent.
 	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
@@ -203,13 +203,13 @@ type AgentState struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Agent identifier.
 	DisplayName pulumi.StringPtrInput
 	// Environment identifier.
 	EnvironmentId pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The current heartbeat status of the Agent based on its timeLastSyncReceived value.
 	HeartBeatStatus pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -224,7 +224,7 @@ type AgentState struct {
 	// The current state of the Agent.
 	State pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
@@ -247,13 +247,13 @@ type agentArgs struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Agent identifier.
 	DisplayName string `pulumi:"displayName"`
 	// Environment identifier.
 	EnvironmentId string `pulumi:"environmentId"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OS version.
 	//
 	// ** IMPORTANT **
@@ -270,13 +270,13 @@ type AgentArgs struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Agent identifier.
 	DisplayName pulumi.StringInput
 	// Environment identifier.
 	EnvironmentId pulumi.StringInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// OS version.
 	//
 	// ** IMPORTANT **
@@ -392,8 +392,8 @@ func (o AgentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o AgentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Agent) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AgentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Agent identifier.
@@ -407,8 +407,8 @@ func (o AgentOutput) EnvironmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o AgentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Agent) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AgentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The current heartbeat status of the Agent based on its timeLastSyncReceived value.
@@ -440,8 +440,8 @@ func (o AgentOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o AgentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Agent) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AgentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Agent) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.

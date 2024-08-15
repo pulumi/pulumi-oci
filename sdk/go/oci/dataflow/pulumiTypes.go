@@ -3265,9 +3265,9 @@ type GetApplicationsApplication struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration map[string]interface{} `pulumi:"configuration"`
+	Configuration map[string]string `pulumi:"configuration"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description.
 	Description string `pulumi:"description"`
 	// The query parameter for the Spark application name.
@@ -3285,7 +3285,7 @@ type GetApplicationsApplication struct {
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The application ID.
 	Id string `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -3347,9 +3347,9 @@ type GetApplicationsApplicationArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration pulumi.MapInput `pulumi:"configuration"`
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
@@ -3367,7 +3367,7 @@ type GetApplicationsApplicationArgs struct {
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The application ID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -3485,13 +3485,13 @@ func (o GetApplicationsApplicationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o GetApplicationsApplicationOutput) Configuration() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.Configuration }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.Configuration }).(pulumi.StringMapOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description.
@@ -3539,8 +3539,8 @@ func (o GetApplicationsApplicationOutput) FileUri() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetApplicationsApplication) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetApplicationsApplicationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetApplicationsApplication) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The application ID.
@@ -4734,13 +4734,13 @@ type GetInvokeRunsRun struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration map[string]interface{} `pulumi:"configuration"`
+	Configuration map[string]string `pulumi:"configuration"`
 	// The data read by the run in bytes.
 	DataReadInBytes string `pulumi:"dataReadInBytes"`
 	// The data written by the run in bytes.
 	DataWrittenInBytes string `pulumi:"dataWrittenInBytes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The query parameter for the Spark application name.
 	DisplayName string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
@@ -4756,7 +4756,7 @@ type GetInvokeRunsRun struct {
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ID of a run.
 	Id string `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -4838,13 +4838,13 @@ type GetInvokeRunsRunArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration pulumi.MapInput `pulumi:"configuration"`
+	Configuration pulumi.StringMapInput `pulumi:"configuration"`
 	// The data read by the run in bytes.
 	DataReadInBytes pulumi.StringInput `pulumi:"dataReadInBytes"`
 	// The data written by the run in bytes.
 	DataWrittenInBytes pulumi.StringInput `pulumi:"dataWrittenInBytes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The query parameter for the Spark application name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
@@ -4860,7 +4860,7 @@ type GetInvokeRunsRunArgs struct {
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringInput `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The ID of a run.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -5002,8 +5002,8 @@ func (o GetInvokeRunsRunOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o GetInvokeRunsRunOutput) Configuration() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) map[string]interface{} { return v.Configuration }).(pulumi.MapOutput)
+func (o GetInvokeRunsRunOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) map[string]string { return v.Configuration }).(pulumi.StringMapOutput)
 }
 
 // The data read by the run in bytes.
@@ -5017,8 +5017,8 @@ func (o GetInvokeRunsRunOutput) DataWrittenInBytes() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetInvokeRunsRunOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetInvokeRunsRunOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The query parameter for the Spark application name.
@@ -5057,8 +5057,8 @@ func (o GetInvokeRunsRunOutput) FileUri() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetInvokeRunsRunOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInvokeRunsRun) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetInvokeRunsRunOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInvokeRunsRun) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ID of a run.
@@ -6438,13 +6438,13 @@ type GetPoolsPoolCollectionItem struct {
 	// List of PoolConfig items.
 	Configurations []GetPoolsPoolCollectionItemConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// The query parameter for the Spark application name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
 	Id string `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
@@ -6484,13 +6484,13 @@ type GetPoolsPoolCollectionItemArgs struct {
 	// List of PoolConfig items.
 	Configurations GetPoolsPoolCollectionItemConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
@@ -6575,8 +6575,8 @@ func (o GetPoolsPoolCollectionItemOutput) Configurations() GetPoolsPoolCollectio
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPoolsPoolCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPoolsPoolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Avoid entering confidential information.
@@ -6590,8 +6590,8 @@ func (o GetPoolsPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPoolsPoolCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPoolsPoolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPoolsPoolCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a pool. Unique Id to indentify a dataflow pool resource.
@@ -7573,7 +7573,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
@@ -7581,7 +7581,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
 	Id string `pulumi:"id"`
 	// The detailed messages about the lifecycle state.
@@ -7621,7 +7621,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
@@ -7629,7 +7629,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// An array of DNS zone names. Example: `[ "app.examplecorp.com", "app.examplecorp2.com" ]`
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The detailed messages about the lifecycle state.
@@ -7711,8 +7711,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Avoid entering confidential information.
@@ -7731,8 +7731,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DnsZones() pulum
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a private endpoint.
@@ -9679,7 +9679,7 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// The OCID of the compartment in which to query resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the SQL Endpoint.
 	Description string `pulumi:"description"`
 	// The query parameter for the Spark application name.
@@ -9693,7 +9693,7 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs []GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfig `pulumi:"executorShapeConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provision identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
@@ -9711,7 +9711,7 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfigurations []GetSqlEndpointsSqlEndpointCollectionItemNetworkConfiguration `pulumi:"networkConfigurations"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations map[string]interface{} `pulumi:"sparkAdvancedConfigurations"`
+	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of SQL Endpoint.
 	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
 	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
@@ -9719,7 +9719,7 @@ type GetSqlEndpointsSqlEndpointCollectionItem struct {
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage string `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
@@ -9743,7 +9743,7 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// The OCID of the compartment in which to query resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the SQL Endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The query parameter for the Spark application name.
@@ -9757,7 +9757,7 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfigs GetSqlEndpointsSqlEndpointCollectionItemExecutorShapeConfigArrayInput `pulumi:"executorShapeConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The provision identifier that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
@@ -9775,7 +9775,7 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfigurations GetSqlEndpointsSqlEndpointCollectionItemNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations pulumi.MapInput `pulumi:"sparkAdvancedConfigurations"`
+	SparkAdvancedConfigurations pulumi.StringMapInput `pulumi:"sparkAdvancedConfigurations"`
 	// The version of SQL Endpoint.
 	SqlEndpointVersion pulumi.StringInput `pulumi:"sqlEndpointVersion"`
 	// A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
@@ -9783,7 +9783,7 @@ type GetSqlEndpointsSqlEndpointCollectionItemArgs struct {
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
@@ -9849,8 +9849,8 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the SQL Endpoint.
@@ -9888,8 +9888,8 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) ExecutorShapeConfigs() G
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provision identifier that is immutable on creation.
@@ -9935,10 +9935,10 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) NetworkConfigurations() 
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SparkAdvancedConfigurations() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} {
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SparkAdvancedConfigurations() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]string {
 		return v.SparkAdvancedConfigurations
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The version of SQL Endpoint.
@@ -9957,8 +9957,8 @@ func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) StateMessage() pulumi.St
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSqlEndpointsSqlEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSqlEndpointsSqlEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Sql Endpoint was created. An RFC3339 formatted datetime string.

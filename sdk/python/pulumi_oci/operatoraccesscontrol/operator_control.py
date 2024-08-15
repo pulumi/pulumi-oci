@@ -20,10 +20,10 @@ class OperatorControlArgs:
                  operator_control_name: pulumi.Input[str],
                  resource_type: pulumi.Input[str],
                  approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  number_of_approvers: Optional[pulumi.Input[int]] = None,
                  pre_approved_op_action_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  system_message: Optional[pulumi.Input[str]] = None):
@@ -35,10 +35,10 @@ class OperatorControlArgs:
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
         :param pulumi.Input[str] resource_type: resourceType for which the OperatorControl is applicable
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approvers_lists: (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] pre_approved_op_action_lists: (Updatable) List of pre-approved operator actions. Access requests associated with a resource governed by this operator control will be auto-approved if the access request only contain operator actions in the pre-approved list.
         :param pulumi.Input[str] system_message: (Updatable) This is the message that will be displayed to the operator users while accessing the system.
@@ -143,14 +143,14 @@ class OperatorControlArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -179,14 +179,14 @@ class OperatorControlArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -237,10 +237,10 @@ class _OperatorControlState:
                  approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_default_operator_control: Optional[pulumi.Input[bool]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
                  last_modified_info: Optional[pulumi.Input[str]] = None,
@@ -259,10 +259,10 @@ class _OperatorControlState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approvers_lists: (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains this operator control.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
@@ -371,14 +371,14 @@ class _OperatorControlState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -407,14 +407,14 @@ class _OperatorControlState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -574,10 +574,10 @@ class OperatorControl(pulumi.CustomResource):
                  approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
                  number_of_approvers: Optional[pulumi.Input[int]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
@@ -603,10 +603,10 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approvers_lists: (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains this operator control.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[int] number_of_approvers: (Updatable) Number of approvers required to approve an access request.
         :param pulumi.Input[str] operator_control_name: (Updatable) Name of the operator control.
@@ -655,10 +655,10 @@ class OperatorControl(pulumi.CustomResource):
                  approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
                  number_of_approvers: Optional[pulumi.Input[int]] = None,
                  operator_control_name: Optional[pulumi.Input[str]] = None,
@@ -718,10 +718,10 @@ class OperatorControl(pulumi.CustomResource):
             approver_groups_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             approvers_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             email_id_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_default_operator_control: Optional[pulumi.Input[bool]] = None,
             is_fully_pre_approved: Optional[pulumi.Input[bool]] = None,
             last_modified_info: Optional[pulumi.Input[str]] = None,
@@ -745,10 +745,10 @@ class OperatorControl(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approver_groups_lists: (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] approvers_lists: (Updatable) List of users who can approve an access request associated with a resource governed by this operator control.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains this operator control.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] description: (Updatable) Description of the operator control.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] email_id_lists: (Updatable) List of emailId.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_default_operator_control: Whether the operator control is a default Operator Control.
         :param pulumi.Input[bool] is_fully_pre_approved: (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
         :param pulumi.Input[str] last_modified_info: Description associated with the latest modification of the operator control.
@@ -826,7 +826,7 @@ class OperatorControl(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
@@ -850,7 +850,7 @@ class OperatorControl(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """

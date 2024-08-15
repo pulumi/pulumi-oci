@@ -5,7 +5,6 @@ package com.pulumi.oci.Psql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -31,7 +30,7 @@ public final class DbSystemPatchOperation {
      * @return Specify instance details such as displayName, description or privateIp. Example: `{&#34;displayName&#34;: &#34;value&#34;}`.
      * 
      */
-    private @Nullable Map<String,Object> value;
+    private @Nullable Map<String,String> value;
 
     private DbSystemPatchOperation() {}
     public Optional<String> from() {
@@ -61,7 +60,7 @@ public final class DbSystemPatchOperation {
      * @return Specify instance details such as displayName, description or privateIp. Example: `{&#34;displayName&#34;: &#34;value&#34;}`.
      * 
      */
-    public Map<String,Object> value() {
+    public Map<String,String> value() {
         return this.value == null ? Map.of() : this.value;
     }
 
@@ -79,7 +78,7 @@ public final class DbSystemPatchOperation {
         private @Nullable String position;
         private @Nullable String selectedItem;
         private String selection;
-        private @Nullable Map<String,Object> value;
+        private @Nullable Map<String,String> value;
         public Builder() {}
         public Builder(DbSystemPatchOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,7 +125,7 @@ public final class DbSystemPatchOperation {
             return this;
         }
         @CustomType.Setter
-        public Builder value(@Nullable Map<String,Object> value) {
+        public Builder value(@Nullable Map<String,String> value) {
 
             this.value = value;
             return this;

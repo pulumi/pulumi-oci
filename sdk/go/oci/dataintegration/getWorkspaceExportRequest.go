@@ -68,8 +68,8 @@ type LookupWorkspaceExportRequestResult struct {
 	// Name of the user who initiated export request.
 	CreatedBy string `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages    map[string]interface{} `pulumi:"errorMessages"`
-	ExportRequestKey string                 `pulumi:"exportRequestKey"`
+	ErrorMessages    map[string]string `pulumi:"errorMessages"`
+	ExportRequestKey string            `pulumi:"exportRequestKey"`
 	// The array of exported object details.
 	ExportedItems []GetWorkspaceExportRequestExportedItem `pulumi:"exportedItems"`
 	// Name of the exported zip file.
@@ -158,8 +158,8 @@ func (o LookupWorkspaceExportRequestResultOutput) CreatedBy() pulumi.StringOutpu
 }
 
 // Contains key of the error
-func (o LookupWorkspaceExportRequestResultOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) map[string]interface{} { return v.ErrorMessages }).(pulumi.MapOutput)
+func (o LookupWorkspaceExportRequestResultOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceExportRequestResult) map[string]string { return v.ErrorMessages }).(pulumi.StringMapOutput)
 }
 
 func (o LookupWorkspaceExportRequestResultOutput) ExportRequestKey() pulumi.StringOutput {

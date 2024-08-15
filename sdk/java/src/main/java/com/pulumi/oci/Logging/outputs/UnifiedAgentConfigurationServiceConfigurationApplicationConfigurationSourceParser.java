@@ -10,7 +10,6 @@ import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurat
 import com.pulumi.oci.Logging.outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -175,7 +174,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
-    private @Nullable Map<String,Object> types;
+    private @Nullable Map<String,String> types;
 
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser() {}
     /**
@@ -391,7 +390,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
-    public Map<String,Object> types() {
+    public Map<String,String> types() {
         return this.types == null ? Map.of() : this.types;
     }
 
@@ -433,7 +432,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         private @Nullable String timeFormat;
         private @Nullable String timeType;
         private @Nullable Integer timeoutInMilliseconds;
-        private @Nullable Map<String,Object> types;
+        private @Nullable Map<String,String> types;
         public Builder() {}
         public Builder(UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -655,7 +654,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
             return this;
         }
         @CustomType.Setter
-        public Builder types(@Nullable Map<String,Object> types) {
+        public Builder types(@Nullable Map<String,String> types) {
 
             this.types = types;
             return this;

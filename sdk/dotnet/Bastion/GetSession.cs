@@ -141,7 +141,7 @@ namespace Pulumi.Oci.Bastion
         /// <summary>
         /// The connection message for the session.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SshMetadata;
+        public readonly ImmutableDictionary<string, string> SshMetadata;
         /// <summary>
         /// The current state of the session.
         /// </summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Bastion
 
             int sessionTtlInSeconds,
 
-            ImmutableDictionary<string, object> sshMetadata,
+            ImmutableDictionary<string, string> sshMetadata,
 
             string state,
 

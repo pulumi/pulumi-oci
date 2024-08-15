@@ -69,18 +69,18 @@ type LookupComputeImageCapabilitySchemaResult struct {
 	ComputeGlobalImageCapabilitySchemaVersionName string `pulumi:"computeGlobalImageCapabilitySchemaVersionName"`
 	ComputeImageCapabilitySchemaId                string `pulumi:"computeImageCapabilitySchemaId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// The OCID of the image associated with this compute image capability schema
 	ImageId        string  `pulumi:"imageId"`
 	IsMergeEnabled *string `pulumi:"isMergeEnabled"`
 	// A mapping of each capability name to its ImageCapabilityDescriptor.
-	SchemaData map[string]interface{} `pulumi:"schemaData"`
+	SchemaData map[string]string `pulumi:"schemaData"`
 	// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -147,8 +147,8 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) ComputeImageCapabilitySc
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupComputeImageCapabilitySchemaResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -157,8 +157,8 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) DisplayName() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupComputeImageCapabilitySchemaResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -176,8 +176,8 @@ func (o LookupComputeImageCapabilitySchemaResultOutput) IsMergeEnabled() pulumi.
 }
 
 // A mapping of each capability name to its ImageCapabilityDescriptor.
-func (o LookupComputeImageCapabilitySchemaResultOutput) SchemaData() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]interface{} { return v.SchemaData }).(pulumi.MapOutput)
+func (o LookupComputeImageCapabilitySchemaResultOutput) SchemaData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupComputeImageCapabilitySchemaResult) map[string]string { return v.SchemaData }).(pulumi.StringMapOutput)
 }
 
 // The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

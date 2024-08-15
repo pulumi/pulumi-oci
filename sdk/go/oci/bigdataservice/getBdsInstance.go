@@ -78,13 +78,13 @@ type LookupBdsInstanceResult struct {
 	// The user who created the cluster.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name of the node.
 	DisplayName                   string                   `pulumi:"displayName"`
 	EdgeNodes                     []GetBdsInstanceEdgeNode `pulumi:"edgeNodes"`
 	ExecuteBootstrapScriptTrigger int                      `pulumi:"executeBootstrapScriptTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Big Data Service resource.
 	Id                        string   `pulumi:"id"`
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
@@ -216,8 +216,8 @@ func (o LookupBdsInstanceResultOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
-func (o LookupBdsInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBdsInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the node.
@@ -234,8 +234,8 @@ func (o LookupBdsInstanceResultOutput) ExecuteBootstrapScriptTrigger() pulumi.In
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
-func (o LookupBdsInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBdsInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBdsInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBdsInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Big Data Service resource.

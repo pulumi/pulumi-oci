@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DeploymentType;
         /// <summary>
         /// Source of the Exadata system.
@@ -34,13 +34,13 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string OpsiPrivateEndpointId;
         public readonly string ServiceName;
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
 
         [OutputConstructor]
         private GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailMemberDatabaseDetailResult(
@@ -56,19 +56,19 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string dbmPrivateEndpointId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string deploymentType,
 
             string entitySource,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string opsiPrivateEndpointId,
 
             string serviceName,
 
-            ImmutableDictionary<string, object> systemTags)
+            ImmutableDictionary<string, string> systemTags)
         {
             CompartmentId = compartmentId;
             ConnectionDetails = connectionDetails;

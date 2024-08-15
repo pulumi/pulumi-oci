@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -33,7 +32,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return description containing reason for releasing of OperatorControl.
      * 
@@ -53,7 +52,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the operator control assignment.
      * 
@@ -192,7 +191,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -220,7 +219,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -393,11 +392,11 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
         private String assignerId;
         private String comment;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String detachmentDescription;
         private Integer errorCode;
         private String errorMessage;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isAutoApproveDuringMaintenance;
         private Boolean isDefaultAssignment;
@@ -482,7 +481,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "definedTags");
             }
@@ -514,7 +513,7 @@ public final class GetControlAssignmentsOperatorControlAssignmentCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetControlAssignmentsOperatorControlAssignmentCollectionItem", "freeformTags");
             }

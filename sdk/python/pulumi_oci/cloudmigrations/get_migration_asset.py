@@ -202,7 +202,7 @@ class GetMigrationAssetResult:
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Mapping[str, Any]:
+    def snapshots(self) -> Mapping[str, str]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """

@@ -100,7 +100,7 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetEndpointContentModerationConfigResult> ContentModerationConfigs;
         public readonly string DedicatedAiClusterId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// An optional description of the endpoint.
         /// </summary>
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string DisplayName;
         public readonly string EndpointId;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         public readonly string LifecycleDetails;
         /// <summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// The current state of the endpoint.
         /// </summary>
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         /// <summary>
         /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string dedicatedAiClusterId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string endpointId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

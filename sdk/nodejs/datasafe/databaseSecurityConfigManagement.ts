@@ -35,15 +35,15 @@ export class DatabaseSecurityConfigManagement extends pulumi.CustomResource {
     }
 
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly description!: pulumi.Output<string>;
     public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     public readonly refreshTrigger!: pulumi.Output<boolean | undefined>;
     public readonly sqlFirewallConfig!: pulumi.Output<outputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
     public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     public readonly targetId!: pulumi.Output<string | undefined>;
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     public /*out*/ readonly timeLastRefreshed!: pulumi.Output<string>;
@@ -103,15 +103,15 @@ export class DatabaseSecurityConfigManagement extends pulumi.CustomResource {
  */
 export interface DatabaseSecurityConfigManagementState {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     lifecycleDetails?: pulumi.Input<string>;
     refreshTrigger?: pulumi.Input<boolean>;
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
     state?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     targetId?: pulumi.Input<string>;
     timeCreated?: pulumi.Input<string>;
     timeLastRefreshed?: pulumi.Input<string>;
@@ -123,10 +123,10 @@ export interface DatabaseSecurityConfigManagementState {
  */
 export interface DatabaseSecurityConfigManagementArgs {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     refreshTrigger?: pulumi.Input<boolean>;
     sqlFirewallConfig?: pulumi.Input<inputs.DataSafe.DatabaseSecurityConfigManagementSqlFirewallConfig>;
     targetId?: pulumi.Input<string>;

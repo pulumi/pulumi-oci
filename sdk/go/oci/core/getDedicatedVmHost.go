@@ -66,13 +66,13 @@ type LookupDedicatedVmHostResult struct {
 	// The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
 	DedicatedVmHostShape string `pulumi:"dedicatedVmHostShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
 	FaultDomain string `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
 	Id string `pulumi:"id"`
 	// The current available memory of the dedicated VM host, in GBs.
@@ -147,8 +147,8 @@ func (o LookupDedicatedVmHostResultOutput) DedicatedVmHostShape() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDedicatedVmHostResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDedicatedVmHostResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDedicatedVmHostResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDedicatedVmHostResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -162,8 +162,8 @@ func (o LookupDedicatedVmHostResultOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupDedicatedVmHostResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDedicatedVmHostResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDedicatedVmHostResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDedicatedVmHostResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.

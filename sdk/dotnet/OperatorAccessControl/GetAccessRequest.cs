@@ -129,7 +129,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Duration in hours for which access is sought on the target resource.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.OperatorAccessControl
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             int duration,
 
@@ -277,7 +277,7 @@ namespace Pulumi.Oci.OperatorAccessControl
 
             ImmutableArray<Outputs.GetAccessRequestExtensionApproverDetailResult> extensionApproverDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

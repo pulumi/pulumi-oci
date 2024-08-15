@@ -41,11 +41,11 @@ import (
 //						SubnetId:           pulumi.Any(testSubnet.Id),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				InitialVirtualNodeLabels: containerengine.VirtualNodePoolInitialVirtualNodeLabelArray{
 //					&containerengine.VirtualNodePoolInitialVirtualNodeLabelArgs{
@@ -68,11 +68,11 @@ import (
 //					},
 //				},
 //				VirtualNodeTags: &containerengine.VirtualNodePoolVirtualNodeTagsArgs{
-//					DefinedTags: pulumi.Map{
-//						"Operations.CostCenter": pulumi.Any("42"),
+//					DefinedTags: pulumi.StringMap{
+//						"Operations.CostCenter": pulumi.String("42"),
 //					},
-//					FreeformTags: pulumi.Map{
-//						"Department": pulumi.Any("Finance"),
+//					FreeformTags: pulumi.StringMap{
+//						"Department": pulumi.String("Finance"),
 //					},
 //				},
 //			})
@@ -100,11 +100,11 @@ type VirtualNodePool struct {
 	// Compartment of the virtual node pool.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayOutput `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
@@ -122,7 +122,7 @@ type VirtualNodePool struct {
 	// The state of the Virtual Node Pool.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints VirtualNodePoolTaintArrayOutput `pulumi:"taints"`
 	// The time the virtual node pool was created.
@@ -186,11 +186,11 @@ type virtualNodePoolState struct {
 	// Compartment of the virtual node pool.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
 	// The version of Kubernetes running on the nodes in the node pool.
@@ -208,7 +208,7 @@ type virtualNodePoolState struct {
 	// The state of the Virtual Node Pool.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []VirtualNodePoolTaint `pulumi:"taints"`
 	// The time the virtual node pool was created.
@@ -225,11 +225,11 @@ type VirtualNodePoolState struct {
 	// Compartment of the virtual node pool.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
 	// The version of Kubernetes running on the nodes in the node pool.
@@ -247,7 +247,7 @@ type VirtualNodePoolState struct {
 	// The state of the Virtual Node Pool.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints VirtualNodePoolTaintArrayInput
 	// The time the virtual node pool was created.
@@ -268,11 +268,11 @@ type virtualNodePoolArgs struct {
 	// Compartment of the virtual node pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
 	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
@@ -296,11 +296,11 @@ type VirtualNodePoolArgs struct {
 	// Compartment of the virtual node pool.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
 	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
@@ -415,8 +415,8 @@ func (o VirtualNodePoolOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o VirtualNodePoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VirtualNodePoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Display name of the virtual node pool. This is a non-unique value.
@@ -425,8 +425,8 @@ func (o VirtualNodePoolOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o VirtualNodePoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VirtualNodePoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
@@ -474,8 +474,8 @@ func (o VirtualNodePoolOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o VirtualNodePoolOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualNodePool) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o VirtualNodePoolOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.

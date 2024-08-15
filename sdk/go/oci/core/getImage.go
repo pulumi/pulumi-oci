@@ -69,11 +69,11 @@ type LookupImageResult struct {
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
 	CreateImageAllowed bool `pulumi:"createImageAllowed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the image.
 	Id                 string                      `pulumi:"id"`
 	ImageId            string                      `pulumi:"imageId"`
@@ -165,8 +165,8 @@ func (o LookupImageResultOutput) CreateImageAllowed() pulumi.BoolOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupImageResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupImageResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupImageResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupImageResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -175,8 +175,8 @@ func (o LookupImageResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupImageResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupImageResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupImageResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupImageResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the image.

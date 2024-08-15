@@ -5,7 +5,6 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetBuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    private Map<String,Object> buildPipelineStageRunProgress;
+    private Map<String,String> buildPipelineStageRunProgress;
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -33,7 +32,7 @@ public final class GetBuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    public Map<String,Object> buildPipelineStageRunProgress() {
+    public Map<String,String> buildPipelineStageRunProgress() {
         return this.buildPipelineStageRunProgress;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetBuildRunBuildRunProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> buildPipelineStageRunProgress;
+        private Map<String,String> buildPipelineStageRunProgress;
         private String timeFinished;
         private String timeStarted;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetBuildRunBuildRunProgress {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineStageRunProgress(Map<String,Object> buildPipelineStageRunProgress) {
+        public Builder buildPipelineStageRunProgress(Map<String,String> buildPipelineStageRunProgress) {
             if (buildPipelineStageRunProgress == null) {
               throw new MissingRequiredPropertyException("GetBuildRunBuildRunProgress", "buildPipelineStageRunProgress");
             }

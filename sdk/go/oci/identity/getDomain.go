@@ -68,14 +68,14 @@ type LookupDomainResult struct {
 	// The OCID of the compartment containing the domain.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The domain descripition
 	Description string `pulumi:"description"`
 	// The mutable display name of the domain
 	DisplayName string `pulumi:"displayName"`
 	DomainId    string `pulumi:"domainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`
 	HomeRegion string `pulumi:"homeRegion"`
 	// Region specific domain URL.
@@ -162,8 +162,8 @@ func (o LookupDomainResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDomainResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDomainResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDomainResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDomainResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The domain descripition
@@ -181,8 +181,8 @@ func (o LookupDomainResultOutput) DomainId() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupDomainResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDomainResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDomainResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDomainResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The home region for the domain. See [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) for the full list of supported region names.  Example: `us-phoenix-1`

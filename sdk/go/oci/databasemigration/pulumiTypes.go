@@ -218,11 +218,11 @@ func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngre
 
 type JobParameterFileVersion struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description to discribe the current parameter file version
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
 	IsCurrent *bool `pulumi:"isCurrent"`
 	// Return true/false for whether the parameter file is oracle provided (Factory)
@@ -232,7 +232,7 @@ type JobParameterFileVersion struct {
 	// Phase name
 	Name *string `pulumi:"name"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -250,11 +250,11 @@ type JobParameterFileVersionInput interface {
 
 type JobParameterFileVersionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description to discribe the current parameter file version
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
 	IsCurrent pulumi.BoolPtrInput `pulumi:"isCurrent"`
 	// Return true/false for whether the parameter file is oracle provided (Factory)
@@ -264,7 +264,7 @@ type JobParameterFileVersionArgs struct {
 	// Phase name
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the Migration Job was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 }
@@ -321,8 +321,8 @@ func (o JobParameterFileVersionOutput) ToJobParameterFileVersionOutputWithContex
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o JobParameterFileVersionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o JobParameterFileVersionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description to discribe the current parameter file version
@@ -331,8 +331,8 @@ func (o JobParameterFileVersionOutput) Description() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-func (o JobParameterFileVersionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o JobParameterFileVersionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
@@ -356,8 +356,8 @@ func (o JobParameterFileVersionOutput) Name() pulumi.StringPtrOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o JobParameterFileVersionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v JobParameterFileVersion) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o JobParameterFileVersionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v JobParameterFileVersion) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Migration Job was created. An RFC3339 formatted datetime string
@@ -5229,13 +5229,13 @@ type GetConnectionsConnectionCollectionItem struct {
 	// The OCID of the database system being referenced.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The IP Address of the host.
 	Host string `pulumi:"host"`
 	// The OCID of the connection being referenced.
@@ -5281,7 +5281,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	// Oracle Cloud Infrastructure resource ID.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The array of technology types.
 	TechnologyType string `pulumi:"technologyType"`
 	// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -5322,13 +5322,13 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// The OCID of the database system being referenced.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The IP Address of the host.
 	Host pulumi.StringInput `pulumi:"host"`
 	// The OCID of the connection being referenced.
@@ -5374,7 +5374,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// Oracle Cloud Infrastructure resource ID.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The array of technology types.
 	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
 	// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -5477,8 +5477,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) DbSystemId() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -5492,8 +5492,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The IP Address of the host.
@@ -5615,8 +5615,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) SubnetId() pulumi.StringOu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The array of technology types.

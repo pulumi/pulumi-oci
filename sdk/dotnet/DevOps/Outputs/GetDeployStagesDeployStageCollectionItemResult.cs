@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// User provided key and value pair configuration, which is assigned through constants or parameter.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Config;
+        public readonly ImmutableDictionary<string, string> Config;
         /// <summary>
         /// Specifies the container configuration.
         /// </summary>
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Function environment OCID.
         /// </summary>
@@ -268,7 +268,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
         /// </summary>
@@ -322,11 +322,11 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string computeInstanceGroupDeployEnvironmentId,
 
-            ImmutableDictionary<string, object> config,
+            ImmutableDictionary<string, string> config,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemContainerConfigResult> containerConfigs,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string deployArtifactId,
 
@@ -352,7 +352,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemFailurePolicyResult> failurePolicies,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string functionDeployEnvironmentId,
 
@@ -426,7 +426,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             ImmutableArray<Outputs.GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfigResult> testLoadBalancerConfigs,
 

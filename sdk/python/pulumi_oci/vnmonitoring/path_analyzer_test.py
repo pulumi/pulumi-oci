@@ -20,9 +20,9 @@ class PathAnalyzerTestArgs:
                  destination_endpoint: pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'],
                  protocol: pulumi.Input[int],
                  source_endpoint: pulumi.Input['PathAnalyzerTestSourceEndpointArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  protocol_parameters: Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']] = None,
                  query_options: Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']] = None):
         """
@@ -31,9 +31,9 @@ class PathAnalyzerTestArgs:
         :param pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalyzerTestSourceEndpointArgs'] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input['PathAnalyzerTestProtocolParametersArgs'] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalyzerTestQueryOptionsArgs'] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
         """
@@ -102,14 +102,14 @@ class PathAnalyzerTestArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -126,14 +126,14 @@ class PathAnalyzerTestArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -165,31 +165,31 @@ class PathAnalyzerTestArgs:
 class _PathAnalyzerTestState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  destination_endpoint: Optional[pulumi.Input['PathAnalyzerTestDestinationEndpointArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  protocol: Optional[pulumi.Input[int]] = None,
                  protocol_parameters: Optional[pulumi.Input['PathAnalyzerTestProtocolParametersArgs']] = None,
                  query_options: Optional[pulumi.Input['PathAnalyzerTestQueryOptionsArgs']] = None,
                  source_endpoint: Optional[pulumi.Input['PathAnalyzerTestSourceEndpointArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering PathAnalyzerTest resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['PathAnalyzerTestDestinationEndpointArgs'] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalyzerTestProtocolParametersArgs'] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalyzerTestQueryOptionsArgs'] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input['PathAnalyzerTestSourceEndpointArgs'] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -234,14 +234,14 @@ class _PathAnalyzerTestState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -270,14 +270,14 @@ class _PathAnalyzerTestState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -342,14 +342,14 @@ class _PathAnalyzerTestState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -383,10 +383,10 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  protocol: Optional[pulumi.Input[int]] = None,
                  protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
                  query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
@@ -458,10 +458,10 @@ class PathAnalyzerTest(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
@@ -552,10 +552,10 @@ class PathAnalyzerTest(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  protocol: Optional[pulumi.Input[int]] = None,
                  protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
                  query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
@@ -601,16 +601,16 @@ class PathAnalyzerTest(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             destination_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             protocol: Optional[pulumi.Input[int]] = None,
             protocol_parameters: Optional[pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']]] = None,
             query_options: Optional[pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']]] = None,
             source_endpoint: Optional[pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'PathAnalyzerTest':
         """
@@ -621,16 +621,16 @@ class PathAnalyzerTest(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['PathAnalyzerTestDestinationEndpointArgs', 'PathAnalyzerTestDestinationEndpointArgsDict']] destination_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] protocol: (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalyzerTestProtocolParametersArgs', 'PathAnalyzerTestProtocolParametersArgsDict']] protocol_parameters: (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalyzerTestQueryOptionsArgs', 'PathAnalyzerTestQueryOptionsArgsDict']] query_options: (Updatable) Defines the query options required for a `PathAnalyzerTest` resource.
         :param pulumi.Input[Union['PathAnalyzerTestSourceEndpointArgs', 'PathAnalyzerTestSourceEndpointArgsDict']] source_endpoint: (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param pulumi.Input[str] state: The current state of the `PathAnalyzerTest` resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -663,7 +663,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -687,7 +687,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -735,7 +735,7 @@ class PathAnalyzerTest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

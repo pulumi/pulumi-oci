@@ -102,7 +102,7 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalProperties!: pulumi.Output<{[key: string]: string}>;
     /**
      * The annotation format name required for labeling records.
      */
@@ -122,7 +122,7 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user provided description of the dataset
      */
@@ -134,7 +134,7 @@ export class Dataset extends pulumi.CustomResource {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
@@ -255,7 +255,7 @@ export interface DatasetState {
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    additionalProperties?: pulumi.Input<{[key: string]: any}>;
+    additionalProperties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The annotation format name required for labeling records.
      */
@@ -275,7 +275,7 @@ export interface DatasetState {
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A user provided description of the dataset
      */
@@ -287,7 +287,7 @@ export interface DatasetState {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */
@@ -353,7 +353,7 @@ export interface DatasetArgs {
     /**
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A user provided description of the dataset
      */
@@ -365,7 +365,7 @@ export interface DatasetArgs {
     /**
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Initial import dataset configuration. Allows user to create dataset from existing dataset files.
      */

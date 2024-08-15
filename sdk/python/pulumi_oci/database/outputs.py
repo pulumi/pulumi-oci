@@ -1739,14 +1739,14 @@ class AutonomousDatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  dedicated: Optional[str] = None,
                  high: Optional[str] = None,
                  low: Optional[str] = None,
                  medium: Optional[str] = None,
                  profiles: Optional[Sequence['outputs.AutonomousDatabaseConnectionStringProfile']] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -1768,7 +1768,7 @@ class AutonomousDatabaseConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
@@ -4976,11 +4976,11 @@ class DatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  cdb_default: Optional[str] = None,
                  cdb_ip_default: Optional[str] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the Database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the Database.
         :param str cdb_default: Host name based CDB Connection String.
         :param str cdb_ip_default: IP based CDB Connection String.
         """
@@ -4993,7 +4993,7 @@ class DatabaseConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the Database.
         """
@@ -5081,8 +5081,8 @@ class DatabaseDatabase(dict):
                  db_backup_config: Optional['outputs.DatabaseDatabaseDbBackupConfig'] = None,
                  db_unique_name: Optional[str] = None,
                  db_workload: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  kms_key_id: Optional[str] = None,
                  kms_key_version_id: Optional[str] = None,
                  ncharacter_set: Optional[str] = None,
@@ -5105,8 +5105,8 @@ class DatabaseDatabase(dict):
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -5231,7 +5231,7 @@ class DatabaseDatabase(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -5239,7 +5239,7 @@ class DatabaseDatabase(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -5792,11 +5792,11 @@ class DatabaseUpgradeConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  cdb_default: Optional[str] = None,
                  cdb_ip_default: Optional[str] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the Database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the Database.
         :param str cdb_default: Host name based CDB Connection String.
         :param str cdb_ip_default: IP based CDB Connection String.
         """
@@ -5809,7 +5809,7 @@ class DatabaseUpgradeConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the Database.
         """
@@ -6239,8 +6239,8 @@ class DbHomeDatabase(dict):
                  db_name: Optional[str] = None,
                  db_unique_name: Optional[str] = None,
                  db_workload: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
                  key_store_id: Optional[str] = None,
                  kms_key_id: Optional[str] = None,
@@ -6270,8 +6270,8 @@ class DbHomeDatabase(dict):
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -6432,7 +6432,7 @@ class DbHomeDatabase(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -6440,7 +6440,7 @@ class DbHomeDatabase(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -6591,7 +6591,7 @@ class DbHomeDatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  cdb_default: Optional[str] = None,
                  cdb_ip_default: Optional[str] = None):
         if all_connection_strings is not None:
@@ -6603,7 +6603,7 @@ class DbHomeDatabaseConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "all_connection_strings")
 
     @property
@@ -6918,9 +6918,9 @@ class DbSystemDbHome(dict):
                  database_software_image_id: Optional[str] = None,
                  db_home_location: Optional[str] = None,
                  db_version: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
                  last_patch_history_entry_id: Optional[str] = None,
                  lifecycle_details: Optional[str] = None,
@@ -6934,9 +6934,9 @@ class DbSystemDbHome(dict):
         :param str db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-provided name of the Database Home.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -7009,7 +7009,7 @@ class DbSystemDbHome(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -7025,7 +7025,7 @@ class DbSystemDbHome(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -7150,8 +7150,8 @@ class DbSystemDbHomeDatabase(dict):
                  db_name: Optional[str] = None,
                  db_unique_name: Optional[str] = None,
                  db_workload: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
                  kms_key_id: Optional[str] = None,
                  kms_key_version_id: Optional[str] = None,
@@ -7180,8 +7180,8 @@ class DbSystemDbHomeDatabase(dict):
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -7346,7 +7346,7 @@ class DbSystemDbHomeDatabase(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -7354,7 +7354,7 @@ class DbSystemDbHomeDatabase(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -7481,7 +7481,7 @@ class DbSystemDbHomeDatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  cdb_default: Optional[str] = None,
                  cdb_ip_default: Optional[str] = None):
         if all_connection_strings is not None:
@@ -7493,7 +7493,7 @@ class DbSystemDbHomeDatabaseConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "all_connection_strings")
 
     @property
@@ -10825,11 +10825,11 @@ class PluggableDatabaseConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  pdb_default: Optional[str] = None,
                  pdb_ip_default: Optional[str] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -10842,7 +10842,7 @@ class PluggableDatabaseConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -10892,7 +10892,7 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
 
     def __init__(__self__, *,
                  enable_pluggabledatabasemanagement: bool,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  pdb_default: Optional[str] = None,
                  pdb_ip_default: Optional[str] = None):
         """
@@ -10901,7 +10901,7 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -10927,7 +10927,7 @@ class PluggableDatabaseManagementsManagementConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -11355,11 +11355,11 @@ class PluggableDatabasesLocalCloneConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  pdb_default: Optional[str] = None,
                  pdb_ip_default: Optional[str] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -11372,7 +11372,7 @@ class PluggableDatabasesLocalCloneConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -11541,11 +11541,11 @@ class PluggableDatabasesRemoteCloneConnectionString(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 all_connection_strings: Optional[Mapping[str, Any]] = None,
+                 all_connection_strings: Optional[Mapping[str, str]] = None,
                  pdb_default: Optional[str] = None,
                  pdb_ip_default: Optional[str] = None):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -11558,7 +11558,7 @@ class PluggableDatabasesRemoteCloneConnectionString(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[Mapping[str, Any]]:
+    def all_connection_strings(self) -> Optional[Mapping[str, str]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -12456,8 +12456,8 @@ class GetApplicationVipsApplicationVipResult(dict):
                  cloud_vm_cluster_id: str,
                  compartment_id: str,
                  db_node_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  id: str,
                  ip_address: str,
@@ -12468,8 +12468,8 @@ class GetApplicationVipsApplicationVipResult(dict):
         """
         :param str cloud_vm_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname of the application virtual IP (VIP) address.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application virtual IP (VIP) address.
         :param str ip_address: The application virtual IP (VIP) address.
@@ -12514,7 +12514,7 @@ class GetApplicationVipsApplicationVipResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -12522,7 +12522,7 @@ class GetApplicationVipsApplicationVipResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -13867,12 +13867,12 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
                  db_split_threshold: int,
                  db_unique_name: str,
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  distribution_affinity: str,
                  dst_file_version: str,
                  fast_start_fail_over_lag_limit_in_seconds: int,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  infrastructure_type: str,
                  is_automatic_failover_enabled: bool,
@@ -13928,11 +13928,11 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
         :param str db_name: The Database name for the Autonomous Container Database. The name must be unique within the Cloud Autonomous VM Cluster, starting with an alphabetic character, followed by 1 to 7 alphanumeric characters.
         :param int db_split_threshold: The value above which an Autonomous Database will be split across multiple nodes. This value defaults to 16 when the "CPU per VM" value on the Autonomous VM Cluster is greater than 16. Otherwise, it defaults to the "CPU per VM" value.
         :param str db_version: Oracle Database version of the Autonomous Container Database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str distribution_affinity: This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
         :param str dst_file_version: DST Time-zone File version of the Autonomous Container Database.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str infrastructure_type: A filter to return only resources that match the given Infrastructure Type.
         :param bool is_dst_file_update_enabled: Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
@@ -14129,7 +14129,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -14166,7 +14166,7 @@ class GetAutonomousContainerDatabasesAutonomousContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -15705,14 +15705,14 @@ class GetAutonomousDatabaseBackupsFilterResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  dedicated: str,
                  high: str,
                  low: str,
                  medium: str,
                  profiles: Sequence['outputs.GetAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, Any] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -15728,7 +15728,7 @@ class GetAutonomousDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
@@ -16800,9 +16800,9 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
                  autonomous_dsi_one_off_patches: Sequence[str],
                  compartment_id: str,
                  database_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_shape_family: str,
                  lifecycle_details: str,
@@ -16814,9 +16814,9 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
         :param Sequence[str] autonomous_dsi_one_off_patches: One-off patches included in the Autonomous Database Software Image
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str database_version: The database version with which the Autonomous Database Software Image is to be built.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database Software Image.
         :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
         :param str lifecycle_details: Detailed message for the lifecycle state.
@@ -16864,7 +16864,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -16880,7 +16880,7 @@ class GetAutonomousDatabaseSoftwareImagesAutonomousDatabaseSoftwareImageCollecti
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -17067,12 +17067,12 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  db_tools_details: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailResult'],
                  db_version: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  disaster_recovery_region_type: str,
                  disaster_recovery_type: str,
                  display_name: str,
                  failed_data_recovery_in_seconds: int,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  in_memory_area_in_gbs: int,
                  in_memory_percentage: int,
@@ -17145,7 +17145,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  supported_regions_to_clone_tos: Sequence[str],
                  switchover_to: str,
                  switchover_to_remote_peer_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_data_guard_role_changed: str,
                  time_deletion_of_free_autonomous_database: str,
@@ -17200,12 +17200,12 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseDbToolsDetailArgs'] db_tools_details: The list of database tools details.
         :param str db_version: A filter to return only autonomous database resources that match the specified dbVersion.
         :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
         :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -17269,7 +17269,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the Autonomous Database was created.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
@@ -17697,7 +17697,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -17737,7 +17737,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -18293,7 +18293,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -18539,14 +18539,14 @@ class GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  dedicated: str,
                  high: str,
                  low: str,
                  medium: str,
                  profiles: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, Any] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -18562,7 +18562,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
@@ -19364,11 +19364,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  db_tools_details: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseDbToolsDetailResult'],
                  db_version: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  disaster_recovery_region_type: str,
                  display_name: str,
                  failed_data_recovery_in_seconds: int,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  in_memory_area_in_gbs: int,
                  in_memory_percentage: int,
@@ -19428,7 +19428,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  subnet_id: str,
                  subscription_id: str,
                  supported_regions_to_clone_tos: Sequence[str],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_data_guard_role_changed: str,
                  time_deletion_of_free_autonomous_database: str,
@@ -19485,11 +19485,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                * DW - indicates an Autonomous Data Warehouse database
                * AJD - indicates an Autonomous JSON Database
                * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param int in_memory_area_in_gbs: The area assigned to In-Memory tables in Autonomous Database.
         :param int in_memory_percentage: The percentage of the System Global Area(SGA) assigned to In-Memory tables in Autonomous Database. This property is applicable only to Autonomous Databases on the Exadata Cloud@Customer platform.
@@ -19550,7 +19550,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the Autonomous Database was created.
         :param str time_data_guard_role_changed: The date and time the Autonomous Data Guard role was switched for the Autonomous Database. For databases that have standbys in both the primary Data Guard region and a remote Data Guard standby region, this is the latest timestamp of either the database using the "primary" role in the primary Data Guard region, or database located in the remote Data Guard standby region.
         :param str time_deletion_of_free_autonomous_database: The date and time the Always Free database will be automatically deleted because of inactivity. If the database is in the STOPPED state and without activity until this time, it will be deleted.
@@ -19941,7 +19941,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -19973,7 +19973,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -20454,7 +20454,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -20687,14 +20687,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult(dict):
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  dedicated: str,
                  high: str,
                  low: str,
                  medium: str,
                  profiles: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringProfileResult']):
         """
-        :param Mapping[str, Any] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param Mapping[str, str] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param str dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param str high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param str low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -20710,7 +20710,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionStringResult(dict)
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
@@ -22232,10 +22232,10 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
                  availability_domain: str,
                  compartment_id: str,
                  create_async: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname: str,
                  id: str,
                  last_maintenance_run_id: str,
@@ -22254,10 +22254,10 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
         """
         :param str availability_domain: A filter to return only resources that match the given availability domain exactly.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: The domain name for the Autonomous Exadata Infrastructure.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname: The host name for the Autonomous Exadata Infrastructure node.
         :param str id: The OCID of the Autonomous Exadata Infrastructure.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -22321,7 +22321,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -22345,7 +22345,7 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22837,8 +22837,8 @@ class GetAutonomousVirtualMachinesAutonomousVirtualMachineResult(dict):
                  db_node_storage_size_in_gbs: int,
                  db_server_display_name: str,
                  db_server_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  memory_size_in_gbs: int,
                  state: str,
@@ -22851,8 +22851,8 @@ class GetAutonomousVirtualMachinesAutonomousVirtualMachineResult(dict):
         :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Autonomous Virtual Machine.
         :param str db_server_display_name: The display name of the dbServer associated with the Autonomous Virtual Machine.
         :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server associated with the Autonomous Virtual Machine.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machine.
         :param int memory_size_in_gbs: The allocated memory in GBs on the Autonomous Virtual Machine.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -22930,7 +22930,7 @@ class GetAutonomousVirtualMachinesAutonomousVirtualMachineResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -22938,7 +22938,7 @@ class GetAutonomousVirtualMachinesAutonomousVirtualMachineResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -23009,9 +23009,9 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
     def __init__(__self__, *,
                  autonomous_container_database_vm_usages: Sequence['outputs.GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult'],
                  available_cpus: float,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  largest_provisionable_autonomous_database_in_cpus: float,
                  provisionable_cpuses: Sequence[float],
@@ -23022,9 +23022,9 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
         """
         :param Sequence['GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: list of autonomous container database resource usage per autonomous virtual machine.
         :param float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
         :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
@@ -23064,7 +23064,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -23080,7 +23080,7 @@ class GetAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResource
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -23733,11 +23733,11 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
                  db_servers: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  exadata_infrastructure_id: str,
                  exadata_storage_in_tbs_lowest_scaled_value: float,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_local_backup_enabled: bool,
                  is_mtls_enabled: bool,
@@ -23783,11 +23783,11 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
         :param float data_storage_size_in_tbs: The total data storage allocated in TBs
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
         :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage(in TBs) can be scaled down.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM cluster.
         :param bool is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the Autonomous VM cluster. If false, database backup on local Exadata storage is not available in the Autonomous VM cluster.
         :param bool is_mtls_enabled: Enable mutual TLS(mTLS) authentication for database while provisioning a VMCluster. Default is TLS.
@@ -23994,7 +23994,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -24026,7 +24026,7 @@ class GetAutonomousVmClustersAutonomousVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -24673,9 +24673,9 @@ class GetBackupDestinationsBackupDestinationResult(dict):
                  associated_databases: Sequence['outputs.GetBackupDestinationsBackupDestinationAssociatedDatabaseResult'],
                  compartment_id: str,
                  connection_string: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  local_mount_point_path: str,
@@ -24691,9 +24691,9 @@ class GetBackupDestinationsBackupDestinationResult(dict):
         :param Sequence['GetBackupDestinationsBackupDestinationAssociatedDatabaseArgs'] associated_databases: List of databases associated with the backup destination.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str connection_string: For a RECOVERY_APPLIANCE backup destination, the connection string for connecting to the Recovery Appliance.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-provided name of the backup destination.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param str lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
         :param str local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
@@ -24749,7 +24749,7 @@ class GetBackupDestinationsBackupDestinationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -24765,7 +24765,7 @@ class GetBackupDestinationsBackupDestinationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -25209,9 +25209,9 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
     def __init__(__self__, *,
                  autonomous_container_database_vm_usages: Sequence['outputs.GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageResult'],
                  available_cpus: float,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  largest_provisionable_autonomous_database_in_cpus: float,
                  provisionable_cpuses: Sequence[float],
@@ -25222,9 +25222,9 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
         """
         :param Sequence['GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseResourceUsageAutonomousContainerDatabaseVmUsageArgs'] autonomous_container_database_vm_usages: List of autonomous container database resource usage per autonomous virtual machine.
         :param float available_cpus: CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
         :param float largest_provisionable_autonomous_database_in_cpus: Largest provisionable ADB in the Autonomous Container Database.
         :param Sequence[float] provisionable_cpuses: Valid list of provisionable CPUs for Autonomous Database.
@@ -25264,7 +25264,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -25280,7 +25280,7 @@ class GetCloudAutonomousVmClusterAcdResourceUsagesAutonomousContainerDatabaseRes
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -25966,12 +25966,12 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
                  db_servers: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  domain: str,
                  exadata_storage_in_tbs_lowest_scaled_value: float,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname: str,
                  id: str,
                  is_mtls_enabled_vm_cluster: bool,
@@ -26023,12 +26023,12 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
         :param float data_storage_size_in_tbs: The total data storage allocated, in terabytes (TB).
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Sequence[str] db_servers: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str description: User defined description of the cloud Autonomous VM cluster.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: The domain name for the cloud Autonomous VM cluster.
         :param float exadata_storage_in_tbs_lowest_scaled_value: The lowest value to which exadataStorage (in TBs) can be scaled down.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname: The hostname for the cloud Autonomous VM cluster.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
         :param bool is_mtls_enabled_vm_cluster: Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
@@ -26260,7 +26260,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -26300,7 +26300,7 @@ class GetCloudAutonomousVmClustersCloudAutonomousVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -27204,9 +27204,9 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  db_node_storage_size_in_gbs: int,
                  db_server_version: str,
                  defined_file_system_configurations: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  last_maintenance_run_id: str,
                  lifecycle_details: str,
@@ -27224,7 +27224,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  storage_count: int,
                  storage_server_version: str,
                  subscription_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  total_storage_size_in_gbs: int):
         """
@@ -27241,9 +27241,9 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param str db_server_version: The software version of the database servers (dom0) in the cloud Exadata infrastructure. Example: 20.1.15
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param str last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -27261,7 +27261,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param int storage_count: The number of storage servers for the cloud Exadata infrastructure.
         :param str storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param int total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
         """
@@ -27408,7 +27408,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -27424,7 +27424,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -27568,7 +27568,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -28071,12 +28071,12 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
                  db_servers: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  disk_redundancy: str,
                  display_name: str,
                  domain: str,
                  file_system_configuration_details: Sequence['outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gi_version: str,
                  hostname: str,
                  id: str,
@@ -28103,7 +28103,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  storage_size_in_gbs: int,
                  subnet_id: str,
                  subscription_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  system_version: str,
                  time_created: str,
                  time_zone: str,
@@ -28122,12 +28122,12 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param float data_storage_size_in_tbs: The data disk group size to be allocated in TBs.
         :param int db_node_storage_size_in_gbs: The local node storage to be allocated in GBs.
         :param Sequence[str] db_servers: The list of DB servers.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: The domain name for the cloud VM cluster.
         :param Sequence['GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs'] file_system_configuration_details: Details of the file system configuration of the VM cluster.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param str hostname: The hostname for the cloud VM cluster.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster.
@@ -28153,7 +28153,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param int storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the cloud VM cluster was created.
         :param str time_zone: The time zone of the cloud VM cluster. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -28315,7 +28315,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -28355,7 +28355,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -28566,7 +28566,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -28816,12 +28816,12 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  creation_type: str,
                  data_collection_options: Sequence['outputs.GetDataGuardAssociationsDataGuardAssociationDataCollectionOptionResult'],
                  database_admin_password: str,
-                 database_defined_tags: Mapping[str, Any],
-                 database_freeform_tags: Mapping[str, Any],
+                 database_defined_tags: Mapping[str, str],
+                 database_freeform_tags: Mapping[str, str],
                  database_id: str,
                  database_software_image_id: str,
-                 db_system_defined_tags: Mapping[str, Any],
-                 db_system_freeform_tags: Mapping[str, Any],
+                 db_system_defined_tags: Mapping[str, str],
+                 db_system_freeform_tags: Mapping[str, str],
                  delete_standby_db_home_on_delete: str,
                  display_name: str,
                  fault_domains: Sequence[str],
@@ -28965,12 +28965,12 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Mapping[str, Any]:
+    def database_defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "database_defined_tags")
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Mapping[str, Any]:
+    def database_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "database_freeform_tags")
 
     @property
@@ -28988,12 +28988,12 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Mapping[str, Any]:
+    def db_system_defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_defined_tags")
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Mapping[str, Any]:
+    def db_system_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_freeform_tags")
 
     @property
@@ -29232,11 +29232,11 @@ class GetDataGuardAssociationsFilterResult(dict):
 @pulumi.output_type
 class GetDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  cdb_default: str,
                  cdb_ip_default: str):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the Database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the Database.
         :param str cdb_default: Host name based CDB Connection String.
         :param str cdb_ip_default: IP based CDB Connection String.
         """
@@ -29246,7 +29246,7 @@ class GetDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         All connection strings to use to connect to the Database.
         """
@@ -29281,8 +29281,8 @@ class GetDatabaseDatabaseResult(dict):
                  db_name: str,
                  db_unique_name: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  kms_key_id: str,
                  kms_key_version_id: str,
                  ncharacter_set: str,
@@ -29298,8 +29298,8 @@ class GetDatabaseDatabaseResult(dict):
         :param str db_name: The database name.
         :param str db_unique_name: A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str ncharacter_set: The national character set for the database.
@@ -29392,7 +29392,7 @@ class GetDatabaseDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -29400,7 +29400,7 @@ class GetDatabaseDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -30953,9 +30953,9 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
                  database_software_image_included_patches: Sequence[str],
                  database_software_image_one_off_patches: Sequence[str],
                  database_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_shape_family: str,
                  image_type: str,
@@ -30972,9 +30972,9 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
         :param Sequence[str] database_software_image_included_patches: List of one-off patches for Database Homes.
         :param Sequence[str] database_software_image_one_off_patches: List of one-off patches for Database Homes.
         :param str database_version: The database version with which the database software image is to be built.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database software image.
         :param str image_shape_family: A filter to return only resources that match the given image shape family exactly.
         :param str image_type: A filter to return only resources that match the given image type exactly.
@@ -31039,7 +31039,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -31055,7 +31055,7 @@ class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -31360,8 +31360,8 @@ class GetDatabasesDatabaseResult(dict):
                  db_unique_name: str,
                  db_version: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_cdb: bool,
                  key_store_id: str,
@@ -31395,8 +31395,8 @@ class GetDatabasesDatabaseResult(dict):
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str db_unique_name: A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param bool is_cdb: True if the database is a container database.
         :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -31553,7 +31553,7 @@ class GetDatabasesDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -31561,7 +31561,7 @@ class GetDatabasesDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -31730,11 +31730,11 @@ class GetDatabasesDatabaseResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  cdb_default: str,
                  cdb_ip_default: str):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the Database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the Database.
         :param str cdb_default: Host name based CDB Connection String.
         :param str cdb_ip_default: IP based CDB Connection String.
         """
@@ -31744,7 +31744,7 @@ class GetDatabasesDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         All connection strings to use to connect to the Database.
         """
@@ -31779,8 +31779,8 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  db_name: str,
                  db_unique_name: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  kms_key_id: str,
                  kms_key_version_id: str,
                  ncharacter_set: str,
@@ -31796,8 +31796,8 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param str db_name: A filter to return only resources that match the entire database name given. The match is not case sensitive.
         :param str db_unique_name: A system-generated name for the database to ensure uniqueness within an Oracle Data Guard group (a primary database and its standby databases). The unique name cannot be changed.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str ncharacter_set: The national character set for the database.
@@ -31890,7 +31890,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -31898,7 +31898,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32317,8 +32317,8 @@ class GetDbHomeDatabaseResult(dict):
                  db_name: str,
                  db_unique_name: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  key_store_id: str,
                  kms_key_id: str,
@@ -32336,8 +32336,8 @@ class GetDbHomeDatabaseResult(dict):
                  vault_id: str):
         """
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -32434,7 +32434,7 @@ class GetDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -32442,7 +32442,7 @@ class GetDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32545,7 +32545,7 @@ class GetDbHomeDatabaseResult(dict):
 @pulumi.output_type
 class GetDbHomeDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  cdb_default: str,
                  cdb_ip_default: str):
         pulumi.set(__self__, "all_connection_strings", all_connection_strings)
@@ -32554,7 +32554,7 @@ class GetDbHomeDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         return pulumi.get(self, "all_connection_strings")
 
     @property
@@ -32915,10 +32915,10 @@ class GetDbHomesDbHomeResult(dict):
                  db_home_location: str,
                  db_system_id: str,
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  enable_database_delete: bool,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_desupported_version: bool,
                  is_unified_auditing_enabled: bool,
@@ -32936,9 +32936,9 @@ class GetDbHomesDbHomeResult(dict):
         :param str db_home_location: The location of the Oracle Database Home.
         :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
         :param str db_version: A filter to return only DB Homes that match the specified dbVersion.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param bool is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -33023,7 +33023,7 @@ class GetDbHomesDbHomeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -33044,7 +33044,7 @@ class GetDbHomesDbHomeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33144,8 +33144,8 @@ class GetDbHomesDbHomeDatabaseResult(dict):
                  db_name: str,
                  db_unique_name: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  key_store_id: str,
                  kms_key_id: str,
@@ -33164,8 +33164,8 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         """
         :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
         :param str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -33265,7 +33265,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -33273,7 +33273,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33376,7 +33376,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
 @pulumi.output_type
 class GetDbHomesDbHomeDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  cdb_default: str,
                  cdb_ip_default: str):
         pulumi.set(__self__, "all_connection_strings", all_connection_strings)
@@ -33385,7 +33385,7 @@ class GetDbHomesDbHomeDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         return pulumi.get(self, "all_connection_strings")
 
     @property
@@ -33525,9 +33525,9 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
                  compartment_id: str,
                  connection_string: str,
                  db_node_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  fingerprint: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  public_key: str,
@@ -33537,9 +33537,9 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
         :param str compartment_id: The OCID of the compartment to contain the console connection.
         :param str connection_string: The SSH connection string for the console connection.
         :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str fingerprint: The SSH public key fingerprint for the console connection.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the console connection.
         :param str lifecycle_details: Information about the current lifecycle state.
         :param str service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
@@ -33583,7 +33583,7 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -33599,7 +33599,7 @@ class GetDbNodeConsoleConnectionsConsoleConnectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33687,9 +33687,9 @@ class GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  db_node_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -33697,9 +33697,9 @@ class GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemResult(dict):
         """
         :param str compartment_id: The OCID of the compartment containing the console history.
         :param str db_node_id: The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the console history.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
@@ -33733,7 +33733,7 @@ class GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -33749,7 +33749,7 @@ class GetDbNodeConsoleHistoriesConsoleHistoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33827,9 +33827,9 @@ class GetDbNodesDbNodeResult(dict):
                  db_node_storage_size_in_gbs: int,
                  db_server_id: str,
                  db_system_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host_ip_id: str,
                  hostname: str,
                  id: str,
@@ -33853,9 +33853,9 @@ class GetDbNodesDbNodeResult(dict):
         :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
         :param str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         :param str db_system_id: The DB system [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str fault_domain: The name of the Fault Domain the instance is contained in.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str host_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host IP address associated with the database node. Use this OCID with either the  [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/GetPrivateIp) or the [GetPublicIpByPrivateIpId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/PublicIp/GetPublicIpByPrivateIpId) API to get the IP address  needed to make a database connection.
                **Note:** Applies only to Exadata Cloud Service.
         :param str hostname: The host name for the database node.
@@ -33970,7 +33970,7 @@ class GetDbNodesDbNodeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -33986,7 +33986,7 @@ class GetDbNodesDbNodeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -34194,10 +34194,10 @@ class GetDbServersDbServerResult(dict):
                  db_node_ids: Sequence[str],
                  db_node_storage_size_in_gbs: int,
                  db_server_patching_details: Sequence['outputs.GetDbServersDbServerDbServerPatchingDetailResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  exadata_infrastructure_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  max_cpu_count: int,
@@ -34216,10 +34216,10 @@ class GetDbServersDbServerResult(dict):
         :param Sequence[str] db_node_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
         :param int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db server.
         :param Sequence['GetDbServersDbServerDbServerPatchingDetailArgs'] db_server_patching_details: The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ExadataInfrastructure.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param int max_cpu_count: The total number of CPU cores available.
@@ -34311,7 +34311,7 @@ class GetDbServersDbServerResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -34335,7 +34335,7 @@ class GetDbServersDbServerResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -35423,12 +35423,12 @@ class GetDbSystemsDbSystemResult(dict):
                  database_edition: str,
                  db_homes: Sequence['outputs.GetDbSystemsDbSystemDbHomeResult'],
                  db_system_options: Sequence['outputs.GetDbSystemsDbSystemDbSystemOptionResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  disk_redundancy: str,
                  display_name: str,
                  domain: str,
                  fault_domains: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname: str,
                  id: str,
                  iorm_config_caches: Sequence['outputs.GetDbSystemsDbSystemIormConfigCachResult'],
@@ -35477,12 +35477,12 @@ class GetDbSystemsDbSystemResult(dict):
         :param int data_storage_size_in_gb: The data storage size, in gigabytes, that is currently available to the DB system. Applies only for virtual machine DB systems. Required for VMDBs.
         :param str database_edition: The Oracle Database edition that applies to all the databases on the DB system.
         :param Sequence['GetDbSystemsDbSystemDbSystemOptionArgs'] db_system_options: The DB system options.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disk_redundancy: The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: The domain name for the DB system.
         :param Sequence[str] fault_domains: List of the Fault Domains in which this DB system is provisioned.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname: The hostname for the DB system.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -35668,7 +35668,7 @@ class GetDbSystemsDbSystemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -35708,7 +35708,7 @@ class GetDbSystemsDbSystemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -36039,18 +36039,18 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
                  databases: Sequence['outputs.GetDbSystemsDbSystemDbHomeDatabaseResult'],
                  db_home_location: str,
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  last_patch_history_entry_id: str,
                  lifecycle_details: str,
                  state: str,
                  time_created: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -36098,7 +36098,7 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -36114,7 +36114,7 @@ class GetDbSystemsDbSystemDbHomeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -36176,8 +36176,8 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
                  db_name: str,
                  db_unique_name: str,
                  db_workload: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
@@ -36192,8 +36192,8 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
                  vault_id: str):
         """
         :param str backup_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup. Specify a backupId to list only the DB systems or DB homes that support creating a database using this backup in this compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -36292,7 +36292,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -36300,7 +36300,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -36385,7 +36385,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseResult(dict):
 @pulumi.output_type
 class GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  cdb_default: str,
                  cdb_ip_default: str):
         pulumi.set(__self__, "all_connection_strings", all_connection_strings)
@@ -36394,7 +36394,7 @@ class GetDbSystemsDbSystemDbHomeDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         return pulumi.get(self, "all_connection_strings")
 
     @property
@@ -37563,10 +37563,10 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
                  db_node_storage_size_in_gbs: int,
                  db_server_version: str,
                  defined_file_system_configurations: Sequence['outputs.GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_servers: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gateway: str,
                  id: str,
                  infini_band_network_cidr: str,
@@ -37611,10 +37611,10 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param str db_server_version: The software version of the database servers (dom0) in the Exadata infrastructure.
         :param Sequence['GetExadataInfrastructuresExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns_servers: The list of DNS server IP addresses. Maximum of 3 allowed.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gateway: The gateway for the control plane network.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
         :param str infini_band_network_cidr: The CIDR block for the Exadata InfiniBand interconnect.
@@ -37847,7 +37847,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -37871,7 +37871,7 @@ class GetExadataInfrastructuresExadataInfrastructureResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -38992,11 +38992,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  cluster_name: str,
                  compartment_id: str,
                  data_collection_options: Sequence['outputs.GetExadbVmClustersExadbVmClusterDataCollectionOptionResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain: str,
                  exascale_db_storage_vault_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gi_version: str,
                  grid_image_id: str,
                  grid_image_type: str,
@@ -39020,7 +39020,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  ssh_public_keys: Sequence[str],
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  system_version: str,
                  time_created: str,
                  time_zone: str,
@@ -39033,11 +39033,11 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param str cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
         :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: A valid Oracle Grid Infrastructure (GI) software version.
         :param str grid_image_id: Grid Setup will be done using this grid image id
         :param str grid_image_type: The type of Grid Image
@@ -39062,7 +39062,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
         :param str time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -39160,7 +39160,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -39192,7 +39192,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -39385,7 +39385,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -39737,15 +39737,15 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
                  additional_flash_cache_in_percent: int,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  high_capacity_database_storages: Sequence['outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult'],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_zone: str,
                  vm_cluster_count: int,
@@ -39754,15 +39754,15 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         :param int additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
         :param str availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str description: Exadata Database Storage Vault description.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storages: Exadata Database Storage Details
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time that the Exadata Database Storage Vault was created.
         :param str time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         :param int vm_cluster_count: The number of Exadata VM clusters used the Exadata Database Storage Vault.
@@ -39811,7 +39811,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -39835,7 +39835,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -39875,7 +39875,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -40051,9 +40051,9 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
                  db_id: str,
                  db_packs: str,
                  db_unique_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  ncharacter_set: str,
@@ -40071,9 +40071,9 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param str db_packs: The database packs licensed for the external Oracle Database.
         :param str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character of the external database.
@@ -40176,7 +40176,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -40192,7 +40192,7 @@ class GetExternalContainerDatabasesExternalContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40484,10 +40484,10 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
                  connection_strings: Sequence['outputs.GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringResult'],
                  connector_agent_id: str,
                  connector_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_database_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -40500,10 +40500,10 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
         :param Sequence['GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs'] connection_strings: The Oracle Database connection string.
         :param str connector_agent_id: The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param str connector_type: The type of connector used by the external database resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str external_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: A filter to return only resources that match the specified lifecycle state.
@@ -40576,7 +40576,7 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -40600,7 +40600,7 @@ class GetExternalDatabaseConnectorsExternalDatabaseConnectorResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40908,9 +40908,9 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
                  db_id: str,
                  db_packs: str,
                  db_unique_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  ncharacter_set: str,
@@ -40929,9 +40929,9 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param str db_packs: The database packs licensed for the external Oracle Database.
         :param str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character of the external database.
@@ -41036,7 +41036,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -41052,7 +41052,7 @@ class GetExternalNonContainerDatabasesExternalNonContainerDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -41358,10 +41358,10 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
                  db_id: str,
                  db_packs: str,
                  db_unique_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_container_database_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  ncharacter_set: str,
@@ -41381,10 +41381,10 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
         :param str db_id: The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
         :param str db_packs: The database packs licensed for the external Oracle Database.
         :param str db_unique_name: The `DB_UNIQUE_NAME` of the external database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str ncharacter_set: The national character of the external database.
@@ -41492,7 +41492,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -41516,7 +41516,7 @@ class GetExternalPluggableDatabasesExternalPluggableDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -42041,9 +42041,9 @@ class GetKeyStoresKeyStoreResult(dict):
                  associated_databases: Sequence['outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult'],
                  compartment_id: str,
                  confirm_details_trigger: int,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -42052,9 +42052,9 @@ class GetKeyStoresKeyStoreResult(dict):
         """
         :param Sequence['GetKeyStoresKeyStoreAssociatedDatabaseArgs'] associated_databases: List of databases associated with the key store.
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: The user-friendly name for the key store. The name does not need to be unique.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param str state: The current state of the key store.
@@ -42096,7 +42096,7 @@ class GetKeyStoresKeyStoreResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -42112,7 +42112,7 @@ class GetKeyStoresKeyStoreResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -42878,10 +42878,10 @@ class GetOneoffPatchesOneoffPatchResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  download_oneoff_patch_trigger: int,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  one_off_patches: Sequence[str],
@@ -42895,9 +42895,9 @@ class GetOneoffPatchesOneoffPatchResult(dict):
         """
         :param str compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str db_version: A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
         :param str lifecycle_details: Detailed message for the lifecycle state.
         :param Sequence[str] one_off_patches: List of one-off patches for Database Homes.
@@ -42944,7 +42944,7 @@ class GetOneoffPatchesOneoffPatchResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -42965,7 +42965,7 @@ class GetOneoffPatchesOneoffPatchResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -43055,11 +43055,11 @@ class GetOneoffPatchesOneoffPatchResult(dict):
 @pulumi.output_type
 class GetPluggableDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  pdb_default: str,
                  pdb_ip_default: str):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -43069,7 +43069,7 @@ class GetPluggableDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -43264,8 +43264,8 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
                  container_database_admin_password: str,
                  container_database_id: str,
                  convert_to_regular_trigger: int,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_restricted: bool,
                  lifecycle_details: str,
@@ -43287,8 +43287,8 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetPluggableDatabasesPluggableDatabaseConnectionStringArgs'] connection_strings: Connection strings to connect to an Oracle Pluggable Database.
         :param str container_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
         :param bool is_restricted: The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
         :param str lifecycle_details: Detailed message for the lifecycle state.
@@ -43361,7 +43361,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -43369,7 +43369,7 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -43494,11 +43494,11 @@ class GetPluggableDatabasesPluggableDatabaseResult(dict):
 @pulumi.output_type
 class GetPluggableDatabasesPluggableDatabaseConnectionStringResult(dict):
     def __init__(__self__, *,
-                 all_connection_strings: Mapping[str, Any],
+                 all_connection_strings: Mapping[str, str],
                  pdb_default: str,
                  pdb_ip_default: str):
         """
-        :param Mapping[str, Any] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param Mapping[str, str] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param str pdb_default: A host name-based PDB connection string.
         :param str pdb_ip_default: An IP-based PDB connection string.
         """
@@ -43508,7 +43508,7 @@ class GetPluggableDatabasesPluggableDatabaseConnectionStringResult(dict):
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Mapping[str, Any]:
+    def all_connection_strings(self) -> Mapping[str, str]:
         """
         All connection strings to use to connect to the pluggable database.
         """
@@ -44102,12 +44102,12 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
     def __init__(__self__, *,
                  action: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns: Sequence[str],
                  dr_scans: Sequence['outputs.GetVmClusterNetworksVmClusterNetworkDrScanResult'],
                  exadata_infrastructure_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  ntps: Sequence[str],
@@ -44119,12 +44119,12 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
                  vm_networks: Sequence['outputs.GetVmClusterNetworksVmClusterNetworkVmNetworkResult']):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns: The list of DNS server IP addresses. Maximum of 3 allowed.
         :param Sequence['GetVmClusterNetworksVmClusterNetworkDrScanArgs'] dr_scans: The SCAN details for DR network
         :param str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
         :param str lifecycle_details: Additional information about the current lifecycle state.
         :param Sequence[str] ntps: The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -44167,7 +44167,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -44207,7 +44207,7 @@ class GetVmClusterNetworksVmClusterNetworkResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -45390,11 +45390,11 @@ class GetVmClustersVmClusterResult(dict):
                  data_storage_size_in_tbs: float,
                  db_node_storage_size_in_gbs: int,
                  db_servers: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  exadata_infrastructure_id: str,
                  file_system_configuration_details: Sequence['outputs.GetVmClustersVmClusterFileSystemConfigurationDetailResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gi_version: str,
                  id: str,
                  is_local_backup_enabled: bool,
@@ -45421,11 +45421,11 @@ class GetVmClustersVmClusterResult(dict):
         :param float data_storage_size_in_tbs: Size, in terabytes, of the DATA disk group.
         :param int db_node_storage_size_in_gbs: The local node storage allocated in GBs.
         :param Sequence[str] db_servers: The list of Db server.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param str exadata_infrastructure_id: If provided, filters the results for the given Exadata Infrastructure.
         :param Sequence['GetVmClustersVmClusterFileSystemConfigurationDetailArgs'] file_system_configuration_details: Details of the file system configuration of the VM cluster.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gi_version: The Oracle Grid Infrastructure software version for the VM cluster.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
         :param bool is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the VM cluster. If false, database backup on local Exadata storage is not available in the VM cluster.
@@ -45545,7 +45545,7 @@ class GetVmClustersVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -45577,7 +45577,7 @@ class GetVmClustersVmClusterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """

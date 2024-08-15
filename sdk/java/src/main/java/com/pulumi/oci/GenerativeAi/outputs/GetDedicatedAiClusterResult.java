@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterCapacity;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,10 +17,10 @@ public final class GetDedicatedAiClusterResult {
     private List<GetDedicatedAiClusterCapacity> capacities;
     private String compartmentId;
     private String dedicatedAiClusterId;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String description;
     private String displayName;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
      * 
@@ -29,7 +28,7 @@ public final class GetDedicatedAiClusterResult {
     private String id;
     private String lifecycleDetails;
     private String state;
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     private String timeCreated;
     private String timeUpdated;
     private String type;
@@ -46,7 +45,7 @@ public final class GetDedicatedAiClusterResult {
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String description() {
@@ -55,7 +54,7 @@ public final class GetDedicatedAiClusterResult {
     public String displayName() {
         return this.displayName;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -71,7 +70,7 @@ public final class GetDedicatedAiClusterResult {
     public String state() {
         return this.state;
     }
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public String timeCreated() {
@@ -102,14 +101,14 @@ public final class GetDedicatedAiClusterResult {
         private List<GetDedicatedAiClusterCapacity> capacities;
         private String compartmentId;
         private String dedicatedAiClusterId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
@@ -164,7 +163,7 @@ public final class GetDedicatedAiClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDedicatedAiClusterResult", "definedTags");
             }
@@ -188,7 +187,7 @@ public final class GetDedicatedAiClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDedicatedAiClusterResult", "freeformTags");
             }
@@ -220,7 +219,7 @@ public final class GetDedicatedAiClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDedicatedAiClusterResult", "systemTags");
             }

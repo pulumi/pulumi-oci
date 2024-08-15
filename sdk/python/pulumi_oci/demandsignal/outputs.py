@@ -165,14 +165,14 @@ class OccDemandSignalPatchOperation(dict):
                  from_: str,
                  operation: str,
                  selection: str,
-                 value: Mapping[str, Any],
+                 value: Mapping[str, str],
                  position: Optional[str] = None,
                  selected_item: Optional[str] = None):
         """
         :param str from_: (Updatable)
         :param str operation: (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
         :param str selection: (Updatable)
-        :param Mapping[str, Any] value: (Updatable)
+        :param Mapping[str, str] value: (Updatable)
         :param str position: (Updatable)
         :param str selected_item: (Updatable)
         """
@@ -211,7 +211,7 @@ class OccDemandSignalPatchOperation(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         """
         (Updatable)
         """
@@ -322,9 +322,9 @@ class GetOccDemandSignalPatchOperationResult(dict):
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         """
-        :param Mapping[str, Any] value: The Demand Signal Value.
+        :param Mapping[str, str] value: The Demand Signal Value.
         """
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
@@ -360,7 +360,7 @@ class GetOccDemandSignalPatchOperationResult(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         """
         The Demand Signal Value.
         """
@@ -416,9 +416,9 @@ class GetOccDemandSignalsOccDemandSignalCollectionResult(dict):
 class GetOccDemandSignalsOccDemandSignalCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_active: bool,
                  lifecycle_details: str,
@@ -426,20 +426,20 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemResult(dict):
                  occ_demand_signals: Sequence['outputs.GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalResult'],
                  patch_operations: Sequence['outputs.GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OccDemandSignal.
         :param bool is_active: Indicator of whether to share the data with Oracle.
         :param str lifecycle_details: A message that describes the current state of the OccDemandSignal in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param Sequence['GetOccDemandSignalsOccDemandSignalCollectionItemOccDemandSignalArgs'] occ_demand_signals: The OccDemandSignal data.
         :param str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the OccDemandSignal was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the OccDemandSignal was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -468,7 +468,7 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -484,7 +484,7 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -542,7 +542,7 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -653,9 +653,9 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationResult(dict)
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         """
-        :param Mapping[str, Any] value: The Demand Signal Value.
+        :param Mapping[str, str] value: The Demand Signal Value.
         """
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
@@ -691,7 +691,7 @@ class GetOccDemandSignalsOccDemandSignalCollectionItemPatchOperationResult(dict)
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         """
         The Demand Signal Value.
         """

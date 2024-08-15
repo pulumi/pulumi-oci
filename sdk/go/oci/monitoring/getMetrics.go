@@ -71,8 +71,8 @@ type GetMetricsArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	DimensionFilters map[string]interface{} `pulumi:"dimensionFilters"`
-	Filters          []GetMetricsFilter     `pulumi:"filters"`
+	DimensionFilters map[string]string  `pulumi:"dimensionFilters"`
+	Filters          []GetMetricsFilter `pulumi:"filters"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
 	// Example - group by namespace: `[ "namespace" ]`
@@ -88,11 +88,11 @@ type GetMetricsArgs struct {
 // A collection of values returned by getMetrics.
 type GetMetricsResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric.
-	CompartmentId          string                 `pulumi:"compartmentId"`
-	CompartmentIdInSubtree *bool                  `pulumi:"compartmentIdInSubtree"`
-	DimensionFilters       map[string]interface{} `pulumi:"dimensionFilters"`
-	Filters                []GetMetricsFilter     `pulumi:"filters"`
-	GroupBies              []string               `pulumi:"groupBies"`
+	CompartmentId          string             `pulumi:"compartmentId"`
+	CompartmentIdInSubtree *bool              `pulumi:"compartmentIdInSubtree"`
+	DimensionFilters       map[string]string  `pulumi:"dimensionFilters"`
+	Filters                []GetMetricsFilter `pulumi:"filters"`
+	GroupBies              []string           `pulumi:"groupBies"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of metrics.
@@ -125,7 +125,7 @@ type GetMetricsOutputArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	DimensionFilters pulumi.MapInput            `pulumi:"dimensionFilters"`
+	DimensionFilters pulumi.StringMapInput      `pulumi:"dimensionFilters"`
 	Filters          GetMetricsFilterArrayInput `pulumi:"filters"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
@@ -167,8 +167,8 @@ func (o GetMetricsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetMetricsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
 }
 
-func (o GetMetricsResultOutput) DimensionFilters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetricsResult) map[string]interface{} { return v.DimensionFilters }).(pulumi.MapOutput)
+func (o GetMetricsResultOutput) DimensionFilters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetricsResult) map[string]string { return v.DimensionFilters }).(pulumi.StringMapOutput)
 }
 
 func (o GetMetricsResultOutput) Filters() GetMetricsFilterArrayOutput {

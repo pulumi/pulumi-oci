@@ -71,7 +71,7 @@ type GetSecretbundleResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Customer-provided contextual metadata for the secret.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The contents of the secret.
 	SecretBundleContents []GetSecretbundleSecretBundleContent `pulumi:"secretBundleContents"`
 	// The OCID of the secret.
@@ -142,8 +142,8 @@ func (o GetSecretbundleResultOutput) Id() pulumi.StringOutput {
 }
 
 // Customer-provided contextual metadata for the secret.
-func (o GetSecretbundleResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecretbundleResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetSecretbundleResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecretbundleResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The contents of the secret.

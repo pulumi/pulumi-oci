@@ -63,7 +63,7 @@ export interface GetAlarmSuppressionResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -71,7 +71,7 @@ export interface GetAlarmSuppressionResult {
     /**
      * Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
      */
-    readonly dimensions: {[key: string]: any};
+    readonly dimensions: {[key: string]: string};
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -79,7 +79,7 @@ export interface GetAlarmSuppressionResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
      */

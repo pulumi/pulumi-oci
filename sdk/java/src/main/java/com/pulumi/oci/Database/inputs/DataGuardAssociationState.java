@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.DataGuardAssociationDataCollectionOptionsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -169,13 +168,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * 
      */
     @Import(name="databaseDefinedTags")
-    private @Nullable Output<Map<String,Object>> databaseDefinedTags;
+    private @Nullable Output<Map<String,String>> databaseDefinedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Optional<Output<Map<String,Object>>> databaseDefinedTags() {
+    public Optional<Output<Map<String,String>>> databaseDefinedTags() {
         return Optional.ofNullable(this.databaseDefinedTags);
     }
 
@@ -184,13 +183,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * 
      */
     @Import(name="databaseFreeformTags")
-    private @Nullable Output<Map<String,Object>> databaseFreeformTags;
+    private @Nullable Output<Map<String,String>> databaseFreeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> databaseFreeformTags() {
+    public Optional<Output<Map<String,String>>> databaseFreeformTags() {
         return Optional.ofNullable(this.databaseFreeformTags);
     }
 
@@ -229,13 +228,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * 
      */
     @Import(name="dbSystemDefinedTags")
-    private @Nullable Output<Map<String,Object>> dbSystemDefinedTags;
+    private @Nullable Output<Map<String,String>> dbSystemDefinedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Optional<Output<Map<String,Object>>> dbSystemDefinedTags() {
+    public Optional<Output<Map<String,String>>> dbSystemDefinedTags() {
         return Optional.ofNullable(this.dbSystemDefinedTags);
     }
 
@@ -244,13 +243,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
      * 
      */
     @Import(name="dbSystemFreeformTags")
-    private @Nullable Output<Map<String,Object>> dbSystemFreeformTags;
+    private @Nullable Output<Map<String,String>> dbSystemFreeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> dbSystemFreeformTags() {
+    public Optional<Output<Map<String,String>>> dbSystemFreeformTags() {
         return Optional.ofNullable(this.dbSystemFreeformTags);
     }
 
@@ -977,7 +976,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder databaseDefinedTags(@Nullable Output<Map<String,Object>> databaseDefinedTags) {
+        public Builder databaseDefinedTags(@Nullable Output<Map<String,String>> databaseDefinedTags) {
             $.databaseDefinedTags = databaseDefinedTags;
             return this;
         }
@@ -988,7 +987,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder databaseDefinedTags(Map<String,Object> databaseDefinedTags) {
+        public Builder databaseDefinedTags(Map<String,String> databaseDefinedTags) {
             return databaseDefinedTags(Output.of(databaseDefinedTags));
         }
 
@@ -998,7 +997,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder databaseFreeformTags(@Nullable Output<Map<String,Object>> databaseFreeformTags) {
+        public Builder databaseFreeformTags(@Nullable Output<Map<String,String>> databaseFreeformTags) {
             $.databaseFreeformTags = databaseFreeformTags;
             return this;
         }
@@ -1009,7 +1008,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder databaseFreeformTags(Map<String,Object> databaseFreeformTags) {
+        public Builder databaseFreeformTags(Map<String,String> databaseFreeformTags) {
             return databaseFreeformTags(Output.of(databaseFreeformTags));
         }
 
@@ -1061,7 +1060,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder dbSystemDefinedTags(@Nullable Output<Map<String,Object>> dbSystemDefinedTags) {
+        public Builder dbSystemDefinedTags(@Nullable Output<Map<String,String>> dbSystemDefinedTags) {
             $.dbSystemDefinedTags = dbSystemDefinedTags;
             return this;
         }
@@ -1072,7 +1071,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder dbSystemDefinedTags(Map<String,Object> dbSystemDefinedTags) {
+        public Builder dbSystemDefinedTags(Map<String,String> dbSystemDefinedTags) {
             return dbSystemDefinedTags(Output.of(dbSystemDefinedTags));
         }
 
@@ -1082,7 +1081,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder dbSystemFreeformTags(@Nullable Output<Map<String,Object>> dbSystemFreeformTags) {
+        public Builder dbSystemFreeformTags(@Nullable Output<Map<String,String>> dbSystemFreeformTags) {
             $.dbSystemFreeformTags = dbSystemFreeformTags;
             return this;
         }
@@ -1093,7 +1092,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          * @return builder
          * 
          */
-        public Builder dbSystemFreeformTags(Map<String,Object> dbSystemFreeformTags) {
+        public Builder dbSystemFreeformTags(Map<String,String> dbSystemFreeformTags) {
             return dbSystemFreeformTags(Output.of(dbSystemFreeformTags));
         }
 

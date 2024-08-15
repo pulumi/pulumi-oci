@@ -55,13 +55,13 @@ import (
 //					},
 //				},
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(maskingPolicyDescription),
 //				DisplayName: pulumi.Any(maskingPolicyDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsDropTempTablesEnabled: pulumi.Any(maskingPolicyIsDropTempTablesEnabled),
 //				IsRedoLoggingEnabled:    pulumi.Any(maskingPolicyIsRedoLoggingEnabled),
@@ -97,13 +97,13 @@ type MaskingPolicy struct {
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the masking policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -174,13 +174,13 @@ type maskingPolicyState struct {
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the masking policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -216,13 +216,13 @@ type MaskingPolicyState struct {
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the masking policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -262,13 +262,13 @@ type maskingPolicyArgs struct {
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the masking policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -299,13 +299,13 @@ type MaskingPolicyArgs struct {
 	// (Updatable) The OCID of the compartment where the masking policy should be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the masking policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -430,8 +430,8 @@ func (o MaskingPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o MaskingPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MaskingPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the masking policy.
@@ -445,8 +445,8 @@ func (o MaskingPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o MaskingPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MaskingPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MaskingPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MaskingPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.

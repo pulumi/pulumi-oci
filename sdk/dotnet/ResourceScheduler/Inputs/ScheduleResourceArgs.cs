@@ -19,16 +19,16 @@ namespace Pulumi.Oci.ResourceScheduler.Inputs
         public Input<string> Id { get; set; } = null!;
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// (Updatable) This is additional information that helps to identity the resource for the schedule.
         /// 
         /// { "id": "&lt;OCID_of_bucket&gt;" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

@@ -64,11 +64,11 @@ type LookupKeyStoreResult struct {
 	CompartmentId         string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id         string `pulumi:"id"`
 	KeyStoreId string `pulumi:"keyStoreId"`
@@ -135,8 +135,8 @@ func (o LookupKeyStoreResultOutput) ConfirmDetailsTrigger() pulumi.IntOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupKeyStoreResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupKeyStoreResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the key store. The name does not need to be unique.
@@ -145,8 +145,8 @@ func (o LookupKeyStoreResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupKeyStoreResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupKeyStoreResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupKeyStoreResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.

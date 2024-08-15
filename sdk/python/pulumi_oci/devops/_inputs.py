@@ -1117,11 +1117,11 @@ class BuildRunBuildRunArgumentsItemArgs:
 @pulumi.input_type
 class BuildRunBuildRunProgressArgs:
     def __init__(__self__, *,
-                 build_pipeline_stage_run_progress: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 build_pipeline_stage_run_progress: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] build_pipeline_stage_run_progress: Map of stage OCIDs to build pipeline stage run progress model.
         :param pulumi.Input[str] time_finished: The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_started: The time the build run started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -1134,14 +1134,14 @@ class BuildRunBuildRunProgressArgs:
 
     @property
     @pulumi.getter(name="buildPipelineStageRunProgress")
-    def build_pipeline_stage_run_progress(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def build_pipeline_stage_run_progress(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Map of stage OCIDs to build pipeline stage run progress model.
         """
         return pulumi.get(self, "build_pipeline_stage_run_progress")
 
     @build_pipeline_stage_run_progress.setter
-    def build_pipeline_stage_run_progress(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def build_pipeline_stage_run_progress(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "build_pipeline_stage_run_progress", value)
 
     @property
@@ -3908,11 +3908,11 @@ class DeploymentDeploymentArgumentsItemArgs:
 @pulumi.input_type
 class DeploymentDeploymentExecutionProgressArgs:
     def __init__(__self__, *,
-                 deploy_stage_execution_progress: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 deploy_stage_execution_progress: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] deploy_stage_execution_progress: Map of stage OCIDs to deploy stage execution progress model.
         :param pulumi.Input[str] time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         """
@@ -3925,14 +3925,14 @@ class DeploymentDeploymentExecutionProgressArgs:
 
     @property
     @pulumi.getter(name="deployStageExecutionProgress")
-    def deploy_stage_execution_progress(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def deploy_stage_execution_progress(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Map of stage OCIDs to deploy stage execution progress model.
         """
         return pulumi.get(self, "deploy_stage_execution_progress")
 
     @deploy_stage_execution_progress.setter
-    def deploy_stage_execution_progress(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def deploy_stage_execution_progress(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "deploy_stage_execution_progress", value)
 
     @property

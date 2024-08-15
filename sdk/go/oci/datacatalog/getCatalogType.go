@@ -84,7 +84,7 @@ type GetCatalogTypeResult struct {
 	// The immutable name of the type.
 	Name string `pulumi:"name"`
 	// A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// The current state of the type.
 	State string `pulumi:"state"`
 	// Indicates the category this type belongs to. For instance, data assets, connections.
@@ -186,8 +186,8 @@ func (o GetCatalogTypeResultOutput) Name() pulumi.StringOutput {
 }
 
 // A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
-func (o GetCatalogTypeResultOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogTypeResult) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o GetCatalogTypeResultOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogTypeResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // The current state of the type.

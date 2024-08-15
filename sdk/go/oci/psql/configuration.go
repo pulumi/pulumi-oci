@@ -43,12 +43,12 @@ import (
 //				DbVersion:   pulumi.Any(configurationDbVersion),
 //				DisplayName: pulumi.Any(configurationDisplayName),
 //				Shape:       pulumi.Any(configurationShape),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(configurationDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				InstanceMemorySizeInGbs: pulumi.Any(configurationInstanceMemorySizeInGbs),
 //				InstanceOcpuCount:       pulumi.Any(configurationInstanceOcpuCount),
@@ -85,13 +85,13 @@ type Configuration struct {
 	// Version of the PostgreSQL database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Details about the configuration set.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
 	//
 	// Skip or set it's value to 0 if configuration is for a flexible shape.
@@ -112,7 +112,7 @@ type Configuration struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 }
@@ -173,13 +173,13 @@ type configurationState struct {
 	// Version of the PostgreSQL database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details about the configuration set.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
 	//
 	// Skip or set it's value to 0 if configuration is for a flexible shape.
@@ -200,7 +200,7 @@ type configurationState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 }
@@ -217,13 +217,13 @@ type ConfigurationState struct {
 	// Version of the PostgreSQL database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details about the configuration set.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Memory size in gigabytes with 1GB increment.
 	//
 	// Skip or set it's value to 0 if configuration is for a flexible shape.
@@ -244,7 +244,7 @@ type ConfigurationState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 }
@@ -261,13 +261,13 @@ type configurationArgs struct {
 	// Version of the PostgreSQL database.
 	DbVersion string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details about the configuration set.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Memory size in gigabytes with 1GB increment.
 	//
 	// Skip or set it's value to 0 if configuration is for a flexible shape.
@@ -284,7 +284,7 @@ type configurationArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // The set of arguments for constructing a Configuration resource.
@@ -296,13 +296,13 @@ type ConfigurationArgs struct {
 	// Version of the PostgreSQL database.
 	DbVersion pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details about the configuration set.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the configuration. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Memory size in gigabytes with 1GB increment.
 	//
 	// Skip or set it's value to 0 if configuration is for a flexible shape.
@@ -319,7 +319,7 @@ type ConfigurationArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 }
 
 func (ConfigurationArgs) ElementType() reflect.Type {
@@ -435,8 +435,8 @@ func (o ConfigurationOutput) DbVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Configuration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Details about the configuration set.
@@ -450,8 +450,8 @@ func (o ConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Configuration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Memory size in gigabytes with 1GB increment.
@@ -492,8 +492,8 @@ func (o ConfigurationOutput) State() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConfigurationOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Configuration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ConfigurationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Configuration) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

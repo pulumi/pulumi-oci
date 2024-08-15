@@ -4,7 +4,6 @@
 package com.pulumi.oci.GloballyDistributedDatabase.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,14 +15,14 @@ public final class ShardedDatabaseConnectionString {
      * @return Collection of connection strings.
      * 
      */
-    private @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,String> allConnectionStrings;
 
     private ShardedDatabaseConnectionString() {}
     /**
      * @return Collection of connection strings.
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
 
@@ -36,7 +35,7 @@ public final class ShardedDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable Map<String,String> allConnectionStrings;
         public Builder() {}
         public Builder(ShardedDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -44,7 +43,7 @@ public final class ShardedDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(@Nullable Map<String,String> allConnectionStrings) {
 
             this.allConnectionStrings = allConnectionStrings;
             return this;

@@ -11,7 +11,6 @@ import com.pulumi.oci.DataCatalog.ConnectionArgs;
 import com.pulumi.oci.DataCatalog.inputs.ConnectionState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -150,14 +149,14 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;encProperties&#34;: { &#34;default&#34;: { &#34;password&#34;: &#34;example-password&#34;}}}`
      * 
      */
-    @Export(name="encProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output</* @Nullable */ Map<String,Object>> encProperties;
+    @Export(name="encProperties", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> encProperties;
 
     /**
      * @return (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;encProperties&#34;: { &#34;default&#34;: { &#34;password&#34;: &#34;example-password&#34;}}}`
      * 
      */
-    public Output<Optional<Map<String,Object>>> encProperties() {
+    public Output<Optional<Map<String,String>>> encProperties() {
         return Codegen.optional(this.encProperties);
     }
     /**
@@ -202,10 +201,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<String> key() {
         return this.key;
     }
-    @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> properties;
+    @Export(name="properties", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> properties;
 
-    public Output<Map<String,Object>> properties() {
+    public Output<Map<String,String>> properties() {
         return this.properties;
     }
     /**

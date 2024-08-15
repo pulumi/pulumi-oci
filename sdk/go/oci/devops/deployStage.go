@@ -49,11 +49,11 @@ type DeployStage struct {
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringOutput `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config pulumi.MapOutput `pulumi:"config"`
+	Config pulumi.StringMapOutput `pulumi:"config"`
 	// (Updatable) Specifies the container configuration.
 	ContainerConfig DeployStageContainerConfigOutput `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrOutput `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
@@ -79,7 +79,7 @@ type DeployStage struct {
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicy DeployStageFailurePolicyOutput `pulumi:"failurePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Function environment OCID.
 	FunctionDeployEnvironmentId pulumi.StringOutput `pulumi:"functionDeployEnvironmentId"`
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
@@ -151,7 +151,7 @@ type DeployStage struct {
 	// The current state of the deployment stage.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigOutput `pulumi:"testLoadBalancerConfig"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -230,11 +230,11 @@ type deployStageState struct {
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId *string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// (Updatable) Specifies the container configuration.
 	ContainerConfig *DeployStageContainerConfig `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
@@ -260,7 +260,7 @@ type deployStageState struct {
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicy *DeployStageFailurePolicy `pulumi:"failurePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Function environment OCID.
 	FunctionDeployEnvironmentId *string `pulumi:"functionDeployEnvironmentId"`
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
@@ -332,7 +332,7 @@ type deployStageState struct {
 	// The current state of the deployment stage.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig *DeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfig"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -373,11 +373,11 @@ type DeployStageState struct {
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config pulumi.MapInput
+	Config pulumi.StringMapInput
 	// (Updatable) Specifies the container configuration.
 	ContainerConfig DeployStageContainerConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrInput
 	// (Updatable) The list of file artifact OCIDs to deploy.
@@ -403,7 +403,7 @@ type DeployStageState struct {
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicy DeployStageFailurePolicyPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Function environment OCID.
 	FunctionDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
@@ -475,7 +475,7 @@ type DeployStageState struct {
 	// The current state of the deployment stage.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
 	TestLoadBalancerConfig DeployStageTestLoadBalancerConfigPtrInput
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -518,11 +518,11 @@ type deployStageArgs struct {
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId *string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// (Updatable) Specifies the container configuration.
 	ContainerConfig *DeployStageContainerConfig `pulumi:"containerConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// (Updatable) The list of file artifact OCIDs to deploy.
@@ -548,7 +548,7 @@ type deployStageArgs struct {
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicy *DeployStageFailurePolicy `pulumi:"failurePolicy"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Function environment OCID.
 	FunctionDeployEnvironmentId *string `pulumi:"functionDeployEnvironmentId"`
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
@@ -648,11 +648,11 @@ type DeployStageArgs struct {
 	// (Updatable) A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config pulumi.MapInput
+	Config pulumi.StringMapInput
 	// (Updatable) Specifies the container configuration.
 	ContainerConfig DeployStageContainerConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId pulumi.StringPtrInput
 	// (Updatable) The list of file artifact OCIDs to deploy.
@@ -678,7 +678,7 @@ type DeployStageArgs struct {
 	// (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicy DeployStageFailurePolicyPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Function environment OCID.
 	FunctionDeployEnvironmentId pulumi.StringPtrInput
 	// (Updatable) Timeout for execution of the Function. Value in seconds.
@@ -900,8 +900,8 @@ func (o DeployStageOutput) ComputeInstanceGroupDeployEnvironmentId() pulumi.Stri
 }
 
 // (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
-func (o DeployStageOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.Config }).(pulumi.MapOutput)
+func (o DeployStageOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringMapOutput { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies the container configuration.
@@ -910,8 +910,8 @@ func (o DeployStageOutput) ContainerConfig() DeployStageContainerConfigOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o DeployStageOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DeployStageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -977,8 +977,8 @@ func (o DeployStageOutput) FailurePolicy() DeployStageFailurePolicyOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o DeployStageOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DeployStageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Function environment OCID.
@@ -1159,8 +1159,8 @@ func (o DeployStageOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DeployStageOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployStage) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DeployStageOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployStage) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.

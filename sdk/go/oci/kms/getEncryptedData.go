@@ -58,7 +58,7 @@ func LookupEncryptedData(ctx *pulumi.Context, args *LookupEncryptedDataArgs, opt
 // A collection of arguments for invoking getEncryptedData.
 type LookupEncryptedDataArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
 	// The OCID of the key to encrypt with.
@@ -69,7 +69,7 @@ type LookupEncryptedDataArgs struct {
 
 // A collection of values returned by getEncryptedData.
 type LookupEncryptedDataResult struct {
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The encrypted data.
 	Ciphertext     string `pulumi:"ciphertext"`
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
@@ -95,7 +95,7 @@ func LookupEncryptedDataOutput(ctx *pulumi.Context, args LookupEncryptedDataOutp
 // A collection of arguments for invoking getEncryptedData.
 type LookupEncryptedDataOutputArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput `pulumi:"associatedData"`
+	AssociatedData pulumi.StringMapInput `pulumi:"associatedData"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringInput `pulumi:"cryptoEndpoint"`
 	// The OCID of the key to encrypt with.
@@ -123,8 +123,8 @@ func (o LookupEncryptedDataResultOutput) ToLookupEncryptedDataResultOutputWithCo
 	return o
 }
 
-func (o LookupEncryptedDataResultOutput) AssociatedData() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEncryptedDataResult) map[string]interface{} { return v.AssociatedData }).(pulumi.MapOutput)
+func (o LookupEncryptedDataResultOutput) AssociatedData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEncryptedDataResult) map[string]string { return v.AssociatedData }).(pulumi.StringMapOutput)
 }
 
 // The encrypted data.

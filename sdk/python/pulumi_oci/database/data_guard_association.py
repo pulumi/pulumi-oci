@@ -27,11 +27,11 @@ class DataGuardAssociationArgs:
                  cpu_core_count: Optional[pulumi.Input[int]] = None,
                  create_async: Optional[pulumi.Input[bool]] = None,
                  data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
@@ -81,11 +81,11 @@ class DataGuardAssociationArgs:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param pulumi.Input[int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
-        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
-        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
@@ -328,26 +328,26 @@ class DataGuardAssociationArgs:
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "database_defined_tags")
 
     @database_defined_tags.setter
-    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "database_defined_tags", value)
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "database_freeform_tags")
 
     @database_freeform_tags.setter
-    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "database_freeform_tags", value)
 
     @property
@@ -364,26 +364,26 @@ class DataGuardAssociationArgs:
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "db_system_defined_tags")
 
     @db_system_defined_tags.setter
-    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_defined_tags", value)
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "db_system_freeform_tags")
 
     @db_system_freeform_tags.setter
-    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
 
     @property
@@ -617,12 +617,12 @@ class _DataGuardAssociationState:
                  creation_type: Optional[pulumi.Input[str]] = None,
                  data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -668,12 +668,12 @@ class _DataGuardAssociationState:
                * At least two special characters. Valid special characters include "_", "#", and "-" only.
                
                **The password MUST be the same as the primary admin password.**
-        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
-        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
@@ -928,26 +928,26 @@ class _DataGuardAssociationState:
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def database_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "database_defined_tags")
 
     @database_defined_tags.setter
-    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def database_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "database_defined_tags", value)
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def database_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "database_freeform_tags")
 
     @database_freeform_tags.setter
-    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def database_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "database_freeform_tags", value)
 
     @property
@@ -976,26 +976,26 @@ class _DataGuardAssociationState:
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def db_system_defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "db_system_defined_tags")
 
     @db_system_defined_tags.setter
-    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def db_system_defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_defined_tags", value)
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def db_system_freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "db_system_freeform_tags")
 
     @db_system_freeform_tags.setter
-    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def db_system_freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "db_system_freeform_tags", value)
 
     @property
@@ -1359,12 +1359,12 @@ class DataGuardAssociation(pulumi.CustomResource):
                  creation_type: Optional[pulumi.Input[str]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1463,12 +1463,12 @@ class DataGuardAssociation(pulumi.CustomResource):
                * At least two special characters. Valid special characters include "_", "#", and "-" only.
                
                **The password MUST be the same as the primary admin password.**
-        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
-        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
@@ -1605,12 +1605,12 @@ class DataGuardAssociation(pulumi.CustomResource):
                  creation_type: Optional[pulumi.Input[str]] = None,
                  data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
                  database_admin_password: Optional[pulumi.Input[str]] = None,
-                 database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  database_id: Optional[pulumi.Input[str]] = None,
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
-                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1715,12 +1715,12 @@ class DataGuardAssociation(pulumi.CustomResource):
             creation_type: Optional[pulumi.Input[str]] = None,
             data_collection_options: Optional[pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']]] = None,
             database_admin_password: Optional[pulumi.Input[str]] = None,
-            database_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            database_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            database_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            database_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             database_id: Optional[pulumi.Input[str]] = None,
             database_software_image_id: Optional[pulumi.Input[str]] = None,
-            db_system_defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            db_system_defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            db_system_freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             delete_standby_db_home_on_delete: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             fault_domains: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -1771,12 +1771,12 @@ class DataGuardAssociation(pulumi.CustomResource):
                * At least two special characters. Valid special characters include "_", "#", and "-" only.
                
                **The password MUST be the same as the primary admin password.**
-        :param pulumi.Input[Mapping[str, Any]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] database_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
-        :param pulumi.Input[Mapping[str, Any]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] db_system_freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] display_name: The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] fault_domains: A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
                
@@ -1958,7 +1958,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def database_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -1966,7 +1966,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def database_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -1990,7 +1990,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def db_system_defined_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -1998,7 +1998,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def db_system_freeform_tags(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """

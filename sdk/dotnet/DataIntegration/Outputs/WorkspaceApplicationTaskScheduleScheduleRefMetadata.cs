@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// (Updatable) Information property fields.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? InfoFields;
+        public readonly ImmutableDictionary<string, string>? InfoFields;
         /// <summary>
         /// (Updatable) Specifies whether this object is a favorite or not.
         /// </summary>
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             string? identifierPath,
 
-            ImmutableDictionary<string, object>? infoFields,
+            ImmutableDictionary<string, string>? infoFields,
 
             bool? isFavorite,
 

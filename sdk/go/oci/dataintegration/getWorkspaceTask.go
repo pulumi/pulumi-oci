@@ -59,7 +59,7 @@ type LookupWorkspaceTaskResult struct {
 	// The key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceTaskMetadata `pulumi:"metadatas"`
 	// The type of the types object.
@@ -200,8 +200,8 @@ func (o LookupWorkspaceTaskResultOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o LookupWorkspaceTaskResultOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceTaskResult) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o LookupWorkspaceTaskResultOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceTaskResult) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

@@ -116,18 +116,18 @@ type DataGuardAssociation struct {
 	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringOutput `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DatabaseDefinedTags pulumi.MapOutput `pulumi:"databaseDefinedTags"`
+	DatabaseDefinedTags pulumi.StringMapOutput `pulumi:"databaseDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DatabaseFreeformTags pulumi.MapOutput `pulumi:"databaseFreeformTags"`
+	DatabaseFreeformTags pulumi.StringMapOutput `pulumi:"databaseFreeformTags"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
 	DatabaseSoftwareImageId pulumi.StringPtrOutput `pulumi:"databaseSoftwareImageId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DbSystemDefinedTags pulumi.MapOutput `pulumi:"dbSystemDefinedTags"`
+	DbSystemDefinedTags pulumi.StringMapOutput `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.MapOutput    `pulumi:"dbSystemFreeformTags"`
-	DeleteStandbyDbHomeOnDelete pulumi.StringOutput `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DbSystemFreeformTags        pulumi.StringMapOutput `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete pulumi.StringOutput    `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -289,18 +289,18 @@ type dataGuardAssociationState struct {
 	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword *string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DatabaseDefinedTags map[string]interface{} `pulumi:"databaseDefinedTags"`
+	DatabaseDefinedTags map[string]string `pulumi:"databaseDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DatabaseFreeformTags map[string]interface{} `pulumi:"databaseFreeformTags"`
+	DatabaseFreeformTags map[string]string `pulumi:"databaseFreeformTags"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId *string `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DbSystemDefinedTags map[string]interface{} `pulumi:"dbSystemDefinedTags"`
+	DbSystemDefinedTags map[string]string `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
-	DeleteStandbyDbHomeOnDelete *string                `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete *string           `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -408,17 +408,17 @@ type DataGuardAssociationState struct {
 	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DatabaseDefinedTags pulumi.MapInput
+	DatabaseDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DatabaseFreeformTags pulumi.MapInput
+	DatabaseFreeformTags pulumi.StringMapInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringPtrInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DbSystemDefinedTags pulumi.MapInput
+	DbSystemDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.MapInput
+	DbSystemFreeformTags        pulumi.StringMapInput
 	DeleteStandbyDbHomeOnDelete pulumi.StringPtrInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
@@ -527,18 +527,18 @@ type dataGuardAssociationArgs struct {
 	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword string `pulumi:"databaseAdminPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DatabaseDefinedTags map[string]interface{} `pulumi:"databaseDefinedTags"`
+	DatabaseDefinedTags map[string]string `pulumi:"databaseDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DatabaseFreeformTags map[string]interface{} `pulumi:"databaseFreeformTags"`
+	DatabaseFreeformTags map[string]string `pulumi:"databaseFreeformTags"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId string `pulumi:"databaseId"`
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DbSystemDefinedTags map[string]interface{} `pulumi:"dbSystemDefinedTags"`
+	DbSystemDefinedTags map[string]string `pulumi:"dbSystemDefinedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
-	DeleteStandbyDbHomeOnDelete string                 `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// A Fault Domain is a grouping of hardware and infrastructure within an availability domain. Fault Domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or maintenance that affects one Fault Domain does not affect DB systems in other Fault Domains.
@@ -629,17 +629,17 @@ type DataGuardAssociationArgs struct {
 	// **The password MUST be the same as the primary admin password.**
 	DatabaseAdminPassword pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DatabaseDefinedTags pulumi.MapInput
+	DatabaseDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DatabaseFreeformTags pulumi.MapInput
+	DatabaseFreeformTags pulumi.StringMapInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringInput
 	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Applicable only when creationType=`ExistingDbSystem` and when the existing database has Exadata shape.
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DbSystemDefinedTags pulumi.MapInput
+	DbSystemDefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	DbSystemFreeformTags        pulumi.MapInput
+	DbSystemFreeformTags        pulumi.StringMapInput
 	DeleteStandbyDbHomeOnDelete pulumi.StringInput
 	// The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
@@ -849,13 +849,13 @@ func (o DataGuardAssociationOutput) DatabaseAdminPassword() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o DataGuardAssociationOutput) DatabaseDefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.MapOutput { return v.DatabaseDefinedTags }).(pulumi.MapOutput)
+func (o DataGuardAssociationOutput) DatabaseDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DatabaseDefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DataGuardAssociationOutput) DatabaseFreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.MapOutput { return v.DatabaseFreeformTags }).(pulumi.MapOutput)
+func (o DataGuardAssociationOutput) DatabaseFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DatabaseFreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -869,13 +869,13 @@ func (o DataGuardAssociationOutput) DatabaseSoftwareImageId() pulumi.StringPtrOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o DataGuardAssociationOutput) DbSystemDefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.MapOutput { return v.DbSystemDefinedTags }).(pulumi.MapOutput)
+func (o DataGuardAssociationOutput) DbSystemDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DbSystemDefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DataGuardAssociationOutput) DbSystemFreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataGuardAssociation) pulumi.MapOutput { return v.DbSystemFreeformTags }).(pulumi.MapOutput)
+func (o DataGuardAssociationOutput) DbSystemFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringMapOutput { return v.DbSystemFreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o DataGuardAssociationOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {

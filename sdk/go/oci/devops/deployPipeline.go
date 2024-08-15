@@ -32,8 +32,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DevOps.NewDeployPipeline(ctx, "test_deploy_pipeline", &DevOps.DeployPipelineArgs{
 //				ProjectId: pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DeployPipelineParameters: &devops.DeployPipelineDeployPipelineParametersArgs{
 //					Items: devops.DeployPipelineDeployPipelineParametersItemArray{
@@ -46,8 +46,8 @@ import (
 //				},
 //				Description: pulumi.Any(deployPipelineDescription),
 //				DisplayName: pulumi.Any(deployPipelineDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -72,7 +72,7 @@ type DeployPipeline struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// List of all artifacts used in the pipeline.
 	DeployPipelineArtifacts DeployPipelineDeployPipelineArtifactArrayOutput `pulumi:"deployPipelineArtifacts"`
 	// List of all environments used in the pipeline.
@@ -84,7 +84,7 @@ type DeployPipeline struct {
 	// (Updatable) Deployment pipeline display name. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
@@ -95,7 +95,7 @@ type DeployPipeline struct {
 	// The current state of the deployment pipeline.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -138,7 +138,7 @@ type deployPipelineState struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// List of all artifacts used in the pipeline.
 	DeployPipelineArtifacts []DeployPipelineDeployPipelineArtifact `pulumi:"deployPipelineArtifacts"`
 	// List of all environments used in the pipeline.
@@ -150,7 +150,7 @@ type deployPipelineState struct {
 	// (Updatable) Deployment pipeline display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of a project.
@@ -161,7 +161,7 @@ type deployPipelineState struct {
 	// The current state of the deployment pipeline.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -172,7 +172,7 @@ type DeployPipelineState struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// List of all artifacts used in the pipeline.
 	DeployPipelineArtifacts DeployPipelineDeployPipelineArtifactArrayInput
 	// List of all environments used in the pipeline.
@@ -184,7 +184,7 @@ type DeployPipelineState struct {
 	// (Updatable) Deployment pipeline display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of a project.
@@ -195,7 +195,7 @@ type DeployPipelineState struct {
 	// The current state of the deployment pipeline.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// Time the deployment pipeline was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -208,7 +208,7 @@ func (DeployPipelineState) ElementType() reflect.Type {
 
 type deployPipelineArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
 	DeployPipelineParameters *DeployPipelineDeployPipelineParameters `pulumi:"deployPipelineParameters"`
 	// (Updatable) Optional description about the deployment pipeline.
@@ -216,7 +216,7 @@ type deployPipelineArgs struct {
 	// (Updatable) Deployment pipeline display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a project.
 	//
 	// ** IMPORTANT **
@@ -227,7 +227,7 @@ type deployPipelineArgs struct {
 // The set of arguments for constructing a DeployPipeline resource.
 type DeployPipelineArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Specifies list of parameters present in the deployment pipeline. In case of Update operation, replaces existing parameters list. Merging with existing parameters is not supported.
 	DeployPipelineParameters DeployPipelineDeployPipelineParametersPtrInput
 	// (Updatable) Optional description about the deployment pipeline.
@@ -235,7 +235,7 @@ type DeployPipelineArgs struct {
 	// (Updatable) Deployment pipeline display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of a project.
 	//
 	// ** IMPORTANT **
@@ -336,8 +336,8 @@ func (o DeployPipelineOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o DeployPipelineOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployPipeline) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DeployPipelineOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployPipeline) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // List of all artifacts used in the pipeline.
@@ -372,8 +372,8 @@ func (o DeployPipelineOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o DeployPipelineOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployPipeline) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DeployPipelineOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployPipeline) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -395,8 +395,8 @@ func (o DeployPipelineOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DeployPipelineOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployPipeline) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DeployPipelineOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployPipeline) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment pipeline was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

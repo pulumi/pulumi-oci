@@ -11,7 +11,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchesPatc
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchesPatchSummaryCollectionItemPatchObjectMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationPatchesPatchSummaryCollectionItemRegistryMetadata;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +42,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
      * @return The errors encountered while applying the patch, if any.
      * 
      */
-    private Map<String,Object> errorMessages;
+    private Map<String,String> errorMessages;
     /**
      * @return Used to filter by the identifier of the published object.
      * 
@@ -58,7 +57,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private Map<String,String> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
@@ -155,7 +154,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
      * @return The errors encountered while applying the patch, if any.
      * 
      */
-    public Map<String,Object> errorMessages() {
+    public Map<String,String> errorMessages() {
         return this.errorMessages;
     }
     /**
@@ -176,7 +175,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Map<String,Object> keyMap() {
+    public Map<String,String> keyMap() {
         return this.keyMap;
     }
     /**
@@ -283,10 +282,10 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
         private Integer applicationVersion;
         private List<GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadata> dependentObjectMetadatas;
         private String description;
-        private Map<String,Object> errorMessages;
+        private Map<String,String> errorMessages;
         private String identifier;
         private String key;
-        private Map<String,Object> keyMap;
+        private Map<String,String> keyMap;
         private List<GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata> metadatas;
         private String modelType;
         private String modelVersion;
@@ -364,7 +363,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             if (errorMessages == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationPatchesPatchSummaryCollectionItem", "errorMessages");
             }
@@ -388,7 +387,7 @@ public final class GetWorkspaceApplicationPatchesPatchSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             if (keyMap == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationPatchesPatchSummaryCollectionItem", "keyMap");
             }

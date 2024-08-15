@@ -34,15 +34,15 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				EntitySource:  pulumi.Any(hostInsightEntitySource),
 //				ComputeId:     pulumi.Any(testCompute.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				EnterpriseManagerBridgeId:         pulumi.Any(testEnterpriseManagerBridge.Id),
 //				EnterpriseManagerEntityIdentifier: pulumi.Any(hostInsightEnterpriseManagerEntityIdentifier),
 //				EnterpriseManagerIdentifier:       pulumi.Any(hostInsightEnterpriseManagerIdentifier),
 //				ExadataInsightId:                  pulumi.Any(testExadataInsight.Id),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
 //				Status:            pulumi.String("DISABLED"),
@@ -71,7 +71,7 @@ type HostInsight struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId pulumi.StringOutput `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringOutput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -89,7 +89,7 @@ type HostInsight struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringOutput `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
 	HostDisplayName pulumi.StringOutput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
@@ -115,7 +115,7 @@ type HostInsight struct {
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
@@ -163,7 +163,7 @@ type hostInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId *string `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -181,7 +181,7 @@ type hostInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The user-friendly name for the host. The name does not have to be unique.
 	HostDisplayName *string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
@@ -207,7 +207,7 @@ type hostInsightState struct {
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the host insight was updated. An RFC3339 formatted datetime string
@@ -220,7 +220,7 @@ type HostInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
 	// Enterprise Manager Entity Display Name
@@ -238,7 +238,7 @@ type HostInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The user-friendly name for the host. The name does not have to be unique.
 	HostDisplayName pulumi.StringPtrInput
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
@@ -264,7 +264,7 @@ type HostInsightState struct {
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the host insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the host insight was updated. An RFC3339 formatted datetime string
@@ -281,7 +281,7 @@ type hostInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId *string `pulumi:"computeId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Unique Identifier
@@ -293,7 +293,7 @@ type hostInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
 	//
 	// ** IMPORTANT **
@@ -310,7 +310,7 @@ type HostInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
 	ComputeId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
 	// Enterprise Manager Entity Unique Identifier
@@ -322,7 +322,7 @@ type HostInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
 	//
 	// ** IMPORTANT **
@@ -430,8 +430,8 @@ func (o HostInsightOutput) ComputeId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o HostInsightOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o HostInsightOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // OPSI Enterprise Manager Bridge OCID
@@ -475,8 +475,8 @@ func (o HostInsightOutput) ExadataInsightId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o HostInsightOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o HostInsightOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the host. The name does not have to be unique.
@@ -537,8 +537,8 @@ func (o HostInsightOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o HostInsightOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *HostInsight) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o HostInsightOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HostInsight) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the host insight was first enabled. An RFC3339 formatted datetime string

@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemDataPoint;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemEvaluationDataPoint;
 import com.pulumi.oci.StackMonitoring.inputs.GetBaselineableMetricsEvaluateItemTrainingDataPoint;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,13 +38,13 @@ public final class GetBaselineableMetricsEvaluateItem extends com.pulumi.resourc
      * 
      */
     @Import(name="dimensions", required=true)
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
 
     /**
      * @return list of dimensions for the metric
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
 
@@ -133,7 +132,7 @@ public final class GetBaselineableMetricsEvaluateItem extends com.pulumi.resourc
          * @return builder
          * 
          */
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             $.dimensions = dimensions;
             return this;
         }

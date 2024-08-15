@@ -58,9 +58,9 @@ export interface GetArtifactByPathResult {
     readonly artifactPath: string;
     readonly compartmentId: string;
     readonly content: string;
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly displayName: string;
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly id: string;
     readonly repositoryId: string;
     readonly sha256: string;

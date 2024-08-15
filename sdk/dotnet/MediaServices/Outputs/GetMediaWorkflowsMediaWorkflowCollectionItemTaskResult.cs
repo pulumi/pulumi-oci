@@ -20,7 +20,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// <summary>
         /// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> EnableWhenReferencedParameterEquals;
+        public readonly ImmutableDictionary<string, string> EnableWhenReferencedParameterEquals;
         /// <summary>
         /// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         /// </summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         private GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(
             string enableParameterReference,
 
-            ImmutableDictionary<string, object> enableWhenReferencedParameterEquals,
+            ImmutableDictionary<string, string> enableWhenReferencedParameterEquals,
 
             string key,
 

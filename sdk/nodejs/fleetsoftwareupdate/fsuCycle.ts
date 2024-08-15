@@ -38,11 +38,11 @@ export class FsuCycle extends pulumi.CustomResource {
     public readonly batchingStrategy!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     public /*out*/ readonly collectionType!: pulumi.Output<string>;
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly diagnosticsCollection!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
     public readonly displayName!: pulumi.Output<string>;
     public /*out*/ readonly executingFsuActionId!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public readonly fsuCollectionId!: pulumi.Output<string>;
     public readonly goalVersionDetails!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
     public readonly isIgnoreMissingPatches!: pulumi.Output<string[]>;
@@ -54,7 +54,7 @@ export class FsuCycle extends pulumi.CustomResource {
     public /*out*/ readonly nextActionToExecutes!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute[]>;
     public readonly stageActionSchedule!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
     public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     public /*out*/ readonly timeFinished!: pulumi.Output<string>;
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -151,11 +151,11 @@ export interface FsuCycleState {
     batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     collectionType?: pulumi.Input<string>;
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
     displayName?: pulumi.Input<string>;
     executingFsuActionId?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     fsuCollectionId?: pulumi.Input<string>;
     goalVersionDetails?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
     isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[]>;
@@ -167,7 +167,7 @@ export interface FsuCycleState {
     nextActionToExecutes?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleNextActionToExecute>[]>;
     stageActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleStageActionSchedule>;
     state?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     timeCreated?: pulumi.Input<string>;
     timeFinished?: pulumi.Input<string>;
     timeUpdated?: pulumi.Input<string>;
@@ -181,10 +181,10 @@ export interface FsuCycleArgs {
     applyActionSchedule?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleApplyActionSchedule>;
     batchingStrategy?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleBatchingStrategy>;
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     diagnosticsCollection?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleDiagnosticsCollection>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     fsuCollectionId: pulumi.Input<string>;
     goalVersionDetails: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCycleGoalVersionDetails>;
     isIgnoreMissingPatches?: pulumi.Input<pulumi.Input<string>[]>;

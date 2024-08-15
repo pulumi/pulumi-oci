@@ -21,10 +21,10 @@ class DatabaseToolsConnectionArgs:
                  type: pulumi.Input[str],
                  user_name: pulumi.Input[str],
                  user_password: pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'],
-                 advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 advanced_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_stores: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionLockArgs']]]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -39,10 +39,10 @@ class DatabaseToolsConnectionArgs:
         :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
         :param pulumi.Input[str] user_name: (Updatable) The database user name.
         :param pulumi.Input['DatabaseToolsConnectionUserPasswordArgs'] user_password: (Updatable) The user password.
-        :param pulumi.Input[Mapping[str, Any]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
@@ -141,14 +141,14 @@ class DatabaseToolsConnectionArgs:
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def advanced_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
 
     @advanced_properties.setter
-    def advanced_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def advanced_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "advanced_properties", value)
 
     @property
@@ -165,26 +165,26 @@ class DatabaseToolsConnectionArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -275,12 +275,12 @@ class DatabaseToolsConnectionArgs:
 @pulumi.input_type
 class _DatabaseToolsConnectionState:
     def __init__(__self__, *,
-                 advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 advanced_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_stores: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionLockArgs']]]] = None,
@@ -289,7 +289,7 @@ class _DatabaseToolsConnectionState:
                  related_resource: Optional[pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs']] = None,
                  runtime_support: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None,
@@ -298,12 +298,12 @@ class _DatabaseToolsConnectionState:
                  user_password: Optional[pulumi.Input['DatabaseToolsConnectionUserPasswordArgs']] = None):
         """
         Input properties used for looking up and filtering DatabaseToolsConnection resources.
-        :param pulumi.Input[Mapping[str, Any]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionKeyStoreArgs']]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Sequence[pulumi.Input['DatabaseToolsConnectionLockArgs']]] locks: Locks associated with this resource.
@@ -312,7 +312,7 @@ class _DatabaseToolsConnectionState:
         :param pulumi.Input['DatabaseToolsConnectionRelatedResourceArgs'] related_resource: (Updatable) The related resource
         :param pulumi.Input[str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[str] state: The current state of the Database Tools connection.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
@@ -365,14 +365,14 @@ class _DatabaseToolsConnectionState:
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def advanced_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         """
         return pulumi.get(self, "advanced_properties")
 
     @advanced_properties.setter
-    def advanced_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def advanced_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "advanced_properties", value)
 
     @property
@@ -401,14 +401,14 @@ class _DatabaseToolsConnectionState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -425,14 +425,14 @@ class _DatabaseToolsConnectionState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -533,14 +533,14 @@ class _DatabaseToolsConnectionState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -621,12 +621,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 advanced_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_stores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -653,12 +653,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] private_endpoint_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint used to access the database in the customer VCN.
@@ -704,12 +704,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 advanced_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_string: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  key_stores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
                  locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
@@ -770,12 +770,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            advanced_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            advanced_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_string: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             key_stores: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]]] = None,
@@ -784,7 +784,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
             related_resource: Optional[pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']]] = None,
             runtime_support: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             type: Optional[pulumi.Input[str]] = None,
@@ -798,12 +798,12 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] advanced_properties: (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
         :param pulumi.Input[str] connection_string: (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict']]]] key_stores: (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict']]]] locks: Locks associated with this resource.
@@ -812,7 +812,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict']] related_resource: (Updatable) The related resource
         :param pulumi.Input[str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[str] state: The current state of the Database Tools connection.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
@@ -849,7 +849,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> pulumi.Output[Mapping[str, Any]]:
+    def advanced_properties(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
         """
@@ -873,7 +873,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -889,7 +889,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -961,7 +961,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

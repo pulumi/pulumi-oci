@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceFolderMetadataAggregatorAr
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceFolderMetadataCountStatisticArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -117,13 +116,13 @@ public final class WorkspaceFolderMetadataArgs extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="infoFields")
-    private @Nullable Output<Map<String,Object>> infoFields;
+    private @Nullable Output<Map<String,String>> infoFields;
 
     /**
      * @return Information property fields.
      * 
      */
-    public Optional<Output<Map<String,Object>>> infoFields() {
+    public Optional<Output<Map<String,String>>> infoFields() {
         return Optional.ofNullable(this.infoFields);
     }
 
@@ -421,7 +420,7 @@ public final class WorkspaceFolderMetadataArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder infoFields(@Nullable Output<Map<String,Object>> infoFields) {
+        public Builder infoFields(@Nullable Output<Map<String,String>> infoFields) {
             $.infoFields = infoFields;
             return this;
         }
@@ -432,7 +431,7 @@ public final class WorkspaceFolderMetadataArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder infoFields(Map<String,Object> infoFields) {
+        public Builder infoFields(Map<String,String> infoFields) {
             return infoFields(Output.of(infoFields));
         }
 

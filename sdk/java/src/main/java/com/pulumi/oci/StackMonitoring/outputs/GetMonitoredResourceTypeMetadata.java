@@ -6,7 +6,6 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetMonitoredResourceTypeMetadataUniquePropertySet;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +48,7 @@ public final class GetMonitoredResourceTypeMetadata {
      * @return List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{&#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;, &#34;osVersion&#34;: &#34;v6.0,v7.0&#34;}`
      * 
      */
-    private Map<String,Object> validPropertyValues;
+    private Map<String,String> validPropertyValues;
 
     private GetMonitoredResourceTypeMetadata() {}
     /**
@@ -99,7 +98,7 @@ public final class GetMonitoredResourceTypeMetadata {
      * @return List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{&#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;, &#34;osVersion&#34;: &#34;v6.0,v7.0&#34;}`
      * 
      */
-    public Map<String,Object> validPropertyValues() {
+    public Map<String,String> validPropertyValues() {
         return this.validPropertyValues;
     }
 
@@ -118,7 +117,7 @@ public final class GetMonitoredResourceTypeMetadata {
         private List<GetMonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
         private List<String> validPropertiesForCreates;
         private List<String> validPropertiesForUpdates;
-        private Map<String,Object> validPropertyValues;
+        private Map<String,String> validPropertyValues;
         public Builder() {}
         public Builder(GetMonitoredResourceTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -195,7 +194,7 @@ public final class GetMonitoredResourceTypeMetadata {
             return validPropertiesForUpdates(List.of(validPropertiesForUpdates));
         }
         @CustomType.Setter
-        public Builder validPropertyValues(Map<String,Object> validPropertyValues) {
+        public Builder validPropertyValues(Map<String,String> validPropertyValues) {
             if (validPropertyValues == null) {
               throw new MissingRequiredPropertyException("GetMonitoredResourceTypeMetadata", "validPropertyValues");
             }

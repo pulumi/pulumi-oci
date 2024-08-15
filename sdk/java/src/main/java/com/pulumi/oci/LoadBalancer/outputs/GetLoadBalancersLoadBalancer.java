@@ -9,7 +9,6 @@ import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerIpAddress
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerReservedIp;
 import com.pulumi.oci.LoadBalancer.outputs.GetLoadBalancersLoadBalancerShapeDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +25,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
      * 
@@ -36,7 +35,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Ocid of the Reserved IP/Public Ip created with VCN.
      * 
@@ -97,7 +96,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the load balancer was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -116,7 +115,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -130,7 +129,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -217,7 +216,7 @@ public final class GetLoadBalancersLoadBalancer {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -238,9 +237,9 @@ public final class GetLoadBalancersLoadBalancer {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
         private List<String> ipAddresses;
@@ -253,7 +252,7 @@ public final class GetLoadBalancersLoadBalancer {
         private List<GetLoadBalancersLoadBalancerShapeDetail> shapeDetails;
         private String state;
         private List<String> subnetIds;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetLoadBalancersLoadBalancer defaults) {
@@ -287,7 +286,7 @@ public final class GetLoadBalancersLoadBalancer {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "definedTags");
             }
@@ -303,7 +302,7 @@ public final class GetLoadBalancersLoadBalancer {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "freeformTags");
             }
@@ -425,7 +424,7 @@ public final class GetLoadBalancersLoadBalancer {
             return subnetIds(List.of(subnetIds));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetLoadBalancersLoadBalancer", "systemTags");
             }

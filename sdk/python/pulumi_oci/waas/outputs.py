@@ -1011,7 +1011,7 @@ class PolicyPolicyConfigHealthChecks(dict):
     def __init__(__self__, *,
                  expected_response_code_groups: Optional[Sequence[str]] = None,
                  expected_response_text: Optional[str] = None,
-                 headers: Optional[Mapping[str, Any]] = None,
+                 headers: Optional[Mapping[str, str]] = None,
                  healthy_threshold: Optional[int] = None,
                  interval_in_seconds: Optional[int] = None,
                  is_enabled: Optional[bool] = None,
@@ -1027,7 +1027,7 @@ class PolicyPolicyConfigHealthChecks(dict):
                * **4XX:** Client errors response code group.
                * **5XX:** Server errors response code group.
         :param str expected_response_text: (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        :param Mapping[str, Any] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+        :param Mapping[str, str] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
                
                **Note:** The only currently-supported header fields are Host and User-Agent.
         :param int healthy_threshold: (Updatable) Number of successful health checks after which the server is marked up.
@@ -1084,7 +1084,7 @@ class PolicyPolicyConfigHealthChecks(dict):
 
     @property
     @pulumi.getter
-    def headers(self) -> Optional[Mapping[str, Any]]:
+    def headers(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 
@@ -3653,9 +3653,9 @@ class GetAddressListsAddressListResult(dict):
                  address_count: float,
                  addresses: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str):
@@ -3663,9 +3663,9 @@ class GetAddressListsAddressListResult(dict):
         :param float address_count: The total number of unique IP addresses in the address list.
         :param Sequence[str] addresses: The list of IP addresses or CIDR notations.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The user-friendly name of the address list.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
         :param str state: The current lifecycle state of the address list.
         :param str time_created: The date and time the address list was created, expressed in RFC 3339 timestamp format.
@@ -3706,7 +3706,7 @@ class GetAddressListsAddressListResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3722,7 +3722,7 @@ class GetAddressListsAddressListResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -4033,10 +4033,10 @@ class GetCertificatesCertificateResult(dict):
     def __init__(__self__, *,
                  certificate_data: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  extensions: Sequence['outputs.GetCertificatesCertificateExtensionResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_trust_verification_disabled: bool,
                  issued_by: str,
@@ -4054,10 +4054,10 @@ class GetCertificatesCertificateResult(dict):
         """
         :param str certificate_data: The data of the SSL certificate.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The user-friendly name of the SSL certificate.
         :param Sequence['GetCertificatesCertificateExtensionArgs'] extensions: Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
         :param bool is_trust_verification_disabled: This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
         :param Sequence['GetCertificatesCertificateIssuerNameArgs'] issuer_names: The issuer of the certificate.
@@ -4110,7 +4110,7 @@ class GetCertificatesCertificateResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4134,7 +4134,7 @@ class GetCertificatesCertificateResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -4532,10 +4532,10 @@ class GetCertificatesFilterResult(dict):
 class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  mod_security_rule_ids: Sequence[str],
                  state: str,
@@ -4543,10 +4543,10 @@ class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: The description of the custom protection rule.
         :param str display_name: The user-friendly name of the custom protection rule.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
         :param Sequence[str] mod_security_rule_ids: The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
         :param str state: The current lifecycle state of the custom protection rule.
@@ -4574,7 +4574,7 @@ class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4598,7 +4598,7 @@ class GetCustomProtectionRulesCustomProtectionRuleResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -4832,10 +4832,10 @@ class GetHttpRedirectsFilterResult(dict):
 class GetHttpRedirectsHttpRedirectResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  response_code: int,
                  state: str,
@@ -4843,10 +4843,10 @@ class GetHttpRedirectsHttpRedirectResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
         :param str domain: The domain from which traffic will be redirected.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
         :param int response_code: The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
         :param str state: The current lifecycle state of the HTTP Redirect.
@@ -4874,7 +4874,7 @@ class GetHttpRedirectsHttpRedirectResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4898,7 +4898,7 @@ class GetHttpRedirectsHttpRedirectResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -5232,10 +5232,10 @@ class GetWaasPoliciesWaasPolicyResult(dict):
                  additional_domains: Sequence[str],
                  cname: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  origin_groups: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginGroupResult'],
                  origins: Sequence['outputs.GetWaasPoliciesWaasPolicyOriginResult'],
@@ -5247,10 +5247,10 @@ class GetWaasPoliciesWaasPolicyResult(dict):
         :param Sequence[str] additional_domains: An array of additional domains for this web application.
         :param str cname: The CNAME record to add to your DNS configuration to route traffic for the domain, and all additional domains, through the WAF.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
         :param str domain: The domain for which the cookie is set, defaults to WAAS policy domain.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
         :param Sequence['GetWaasPoliciesWaasPolicyOriginGroupArgs'] origin_groups: The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
         :param Sequence['GetWaasPoliciesWaasPolicyOriginArgs'] origins: A map of host servers (origins) and their keys for the web application. Origin keys are used to associate origins to specific protection rules. The key should be a user-friendly name for the host. **Examples:** `primary` or `secondary`.
@@ -5300,7 +5300,7 @@ class GetWaasPoliciesWaasPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5324,7 +5324,7 @@ class GetWaasPoliciesWaasPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -5694,7 +5694,7 @@ class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult(dict):
     def __init__(__self__, *,
                  expected_response_code_groups: Sequence[str],
                  expected_response_text: str,
-                 headers: Mapping[str, Any],
+                 headers: Mapping[str, str],
                  healthy_threshold: int,
                  interval_in_seconds: int,
                  is_enabled: bool,
@@ -5710,7 +5710,7 @@ class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult(dict):
                * **4XX:** Client errors response code group.
                * **5XX:** Server errors response code group.
         :param str expected_response_text: Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        :param Mapping[str, Any] headers: HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+        :param Mapping[str, str] headers: HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
         :param int healthy_threshold: Number of successful health checks after which the server is marked up.
         :param int interval_in_seconds: Time between health checks of an individual origin server, in seconds.
         :param bool is_enabled: Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -5757,7 +5757,7 @@ class GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckResult(dict):
 
     @property
     @pulumi.getter
-    def headers(self) -> Mapping[str, Any]:
+    def headers(self) -> Mapping[str, str]:
         """
         HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
         """
@@ -7948,7 +7948,7 @@ class GetWaasPolicyPolicyConfigHealthChecksResult(dict):
     def __init__(__self__, *,
                  expected_response_code_groups: Sequence[str],
                  expected_response_text: str,
-                 headers: Mapping[str, Any],
+                 headers: Mapping[str, str],
                  healthy_threshold: int,
                  interval_in_seconds: int,
                  is_enabled: bool,
@@ -7964,7 +7964,7 @@ class GetWaasPolicyPolicyConfigHealthChecksResult(dict):
                * **4XX:** Client errors response code group.
                * **5XX:** Server errors response code group.
         :param str expected_response_text: Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        :param Mapping[str, Any] headers: HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+        :param Mapping[str, str] headers: HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
         :param int healthy_threshold: Number of successful health checks after which the server is marked up.
         :param int interval_in_seconds: Time between health checks of an individual origin server, in seconds.
         :param bool is_enabled: Enables or disables the JavaScript challenge Web Application Firewall feature.
@@ -8011,7 +8011,7 @@ class GetWaasPolicyPolicyConfigHealthChecksResult(dict):
 
     @property
     @pulumi.getter
-    def headers(self) -> Mapping[str, Any]:
+    def headers(self) -> Mapping[str, str]:
         """
         HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
         """

@@ -68,13 +68,13 @@ type LookupNamespaceIngestTimeRuleResult struct {
 	// The condition(s) to evaluate for an ingest time rule.
 	Conditions []GetNamespaceIngestTimeRuleCondition `pulumi:"conditions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// The ingest time rule display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id               string `pulumi:"id"`
 	IngestTimeRuleId string `pulumi:"ingestTimeRuleId"`
@@ -146,8 +146,8 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) Conditions() GetNamespaceInge
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupNamespaceIngestTimeRuleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -161,8 +161,8 @@ func (o LookupNamespaceIngestTimeRuleResultOutput) DisplayName() pulumi.StringOu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupNamespaceIngestTimeRuleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNamespaceIngestTimeRuleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNamespaceIngestTimeRuleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.

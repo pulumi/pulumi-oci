@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetMetricDataMetricDataAggregatedDatapoint;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ public final class GetMetricDataMetricData {
      * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
     /**
      * @return The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
      * 
@@ -44,7 +43,7 @@ public final class GetMetricDataMetricData {
      * @return The references provided in a metric definition to indicate extra information about the metric.  Example: `&#34;unit&#34;: &#34;bytes&#34;`
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The name of the metric.  Example: `CpuUtilization`
      * 
@@ -110,7 +109,7 @@ public final class GetMetricDataMetricData {
      * @return Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
     /**
@@ -124,7 +123,7 @@ public final class GetMetricDataMetricData {
      * @return The references provided in a metric definition to indicate extra information about the metric.  Example: `&#34;unit&#34;: &#34;bytes&#34;`
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -190,9 +189,9 @@ public final class GetMetricDataMetricData {
         private List<GetMetricDataMetricDataAggregatedDatapoint> aggregatedDatapoints;
         private String compartmentId;
         private Boolean compartmentIdInSubtree;
-        private Map<String,Object> dimensions;
+        private Map<String,String> dimensions;
         private String endTime;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String namespace;
         private String query;
@@ -244,7 +243,7 @@ public final class GetMetricDataMetricData {
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             if (dimensions == null) {
               throw new MissingRequiredPropertyException("GetMetricDataMetricData", "dimensions");
             }
@@ -260,7 +259,7 @@ public final class GetMetricDataMetricData {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetMetricDataMetricData", "metadata");
             }

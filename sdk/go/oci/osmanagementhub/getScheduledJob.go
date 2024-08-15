@@ -61,13 +61,13 @@ type LookupScheduledJobResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User-specified description for the scheduled job.
 	Description string `pulumi:"description"`
 	// User-friendly name for the scheduled job.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
 	Id string `pulumi:"id"`
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
@@ -106,7 +106,7 @@ type LookupScheduledJobResult struct {
 	// The current state of the scheduled job.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -163,8 +163,8 @@ func (o LookupScheduledJobResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupScheduledJobResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduledJobResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupScheduledJobResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduledJobResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User-specified description for the scheduled job.
@@ -178,8 +178,8 @@ func (o LookupScheduledJobResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupScheduledJobResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduledJobResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupScheduledJobResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduledJobResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job.
@@ -265,8 +265,8 @@ func (o LookupScheduledJobResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupScheduledJobResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduledJobResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupScheduledJobResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduledJobResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

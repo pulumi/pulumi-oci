@@ -36,8 +36,8 @@ import (
 //				DatabaseSoftwareImageOneOffPatches: pulumi.Any(databaseSoftwareImageDatabaseSoftwareImageOneOffPatches),
 //				DatabaseVersion:                    pulumi.Any(databaseSoftwareImageDatabaseVersion),
 //				DefinedTags:                        pulumi.Any(databaseSoftwareImageDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				ImageShapeFamily: pulumi.Any(databaseSoftwareImageImageShapeFamily),
 //				ImageType:        pulumi.Any(databaseSoftwareImageImageType),
@@ -73,11 +73,11 @@ type DatabaseSoftwareImage struct {
 	// The database version with which the database software image is to be built.
 	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// To what shape the image is meant for.
 	ImageShapeFamily pulumi.StringOutput `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
@@ -148,11 +148,11 @@ type databaseSoftwareImageState struct {
 	// The database version with which the database software image is to be built.
 	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// To what shape the image is meant for.
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
@@ -188,11 +188,11 @@ type DatabaseSoftwareImageState struct {
 	// The database version with which the database software image is to be built.
 	DatabaseVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// To what shape the image is meant for.
 	ImageShapeFamily pulumi.StringPtrInput
 	// The type of software image. Can be grid or database.
@@ -230,11 +230,11 @@ type databaseSoftwareImageArgs struct {
 	// The database version with which the database software image is to be built.
 	DatabaseVersion *string `pulumi:"databaseVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// To what shape the image is meant for.
 	ImageShapeFamily *string `pulumi:"imageShapeFamily"`
 	// The type of software image. Can be grid or database.
@@ -259,11 +259,11 @@ type DatabaseSoftwareImageArgs struct {
 	// The database version with which the database software image is to be built.
 	DatabaseVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// To what shape the image is meant for.
 	ImageShapeFamily pulumi.StringPtrInput
 	// The type of software image. Can be grid or database.
@@ -387,8 +387,8 @@ func (o DatabaseSoftwareImageOutput) DatabaseVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o DatabaseSoftwareImageOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DatabaseSoftwareImageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The user-friendly name for the database software image. The name does not have to be unique.
@@ -397,8 +397,8 @@ func (o DatabaseSoftwareImageOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DatabaseSoftwareImageOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DatabaseSoftwareImageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSoftwareImage) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // To what shape the image is meant for.

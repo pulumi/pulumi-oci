@@ -19,14 +19,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTagsFilter")]
-        private InputMap<object>? _definedTagsFilter;
+        private InputMap<string>? _definedTagsFilter;
 
         /// <summary>
         /// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DefinedTagsFilter
+        public InputMap<string> DefinedTagsFilter
         {
-            get => _definedTagsFilter ?? (_definedTagsFilter = new InputMap<object>());
+            get => _definedTagsFilter ?? (_definedTagsFilter = new InputMap<string>());
             set => _definedTagsFilter = value;
         }
 

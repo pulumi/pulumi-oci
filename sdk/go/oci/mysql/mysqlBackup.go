@@ -32,13 +32,13 @@ import (
 //			_, err := Mysql.NewMysqlBackup(ctx, "test_mysql_backup", &Mysql.MysqlBackupArgs{
 //				DbSystemId: pulumi.Any(testDbSystem.Id),
 //				BackupType: pulumi.Any(mysqlBackupBackupType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(mysqlBackupDescription),
 //				DisplayName: pulumi.Any(mysqlBackupDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				RetentionInDays: pulumi.Any(mysqlBackupRetentionInDays),
 //			})
@@ -77,13 +77,13 @@ type MysqlBackup struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots MysqlBackupDbSystemSnapshotArrayOutput `pulumi:"dbSystemSnapshots"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-supplied description for the backup.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
 	ImmediateSourceBackupId pulumi.StringOutput `pulumi:"immediateSourceBackupId"`
 	// Additional information about the current lifecycleState.
@@ -154,13 +154,13 @@ type mysqlBackupState struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []MysqlBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-supplied description for the backup.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
 	ImmediateSourceBackupId *string `pulumi:"immediateSourceBackupId"`
 	// Additional information about the current lifecycleState.
@@ -202,13 +202,13 @@ type MysqlBackupState struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots MysqlBackupDbSystemSnapshotArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-supplied description for the backup.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
 	ImmediateSourceBackupId pulumi.StringPtrInput
 	// Additional information about the current lifecycleState.
@@ -246,13 +246,13 @@ type mysqlBackupArgs struct {
 	DbSystemId                *string                              `pulumi:"dbSystemId"`
 	DbSystemSnapshotSummaries []MysqlBackupDbSystemSnapshotSummary `pulumi:"dbSystemSnapshotSummaries"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-supplied description for the backup.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// Details of backup source in the cloud.
@@ -269,13 +269,13 @@ type MysqlBackupArgs struct {
 	DbSystemId                pulumi.StringPtrInput
 	DbSystemSnapshotSummaries MysqlBackupDbSystemSnapshotSummaryArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-supplied description for the backup.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-supplied display name for the backup.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Number of days to retain this backup.
 	RetentionInDays pulumi.IntPtrInput
 	// Details of backup source in the cloud.
@@ -409,8 +409,8 @@ func (o MysqlBackupOutput) DbSystemSnapshots() MysqlBackupDbSystemSnapshotArrayO
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlBackupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlBackup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlBackupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-supplied description for the backup.
@@ -424,8 +424,8 @@ func (o MysqlBackupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlBackupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlBackup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlBackupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the immediate source DB system backup from which this DB system backup was copied.

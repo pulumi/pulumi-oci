@@ -29,11 +29,11 @@ export interface GetFsuCycleResult {
     readonly batchingStrategies: outputs.FleetSoftwareUpdate.GetFsuCycleBatchingStrategy[];
     readonly collectionType: string;
     readonly compartmentId: string;
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly diagnosticsCollections: outputs.FleetSoftwareUpdate.GetFsuCycleDiagnosticsCollection[];
     readonly displayName: string;
     readonly executingFsuActionId: string;
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly fsuCollectionId: string;
     readonly fsuCycleId: string;
     readonly goalVersionDetails: outputs.FleetSoftwareUpdate.GetFsuCycleGoalVersionDetail[];
@@ -47,7 +47,7 @@ export interface GetFsuCycleResult {
     readonly nextActionToExecutes: outputs.FleetSoftwareUpdate.GetFsuCycleNextActionToExecute[];
     readonly stageActionSchedules: outputs.FleetSoftwareUpdate.GetFsuCycleStageActionSchedule[];
     readonly state: string;
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     readonly timeCreated: string;
     readonly timeFinished: string;
     readonly timeUpdated: string;

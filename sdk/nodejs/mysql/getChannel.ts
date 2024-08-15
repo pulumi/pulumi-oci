@@ -54,7 +54,7 @@ export interface GetChannelResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * User provided description of the Channel.
      */
@@ -66,7 +66,7 @@ export interface GetChannelResult {
     /**
      * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly id: string;
     /**
      * Whether the Channel has been enabled by the user.

@@ -6,7 +6,6 @@ package com.pulumi.oci.GloballyDistributedDatabase.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +26,7 @@ public final class GetShardedDatabaseGsm {
      * @return Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return Name of the shard.
      * 
@@ -78,7 +77,7 @@ public final class GetShardedDatabaseGsm {
      * @return Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -135,7 +134,7 @@ public final class GetShardedDatabaseGsm {
     public static final class Builder {
         private Double computeCount;
         private Double dataStorageSizeInGbs;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String status;
         private String supportingResourceId;
@@ -173,7 +172,7 @@ public final class GetShardedDatabaseGsm {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetShardedDatabaseGsm", "metadata");
             }

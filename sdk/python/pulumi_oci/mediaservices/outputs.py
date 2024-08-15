@@ -646,7 +646,7 @@ class MediaWorkflowTask(dict):
                  type: str,
                  version: str,
                  enable_parameter_reference: Optional[str] = None,
-                 enable_when_referenced_parameter_equals: Optional[Mapping[str, Any]] = None,
+                 enable_when_referenced_parameter_equals: Optional[Mapping[str, str]] = None,
                  prerequisites: Optional[Sequence[str]] = None):
         """
         :param str key: (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
@@ -658,7 +658,7 @@ class MediaWorkflowTask(dict):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        :param Mapping[str, str] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param Sequence[str] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
         pulumi.set(__self__, "key", key)
@@ -718,7 +718,7 @@ class MediaWorkflowTask(dict):
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, Any]]:
+    def enable_when_referenced_parameter_equals(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """
@@ -1456,9 +1456,9 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
     def __init__(__self__, *,
                  bucket: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  locks: Sequence['outputs.GetMediaAssetsMediaAssetCollectionItemLockResult'],
@@ -1475,16 +1475,16 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
                  source_media_workflow_id: str,
                  source_media_workflow_version: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str):
         """
         :param str bucket: Filter MediaAsset by the bucket where the object is stored.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
         :param Sequence['GetMediaAssetsMediaAssetCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str master_media_asset_id: Unique MediaAsset identifier of the first asset upload.
@@ -1500,7 +1500,7 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
         :param str source_media_workflow_id: The ID of the MediaWorkflow used to produce this asset.
         :param str source_media_workflow_version: The version of the MediaWorkflow used to produce this asset.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the MediaAsset was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
         :param str type: Filter MediaAsset by the asset type.
@@ -1549,7 +1549,7 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1565,7 +1565,7 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1698,7 +1698,7 @@ class GetMediaAssetsMediaAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1943,29 +1943,29 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionResult(d
 class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  lifecyle_details: str,
                  locks: Sequence['outputs.GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockResult'],
                  parameters: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique MediaWorkflowConfiguration identifier.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str parameters: Reuseable parameter values encoded as a JSON; the top and second level JSON elements are objects. Each key of the top level object refer to a task key that is unqiue to the workflow, each of the second level objects' keys refer to the name of a parameter that is unique to the task. taskKey > parameterName > parameterValue
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
         """
@@ -1993,7 +1993,7 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2009,7 +2009,7 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2062,7 +2062,7 @@ class GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemResu
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2461,9 +2461,9 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionResult(dict):
 class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  lifecycle_details: str,
@@ -2475,7 +2475,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
                  parameters: str,
                  runnable: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  task_lifecycle_states: Sequence['outputs.GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateResult'],
                  time_created: str,
                  time_ended: str,
@@ -2484,9 +2484,9 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
                  workflow_identifier_type: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique MediaWorkflowJob identifier
         :param str lifecycle_details: The lifecycle details of MediaWorkflowJob task.
         :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemLockArgs'] locks: Locks associated with this resource.
@@ -2496,7 +2496,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
         :param str parameters: Parameters that override parameters specified in MediaWorkflowTaskDeclarations, the MediaWorkflow, the MediaWorkflow's MediaWorkflowConfigurations and the MediaWorkflowConfigurations of this MediaWorkflowJob. The parameters are given as JSON.  The top level and 2nd level elements must be JSON objects (vs arrays, scalars, etc). The top level keys refer to a task's key and the 2nd level keys refer to a parameter's name.
         :param str runnable: A JSON representation of the job as it will be run by the system. All the task declarations, configurations and parameters are merged. Parameter values are all fully resolved.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArgs'] task_lifecycle_states: Status of each task.
         :param str time_created: Creation time of the job. An RFC3339 formatted datetime string.
         :param str time_ended: Time when the job finished. An RFC3339 formatted datetime string.
@@ -2536,7 +2536,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2552,7 +2552,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2642,7 +2642,7 @@ class GetMediaWorkflowJobsMediaWorkflowJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2924,7 +2924,7 @@ class GetMediaWorkflowLockResult(dict):
 class GetMediaWorkflowTaskResult(dict):
     def __init__(__self__, *,
                  enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
+                 enable_when_referenced_parameter_equals: Mapping[str, str],
                  key: str,
                  parameters: str,
                  prerequisites: Sequence[str],
@@ -2932,7 +2932,7 @@ class GetMediaWorkflowTaskResult(dict):
                  version: str):
         """
         :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        :param Mapping[str, str] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -2957,7 +2957,7 @@ class GetMediaWorkflowTaskResult(dict):
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
+    def enable_when_referenced_parameter_equals(self) -> Mapping[str, str]:
         """
         Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """
@@ -3098,9 +3098,9 @@ class GetMediaWorkflowsMediaWorkflowCollectionResult(dict):
 class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  lifecyle_details: str,
@@ -3108,23 +3108,23 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
                  media_workflow_configuration_ids: Sequence[str],
                  parameters: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tasks: Sequence['outputs.GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult'],
                  time_created: str,
                  time_updated: str,
                  version: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique MediaWorkflow identifier.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetMediaWorkflowsMediaWorkflowCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] media_workflow_configuration_ids: Configurations to be applied to all the runs of this workflow. Parameters in these configurations are overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that appear in the configuration at the highest index will be used.
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs'] tasks: The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
         :param str time_created: The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
@@ -3157,7 +3157,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3173,7 +3173,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3234,7 +3234,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3339,7 +3339,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemLockResult(dict):
 class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
     def __init__(__self__, *,
                  enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
+                 enable_when_referenced_parameter_equals: Mapping[str, str],
                  key: str,
                  parameters: str,
                  prerequisites: Sequence[str],
@@ -3347,7 +3347,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
                  version: str):
         """
         :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        :param Mapping[str, str] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -3372,7 +3372,7 @@ class GetMediaWorkflowsMediaWorkflowCollectionItemTaskResult(dict):
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
+    def enable_when_referenced_parameter_equals(self) -> Mapping[str, str]:
         """
         Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """
@@ -3664,32 +3664,32 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  configs: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  distribution_channel_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  is_lock_override: bool,
                  lifecyle_details: str,
                  locks: Sequence['outputs.GetStreamCdnConfigsStreamCdnConfigCollectionItemLockResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The compartment ID of the lock.
         :param Sequence['GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArgs'] configs: Base fields of the StreamCdnConfig configuration object.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
         :param str distribution_channel_id: The Stream Distribution Channel identifier this CdnConfig belongs to.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique StreamCdnConfig identifier.
         :param bool is_enabled: Whether publishing to CDN is enabled.
         :param str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetStreamCdnConfigsStreamCdnConfigCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the CDN Config was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the CDN Config was updated. An RFC3339 formatted datetime string.
         """
@@ -3727,7 +3727,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3751,7 +3751,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3804,7 +3804,7 @@ class GetStreamCdnConfigsStreamCdnConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4133,27 +4133,27 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionResult(dic
 class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  locks: Sequence['outputs.GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
         :param str domain_name: Unique domain name of the Distribution Channel.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Stream Distribution Channel identifier.
         :param Sequence['GetStreamDistributionChannelsStreamDistributionChannelCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
         """
@@ -4180,7 +4180,7 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4204,7 +4204,7 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4241,7 +4241,7 @@ class GetStreamDistributionChannelsStreamDistributionChannelCollectionItemResult
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4460,33 +4460,33 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionResult(dict):
 class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  distribution_channel_id: str,
                  encryptions: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_lock_override: bool,
                  locks: Sequence['outputs.GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockResult'],
                  segment_time_in_seconds: int,
                  state: str,
                  stream_packaging_format: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The compartment ID of the lock.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name given.
         :param str distribution_channel_id: Unique Stream Distribution Channel identifier.
         :param Sequence['GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArgs'] encryptions: The encryption used by the stream packaging configuration.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
         :param Sequence['GetStreamPackagingConfigsStreamPackagingConfigCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param int segment_time_in_seconds: The duration in seconds for each fragment.
         :param str state: A filter to return only the resources with lifecycleState matching the given lifecycleState.
         :param str stream_packaging_format: The output format for the package.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
         """
@@ -4516,7 +4516,7 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4548,7 +4548,7 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4601,7 +4601,7 @@ class GetStreamPackagingConfigsStreamPackagingConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4770,7 +4770,7 @@ class GetSystemMediaWorkflowItemResult(dict):
 class GetSystemMediaWorkflowItemTaskResult(dict):
     def __init__(__self__, *,
                  enable_parameter_reference: str,
-                 enable_when_referenced_parameter_equals: Mapping[str, Any],
+                 enable_when_referenced_parameter_equals: Mapping[str, str],
                  key: str,
                  parameters: str,
                  prerequisites: Sequence[str],
@@ -4778,7 +4778,7 @@ class GetSystemMediaWorkflowItemTaskResult(dict):
                  version: str):
         """
         :param str enable_parameter_reference: Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param Mapping[str, Any] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        :param Mapping[str, str] enable_when_referenced_parameter_equals: Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param str key: A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
         :param str parameters: Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
         :param Sequence[str] prerequisites: Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
@@ -4803,7 +4803,7 @@ class GetSystemMediaWorkflowItemTaskResult(dict):
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Mapping[str, Any]:
+    def enable_when_referenced_parameter_equals(self) -> Mapping[str, str]:
         """
         Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """

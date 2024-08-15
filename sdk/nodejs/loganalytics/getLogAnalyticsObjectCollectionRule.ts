@@ -65,7 +65,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
      */
@@ -77,7 +77,7 @@ export interface GetLogAnalyticsObjectCollectionRuleResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      */

@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.outputs.GetVirtualNetworksVirtualNetworkByoipv6cidrDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +22,10 @@ public final class GetVirtualNetworksVirtualNetwork {
     private String defaultDhcpOptionsId;
     private String defaultRouteTableId;
     private String defaultSecurityListId;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String displayName;
     private String dnsLabel;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String id;
     private List<String> ipv6cidrBlocks;
     private List<String> ipv6privateCidrBlocks;
@@ -61,7 +60,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     public String defaultSecurityListId() {
         return this.defaultSecurityListId;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String displayName() {
@@ -70,7 +69,7 @@ public final class GetVirtualNetworksVirtualNetwork {
     public String dnsLabel() {
         return this.dnsLabel;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String id() {
@@ -115,10 +114,10 @@ public final class GetVirtualNetworksVirtualNetwork {
         private String defaultDhcpOptionsId;
         private String defaultRouteTableId;
         private String defaultSecurityListId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String dnsLabel;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<String> ipv6cidrBlocks;
         private List<String> ipv6privateCidrBlocks;
@@ -226,7 +225,7 @@ public final class GetVirtualNetworksVirtualNetwork {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetVirtualNetworksVirtualNetwork", "definedTags");
             }
@@ -250,7 +249,7 @@ public final class GetVirtualNetworksVirtualNetwork {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetVirtualNetworksVirtualNetwork", "freeformTags");
             }

@@ -75,7 +75,7 @@ export interface GetObjectHeadResult {
     /**
      * The metadata of the object
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata: {[key: string]: string};
     readonly namespace: string;
     readonly object: string;
     /**

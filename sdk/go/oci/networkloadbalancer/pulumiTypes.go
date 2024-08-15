@@ -4503,11 +4503,11 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the reserved public IP address created with the virtual cloud network.
 	Id string `pulumi:"id"`
 	// An array of IP addresses.
@@ -4530,7 +4530,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem struct {
 	SubnetId       string `pulumi:"subnetId"`
 	SubnetIpv6cidr string `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -4554,11 +4554,11 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the reserved public IP address created with the virtual cloud network.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of IP addresses.
@@ -4581,7 +4581,7 @@ type GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemArgs struct {
 	SubnetId       pulumi.StringInput `pulumi:"subnetId"`
 	SubnetIpv6cidr pulumi.StringInput `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -4653,10 +4653,10 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) Compartm
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]interface{} {
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -4665,10 +4665,10 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) DisplayN
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]interface{} {
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // OCID of the reserved public IP address created with the virtual cloud network.
@@ -4737,10 +4737,10 @@ func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SubnetIp
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]interface{} {
+func (o GetNetworkLoadBalancersNetworkLoadBalancerCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkLoadBalancersNetworkLoadBalancerCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`

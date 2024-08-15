@@ -67,14 +67,14 @@ type LookupBlockchainPlatformResult struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
 	ComputeShape string `pulumi:"computeShape"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Platform Instance Description
 	Description string `pulumi:"description"`
 	// Platform Instance Display name, can be renamed
 	DisplayName     string `pulumi:"displayName"`
 	FederatedUserId string `pulumi:"federatedUserId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos []GetBlockchainPlatformHostOcpuUtilizationInfo `pulumi:"hostOcpuUtilizationInfos"`
 	// unique identifier that is immutable on creation
@@ -178,8 +178,8 @@ func (o LookupBlockchainPlatformResultOutput) ComputeShape() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupBlockchainPlatformResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBlockchainPlatformResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Platform Instance Description
@@ -197,8 +197,8 @@ func (o LookupBlockchainPlatformResultOutput) FederatedUserId() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupBlockchainPlatformResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBlockchainPlatformResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBlockchainPlatformResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBlockchainPlatformResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of OcpuUtilization for all hosts

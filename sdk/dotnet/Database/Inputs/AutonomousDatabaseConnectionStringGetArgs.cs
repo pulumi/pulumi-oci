@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseConnectionStringGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
-        private InputMap<object>? _allConnectionStrings;
+        private InputMap<string>? _allConnectionStrings;
 
         /// <summary>
         /// Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         /// </summary>
-        public InputMap<object> AllConnectionStrings
+        public InputMap<string> AllConnectionStrings
         {
-            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<object>());
+            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<string>());
             set => _allConnectionStrings = value;
         }
 

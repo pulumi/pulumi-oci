@@ -69,13 +69,13 @@ type LookupAtCustomerCccInfrastructureResult struct {
 	// The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
 	ConnectionState string `pulumi:"connectionState"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id string `pulumi:"id"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -95,7 +95,7 @@ type LookupAtCustomerCccInfrastructureResult struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -167,8 +167,8 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) ConnectionState() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAtCustomerCccInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
@@ -182,8 +182,8 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) DisplayName() pulumi.Stri
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAtCustomerCccInfrastructureResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
@@ -236,8 +236,8 @@ func (o LookupAtCustomerCccInfrastructureResultOutput) SubnetId() pulumi.StringO
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAtCustomerCccInfrastructureResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccInfrastructureResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccInfrastructureResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.

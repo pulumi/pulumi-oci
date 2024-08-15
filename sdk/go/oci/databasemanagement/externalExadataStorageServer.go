@@ -27,13 +27,13 @@ type ExternalExadataStorageServer struct {
 	pulumi.CustomResourceState
 
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// The connector of the Exadata storage server.
 	Connectors ExternalExadataStorageServerConnectorArrayOutput `pulumi:"connectors"`
 	// The CPU count of the Exadata storage server.
 	CpuCount pulumi.Float64Output `pulumi:"cpuCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -44,7 +44,7 @@ type ExternalExadataStorageServer struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The internal ID of the Exadata resource.
 	InternalId pulumi.StringOutput `pulumi:"internalId"`
 	// The IP address of the Exadata storage server.
@@ -72,7 +72,7 @@ type ExternalExadataStorageServer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
 	StorageGridId pulumi.StringOutput `pulumi:"storageGridId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The timestamp of the creation of the Exadata resource.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
@@ -115,13 +115,13 @@ func GetExternalExadataStorageServer(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalExadataStorageServer resources.
 type externalExadataStorageServerState struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The connector of the Exadata storage server.
 	Connectors []ExternalExadataStorageServerConnector `pulumi:"connectors"`
 	// The CPU count of the Exadata storage server.
 	CpuCount *float64 `pulumi:"cpuCount"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -132,7 +132,7 @@ type externalExadataStorageServerState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The internal ID of the Exadata resource.
 	InternalId *string `pulumi:"internalId"`
 	// The IP address of the Exadata storage server.
@@ -160,7 +160,7 @@ type externalExadataStorageServerState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
 	StorageGridId *string `pulumi:"storageGridId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The timestamp of the creation of the Exadata resource.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The timestamp of the last update of the Exadata resource.
@@ -171,13 +171,13 @@ type externalExadataStorageServerState struct {
 
 type ExternalExadataStorageServerState struct {
 	// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapInput
+	AdditionalDetails pulumi.StringMapInput
 	// The connector of the Exadata storage server.
 	Connectors ExternalExadataStorageServerConnectorArrayInput
 	// The CPU count of the Exadata storage server.
 	CpuCount pulumi.Float64PtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -188,7 +188,7 @@ type ExternalExadataStorageServerState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The internal ID of the Exadata resource.
 	InternalId pulumi.StringPtrInput
 	// The IP address of the Exadata storage server.
@@ -216,7 +216,7 @@ type ExternalExadataStorageServerState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server grid.
 	StorageGridId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The timestamp of the creation of the Exadata resource.
 	TimeCreated pulumi.StringPtrInput
 	// The timestamp of the last update of the Exadata resource.
@@ -231,27 +231,27 @@ func (ExternalExadataStorageServerState) ElementType() reflect.Type {
 
 type externalExadataStorageServerArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
 	ExternalExadataStorageServerId string `pulumi:"externalExadataStorageServerId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalExadataStorageServer resource.
 type ExternalExadataStorageServerArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
 	ExternalExadataStorageServerId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (ExternalExadataStorageServerArgs) ElementType() reflect.Type {
@@ -342,8 +342,8 @@ func (o ExternalExadataStorageServerOutput) ToExternalExadataStorageServerOutput
 }
 
 // The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o ExternalExadataStorageServerOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o ExternalExadataStorageServerOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.StringMapOutput { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The connector of the Exadata storage server.
@@ -359,8 +359,8 @@ func (o ExternalExadataStorageServerOutput) CpuCount() pulumi.Float64Output {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ExternalExadataStorageServerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExternalExadataStorageServerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
@@ -382,8 +382,8 @@ func (o ExternalExadataStorageServerOutput) ExternalExadataStorageServerId() pul
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalExadataStorageServerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExternalExadataStorageServerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The internal ID of the Exadata resource.
@@ -452,8 +452,8 @@ func (o ExternalExadataStorageServerOutput) StorageGridId() pulumi.StringOutput 
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ExternalExadataStorageServerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ExternalExadataStorageServerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalExadataStorageServer) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The timestamp of the creation of the Exadata resource.

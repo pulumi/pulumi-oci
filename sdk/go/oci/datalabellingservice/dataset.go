@@ -96,7 +96,7 @@ type Dataset struct {
 	pulumi.CustomResourceState
 
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	AdditionalProperties pulumi.MapOutput `pulumi:"additionalProperties"`
+	AdditionalProperties pulumi.StringMapOutput `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat pulumi.StringOutput `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
@@ -106,13 +106,13 @@ type Dataset struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsOutput `pulumi:"datasetSourceDetails"`
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user provided description of the dataset
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationOutput `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -182,7 +182,7 @@ func GetDataset(ctx *pulumi.Context,
 // Input properties used for looking up and filtering Dataset resources.
 type datasetState struct {
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
+	AdditionalProperties map[string]string `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat *string `pulumi:"annotationFormat"`
 	// (Updatable) The OCID of the compartment of the resource.
@@ -192,13 +192,13 @@ type datasetState struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails *DatasetDatasetSourceDetails `pulumi:"datasetSourceDetails"`
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user provided description of the dataset
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfiguration *DatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -224,7 +224,7 @@ type datasetState struct {
 
 type DatasetState struct {
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	AdditionalProperties pulumi.MapInput
+	AdditionalProperties pulumi.StringMapInput
 	// The annotation format name required for labeling records.
 	AnnotationFormat pulumi.StringPtrInput
 	// (Updatable) The OCID of the compartment of the resource.
@@ -234,13 +234,13 @@ type DatasetState struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsPtrInput
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user provided description of the dataset
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationPtrInput
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -278,13 +278,13 @@ type datasetArgs struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetails `pulumi:"datasetSourceDetails"`
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user provided description of the dataset
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfiguration *DatasetInitialImportDatasetConfiguration `pulumi:"initialImportDatasetConfiguration"`
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -309,13 +309,13 @@ type DatasetArgs struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails DatasetDatasetSourceDetailsInput
 	// (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user provided description of the dataset
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
 	InitialImportDatasetConfiguration DatasetInitialImportDatasetConfigurationPtrInput
 	// The initial generate records configuration. It generates records from the dataset's source.
@@ -417,8 +417,8 @@ func (o DatasetOutput) ToDatasetOutputWithContext(ctx context.Context) DatasetOu
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o DatasetOutput) AdditionalProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.MapOutput { return v.AdditionalProperties }).(pulumi.MapOutput)
+func (o DatasetOutput) AdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringMapOutput { return v.AdditionalProperties }).(pulumi.StringMapOutput)
 }
 
 // The annotation format name required for labeling records.
@@ -442,8 +442,8 @@ func (o DatasetOutput) DatasetSourceDetails() DatasetDatasetSourceDetailsOutput 
 }
 
 // (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o DatasetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DatasetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user provided description of the dataset
@@ -457,8 +457,8 @@ func (o DatasetOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o DatasetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Dataset) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DatasetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Dataset) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Initial import dataset configuration. Allows user to create dataset from existing dataset files.

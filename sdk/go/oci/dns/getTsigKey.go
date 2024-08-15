@@ -63,9 +63,9 @@ type LookupTsigKeyResult struct {
 	// The OCID of the compartment containing the TSIG key.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// A globally unique domain name identifying the key for a given pair of hosts.
@@ -132,13 +132,13 @@ func (o LookupTsigKeyResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupTsigKeyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupTsigKeyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupTsigKeyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTsigKeyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupTsigKeyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTsigKeyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.

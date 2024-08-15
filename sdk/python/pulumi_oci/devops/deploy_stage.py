@@ -29,9 +29,9 @@ class DeployStageArgs:
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
@@ -41,7 +41,7 @@ class DeployStageArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
@@ -94,9 +94,9 @@ class DeployStageArgs:
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
@@ -106,7 +106,7 @@ class DeployStageArgs:
         :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
         :param pulumi.Input['DeployStageFailurePolicyArgs'] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
@@ -427,14 +427,14 @@ class DeployStageArgs:
 
     @property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "config", value)
 
     @property
@@ -451,14 +451,14 @@ class DeployStageArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -571,14 +571,14 @@ class DeployStageArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -1040,9 +1040,9 @@ class _DeployStageState:
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  container_config: Optional[pulumi.Input['DeployStageContainerConfigArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
@@ -1055,7 +1055,7 @@ class _DeployStageState:
                  display_name: Optional[pulumi.Input[str]] = None,
                  docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  failure_policy: Optional[pulumi.Input['DeployStageFailurePolicyArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input['DeployStageGreenBackendIpsArgs']] = None,
@@ -1091,7 +1091,7 @@ class _DeployStageState:
                  should_skip_crds: Optional[pulumi.Input[bool]] = None,
                  should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  test_load_balancer_config: Optional[pulumi.Input['DeployStageTestLoadBalancerConfigArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -1112,9 +1112,9 @@ class _DeployStageState:
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input['DeployStageContainerConfigArgs'] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
@@ -1127,7 +1127,7 @@ class _DeployStageState:
         :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
         :param pulumi.Input['DeployStageFailurePolicyArgs'] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input['DeployStageGreenBackendIpsArgs'] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
@@ -1163,7 +1163,7 @@ class _DeployStageState:
         :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         :param pulumi.Input[str] state: The current state of the deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input['DeployStageTestLoadBalancerConfigArgs'] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -1447,14 +1447,14 @@ class _DeployStageState:
 
     @property
     @pulumi.getter
-    def config(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def config(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
         return pulumi.get(self, "config")
 
     @config.setter
-    def config(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def config(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "config", value)
 
     @property
@@ -1471,14 +1471,14 @@ class _DeployStageState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -1627,14 +1627,14 @@ class _DeployStageState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -2059,14 +2059,14 @@ class _DeployStageState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -2169,9 +2169,9 @@ class DeployStage(pulumi.CustomResource):
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
@@ -2184,7 +2184,7 @@ class DeployStage(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
@@ -2248,9 +2248,9 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
@@ -2263,7 +2263,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
         :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
@@ -2346,9 +2346,9 @@ class DeployStage(pulumi.CustomResource):
                  compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
                  compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
-                 config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 config: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
@@ -2361,7 +2361,7 @@ class DeployStage(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
                  failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
                  function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
@@ -2505,9 +2505,9 @@ class DeployStage(pulumi.CustomResource):
             compute_instance_group_canary_deploy_stage_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_canary_traffic_shift_deploy_stage_id: Optional[pulumi.Input[str]] = None,
             compute_instance_group_deploy_environment_id: Optional[pulumi.Input[str]] = None,
-            config: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            config: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             container_config: Optional[pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             deploy_artifact_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             deploy_environment_id_a: Optional[pulumi.Input[str]] = None,
@@ -2520,7 +2520,7 @@ class DeployStage(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[str]] = None,
             docker_image_deploy_artifact_id: Optional[pulumi.Input[str]] = None,
             failure_policy: Optional[pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             function_deploy_environment_id: Optional[pulumi.Input[str]] = None,
             function_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             green_backend_ips: Optional[pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']]] = None,
@@ -2556,7 +2556,7 @@ class DeployStage(pulumi.CustomResource):
             should_skip_crds: Optional[pulumi.Input[bool]] = None,
             should_skip_render_subchart_notes: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             test_load_balancer_config: Optional[pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -2582,9 +2582,9 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_deploy_environment_id: (Updatable) A compute instance group environment OCID for rolling deployment.
-        :param pulumi.Input[Mapping[str, Any]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] config: (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         :param pulumi.Input[Union['DeployStageContainerConfigArgs', 'DeployStageContainerConfigArgsDict']] container_config: (Updatable) Specifies the container configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deploy_artifact_id: (Updatable) Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] deploy_artifact_ids: (Updatable) The list of file artifact OCIDs to deploy.
         :param pulumi.Input[str] deploy_environment_id_a: First compute instance group environment OCID for deployment.
@@ -2597,7 +2597,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) Deployment stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
         :param pulumi.Input[str] docker_image_deploy_artifact_id: (Updatable) A Docker image artifact OCID.
         :param pulumi.Input[Union['DeployStageFailurePolicyArgs', 'DeployStageFailurePolicyArgsDict']] failure_policy: (Updatable) Specifies a failure policy for a compute instance group rolling deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] function_deploy_environment_id: (Updatable) Function environment OCID.
         :param pulumi.Input[int] function_timeout_in_seconds: (Updatable) Timeout for execution of the Function. Value in seconds.
         :param pulumi.Input[Union['DeployStageGreenBackendIpsArgs', 'DeployStageGreenBackendIpsArgsDict']] green_backend_ips: (Updatable) Collection of backend environment IP addresses.
@@ -2633,7 +2633,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[bool] should_skip_crds: (Updatable) If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
         :param pulumi.Input[bool] should_skip_render_subchart_notes: (Updatable) If set, renders subchart notes along with the parent. Set to false by default.
         :param pulumi.Input[str] state: The current state of the deployment stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Union['DeployStageTestLoadBalancerConfigArgs', 'DeployStageTestLoadBalancerConfigArgsDict']] test_load_balancer_config: (Updatable) Specifies configuration for load balancer traffic shift stages. The load balancer specified here should be an Application load balancer type. Network load balancers are not supported.
         :param pulumi.Input[str] time_created: Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: Time the deployment stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -2808,7 +2808,7 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def config(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def config(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
         """
@@ -2824,7 +2824,7 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2928,7 +2928,7 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -3216,7 +3216,7 @@ class DeployStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

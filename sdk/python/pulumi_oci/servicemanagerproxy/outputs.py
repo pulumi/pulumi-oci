@@ -144,8 +144,8 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  console_url: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  service_definitions: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinitionResult'],
                  service_environment_endpoints: Sequence['outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpointResult'],
@@ -188,12 +188,12 @@ class GetServiceEnvironmentsServiceEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property

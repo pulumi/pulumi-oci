@@ -75,13 +75,13 @@ type LookupMysqlBackupResult struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []GetMysqlBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
 	Description string `pulumi:"description"`
 	// A user-supplied display name for the backup.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the backup itself
 	Id string `pulumi:"id"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -191,8 +191,8 @@ func (o LookupMysqlBackupResultOutput) DbSystemSnapshots() GetMysqlBackupDbSyste
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMysqlBackupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMysqlBackupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-supplied description for the backup.
@@ -206,8 +206,8 @@ func (o LookupMysqlBackupResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMysqlBackupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMysqlBackupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMysqlBackupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID of the backup itself

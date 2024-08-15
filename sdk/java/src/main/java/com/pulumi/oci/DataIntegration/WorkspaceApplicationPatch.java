@@ -16,7 +16,6 @@ import com.pulumi.oci.DataIntegration.outputs.WorkspaceApplicationPatchPatchObje
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceApplicationPatchRegistryMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -150,14 +149,14 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * The errors encountered while applying the patch, if any.
      * 
      */
-    @Export(name="errorMessages", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> errorMessages;
+    @Export(name="errorMessages", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> errorMessages;
 
     /**
      * @return The errors encountered while applying the patch, if any.
      * 
      */
-    public Output<Map<String,Object>> errorMessages() {
+    public Output<Map<String,String>> errorMessages() {
         return this.errorMessages;
     }
     /**
@@ -192,14 +191,14 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> keyMap;
+    @Export(name="keyMap", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> keyMap;
 
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Output<Map<String,Object>> keyMap() {
+    public Output<Map<String,String>> keyMap() {
         return this.keyMap;
     }
     /**

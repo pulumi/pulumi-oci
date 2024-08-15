@@ -64,12 +64,12 @@ type GetFusionEnvironmentServiceAttachmentResult struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Service Attachment Display name, can be renamed
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
-	FusionEnvironmentId string                 `pulumi:"fusionEnvironmentId"`
+	FreeformTags        map[string]string `pulumi:"freeformTags"`
+	FusionEnvironmentId string            `pulumi:"fusionEnvironmentId"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -135,8 +135,8 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) CompartmentId() pulum
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Service Attachment Display name, can be renamed
@@ -145,8 +145,8 @@ func (o GetFusionEnvironmentServiceAttachmentResultOutput) DisplayName() pulumi.
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFusionEnvironmentServiceAttachmentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetFusionEnvironmentServiceAttachmentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentServiceAttachmentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFusionEnvironmentServiceAttachmentResultOutput) FusionEnvironmentId() pulumi.StringOutput {

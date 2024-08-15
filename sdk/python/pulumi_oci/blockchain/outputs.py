@@ -957,11 +957,11 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
                  compartment_id: str,
                  component_details: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailResult'],
                  compute_shape: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  federated_user_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host_ocpu_utilization_infos: Sequence['outputs.GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoResult'],
                  id: str,
                  idcs_access_token: str,
@@ -985,10 +985,10 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemComponentDetailArgs'] component_details: Blockchain Platform component details.
         :param str compute_shape: Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE or ENTERPRISE_CUSTOM
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Platform Instance Description
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence['GetBlockchainPlatformsBlockchainPlatformCollectionItemHostOcpuUtilizationInfoArgs'] host_ocpu_utilization_infos: List of OcpuUtilization for all hosts
         :param str id: unique identifier that is immutable on creation
         :param bool is_byol: Bring your own license
@@ -1068,7 +1068,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1097,7 +1097,7 @@ class GetBlockchainPlatformsBlockchainPlatformCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

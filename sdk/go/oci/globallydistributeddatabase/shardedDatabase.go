@@ -54,13 +54,13 @@ type ShardedDatabase struct {
 	// Possible workload types.
 	DbWorkload pulumi.StringOutput `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Oracle sharded database display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
 	DownloadGsmCertificateSigningRequestTrigger pulumi.IntPtrOutput `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
 	GenerateGsmCertificateSigningRequestTrigger pulumi.IntPtrOutput `pulumi:"generateGsmCertificateSigningRequestTrigger"`
 	// (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
@@ -100,7 +100,7 @@ type ShardedDatabase struct {
 	// (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
 	StopDatabaseTrigger pulumi.IntPtrOutput `pulumi:"stopDatabaseTrigger"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -214,13 +214,13 @@ type shardedDatabaseState struct {
 	// Possible workload types.
 	DbWorkload *string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Oracle sharded database display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
 	DownloadGsmCertificateSigningRequestTrigger *int `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
 	GenerateGsmCertificateSigningRequestTrigger *int `pulumi:"generateGsmCertificateSigningRequestTrigger"`
 	// (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
@@ -260,7 +260,7 @@ type shardedDatabaseState struct {
 	// (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
 	StopDatabaseTrigger *int `pulumi:"stopDatabaseTrigger"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -300,13 +300,13 @@ type ShardedDatabaseState struct {
 	// Possible workload types.
 	DbWorkload pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Oracle sharded database display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
 	DownloadGsmCertificateSigningRequestTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
 	GenerateGsmCertificateSigningRequestTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
@@ -346,7 +346,7 @@ type ShardedDatabaseState struct {
 	// (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
 	StopDatabaseTrigger pulumi.IntPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -386,13 +386,13 @@ type shardedDatabaseArgs struct {
 	// Possible workload types.
 	DbWorkload string `pulumi:"dbWorkload"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Oracle sharded database display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
 	DownloadGsmCertificateSigningRequestTrigger *int `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
 	GenerateGsmCertificateSigningRequestTrigger *int `pulumi:"generateGsmCertificateSigningRequestTrigger"`
 	// (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
@@ -447,13 +447,13 @@ type ShardedDatabaseArgs struct {
 	// Possible workload types.
 	DbWorkload pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Oracle sharded database display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
 	DownloadGsmCertificateSigningRequestTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
 	GenerateGsmCertificateSigningRequestTrigger pulumi.IntPtrInput
 	// (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
@@ -630,8 +630,8 @@ func (o ShardedDatabaseOutput) DbWorkload() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ShardedDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ShardedDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ShardedDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ShardedDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Oracle sharded database display name.
@@ -645,8 +645,8 @@ func (o ShardedDatabaseOutput) DownloadGsmCertificateSigningRequestTrigger() pul
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ShardedDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ShardedDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ShardedDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ShardedDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
@@ -748,8 +748,8 @@ func (o ShardedDatabaseOutput) StopDatabaseTrigger() pulumi.IntPtrOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ShardedDatabaseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ShardedDatabase) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ShardedDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ShardedDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Sharded Database was created. An RFC3339 formatted datetime string

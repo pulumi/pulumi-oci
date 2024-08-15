@@ -13,14 +13,14 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class DiscoveryJobDiscoveryDetailsPropertiesGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("propertiesMap")]
-        private InputMap<object>? _propertiesMap;
+        private InputMap<string>? _propertiesMap;
 
         /// <summary>
         /// Key/Value pair of Property
         /// </summary>
-        public InputMap<object> PropertiesMap
+        public InputMap<string> PropertiesMap
         {
-            get => _propertiesMap ?? (_propertiesMap = new InputMap<object>());
+            get => _propertiesMap ?? (_propertiesMap = new InputMap<string>());
             set => _propertiesMap = value;
         }
 

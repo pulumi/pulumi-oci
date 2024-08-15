@@ -1028,13 +1028,13 @@ type AuditProfileAuditTrail struct {
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id *string `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -1054,7 +1054,7 @@ type AuditProfileAuditTrail struct {
 	// The current sub-state of the audit trail.
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -1090,13 +1090,13 @@ type AuditProfileAuditTrailArgs struct {
 	// (Updatable) The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -1116,7 +1116,7 @@ type AuditProfileAuditTrailArgs struct {
 	// The current sub-state of the audit trail.
 	Status pulumi.StringPtrInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -1200,8 +1200,8 @@ func (o AuditProfileAuditTrailOutput) CompartmentId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AuditProfileAuditTrailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AuditProfileAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the audit profile.
@@ -1215,8 +1215,8 @@ func (o AuditProfileAuditTrailOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AuditProfileAuditTrailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AuditProfileAuditTrailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit profile.
@@ -1265,8 +1265,8 @@ func (o AuditProfileAuditTrailOutput) Status() pulumi.StringPtrOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AuditProfileAuditTrailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o AuditProfileAuditTrailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v AuditProfileAuditTrail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe target for which the audit profile is created.
@@ -7543,7 +7543,7 @@ func (o GetAlertAnalyticItemArrayOutput) Index(i pulumi.IntInput) GetAlertAnalyt
 
 type GetAlertAnalyticItemDimension struct {
 	// A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-	GroupBy map[string]interface{} `pulumi:"groupBy"`
+	GroupBy map[string]string `pulumi:"groupBy"`
 }
 
 // GetAlertAnalyticItemDimensionInput is an input type that accepts GetAlertAnalyticItemDimensionArgs and GetAlertAnalyticItemDimensionOutput values.
@@ -7559,7 +7559,7 @@ type GetAlertAnalyticItemDimensionInput interface {
 
 type GetAlertAnalyticItemDimensionArgs struct {
 	// A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-	GroupBy pulumi.MapInput `pulumi:"groupBy"`
+	GroupBy pulumi.StringMapInput `pulumi:"groupBy"`
 }
 
 func (GetAlertAnalyticItemDimensionArgs) ElementType() reflect.Type {
@@ -7614,8 +7614,8 @@ func (o GetAlertAnalyticItemDimensionOutput) ToGetAlertAnalyticItemDimensionOutp
 }
 
 // A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
-func (o GetAlertAnalyticItemDimensionOutput) GroupBy() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertAnalyticItemDimension) map[string]interface{} { return v.GroupBy }).(pulumi.MapOutput)
+func (o GetAlertAnalyticItemDimensionOutput) GroupBy() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertAnalyticItemDimension) map[string]string { return v.GroupBy }).(pulumi.StringMapOutput)
 }
 
 type GetAlertAnalyticItemDimensionArrayOutput struct{ *pulumi.OutputState }
@@ -7741,13 +7741,13 @@ type GetAlertPoliciesAlertPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert policy.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the alert policy.
 	Id string `pulumi:"id"`
 	// An optional filter to return only alert policies that are user-defined or not.
@@ -7759,7 +7759,7 @@ type GetAlertPoliciesAlertPolicyCollectionItem struct {
 	// An optional filter to return only alert policies that have the given life-cycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -7784,13 +7784,13 @@ type GetAlertPoliciesAlertPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the alert policy.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the alert policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An optional filter to return only alert policies that are user-defined or not.
@@ -7802,7 +7802,7 @@ type GetAlertPoliciesAlertPolicyCollectionItemArgs struct {
 	// An optional filter to return only alert policies that have the given life-cycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -7877,8 +7877,8 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) CompartmentId() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the alert policy.
@@ -7892,8 +7892,8 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) DisplayName() pulumi.St
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the alert policy.
@@ -7922,8 +7922,8 @@ func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) State() pulumi.StringOu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAlertPoliciesAlertPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertPoliciesAlertPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -8746,15 +8746,15 @@ type GetAlertsAlertCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert.
 	Description string `pulumi:"description"`
 	// The display name of the alert.
 	DisplayName string `pulumi:"displayName"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	FeatureDetails map[string]interface{} `pulumi:"featureDetails"`
+	FeatureDetails map[string]string `pulumi:"featureDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return alert by it's OCID.
 	Id string `pulumi:"id"`
 	// The operation (event) that triggered alert.
@@ -8774,7 +8774,7 @@ type GetAlertsAlertCollectionItem struct {
 	// The status of the alert.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Array of OCIDs of the target database which are associated with the alert.
 	TargetIds []string `pulumi:"targetIds"`
 	// Array of names of the target database.
@@ -8809,15 +8809,15 @@ type GetAlertsAlertCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the alert.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The display name of the alert.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	FeatureDetails pulumi.MapInput `pulumi:"featureDetails"`
+	FeatureDetails pulumi.StringMapInput `pulumi:"featureDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return alert by it's OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The operation (event) that triggered alert.
@@ -8837,7 +8837,7 @@ type GetAlertsAlertCollectionItemArgs struct {
 	// The status of the alert.
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Array of OCIDs of the target database which are associated with the alert.
 	TargetIds pulumi.StringArrayInput `pulumi:"targetIds"`
 	// Array of names of the target database.
@@ -8929,8 +8929,8 @@ func (o GetAlertsAlertCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAlertsAlertCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAlertsAlertCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the alert.
@@ -8944,13 +8944,13 @@ func (o GetAlertsAlertCollectionItemOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-func (o GetAlertsAlertCollectionItemOutput) FeatureDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]interface{} { return v.FeatureDetails }).(pulumi.MapOutput)
+func (o GetAlertsAlertCollectionItemOutput) FeatureDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]string { return v.FeatureDetails }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAlertsAlertCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAlertsAlertCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return alert by it's OCID.
@@ -8999,8 +8999,8 @@ func (o GetAlertsAlertCollectionItemOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAlertsAlertCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAlertsAlertCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlertsAlertCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Array of OCIDs of the target database which are associated with the alert.
@@ -9251,7 +9251,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the archive retrieval.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -9261,7 +9261,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo string `pulumi:"errorInfo"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the archive retrieval.
 	Id string `pulumi:"id"`
 	// Details about the current state of the archive retrieval.
@@ -9271,7 +9271,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem struct {
 	// A filter to return only resources that matches the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId string `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
@@ -9299,7 +9299,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the archive retrieval.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -9309,7 +9309,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo pulumi.StringInput `pulumi:"errorInfo"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the archive retrieval.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the archive retrieval.
@@ -9319,7 +9319,7 @@ type GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemArgs struct {
 	// A filter to return only resources that matches the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
@@ -9392,10 +9392,10 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) Comp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]interface{} {
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description of the archive retrieval.
@@ -9419,10 +9419,10 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) Erro
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]interface{} {
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the archive retrieval.
@@ -9446,10 +9446,10 @@ func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) Stat
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]interface{} {
+func (o GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditArchiveRetrievalsAuditArchiveRetrievalCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target associated with the archive retrieval.
@@ -9962,7 +9962,7 @@ type GetAuditEventItem struct {
 	// Name of the database user whose actions were audited.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode string `pulumi:"errorCode"`
 	// Detailed message on why the Error occurred.
@@ -9972,7 +9972,7 @@ type GetAuditEventItem struct {
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes string `pulumi:"extendedEventAttributes"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit event.
 	Id string `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
@@ -10047,7 +10047,7 @@ type GetAuditEventItemArgs struct {
 	// Name of the database user whose actions were audited.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
 	// Detailed message on why the Error occurred.
@@ -10057,7 +10057,7 @@ type GetAuditEventItemArgs struct {
 	// List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
 	ExtendedEventAttributes pulumi.StringInput `pulumi:"extendedEventAttributes"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit event.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
@@ -10216,8 +10216,8 @@ func (o GetAuditEventItemOutput) DbUserName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditEventItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditEventItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditEventItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditEventItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Oracle Error code generated by the action. Zero indicates the action was successful.
@@ -10241,8 +10241,8 @@ func (o GetAuditEventItemOutput) ExtendedEventAttributes() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditEventItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditEventItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditEventItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditEventItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit event.
@@ -10466,7 +10466,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	// The name of the database user whose actions were audited.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode string `pulumi:"errorCode"`
 	// The detailed message on why the error occurred.
@@ -10478,7 +10478,7 @@ type GetAuditEventsAuditEventCollectionItem struct {
 	// Fine-grained auditing (FGA) policy name that generated this audit record.
 	FgaPolicyName string `pulumi:"fgaPolicyName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit event.
 	Id string `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
@@ -10561,7 +10561,7 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// The name of the database user whose actions were audited.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Oracle Error code generated by the action. Zero indicates the action was successful.
 	ErrorCode pulumi.StringInput `pulumi:"errorCode"`
 	// The detailed message on why the error occurred.
@@ -10573,7 +10573,7 @@ type GetAuditEventsAuditEventCollectionItemArgs struct {
 	// Fine-grained auditing (FGA) policy name that generated this audit record.
 	FgaPolicyName pulumi.StringInput `pulumi:"fgaPolicyName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit event.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether an alert was raised for this audit event.
@@ -10746,8 +10746,8 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) DbUserName() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditEventsAuditEventCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditEventsAuditEventCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Oracle Error code generated by the action. Zero indicates the action was successful.
@@ -10776,8 +10776,8 @@ func (o GetAuditEventsAuditEventCollectionItemOutput) FgaPolicyName() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditEventsAuditEventCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditEventsAuditEventCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditEventsAuditEventCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit event.
@@ -11087,13 +11087,13 @@ type GetAuditPoliciesAuditPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the audit policy.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit policy.
 	Id string `pulumi:"id"`
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
@@ -11105,7 +11105,7 @@ type GetAuditPoliciesAuditPolicyCollectionItem struct {
 	// The current state of the audit policy.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The time the the audit policy was created, in the format defined by RFC3339.
@@ -11139,13 +11139,13 @@ type GetAuditPoliciesAuditPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the audit policy.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
@@ -11157,7 +11157,7 @@ type GetAuditPoliciesAuditPolicyCollectionItemArgs struct {
 	// The current state of the audit policy.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The time the the audit policy was created, in the format defined by RFC3339.
@@ -11246,8 +11246,8 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) CompartmentId() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the audit policy.
@@ -11261,8 +11261,8 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) DisplayName() pulumi.St
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit policy.
@@ -11294,8 +11294,8 @@ func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) State() pulumi.StringOu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAuditPoliciesAuditPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditPoliciesAuditPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -12554,13 +12554,13 @@ type GetAuditProfileAuditTrail struct {
 	// The OCID of the compartment that contains the audit.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
 	// The display name of the audit profile.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id string `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -12580,7 +12580,7 @@ type GetAuditProfileAuditTrail struct {
 	// The current sub-state of the audit trail.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -12616,13 +12616,13 @@ type GetAuditProfileAuditTrailArgs struct {
 	// The OCID of the compartment that contains the audit.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The display name of the audit profile.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -12642,7 +12642,7 @@ type GetAuditProfileAuditTrailArgs struct {
 	// The current sub-state of the audit trail.
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The OCID of the Data Safe target for which the audit profile is created.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -12726,8 +12726,8 @@ func (o GetAuditProfileAuditTrailOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditProfileAuditTrailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditProfileAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the audit profile.
@@ -12741,8 +12741,8 @@ func (o GetAuditProfileAuditTrailOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditProfileAuditTrailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditProfileAuditTrailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit profile.
@@ -12791,8 +12791,8 @@ func (o GetAuditProfileAuditTrailOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditProfileAuditTrailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAuditProfileAuditTrailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfileAuditTrail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe target for which the audit profile is created.
@@ -14099,13 +14099,13 @@ type GetAuditProfilesAuditProfileCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id string `pulumi:"id"`
 	// A optional filter to return only resources that match the specified retention configured value.
@@ -14121,7 +14121,7 @@ type GetAuditProfilesAuditProfileCollectionItem struct {
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -14152,13 +14152,13 @@ type GetAuditProfilesAuditProfileCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A optional filter to return only resources that match the specified retention configured value.
@@ -14174,7 +14174,7 @@ type GetAuditProfilesAuditProfileCollectionItemArgs struct {
 	// A optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -14261,8 +14261,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) CompartmentId() pulumi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditProfilesAuditProfileCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the audit profile.
@@ -14276,8 +14276,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) DisplayName() pulumi.S
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditProfilesAuditProfileCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit profile.
@@ -14316,8 +14316,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemOutput) State() pulumi.StringO
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditProfilesAuditProfileCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -14363,13 +14363,13 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id string `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -14389,7 +14389,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrail struct {
 	// The current sub-state of the audit trail.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -14425,13 +14425,13 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit profile.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit profile.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -14451,7 +14451,7 @@ type GetAuditProfilesAuditProfileCollectionItemAuditTrailArgs struct {
 	// The current sub-state of the audit trail.
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit profile was created, in the format defined by RFC3339.
@@ -14535,10 +14535,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) CompartmentI
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the audit profile.
@@ -14552,10 +14550,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) DisplayName(
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit profile.
@@ -14604,10 +14600,8 @@ func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) Status() pul
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetAuditProfilesAuditProfileCollectionItemAuditTrailOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditProfilesAuditProfileCollectionItemAuditTrail) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -15105,13 +15099,13 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the audit trail.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the audit trail.
 	Id string `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -15132,7 +15126,7 @@ type GetAuditTrailsAuditTrailCollectionItem struct {
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
@@ -15170,13 +15164,13 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the audit trail.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the audit trail.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
@@ -15197,7 +15191,7 @@ type GetAuditTrailsAuditTrailCollectionItemArgs struct {
 	// A optional filter to return only resources that match the specified sub-state of audit trail.
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the audit trail was created, in the format defined by RFC3339.
@@ -15286,8 +15280,8 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAuditTrailsAuditTrailCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the audit trail.
@@ -15301,8 +15295,8 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetAuditTrailsAuditTrailCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the audit trail.
@@ -15355,8 +15349,8 @@ func (o GetAuditTrailsAuditTrailCollectionItemOutput) Status() pulumi.StringOutp
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetAuditTrailsAuditTrailCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetAuditTrailsAuditTrailCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAuditTrailsAuditTrailCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -16087,7 +16081,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpoint struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -16095,7 +16089,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpoint struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn string `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe private endpoint.
 	Id string `pulumi:"id"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
@@ -16109,7 +16103,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpoint struct {
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// A filter to return only resources that match the specified VCN OCID.
@@ -16131,7 +16125,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -16139,7 +16133,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Data Safe private endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
@@ -16153,7 +16147,7 @@ type GetDataSafePrivateEndpointsDataSafePrivateEndpointArgs struct {
 	// The OCID of the subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// A filter to return only resources that match the specified VCN OCID.
@@ -16217,10 +16211,8 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) CompartmentId(
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the private endpoint.
@@ -16239,10 +16231,8 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) EndpointFqdn()
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe private endpoint.
@@ -16276,8 +16266,8 @@ func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) SubnetId() pul
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDataSafePrivateEndpointsDataSafePrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSafePrivateEndpointsDataSafePrivateEndpoint) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -18406,7 +18396,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the format entry.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -18414,7 +18404,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem struct {
 	// An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries []GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntry `pulumi:"formatEntries"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the library masking format.
 	Id string `pulumi:"id"`
 	// An array of OCIDs of the sensitive types compatible with the library masking format.
@@ -18444,7 +18434,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the format entry.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -18452,7 +18442,7 @@ type GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemArgs struct {
 	// An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemFormatEntryArrayInput `pulumi:"formatEntries"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the library masking format.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An array of OCIDs of the sensitive types compatible with the library masking format.
@@ -18524,10 +18514,10 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) Compar
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) map[string]interface{} {
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The description of the format entry.
@@ -18548,10 +18538,10 @@ func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) Format
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) map[string]interface{} {
+func (o GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLibraryMaskingFormatsLibraryMaskingFormatCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the library masking format.
@@ -21379,14 +21369,14 @@ type GetMaskingPoliciesMaskingPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking policy.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags                map[string]interface{} `pulumi:"freeformTags"`
-	GenerateHealthReportTrigger int                    `pulumi:"generateHealthReportTrigger"`
+	FreeformTags                map[string]string `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger int               `pulumi:"generateHealthReportTrigger"`
 	// The OCID of the masking policy.
 	Id string `pulumi:"id"`
 	// Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
@@ -21429,14 +21419,14 @@ type GetMaskingPoliciesMaskingPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the masking policy.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags                pulumi.MapInput `pulumi:"freeformTags"`
-	GenerateHealthReportTrigger pulumi.IntInput `pulumi:"generateHealthReportTrigger"`
+	FreeformTags                pulumi.StringMapInput `pulumi:"freeformTags"`
+	GenerateHealthReportTrigger pulumi.IntInput       `pulumi:"generateHealthReportTrigger"`
 	// The OCID of the masking policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if the temporary tables created during a masking operation should be dropped after masking. It's enabled by default. Set this attribute to false to preserve the temporary tables. Masking creates temporary tables that map the original sensitive  data values to mask values. By default, these temporary tables are dropped after masking. But, in some cases, you may want  to preserve this information to track how masking changed your data. Note that doing so compromises security. These tables  must be dropped before the database is available for unprivileged users.
@@ -21529,8 +21519,8 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) CompartmentId() pul
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the masking policy.
@@ -21544,8 +21534,8 @@ func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) DisplayName() pulum
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPoliciesMaskingPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetMaskingPoliciesMaskingPolicyCollectionItemOutput) GenerateHealthReportTrigger() pulumi.IntOutput {
@@ -22413,13 +22403,13 @@ type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem struct
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the health report.
 	Id string `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
@@ -22449,13 +22439,13 @@ type GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemArgs st
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the masking health report.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the health report.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
@@ -22529,10 +22519,10 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]interface{} {
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The description of the masking health report.
@@ -22550,10 +22540,10 @@ func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]interface{} {
+func (o GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMaskingPolicyHealthReportsMaskingPolicyHealthReportCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the health report.
@@ -24370,13 +24360,13 @@ type GetOnpremConnectorsOnPremConnector struct {
 	// Created version of the on-premises connector.
 	CreatedVersion string `pulumi:"createdVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the on-premises connector.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the on-premises connector.
 	Id string `pulumi:"id"`
 	// Details about the current state of the on-premises connector.
@@ -24384,7 +24374,7 @@ type GetOnpremConnectorsOnPremConnector struct {
 	// The current state of the on-premises connector.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -24408,13 +24398,13 @@ type GetOnpremConnectorsOnPremConnectorArgs struct {
 	// Created version of the on-premises connector.
 	CreatedVersion pulumi.StringInput `pulumi:"createdVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the on-premises connector.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the on-premises connector.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the on-premises connector.
@@ -24422,7 +24412,7 @@ type GetOnpremConnectorsOnPremConnectorArgs struct {
 	// The current state of the on-premises connector.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -24494,8 +24484,8 @@ func (o GetOnpremConnectorsOnPremConnectorOutput) CreatedVersion() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetOnpremConnectorsOnPremConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOnpremConnectorsOnPremConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the on-premises connector.
@@ -24509,8 +24499,8 @@ func (o GetOnpremConnectorsOnPremConnectorOutput) DisplayName() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetOnpremConnectorsOnPremConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOnpremConnectorsOnPremConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the on-premises connector.
@@ -24529,8 +24519,8 @@ func (o GetOnpremConnectorsOnPremConnectorOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOnpremConnectorsOnPremConnectorOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetOnpremConnectorsOnPremConnectorOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnpremConnectorsOnPremConnector) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the on-premises connector was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -25302,7 +25292,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description string `pulumi:"description"`
 	// The name of the report definition to query.
@@ -25310,7 +25300,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder int `pulumi:"displayOrder"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the report definition.
 	Id string `pulumi:"id"`
 	// A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
@@ -25338,7 +25328,7 @@ type GetReportDefinitionsReportDefinitionCollectionItem struct {
 	// An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries []GetReportDefinitionsReportDefinitionCollectionItemSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies the date and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the report definition was updated.
@@ -25372,7 +25362,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
 	DataSource pulumi.StringInput `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The name of the report definition to query.
@@ -25380,7 +25370,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder pulumi.IntInput `pulumi:"displayOrder"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the report definition.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A boolean flag indicating to list seeded report definitions. Set this parameter to get list of seeded report definitions.
@@ -25408,7 +25398,7 @@ type GetReportDefinitionsReportDefinitionCollectionItemArgs struct {
 	// An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries GetReportDefinitionsReportDefinitionCollectionItemSummaryArrayInput `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the report definition was updated.
@@ -25508,10 +25498,8 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DataSource() p
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the report definition.
@@ -25530,10 +25518,8 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) DisplayOrder()
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the report definition.
@@ -25606,8 +25592,8 @@ func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) Summaries() Ge
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetReportDefinitionsReportDefinitionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportDefinitionsReportDefinitionCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the date and time the report definition was created.
@@ -26367,13 +26353,13 @@ type GetReportsReportCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description string `pulumi:"description"`
 	// The name of the report definition to query.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
 	// Details about the current state of the report in Data Safe.
@@ -26386,7 +26372,7 @@ type GetReportsReportCollectionItem struct {
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
 	// An optional filter to return only resources that match the specified type.
@@ -26408,13 +26394,13 @@ type GetReportsReportCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Specifies a description of the report.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The name of the report definition to query.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the report in Data Safe.
@@ -26427,7 +26413,7 @@ type GetReportsReportCollectionItemArgs struct {
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated pulumi.StringInput `pulumi:"timeGenerated"`
 	// An optional filter to return only resources that match the specified type.
@@ -26491,8 +26477,8 @@ func (o GetReportsReportCollectionItemOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetReportsReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetReportsReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies a description of the report.
@@ -26506,8 +26492,8 @@ func (o GetReportsReportCollectionItemOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetReportsReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetReportsReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the report.
@@ -26540,8 +26526,8 @@ func (o GetReportsReportCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetReportsReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetReportsReportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReportsReportCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the date and time the report was generated.
@@ -27191,13 +27177,13 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem stru
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
 	DifferenceType string `pulumi:"differenceType"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Sensitive data model and masking policy difference resource.
 	Id string `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
@@ -27207,7 +27193,7 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem stru
 	// A filter to return only the resources that match the specified lifecycle states.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -27229,13 +27215,13 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs 
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
 	DifferenceType pulumi.StringInput `pulumi:"differenceType"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Sensitive data model and masking policy difference resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only the resources that match the specified masking policy OCID.
@@ -27245,7 +27231,7 @@ type GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemArgs 
 	// A filter to return only the resources that match the specified lifecycle states.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the SDM masking policy difference creation started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -27311,10 +27297,10 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The type of the SDM masking policy difference. It defines the difference scope. NEW identifies new sensitive columns in the sensitive data model that are not in the masking policy. DELETED identifies columns that are present in the masking policy but have been deleted from the sensitive data model. MODIFIED identifies columns that are present in the sensitive data model as well as the masking policy but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
@@ -27332,10 +27318,10 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Sensitive data model and masking policy difference resource.
@@ -27363,10 +27349,10 @@ func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]interface{} {
+func (o GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The date and time the SDM masking policy difference was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -36345,13 +36331,13 @@ type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem struct {
 	// The usage of security feature - Database Vault.
 	DatabaseVault string `pulumi:"databaseVault"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The usage of security feature - External Authentication.
 	ExternalAuthentication string `pulumi:"externalAuthentication"`
 	// The usage of security feature - Fine Grained Audit.
 	FineGrainedAudit string `pulumi:"fineGrainedAudit"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The usage of security feature - Global Authentication.
 	GlobalAuthentication string `pulumi:"globalAuthentication"`
 	// The usage of security feature - Network Encryption.
@@ -36391,13 +36377,13 @@ type GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemArgs stru
 	// The usage of security feature - Database Vault.
 	DatabaseVault pulumi.StringInput `pulumi:"databaseVault"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The usage of security feature - External Authentication.
 	ExternalAuthentication pulumi.StringInput `pulumi:"externalAuthentication"`
 	// The usage of security feature - Fine Grained Audit.
 	FineGrainedAudit pulumi.StringInput `pulumi:"fineGrainedAudit"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The usage of security feature - Global Authentication.
 	GlobalAuthentication pulumi.StringInput `pulumi:"globalAuthentication"`
 	// The usage of security feature - Network Encryption.
@@ -36496,10 +36482,10 @@ func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]interface{} {
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The usage of security feature - External Authentication.
@@ -36517,10 +36503,10 @@ func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]interface{} {
+func (o GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentSecurityFeaturesSecurityFeatureCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The usage of security feature - Global Authentication.
@@ -37989,13 +37975,13 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security assessment.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security assessment.
 	Id string `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -38023,7 +38009,7 @@ type GetSecurityAssessmentsSecurityAssessment struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics []GetSecurityAssessmentsSecurityAssessmentStatistic `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// Array of database target OCIDs.
@@ -38057,13 +38043,13 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security assessment.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the security assessment.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -38091,7 +38077,7 @@ type GetSecurityAssessmentsSecurityAssessmentArgs struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics GetSecurityAssessmentsSecurityAssessmentStatisticArrayInput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Array of database target OCIDs.
@@ -38167,8 +38153,8 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityAssessmentsSecurityAssessmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSecurityAssessmentsSecurityAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the security assessment.
@@ -38182,8 +38168,8 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) DisplayName() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityAssessmentsSecurityAssessmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSecurityAssessmentsSecurityAssessmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security assessment.
@@ -38254,8 +38240,8 @@ func (o GetSecurityAssessmentsSecurityAssessmentOutput) Statistics() GetSecurity
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityAssessmentsSecurityAssessmentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSecurityAssessmentsSecurityAssessmentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentsSecurityAssessment) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -39902,13 +39888,13 @@ type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security policy.
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy in Data Safe.
@@ -39918,7 +39904,7 @@ type GetSecurityPoliciesSecurityPolicyCollectionItem struct {
 	// The current state of the security policy.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
@@ -39940,13 +39926,13 @@ type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security policy.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the security policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the security policy in Data Safe.
@@ -39956,7 +39942,7 @@ type GetSecurityPoliciesSecurityPolicyCollectionItemArgs struct {
 	// The current state of the security policy.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
@@ -40020,8 +40006,8 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) CompartmentId() p
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the security policy.
@@ -40035,8 +40021,8 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) DisplayName() pul
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security policy.
@@ -40060,8 +40046,8 @@ func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) State() pulumi.St
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSecurityPoliciesSecurityPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPoliciesSecurityPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time that the security policy was created, in the format defined by RFC3339.
@@ -40889,13 +40875,13 @@ type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy deployment.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security policy deployment.
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy deployment in Data Safe.
@@ -40907,7 +40893,7 @@ type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem struct {
 	// The current state of the security policy deployment.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
@@ -40931,13 +40917,13 @@ type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs stru
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security policy deployment.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the security policy deployment.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the security policy deployment in Data Safe.
@@ -40949,7 +40935,7 @@ type GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemArgs stru
 	// The current state of the security policy deployment.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
@@ -41017,10 +41003,10 @@ func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The description of the security policy deployment.
@@ -41038,10 +41024,10 @@ func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security policy deployment.
@@ -41076,10 +41062,10 @@ func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -42698,13 +42684,13 @@ type GetSecurityPolicyReportsSecurityPolicyReportCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy report.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security policy report.
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy report.
@@ -42712,7 +42698,7 @@ type GetSecurityPolicyReportsSecurityPolicyReportCollectionItem struct {
 	// The current state of the security policy report.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -42736,13 +42722,13 @@ type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the security policy report.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the security policy report.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the security policy report.
@@ -42750,7 +42736,7 @@ type GetSecurityPolicyReportsSecurityPolicyReportCollectionItemArgs struct {
 	// The current state of the security policy report.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -42816,10 +42802,10 @@ func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) Compar
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The description of the security policy report.
@@ -42833,10 +42819,10 @@ func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) Displa
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security policy report.
@@ -42855,10 +42841,10 @@ func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) State(
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]interface{} {
+func (o GetSecurityPolicyReportsSecurityPolicyReportCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportsSecurityPolicyReportCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -44665,13 +44651,13 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the sensitive data model.
 	Id string `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
@@ -44689,7 +44675,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItem struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
 	TablesForDiscoveries []GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// A filter to return only items related to a specific target OCID.
@@ -44717,13 +44703,13 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the sensitive data model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the sensitive data model.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if data discovery jobs should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
@@ -44741,7 +44727,7 @@ type GetSensitiveDataModelsSensitiveDataModelCollectionItemArgs struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
 	TablesForDiscoveries GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArrayInput `pulumi:"tablesForDiscoveries"`
 	// A filter to return only items related to a specific target OCID.
@@ -44814,10 +44800,8 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) Compartmen
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the sensitive data model.
@@ -44831,10 +44815,10 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) DisplayNam
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]interface{} {
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the sensitive data model.
@@ -44888,10 +44872,8 @@ func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) State() pu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetSensitiveDataModelsSensitiveDataModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveDataModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
@@ -45258,7 +45240,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 	// A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
 	DefaultMaskingFormatId string `pulumi:"defaultMaskingFormatId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive type.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -45266,7 +45248,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 	// A filter to return the sensitive type resources based on the value of their entityType attribute.
 	EntityType string `pulumi:"entityType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id string `pulumi:"id"`
 	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
@@ -45284,7 +45266,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItem struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -45312,7 +45294,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItemArgs struct {
 	// A filter to return only the sensitive types that have the default masking format identified by the specified OCID.
 	DefaultMaskingFormatId pulumi.StringInput `pulumi:"defaultMaskingFormatId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the sensitive type.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
@@ -45320,7 +45302,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItemArgs struct {
 	// A filter to return the sensitive type resources based on the value of their entityType attribute.
 	EntityType pulumi.StringInput `pulumi:"entityType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only the common sensitive type resources. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
@@ -45338,7 +45320,7 @@ type GetSensitiveTypesSensitiveTypeCollectionItemArgs struct {
 	// A filter to return only the resources that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -45417,8 +45399,8 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) DefaultMaskingFormat
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the sensitive type.
@@ -45437,8 +45419,8 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) EntityType() pulumi.
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the sensitive type.
@@ -45482,8 +45464,8 @@ func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) State() pulumi.Strin
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSensitiveTypesSensitiveTypeCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSensitiveTypesSensitiveTypeCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -45722,13 +45704,13 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem 
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
 	Description string `pulumi:"description"`
 	// The display name of the target-alert policy association.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id string `pulumi:"id"`
 	// Indicates if the target-alert policy association is enabled or disabled by user.
@@ -45740,7 +45722,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem 
 	// An optional filter to return only alert policies that have the given life-cycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -45764,13 +45746,13 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemA
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Describes the target-alert policy association.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The display name of the target-alert policy association.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the target-alert policy association.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates if the target-alert policy association is enabled or disabled by user.
@@ -45782,7 +45764,7 @@ type GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemA
 	// An optional filter to return only alert policies that have the given life-cycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -45850,10 +45832,10 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]interface{} {
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Describes the target-alert policy association.
@@ -45871,10 +45853,10 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]interface{} {
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target-alert policy association.
@@ -45911,10 +45893,10 @@ func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionIt
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]interface{} {
+func (o GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAlertPolicyAssociationsTargetAlertPolicyAssociationCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.
@@ -49384,13 +49366,13 @@ type GetTargetDatabasesTargetDatabase struct {
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabasesTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
@@ -49401,7 +49383,7 @@ type GetTargetDatabasesTargetDatabase struct {
 	// A filter to return only target databases that match the specified lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
@@ -49433,13 +49415,13 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails GetTargetDatabasesTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
@@ -49450,7 +49432,7 @@ type GetTargetDatabasesTargetDatabaseArgs struct {
 	// A filter to return only target databases that match the specified lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
@@ -49542,8 +49524,8 @@ func (o GetTargetDatabasesTargetDatabaseOutput) DatabaseDetails() GetTargetDatab
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetTargetDatabasesTargetDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetDatabasesTargetDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the peer target database in Data Safe.
@@ -49557,8 +49539,8 @@ func (o GetTargetDatabasesTargetDatabaseOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetTargetDatabasesTargetDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetDatabasesTargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe target database.
@@ -49590,8 +49572,8 @@ func (o GetTargetDatabasesTargetDatabaseOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetTargetDatabasesTargetDatabaseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetTargetDatabasesTargetDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetDatabasesTargetDatabase) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the database was registered in Data Safe and created as a target database in Data Safe.
@@ -51661,9 +51643,9 @@ func (o GetUserAssessmentProfileAnalyticsFilterArrayOutput) Index(i pulumi.IntIn
 
 type GetUserAssessmentProfileAnalyticsProfileAggregation struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The array of profile aggregation data.
 	Items []interface{} `pulumi:"items"`
 }
@@ -51681,9 +51663,9 @@ type GetUserAssessmentProfileAnalyticsProfileAggregationInput interface {
 
 type GetUserAssessmentProfileAnalyticsProfileAggregationArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The array of profile aggregation data.
 	Items pulumi.ArrayInput `pulumi:"items"`
 }
@@ -51740,17 +51722,13 @@ func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) ToGetUserAsse
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetUserAssessmentProfileAnalyticsProfileAggregationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfileAnalyticsProfileAggregation) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The array of profile aggregation data.
@@ -51896,11 +51874,11 @@ type GetUserAssessmentProfilesProfile struct {
 	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
 	CpuPerSession string `pulumi:"cpuPerSession"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Maximum times the user is allowed in fail login before the user account is locked.
 	FailedLoginAttempts string `pulumi:"failedLoginAttempts"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
 	IdleTime string `pulumi:"idleTime"`
 	// The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
@@ -51964,11 +51942,11 @@ type GetUserAssessmentProfilesProfileArgs struct {
 	// Specify the CPU time limit for a session, expressed in hundredth of seconds.
 	CpuPerSession pulumi.StringInput `pulumi:"cpuPerSession"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Maximum times the user is allowed in fail login before the user account is locked.
 	FailedLoginAttempts pulumi.StringInput `pulumi:"failedLoginAttempts"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
 	IdleTime pulumi.StringInput `pulumi:"idleTime"`
 	// The permitted periods of continuous inactive time during a session, expressed in minutes. Long-running queries and other operations are not subjected to this limit.
@@ -52086,8 +52064,8 @@ func (o GetUserAssessmentProfilesProfileOutput) CpuPerSession() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetUserAssessmentProfilesProfileOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetUserAssessmentProfilesProfileOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Maximum times the user is allowed in fail login before the user account is locked.
@@ -52096,8 +52074,8 @@ func (o GetUserAssessmentProfilesProfileOutput) FailedLoginAttempts() pulumi.Str
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetUserAssessmentProfilesProfileOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetUserAssessmentProfilesProfileOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentProfilesProfile) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
@@ -53362,13 +53340,13 @@ type GetUserAssessmentsUserAssessment struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the user assessment.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the user assessment.
 	Id string `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -53394,7 +53372,7 @@ type GetUserAssessmentsUserAssessment struct {
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	Statistics string `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId string `pulumi:"targetId"`
 	// Array of database target OCIDs.
@@ -53426,13 +53404,13 @@ type GetUserAssessmentsUserAssessmentArgs struct {
 	// A filter to return only resources that match the specified compartment OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the user assessment.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the specified display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the user assessment.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -53458,7 +53436,7 @@ type GetUserAssessmentsUserAssessmentArgs struct {
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	Statistics pulumi.StringInput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringInput `pulumi:"targetId"`
 	// Array of database target OCIDs.
@@ -53532,8 +53510,8 @@ func (o GetUserAssessmentsUserAssessmentOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetUserAssessmentsUserAssessmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetUserAssessmentsUserAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the user assessment.
@@ -53547,8 +53525,8 @@ func (o GetUserAssessmentsUserAssessmentOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetUserAssessmentsUserAssessmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetUserAssessmentsUserAssessmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the user assessment.
@@ -53614,8 +53592,8 @@ func (o GetUserAssessmentsUserAssessmentOutput) Statistics() pulumi.StringOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetUserAssessmentsUserAssessmentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetUserAssessmentsUserAssessmentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUserAssessmentsUserAssessment) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only items related to a specific target OCID.

@@ -65,14 +65,14 @@ type LookupNotificationTopicResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for the topic.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the topic.
 	Description string `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Id           string            `pulumi:"id"`
 	// The name of the topic.
 	Name string `pulumi:"name"`
 	// A unique short topic Id. This is used only for SMS subscriptions.
@@ -136,8 +136,8 @@ func (o LookupNotificationTopicResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupNotificationTopicResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNotificationTopicResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the topic.
@@ -151,8 +151,8 @@ func (o LookupNotificationTopicResultOutput) Etag() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupNotificationTopicResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNotificationTopicResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNotificationTopicResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNotificationTopicResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupNotificationTopicResultOutput) Id() pulumi.StringOutput {

@@ -1095,11 +1095,11 @@ type GetPrivateApplicationsPrivateApplicationCollectionItem struct {
 	// The unique identifier for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Exact match name filter.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the private application in Marketplace.
 	Id                    string `pulumi:"id"`
 	LogoFileBase64encoded string `pulumi:"logoFileBase64encoded"`
@@ -1135,11 +1135,11 @@ type GetPrivateApplicationsPrivateApplicationCollectionItemArgs struct {
 	// The unique identifier for the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Exact match name filter.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique identifier for the private application in Marketplace.
 	Id                    pulumi.StringInput `pulumi:"id"`
 	LogoFileBase64encoded pulumi.StringInput `pulumi:"logoFileBase64encoded"`
@@ -1217,10 +1217,8 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) Compartmen
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Exact match name filter.
@@ -1229,10 +1227,10 @@ func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) map[string]interface{} {
+func (o GetPrivateApplicationsPrivateApplicationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateApplicationsPrivateApplicationCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the private application in Marketplace.
@@ -2082,11 +2080,11 @@ type GetServiceCatalogsServiceCatalogCollectionItem struct {
 	// The unique identifier for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Exact match name filter.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the Service catalog.
 	Id string `pulumi:"id"`
 	// The lifecycle state of the service catalog.
@@ -2112,11 +2110,11 @@ type GetServiceCatalogsServiceCatalogCollectionItemArgs struct {
 	// The unique identifier for the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Exact match name filter.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique identifier for the Service catalog.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The lifecycle state of the service catalog.
@@ -2184,8 +2182,8 @@ func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) CompartmentId() pu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Exact match name filter.
@@ -2194,8 +2192,8 @@ func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) DisplayName() pulu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetServiceCatalogsServiceCatalogCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogsServiceCatalogCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the Service catalog.

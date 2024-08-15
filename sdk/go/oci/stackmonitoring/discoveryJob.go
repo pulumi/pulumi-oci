@@ -55,13 +55,13 @@ import (
 //						PropertiesMap: pulumi.Any(discoveryJobDiscoveryDetailsTagsPropertiesMap),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DiscoveryClient: pulumi.Any(discoveryJobDiscoveryClient),
 //				DiscoveryType:   pulumi.Any(discoveryJobDiscoveryType),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				ShouldPropagateTagsToDiscoveredResources: pulumi.Any(discoveryJobShouldPropagateTagsToDiscoveredResources),
 //			})
@@ -87,7 +87,7 @@ type DiscoveryJob struct {
 	// The OCID of Compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Client who submits discovery job.
 	DiscoveryClient pulumi.StringOutput `pulumi:"discoveryClient"`
 	// The request of DiscoveryJob Resource details.
@@ -95,7 +95,7 @@ type DiscoveryJob struct {
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType pulumi.StringPtrOutput `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
 	//
 	// ** IMPORTANT **
@@ -108,7 +108,7 @@ type DiscoveryJob struct {
 	// The short summary of the status of the discovery job
 	StatusMessage pulumi.StringOutput `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of Tenant
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
@@ -156,7 +156,7 @@ type discoveryJobState struct {
 	// The OCID of Compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Client who submits discovery job.
 	DiscoveryClient *string `pulumi:"discoveryClient"`
 	// The request of DiscoveryJob Resource details.
@@ -164,7 +164,7 @@ type discoveryJobState struct {
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType *string `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
 	//
 	// ** IMPORTANT **
@@ -177,7 +177,7 @@ type discoveryJobState struct {
 	// The short summary of the status of the discovery job
 	StatusMessage *string `pulumi:"statusMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of Tenant
 	TenantId *string `pulumi:"tenantId"`
 	// The time the discovery Job was updated.
@@ -190,7 +190,7 @@ type DiscoveryJobState struct {
 	// The OCID of Compartment
 	CompartmentId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Client who submits discovery job.
 	DiscoveryClient pulumi.StringPtrInput
 	// The request of DiscoveryJob Resource details.
@@ -198,7 +198,7 @@ type DiscoveryJobState struct {
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
 	//
 	// ** IMPORTANT **
@@ -211,7 +211,7 @@ type DiscoveryJobState struct {
 	// The short summary of the status of the discovery job
 	StatusMessage pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of Tenant
 	TenantId pulumi.StringPtrInput
 	// The time the discovery Job was updated.
@@ -228,7 +228,7 @@ type discoveryJobArgs struct {
 	// The OCID of Compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Client who submits discovery job.
 	DiscoveryClient *string `pulumi:"discoveryClient"`
 	// The request of DiscoveryJob Resource details.
@@ -236,7 +236,7 @@ type discoveryJobArgs struct {
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType *string `pulumi:"discoveryType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
 	//
 	// ** IMPORTANT **
@@ -249,7 +249,7 @@ type DiscoveryJobArgs struct {
 	// The OCID of Compartment
 	CompartmentId pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Client who submits discovery job.
 	DiscoveryClient pulumi.StringPtrInput
 	// The request of DiscoveryJob Resource details.
@@ -257,7 +257,7 @@ type DiscoveryJobArgs struct {
 	// Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
 	DiscoveryType pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
 	//
 	// ** IMPORTANT **
@@ -358,8 +358,8 @@ func (o DiscoveryJobOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DiscoveryJobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DiscoveryJobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Client who submits discovery job.
@@ -378,8 +378,8 @@ func (o DiscoveryJobOutput) DiscoveryType() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DiscoveryJobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DiscoveryJobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // If this parameter set to true, the specified tags will be applied  to all resources discovered in the current request.  Default is true.
@@ -406,8 +406,8 @@ func (o DiscoveryJobOutput) StatusMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DiscoveryJobOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DiscoveryJob) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DiscoveryJobOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DiscoveryJob) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of Tenant

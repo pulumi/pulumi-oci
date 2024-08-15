@@ -17,7 +17,7 @@ class HttpProbeArgs:
                  compartment_id: pulumi.Input[str],
                  protocol: pulumi.Input[str],
                  targets: pulumi.Input[Sequence[pulumi.Input[str]]],
-                 headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  method: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -28,7 +28,7 @@ class HttpProbeArgs:
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] protocol: The supported protocols available for HTTP probes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] targets: A list of targets (hostnames or IP addresses) of the probe.
-        :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] headers: A dictionary of HTTP request headers.
                
                *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
@@ -95,7 +95,7 @@ class HttpProbeArgs:
 
     @property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A dictionary of HTTP request headers.
 
@@ -104,7 +104,7 @@ class HttpProbeArgs:
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "headers", value)
 
     @property
@@ -176,7 +176,7 @@ class HttpProbeArgs:
 class _HttpProbeState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  home_region: Optional[pulumi.Input[str]] = None,
                  method: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None,
@@ -190,7 +190,7 @@ class _HttpProbeState:
         """
         Input properties used for looking up and filtering HttpProbe resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] headers: A dictionary of HTTP request headers.
                
                *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
@@ -247,7 +247,7 @@ class _HttpProbeState:
 
     @property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A dictionary of HTTP request headers.
 
@@ -256,7 +256,7 @@ class _HttpProbeState:
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "headers", value)
 
     @property
@@ -390,7 +390,7 @@ class HttpProbe(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  method: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -436,7 +436,7 @@ class HttpProbe(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] headers: A dictionary of HTTP request headers.
                
                *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] method: The supported HTTP methods available for probes.
@@ -507,7 +507,7 @@ class HttpProbe(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  method: Optional[pulumi.Input[str]] = None,
                  path: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -553,7 +553,7 @@ class HttpProbe(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             home_region: Optional[pulumi.Input[str]] = None,
             method: Optional[pulumi.Input[str]] = None,
             path: Optional[pulumi.Input[str]] = None,
@@ -572,7 +572,7 @@ class HttpProbe(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
-        :param pulumi.Input[Mapping[str, Any]] headers: A dictionary of HTTP request headers.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] headers: A dictionary of HTTP request headers.
                
                *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         :param pulumi.Input[str] home_region: The region where updates must be made and where results must be fetched from.
@@ -618,7 +618,7 @@ class HttpProbe(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def headers(self) -> pulumi.Output[Mapping[str, Any]]:
+    def headers(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A dictionary of HTTP request headers.
 

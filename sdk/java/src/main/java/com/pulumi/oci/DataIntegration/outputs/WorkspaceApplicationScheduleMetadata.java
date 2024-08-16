@@ -8,7 +8,6 @@ import com.pulumi.oci.DataIntegration.outputs.WorkspaceApplicationScheduleMetada
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceApplicationScheduleMetadataCountStatistic;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +51,7 @@ public final class WorkspaceApplicationScheduleMetadata {
      * @return Information property fields.
      * 
      */
-    private @Nullable Map<String,Object> infoFields;
+    private @Nullable Map<String,String> infoFields;
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
@@ -136,7 +135,7 @@ public final class WorkspaceApplicationScheduleMetadata {
      * @return Information property fields.
      * 
      */
-    public Map<String,Object> infoFields() {
+    public Map<String,String> infoFields() {
         return this.infoFields == null ? Map.of() : this.infoFields;
     }
     /**
@@ -204,7 +203,7 @@ public final class WorkspaceApplicationScheduleMetadata {
         private @Nullable String createdBy;
         private @Nullable String createdByName;
         private @Nullable String identifierPath;
-        private @Nullable Map<String,Object> infoFields;
+        private @Nullable Map<String,String> infoFields;
         private @Nullable Boolean isFavorite;
         private @Nullable List<String> labels;
         private @Nullable Integer registryVersion;
@@ -274,7 +273,7 @@ public final class WorkspaceApplicationScheduleMetadata {
             return this;
         }
         @CustomType.Setter
-        public Builder infoFields(@Nullable Map<String,Object> infoFields) {
+        public Builder infoFields(@Nullable Map<String,String> infoFields) {
 
             this.infoFields = infoFields;
             return this;

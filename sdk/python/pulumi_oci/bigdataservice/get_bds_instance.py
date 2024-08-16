@@ -224,7 +224,7 @@ class GetBdsInstanceResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -250,7 +250,7 @@ class GetBdsInstanceResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         """

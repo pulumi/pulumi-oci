@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         /// </summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The Virtual Cloud Network OCID.
         /// </summary>
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Integration.Outputs
 
             ImmutableArray<Outputs.GetIntegrationInstancesIntegrationInstanceCustomEndpointResult> customEndpoints,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Integration.Outputs
 
             int enableProcessAutomationTrigger,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Integration.Outputs
 
             string stateMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

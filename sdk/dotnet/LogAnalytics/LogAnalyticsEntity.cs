@@ -95,7 +95,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Internal name for the log analytics entity type.
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.LogAnalytics
         /// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
         [Output("properties")]
-        public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
         /// <summary>
         /// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
@@ -268,14 +268,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -286,14 +286,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> EntityTypeName { get; set; } = null!;
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -328,14 +328,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> Namespace { get; set; } = null!;
 
         [Input("properties")]
-        private InputMap<object>? _properties;
+        private InputMap<string>? _properties;
 
         /// <summary>
         /// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
-        public InputMap<object> Properties
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 
@@ -388,14 +388,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -412,14 +412,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? EntityTypeName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -472,14 +472,14 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? Namespace { get; set; }
 
         [Input("properties")]
-        private InputMap<object>? _properties;
+        private InputMap<string>? _properties;
 
         /// <summary>
         /// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         /// </summary>
-        public InputMap<object> Properties
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 

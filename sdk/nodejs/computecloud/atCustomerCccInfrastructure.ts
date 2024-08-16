@@ -90,7 +90,7 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
@@ -102,7 +102,7 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
@@ -142,7 +142,7 @@ export class AtCustomerCccInfrastructure extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */
@@ -249,7 +249,7 @@ export interface AtCustomerCccInfrastructureState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
@@ -261,7 +261,7 @@ export interface AtCustomerCccInfrastructureState {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
      */
@@ -301,7 +301,7 @@ export interface AtCustomerCccInfrastructureState {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */
@@ -339,7 +339,7 @@ export interface AtCustomerCccInfrastructureArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
@@ -351,7 +351,7 @@ export interface AtCustomerCccInfrastructureArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
      *

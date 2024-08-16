@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Optimizer
         /// Additional metadata key/value pairs for the recommendation.
         /// </summary>
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// The level of importance assigned to the recommendation.
@@ -235,14 +235,14 @@ namespace Pulumi.Oci.Optimizer
         public Input<double>? EstimatedCostSaving { get; set; }
 
         [Input("extendedMetadata")]
-        private InputMap<object>? _extendedMetadata;
+        private InputMap<string>? _extendedMetadata;
 
         /// <summary>
         /// Additional metadata key/value pairs for the recommendation.
         /// </summary>
-        public InputMap<object> ExtendedMetadata
+        public InputMap<string> ExtendedMetadata
         {
-            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<object>());
+            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<string>());
             set => _extendedMetadata = value;
         }
 

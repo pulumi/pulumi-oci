@@ -50,11 +50,11 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
@@ -74,7 +74,7 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -106,7 +106,7 @@ export class ExternalExadataStorageGrid extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
@@ -185,11 +185,11 @@ export interface ExternalExadataStorageGridState {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: any}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
      */
@@ -209,7 +209,7 @@ export interface ExternalExadataStorageGridState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The internal ID of the Exadata resource.
      */
@@ -241,7 +241,7 @@ export interface ExternalExadataStorageGridState {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The timestamp of the creation of the Exadata resource.
      */
@@ -263,7 +263,7 @@ export interface ExternalExadataStorageGridArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
      */
@@ -275,5 +275,5 @@ export interface ExternalExadataStorageGridArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

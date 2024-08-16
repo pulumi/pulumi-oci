@@ -108,8 +108,8 @@ class RepositoryRefArgs:
 class _RepositoryRefState:
     def __init__(__self__, *,
                  commit_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  full_ref_name: Optional[pulumi.Input[str]] = None,
                  object_id: Optional[pulumi.Input[str]] = None,
                  ref_name: Optional[pulumi.Input[str]] = None,
@@ -118,8 +118,8 @@ class _RepositoryRefState:
         """
         Input properties used for looking up and filtering RepositoryRef resources.
         :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] full_ref_name: Unique full reference name inside a repository.
         :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
         :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
@@ -161,26 +161,26 @@ class _RepositoryRefState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -385,8 +385,8 @@ class RepositoryRef(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             commit_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             full_ref_name: Optional[pulumi.Input[str]] = None,
             object_id: Optional[pulumi.Input[str]] = None,
             ref_name: Optional[pulumi.Input[str]] = None,
@@ -400,8 +400,8 @@ class RepositoryRef(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] commit_id: (Updatable) Commit ID pointed to by the new branch.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] full_ref_name: Unique full reference name inside a repository.
         :param pulumi.Input[str] object_id: (Updatable) SHA-1 hash value of the object pointed to by the tag.
         :param pulumi.Input[str] ref_name: A filter to return only resources that match the given reference name.
@@ -436,7 +436,7 @@ class RepositoryRef(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -444,7 +444,7 @@ class RepositoryRef(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """

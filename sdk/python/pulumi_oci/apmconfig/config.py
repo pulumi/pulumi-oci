@@ -19,12 +19,12 @@ class ConfigArgs:
                  apm_domain_id: pulumi.Input[str],
                  config_type: pulumi.Input[str],
                  display_name: pulumi.Input[str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
                  filter_id: Optional[pulumi.Input[str]] = None,
                  filter_text: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
@@ -37,12 +37,12 @@ class ConfigArgs:
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]] metrics: (Updatable) The list of metrics in this group.
@@ -119,14 +119,14 @@ class ConfigArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -179,14 +179,14 @@ class ConfigArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -280,14 +280,14 @@ class _ConfigState:
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  etag: Optional[pulumi.Input[str]] = None,
                  filter_id: Optional[pulumi.Input[str]] = None,
                  filter_text: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]]] = None,
@@ -303,14 +303,14 @@ class _ConfigState:
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigInUseByArgs']]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigMetricArgs']]] metrics: (Updatable) The list of metrics in this group.
@@ -403,14 +403,14 @@ class _ConfigState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -487,14 +487,14 @@ class _ConfigState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -625,13 +625,13 @@ class Config(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  filter_id: Optional[pulumi.Input[str]] = None,
                  filter_text: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
@@ -701,13 +701,13 @@ class Config(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]] metrics: (Updatable) The list of metrics in this group.
@@ -796,13 +796,13 @@ class Config(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  filter_id: Optional[pulumi.Input[str]] = None,
                  filter_text: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  group: Optional[pulumi.Input[str]] = None,
                  in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
@@ -859,14 +859,14 @@ class Config(pulumi.CustomResource):
             apm_domain_id: Optional[pulumi.Input[str]] = None,
             config_type: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             etag: Optional[pulumi.Input[str]] = None,
             filter_id: Optional[pulumi.Input[str]] = None,
             filter_text: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             group: Optional[pulumi.Input[str]] = None,
             in_use_bies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]]] = None,
             metrics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]]] = None,
@@ -887,14 +887,14 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] group: (Updatable) A string that specifies the group that an OPTIONS item belongs to.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict']]]] in_use_bies: The list of configuration items that reference the span filter.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict']]]] metrics: (Updatable) The list of metrics in this group.
@@ -959,7 +959,7 @@ class Config(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1015,7 +1015,7 @@ class Config(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

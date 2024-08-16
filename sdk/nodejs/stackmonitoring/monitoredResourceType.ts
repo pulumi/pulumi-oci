@@ -88,7 +88,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A friendly description.
      */
@@ -100,7 +100,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The metadata details for resource type.
      */
@@ -132,7 +132,7 @@ export class MonitoredResourceType extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
@@ -205,7 +205,7 @@ export interface MonitoredResourceTypeState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A friendly description.
      */
@@ -217,7 +217,7 @@ export interface MonitoredResourceTypeState {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The metadata details for resource type.
      */
@@ -249,7 +249,7 @@ export interface MonitoredResourceTypeState {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      */
@@ -271,7 +271,7 @@ export interface MonitoredResourceTypeArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A friendly description.
      */
@@ -283,7 +283,7 @@ export interface MonitoredResourceTypeArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The metadata details for resource type.
      */

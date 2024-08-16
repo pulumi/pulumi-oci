@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Policy for how the DB System and related resources should be handled at the time of its deletion.
@@ -223,7 +223,7 @@ namespace Pulumi.Oci.Mysql
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A summary of a HeatWave cluster.
@@ -468,14 +468,14 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? DatabaseManagement { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -514,14 +514,14 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? FaultDomain { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -714,14 +714,14 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? DatabaseManagement { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -772,14 +772,14 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? FaultDomain { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 

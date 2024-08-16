@@ -11,7 +11,6 @@ import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterEndpointConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterImagePolicyConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterMetadata;
 import com.pulumi.oci.ContainerEngine.outputs.GetClustersClusterOption;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +37,7 @@ public final class GetClustersCluster {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The network configuration for access to the Cluster control plane.
      * 
@@ -53,7 +52,7 @@ public final class GetClustersCluster {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the cluster.
      * 
@@ -136,7 +135,7 @@ public final class GetClustersCluster {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -157,7 +156,7 @@ public final class GetClustersCluster {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -250,10 +249,10 @@ public final class GetClustersCluster {
         private List<String> availableKubernetesUpgrades;
         private List<GetClustersClusterClusterPodNetworkOption> clusterPodNetworkOptions;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private List<GetClustersClusterEndpointConfig> endpointConfigs;
         private List<GetClustersClusterEndpoint> endpoints;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetClustersClusterImagePolicyConfig> imagePolicyConfigs;
         private String kmsKeyId;
@@ -319,7 +318,7 @@ public final class GetClustersCluster {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetClustersCluster", "definedTags");
             }
@@ -349,7 +348,7 @@ public final class GetClustersCluster {
             return endpoints(List.of(endpoints));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetClustersCluster", "freeformTags");
             }

@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ObjectStorage.outputs.GetBucketSummariesBucketSummaryRetentionRule;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +49,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The entity tag (ETag) for the bucket.
      * 
@@ -60,7 +59,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String id;
     /**
      * @return Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to &#39;true&#39; when this bucket is configured as a destination in a replication policy.
@@ -76,7 +75,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Arbitrary string keys and values for user-defined metadata.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
      * 
@@ -169,7 +168,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -183,7 +182,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String id() {
@@ -207,7 +206,7 @@ public final class GetBucketSummariesBucketSummary {
      * @return Arbitrary string keys and values for user-defined metadata.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -286,13 +285,13 @@ public final class GetBucketSummariesBucketSummary {
         private String bucketId;
         private String compartmentId;
         private String createdBy;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String etag;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isReadOnly;
         private String kmsKeyId;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String namespace;
         private Boolean objectEventsEnabled;
@@ -387,7 +386,7 @@ public final class GetBucketSummariesBucketSummary {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "definedTags");
             }
@@ -403,7 +402,7 @@ public final class GetBucketSummariesBucketSummary {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "freeformTags");
             }
@@ -435,7 +434,7 @@ public final class GetBucketSummariesBucketSummary {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetBucketSummariesBucketSummary", "metadata");
             }

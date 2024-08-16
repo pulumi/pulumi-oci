@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +29,7 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
      * 
      */
     private String displayName;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return unique FusionEnvironment identifier
      * 
@@ -105,7 +104,7 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
     public String displayName() {
         return this.displayName;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -194,7 +193,7 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
         private List<GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemAction> actions;
         private Integer delayInHours;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String fusionEnvironmentId;
         private String id;
         private String lifecycleDetails;
@@ -254,7 +253,7 @@ public final class GetFusionEnvironmentScheduledActivitiesScheduledActivityColle
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItem", "freeformTags");
             }

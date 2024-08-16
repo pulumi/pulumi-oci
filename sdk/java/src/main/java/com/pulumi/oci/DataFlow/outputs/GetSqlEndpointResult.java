@@ -9,7 +9,6 @@ import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointDriverShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetSqlEndpointNetworkConfiguration;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +25,7 @@ public final class GetSqlEndpointResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The description of the SQL Endpoint.
      * 
@@ -61,7 +60,7 @@ public final class GetSqlEndpointResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The provision identifier that is immutable on creation.
      * 
@@ -106,7 +105,7 @@ public final class GetSqlEndpointResult {
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    private Map<String,Object> sparkAdvancedConfigurations;
+    private Map<String,String> sparkAdvancedConfigurations;
     private String sqlEndpointId;
     /**
      * @return The version of SQL Endpoint.
@@ -127,7 +126,7 @@ public final class GetSqlEndpointResult {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
      * 
@@ -156,7 +155,7 @@ public final class GetSqlEndpointResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -205,7 +204,7 @@ public final class GetSqlEndpointResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -268,7 +267,7 @@ public final class GetSqlEndpointResult {
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Map<String,Object> sparkAdvancedConfigurations() {
+    public Map<String,String> sparkAdvancedConfigurations() {
         return this.sparkAdvancedConfigurations;
     }
     public String sqlEndpointId() {
@@ -299,7 +298,7 @@ public final class GetSqlEndpointResult {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -334,14 +333,14 @@ public final class GetSqlEndpointResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private String driverShape;
         private List<GetSqlEndpointDriverShapeConfig> driverShapeConfigs;
         private String executorShape;
         private List<GetSqlEndpointExecutorShapeConfig> executorShapeConfigs;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String jdbcEndpointUrl;
         private String lakeId;
@@ -350,12 +349,12 @@ public final class GetSqlEndpointResult {
         private String metastoreId;
         private Integer minExecutorCount;
         private List<GetSqlEndpointNetworkConfiguration> networkConfigurations;
-        private Map<String,Object> sparkAdvancedConfigurations;
+        private Map<String,String> sparkAdvancedConfigurations;
         private String sqlEndpointId;
         private String sqlEndpointVersion;
         private String state;
         private String stateMessage;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String warehouseBucketUri;
@@ -399,7 +398,7 @@ public final class GetSqlEndpointResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "definedTags");
             }
@@ -461,7 +460,7 @@ public final class GetSqlEndpointResult {
             return executorShapeConfigs(List.of(executorShapeConfigs));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "freeformTags");
             }
@@ -536,7 +535,7 @@ public final class GetSqlEndpointResult {
             return networkConfigurations(List.of(networkConfigurations));
         }
         @CustomType.Setter
-        public Builder sparkAdvancedConfigurations(Map<String,Object> sparkAdvancedConfigurations) {
+        public Builder sparkAdvancedConfigurations(Map<String,String> sparkAdvancedConfigurations) {
             if (sparkAdvancedConfigurations == null) {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "sparkAdvancedConfigurations");
             }
@@ -576,7 +575,7 @@ public final class GetSqlEndpointResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetSqlEndpointResult", "systemTags");
             }

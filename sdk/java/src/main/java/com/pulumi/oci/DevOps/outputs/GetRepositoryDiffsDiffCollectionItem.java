@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DevOps.outputs.GetRepositoryDiffsDiffCollectionItemChange;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
      * 
      */
     private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Indicates whether the file is binary.
      * 
@@ -72,7 +71,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
     public List<GetRepositoryDiffsDiffCollectionItemChange> changes() {
         return this.changes;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -129,7 +128,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
     public static final class Builder {
         private Boolean areConflictsInFile;
         private List<GetRepositoryDiffsDiffCollectionItemChange> changes;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private Boolean isBinary;
         private Boolean isLarge;
         private String newId;
@@ -170,7 +169,7 @@ public final class GetRepositoryDiffsDiffCollectionItem {
             return changes(List.of(changes));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetRepositoryDiffsDiffCollectionItem", "freeformTags");
             }

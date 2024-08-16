@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceExportRequestExportedItem;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +34,7 @@ public final class GetWorkspaceExportRequestResult {
      * @return Contains key of the error
      * 
      */
-    private Map<String,Object> errorMessages;
+    private Map<String,String> errorMessages;
     private String exportRequestKey;
     /**
      * @return The array of exported object details.
@@ -136,7 +135,7 @@ public final class GetWorkspaceExportRequestResult {
      * @return Contains key of the error
      * 
      */
-    public Map<String,Object> errorMessages() {
+    public Map<String,String> errorMessages() {
         return this.errorMessages;
     }
     public String exportRequestKey() {
@@ -259,7 +258,7 @@ public final class GetWorkspaceExportRequestResult {
         private Boolean areReferencesIncluded;
         private String bucket;
         private String createdBy;
-        private Map<String,Object> errorMessages;
+        private Map<String,String> errorMessages;
         private String exportRequestKey;
         private List<GetWorkspaceExportRequestExportedItem> exportedItems;
         private String fileName;
@@ -328,7 +327,7 @@ public final class GetWorkspaceExportRequestResult {
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             if (errorMessages == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceExportRequestResult", "errorMessages");
             }

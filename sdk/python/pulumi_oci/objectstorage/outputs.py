@@ -626,13 +626,13 @@ class GetBucketSummariesBucketSummaryResult(dict):
                  bucket_id: str,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  etag: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_read_only: bool,
                  kms_key_id: str,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  namespace: str,
                  object_events_enabled: bool,
@@ -649,12 +649,12 @@ class GetBucketSummariesBucketSummaryResult(dict):
         :param str auto_tiering: The auto tiering status on the bucket. A bucket is created with auto tiering `Disabled` by default. For auto tiering `InfrequentAccess`, objects are transitioned automatically between the 'Standard' and 'InfrequentAccess' tiers based on the access pattern of the objects.
         :param str compartment_id: The ID of the compartment in which to list buckets.
         :param str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str etag: The entity tag (ETag) for the bucket.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param bool is_read_only: Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         :param str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
-        :param Mapping[str, Any] metadata: Arbitrary string keys and values for user-defined metadata.
+        :param Mapping[str, str] metadata: Arbitrary string keys and values for user-defined metadata.
         :param str name: The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
         :param str namespace: The Object Storage namespace used for the request.
         :param bool object_events_enabled: Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
@@ -743,7 +743,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -759,7 +759,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -788,7 +788,7 @@ class GetBucketSummariesBucketSummaryResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Arbitrary string keys and values for user-defined metadata.
         """

@@ -20,10 +20,10 @@ class AlertPolicyArgs:
                  compartment_id: pulumi.Input[str],
                  severity: pulumi.Input[str],
                  alert_policy_rule_details: Optional[pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AlertPolicy resource.
         :param pulumi.Input[str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
@@ -34,10 +34,10 @@ class AlertPolicyArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]] alert_policy_rule_details: The details of the alert policy rule.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "alert_policy_type", alert_policy_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -107,14 +107,14 @@ class AlertPolicyArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -143,14 +143,14 @@ class AlertPolicyArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
@@ -160,15 +160,15 @@ class _AlertPolicyState:
                  alert_policy_rule_details: Optional[pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]]] = None,
                  alert_policy_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_user_defined: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
@@ -176,10 +176,10 @@ class _AlertPolicyState:
         :param pulumi.Input[Sequence[pulumi.Input['AlertPolicyAlertPolicyRuleDetailArgs']]] alert_policy_rule_details: The details of the alert policy rule.
         :param pulumi.Input[str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_user_defined: Indicates if the alert policy is user-defined (true) or pre-defined (false).
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the alert policy.
         :param pulumi.Input[str] severity: (Updatable) Severity level of the alert raised by this policy.
@@ -188,7 +188,7 @@ class _AlertPolicyState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the alert.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -259,14 +259,14 @@ class _AlertPolicyState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -295,14 +295,14 @@ class _AlertPolicyState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -359,14 +359,14 @@ class _AlertPolicyState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -402,10 +402,10 @@ class AlertPolicy(pulumi.CustomResource):
                  alert_policy_rule_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]]] = None,
                  alert_policy_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -451,10 +451,10 @@ class AlertPolicy(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]] alert_policy_rule_details: The details of the alert policy rule.
         :param pulumi.Input[str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] severity: (Updatable) Severity level of the alert raised by this policy.
                
                
@@ -523,10 +523,10 @@ class AlertPolicy(pulumi.CustomResource):
                  alert_policy_rule_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]]] = None,
                  alert_policy_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  severity: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -570,15 +570,15 @@ class AlertPolicy(pulumi.CustomResource):
             alert_policy_rule_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]]] = None,
             alert_policy_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_user_defined: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             severity: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'AlertPolicy':
         """
@@ -591,10 +591,10 @@ class AlertPolicy(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AlertPolicyAlertPolicyRuleDetailArgs', 'AlertPolicyAlertPolicyRuleDetailArgsDict']]]] alert_policy_rule_details: The details of the alert policy rule.
         :param pulumi.Input[str] alert_policy_type: Indicates the Data Safe feature the alert policy belongs to
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the alert policy.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the alert policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_user_defined: Indicates if the alert policy is user-defined (true) or pre-defined (false).
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the alert policy.
         :param pulumi.Input[str] severity: (Updatable) Severity level of the alert raised by this policy.
@@ -603,7 +603,7 @@ class AlertPolicy(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] state: The current state of the alert.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[str] time_updated: Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -653,7 +653,7 @@ class AlertPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -677,7 +677,7 @@ class AlertPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
@@ -721,7 +721,7 @@ class AlertPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

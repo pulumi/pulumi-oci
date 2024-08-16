@@ -31,10 +31,10 @@ class BdsInstanceArgs:
                  cloud_sql_details: Optional[pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]]] = None,
                  cluster_profile: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
@@ -60,9 +60,9 @@ class BdsInstanceArgs:
         :param pulumi.Input[str] bootstrap_script_url: (Updatable) Pre-authenticated URL of the script in Object Store that is downloaded and executed.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceCloudSqlDetailArgs']]] cloud_sql_details: The information about added Cloud SQL capability
         :param pulumi.Input[str] cluster_profile: Profile of the Big Data Service cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -299,14 +299,14 @@ class BdsInstanceArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -332,14 +332,14 @@ class BdsInstanceArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -489,11 +489,11 @@ class _BdsInstanceState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input['BdsInstanceComputeOnlyWorkerNodeArgs']] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input['BdsInstanceEdgeNodeArgs']] = None,
                  execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
@@ -526,10 +526,10 @@ class _BdsInstanceState:
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
         :param pulumi.Input[str] created_by: The user who created the cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -754,14 +754,14 @@ class _BdsInstanceState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -799,14 +799,14 @@ class _BdsInstanceState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -1073,11 +1073,11 @@ class BdsInstance(pulumi.CustomResource):
                  cluster_version: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
                  execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
@@ -1117,10 +1117,10 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_public_key: The SSH public key used to authenticate the cluster connection.
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -1180,11 +1180,11 @@ class BdsInstance(pulumi.CustomResource):
                  cluster_version: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
                  execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
                  is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
@@ -1290,11 +1290,11 @@ class BdsInstance(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             compute_only_worker_node: Optional[pulumi.Input[Union['BdsInstanceComputeOnlyWorkerNodeArgs', 'BdsInstanceComputeOnlyWorkerNodeArgsDict']]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             edge_node: Optional[pulumi.Input[Union['BdsInstanceEdgeNodeArgs', 'BdsInstanceEdgeNodeArgsDict']]] = None,
             execute_bootstrap_script_trigger: Optional[pulumi.Input[int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             ignore_existing_nodes_shapes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             is_cloud_sql_configured: Optional[pulumi.Input[bool]] = None,
             is_force_stop_jobs: Optional[pulumi.Input[bool]] = None,
@@ -1332,10 +1332,10 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[str] cluster_version: Version of the Hadoop distribution
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment
         :param pulumi.Input[str] created_by: The user who created the cluster.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the BDS instance
         :param pulumi.Input[int] execute_bootstrap_script_trigger: (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignore_existing_nodes_shapes: Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
         :param pulumi.Input[bool] is_cloud_sql_configured: (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
         :param pulumi.Input[bool] is_force_stop_jobs: (Updatable) When setting state as `INACTIVE` for stopping a cluster, setting this flag to true forcefully stops the bds instance.
@@ -1484,7 +1484,7 @@ class BdsInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1513,7 +1513,7 @@ class BdsInstance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

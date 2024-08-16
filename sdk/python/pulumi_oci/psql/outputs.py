@@ -894,11 +894,11 @@ class DbSystemPatchOperation(dict):
                  from_: Optional[str] = None,
                  position: Optional[str] = None,
                  selected_item: Optional[str] = None,
-                 value: Optional[Mapping[str, Any]] = None):
+                 value: Optional[Mapping[str, str]] = None):
         """
         :param str operation: The operation can be one of these values: `INSERT`, `REMOVE`.
         :param str selection: In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
-        :param Mapping[str, Any] value: Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+        :param Mapping[str, str] value: Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         """
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "selection", selection)
@@ -944,7 +944,7 @@ class DbSystemPatchOperation(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Optional[Mapping[str, Any]]:
+    def value(self) -> Optional[Mapping[str, str]]:
         """
         Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         """
@@ -1136,10 +1136,10 @@ class GetBackupsBackupCollectionItemResult(dict):
                  compartment_id: str,
                  db_system_details: Sequence['outputs.GetBackupsBackupCollectionItemDbSystemDetailResult'],
                  db_system_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  last_accepted_request_token: str,
                  last_completed_request_token: str,
@@ -1147,7 +1147,7 @@ class GetBackupsBackupCollectionItemResult(dict):
                  retention_period: int,
                  source_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -1155,10 +1155,10 @@ class GetBackupsBackupCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetBackupsBackupCollectionItemDbSystemDetailArgs'] db_system_details: Information about the database system associated with a backup.
         :param str db_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description for the backup.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A unique identifier for the database system.
         :param str last_accepted_request_token: lastAcceptedRequestToken from MP.
         :param str last_completed_request_token: lastCompletedRequestToken from MP.
@@ -1166,7 +1166,7 @@ class GetBackupsBackupCollectionItemResult(dict):
         :param int retention_period: Backup retention period in days.
         :param str source_type: Specifies whether the backup was created manually, or by a management policy.
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -1223,7 +1223,7 @@ class GetBackupsBackupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1247,7 +1247,7 @@ class GetBackupsBackupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1311,7 +1311,7 @@ class GetBackupsBackupCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1576,10 +1576,10 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  configuration_details: Sequence['outputs.GetConfigurationsConfigurationCollectionItemConfigurationDetailResult'],
                  db_configuration_overrides: Sequence['outputs.GetConfigurationsConfigurationCollectionItemDbConfigurationOverrideResult'],
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_memory_size_in_gbs: int,
                  instance_ocpu_count: int,
@@ -1587,17 +1587,17 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
                  lifecycle_details: str,
                  shape: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str config_type: The type of configuration. Either user-created or a default configuration.
         :param Sequence['GetConfigurationsConfigurationCollectionItemConfigurationDetailArgs'] configuration_details: List of configuration details.
         :param str db_version: Version of the PostgreSQL database, such as 14.9.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description for the configuration.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A unique identifier for the configuration. Immutable on creation.
         :param int instance_memory_size_in_gbs: Memory size in gigabytes with 1GB increment.
         :param int instance_ocpu_count: CPU core count.
@@ -1605,7 +1605,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str shape: The name of the shape for the configuration. Example: `VM.Standard.E4.Flex`
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -1666,7 +1666,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1690,7 +1690,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1754,7 +1754,7 @@ class GetConfigurationsConfigurationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2387,7 +2387,7 @@ class GetDbSystemPatchOperationResult(dict):
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "position", position)
@@ -2422,7 +2422,7 @@ class GetDbSystemPatchOperationResult(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         return pulumi.get(self, "value")
 
 
@@ -2538,10 +2538,10 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  config_id: str,
                  credentials: Sequence['outputs.GetDbSystemsDbSystemCollectionItemCredentialResult'],
                  db_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_count: int,
                  instance_memory_size_in_gbs: int,
@@ -2556,7 +2556,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  sources: Sequence['outputs.GetDbSystemsDbSystemCollectionItemSourceResult'],
                  state: str,
                  storage_details: Sequence['outputs.GetDbSystemsDbSystemCollectionItemStorageDetailResult'],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  system_type: str,
                  time_created: str,
                  time_updated: str):
@@ -2565,10 +2565,10 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param str db_version: The major and minor versions of the database system software.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the database instance node.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A unique identifier for the database system.
         :param int instance_count: Count of instances, or nodes, in the database system.
         :param int instance_memory_size_in_gbs: The total amount of memory available to each database instance node, in gigabytes.
@@ -2581,7 +2581,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param Sequence['GetDbSystemsDbSystemCollectionItemSourceArgs'] sources: The source used to restore the database system.
         :param str state: A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
         :param Sequence['GetDbSystemsDbSystemCollectionItemStorageDetailArgs'] storage_details: Storage details of the database system.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str system_type: Type of the database system.
         :param str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -2659,7 +2659,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2683,7 +2683,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2797,7 +2797,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3150,7 +3150,7 @@ class GetDbSystemsDbSystemCollectionItemPatchOperationResult(dict):
                  position: str,
                  selected_item: str,
                  selection: str,
-                 value: Mapping[str, Any]):
+                 value: Mapping[str, str]):
         pulumi.set(__self__, "from_", from_)
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "position", position)
@@ -3185,7 +3185,7 @@ class GetDbSystemsDbSystemCollectionItemPatchOperationResult(dict):
 
     @property
     @pulumi.getter
-    def value(self) -> Mapping[str, Any]:
+    def value(self) -> Mapping[str, str]:
         return pulumi.get(self, "value")
 
 

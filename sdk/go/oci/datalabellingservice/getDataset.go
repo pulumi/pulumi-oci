@@ -59,7 +59,7 @@ type LookupDatasetArgs struct {
 // A collection of values returned by getDataset.
 type LookupDatasetResult struct {
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	AdditionalProperties map[string]interface{} `pulumi:"additionalProperties"`
+	AdditionalProperties map[string]string `pulumi:"additionalProperties"`
 	// The annotation format name required for labeling records.
 	AnnotationFormat string `pulumi:"annotationFormat"`
 	// The OCID of the compartment of the resource.
@@ -70,13 +70,13 @@ type LookupDatasetResult struct {
 	// This allows the customer to specify the source of the dataset.
 	DatasetSourceDetails []GetDatasetDatasetSourceDetail `pulumi:"datasetSourceDetails"`
 	// The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user provided description of the dataset
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Dataset.
 	Id string `pulumi:"id"`
 	// Initial import dataset configuration. Allows user to create dataset from existing dataset files.
@@ -138,8 +138,8 @@ func (o LookupDatasetResultOutput) ToLookupDatasetResultOutputWithContext(ctx co
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o LookupDatasetResultOutput) AdditionalProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatasetResult) map[string]interface{} { return v.AdditionalProperties }).(pulumi.MapOutput)
+func (o LookupDatasetResultOutput) AdditionalProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatasetResult) map[string]string { return v.AdditionalProperties }).(pulumi.StringMapOutput)
 }
 
 // The annotation format name required for labeling records.
@@ -167,8 +167,8 @@ func (o LookupDatasetResultOutput) DatasetSourceDetails() GetDatasetDatasetSourc
 }
 
 // The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o LookupDatasetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatasetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDatasetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatasetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user provided description of the dataset
@@ -182,8 +182,8 @@ func (o LookupDatasetResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o LookupDatasetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatasetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDatasetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatasetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Dataset.

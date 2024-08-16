@@ -22,9 +22,9 @@ class ManagedInstanceGroupArgs:
                  os_family: pulumi.Input[str],
                  vendor_name: pulumi.Input[str],
                  autonomous_settings: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  notification_topic_id: Optional[pulumi.Input[str]] = None,
@@ -41,9 +41,9 @@ class ManagedInstanceGroupArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
         :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
@@ -149,14 +149,14 @@ class ManagedInstanceGroupArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -173,14 +173,14 @@ class ManagedInstanceGroupArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -238,10 +238,10 @@ class _ManagedInstanceGroupState:
                  arch_type: Optional[pulumi.Input[str]] = None,
                  autonomous_settings: Optional[pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_managed_by_autonomous_linux: Optional[pulumi.Input[bool]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  managed_instance_count: Optional[pulumi.Input[int]] = None,
@@ -252,7 +252,7 @@ class _ManagedInstanceGroupState:
                  software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  software_sources: Optional[pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupSoftwareSourceArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_modified: Optional[pulumi.Input[str]] = None,
                  vendor_name: Optional[pulumi.Input[str]] = None):
@@ -261,10 +261,10 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
         :param pulumi.Input['ManagedInstanceGroupAutonomousSettingsArgs'] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_managed_by_autonomous_linux: Indicates whether the Autonomous Linux service manages the group.
         :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
         :param pulumi.Input[int] managed_instance_count: The number of managed instances in the group.
@@ -275,7 +275,7 @@ class _ManagedInstanceGroupState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         :param pulumi.Input[Sequence[pulumi.Input['ManagedInstanceGroupSoftwareSourceArgs']]] software_sources: The list of software sources that the managed instance group will use.
         :param pulumi.Input[str] state: The current state of the managed instance group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
@@ -365,14 +365,14 @@ class _ManagedInstanceGroupState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -401,14 +401,14 @@ class _ManagedInstanceGroupState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -533,14 +533,14 @@ class _ManagedInstanceGroupState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -592,10 +592,10 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  arch_type: Optional[pulumi.Input[str]] = None,
                  autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  notification_topic_id: Optional[pulumi.Input[str]] = None,
@@ -649,10 +649,10 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
         :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] managed_instance_ids: The list of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to be added to the group.
         :param pulumi.Input[str] notification_topic_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Oracle Notifications service (ONS) topic. ONS is the channel used to send notifications to the customer.
@@ -729,10 +729,10 @@ class ManagedInstanceGroup(pulumi.CustomResource):
                  arch_type: Optional[pulumi.Input[str]] = None,
                  autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  location: Optional[pulumi.Input[str]] = None,
                  managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  notification_topic_id: Optional[pulumi.Input[str]] = None,
@@ -792,10 +792,10 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             arch_type: Optional[pulumi.Input[str]] = None,
             autonomous_settings: Optional[pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_managed_by_autonomous_linux: Optional[pulumi.Input[bool]] = None,
             location: Optional[pulumi.Input[str]] = None,
             managed_instance_count: Optional[pulumi.Input[int]] = None,
@@ -806,7 +806,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
             software_source_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             software_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupSoftwareSourceArgs', 'ManagedInstanceGroupSoftwareSourceArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_modified: Optional[pulumi.Input[str]] = None,
             vendor_name: Optional[pulumi.Input[str]] = None) -> 'ManagedInstanceGroup':
@@ -820,10 +820,10 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[str] arch_type: The CPU architecture type of the managed instances that will be attached to this group.
         :param pulumi.Input[Union['ManagedInstanceGroupAutonomousSettingsArgs', 'ManagedInstanceGroupAutonomousSettingsArgsDict']] autonomous_settings: (Updatable) Updatable settings for the Autonomous Linux service.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the managed instance group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) User-specified description of the managed instance group. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the managed instance group. Does not have to be unique and you can change the name later. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_managed_by_autonomous_linux: Indicates whether the Autonomous Linux service manages the group.
         :param pulumi.Input[str] location: The location of managed instances attached to the group. If no location is provided, the default is on premises.
         :param pulumi.Input[int] managed_instance_count: The number of managed instances in the group.
@@ -834,7 +834,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] software_source_ids: The list of software source [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) available to the managed instances in the group.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ManagedInstanceGroupSoftwareSourceArgs', 'ManagedInstanceGroupSoftwareSourceArgsDict']]]] software_sources: The list of software sources that the managed instance group will use.
         :param pulumi.Input[str] state: The current state of the managed instance group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the managed instance group was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] time_modified: The time the managed instance group was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
         :param pulumi.Input[str] vendor_name: The vendor of the operating system that will be used by the managed instances in the group. 
@@ -896,7 +896,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -920,7 +920,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1008,7 +1008,7 @@ class ManagedInstanceGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

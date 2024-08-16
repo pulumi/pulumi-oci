@@ -60,7 +60,7 @@ export interface GetRuleResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
      */
@@ -72,7 +72,7 @@ export interface GetRuleResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
      */

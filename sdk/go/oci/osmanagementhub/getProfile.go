@@ -63,13 +63,13 @@ type LookupProfileResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the registration profile.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Software source description.
 	Description string `pulumi:"description"`
 	// Software source name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
 	// Indicates if the profile is set as the default. There is exactly one default profile for a specified architecture, OS family, registration type, and vendor. When registering an instance with the corresonding characteristics, the default profile is used, unless another profile is specified.
@@ -99,7 +99,7 @@ type LookupProfileResult struct {
 	// The current state of the registration profile.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The vendor of the operating system for the instance.
@@ -155,8 +155,8 @@ func (o LookupProfileResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupProfileResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Software source description.
@@ -170,8 +170,8 @@ func (o LookupProfileResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupProfileResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -251,8 +251,8 @@ func (o LookupProfileResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupProfileResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProfileResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProfileResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProfileResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the registration profile was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

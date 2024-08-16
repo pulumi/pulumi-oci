@@ -34,11 +34,11 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(vbsInstanceDisplayName),
 //				Name:          pulumi.Any(vbsInstanceName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IdcsAccessToken:                 pulumi.Any(vbsInstanceIdcsAccessToken),
 //				IsResourceUsageAgreementGranted: pulumi.Any(vbsInstanceIsResourceUsageAgreementGranted),
@@ -66,11 +66,11 @@ type InstVbsInstance struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Display Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
 	IdcsAccessToken pulumi.StringOutput `pulumi:"idcsAccessToken"`
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
@@ -87,7 +87,7 @@ type InstVbsInstance struct {
 	// The current state of the VbsInstance.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
@@ -135,11 +135,11 @@ type instVbsInstanceState struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display Name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
 	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
@@ -156,7 +156,7 @@ type instVbsInstanceState struct {
 	// The current state of the VbsInstance.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
@@ -169,11 +169,11 @@ type InstVbsInstanceState struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display Name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
 	IdcsAccessToken pulumi.StringPtrInput
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
@@ -190,7 +190,7 @@ type InstVbsInstanceState struct {
 	// The current state of the VbsInstance.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
@@ -207,11 +207,11 @@ type instVbsInstanceArgs struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display Name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
 	IdcsAccessToken *string `pulumi:"idcsAccessToken"`
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
@@ -230,11 +230,11 @@ type InstVbsInstanceArgs struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display Name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// IDCS personal acceess token identifying IDCS user and stripe for the VBS service
 	IdcsAccessToken pulumi.StringPtrInput
 	// (Updatable) Whether VBS is authorized to create and use resources in the customer tenancy
@@ -341,8 +341,8 @@ func (o InstVbsInstanceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o InstVbsInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o InstVbsInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Display Name
@@ -351,8 +351,8 @@ func (o InstVbsInstanceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o InstVbsInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o InstVbsInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // IDCS personal acceess token identifying IDCS user and stripe for the VBS service
@@ -389,8 +389,8 @@ func (o InstVbsInstanceOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o InstVbsInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstVbsInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o InstVbsInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstVbsInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the VbsInstance was created. An RFC3339 formatted datetime string

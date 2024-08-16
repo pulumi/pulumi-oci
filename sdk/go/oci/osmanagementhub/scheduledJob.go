@@ -79,13 +79,13 @@ import (
 //				},
 //				ScheduleType:      pulumi.Any(scheduledJobScheduleType),
 //				TimeNextExecution: pulumi.Any(scheduledJobTimeNextExecution),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(scheduledJobDescription),
 //				DisplayName: pulumi.Any(scheduledJobDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsManagedByAutonomousLinux: pulumi.Any(scheduledJobIsManagedByAutonomousLinux),
 //				IsSubcompartmentIncluded:   pulumi.Any(scheduledJobIsSubcompartmentIncluded),
@@ -119,13 +119,13 @@ type ScheduledJob struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
 	IsManagedByAutonomousLinux pulumi.BoolOutput `pulumi:"isManagedByAutonomousLinux"`
 	// Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
@@ -161,7 +161,7 @@ type ScheduledJob struct {
 	// The current state of the scheduled job.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -222,13 +222,13 @@ type scheduledJobState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
 	IsManagedByAutonomousLinux *bool `pulumi:"isManagedByAutonomousLinux"`
 	// Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
@@ -264,7 +264,7 @@ type scheduledJobState struct {
 	// The current state of the scheduled job.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -284,13 +284,13 @@ type ScheduledJobState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
 	IsManagedByAutonomousLinux pulumi.BoolPtrInput
 	// Indicates if the schedule job has restricted update and deletion capabilities. For restricted scheduled jobs,  you can update only the timeNextExecution, recurringRule, and tags.
@@ -326,7 +326,7 @@ type ScheduledJobState struct {
 	// The current state of the scheduled job.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
 	// The time of the last execution of this scheduled job (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -350,13 +350,13 @@ type scheduledJobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
 	IsManagedByAutonomousLinux *bool `pulumi:"isManagedByAutonomousLinux"`
 	// Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
@@ -399,13 +399,13 @@ type ScheduledJobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the scheduled job. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether this scheduled job is managed by the Autonomous Linux service.
 	IsManagedByAutonomousLinux pulumi.BoolPtrInput
 	// Indicates whether to apply the scheduled job to all compartments in the tenancy when managedCompartmentIds specifies  the tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (root compartment).
@@ -536,8 +536,8 @@ func (o ScheduledJobOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ScheduledJobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ScheduledJob) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ScheduledJobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduledJob) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User-specified description of the scheduled job. Avoid entering confidential information.
@@ -551,8 +551,8 @@ func (o ScheduledJobOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ScheduledJobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ScheduledJob) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ScheduledJobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduledJob) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates whether this scheduled job is managed by the Autonomous Linux service.
@@ -629,8 +629,8 @@ func (o ScheduledJobOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ScheduledJobOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ScheduledJob) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ScheduledJobOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ScheduledJob) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time this scheduled job was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

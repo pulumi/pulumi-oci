@@ -63,11 +63,11 @@ type LookupNetworkFirewallResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Network Firewall.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
 	Id string `pulumi:"id"`
 	// IPv4 address for the Network Firewall.
@@ -86,7 +86,7 @@ type LookupNetworkFirewallResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -142,8 +142,8 @@ func (o LookupNetworkFirewallResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupNetworkFirewallResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the Network Firewall. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -152,8 +152,8 @@ func (o LookupNetworkFirewallResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupNetworkFirewallResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
@@ -201,8 +201,8 @@ func (o LookupNetworkFirewallResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupNetworkFirewallResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`

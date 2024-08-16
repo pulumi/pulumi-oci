@@ -943,7 +943,7 @@ class PolicyPolicyConfigHealthChecksArgs:
     def __init__(__self__, *,
                  expected_response_code_groups: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  expected_response_text: Optional[pulumi.Input[str]] = None,
-                 headers: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  healthy_threshold: Optional[pulumi.Input[int]] = None,
                  interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  is_enabled: Optional[pulumi.Input[bool]] = None,
@@ -959,7 +959,7 @@ class PolicyPolicyConfigHealthChecksArgs:
                * **4XX:** Client errors response code group.
                * **5XX:** Server errors response code group.
         :param pulumi.Input[str] expected_response_text: (Updatable) Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
-        :param pulumi.Input[Mapping[str, Any]] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] headers: (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
                
                **Note:** The only currently-supported header fields are Host and User-Agent.
         :param pulumi.Input[int] healthy_threshold: (Updatable) Number of successful health checks after which the server is marked up.
@@ -1024,7 +1024,7 @@ class PolicyPolicyConfigHealthChecksArgs:
 
     @property
     @pulumi.getter
-    def headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 
@@ -1033,7 +1033,7 @@ class PolicyPolicyConfigHealthChecksArgs:
         return pulumi.get(self, "headers")
 
     @headers.setter
-    def headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "headers", value)
 
     @property

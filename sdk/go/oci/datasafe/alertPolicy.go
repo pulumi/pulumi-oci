@@ -41,13 +41,13 @@ import (
 //						DisplayName: pulumi.Any(alertPolicyAlertPolicyRuleDetailsDisplayName),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(alertPolicyDescription),
 //				DisplayName: pulumi.Any(alertPolicyDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -76,13 +76,13 @@ type AlertPolicy struct {
 	// (Updatable) The OCID of the compartment where you want to create the alert policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the alert policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
 	IsUserDefined pulumi.BoolOutput `pulumi:"isUserDefined"`
 	// Details about the current state of the alert policy.
@@ -95,7 +95,7 @@ type AlertPolicy struct {
 	// The current state of the alert.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -148,13 +148,13 @@ type alertPolicyState struct {
 	// (Updatable) The OCID of the compartment where you want to create the alert policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the alert policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
 	IsUserDefined *bool `pulumi:"isUserDefined"`
 	// Details about the current state of the alert policy.
@@ -167,7 +167,7 @@ type alertPolicyState struct {
 	// The current state of the alert.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -182,13 +182,13 @@ type AlertPolicyState struct {
 	// (Updatable) The OCID of the compartment where you want to create the alert policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the alert policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates if the alert policy is user-defined (true) or pre-defined (false).
 	IsUserDefined pulumi.BoolPtrInput
 	// Details about the current state of the alert policy.
@@ -201,7 +201,7 @@ type AlertPolicyState struct {
 	// The current state of the alert.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// Last date and time the alert policy was updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -220,13 +220,13 @@ type alertPolicyArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the alert policy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the alert policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Severity level of the alert raised by this policy.
 	//
 	// ** IMPORTANT **
@@ -243,13 +243,13 @@ type AlertPolicyArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the alert policy.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the alert policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the alert policy. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Severity level of the alert raised by this policy.
 	//
 	// ** IMPORTANT **
@@ -360,8 +360,8 @@ func (o AlertPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AlertPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlertPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AlertPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlertPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the alert policy.
@@ -375,8 +375,8 @@ func (o AlertPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AlertPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlertPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AlertPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlertPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates if the alert policy is user-defined (true) or pre-defined (false).
@@ -403,8 +403,8 @@ func (o AlertPolicyOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AlertPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AlertPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AlertPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AlertPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

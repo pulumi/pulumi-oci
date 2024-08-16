@@ -162,7 +162,7 @@ class _MigrationAssetState:
                  replication_compartment_id: Optional[pulumi.Input[str]] = None,
                  replication_schedule_id: Optional[pulumi.Input[str]] = None,
                  snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
-                 snapshots: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_asset_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -187,7 +187,7 @@ class _MigrationAssetState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
         :param pulumi.Input[str] state: The current state of the migration asset.
         :param pulumi.Input[str] tenancy_id: Tenancy identifier
@@ -395,14 +395,14 @@ class _MigrationAssetState:
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def snapshots(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "snapshots")
 
     @snapshots.setter
-    def snapshots(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def snapshots(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "snapshots", value)
 
     @property
@@ -623,7 +623,7 @@ class MigrationAsset(pulumi.CustomResource):
             replication_compartment_id: Optional[pulumi.Input[str]] = None,
             replication_schedule_id: Optional[pulumi.Input[str]] = None,
             snap_shot_bucket_name: Optional[pulumi.Input[str]] = None,
-            snapshots: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            snapshots: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             source_asset_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -653,7 +653,7 @@ class MigrationAsset(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] source_asset_id: OCID that is referenced to an asset for an inventory.
         :param pulumi.Input[str] state: The current state of the migration asset.
         :param pulumi.Input[str] tenancy_id: Tenancy identifier
@@ -794,7 +794,7 @@ class MigrationAsset(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def snapshots(self) -> pulumi.Output[Mapping[str, Any]]:
+    def snapshots(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """

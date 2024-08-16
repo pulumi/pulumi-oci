@@ -35,12 +35,12 @@ import (
 //			_, err := OsManagement.NewManagedInstanceGroup(ctx, "test_managed_instance_group", &OsManagement.ManagedInstanceGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(managedInstanceGroupDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(managedInstanceGroupDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				OsFamily:           pulumi.Any(managedInstanceGroupOsFamily),
 //				ManagedInstanceIds: pulumi.Any(managedInstanceGroupManagedInstanceIds),
@@ -67,14 +67,14 @@ type ManagedInstanceGroup struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the managed instance group
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Managed Instance Group identifier
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags         pulumi.MapOutput `pulumi:"freeformTags"`
-	ManagedInstanceCount pulumi.IntOutput `pulumi:"managedInstanceCount"`
+	FreeformTags         pulumi.StringMapOutput `pulumi:"freeformTags"`
+	ManagedInstanceCount pulumi.IntOutput       `pulumi:"managedInstanceCount"`
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
@@ -127,14 +127,14 @@ type managedInstanceGroupState struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the managed instance group
 	Description *string `pulumi:"description"`
 	// (Updatable) Managed Instance Group identifier
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags         map[string]interface{} `pulumi:"freeformTags"`
-	ManagedInstanceCount *int                   `pulumi:"managedInstanceCount"`
+	FreeformTags         map[string]string `pulumi:"freeformTags"`
+	ManagedInstanceCount *int              `pulumi:"managedInstanceCount"`
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
@@ -152,13 +152,13 @@ type ManagedInstanceGroupState struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information specified by the user about the managed instance group
 	Description pulumi.StringPtrInput
 	// (Updatable) Managed Instance Group identifier
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags         pulumi.MapInput
+	FreeformTags         pulumi.StringMapInput
 	ManagedInstanceCount pulumi.IntPtrInput
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
@@ -181,13 +181,13 @@ type managedInstanceGroupArgs struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the managed instance group
 	Description *string `pulumi:"description"`
 	// (Updatable) Managed Instance Group identifier
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
@@ -202,13 +202,13 @@ type ManagedInstanceGroupArgs struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information specified by the user about the managed instance group
 	Description pulumi.StringPtrInput
 	// (Updatable) Managed Instance Group identifier
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The list of managed instance OCIDs to be added to the managed instance group.
 	//
 	// ** IMPORTANT **
@@ -311,8 +311,8 @@ func (o ManagedInstanceGroupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ManagedInstanceGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ManagedInstanceGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Information specified by the user about the managed instance group
@@ -326,8 +326,8 @@ func (o ManagedInstanceGroupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ManagedInstanceGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ManagedInstanceGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedInstanceGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o ManagedInstanceGroupOutput) ManagedInstanceCount() pulumi.IntOutput {

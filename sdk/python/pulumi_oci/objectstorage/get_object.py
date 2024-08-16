@@ -208,7 +208,7 @@ class GetObjectResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
         """

@@ -108,7 +108,7 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The sha256 digest of the image layer.
         /// </summary>
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.Artifacts
         /// <summary>
         /// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The creation time of the version.
         /// </summary>
@@ -181,13 +181,13 @@ namespace Pulumi.Oci.Artifacts
 
             string createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string digest,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -207,7 +207,7 @@ namespace Pulumi.Oci.Artifacts
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

@@ -19,14 +19,14 @@ namespace Pulumi.Oci.MediaServices.Inputs
         public Input<string>? EnableParameterReference { get; set; }
 
         [Input("enableWhenReferencedParameterEquals")]
-        private InputMap<object>? _enableWhenReferencedParameterEquals;
+        private InputMap<string>? _enableWhenReferencedParameterEquals;
 
         /// <summary>
         /// (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         /// </summary>
-        public InputMap<object> EnableWhenReferencedParameterEquals
+        public InputMap<string> EnableWhenReferencedParameterEquals
         {
-            get => _enableWhenReferencedParameterEquals ?? (_enableWhenReferencedParameterEquals = new InputMap<object>());
+            get => _enableWhenReferencedParameterEquals ?? (_enableWhenReferencedParameterEquals = new InputMap<string>());
             set => _enableWhenReferencedParameterEquals = value;
         }
 

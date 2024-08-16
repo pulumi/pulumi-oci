@@ -9,7 +9,6 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupAssociation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupLogLocation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMember;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +26,7 @@ public final class GetDrProtectionGroupResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private Integer disassociateTrigger;
     /**
      * @return The display name of the DR protection group.  Example: `EBS PHX Group`
@@ -39,7 +38,7 @@ public final class GetDrProtectionGroupResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      * 
@@ -89,7 +88,7 @@ public final class GetDrProtectionGroupResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
@@ -116,7 +115,7 @@ public final class GetDrProtectionGroupResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public Integer disassociateTrigger() {
@@ -136,7 +135,7 @@ public final class GetDrProtectionGroupResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -206,7 +205,7 @@ public final class GetDrProtectionGroupResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -235,11 +234,11 @@ public final class GetDrProtectionGroupResult {
     public static final class Builder {
         private List<GetDrProtectionGroupAssociation> associations;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private Integer disassociateTrigger;
         private String displayName;
         private String drProtectionGroupId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifeCycleDetails;
         private String lifecycleSubState;
@@ -249,7 +248,7 @@ public final class GetDrProtectionGroupResult {
         private String peerRegion;
         private String role;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -296,7 +295,7 @@ public final class GetDrProtectionGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "definedTags");
             }
@@ -328,7 +327,7 @@ public final class GetDrProtectionGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "freeformTags");
             }
@@ -414,7 +413,7 @@ public final class GetDrProtectionGroupResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupResult", "systemTags");
             }

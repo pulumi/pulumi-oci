@@ -67,11 +67,11 @@ type GetByoipRangeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the BYOIP CIDR block.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
@@ -153,8 +153,8 @@ func (o GetByoipRangeResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetByoipRangeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetByoipRangeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -163,8 +163,8 @@ func (o GetByoipRangeResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetByoipRangeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetByoipRangeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetByoipRangeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetByoipRangeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

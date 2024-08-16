@@ -903,11 +903,11 @@ type GetQuotasQuota struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the quota.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the quota.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -938,11 +938,11 @@ type GetQuotasQuotaArgs struct {
 	// The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the quota.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the quota.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -1015,8 +1015,8 @@ func (o GetQuotasQuotaOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetQuotasQuotaOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetQuotasQuota) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetQuotasQuotaOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetQuotasQuota) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the quota.
@@ -1025,8 +1025,8 @@ func (o GetQuotasQuotaOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetQuotasQuotaOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetQuotasQuota) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetQuotasQuotaOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetQuotasQuota) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the quota.

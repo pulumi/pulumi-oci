@@ -6,7 +6,6 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Additional details of the maintenance in the form of json.
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private Map<String,String> additionalDetails;
     private String alternativeResolutionAction;
     /**
      * @return These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -54,7 +53,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return It is the descriptive information about the maintenance taking place on the customer instance.
      * 
@@ -74,7 +73,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
      * 
@@ -142,7 +141,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Additional details of the maintenance in the form of json.
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails;
     }
     public String alternativeResolutionAction() {
@@ -194,7 +193,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -222,7 +221,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -322,7 +321,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
+        private Map<String,String> additionalDetails;
         private String alternativeResolutionAction;
         private List<String> alternativeResolutionActions;
         private Boolean canDeleteLocalStorage;
@@ -330,11 +329,11 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
         private String compartmentId;
         private String correlationToken;
         private String createdBy;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private String estimatedDuration;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String instanceAction;
         private String instanceId;
@@ -380,7 +379,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(Map<String,String> additionalDetails) {
             if (additionalDetails == null) {
               throw new MissingRequiredPropertyException("GetInstanceMaintenanceEventsInstanceMaintenanceEvent", "additionalDetails");
             }
@@ -447,7 +446,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceMaintenanceEventsInstanceMaintenanceEvent", "definedTags");
             }
@@ -479,7 +478,7 @@ public final class GetInstanceMaintenanceEventsInstanceMaintenanceEvent {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceMaintenanceEventsInstanceMaintenanceEvent", "freeformTags");
             }

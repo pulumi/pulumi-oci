@@ -51,11 +51,11 @@ export interface GetPublicationResult {
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The model for upload data for images and icons.
      */
@@ -102,7 +102,7 @@ export interface GetPublicationResult {
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */

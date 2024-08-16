@@ -33,12 +33,12 @@ import (
 //			_, err := DataScience.NewNotebookSession(ctx, "test_notebook_session", &DataScience.NotebookSessionArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ProjectId:     pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(notebookSessionDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				NotebookSessionConfigDetails: &datascience.NotebookSessionNotebookSessionConfigDetailsArgs{
 //					Shape:                 pulumi.Any(notebookSessionNotebookSessionConfigDetailsShape),
@@ -107,11 +107,11 @@ type NotebookSession struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the state of the notebook session.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Details for the notebook session configuration.
@@ -176,11 +176,11 @@ type notebookSessionState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the state of the notebook session.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Details for the notebook session configuration.
@@ -210,11 +210,11 @@ type NotebookSessionState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the notebook session.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the state of the notebook session.
 	LifecycleDetails pulumi.StringPtrInput
 	// Details for the notebook session configuration.
@@ -246,11 +246,11 @@ type notebookSessionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details for the notebook session configuration.
 	NotebookSessionConfigDetails *NotebookSessionNotebookSessionConfigDetails `pulumi:"notebookSessionConfigDetails"`
 	// (Updatable) Details for the notebook session configuration.
@@ -273,11 +273,11 @@ type NotebookSessionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details for the notebook session configuration.
 	NotebookSessionConfigDetails NotebookSessionNotebookSessionConfigDetailsPtrInput
 	// (Updatable) Details for the notebook session configuration.
@@ -393,8 +393,8 @@ func (o NotebookSessionOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NotebookSessionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NotebookSessionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My NotebookSession`
@@ -403,8 +403,8 @@ func (o NotebookSessionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NotebookSessionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NotebookSession) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NotebookSessionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NotebookSession) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the state of the notebook session.

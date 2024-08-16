@@ -64,13 +64,13 @@ type LookupCatalogPrivateEndpointResult struct {
 	// Identifier of the compartment this private endpoint belongs to
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Mutable name of the Private Reverse Connection Endpoint
 	DisplayName string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -82,7 +82,7 @@ type LookupCatalogPrivateEndpointResult struct {
 	// Subnet Identifier
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -142,8 +142,8 @@ func (o LookupCatalogPrivateEndpointResultOutput) CompartmentId() pulumi.StringO
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupCatalogPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Mutable name of the Private Reverse Connection Endpoint
@@ -157,8 +157,8 @@ func (o LookupCatalogPrivateEndpointResultOutput) DnsZones() pulumi.StringArrayO
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupCatalogPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable
@@ -187,8 +187,8 @@ func (o LookupCatalogPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupCatalogPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupCatalogPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCatalogPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

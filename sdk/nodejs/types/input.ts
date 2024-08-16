@@ -167,7 +167,7 @@ export namespace Adm {
         /**
          * (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
          */
-        additionalParameters?: pulumi.Input<{[key: string]: any}>;
+        additionalParameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The type of Build Service.
          */
@@ -1697,7 +1697,7 @@ export namespace ApiGateway {
         /**
          * (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
          */
-        parameters?: pulumi.Input<{[key: string]: any}>;
+        parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A set of Public Keys that will be used to verify the JWT signature.
          */
@@ -2182,7 +2182,7 @@ export namespace ApiGateway {
         /**
          * (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
          */
-        parameters?: pulumi.Input<{[key: string]: any}>;
+        parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A set of Public Keys that will be used to verify the JWT signature.
          */
@@ -6031,7 +6031,7 @@ export namespace CapacityManagement {
         /**
          * (Updatable)
          */
-        value: pulumi.Input<{[key: string]: any}>;
+        value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 }
 
@@ -6756,11 +6756,11 @@ export namespace CloudBridge {
         /**
          * (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
          */
@@ -8258,7 +8258,7 @@ export namespace CloudGuard {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The target description.
          *
@@ -8276,7 +8276,7 @@ export namespace CloudGuard {
          *
          * Avoid entering confidential information.
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Unique identifier of target responder recipe that can't be changed after creation
          */
@@ -8300,7 +8300,7 @@ export namespace CloudGuard {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The date and time the target was created. Format defined by RFC3339.
          */
@@ -9401,11 +9401,11 @@ export namespace CloudMigrations {
         /**
          * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
          */
-        snapshots?: pulumi.Input<{[key: string]: any}>;
+        snapshots?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
          */
-        sourceAssetData?: pulumi.Input<{[key: string]: any}>;
+        sourceAssetData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * OCID that is referenced to an asset for an inventory.
          */
@@ -9460,7 +9460,7 @@ export namespace CloudMigrations {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -9472,7 +9472,7 @@ export namespace CloudMigrations {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          */
@@ -9549,7 +9549,7 @@ export namespace CloudMigrations {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -9557,7 +9557,7 @@ export namespace CloudMigrations {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          */
@@ -9679,7 +9679,7 @@ export namespace CloudMigrations {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -9691,7 +9691,7 @@ export namespace CloudMigrations {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          */
@@ -9768,7 +9768,7 @@ export namespace CloudMigrations {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -9776,7 +9776,7 @@ export namespace CloudMigrations {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          */
@@ -9898,7 +9898,7 @@ export namespace CloudMigrations {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -9916,7 +9916,7 @@ export namespace CloudMigrations {
         /**
          * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
          */
@@ -10037,7 +10037,7 @@ export namespace CloudMigrations {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -10045,7 +10045,7 @@ export namespace CloudMigrations {
         /**
          * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
          *
@@ -10657,22 +10657,22 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface ClusterOptionsServiceLbConfig {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface ContainerInstanceContainer {
@@ -10704,7 +10704,7 @@ export namespace ContainerEngine {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
          */
@@ -10714,7 +10714,7 @@ export namespace ContainerEngine {
          *
          * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         exitCode?: pulumi.Input<number>;
         /**
          * The fault domain where the container instance runs.
@@ -10723,7 +10723,7 @@ export namespace ContainerEngine {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
          */
@@ -10765,7 +10765,7 @@ export namespace ContainerEngine {
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          */
@@ -10990,7 +10990,7 @@ export namespace ContainerEngine {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
          */
@@ -10998,7 +10998,7 @@ export namespace ContainerEngine {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. Used for DNS.
          */
@@ -11232,7 +11232,7 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * An error that may be associated with the node.
          */
@@ -11244,7 +11244,7 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The OCID of the compute instance backing this node.
          */
@@ -11287,11 +11287,11 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
          */
@@ -11522,7 +11522,7 @@ export namespace ContainerEngine {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          *
@@ -11530,7 +11530,7 @@ export namespace ContainerEngine {
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 }
 
@@ -11892,7 +11892,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -11900,7 +11900,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
          */
@@ -14011,7 +14011,7 @@ export namespace Core {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14019,7 +14019,7 @@ export namespace Core {
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          */
@@ -14110,7 +14110,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14118,7 +14118,7 @@ export namespace Core {
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
          */
-        extendedMetadata?: pulumi.Input<{[key: string]: any}>;
+        extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
          */
@@ -14126,7 +14126,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
          */
@@ -14154,7 +14154,7 @@ export namespace Core {
         /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The platform configuration requested for the instance.
          */
@@ -14251,7 +14251,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14259,7 +14259,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -14345,7 +14345,7 @@ export namespace Core {
         /**
          * Instance Platform Configuration Configuration Map for flexible setting input.
          */
-        configMap?: pulumi.Input<{[key: string]: any}>;
+        configMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -14470,7 +14470,7 @@ export namespace Core {
         /**
          * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        definedTagsFilter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The image's operating system.  Example: `Oracle Linux`
          */
@@ -14570,7 +14570,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14578,7 +14578,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
          */
@@ -14667,7 +14667,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14675,7 +14675,7 @@ export namespace Core {
         /**
          * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
          */
-        extendedMetadata?: pulumi.Input<{[key: string]: any}>;
+        extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
          */
@@ -14683,7 +14683,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
          */
@@ -14711,7 +14711,7 @@ export namespace Core {
         /**
          * Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The platform configuration requested for the instance.
          */
@@ -14793,7 +14793,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -14801,7 +14801,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15008,7 +15008,7 @@ export namespace Core {
         /**
          * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        definedTagsFilter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The image's operating system.  Example: `Oracle Linux`
          */
@@ -15047,7 +15047,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -15055,7 +15055,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15112,7 +15112,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -15120,7 +15120,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
          */
@@ -15174,7 +15174,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -15182,7 +15182,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
          *
@@ -15369,7 +15369,7 @@ export namespace Core {
         /**
          * Instance Platform Configuration Configuration Map for flexible setting input.
          */
-        configMap?: pulumi.Input<{[key: string]: any}>;
+        configMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
          */
@@ -15672,7 +15672,7 @@ export namespace Core {
         /**
          * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTagsFilter?: pulumi.Input<{[key: string]: any}>;
+        definedTagsFilter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The image's operating system.  Example: `Oracle Linux`
          */
@@ -16321,7 +16321,7 @@ export namespace Core {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          */
@@ -16329,7 +16329,7 @@ export namespace Core {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
          *
@@ -17340,7 +17340,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -17482,7 +17482,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -17751,7 +17751,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -17962,7 +17962,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -18201,7 +18201,7 @@ export namespace DataIntegration {
         /**
          * (Updatable) Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Specifies whether this object is a favorite or not.
          */
@@ -18347,7 +18347,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -18539,7 +18539,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -18699,7 +18699,7 @@ export namespace DataIntegration {
         /**
          * (Updatable) The headers for the REST call.
          */
-        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+        requestHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface WorkspaceTaskCancelRestCallConfigConfigValues {
@@ -18845,7 +18845,7 @@ export namespace DataIntegration {
         /**
          * (Updatable) The headers for the REST call.
          */
-        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+        requestHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface WorkspaceTaskExecuteRestCallConfigConfigValues {
@@ -19057,7 +19057,7 @@ export namespace DataIntegration {
         /**
          * Information property fields.
          */
-        infoFields?: pulumi.Input<{[key: string]: any}>;
+        infoFields?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies whether this object is a favorite or not.
          */
@@ -19539,7 +19539,7 @@ export namespace DataIntegration {
         /**
          * (Updatable) The headers for the REST call.
          */
-        requestHeaders?: pulumi.Input<{[key: string]: any}>;
+        requestHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface WorkspaceTaskPollRestCallConfigConfigValues {
@@ -20169,7 +20169,7 @@ export namespace DataSafe {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The description of the audit profile.
          */
@@ -20181,7 +20181,7 @@ export namespace DataSafe {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The OCID of the audit profile.
          */
@@ -20221,7 +20221,7 @@ export namespace DataSafe {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The OCID of the Data Safe target for which the audit profile is created.
          */
@@ -22272,7 +22272,7 @@ export namespace DataScience {
         /**
          * Environment variables to set for the job.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The type of job.
          */
@@ -22406,7 +22406,7 @@ export namespace DataScience {
         /**
          * Environment variables to set for the job.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The type of job.
          */
@@ -22661,7 +22661,7 @@ export namespace DataScience {
         /**
          * (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
          */
@@ -22951,7 +22951,7 @@ export namespace DataScience {
         /**
          * (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
          */
-        customEnvironmentVariables?: pulumi.Input<{[key: string]: any}>;
+        customEnvironmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Git configuration Details.
          */
@@ -23015,7 +23015,7 @@ export namespace DataScience {
         /**
          * (Updatable) Environment variables to set for steps in the pipeline.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          */
@@ -23083,7 +23083,7 @@ export namespace DataScience {
         /**
          * Environment variables to set for step.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A time bound for the execution of the step.
          */
@@ -23102,7 +23102,7 @@ export namespace DataScience {
         /**
          * Environment variables to set for steps in the pipeline.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          */
@@ -23166,7 +23166,7 @@ export namespace DataScience {
         /**
          * Environment variables to set for step.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A time bound for the execution of the step.
          */
@@ -23294,7 +23294,7 @@ export namespace DataScience {
         /**
          * (Updatable) Environment variables to set for step.
          */
-        environmentVariables?: pulumi.Input<{[key: string]: any}>;
+        environmentVariables?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A time bound for the execution of the step.
          */
@@ -23660,7 +23660,7 @@ export namespace Database {
         /**
          * Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
          */
@@ -24520,7 +24520,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the Database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Host name based CDB Connection String.
          */
@@ -24575,11 +24575,11 @@ export namespace Database {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -24731,7 +24731,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the Database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Host name based CDB Connection String.
          */
@@ -24877,11 +24877,11 @@ export namespace Database {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          */
@@ -24945,7 +24945,7 @@ export namespace Database {
     }
 
     export interface DbHomeDatabaseConnectionString {
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         cdbDefault?: pulumi.Input<string>;
         cdbIpDefault?: pulumi.Input<string>;
     }
@@ -25037,7 +25037,7 @@ export namespace Database {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The user-provided name of the Database Home.
          */
@@ -25045,7 +25045,7 @@ export namespace Database {
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
          */
@@ -25121,11 +25121,11 @@ export namespace Database {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
          */
@@ -25177,7 +25177,7 @@ export namespace Database {
     }
 
     export interface DbSystemDbHomeDatabaseConnectionString {
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         cdbDefault?: pulumi.Input<string>;
         cdbIpDefault?: pulumi.Input<string>;
     }
@@ -27020,7 +27020,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the pluggable database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A host name-based PDB connection string.
          */
@@ -27035,7 +27035,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the pluggable database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
          *
@@ -27147,7 +27147,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the pluggable database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A host name-based PDB connection string.
          */
@@ -27187,7 +27187,7 @@ export namespace Database {
         /**
          * All connection strings to use to connect to the pluggable database.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A host name-based PDB connection string.
          */
@@ -28556,7 +28556,7 @@ export namespace DatabaseManagement {
         /**
          * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
          */
-        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
@@ -28607,7 +28607,7 @@ export namespace DatabaseManagement {
         /**
          * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
          */
-        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The name of the Exadata infrastructure.
          */
@@ -28677,7 +28677,7 @@ export namespace DatabaseManagement {
         /**
          * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
          */
-        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
          */
@@ -28689,7 +28689,7 @@ export namespace DatabaseManagement {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
          */
@@ -28701,7 +28701,7 @@ export namespace DatabaseManagement {
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
          */
@@ -28757,7 +28757,7 @@ export namespace DatabaseManagement {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The timestamp of the creation of the Exadata resource.
          */
@@ -28776,7 +28776,7 @@ export namespace DatabaseManagement {
         /**
          * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
          */
-        additionalDetails?: pulumi.Input<{[key: string]: any}>;
+        additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
          */
@@ -28788,7 +28788,7 @@ export namespace DatabaseManagement {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
          */
@@ -28800,7 +28800,7 @@ export namespace DatabaseManagement {
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
          */
@@ -28832,7 +28832,7 @@ export namespace DatabaseManagement {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The timestamp of the creation of the Exadata resource.
          */
@@ -29795,7 +29795,7 @@ export namespace DatabaseManagement {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The infrastructure used to deploy the Oracle Database.
          */
@@ -29803,7 +29803,7 @@ export namespace DatabaseManagement {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group. 
          *
@@ -29819,7 +29819,7 @@ export namespace DatabaseManagement {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The date and time the Managed Database was added to the group.
          */
@@ -30140,7 +30140,7 @@ export namespace DatabaseMigration {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A description to discribe the current parameter file version
          */
@@ -30148,7 +30148,7 @@ export namespace DatabaseMigration {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
          */
@@ -30168,7 +30168,7 @@ export namespace DatabaseMigration {
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The time the Migration Job was created. An RFC3339 formatted datetime string
          */
@@ -30947,7 +30947,7 @@ export namespace DemandSignal {
         /**
          * (Updatable)
          */
-        value: pulumi.Input<{[key: string]: any}>;
+        value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 }
 
@@ -31234,7 +31234,7 @@ export namespace DevOps {
         /**
          * Map of stage OCIDs to build pipeline stage run progress model.
          */
-        buildPipelineStageRunProgress?: pulumi.Input<{[key: string]: any}>;
+        buildPipelineStageRunProgress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
@@ -32018,7 +32018,7 @@ export namespace DevOps {
         /**
          * Map of stage OCIDs to deploy stage execution progress model.
          */
-        deployStageExecutionProgress?: pulumi.Input<{[key: string]: any}>;
+        deployStageExecutionProgress?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          */
@@ -34641,7 +34641,7 @@ export namespace GloballyDistributedDatabase {
         /**
          * Additional metadata related to shard's underlying supporting resource.
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Name of the shard.
          */
@@ -34695,7 +34695,7 @@ export namespace GloballyDistributedDatabase {
         /**
          * Collection of connection strings.
          */
-        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+        allConnectionStrings?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface ShardedDatabaseGsm {
@@ -34710,7 +34710,7 @@ export namespace GloballyDistributedDatabase {
         /**
          * Additional metadata related to shard's underlying supporting resource.
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Name of the shard.
          */
@@ -34788,7 +34788,7 @@ export namespace GloballyDistributedDatabase {
         /**
          * Additional metadata related to shard's underlying supporting resource.
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Name of the shard.
          */
@@ -65448,7 +65448,7 @@ export namespace Logging {
         /**
          * (Updatable) Log category parameters are stored here.
          */
-        parameters?: pulumi.Input<{[key: string]: any}>;
+        parameters?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The unique identifier of the resource emitting the log.
          */
@@ -65684,7 +65684,7 @@ export namespace Logging {
          *
          * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
          */
-        types?: pulumi.Input<{[key: string]: any}>;
+        types?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
@@ -65741,7 +65741,7 @@ export namespace Logging {
         /**
          * (Updatable) Dimensions to be added for metrics.
          */
-        dimensions?: pulumi.Input<{[key: string]: any}>;
+        dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Namespace to emit metrics.
          */
@@ -65990,7 +65990,7 @@ export namespace Logging {
          *
          * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
          */
-        types?: pulumi.Input<{[key: string]: any}>;
+        types?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser {
@@ -66047,7 +66047,7 @@ export namespace Logging {
         /**
          * (Updatable) Dimensions to be added for metrics.
          */
-        dimensions?: pulumi.Input<{[key: string]: any}>;
+        dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Namespace to emit metrics.
          */
@@ -66118,7 +66118,7 @@ export namespace Logging {
         /**
          * (Updatable) Parameters of the custom filter
          */
-        params?: pulumi.Input<{[key: string]: any}>;
+        params?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Source parser object.
          */
@@ -66176,7 +66176,7 @@ export namespace Logging {
         /**
          * (Updatable) Parameters in the custom section
          */
-        params?: pulumi.Input<{[key: string]: any}>;
+        params?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyList {
@@ -66316,7 +66316,7 @@ export namespace Logging {
          *
          * record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
          */
-        types?: pulumi.Input<{[key: string]: any}>;
+        types?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser {
@@ -66373,7 +66373,7 @@ export namespace Logging {
         /**
          * (Updatable) Dimensions to be added for metrics.
          */
-        dimensions?: pulumi.Input<{[key: string]: any}>;
+        dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Namespace to emit metrics.
          */
@@ -67176,7 +67176,7 @@ export namespace MediaServices {
         /**
          * (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
          */
-        enableWhenReferencedParameterEquals?: pulumi.Input<{[key: string]: any}>;
+        enableWhenReferencedParameterEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
          */
@@ -68477,7 +68477,7 @@ export namespace Mysql {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The Deletion policy for the DB System.
          */
@@ -68501,7 +68501,7 @@ export namespace Mysql {
         /**
          * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
          */
@@ -68556,11 +68556,11 @@ export namespace Mysql {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Specifies if PITR is enabled or disabled.
          */
@@ -69134,7 +69134,7 @@ export namespace Mysql {
          *
          * Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
          *
@@ -69142,7 +69142,7 @@ export namespace Mysql {
          *
          * Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Specifies if automatic backups are enabled.
          */
@@ -69180,7 +69180,7 @@ export namespace Mysql {
         /**
          * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) The user-friendly name for the DB System. It does not have to be unique.
          */
@@ -69188,7 +69188,7 @@ export namespace Mysql {
         /**
          * (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The OCID of the DB System.
          */
@@ -71605,7 +71605,7 @@ export namespace Opsi {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Database Deployment Type
          */
@@ -71617,7 +71617,7 @@ export namespace Opsi {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
          */
@@ -71629,7 +71629,7 @@ export namespace Opsi {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails {
@@ -73057,7 +73057,7 @@ export namespace OsManagementHub {
         /**
          * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
          */
@@ -73065,7 +73065,7 @@ export namespace OsManagementHub {
         /**
          * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
@@ -73101,7 +73101,7 @@ export namespace OsManagementHub {
         /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
@@ -74886,7 +74886,7 @@ export namespace Psql {
         /**
          * Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
          */
-        value?: pulumi.Input<{[key: string]: any}>;
+        value?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface DbSystemSource {
@@ -75174,7 +75174,7 @@ export namespace ResourceScheduler {
          *
          * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
          */
-        metadata?: pulumi.Input<{[key: string]: any}>;
+        metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface ScheduleResourceFilter {
@@ -76132,21 +76132,21 @@ export namespace StackMonitoring {
         /**
          * Key/Value pair of Property
          */
-        propertiesMap?: pulumi.Input<{[key: string]: any}>;
+        propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface DiscoveryJobDiscoveryDetailsProperties {
         /**
          * Key/Value pair of Property
          */
-        propertiesMap?: pulumi.Input<{[key: string]: any}>;
+        propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface DiscoveryJobDiscoveryDetailsTags {
         /**
          * Key/Value pair of Property
          */
-        propertiesMap?: pulumi.Input<{[key: string]: any}>;
+        propertiesMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface GetBaselineableMetricsEvaluateItem {
@@ -76157,7 +76157,7 @@ export namespace StackMonitoring {
         /**
          * list of dimensions for the metric
          */
-        dimensions?: {[key: string]: any};
+        dimensions?: {[key: string]: string};
         /**
          * list of data points for the metric for evaluation of anomalies
          */
@@ -76176,7 +76176,7 @@ export namespace StackMonitoring {
         /**
          * list of dimensions for the metric
          */
-        dimensions?: pulumi.Input<{[key: string]: any}>;
+        dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * list of data points for the metric for evaluation of anomalies
          */
@@ -76860,7 +76860,7 @@ export namespace StackMonitoring {
         /**
          * (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
          */
-        validPropertyValues?: pulumi.Input<{[key: string]: any}>;
+        validPropertyValues?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface MonitoredResourceTypeMetadataUniquePropertySet {
@@ -76908,7 +76908,7 @@ export namespace StackMonitoring {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
          */
@@ -76916,7 +76916,7 @@ export namespace StackMonitoring {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Monitored Resource Host Name.
          */
@@ -76960,7 +76960,7 @@ export namespace StackMonitoring {
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     }
 
     export interface MonitoredResourcesSearchAssociationItem {
@@ -77028,7 +77028,7 @@ export namespace StackMonitoring {
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
          */
-        definedTags?: pulumi.Input<{[key: string]: any}>;
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Monitored resource display name.
          */
@@ -77040,7 +77040,7 @@ export namespace StackMonitoring {
         /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
          */
-        freeformTags?: pulumi.Input<{[key: string]: any}>;
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * A filter to return resources with host name match.
          */
@@ -77080,7 +77080,7 @@ export namespace StackMonitoring {
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
          */
-        systemTags?: pulumi.Input<{[key: string]: any}>;
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * Monitored resource creation time. An RFC3339 formatted datetime string.
          */
@@ -78426,7 +78426,7 @@ export namespace Waas {
          *
          * **Note:** The only currently-supported header fields are Host and User-Agent.
          */
-        headers?: pulumi.Input<{[key: string]: any}>;
+        headers?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
          * (Updatable) Number of successful health checks after which the server is marked up.
          */

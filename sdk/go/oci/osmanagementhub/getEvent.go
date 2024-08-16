@@ -63,14 +63,14 @@ type LookupEventResult struct {
 	// Provides additional information for a management station event.
 	Datas []GetEventData `pulumi:"datas"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Details of an event.
 	EventDetails string `pulumi:"eventDetails"`
 	EventId      string `pulumi:"eventId"`
 	// Summary of the event.
 	EventSummary string `pulumi:"eventSummary"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
 	Id string `pulumi:"id"`
 	// Indicates whether the event occurred on a resource that is managed by the Autonomous Linux service.
@@ -84,7 +84,7 @@ type LookupEventResult struct {
 	// Provides information about the system architecture and operating system.
 	SystemDetails []GetEventSystemDetail `pulumi:"systemDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Event was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the event occurred.
@@ -152,8 +152,8 @@ func (o LookupEventResultOutput) Datas() GetEventDataArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupEventResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEventResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupEventResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEventResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Details of an event.
@@ -171,8 +171,8 @@ func (o LookupEventResultOutput) EventSummary() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupEventResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEventResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupEventResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEventResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the event.
@@ -206,8 +206,8 @@ func (o LookupEventResultOutput) SystemDetails() GetEventSystemDetailArrayOutput
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupEventResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEventResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupEventResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEventResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Event was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

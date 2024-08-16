@@ -190,7 +190,7 @@ class _WorkspaceFolderState:
                  folder_key: Optional[pulumi.Input[str]] = None,
                  identifier: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataArgs']]]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
@@ -206,7 +206,7 @@ class _WorkspaceFolderState:
         :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) Currently not used on folder creation. Reserved for future.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
@@ -311,14 +311,14 @@ class _WorkspaceFolderState:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "key_map", value)
 
     @property
@@ -618,7 +618,7 @@ class WorkspaceFolder(pulumi.CustomResource):
             folder_key: Optional[pulumi.Input[str]] = None,
             identifier: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderMetadataArgs', 'WorkspaceFolderMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
@@ -639,7 +639,7 @@ class WorkspaceFolder(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[str] key: (Updatable) Currently not used on folder creation. Reserved for future.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceFolderMetadataArgs', 'WorkspaceFolderMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
@@ -714,7 +714,7 @@ class WorkspaceFolder(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
+    def key_map(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

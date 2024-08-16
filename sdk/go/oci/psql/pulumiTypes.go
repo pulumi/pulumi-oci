@@ -1807,7 +1807,7 @@ type DbSystemPatchOperation struct {
 	// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
 	Selection string `pulumi:"selection"`
 	// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
-	Value map[string]interface{} `pulumi:"value"`
+	Value map[string]string `pulumi:"value"`
 }
 
 // DbSystemPatchOperationInput is an input type that accepts DbSystemPatchOperationArgs and DbSystemPatchOperationOutput values.
@@ -1830,7 +1830,7 @@ type DbSystemPatchOperationArgs struct {
 	// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
 	Selection pulumi.StringInput `pulumi:"selection"`
 	// Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
-	Value pulumi.MapInput `pulumi:"value"`
+	Value pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (DbSystemPatchOperationArgs) ElementType() reflect.Type {
@@ -1907,8 +1907,8 @@ func (o DbSystemPatchOperationOutput) Selection() pulumi.StringOutput {
 }
 
 // Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
-func (o DbSystemPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v DbSystemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+func (o DbSystemPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v DbSystemPatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
 }
 
 type DbSystemPatchOperationArrayOutput struct{ *pulumi.OutputState }
@@ -2510,13 +2510,13 @@ type GetBackupsBackupCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description for the backup.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
@@ -2532,7 +2532,7 @@ type GetBackupsBackupCollectionItem struct {
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -2560,13 +2560,13 @@ type GetBackupsBackupCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description for the backup.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
@@ -2582,7 +2582,7 @@ type GetBackupsBackupCollectionItemArgs struct {
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -2663,8 +2663,8 @@ func (o GetBackupsBackupCollectionItemOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetBackupsBackupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBackupsBackupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description for the backup.
@@ -2678,8 +2678,8 @@ func (o GetBackupsBackupCollectionItemOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetBackupsBackupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBackupsBackupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for the database system.
@@ -2718,8 +2718,8 @@ func (o GetBackupsBackupCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetBackupsBackupCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetBackupsBackupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBackupsBackupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -3536,13 +3536,13 @@ type GetConfigurationsConfigurationCollectionItem struct {
 	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description for the configuration.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the configuration. Immutable on creation.
 	Id string `pulumi:"id"`
 	// Memory size in gigabytes with 1GB increment.
@@ -3558,7 +3558,7 @@ type GetConfigurationsConfigurationCollectionItem struct {
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -3585,13 +3585,13 @@ type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// Version of the PostgreSQL database, such as 14.9.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description for the configuration.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A unique identifier for the configuration. Immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Memory size in gigabytes with 1GB increment.
@@ -3607,7 +3607,7 @@ type GetConfigurationsConfigurationCollectionItemArgs struct {
 	// A filter to return only resources if their `lifecycleState` matches the given `lifecycleState`.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 }
@@ -3692,8 +3692,8 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DbVersion() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetConfigurationsConfigurationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConfigurationsConfigurationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description for the configuration.
@@ -3707,8 +3707,8 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetConfigurationsConfigurationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConfigurationsConfigurationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for the configuration. Immutable on creation.
@@ -3747,8 +3747,8 @@ func (o GetConfigurationsConfigurationCollectionItemOutput) State() pulumi.Strin
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetConfigurationsConfigurationCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetConfigurationsConfigurationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigurationsConfigurationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -5539,12 +5539,12 @@ func (o GetDbSystemNetworkDetailArrayOutput) Index(i pulumi.IntInput) GetDbSyste
 }
 
 type GetDbSystemPatchOperation struct {
-	From         string                 `pulumi:"from"`
-	Operation    string                 `pulumi:"operation"`
-	Position     string                 `pulumi:"position"`
-	SelectedItem string                 `pulumi:"selectedItem"`
-	Selection    string                 `pulumi:"selection"`
-	Value        map[string]interface{} `pulumi:"value"`
+	From         string            `pulumi:"from"`
+	Operation    string            `pulumi:"operation"`
+	Position     string            `pulumi:"position"`
+	SelectedItem string            `pulumi:"selectedItem"`
+	Selection    string            `pulumi:"selection"`
+	Value        map[string]string `pulumi:"value"`
 }
 
 // GetDbSystemPatchOperationInput is an input type that accepts GetDbSystemPatchOperationArgs and GetDbSystemPatchOperationOutput values.
@@ -5559,12 +5559,12 @@ type GetDbSystemPatchOperationInput interface {
 }
 
 type GetDbSystemPatchOperationArgs struct {
-	From         pulumi.StringInput `pulumi:"from"`
-	Operation    pulumi.StringInput `pulumi:"operation"`
-	Position     pulumi.StringInput `pulumi:"position"`
-	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
-	Selection    pulumi.StringInput `pulumi:"selection"`
-	Value        pulumi.MapInput    `pulumi:"value"`
+	From         pulumi.StringInput    `pulumi:"from"`
+	Operation    pulumi.StringInput    `pulumi:"operation"`
+	Position     pulumi.StringInput    `pulumi:"position"`
+	SelectedItem pulumi.StringInput    `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput    `pulumi:"selection"`
+	Value        pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (GetDbSystemPatchOperationArgs) ElementType() reflect.Type {
@@ -5638,8 +5638,8 @@ func (o GetDbSystemPatchOperationOutput) Selection() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbSystemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+func (o GetDbSystemPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemPatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
 }
 
 type GetDbSystemPatchOperationArrayOutput struct{ *pulumi.OutputState }
@@ -6007,13 +6007,13 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	// The major and minor versions of the database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the database instance node.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id string `pulumi:"id"`
 	// Count of instances, or nodes, in the database system.
@@ -6041,7 +6041,7 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	// Storage details of the database system.
 	StorageDetails []GetDbSystemsDbSystemCollectionItemStorageDetail `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of the database system.
 	SystemType string `pulumi:"systemType"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -6073,13 +6073,13 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	// The major and minor versions of the database system software.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the database instance node.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A unique identifier for the database system.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Count of instances, or nodes, in the database system.
@@ -6107,7 +6107,7 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	// Storage details of the database system.
 	StorageDetails GetDbSystemsDbSystemCollectionItemStorageDetailArrayInput `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Type of the database system.
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -6198,8 +6198,8 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) DbVersion() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDbSystemsDbSystemCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDbSystemsDbSystemCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the database instance node.
@@ -6213,8 +6213,8 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) DisplayName() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDbSystemsDbSystemCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDbSystemsDbSystemCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for the database system.
@@ -6300,8 +6300,8 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) StorageDetails() GetDbSystemsD
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDbSystemsDbSystemCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDbSystemsDbSystemCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of the database system.
@@ -7184,12 +7184,12 @@ func (o GetDbSystemsDbSystemCollectionItemNetworkDetailArrayOutput) Index(i pulu
 }
 
 type GetDbSystemsDbSystemCollectionItemPatchOperation struct {
-	From         string                 `pulumi:"from"`
-	Operation    string                 `pulumi:"operation"`
-	Position     string                 `pulumi:"position"`
-	SelectedItem string                 `pulumi:"selectedItem"`
-	Selection    string                 `pulumi:"selection"`
-	Value        map[string]interface{} `pulumi:"value"`
+	From         string            `pulumi:"from"`
+	Operation    string            `pulumi:"operation"`
+	Position     string            `pulumi:"position"`
+	SelectedItem string            `pulumi:"selectedItem"`
+	Selection    string            `pulumi:"selection"`
+	Value        map[string]string `pulumi:"value"`
 }
 
 // GetDbSystemsDbSystemCollectionItemPatchOperationInput is an input type that accepts GetDbSystemsDbSystemCollectionItemPatchOperationArgs and GetDbSystemsDbSystemCollectionItemPatchOperationOutput values.
@@ -7204,12 +7204,12 @@ type GetDbSystemsDbSystemCollectionItemPatchOperationInput interface {
 }
 
 type GetDbSystemsDbSystemCollectionItemPatchOperationArgs struct {
-	From         pulumi.StringInput `pulumi:"from"`
-	Operation    pulumi.StringInput `pulumi:"operation"`
-	Position     pulumi.StringInput `pulumi:"position"`
-	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
-	Selection    pulumi.StringInput `pulumi:"selection"`
-	Value        pulumi.MapInput    `pulumi:"value"`
+	From         pulumi.StringInput    `pulumi:"from"`
+	Operation    pulumi.StringInput    `pulumi:"operation"`
+	Position     pulumi.StringInput    `pulumi:"position"`
+	SelectedItem pulumi.StringInput    `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput    `pulumi:"selection"`
+	Value        pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (GetDbSystemsDbSystemCollectionItemPatchOperationArgs) ElementType() reflect.Type {
@@ -7283,8 +7283,8 @@ func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Selection() pulu
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
 }
 
-func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+func (o GetDbSystemsDbSystemCollectionItemPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItemPatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemPatchOperationArrayOutput struct{ *pulumi.OutputState }

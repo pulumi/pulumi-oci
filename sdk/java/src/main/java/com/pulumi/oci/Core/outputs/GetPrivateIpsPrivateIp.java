@@ -6,7 +6,6 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +26,7 @@ public final class GetPrivateIpsPrivateIp {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -37,7 +36,7 @@ public final class GetPrivateIpsPrivateIp {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * 
@@ -103,7 +102,7 @@ public final class GetPrivateIpsPrivateIp {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -117,7 +116,7 @@ public final class GetPrivateIpsPrivateIp {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -195,9 +194,9 @@ public final class GetPrivateIpsPrivateIp {
     public static final class Builder {
         private String availabilityDomain;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostnameLabel;
         private String id;
         private String ipAddress;
@@ -243,7 +242,7 @@ public final class GetPrivateIpsPrivateIp {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "definedTags");
             }
@@ -259,7 +258,7 @@ public final class GetPrivateIpsPrivateIp {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetPrivateIpsPrivateIp", "freeformTags");
             }

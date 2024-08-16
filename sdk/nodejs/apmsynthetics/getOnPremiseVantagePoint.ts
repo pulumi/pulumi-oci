@@ -54,7 +54,7 @@ export interface GetOnPremiseVantagePointResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A short description about the On-premise vantage point.
      */
@@ -66,7 +66,7 @@ export interface GetOnPremiseVantagePointResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
      */

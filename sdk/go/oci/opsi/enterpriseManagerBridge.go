@@ -34,12 +34,12 @@ import (
 //				CompartmentId:           pulumi.Any(compartmentId),
 //				DisplayName:             pulumi.Any(enterpriseManagerBridgeDisplayName),
 //				ObjectStorageBucketName: pulumi.Any(testBucket.Name),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(enterpriseManagerBridgeDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -64,13 +64,13 @@ type EnterpriseManagerBridge struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of Enterprise Manager Bridge
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
@@ -85,7 +85,7 @@ type EnterpriseManagerBridge struct {
 	// The current state of the Enterprise Manager bridge.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
@@ -134,13 +134,13 @@ type enterpriseManagerBridgeState struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of Enterprise Manager Bridge
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Object Storage Bucket Name
@@ -155,7 +155,7 @@ type enterpriseManagerBridgeState struct {
 	// The current state of the Enterprise Manager bridge.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
@@ -166,13 +166,13 @@ type EnterpriseManagerBridgeState struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of Enterprise Manager Bridge
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Object Storage Bucket Name
@@ -187,7 +187,7 @@ type EnterpriseManagerBridgeState struct {
 	// The current state of the Enterprise Manager bridge.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
@@ -202,13 +202,13 @@ type enterpriseManagerBridgeArgs struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of Enterprise Manager Bridge
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Object Storage Bucket Name
 	//
 	// ** IMPORTANT **
@@ -221,13 +221,13 @@ type EnterpriseManagerBridgeArgs struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of Enterprise Manager Bridge
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friedly name of Enterprise Manager Bridge that does not have to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Object Storage Bucket Name
 	//
 	// ** IMPORTANT **
@@ -328,8 +328,8 @@ func (o EnterpriseManagerBridgeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o EnterpriseManagerBridgeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o EnterpriseManagerBridgeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of Enterprise Manager Bridge
@@ -343,8 +343,8 @@ func (o EnterpriseManagerBridgeOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o EnterpriseManagerBridgeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o EnterpriseManagerBridgeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -376,8 +376,8 @@ func (o EnterpriseManagerBridgeOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o EnterpriseManagerBridgeOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o EnterpriseManagerBridgeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EnterpriseManagerBridge) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string

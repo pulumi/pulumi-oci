@@ -33,12 +33,12 @@ import (
 //			_, err := Apm.NewApmDomain(ctx, "test_apm_domain", &Apm.ApmDomainArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(apmDomainDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(apmDomainDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsFreeTier: pulumi.Any(apmDomainIsFreeTier),
 //			})
@@ -66,13 +66,13 @@ type ApmDomain struct {
 	// The endpoint where the APM agents upload their observations and metrics.
 	DataUploadEndpoint pulumi.StringOutput `pulumi:"dataUploadEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the APM domain.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Display name of the APM domain.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
 	//
 	// ** IMPORTANT **
@@ -127,13 +127,13 @@ type apmDomainState struct {
 	// The endpoint where the APM agents upload their observations and metrics.
 	DataUploadEndpoint *string `pulumi:"dataUploadEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the APM domain.
 	Description *string `pulumi:"description"`
 	// (Updatable) Display name of the APM domain.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
 	//
 	// ** IMPORTANT **
@@ -153,13 +153,13 @@ type ApmDomainState struct {
 	// The endpoint where the APM agents upload their observations and metrics.
 	DataUploadEndpoint pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the APM domain.
 	Description pulumi.StringPtrInput
 	// (Updatable) Display name of the APM domain.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
 	//
 	// ** IMPORTANT **
@@ -181,13 +181,13 @@ type apmDomainArgs struct {
 	// (Updatable) The OCID of the compartment corresponding to the APM domain.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the APM domain.
 	Description *string `pulumi:"description"`
 	// (Updatable) Display name of the APM domain.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether this is an "Always Free" resource. The default value is false.
 	//
 	// ** IMPORTANT **
@@ -200,13 +200,13 @@ type ApmDomainArgs struct {
 	// (Updatable) The OCID of the compartment corresponding to the APM domain.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the APM domain.
 	Description pulumi.StringPtrInput
 	// (Updatable) Display name of the APM domain.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether this is an "Always Free" resource. The default value is false.
 	//
 	// ** IMPORTANT **
@@ -312,8 +312,8 @@ func (o ApmDomainOutput) DataUploadEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ApmDomainOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ApmDomainOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the APM domain.
@@ -327,8 +327,8 @@ func (o ApmDomainOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ApmDomainOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ApmDomain) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ApmDomainOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ApmDomain) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates whether this is an "Always Free" resource. The default value is false.

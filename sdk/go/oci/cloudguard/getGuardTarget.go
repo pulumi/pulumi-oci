@@ -61,13 +61,13 @@ type GetGuardTargetResult struct {
 	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Responder rule description
 	Description string `pulumi:"description"`
 	// Responder rule display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier of target responder recipe that can't be changed after creation
 	Id string `pulumi:"id"`
 	// List of inherited compartments
@@ -79,7 +79,7 @@ type GetGuardTargetResult struct {
 	// The current lifecycle state of the responder rule
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Details specific to the target type.
 	TargetDetails []GetGuardTargetTargetDetail `pulumi:"targetDetails"`
 	// List of detector recipes attached to target
@@ -141,8 +141,8 @@ func (o GetGuardTargetResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetGuardTargetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetGuardTargetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Responder rule description
@@ -156,8 +156,8 @@ func (o GetGuardTargetResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetGuardTargetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetGuardTargetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier of target responder recipe that can't be changed after creation
@@ -186,8 +186,8 @@ func (o GetGuardTargetResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetGuardTargetResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetGuardTargetResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetGuardTargetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetGuardTargetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Details specific to the target type.

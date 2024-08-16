@@ -585,13 +585,13 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
                  database_id: Optional[str] = None,
                  database_resource_type: Optional[str] = None,
                  dbm_private_endpoint_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  deployment_type: Optional[str] = None,
                  entity_source: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  opsi_private_endpoint_id: Optional[str] = None,
                  service_name: Optional[str] = None,
-                 system_tags: Optional[Mapping[str, Any]] = None):
+                 system_tags: Optional[Mapping[str, str]] = None):
         """
         :param str compartment_id: (Updatable) Compartment Identifier of database
         :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs' connection_details: Connection details of the private endpoints.
@@ -599,13 +599,13 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str database_resource_type: Oracle Cloud Infrastructure database resource type
         :param str dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_type: Database Deployment Type
         :param str entity_source: Source of the database entity.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param str service_name: Database service name used for connection requests.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -684,7 +684,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -708,7 +708,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -732,7 +732,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[Mapping[str, Any]]:
+    def system_tags(self) -> Optional[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1757,8 +1757,8 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
                  awr_hub_opsi_source_id: str,
                  awr_source_database_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  hours_since_last_import: float,
                  id: str,
                  is_registered_with_awr_hub: bool,
@@ -1768,7 +1768,7 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
                  source_mail_box_url: str,
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_first_snapshot_generated: str,
                  time_last_snapshot_generated: str,
@@ -1781,8 +1781,8 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
         :param str awr_hub_opsi_source_id: The shorted string of the Awr Hub source database identifier.
         :param str awr_source_database_id: DatabaseId of the Source database for which AWR Data will be uploaded to AWR Hub.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param float hours_since_last_import: Number of hours since last AWR snapshots import happened from the Source database.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Awr Hub source database.
         :param bool is_registered_with_awr_hub: This is `true` if the source databse is registered with a Awr Hub, otherwise `false`
@@ -1792,7 +1792,7 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
         :param str source_mail_box_url: Opsi Mailbox URL based on the Awr Hub and Awr Hub source.
         :param str state: Lifecycle states
         :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_first_snapshot_generated: The time at which the earliest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
         :param str time_last_snapshot_generated: The time at which the latest snapshot was generated in the source database for which data is uploaded to AWR Hub. An RFC3339 formatted datetime string
@@ -1873,7 +1873,7 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1881,7 +1881,7 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1961,7 +1961,7 @@ class GetAwrHubSourcesAwrHubSourceSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2058,31 +2058,31 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  awr_mailbox_url: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hub_dst_timezone_version: str,
                  id: str,
                  lifecycle_details: str,
                  object_storage_bucket_name: str,
                  operations_insights_warehouse_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str awr_mailbox_url: Mailbox URL required for AWR hub and AWR source setup.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str hub_dst_timezone_version: Dst Time Zone Version of the AWR Hub
         :param str id: Unique Awr Hub identifier
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str object_storage_bucket_name: Object Storage Bucket Name
         :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
@@ -2119,7 +2119,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2135,7 +2135,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2191,7 +2191,7 @@ class GetAwrHubsAwrHubSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2505,7 +2505,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  database_type: str,
                  database_version: str,
                  dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deployment_type: str,
                  enterprise_manager_bridge_id: str,
                  enterprise_manager_entity_display_name: str,
@@ -2515,7 +2515,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  enterprise_manager_identifier: str,
                  entity_source: str,
                  exadata_insight_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_heat_wave_cluster_attached: bool,
                  is_highly_available: bool,
@@ -2527,7 +2527,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  service_name: str,
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -2542,7 +2542,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str database_resource_type: Oracle Cloud Infrastructure database resource type
         :param str database_type: Filter by one or more database type. Possible values are ADW-S, ATP-S, ADW-D, ATP-D, EXTERNAL-PDB, EXTERNAL-NONCDB.
         :param str database_version: The version of the database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
         :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
         :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
@@ -2551,7 +2551,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str enterprise_manager_identifier: Enterprise Manager Unqiue Identifier
         :param str entity_source: Source of the database entity.
         :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param bool is_heat_wave_cluster_attached: Specifies if MYSQL DB System has heatwave cluster attached.
         :param bool is_highly_available: Specifies if MYSQL DB System is highly available.
@@ -2563,7 +2563,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str service_name: Database service name used for connection requests.
         :param str state: Lifecycle states
         :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
         """
@@ -2700,7 +2700,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2777,7 +2777,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2873,7 +2873,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3176,32 +3176,32 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionResult(dict):
 class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  object_storage_bucket_name: str,
                  object_storage_bucket_status_details: str,
                  object_storage_namespace_name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of Enterprise Manager Bridge
         :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Enterprise Manager bridge identifier
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str object_storage_bucket_name: Object Storage Bucket Name
         :param str object_storage_bucket_status_details: A message describing status of the object storage bucket of this resource. For example, it can be used to provide actionable information about the permission and content validity of the bucket.
         :param str object_storage_namespace_name: Object Storage Namespace Name
         :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the Enterprise Manager bridge was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Enterprise Manager bridge was updated. An RFC3339 formatted datetime string
         """
@@ -3230,7 +3230,7 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3254,7 +3254,7 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3310,7 +3310,7 @@ class GetEnterpriseManagerBridgesEnterpriseManagerBridgeCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3415,19 +3415,19 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
                  database_id: str,
                  database_resource_type: str,
                  dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deployment_type: str,
                  entity_source: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  opsi_private_endpoint_id: str,
                  service_name: str,
-                 system_tags: Mapping[str, Any]):
+                 system_tags: Mapping[str, str]):
         """
         :param str compartment_id: Compartment identifier of the Exadata insight resource
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str entity_source: Source of the Exadata system.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_details", connection_details)
@@ -3478,7 +3478,7 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3499,7 +3499,7 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3517,7 +3517,7 @@ class GetExadataInsightMemberVmClusterDetailMemberDatabaseDetailResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3632,7 +3632,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionResult(dict):
 class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  enterprise_manager_bridge_id: str,
                  enterprise_manager_entity_display_name: str,
                  enterprise_manager_entity_identifier: str,
@@ -3647,7 +3647,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
                  exadata_rack_type: str,
                  exadata_shape: str,
                  exadata_type: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_sync_enabled: bool,
                  is_virtualized_exadata: bool,
@@ -3655,12 +3655,12 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
                  member_vm_cluster_details: Sequence['outputs.GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetailResult'],
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
         :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
         :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
@@ -3675,13 +3675,13 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
         :param str exadata_rack_type: Exadata rack type.
         :param str exadata_shape: The shape of the Exadata Infrastructure.
         :param str exadata_type: Filter by one or more Exadata types. Possible value are DBMACHINE, EXACS, and EXACC.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param bool is_virtualized_exadata: true if virtualization is used in the Exadata system
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str state: Lifecycle states
         :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the Exadata insight was updated. An RFC3339 formatted datetime string
         """
@@ -3723,7 +3723,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3843,7 +3843,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3901,7 +3901,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3979,19 +3979,19 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
                  database_id: str,
                  database_resource_type: str,
                  dbm_private_endpoint_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deployment_type: str,
                  entity_source: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  opsi_private_endpoint_id: str,
                  service_name: str,
-                 system_tags: Mapping[str, Any]):
+                 system_tags: Mapping[str, str]):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str entity_source: Source of the Exadata system.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_details", connection_details)
@@ -4042,7 +4042,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4063,7 +4063,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4081,7 +4081,7 @@ class GetExadataInsightsExadataInsightSummaryCollectionItemMemberVmClusterDetail
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4251,7 +4251,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  compute_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  enterprise_manager_bridge_id: str,
                  enterprise_manager_entity_display_name: str,
                  enterprise_manager_entity_identifier: str,
@@ -4260,7 +4260,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
                  enterprise_manager_identifier: str,
                  entity_source: str,
                  exadata_insight_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host_display_name: str,
                  host_name: str,
                  host_type: str,
@@ -4273,13 +4273,13 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
                  processor_count: int,
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compute_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compute Instance
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str enterprise_manager_bridge_id: Unique Enterprise Manager bridge identifier
         :param str enterprise_manager_entity_display_name: Enterprise Manager Entity Display Name
         :param str enterprise_manager_entity_identifier: Enterprise Manager Entity Unique Identifier
@@ -4288,7 +4288,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param str enterprise_manager_identifier: Enterprise Manager Unique Identifier
         :param str entity_source: Source of the host entity.
         :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
         :param str host_type: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
@@ -4301,7 +4301,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param int processor_count: Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
         :param str state: Lifecycle states
         :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the host insight was first enabled. An RFC3339 formatted datetime string
         :param str time_updated: The time the host insight was updated. An RFC3339 formatted datetime string
         """
@@ -4351,7 +4351,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4423,7 +4423,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4527,7 +4527,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4956,9 +4956,9 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
                  compartment_id: str,
                  content_types: Sequence['outputs.GetNewsReportsNewsReportCollectionItemContentTypeResult'],
                  day_of_week: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  locale: str,
@@ -4967,7 +4967,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
                  ons_topic_id: str,
                  state: str,
                  status: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -4975,9 +4975,9 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetNewsReportsNewsReportCollectionItemContentTypeArgs'] content_types: Content types that the news report can handle.
         :param str day_of_week: Day of the week in which the news report will be sent if the frequency is set to WEEKLY.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: The description of the news report.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str locale: Language of the news report.
@@ -4986,7 +4986,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
         :param str ons_topic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ONS topic.
         :param str state: Lifecycle states
         :param str status: Resource Status
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the the news report was first enabled. An RFC3339 formatted datetime string.
         :param str time_updated: The time the news report was updated. An RFC3339 formatted datetime string.
         """
@@ -5043,7 +5043,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5059,7 +5059,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5131,7 +5131,7 @@ class GetNewsReportsNewsReportCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5281,10 +5281,10 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
 class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_used_for_rac_dbs: bool,
                  lifecycle_details: str,
@@ -5293,15 +5293,15 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
                  private_ip: str,
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: The description of the private endpoint.
         :param str display_name: A filter to return only resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the Private service accessed database.
         :param bool is_used_for_rac_dbs: The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -5310,7 +5310,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
         :param str private_ip: The private IP addresses assigned to the private endpoint. All IP addresses will be concatenated if it is RAC DBs.
         :param str state: Lifecycle states
         :param str subnet_id: The OCID of the subnet.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
         """
@@ -5341,7 +5341,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5365,7 +5365,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5437,7 +5437,7 @@ class GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointColl
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5510,8 +5510,8 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
     def __init__(__self__, *,
                  compartment_id: str,
                  connection_password: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_awr_data_access: bool,
                  is_em_data_access: bool,
@@ -5520,14 +5520,14 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
                  name: str,
                  operations_insights_warehouse_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str connection_password: User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Operations Insights Warehouse User identifier
         :param bool is_awr_data_access: Indicate whether user has access to AWR data.
         :param bool is_em_data_access: Indicate whether user has access to EM data.
@@ -5536,7 +5536,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
         :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param str state: Lifecycle states
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
@@ -5574,7 +5574,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5582,7 +5582,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5654,7 +5654,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5722,17 +5722,17 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
                  compartment_id: str,
                  cpu_allocated: float,
                  cpu_used: float,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dynamic_group_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  operations_insights_tenancy_id: str,
                  state: str,
                  storage_allocated_in_gbs: float,
                  storage_used_in_gbs: float,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_last_wallet_rotated: str,
                  time_updated: str):
@@ -5740,17 +5740,17 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param float cpu_allocated: Number of OCPUs allocated to OPSI Warehouse ADW.
         :param float cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name.
         :param str dynamic_group_id: OCID of the dynamic group created for the warehouse
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Ops Insights Warehouse identifier
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param str state: Lifecycle states
         :param float storage_allocated_in_gbs: Storage allocated to OPSI Warehouse ADW.
         :param float storage_used_in_gbs: Storage by OPSI Warehouse ADW in GB.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -5799,7 +5799,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5823,7 +5823,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5879,7 +5879,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6426,30 +6426,30 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
                  config_item_fields: Sequence[str],
                  config_items: Sequence['outputs.GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemResult'],
                  config_items_applicable_contexts: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  opsi_config_fields: Sequence[str],
                  opsi_config_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetOpsiConfigurationsOpsiConfigurationsCollectionItemConfigItemArgs'] config_items: Array of configuration item summary objects.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of OPSI configuration.
         :param str display_name: Filter to return based on resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str opsi_config_type: Filter to return based on configuration type of OPSI configuration.
         :param str state: Filter to return based on Lifecycle state of OPSI configuration.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
@@ -6504,7 +6504,7 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6528,7 +6528,7 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6573,7 +6573,7 @@ class GetOpsiConfigurationsOpsiConfigurationsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

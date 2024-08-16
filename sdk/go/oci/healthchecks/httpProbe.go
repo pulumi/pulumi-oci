@@ -68,7 +68,7 @@ type HttpProbe struct {
 	// A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapOutput `pulumi:"headers"`
+	Headers pulumi.StringMapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
 	// The supported HTTP methods available for probes.
@@ -138,7 +138,7 @@ type httpProbeState struct {
 	// A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
 	// The supported HTTP methods available for probes.
@@ -170,7 +170,7 @@ type HttpProbeState struct {
 	// A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapInput
+	Headers pulumi.StringMapInput
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringPtrInput
 	// The supported HTTP methods available for probes.
@@ -206,7 +206,7 @@ type httpProbeArgs struct {
 	// A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// The supported HTTP methods available for probes.
 	Method *string `pulumi:"method"`
 	// The optional URL path to probe, including query parameters.
@@ -233,7 +233,7 @@ type HttpProbeArgs struct {
 	// A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapInput
+	Headers pulumi.StringMapInput
 	// The supported HTTP methods available for probes.
 	Method pulumi.StringPtrInput
 	// The optional URL path to probe, including query parameters.
@@ -348,8 +348,8 @@ func (o HttpProbeOutput) CompartmentId() pulumi.StringOutput {
 // A dictionary of HTTP request headers.
 //
 // *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-func (o HttpProbeOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v *HttpProbe) pulumi.MapOutput { return v.Headers }).(pulumi.MapOutput)
+func (o HttpProbeOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HttpProbe) pulumi.StringMapOutput { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // The region where updates must be made and where results must be fetched from.

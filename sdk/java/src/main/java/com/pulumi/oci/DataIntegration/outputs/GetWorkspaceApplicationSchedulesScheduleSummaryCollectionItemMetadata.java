@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationSchedulesSc
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataCountStatistic;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -51,7 +50,7 @@ public final class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem
      * @return Information property fields.
      * 
      */
-    private Map<String,Object> infoFields;
+    private Map<String,String> infoFields;
     /**
      * @return Specifies whether this object is a favorite or not.
      * 
@@ -135,7 +134,7 @@ public final class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem
      * @return Information property fields.
      * 
      */
-    public Map<String,Object> infoFields() {
+    public Map<String,String> infoFields() {
         return this.infoFields;
     }
     /**
@@ -203,7 +202,7 @@ public final class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem
         private String createdBy;
         private String createdByName;
         private String identifierPath;
-        private Map<String,Object> infoFields;
+        private Map<String,String> infoFields;
         private Boolean isFavorite;
         private List<String> labels;
         private Integer registryVersion;
@@ -285,7 +284,7 @@ public final class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItem
             return this;
         }
         @CustomType.Setter
-        public Builder infoFields(Map<String,Object> infoFields) {
+        public Builder infoFields(Map<String,String> infoFields) {
             if (infoFields == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata", "infoFields");
             }

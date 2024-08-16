@@ -1711,28 +1711,28 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
     def __init__(__self__, *,
                  backend_type: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  load_balancer_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  web_app_firewall_policy_id: str):
         """
         :param str backend_type: Type of the WebAppFirewall, as example LOAD_BALANCER.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
         :param str load_balancer_id: LoadBalancer [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to which the WebAppFirewallPolicy is attached to.
         :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
         :param str web_app_firewall_policy_id: A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of related WebAppFirewallPolicy.
@@ -1769,7 +1769,7 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1785,7 +1785,7 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1825,7 +1825,7 @@ class GetFirewallsWebAppFirewallCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1929,13 +1929,13 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
     def __init__(__self__, *,
                  addresses: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str,
@@ -1943,13 +1943,13 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
         """
         :param Sequence[str] addresses: A private IP address or CIDR IP address range.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
         :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
         :param str type: Type of NetworkAddressList.
@@ -1987,7 +1987,7 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2003,7 +2003,7 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2035,7 +2035,7 @@ class GetNetworkAddressListsNetworkAddressListCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2413,9 +2413,9 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
                  actions: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  request_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlResult'],
@@ -2424,15 +2424,15 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
                  response_access_controls: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlResult'],
                  response_protections: Sequence['outputs.GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemActionArgs'] actions: Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemRequestAccessControlArgs'] request_access_controls: Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
@@ -2441,7 +2441,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseAccessControlArgs'] response_access_controls: Module that allows inspection of HTTP response properties and to return a defined HTTP response.
         :param Sequence['GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResponseProtectionArgs'] response_protections: Module that allows to enable OCI-managed protection capabilities for HTTP responses.
         :param str state: A filter to return only resources that match the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
         """
@@ -2480,7 +2480,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2496,7 +2496,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2568,7 +2568,7 @@ class GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

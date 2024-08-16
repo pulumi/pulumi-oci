@@ -47,17 +47,17 @@ export interface GetDedicatedAiClusterResult {
     readonly capacities: outputs.GenerativeAi.GetDedicatedAiClusterCapacity[];
     readonly compartmentId: string;
     readonly dedicatedAiClusterId: string;
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly description: string;
     readonly displayName: string;
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
      */
     readonly id: string;
     readonly lifecycleDetails: string;
     readonly state: string;
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     readonly timeCreated: string;
     readonly timeUpdated: string;
     readonly type: string;

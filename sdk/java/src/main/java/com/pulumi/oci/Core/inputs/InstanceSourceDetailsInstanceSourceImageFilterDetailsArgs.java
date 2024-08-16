@@ -6,7 +6,6 @@ package com.pulumi.oci.Core.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -38,13 +37,13 @@ public final class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs ext
      * 
      */
     @Import(name="definedTagsFilter")
-    private @Nullable Output<Map<String,Object>> definedTagsFilter;
+    private @Nullable Output<Map<String,String>> definedTagsFilter;
 
     /**
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTagsFilter() {
+    public Optional<Output<Map<String,String>>> definedTagsFilter() {
         return Optional.ofNullable(this.definedTagsFilter);
     }
 
@@ -132,7 +131,7 @@ public final class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs ext
          * @return builder
          * 
          */
-        public Builder definedTagsFilter(@Nullable Output<Map<String,Object>> definedTagsFilter) {
+        public Builder definedTagsFilter(@Nullable Output<Map<String,String>> definedTagsFilter) {
             $.definedTagsFilter = definedTagsFilter;
             return this;
         }
@@ -143,7 +142,7 @@ public final class InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs ext
          * @return builder
          * 
          */
-        public Builder definedTagsFilter(Map<String,Object> definedTagsFilter) {
+        public Builder definedTagsFilter(Map<String,String> definedTagsFilter) {
             return definedTagsFilter(Output.of(definedTagsFilter));
         }
 

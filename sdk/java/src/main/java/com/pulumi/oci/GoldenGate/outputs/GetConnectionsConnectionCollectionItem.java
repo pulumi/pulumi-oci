@@ -11,7 +11,6 @@ import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemI
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemLock;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -113,7 +112,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
@@ -139,7 +138,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The name or address of a host.
      * In case of Generic connection type it represents the Host and port separated by colon. Example: `&#34;server.example.com:1234&#34;`
@@ -299,7 +298,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The array of technology types.
      * 
@@ -479,7 +478,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -517,7 +516,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -769,7 +768,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -867,13 +866,13 @@ public final class GetConnectionsConnectionCollectionItem {
         private String databaseId;
         private String databaseName;
         private String dbSystemId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String deploymentId;
         private String description;
         private String displayName;
         private String endpoint;
         private String fingerprint;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String host;
         private String id;
         private List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
@@ -919,7 +918,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String state;
         private String streamPoolId;
         private String subnetId;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String technologyType;
         private String tenancyId;
         private String timeCreated;
@@ -1187,7 +1186,7 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "definedTags");
             }
@@ -1235,7 +1234,7 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "freeformTags");
             }
@@ -1612,7 +1611,7 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "systemTags");
             }

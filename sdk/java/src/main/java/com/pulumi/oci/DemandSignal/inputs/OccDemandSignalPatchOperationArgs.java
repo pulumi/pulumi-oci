@@ -6,7 +6,6 @@ package com.pulumi.oci.DemandSignal.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -98,13 +97,13 @@ public final class OccDemandSignalPatchOperationArgs extends com.pulumi.resource
      * 
      */
     @Import(name="value", required=true)
-    private Output<Map<String,Object>> value;
+    private Output<Map<String,String>> value;
 
     /**
      * @return (Updatable)
      * 
      */
-    public Output<Map<String,Object>> value() {
+    public Output<Map<String,String>> value() {
         return this.value;
     }
 
@@ -248,7 +247,7 @@ public final class OccDemandSignalPatchOperationArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder value(Output<Map<String,Object>> value) {
+        public Builder value(Output<Map<String,String>> value) {
             $.value = value;
             return this;
         }
@@ -259,7 +258,7 @@ public final class OccDemandSignalPatchOperationArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder value(Map<String,Object> value) {
+        public Builder value(Map<String,String> value) {
             return value(Output.of(value));
         }
 

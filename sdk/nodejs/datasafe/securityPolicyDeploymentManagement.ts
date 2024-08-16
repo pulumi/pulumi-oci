@@ -33,14 +33,14 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
     }
 
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly description!: pulumi.Output<string>;
     public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
     public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     public readonly targetId!: pulumi.Output<string>;
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -95,14 +95,14 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
  */
 export interface SecurityPolicyDeploymentManagementState {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     lifecycleDetails?: pulumi.Input<string>;
     securityPolicyId?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     targetId?: pulumi.Input<string>;
     timeCreated?: pulumi.Input<string>;
     timeUpdated?: pulumi.Input<string>;
@@ -113,9 +113,9 @@ export interface SecurityPolicyDeploymentManagementState {
  */
 export interface SecurityPolicyDeploymentManagementArgs {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     description?: pulumi.Input<string>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     targetId?: pulumi.Input<string>;
 }

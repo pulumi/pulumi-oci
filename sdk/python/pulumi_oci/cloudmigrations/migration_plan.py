@@ -19,8 +19,8 @@ class MigrationPlanArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  migration_id: pulumi.Input[str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
                  strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
                  target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None):
@@ -29,8 +29,8 @@ class MigrationPlanArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
         :param pulumi.Input[str] display_name: (Updatable) Migration plan identifier
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]] strategies: (Updatable) List of strategies for the resources to be migrated.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]] target_environments: (Updatable) List of target environments.
@@ -87,26 +87,26 @@ class MigrationPlanArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -149,11 +149,11 @@ class MigrationPlanArgs:
 @pulumi.input_type
 class _MigrationPlanState:
     def __init__(__self__, *,
-                 calculated_limits: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 calculated_limits: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
                  migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]]] = None,
@@ -161,17 +161,17 @@ class _MigrationPlanState:
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  strategies: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  target_environments: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering MigrationPlan resources.
-        :param pulumi.Input[Mapping[str, Any]] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration plan identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanMigrationPlanStatArgs']]] migration_plan_stats: Status of the migration plan.
@@ -179,7 +179,7 @@ class _MigrationPlanState:
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param pulumi.Input[str] state: The current state of the migration plan.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanStrategyArgs']]] strategies: (Updatable) List of strategies for the resources to be migrated.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['MigrationPlanTargetEnvironmentArgs']]] target_environments: (Updatable) List of target environments.
         :param pulumi.Input[str] time_created: The time when the migration plan was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -219,14 +219,14 @@ class _MigrationPlanState:
 
     @property
     @pulumi.getter(name="calculatedLimits")
-    def calculated_limits(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def calculated_limits(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         """
         return pulumi.get(self, "calculated_limits")
 
     @calculated_limits.setter
-    def calculated_limits(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def calculated_limits(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "calculated_limits", value)
 
     @property
@@ -243,14 +243,14 @@ class _MigrationPlanState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -267,14 +267,14 @@ class _MigrationPlanState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -363,14 +363,14 @@ class _MigrationPlanState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -416,9 +416,9 @@ class MigrationPlan(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
                  strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
@@ -440,9 +440,9 @@ class MigrationPlan(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration plan identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
@@ -483,9 +483,9 @@ class MigrationPlan(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  migration_id: Optional[pulumi.Input[str]] = None,
                  source_migration_plan_id: Optional[pulumi.Input[str]] = None,
                  strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
@@ -531,11 +531,11 @@ class MigrationPlan(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            calculated_limits: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            calculated_limits: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             migration_id: Optional[pulumi.Input[str]] = None,
             migration_plan_stats: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]]] = None,
@@ -543,7 +543,7 @@ class MigrationPlan(pulumi.CustomResource):
             source_migration_plan_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             strategies: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             target_environments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'MigrationPlan':
@@ -554,11 +554,11 @@ class MigrationPlan(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment identifier
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Migration plan identifier
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] migration_id: The OCID of the associated migration.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict']]]] migration_plan_stats: Status of the migration plan.
@@ -566,7 +566,7 @@ class MigrationPlan(pulumi.CustomResource):
         :param pulumi.Input[str] source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param pulumi.Input[str] state: The current state of the migration plan.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict']]]] strategies: (Updatable) List of strategies for the resources to be migrated.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict']]]] target_environments: (Updatable) List of target environments.
         :param pulumi.Input[str] time_created: The time when the migration plan was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -595,7 +595,7 @@ class MigrationPlan(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="calculatedLimits")
-    def calculated_limits(self) -> pulumi.Output[Mapping[str, Any]]:
+    def calculated_limits(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         """
@@ -611,7 +611,7 @@ class MigrationPlan(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -627,7 +627,7 @@ class MigrationPlan(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -691,7 +691,7 @@ class MigrationPlan(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

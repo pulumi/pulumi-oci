@@ -16,9 +16,9 @@ type DefaultRouteTable struct {
 	pulumi.CustomResourceState
 
 	CompartmentId           pulumi.StringOutput                   `pulumi:"compartmentId"`
-	DefinedTags             pulumi.MapOutput                      `pulumi:"definedTags"`
+	DefinedTags             pulumi.StringMapOutput                `pulumi:"definedTags"`
 	DisplayName             pulumi.StringOutput                   `pulumi:"displayName"`
-	FreeformTags            pulumi.MapOutput                      `pulumi:"freeformTags"`
+	FreeformTags            pulumi.StringMapOutput                `pulumi:"freeformTags"`
 	ManageDefaultResourceId pulumi.StringOutput                   `pulumi:"manageDefaultResourceId"`
 	RouteRules              DefaultRouteTableRouteRuleArrayOutput `pulumi:"routeRules"`
 	State                   pulumi.StringOutput                   `pulumi:"state"`
@@ -59,9 +59,9 @@ func GetDefaultRouteTable(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DefaultRouteTable resources.
 type defaultRouteTableState struct {
 	CompartmentId           *string                      `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}       `pulumi:"definedTags"`
+	DefinedTags             map[string]string            `pulumi:"definedTags"`
 	DisplayName             *string                      `pulumi:"displayName"`
-	FreeformTags            map[string]interface{}       `pulumi:"freeformTags"`
+	FreeformTags            map[string]string            `pulumi:"freeformTags"`
 	ManageDefaultResourceId *string                      `pulumi:"manageDefaultResourceId"`
 	RouteRules              []DefaultRouteTableRouteRule `pulumi:"routeRules"`
 	State                   *string                      `pulumi:"state"`
@@ -70,9 +70,9 @@ type defaultRouteTableState struct {
 
 type DefaultRouteTableState struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	ManageDefaultResourceId pulumi.StringPtrInput
 	RouteRules              DefaultRouteTableRouteRuleArrayInput
 	State                   pulumi.StringPtrInput
@@ -85,9 +85,9 @@ func (DefaultRouteTableState) ElementType() reflect.Type {
 
 type defaultRouteTableArgs struct {
 	CompartmentId           *string                      `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}       `pulumi:"definedTags"`
+	DefinedTags             map[string]string            `pulumi:"definedTags"`
 	DisplayName             *string                      `pulumi:"displayName"`
-	FreeformTags            map[string]interface{}       `pulumi:"freeformTags"`
+	FreeformTags            map[string]string            `pulumi:"freeformTags"`
 	ManageDefaultResourceId string                       `pulumi:"manageDefaultResourceId"`
 	RouteRules              []DefaultRouteTableRouteRule `pulumi:"routeRules"`
 }
@@ -95,9 +95,9 @@ type defaultRouteTableArgs struct {
 // The set of arguments for constructing a DefaultRouteTable resource.
 type DefaultRouteTableArgs struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	ManageDefaultResourceId pulumi.StringInput
 	RouteRules              DefaultRouteTableRouteRuleArrayInput
 }
@@ -193,16 +193,16 @@ func (o DefaultRouteTableOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o DefaultRouteTableOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DefaultRouteTableOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultRouteTableOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o DefaultRouteTableOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultRouteTable) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DefaultRouteTableOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultRouteTable) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultRouteTableOutput) ManageDefaultResourceId() pulumi.StringOutput {

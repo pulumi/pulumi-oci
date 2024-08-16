@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Identity.IdentityProviderArgs;
 import com.pulumi.oci.Identity.inputs.IdentityProviderState;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -108,14 +107,14 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -136,28 +135,28 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
      * 
      */
-    @Export(name="freeformAttributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformAttributes;
+    @Export(name="freeformAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformAttributes;
 
     /**
      * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformAttributes() {
+    public Output<Map<String,String>> freeformAttributes() {
         return this.freeformAttributes;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**

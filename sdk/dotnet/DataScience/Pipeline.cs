@@ -139,7 +139,7 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         [Output("deleteRelatedPipelineRuns")]
         public Output<bool?> DeleteRelatedPipelineRuns { get; private set; } = null!;
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.DataScience
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The infrastructure configuration details of a pipeline or a step.
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.DataScience
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -278,14 +278,14 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.PipelineConfigurationDetailsArgs>? ConfigurationDetails { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -305,14 +305,14 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -381,14 +381,14 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? CreatedBy { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -408,14 +408,14 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -470,14 +470,14 @@ namespace Pulumi.Oci.DataScience
         }
 
         [Input("systemTags")]
-        private InputMap<object>? _systemTags;
+        private InputMap<string>? _systemTags;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public InputMap<object> SystemTags
+        public InputMap<string> SystemTags
         {
-            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
 

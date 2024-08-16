@@ -43,11 +43,11 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -72,11 +72,11 @@ type ProcessSet struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the Process Set.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The current revision of the Process Set.
 	Revision pulumi.StringOutput `pulumi:"revision"`
 	// (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
@@ -84,7 +84,7 @@ type ProcessSet struct {
 	// The current state of the Resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -133,11 +133,11 @@ type processSetState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the Process Set.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The current revision of the Process Set.
 	Revision *string `pulumi:"revision"`
 	// (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
@@ -145,7 +145,7 @@ type processSetState struct {
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -156,11 +156,11 @@ type ProcessSetState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the Process Set.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The current revision of the Process Set.
 	Revision pulumi.StringPtrInput
 	// (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
@@ -168,7 +168,7 @@ type ProcessSetState struct {
 	// The current state of the Resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the process set was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the process set was last updated. An RFC3339 formatted datetime string.
@@ -183,11 +183,11 @@ type processSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the Process Set.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
 	Specification ProcessSetSpecification `pulumi:"specification"`
 }
@@ -197,11 +197,11 @@ type ProcessSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the Process Set.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Collection of regular expression specifications used to identify the processes to be monitored.
 	Specification ProcessSetSpecificationInput
 }
@@ -299,8 +299,8 @@ func (o ProcessSetOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ProcessSetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProcessSet) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ProcessSetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProcessSet) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Name of the Process Set.
@@ -309,8 +309,8 @@ func (o ProcessSetOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ProcessSetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProcessSet) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ProcessSetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProcessSet) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The current revision of the Process Set.
@@ -329,8 +329,8 @@ func (o ProcessSetOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ProcessSetOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProcessSet) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ProcessSetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProcessSet) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the process set was created. An RFC3339 formatted datetime string.

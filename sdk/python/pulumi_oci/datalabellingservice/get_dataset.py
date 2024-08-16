@@ -86,7 +86,7 @@ class GetDatasetResult:
 
     @property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Mapping[str, Any]:
+    def additional_properties(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -131,7 +131,7 @@ class GetDatasetResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -155,7 +155,7 @@ class GetDatasetResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """

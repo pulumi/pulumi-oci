@@ -5,7 +5,6 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,7 @@ public final class GetSystemMediaWorkflowItemTask {
      * @return Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    private Map<String,Object> enableWhenReferencedParameterEquals;
+    private Map<String,String> enableWhenReferencedParameterEquals;
     /**
      * @return A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
      * 
@@ -61,7 +60,7 @@ public final class GetSystemMediaWorkflowItemTask {
      * @return Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    public Map<String,Object> enableWhenReferencedParameterEquals() {
+    public Map<String,String> enableWhenReferencedParameterEquals() {
         return this.enableWhenReferencedParameterEquals;
     }
     /**
@@ -110,7 +109,7 @@ public final class GetSystemMediaWorkflowItemTask {
     @CustomType.Builder
     public static final class Builder {
         private String enableParameterReference;
-        private Map<String,Object> enableWhenReferencedParameterEquals;
+        private Map<String,String> enableWhenReferencedParameterEquals;
         private String key;
         private String parameters;
         private List<String> prerequisites;
@@ -137,7 +136,7 @@ public final class GetSystemMediaWorkflowItemTask {
             return this;
         }
         @CustomType.Setter
-        public Builder enableWhenReferencedParameterEquals(Map<String,Object> enableWhenReferencedParameterEquals) {
+        public Builder enableWhenReferencedParameterEquals(Map<String,String> enableWhenReferencedParameterEquals) {
             if (enableWhenReferencedParameterEquals == null) {
               throw new MissingRequiredPropertyException("GetSystemMediaWorkflowItemTask", "enableWhenReferencedParameterEquals");
             }

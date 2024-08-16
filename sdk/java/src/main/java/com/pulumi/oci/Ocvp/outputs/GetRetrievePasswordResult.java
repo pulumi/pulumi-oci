@@ -5,7 +5,6 @@ package com.pulumi.oci.Ocvp.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -23,7 +22,7 @@ public final class GetRetrievePasswordResult {
      * * `passwordType` - SDDC password type.
      * 
      */
-    private Map<String,Object> sddcPassword;
+    private Map<String,String> sddcPassword;
     private String type;
 
     private GetRetrievePasswordResult() {}
@@ -42,7 +41,7 @@ public final class GetRetrievePasswordResult {
      * * `passwordType` - SDDC password type.
      * 
      */
-    public Map<String,Object> sddcPassword() {
+    public Map<String,String> sddcPassword() {
         return this.sddcPassword;
     }
     public String type() {
@@ -60,7 +59,7 @@ public final class GetRetrievePasswordResult {
     public static final class Builder {
         private String id;
         private String sddcId;
-        private Map<String,Object> sddcPassword;
+        private Map<String,String> sddcPassword;
         private String type;
         public Builder() {}
         public Builder(GetRetrievePasswordResult defaults) {
@@ -88,7 +87,7 @@ public final class GetRetrievePasswordResult {
             return this;
         }
         @CustomType.Setter
-        public Builder sddcPassword(Map<String,Object> sddcPassword) {
+        public Builder sddcPassword(Map<String,String> sddcPassword) {
             if (sddcPassword == null) {
               throw new MissingRequiredPropertyException("GetRetrievePasswordResult", "sddcPassword");
             }

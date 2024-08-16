@@ -37,11 +37,11 @@ import (
 //				IsAwrDataAccess:               pulumi.Any(operationsInsightsWarehouseUserIsAwrDataAccess),
 //				Name:                          pulumi.Any(operationsInsightsWarehouseUserName),
 //				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsEmDataAccess:   pulumi.Any(operationsInsightsWarehouseUserIsEmDataAccess),
 //				IsOpsiDataAccess: pulumi.Any(operationsInsightsWarehouseUserIsOpsiDataAccess),
@@ -70,9 +70,9 @@ type OperationsInsightsWarehouseUser struct {
 	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringOutput `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess pulumi.BoolOutput `pulumi:"isAwrDataAccess"`
 	// (Updatable) Indicate whether user has access to EM data.
@@ -91,7 +91,7 @@ type OperationsInsightsWarehouseUser struct {
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -152,9 +152,9 @@ type operationsInsightsWarehouseUserState struct {
 	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword *string `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess *bool `pulumi:"isAwrDataAccess"`
 	// (Updatable) Indicate whether user has access to EM data.
@@ -173,7 +173,7 @@ type operationsInsightsWarehouseUserState struct {
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -186,9 +186,9 @@ type OperationsInsightsWarehouseUserState struct {
 	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess pulumi.BoolPtrInput
 	// (Updatable) Indicate whether user has access to EM data.
@@ -207,7 +207,7 @@ type OperationsInsightsWarehouseUserState struct {
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -224,9 +224,9 @@ type operationsInsightsWarehouseUserArgs struct {
 	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess bool `pulumi:"isAwrDataAccess"`
 	// (Updatable) Indicate whether user has access to EM data.
@@ -249,9 +249,9 @@ type OperationsInsightsWarehouseUserArgs struct {
 	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicate whether user has access to AWR data.
 	IsAwrDataAccess pulumi.BoolInput
 	// (Updatable) Indicate whether user has access to EM data.
@@ -365,13 +365,13 @@ func (o OperationsInsightsWarehouseUserOutput) ConnectionPassword() pulumi.Strin
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OperationsInsightsWarehouseUserOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseUserOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OperationsInsightsWarehouseUserOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseUserOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Indicate whether user has access to AWR data.
@@ -413,8 +413,8 @@ func (o OperationsInsightsWarehouseUserOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OperationsInsightsWarehouseUserOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseUserOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

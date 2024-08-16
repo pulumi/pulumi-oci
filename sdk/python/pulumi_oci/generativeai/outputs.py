@@ -559,14 +559,14 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  capacities: Sequence['outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str,
@@ -609,7 +609,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -627,7 +627,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -653,7 +653,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -765,15 +765,15 @@ class GetEndpointsEndpointCollectionItemResult(dict):
                  compartment_id: str,
                  content_moderation_configs: Sequence['outputs.GetEndpointsEndpointCollectionItemContentModerationConfigResult'],
                  dedicated_ai_cluster_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  model_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
@@ -820,7 +820,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -841,7 +841,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -875,7 +875,7 @@ class GetEndpointsEndpointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -1235,17 +1235,17 @@ class GetModelsModelCollectionItemResult(dict):
                  base_model_id: str,
                  capabilities: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  fine_tune_details: Sequence['outputs.GetModelsModelCollectionItemFineTuneDetailResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_long_term_supported: bool,
                  lifecycle_details: str,
                  model_metrics: Sequence['outputs.GetModelsModelCollectionItemModelMetricResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_deprecated: str,
                  time_updated: str,
@@ -1259,13 +1259,13 @@ class GetModelsModelCollectionItemResult(dict):
         :param str description: An optional description of the model.
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Sequence['GetModelsModelCollectionItemFineTuneDetailArgs'] fine_tune_details: Details about fine-tuning a custom model.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The ID of the model.
         :param bool is_long_term_supported: Whether a model is supported long-term. Only applicable to base models.
         :param str lifecycle_details: A message describing the current state of the model in more detail that can provide actionable information.
         :param Sequence['GetModelsModelCollectionItemModelMetricArgs'] model_metrics: Model metrics during the creation of a new model.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the model was created in the format of an RFC3339 datetime string.
         :param str time_deprecated: Corresponds to the time when the custom model and its associated foundation model will be deprecated.
         :param str time_updated: The date and time that the model was updated in the format of an RFC3339 datetime string.
@@ -1319,7 +1319,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -1348,7 +1348,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -1396,7 +1396,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

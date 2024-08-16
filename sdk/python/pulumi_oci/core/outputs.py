@@ -1839,9 +1839,9 @@ class ClusterNetworkInstancePool(dict):
                  instance_configuration_id: str,
                  size: int,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
                  instance_display_name_formatter: Optional[str] = None,
                  instance_hostname_formatter: Optional[str] = None,
@@ -1853,9 +1853,9 @@ class ClusterNetworkInstancePool(dict):
         :param str instance_configuration_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param int size: (Updatable) The number of instances that should be in the instance pool.
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param Sequence['ClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
         :param Sequence['ClusterNetworkInstancePoolPlacementConfigurationArgs'] placement_configurations: The placement configurations for the instance pool.
@@ -1913,7 +1913,7 @@ class ClusterNetworkInstancePool(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1929,7 +1929,7 @@ class ClusterNetworkInstancePool(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -5421,9 +5421,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
                  block_volume_replicas: Optional['outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas'] = None,
                  cluster_placement_group_id: Optional[str] = None,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  is_auto_tune_enabled: Optional[bool] = None,
                  kms_key_id: Optional[str] = None,
                  size_in_gbs: Optional[str] = None,
@@ -5436,9 +5436,9 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
         :param 'InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param str compartment_id: The OCID of the compartment that contains the volume.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -5525,7 +5525,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5541,7 +5541,7 @@ class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -5787,17 +5787,17 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                  compartment_id: Optional[str] = None,
                  create_vnic_details: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails'] = None,
                  dedicated_vm_host_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 extended_metadata: Optional[Mapping[str, str]] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  instance_options: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions'] = None,
                  ipxe_script: Optional[str] = None,
                  is_pv_encryption_in_transit_enabled: Optional[bool] = None,
                  launch_mode: Optional[str] = None,
                  launch_options: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions'] = None,
-                 metadata: Optional[Mapping[str, Any]] = None,
+                 metadata: Optional[Mapping[str, str]] = None,
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[str] = None,
@@ -5813,11 +5813,11 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -5827,7 +5827,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
         :param 'InstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -5953,7 +5953,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5969,7 +5969,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
+    def extended_metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -5985,7 +5985,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -6037,7 +6037,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetails(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -6346,9 +6346,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -6358,9 +6358,9 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -6415,7 +6415,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -6431,7 +6431,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -6733,7 +6733,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
     def __init__(__self__, *,
                  type: str,
                  are_virtual_instructions_enabled: Optional[bool] = None,
-                 config_map: Optional[Mapping[str, Any]] = None,
+                 config_map: Optional[Mapping[str, str]] = None,
                  is_access_control_service_enabled: Optional[bool] = None,
                  is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
@@ -6746,7 +6746,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
         """
         :param str type: The type of action to run when the instance is interrupted for eviction.
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -6801,7 +6801,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig(dict):
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Optional[Mapping[str, Any]]:
+    def config_map(self) -> Optional[Mapping[str, str]]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -7197,12 +7197,12 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
 
     def __init__(__self__, *,
                  compartment_id: Optional[str] = None,
-                 defined_tags_filter: Optional[Mapping[str, Any]] = None,
+                 defined_tags_filter: Optional[Mapping[str, str]] = None,
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -7225,7 +7225,7 @@ class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSour
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags_filter(self) -> Optional[Mapping[str, str]]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -7543,9 +7543,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
                  block_volume_replicas: Optional['outputs.InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicas'] = None,
                  cluster_placement_group_id: Optional[str] = None,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  is_auto_tune_enabled: Optional[bool] = None,
                  kms_key_id: Optional[str] = None,
                  size_in_gbs: Optional[str] = None,
@@ -7558,9 +7558,9 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
         :param 'InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetailsBlockVolumeReplicasArgs' block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -7645,7 +7645,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -7661,7 +7661,7 @@ class InstanceConfigurationInstanceDetailsOptionBlockVolumeCreateDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -7905,17 +7905,17 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                  compartment_id: Optional[str] = None,
                  create_vnic_details: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails'] = None,
                  dedicated_vm_host_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 extended_metadata: Optional[Mapping[str, Any]] = None,
+                 extended_metadata: Optional[Mapping[str, str]] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  instance_options: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptions'] = None,
                  ipxe_script: Optional[str] = None,
                  is_pv_encryption_in_transit_enabled: Optional[bool] = None,
                  launch_mode: Optional[str] = None,
                  launch_options: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptions'] = None,
-                 metadata: Optional[Mapping[str, Any]] = None,
+                 metadata: Optional[Mapping[str, str]] = None,
                  platform_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig'] = None,
                  preemptible_instance_config: Optional['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig'] = None,
                  preferred_maintenance_action: Optional[str] = None,
@@ -7931,11 +7931,11 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsArgs' create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsInstanceOptionsArgs' instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -7945,7 +7945,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs' launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfigArgs' platform_config: The platform configuration requested for the instance.
         :param 'InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfigArgs' preemptible_instance_config: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -8071,7 +8071,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -8087,7 +8087,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[Mapping[str, Any]]:
+    def extended_metadata(self) -> Optional[Mapping[str, str]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -8103,7 +8103,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -8155,7 +8155,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetails(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[Mapping[str, Any]]:
+    def metadata(self) -> Optional[Mapping[str, str]]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -8434,9 +8434,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -8446,9 +8446,9 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -8503,7 +8503,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -8519,7 +8519,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetails(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -9271,12 +9271,12 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
 
     def __init__(__self__, *,
                  compartment_id: Optional[str] = None,
-                 defined_tags_filter: Optional[Mapping[str, Any]] = None,
+                 defined_tags_filter: Optional[Mapping[str, str]] = None,
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
         :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -9299,7 +9299,7 @@ class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstan
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags_filter(self) -> Optional[Mapping[str, str]]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -9431,9 +9431,9 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -9443,9 +9443,9 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -9500,7 +9500,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -9516,7 +9516,7 @@ class InstanceConfigurationInstanceDetailsOptionSecondaryVnicCreateVnicDetails(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -9715,9 +9715,9 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -9727,9 +9727,9 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. Defaults to true. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. See the `privateIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
@@ -9784,7 +9784,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -9800,7 +9800,7 @@ class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -9937,9 +9937,9 @@ class InstanceCreateVnicDetails(dict):
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.InstanceCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -9960,9 +9960,9 @@ class InstanceCreateVnicDetails(dict):
                Example: `false`
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
                
                For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -10055,7 +10055,7 @@ class InstanceCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -10071,7 +10071,7 @@ class InstanceCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -10671,7 +10671,7 @@ class InstancePlatformConfig(dict):
     def __init__(__self__, *,
                  type: str,
                  are_virtual_instructions_enabled: Optional[bool] = None,
-                 config_map: Optional[Mapping[str, Any]] = None,
+                 config_map: Optional[Mapping[str, str]] = None,
                  is_access_control_service_enabled: Optional[bool] = None,
                  is_input_output_memory_management_unit_enabled: Optional[bool] = None,
                  is_measured_boot_enabled: Optional[bool] = None,
@@ -10684,7 +10684,7 @@ class InstancePlatformConfig(dict):
         """
         :param str type: The type of platform being configured.
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -10741,7 +10741,7 @@ class InstancePlatformConfig(dict):
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Optional[Mapping[str, Any]]:
+    def config_map(self) -> Optional[Mapping[str, str]]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -11789,12 +11789,12 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetails(dict):
 
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Optional[Mapping[str, Any]] = None,
+                 defined_tags_filter: Optional[Mapping[str, str]] = None,
                  operating_system: Optional[str] = None,
                  operating_system_version: Optional[str] = None):
         """
         :param str compartment_id: (Updatable) The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -11816,7 +11816,7 @@ class InstanceSourceDetailsInstanceSourceImageFilterDetails(dict):
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags_filter(self) -> Optional[Mapping[str, str]]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -13975,9 +13975,9 @@ class VnicAttachmentCreateVnicDetails(dict):
                  assign_ipv6ip: Optional[bool] = None,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  ipv6address_ipv6subnet_cidr_pair_details: Optional[Sequence['outputs.VnicAttachmentCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail']] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
@@ -13999,9 +13999,9 @@ class VnicAttachmentCreateVnicDetails(dict):
                Example: `false`
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
                
                For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -14095,7 +14095,7 @@ class VnicAttachmentCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -14111,7 +14111,7 @@ class VnicAttachmentCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -15308,9 +15308,9 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
                  availability_domain: str,
                  block_volume_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  size_in_gbs: str,
                  state: str,
@@ -15321,9 +15321,9 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str block_volume_id: The OCID of the source block volume.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The block volume replica's Oracle ID (OCID).
         :param str size_in_gbs: The size of the source block volume, in GBs.
         :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
@@ -15370,7 +15370,7 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -15386,7 +15386,7 @@ class GetBlockVolumeReplicasBlockVolumeReplicaResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -15693,10 +15693,10 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
     def __init__(__self__, *,
                  boot_volume_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  expiration_time: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_id: str,
                  kms_key_id: str,
@@ -15705,7 +15705,7 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
                  source_details: Sequence['outputs.GetBootVolumeBackupsBootVolumeBackupSourceDetailResult'],
                  source_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_request_received: str,
                  type: str,
@@ -15713,10 +15713,10 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         """
         :param str boot_volume_id: The OCID of the boot volume.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the boot volume backup.
         :param str image_id: The image OCID used to create the boot volume the backup is taken from.
         :param str kms_key_id: The OCID of the Vault service master encryption assigned to the boot volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
@@ -15724,7 +15724,7 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
         :param str source_boot_volume_backup_id: A filter to return only resources that originated from the given source boot volume backup.
         :param str source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_request_received: The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str type: The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
@@ -15768,7 +15768,7 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -15792,7 +15792,7 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -15861,7 +15861,7 @@ class GetBootVolumeBackupsBootVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -16005,9 +16005,9 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
                  availability_domain: str,
                  boot_volume_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_id: str,
                  size_in_gbs: str,
@@ -16019,9 +16019,9 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str boot_volume_id: The OCID of the source boot volume.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The boot volume replica's Oracle ID (OCID).
         :param str image_id: The image OCID used to create the boot volume the replica is replicated from.
         :param str size_in_gbs: The size of the source boot volume, in GBs.
@@ -16070,7 +16070,7 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -16086,7 +16086,7 @@ class GetBootVolumeReplicasBootVolumeReplicaResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -16216,9 +16216,9 @@ class GetBootVolumesBootVolumeResult(dict):
                  boot_volume_replicas_deletion: bool,
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_id: str,
                  is_auto_tune_enabled: bool,
@@ -16228,7 +16228,7 @@ class GetBootVolumesBootVolumeResult(dict):
                  size_in_mbs: str,
                  source_details: Sequence['outputs.GetBootVolumesBootVolumeSourceDetailResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  volume_group_id: str,
                  vpus_per_gb: str):
@@ -16239,9 +16239,9 @@ class GetBootVolumesBootVolumeResult(dict):
         :param Sequence['GetBootVolumesBootVolumeBootVolumeReplicaArgs'] boot_volume_replicas: The list of boot volume replicas of this boot volume
         :param str cluster_placement_group_id: The clusterPlacementGroup Id of the volume for volume placement.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the boot volume replica.
         :param str image_id: The image OCID used to create the boot volume.
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
@@ -16250,7 +16250,7 @@ class GetBootVolumesBootVolumeResult(dict):
         :param str size_in_gbs: The size of the boot volume in GBs.
         :param str size_in_mbs: The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         :param str state: The current state of a boot volume.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the boot volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str volume_group_id: The OCID of the volume group.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this boot volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -16341,7 +16341,7 @@ class GetBootVolumesBootVolumeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -16357,7 +16357,7 @@ class GetBootVolumesBootVolumeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -16434,7 +16434,7 @@ class GetBootVolumesBootVolumeResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -16731,9 +16731,9 @@ class GetByoipRangesByoipRangeCollectionResult(dict):
 class GetByoipRangesByoipRangeCollectionItemResult(dict):
     def __init__(__self__, *,
                  byoip_range_vcn_ipv6allocations: Sequence['outputs.GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ipv6cidr_block: str,
                  lifecycle_details: str,
@@ -16747,9 +16747,9 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
                  compartment_id: Optional[str] = None):
         """
         :param Sequence['GetByoipRangesByoipRangeCollectionItemByoipRangeVcnIpv6allocationArgs'] byoip_range_vcn_ipv6allocations: A list of `ByoipRangeVcnIpv6AllocationSummary` objects.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `ByoipRange` resource.
         :param str ipv6cidr_block: The IPv6 prefix being imported to the Oracle cloud. This prefix must be /48 or larger, and can be subdivided into sub-ranges used across multiple VCNs. A BYOIPv6 prefix can be also assigned across multiple VCNs, and each VCN must be /64 or larger. You may specify a ULA or private IPv6 prefix of /64 or larger to use in the VCN. IPv6-enabled subnets will remain a fixed /64 in size.
         :param str lifecycle_details: The `ByoipRange` resource's current status.
@@ -16790,7 +16790,7 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -16806,7 +16806,7 @@ class GetByoipRangesByoipRangeCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -17592,22 +17592,22 @@ class GetCaptureFilterVtapCaptureFilterRuleUdpOptionSourcePortRangeResult(dict):
 class GetCaptureFiltersCaptureFilterResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  filter_type: str,
                  flow_log_capture_filter_rules: Sequence['outputs.GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str,
                  vtap_capture_filter_rules: Sequence['outputs.GetCaptureFiltersCaptureFilterVtapCaptureFilterRuleResult']):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str filter_type: A filter to only return resources that match the given capture filterType. The filterType value is the string representation of enum - VTAP, FLOWLOG.
         :param Sequence['GetCaptureFiltersCaptureFilterFlowLogCaptureFilterRuleArgs'] flow_log_capture_filter_rules: The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str state: A filter to return only resources that match the given capture filter lifecycle state. The state value is case-insensitive.
         :param str time_created: The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -17634,7 +17634,7 @@ class GetCaptureFiltersCaptureFilterResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -17666,7 +17666,7 @@ class GetCaptureFiltersCaptureFilterResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -18374,9 +18374,9 @@ class GetClusterNetworkClusterConfigurationResult(dict):
 class GetClusterNetworkInstancePoolResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_configuration_id: str,
                  instance_display_name_formatter: str,
@@ -18388,9 +18388,9 @@ class GetClusterNetworkInstancePoolResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param Sequence['GetClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
@@ -18423,7 +18423,7 @@ class GetClusterNetworkInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -18439,7 +18439,7 @@ class GetClusterNetworkInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -19192,9 +19192,9 @@ class GetClusterNetworksClusterNetworkResult(dict):
     def __init__(__self__, *,
                  cluster_configurations: Sequence['outputs.GetClusterNetworksClusterNetworkClusterConfigurationResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hpc_island_id: str,
                  id: str,
                  instance_pools: Sequence['outputs.GetClusterNetworksClusterNetworkInstancePoolResult'],
@@ -19205,9 +19205,9 @@ class GetClusterNetworksClusterNetworkResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolArgs'] instance_pools: The instance pools in the cluster network.
@@ -19246,7 +19246,7 @@ class GetClusterNetworksClusterNetworkResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -19262,7 +19262,7 @@ class GetClusterNetworksClusterNetworkResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -19366,9 +19366,9 @@ class GetClusterNetworksClusterNetworkClusterConfigurationResult(dict):
 class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_configuration_id: str,
                  instance_display_name_formatter: str,
@@ -19380,9 +19380,9 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param Sequence['GetClusterNetworksClusterNetworkInstancePoolLoadBalancerArgs'] load_balancers: The load balancers attached to the instance pool.
@@ -19415,7 +19415,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -19431,7 +19431,7 @@ class GetClusterNetworksClusterNetworkInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -20332,9 +20332,9 @@ class GetComputeCapacityReservationsComputeCapacityReservationResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_reservation_configs: Sequence['outputs.GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigResult'],
                  is_default_reservation: bool,
@@ -20346,9 +20346,9 @@ class GetComputeCapacityReservationsComputeCapacityReservationResult(dict):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity reservation.
         :param Sequence['GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigArgs'] instance_reservation_configs: The capacity configurations for the capacity reservation.
         :param bool is_default_reservation: Whether this capacity reservation is the default. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
@@ -20390,7 +20390,7 @@ class GetComputeCapacityReservationsComputeCapacityReservationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -20406,7 +20406,7 @@ class GetComputeCapacityReservationsComputeCapacityReservationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -20664,9 +20664,9 @@ class GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemResult(di
                  availability_domain: str,
                  capacity_sources: Sequence['outputs.GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySourceResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str,
@@ -20675,9 +20675,9 @@ class GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemResult(di
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param Sequence['GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemCapacitySourceArgs'] capacity_sources: A capacity source of bare metal hosts.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute capacity topology.
         :param str state: The current state of the compute capacity topology.
         :param str time_created: The date and time that the compute capacity topology was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -20720,7 +20720,7 @@ class GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemResult(di
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -20736,7 +20736,7 @@ class GetComputeCapacityTopologiesComputeCapacityTopologyCollectionItemResult(di
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -21297,18 +21297,18 @@ class GetComputeClustersComputeClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster.
         :param str state: The current state of the compute cluster.
         :param str time_created: The date and time the compute cluster was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -21340,7 +21340,7 @@ class GetComputeClustersComputeClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -21356,7 +21356,7 @@ class GetComputeClustersComputeClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -21419,17 +21419,17 @@ class GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaRe
     def __init__(__self__, *,
                  compartment_id: str,
                  current_version_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  time_created: str):
         """
         :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
         :param str current_version_name: The name of the global capabilities version resource that is considered the current version.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
         :param str time_created: The date and time the compute global image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -21459,7 +21459,7 @@ class GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaRe
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -21475,7 +21475,7 @@ class GetComputeGlobalImageCapabilitySchemasComputeGlobalImageCapabilitySchemaRe
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -21531,13 +21531,13 @@ class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapability
                  compute_global_image_capability_schema_id: str,
                  display_name: str,
                  name: str,
-                 schema_data: Mapping[str, Any],
+                 schema_data: Mapping[str, str],
                  time_created: str):
         """
         :param str compute_global_image_capability_schema_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute global image capability schema
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str name: The name of the compute global image capability schema version
-        :param Mapping[str, Any] schema_data: The map of each capability name to its ImageCapabilityDescriptor.
+        :param Mapping[str, str] schema_data: The map of each capability name to its ImageCapabilityDescriptor.
         :param str time_created: The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compute_global_image_capability_schema_id", compute_global_image_capability_schema_id)
@@ -21572,7 +21572,7 @@ class GetComputeGlobalImageCapabilitySchemasVersionsComputeGlobalImageCapability
 
     @property
     @pulumi.getter(name="schemaData")
-    def schema_data(self) -> Mapping[str, Any]:
+    def schema_data(self) -> Mapping[str, str]:
         """
         The map of each capability name to its ImageCapabilityDescriptor.
         """
@@ -21630,23 +21630,23 @@ class GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult(dict):
                  compartment_id: str,
                  compute_global_image_capability_schema_id: str,
                  compute_global_image_capability_schema_version_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_id: str,
-                 schema_data: Mapping[str, Any],
+                 schema_data: Mapping[str, str],
                  time_created: str):
         """
         :param str compartment_id: A filter to return only resources that match the given compartment OCID exactly.
         :param str compute_global_image_capability_schema_id: The ocid of the compute global image capability schema
         :param str compute_global_image_capability_schema_version_name: The name of the compute global image capability schema version
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The compute image capability schema [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str image_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an image.
-        :param Mapping[str, Any] schema_data: A mapping of each capability name to its ImageCapabilityDescriptor.
+        :param Mapping[str, str] schema_data: A mapping of each capability name to its ImageCapabilityDescriptor.
         :param str time_created: The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -21686,7 +21686,7 @@ class GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -21702,7 +21702,7 @@ class GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -21726,7 +21726,7 @@ class GetComputeImageCapabilitySchemasComputeImageCapabilitySchemaResult(dict):
 
     @property
     @pulumi.getter(name="schemaData")
-    def schema_data(self) -> Mapping[str, Any]:
+    def schema_data(self) -> Mapping[str, str]:
         """
         A mapping of each capability name to its ImageCapabilityDescriptor.
         """
@@ -21779,9 +21779,9 @@ class GetConsoleHistoriesConsoleHistoryResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_id: str,
                  state: str,
@@ -21789,9 +21789,9 @@ class GetConsoleHistoriesConsoleHistoryResult(dict):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the console history metadata object.
         :param str instance_id: The OCID of the instance.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -21825,7 +21825,7 @@ class GetConsoleHistoriesConsoleHistoryResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -21841,7 +21841,7 @@ class GetConsoleHistoriesConsoleHistoryResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22083,9 +22083,9 @@ class GetCpesCpeResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  cpe_device_shape_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ip_address: str,
                  is_private: bool,
@@ -22093,9 +22093,9 @@ class GetCpesCpeResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str cpe_device_shape_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type. The Networking service maintains a general list of CPE device types (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that can help a network engineer configure the CPE. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of device. To get the OCIDs for the device types on the list, see [ListCpeDeviceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CpeDeviceShapeSummary/ListCpeDeviceShapes).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The CPE's Oracle ID (OCID).
         :param str ip_address: The public IP address of the on-premises router.
         :param bool is_private: Indicates whether this CPE is of type `private` or not.
@@ -22129,7 +22129,7 @@ class GetCpesCpeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -22145,7 +22145,7 @@ class GetCpesCpeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22318,9 +22318,9 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  customer_reference_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  macsec_properties: Sequence['outputs.GetCrossConnectGroupsCrossConnectGroupMacsecPropertyResult'],
                  oci_logical_device_name: str,
@@ -22330,9 +22330,9 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str customer_reference_name: A reference name or identifier for the physical fiber connection that this cross-connect group uses.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The cross-connect group's Oracle ID (OCID).
         :param Sequence['GetCrossConnectGroupsCrossConnectGroupMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
         :param str oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
@@ -22370,7 +22370,7 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -22386,7 +22386,7 @@ class GetCrossConnectGroupsCrossConnectGroupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22802,10 +22802,10 @@ class GetCrossConnectsCrossConnectResult(dict):
                  compartment_id: str,
                  cross_connect_group_id: str,
                  customer_reference_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  far_cross_connect_or_cross_connect_group_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_active: bool,
                  location_name: str,
@@ -22821,9 +22821,9 @@ class GetCrossConnectsCrossConnectResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str cross_connect_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group.
         :param str customer_reference_name: A reference name or identifier for the physical fiber connection that this cross-connect uses.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The cross-connect's Oracle ID (OCID).
         :param str location_name: The name of the FastConnect location where this cross-connect is installed.
         :param Sequence['GetCrossConnectsCrossConnectMacsecPropertyArgs'] macsec_properties: Properties used for MACsec (if capable).
@@ -22879,7 +22879,7 @@ class GetCrossConnectsCrossConnectResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -22900,7 +22900,7 @@ class GetCrossConnectsCrossConnectResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -23325,10 +23325,10 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
                  availability_domain: str,
                  compartment_id: str,
                  dedicated_vm_host_shape: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  remaining_memory_in_gbs: float,
                  remaining_ocpus: float,
@@ -23340,10 +23340,10 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str dedicated_vm_host_shape: The dedicated virtual machine host shape. The shape determines the number of CPUs and other resources available for VMs.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str fault_domain: The fault domain for the dedicated virtual machine host's assigned instances. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
         :param float remaining_memory_in_gbs: The current available memory of the dedicated VM host, in GBs.
         :param float remaining_ocpus: The current available OCPUs of the dedicated VM host.
@@ -23393,7 +23393,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -23417,7 +23417,7 @@ class GetDedicatedVmHostsDedicatedVmHostResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -23538,10 +23538,10 @@ class GetDhcpOptionsFilterResult(dict):
 class GetDhcpOptionsOptionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  domain_name_type: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  options: Sequence['outputs.GetDhcpOptionsOptionOptionResult'],
                  state: str,
@@ -23549,10 +23549,10 @@ class GetDhcpOptionsOptionResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str domain_name_type: The search domain name type of DHCP options
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) for the set of DHCP options.
         :param Sequence['GetDhcpOptionsOptionOptionArgs'] options: The collection of individual DHCP options.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -23580,7 +23580,7 @@ class GetDhcpOptionsOptionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -23604,7 +23604,7 @@ class GetDhcpOptionsOptionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -23710,12 +23710,12 @@ class GetDhcpOptionsOptionOptionResult(dict):
 class GetDrgAttachmentsDrgAttachmentResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  drg_id: str,
                  drg_route_table_id: str,
                  export_drg_route_distribution_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_cross_tenancy: bool,
                  network_details: Sequence['outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult'],
@@ -23726,12 +23726,12 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
         :param str drg_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
         :param str export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network attached to the DRG.
         :param bool is_cross_tenancy: Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
         :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the DRG attachment is using.
@@ -23765,7 +23765,7 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -23805,7 +23805,7 @@ class GetDrgAttachmentsDrgAttachmentResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -24114,21 +24114,21 @@ class GetDrgRouteDistributionStatementsFilterResult(dict):
 class GetDrgRouteDistributionsDrgRouteDistributionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  distribution_type: str,
                  drg_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str distribution_type: Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
         :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str state: A filter that only returns resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: The date and time the route distribution was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -24153,7 +24153,7 @@ class GetDrgRouteDistributionsDrgRouteDistributionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -24185,7 +24185,7 @@ class GetDrgRouteDistributionsDrgRouteDistributionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -24246,7 +24246,7 @@ class GetDrgRouteDistributionsFilterResult(dict):
 @pulumi.output_type
 class GetDrgRouteTableRouteRulesDrgRouteRuleResult(dict):
     def __init__(__self__, *,
-                 attributes: Mapping[str, Any],
+                 attributes: Mapping[str, str],
                  destination: str,
                  destination_type: str,
                  id: str,
@@ -24256,7 +24256,7 @@ class GetDrgRouteTableRouteRulesDrgRouteRuleResult(dict):
                  route_provenance: str,
                  route_type: str):
         """
-        :param Mapping[str, Any] attributes: Additional properties for the route, computed by the service.
+        :param Mapping[str, str] attributes: Additional properties for the route, computed by the service.
         :param str destination: Represents the range of IP addresses to match against when routing traffic.
         :param str destination_type: The type of destination for the rule.
         :param str id: The Oracle-assigned ID of the DRG route rule.
@@ -24278,7 +24278,7 @@ class GetDrgRouteTableRouteRulesDrgRouteRuleResult(dict):
 
     @property
     @pulumi.getter
-    def attributes(self) -> Mapping[str, Any]:
+    def attributes(self) -> Mapping[str, str]:
         """
         Additional properties for the route, computed by the service.
         """
@@ -24380,10 +24380,10 @@ class GetDrgRouteTableRouteRulesFilterResult(dict):
 class GetDrgRouteTablesDrgRouteTableResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  drg_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  import_drg_route_distribution_id: str,
                  is_ecmp_enabled: bool,
@@ -24392,10 +24392,10 @@ class GetDrgRouteTablesDrgRouteTableResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table.
         :param str import_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the import route distribution.
         :param bool is_ecmp_enabled: If you want traffic to be routed using ECMP across your virtual circuits or IPSec tunnels to your on-premises network, enable ECMP on the DRG route table to which these attachments import routes.
@@ -24424,7 +24424,7 @@ class GetDrgRouteTablesDrgRouteTableResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -24448,7 +24448,7 @@ class GetDrgRouteTablesDrgRouteTableResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -24533,9 +24533,9 @@ class GetDrgsDrgResult(dict):
                  compartment_id: str,
                  default_drg_route_tables: Sequence['outputs.GetDrgsDrgDefaultDrgRouteTableResult'],
                  default_export_drg_route_distribution_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  redundancy_status: str,
                  state: str,
@@ -24544,9 +24544,9 @@ class GetDrgsDrgResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetDrgsDrgDefaultDrgRouteTableArgs'] default_drg_route_tables: The default DRG route table for this DRG. Each network type has a default DRG route table.
         :param str default_export_drg_route_distribution_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this DRG's default export route distribution for the DRG attachments.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The DRG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str state: The DRG's current state.
         :param str time_created: The date and time the DRG was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -24588,7 +24588,7 @@ class GetDrgsDrgResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -24604,7 +24604,7 @@ class GetDrgsDrgResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -25316,9 +25316,9 @@ class GetImagesImageResult(dict):
                  billable_size_in_gbs: str,
                  compartment_id: str,
                  create_image_allowed: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_source_details: Sequence['outputs.GetImagesImageImageSourceDetailResult'],
                  instance_id: str,
@@ -25336,9 +25336,9 @@ class GetImagesImageResult(dict):
         :param str billable_size_in_gbs: The size of the internal storage for this image that is subject to billing (1 GB = 1,073,741,824 bytes).  Example: `100`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param bool create_image_allowed: Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the image.
         :param str launch_mode: Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
                * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
@@ -25415,7 +25415,7 @@ class GetImagesImageResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -25431,7 +25431,7 @@ class GetImagesImageResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -26035,9 +26035,9 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
                  block_volume_replicas: Sequence['outputs.GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
@@ -26050,9 +26050,9 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
         :param Sequence['GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param str compartment_id: The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -26123,7 +26123,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -26139,7 +26139,7 @@ class GetInstanceConfigurationInstanceDetailBlockVolumeCreateDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -26281,17 +26281,17 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  instance_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionResult'],
                  ipxe_script: str,
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult'],
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
@@ -26307,11 +26307,11 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
         :param str compartment_id: The OCID of the compartment containing images to search
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -26321,7 +26321,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -26422,7 +26422,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -26438,7 +26438,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -26454,7 +26454,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -26506,7 +26506,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -26679,9 +26679,9 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -26692,9 +26692,9 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -26741,7 +26741,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -26757,7 +26757,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -26966,7 +26966,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult(dict)
 class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: bool,
-                 config_map: Mapping[str, Any],
+                 config_map: Mapping[str, str],
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
@@ -26979,7 +26979,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
                  type: str):
         """
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -27014,7 +27014,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dic
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Mapping[str, Any]:
+    def config_map(self) -> Mapping[str, str]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -27298,12 +27298,12 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailResult(dict)
 class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -27322,7 +27322,7 @@ class GetInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSour
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -27518,9 +27518,9 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
                  block_volume_replicas: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
@@ -27533,9 +27533,9 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param str compartment_id: The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -27606,7 +27606,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -27622,7 +27622,7 @@ class GetInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailResult(
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -27764,17 +27764,17 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  instance_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionResult'],
                  ipxe_script: str,
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult'],
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
@@ -27790,11 +27790,11 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
         :param str compartment_id: The OCID of the compartment containing images to search
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -27804,7 +27804,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -27905,7 +27905,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -27921,7 +27921,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -27937,7 +27937,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -27989,7 +27989,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -28162,9 +28162,9 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -28175,9 +28175,9 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -28224,7 +28224,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -28240,7 +28240,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailRe
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -28770,12 +28770,12 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailResult
 class GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -28794,7 +28794,7 @@ class GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstan
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -28863,9 +28863,9 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -28876,9 +28876,9 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -28925,7 +28925,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -28941,7 +28941,7 @@ class GetInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailR
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -29071,9 +29071,9 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -29084,9 +29084,9 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -29133,7 +29133,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -29149,7 +29149,7 @@ class GetInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailResult(
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -29271,9 +29271,9 @@ class GetInstanceConfigurationsInstanceConfigurationResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  deferred_fields: Sequence[str],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailResult'],
                  instance_id: str,
@@ -29282,9 +29282,9 @@ class GetInstanceConfigurationsInstanceConfigurationResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence[str] deferred_fields: Parameters that were not specified when the instance configuration was created, but that are required to launch an instance from the instance configuration. See the [LaunchInstanceConfiguration](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Instance/LaunchInstanceConfiguration) operation.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the volume backup.
         :param str time_created: The date and time the instance configuration was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
@@ -29317,7 +29317,7 @@ class GetInstanceConfigurationsInstanceConfigurationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -29333,7 +29333,7 @@ class GetInstanceConfigurationsInstanceConfigurationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -29566,9 +29566,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
                  block_volume_replicas: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
@@ -29581,9 +29581,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -29654,7 +29654,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -29670,7 +29670,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailBlockVolumeCre
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -29812,17 +29812,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  instance_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionResult'],
                  ipxe_script: str,
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult'],
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
@@ -29838,11 +29838,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -29852,7 +29852,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -29953,7 +29953,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -29969,7 +29969,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -29985,7 +29985,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -30037,7 +30037,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailRe
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -30210,9 +30210,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -30223,9 +30223,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -30272,7 +30272,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -30288,7 +30288,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCr
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -30497,7 +30497,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLa
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: bool,
-                 config_map: Mapping[str, Any],
+                 config_map: Mapping[str, str],
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
@@ -30510,7 +30510,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
                  type: str):
         """
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available. For example, Secure Virtual Machine for AMD shapes or VT-x for Intel shapes.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot feature is enabled on the instance.
@@ -30545,7 +30545,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPl
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Mapping[str, Any]:
+    def config_map(self) -> Mapping[str, str]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -30829,12 +30829,12 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -30853,7 +30853,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSo
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -31049,9 +31049,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
                  block_volume_replicas: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaResult'],
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  is_auto_tune_enabled: bool,
                  kms_key_id: str,
                  size_in_gbs: str,
@@ -31064,9 +31064,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVolumeCreateDetailBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas to be enabled for this volume in the specified destination availability domains.
         :param str cluster_placement_group_id: The OCID of the cluster placement group of the instance.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param str kms_key_id: The OCID of the Vault service key to assign as the master encryption key for the volume.
         :param str size_in_gbs: The size of the volume in GBs.
@@ -31137,7 +31137,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -31153,7 +31153,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionBlockVol
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -31295,17 +31295,17 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  instance_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionResult'],
                  ipxe_script: str,
                  is_pv_encryption_in_transit_enabled: bool,
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionResult'],
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  platform_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigResult'],
                  preferred_maintenance_action: str,
@@ -31321,11 +31321,11 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailArgs'] create_vnic_details: Contains the properties of the VNIC for an instance configuration. See [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) and [Instance Configurations](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/instancemanagement.htm#config) for more information.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host to place the instance on.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailInstanceOptionArgs'] instance_options: Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         :param str ipxe_script: This is an advanced option.
         :param bool is_pv_encryption_in_transit_enabled: Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
@@ -31335,7 +31335,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPlatformConfigArgs'] platform_configs: The platform configuration requested for the instance.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str preferred_maintenance_action: The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
@@ -31436,7 +31436,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -31452,7 +31452,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -31468,7 +31468,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -31520,7 +31520,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         """
@@ -31693,9 +31693,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -31706,9 +31706,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -31755,7 +31755,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -31771,7 +31771,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32301,12 +32301,12 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -32325,7 +32325,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionLaunchDe
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -32394,9 +32394,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -32407,9 +32407,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -32456,7 +32456,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -32472,7 +32472,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailOptionSecondar
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32602,9 +32602,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -32615,9 +32615,9 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
         :param bool assign_ipv6ip: Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a private DNS record. See the `assignPrivateDnsRecord` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. See the `assignPublicIp` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         :param Sequence['GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure selects an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to add the VNIC to. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -32664,7 +32664,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -32680,7 +32680,7 @@ class GetInstanceConfigurationsInstanceConfigurationInstanceDetailSecondaryVnicC
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32796,9 +32796,9 @@ class GetInstanceConsoleConnectionsInstanceConsoleConnectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  connection_string: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  fingerprint: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_id: str,
                  public_key: str,
@@ -32808,9 +32808,9 @@ class GetInstanceConsoleConnectionsInstanceConsoleConnectionResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str connection_string: The SSH connection string for the console connection.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str fingerprint: The SSH public key's fingerprint for client authentication to the console connection.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the console connection.
         :param str instance_id: The OCID of the instance.
         :param str service_host_key_fingerprint: The SSH public key's fingerprint for the console connection service host.
@@ -32847,7 +32847,7 @@ class GetInstanceConsoleConnectionsInstanceConsoleConnectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -32863,7 +32863,7 @@ class GetInstanceConsoleConnectionsInstanceConsoleConnectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -32921,9 +32921,9 @@ class GetInstanceCreateVnicDetailResult(dict):
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -32932,9 +32932,9 @@ class GetInstanceCreateVnicDetailResult(dict):
                  subnet_id: str,
                  vlan_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the instance VNIC's primary private IP.
         :param str private_ip: The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         """
@@ -32969,7 +32969,7 @@ class GetInstanceCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -32985,7 +32985,7 @@ class GetInstanceCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33411,7 +33411,7 @@ class GetInstanceMaintenanceEventsFilterResult(dict):
 @pulumi.output_type
 class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
     def __init__(__self__, *,
-                 additional_details: Mapping[str, Any],
+                 additional_details: Mapping[str, str],
                  alternative_resolution_action: str,
                  alternative_resolution_actions: Sequence[str],
                  can_delete_local_storage: bool,
@@ -33419,11 +33419,11 @@ class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
                  compartment_id: str,
                  correlation_token: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  estimated_duration: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_action: str,
                  instance_id: str,
@@ -33438,18 +33438,18 @@ class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
                  time_started: str,
                  time_window_start: str):
         """
-        :param Mapping[str, Any] additional_details: Additional details of the maintenance in the form of json.
+        :param Mapping[str, str] additional_details: Additional details of the maintenance in the form of json.
         :param Sequence[str] alternative_resolution_actions: These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
         :param bool can_delete_local_storage: For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
         :param bool can_reschedule: Indicates if this MaintenanceEvent is capable of being rescheduled up to the timeHardDueDate.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str correlation_token: A filter to only return resources that have a matching correlationToken.
         :param str created_by: The creator of the maintenance event.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: It is the descriptive information about the maintenance taking place on the customer instance.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str estimated_duration: This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
         :param str instance_action: A filter to only return resources that match the given instance action.
         :param str instance_id: The OCID of the instance.
@@ -33492,7 +33492,7 @@ class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
+    def additional_details(self) -> Mapping[str, str]:
         """
         Additional details of the maintenance in the form of json.
         """
@@ -33553,7 +33553,7 @@ class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -33585,7 +33585,7 @@ class GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -33806,7 +33806,7 @@ class GetInstanceMeasuredBootReportMeasurementPolicyResult(dict):
 class GetInstancePlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: bool,
-                 config_map: Mapping[str, Any],
+                 config_map: Mapping[str, str],
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
@@ -33819,7 +33819,7 @@ class GetInstancePlatformConfigResult(dict):
                  type: str):
         """
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance
@@ -33854,7 +33854,7 @@ class GetInstancePlatformConfigResult(dict):
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Mapping[str, Any]:
+    def config_map(self) -> Mapping[str, str]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -34495,9 +34495,9 @@ class GetInstancePoolsInstancePoolResult(dict):
     def __init__(__self__, *,
                  actual_size: int,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  instance_configuration_id: str,
                  instance_display_name_formatter: str,
@@ -34509,9 +34509,9 @@ class GetInstancePoolsInstancePoolResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer attachment.
         :param str instance_configuration_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration associated with the instance pool.
         :param str instance_display_name_formatter: A user-friendly formatter for the instance pool's instances. Instance displaynames follow the format. The formatter does not retroactively change instance's displaynames, only instance displaynames in the future follow the format
@@ -34552,7 +34552,7 @@ class GetInstancePoolsInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -34568,7 +34568,7 @@ class GetInstancePoolsInstancePoolResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -35197,12 +35197,12 @@ class GetInstanceSourceDetailResult(dict):
 class GetInstanceSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The OCID of the compartment containing images to search
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -35221,7 +35221,7 @@ class GetInstanceSourceDetailInstanceSourceImageFilterDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -35291,11 +35291,11 @@ class GetInstancesInstanceResult(dict):
                  compute_cluster_id: str,
                  create_vnic_details: Sequence['outputs.GetInstancesInstanceCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  id: str,
                  image: str,
@@ -35307,7 +35307,7 @@ class GetInstancesInstanceResult(dict):
                  launch_mode: str,
                  launch_options: Sequence['outputs.GetInstancesInstanceLaunchOptionResult'],
                  launch_volume_attachments: Sequence['outputs.GetInstancesInstanceLaunchVolumeAttachmentResult'],
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  platform_configs: Sequence['outputs.GetInstancesInstancePlatformConfigResult'],
                  preemptible_instance_configs: Sequence['outputs.GetInstancesInstancePreemptibleInstanceConfigResult'],
                  preserve_boot_volume: bool,
@@ -35320,7 +35320,7 @@ class GetInstancesInstanceResult(dict):
                  source_details: Sequence['outputs.GetInstancesInstanceSourceDetailResult'],
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_maintenance_reboot_due: str,
                  update_operation_constraint: str):
@@ -35334,11 +35334,11 @@ class GetInstancesInstanceResult(dict):
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
         :param str dedicated_vm_host_id: The OCID of the dedicated virtual machine host that the instance is placed on.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str fault_domain: The name of the fault domain the instance is running in.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the instance.
         :param str image: Deprecated. Use `sourceDetails` instead.
         :param str instance_configuration_id: The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
@@ -35352,7 +35352,7 @@ class GetInstancesInstanceResult(dict):
                * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
                * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         :param Sequence['GetInstancesInstanceLaunchOptionArgs'] launch_options: Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
-        :param Mapping[str, Any] metadata: Custom metadata that you provide.
+        :param Mapping[str, str] metadata: Custom metadata that you provide.
         :param Sequence['GetInstancesInstancePlatformConfigArgs'] platform_configs: The platform configuration for the instance.
         :param Sequence['GetInstancesInstancePreemptibleInstanceConfigArgs'] preemptible_instance_configs: (Optional) Configuration options for preemptible instances.
         :param bool preserve_boot_volume: (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
@@ -35360,7 +35360,7 @@ class GetInstancesInstanceResult(dict):
         :param str shape: The shape of the instance. The shape determines the number of CPUs and the amount of memory allocated to the instance. You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
         :param Sequence['GetInstancesInstanceShapeConfigArgs'] shape_configs: The shape configuration for an instance. The shape configuration determines the resources allocated to an instance.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param str time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
@@ -35493,7 +35493,7 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -35509,7 +35509,7 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -35525,7 +35525,7 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -35621,7 +35621,7 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata that you provide.
         """
@@ -35711,7 +35711,7 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -35858,9 +35858,9 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetInstancesInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -35869,9 +35869,9 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
                  subnet_id: str,
                  vlan_id: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "assign_ipv6ip", assign_ipv6ip)
         pulumi.set(__self__, "assign_private_dns_record", assign_private_dns_record)
@@ -35904,7 +35904,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -35920,7 +35920,7 @@ class GetInstancesInstanceCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -36252,7 +36252,7 @@ class GetInstancesInstanceLaunchVolumeAttachmentLaunchCreateVolumeDetailResult(d
 class GetInstancesInstancePlatformConfigResult(dict):
     def __init__(__self__, *,
                  are_virtual_instructions_enabled: bool,
-                 config_map: Mapping[str, Any],
+                 config_map: Mapping[str, str],
                  is_access_control_service_enabled: bool,
                  is_input_output_memory_management_unit_enabled: bool,
                  is_measured_boot_enabled: bool,
@@ -36265,7 +36265,7 @@ class GetInstancesInstancePlatformConfigResult(dict):
                  type: str):
         """
         :param bool are_virtual_instructions_enabled: Whether virtualization instructions are available.
-        :param Mapping[str, Any] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
+        :param Mapping[str, str] config_map: Instance Platform Configuration Configuration Map for flexible setting input.
         :param bool is_access_control_service_enabled: Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device passthrough.
         :param bool is_input_output_memory_management_unit_enabled: Whether the input-output memory management unit is enabled.
         :param bool is_measured_boot_enabled: Whether the Measured Boot is to be enabled on the instance.
@@ -36300,7 +36300,7 @@ class GetInstancesInstancePlatformConfigResult(dict):
 
     @property
     @pulumi.getter(name="configMap")
-    def config_map(self) -> Mapping[str, Any]:
+    def config_map(self) -> Mapping[str, str]:
         """
         Instance Platform Configuration Configuration Map for flexible setting input.
         """
@@ -36664,12 +36664,12 @@ class GetInstancesInstanceSourceDetailResult(dict):
 class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetailResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags_filter: Mapping[str, Any],
+                 defined_tags_filter: Mapping[str, str],
                  operating_system: str,
                  operating_system_version: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, str] defined_tags_filter: Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str operating_system: The image's operating system.  Example: `Oracle Linux`
         :param str operating_system_version: The image's operating system version.  Example: `7.2`
         """
@@ -36688,7 +36688,7 @@ class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetailResult(dict
 
     @property
     @pulumi.getter(name="definedTagsFilter")
-    def defined_tags_filter(self) -> Mapping[str, Any]:
+    def defined_tags_filter(self) -> Mapping[str, str]:
         """
         Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -36742,10 +36742,10 @@ class GetInternetGatewaysFilterResult(dict):
 class GetInternetGatewaysGatewayResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  enabled: bool,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  route_table_id: str,
                  state: str,
@@ -36753,10 +36753,10 @@ class GetInternetGatewaysGatewayResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param bool enabled: Whether the gateway is enabled. When the gateway is disabled, traffic is not routed to/from the Internet, regardless of route rules.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The internet gateway's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the Internet Gateway is using.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -36784,7 +36784,7 @@ class GetInternetGatewaysGatewayResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -36808,7 +36808,7 @@ class GetInternetGatewaysGatewayResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -38609,10 +38609,10 @@ class GetIpsecConnectionsConnectionResult(dict):
                  cpe_id: str,
                  cpe_local_identifier: str,
                  cpe_local_identifier_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  drg_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  static_routes: Sequence[str],
@@ -38623,10 +38623,10 @@ class GetIpsecConnectionsConnectionResult(dict):
         :param str cpe_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE.
         :param str cpe_local_identifier: Your identifier for your CPE device. Can be either an IP address or a hostname (specifically, the fully qualified domain name (FQDN)). The type of identifier here must correspond to the value for `cpeLocalIdentifierType`.
         :param str cpe_local_identifier_type: The type of identifier for your CPE device. The value here must correspond to the value for `cpeLocalIdentifier`.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str state: The IPSec connection's current state.
         :param Sequence[str] static_routes: Static routes to the CPE. The CIDR must not be a multicast address or class E address.
@@ -38681,7 +38681,7 @@ class GetIpsecConnectionsConnectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -38705,7 +38705,7 @@ class GetIpsecConnectionsConnectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -38888,9 +38888,9 @@ class GetIpv6sFilterResult(dict):
 class GetIpv6sIpv6Result(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ip_address: str,
                  ipv6subnet_cidr: str,
@@ -38900,9 +38900,9 @@ class GetIpv6sIpv6Result(dict):
                  vnic_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6. This is the same as the VNIC's compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
         :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
         :param str state: The IPv6's current state.
@@ -38932,7 +38932,7 @@ class GetIpv6sIpv6Result(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -38948,7 +38948,7 @@ class GetIpv6sIpv6Result(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -39127,9 +39127,9 @@ class GetLocalPeeringGatewaysFilterResult(dict):
 class GetLocalPeeringGatewaysLocalPeeringGatewayResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_cross_tenancy_peering: bool,
                  peer_advertised_cidr: str,
@@ -39143,9 +39143,9 @@ class GetLocalPeeringGatewaysLocalPeeringGatewayResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The LPG's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param bool is_cross_tenancy_peering: Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
         :param str peer_advertised_cidr: The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
@@ -39184,7 +39184,7 @@ class GetLocalPeeringGatewaysLocalPeeringGatewayResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -39200,7 +39200,7 @@ class GetLocalPeeringGatewaysLocalPeeringGatewayResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -39327,9 +39327,9 @@ class GetNatGatewaysNatGatewayResult(dict):
     def __init__(__self__, *,
                  block_traffic: bool,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  nat_ip: str,
                  public_ip_id: str,
@@ -39340,9 +39340,9 @@ class GetNatGatewaysNatGatewayResult(dict):
         """
         :param bool block_traffic: Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NAT gateway.
         :param str nat_ip: The IP address associated with the NAT gateway.
         :param str public_ip_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP address associated with the NAT gateway.
@@ -39382,7 +39382,7 @@ class GetNatGatewaysNatGatewayResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -39398,7 +39398,7 @@ class GetNatGatewaysNatGatewayResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -39940,18 +39940,18 @@ class GetNetworkSecurityGroupsFilterResult(dict):
 class GetNetworkSecurityGroupsNetworkSecurityGroupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str,
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security group.
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: The date and time the network security group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -39976,7 +39976,7 @@ class GetNetworkSecurityGroupsNetworkSecurityGroupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -39992,7 +39992,7 @@ class GetNetworkSecurityGroupsNetworkSecurityGroupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40114,9 +40114,9 @@ class GetPrivateIpsPrivateIpResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  id: str,
                  ip_address: str,
@@ -40129,9 +40129,9 @@ class GetPrivateIpsPrivateIpResult(dict):
         """
         :param str availability_domain: The private IP's availability domain. This attribute will be null if this is a *secondary* private IP assigned to a VNIC that is in a *regional* subnet.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the private IP.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname_label: The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         :param str id: The private IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str ip_address: An IP address. This could be either IPv4 or IPv6, depending on the resource. Example: `10.0.3.3`
@@ -40175,7 +40175,7 @@ class GetPrivateIpsPrivateIpResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -40191,7 +40191,7 @@ class GetPrivateIpsPrivateIpResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40314,18 +40314,18 @@ class GetPublicIpPoolsPublicIpPoolCollectionItemResult(dict):
     def __init__(__self__, *,
                  cidr_blocks: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str):
         """
         :param Sequence[str] cidr_blocks: The CIDR blocks added to this pool. This could be all or a portion of a BYOIP CIDR block.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
         :param str state: The public IP pool's current state.
         :param str time_created: The date and time the public IP pool was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -40357,7 +40357,7 @@ class GetPublicIpPoolsPublicIpPoolCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -40373,7 +40373,7 @@ class GetPublicIpPoolsPublicIpPoolCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40438,9 +40438,9 @@ class GetPublicIpsPublicIpResult(dict):
                  assigned_entity_type: str,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ip_address: str,
                  lifetime: str,
@@ -40454,9 +40454,9 @@ class GetPublicIpsPublicIpResult(dict):
         :param str assigned_entity_type: The type of entity the public IP is assigned to, or in the process of being assigned to.
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str ip_address: The public IP address of the `publicIp` object.  Example: `203.0.113.2`
         :param str lifetime: A filter to return only public IPs that match given lifetime.
@@ -40518,7 +40518,7 @@ class GetPublicIpsPublicIpResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -40534,7 +40534,7 @@ class GetPublicIpsPublicIpResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40638,10 +40638,10 @@ class GetRemotePeeringConnectionsFilterResult(dict):
 class GetRemotePeeringConnectionsRemotePeeringConnectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  drg_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_cross_tenancy_peering: bool,
                  peer_id: str,
@@ -40652,10 +40652,10 @@ class GetRemotePeeringConnectionsRemotePeeringConnectionResult(dict):
                  time_created: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str drg_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC.
         :param bool is_cross_tenancy_peering: Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
         :param str peer_id: If this RPC is peered, this value is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the other RPC.
@@ -40689,7 +40689,7 @@ class GetRemotePeeringConnectionsRemotePeeringConnectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -40713,7 +40713,7 @@ class GetRemotePeeringConnectionsRemotePeeringConnectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -40815,9 +40815,9 @@ class GetRouteTablesFilterResult(dict):
 class GetRouteTablesRouteTableResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  route_rules: Sequence['outputs.GetRouteTablesRouteTableRouteRuleResult'],
                  state: str,
@@ -40825,9 +40825,9 @@ class GetRouteTablesRouteTableResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The route table's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param Sequence['GetRouteTablesRouteTableRouteRuleArgs'] route_rules: The collection of rules for routing destination IPs to network devices.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
@@ -40854,7 +40854,7 @@ class GetRouteTablesRouteTableResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -40870,7 +40870,7 @@ class GetRouteTablesRouteTableResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -41026,10 +41026,10 @@ class GetSecurityListsFilterResult(dict):
 class GetSecurityListsSecurityListResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  egress_security_rules: Sequence['outputs.GetSecurityListsSecurityListEgressSecurityRuleResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ingress_security_rules: Sequence['outputs.GetSecurityListsSecurityListIngressSecurityRuleResult'],
                  state: str,
@@ -41037,10 +41037,10 @@ class GetSecurityListsSecurityListResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param Sequence['GetSecurityListsSecurityListEgressSecurityRuleArgs'] egress_security_rules: Rules for allowing egress IP packets.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The security list's Oracle Cloud ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param Sequence['GetSecurityListsSecurityListIngressSecurityRuleArgs'] ingress_security_rules: Rules for allowing ingress IP packets.
         :param str state: A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
@@ -41068,7 +41068,7 @@ class GetSecurityListsSecurityListResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -41092,7 +41092,7 @@ class GetSecurityListsSecurityListResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -41699,9 +41699,9 @@ class GetServiceGatewaysServiceGatewayResult(dict):
     def __init__(__self__, *,
                  block_traffic: bool,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  route_table_id: str,
                  services: Sequence['outputs.GetServiceGatewaysServiceGatewayServiceResult'],
@@ -41711,9 +41711,9 @@ class GetServiceGatewaysServiceGatewayResult(dict):
         """
         :param bool block_traffic: Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the service gateway.
         :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway is using. For information about why you would associate a route table with a service gateway, see [Transit Routing: Private Access to Oracle Services](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
         :param Sequence['GetServiceGatewaysServiceGatewayServiceArgs'] services: List of the [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects enabled for this service gateway. The list can be empty. You can enable a particular `Service` by using [AttachServiceId](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/AttachServiceId) or [UpdateServiceGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/ServiceGateway/UpdateServiceGateway).
@@ -41751,7 +41751,7 @@ class GetServiceGatewaysServiceGatewayResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -41767,7 +41767,7 @@ class GetServiceGatewaysServiceGatewayResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -43618,11 +43618,11 @@ class GetSubnetsSubnetResult(dict):
                  availability_domain: str,
                  cidr_block: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  dhcp_options_id: str,
                  display_name: str,
                  dns_label: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ipv6cidr_block: str,
                  ipv6cidr_blocks: Sequence[str],
@@ -43641,11 +43641,11 @@ class GetSubnetsSubnetResult(dict):
         :param str availability_domain: The subnet's availability domain. This attribute will be null if this is a regional subnet instead of an AD-specific subnet. Oracle recommends creating regional subnets.  Example: `Uocm:PHX-AD-1`
         :param str cidr_block: The subnet's CIDR block.  Example: `10.0.1.0/24`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str dhcp_options_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the set of DHCP options that the subnet uses.
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str dns_label: A DNS label for the subnet, used in conjunction with the VNIC's hostname and VCN's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter and is unique within the VCN. The value cannot be changed.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The subnet's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str ipv6cidr_block: For an IPv6-enabled subnet, this is the IPv6 prefix for the subnet's IP address space. The subnet size is always /64. See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).  Example: `2001:0db8:0123:1111::/64`
         :param Sequence[str] ipv6cidr_blocks: The list of all IPv6 prefixes (Oracle allocated IPv6 GUA, ULA or private IPv6 prefixes, BYOIPv6 prefixes) for the subnet.
@@ -43710,7 +43710,7 @@ class GetSubnetsSubnetResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -43742,7 +43742,7 @@ class GetSubnetsSubnetResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -44007,10 +44007,10 @@ class GetVcnsVirtualNetworkResult(dict):
                  default_dhcp_options_id: str,
                  default_route_table_id: str,
                  default_security_list_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_label: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ipv6cidr_blocks: Sequence[str],
                  ipv6private_cidr_blocks: Sequence[str],
@@ -44027,10 +44027,10 @@ class GetVcnsVirtualNetworkResult(dict):
         :param str default_dhcp_options_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
         :param str default_route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
         :param str default_security_list_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str dns_label: A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param Sequence[str] ipv6cidr_blocks: For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
         :param Sequence[str] ipv6private_cidr_blocks: For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
@@ -44122,7 +44122,7 @@ class GetVcnsVirtualNetworkResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -44146,7 +44146,7 @@ class GetVcnsVirtualNetworkResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -44554,9 +44554,9 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
                  cross_connect_mappings: Sequence['outputs.GetVirtualCircuitsVirtualCircuitCrossConnectMappingResult'],
                  customer_asn: str,
                  customer_bgp_asn: int,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gateway_id: str,
                  id: str,
                  ip_mtu: str,
@@ -44585,9 +44585,9 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
         :param Sequence['GetVirtualCircuitsVirtualCircuitCrossConnectMappingArgs'] cross_connect_mappings: An array of mappings, each containing properties for a cross-connect or cross-connect group that is associated with this virtual circuit.
         :param str customer_asn: The BGP ASN of the network at the other end of the BGP session from Oracle. If the session is between the customer's edge router and Oracle, the value is the customer's ASN. If the BGP session is between the provider's edge router and Oracle, the value is the provider's ASN. Can be a 2-byte or 4-byte ASN. Uses "asplain" format.
         :param int customer_bgp_asn: Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gateway_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's [dynamic routing gateway (DRG)](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Drg) that this virtual circuit uses. Applicable only to private virtual circuits.
         :param str id: The virtual circuit's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str ip_mtu: The layer 3 IP MTU to use on this virtual circuit.
@@ -44713,7 +44713,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -44729,7 +44729,7 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -45011,10 +45011,10 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
                  default_dhcp_options_id: str,
                  default_route_table_id: str,
                  default_security_list_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_label: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ipv6cidr_blocks: Sequence[str],
                  ipv6private_cidr_blocks: Sequence[str],
@@ -45086,7 +45086,7 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -45101,7 +45101,7 @@ class GetVirtualNetworksVirtualNetworkResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -45197,9 +45197,9 @@ class GetVlansVlanResult(dict):
                  availability_domain: str,
                  cidr_block: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  nsg_ids: Sequence[str],
                  route_table_id: str,
@@ -45211,9 +45211,9 @@ class GetVlansVlanResult(dict):
         :param str availability_domain: The VLAN's availability domain. This attribute will be null if this is a regional VLAN rather than an AD-specific VLAN.  Example: `Uocm:PHX-AD-1`
         :param str cidr_block: The range of IPv4 addresses that will be used for layer 3 communication with hosts outside the VLAN.  Example: `192.168.1.0/24`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The VLAN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param Sequence[str] nsg_ids: A list of the OCIDs of the network security groups (NSGs) to use with this VLAN. All VNICs in the VLAN belong to these NSGs. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str route_table_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table that the VLAN uses.
@@ -45262,7 +45262,7 @@ class GetVlansVlanResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -45278,7 +45278,7 @@ class GetVlansVlanResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -45520,9 +45520,9 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
                  assign_ipv6ip: bool,
                  assign_private_dns_record: bool,
                  assign_public_ip: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  ipv6address_ipv6subnet_cidr_pair_details: Sequence['outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult'],
                  nsg_ids: Sequence[str],
@@ -45566,7 +45566,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -45579,7 +45579,7 @@ class GetVnicAttachmentsVnicAttachmentCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -46045,19 +46045,19 @@ class GetVolumeBackupPoliciesFilterResult(dict):
 class GetVolumeBackupPoliciesVolumeBackupPolicyResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  destination_region: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  schedules: Sequence['outputs.GetVolumeBackupPoliciesVolumeBackupPolicyScheduleResult'],
                  time_created: str):
         """
         :param str compartment_id: The OCID of the compartment. If no compartment is specified, the Oracle defined backup policies are listed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str destination_region: The paired destination region for copying scheduled backups to. Example `us-ashburn-1`. See [Region Pairs](https://docs.cloud.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm#RegionPairs) for details about paired regions.
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the volume backup policy.
         :param Sequence['GetVolumeBackupPoliciesVolumeBackupPolicyScheduleArgs'] schedules: The collection of schedules that this policy will apply.
         :param str time_created: The date and time the volume backup policy was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -46081,7 +46081,7 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -46105,7 +46105,7 @@ class GetVolumeBackupPoliciesVolumeBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -46362,10 +46362,10 @@ class GetVolumeBackupsFilterResult(dict):
 class GetVolumeBackupsVolumeBackupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  expiration_time: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  kms_key_id: str,
                  size_in_gbs: str,
@@ -46374,7 +46374,7 @@ class GetVolumeBackupsVolumeBackupResult(dict):
                  source_type: str,
                  source_volume_backup_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_request_received: str,
                  type: str,
@@ -46383,10 +46383,10 @@ class GetVolumeBackupsVolumeBackupResult(dict):
                  volume_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str expiration_time: The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the volume backup.
         :param str kms_key_id: The OCID of the Vault service key which is the master encryption key for the volume backup. For more information about the Vault service and encryption keys, see [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
         :param str size_in_gbs: The size of the volume, in GBs.
@@ -46394,7 +46394,7 @@ class GetVolumeBackupsVolumeBackupResult(dict):
         :param str source_type: Specifies whether the backup was created manually, or via scheduled backup policy.
         :param str source_volume_backup_id: A filter to return only resources that originated from the given source volume backup.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_request_received: The date and time the request to create the volume backup was received. Format defined by [RFC3339]https://tools.ietf.org/html/rfc3339.
         :param str type: The type of a volume backup. Supported values are 'FULL' or 'INCREMENTAL'.
@@ -46433,7 +46433,7 @@ class GetVolumeBackupsVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -46457,7 +46457,7 @@ class GetVolumeBackupsVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -46527,7 +46527,7 @@ class GetVolumeBackupsVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -46686,10 +46686,10 @@ class GetVolumeGroupBackupsFilterResult(dict):
 class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  expiration_time: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  size_in_gbs: str,
                  size_in_mbs: str,
@@ -46706,10 +46706,10 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
                  volume_group_id: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str expiration_time: The date and time the volume group backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for volume group backups that were created automatically by a scheduled-backup policy. For manually created volume group backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the volume group backup.
         :param str size_in_gbs: The aggregate size of the volume group backup, in GBs.
         :param str size_in_mbs: The aggregate size of the volume group backup, in MBs.
@@ -46754,7 +46754,7 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -46778,7 +46778,7 @@ class GetVolumeGroupBackupsVolumeGroupBackupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -46981,9 +46981,9 @@ class GetVolumeGroupReplicasVolumeGroupReplicaResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  member_replicas: Sequence['outputs.GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaResult'],
                  size_in_gbs: str,
@@ -46994,9 +46994,9 @@ class GetVolumeGroupReplicasVolumeGroupReplicaResult(dict):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID for the volume group replica.
         :param Sequence['GetVolumeGroupReplicasVolumeGroupReplicaMemberReplicaArgs'] member_replicas: Volume replicas within this volume group replica.
         :param str size_in_gbs: The aggregate size of the volume group replica in GBs.
@@ -47036,7 +47036,7 @@ class GetVolumeGroupReplicasVolumeGroupReplicaResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -47052,7 +47052,7 @@ class GetVolumeGroupReplicasVolumeGroupReplicaResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -47178,9 +47178,9 @@ class GetVolumeGroupsVolumeGroupResult(dict):
                  backup_policy_id: str,
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_hydrated: bool,
                  preserve_volume_replica: bool,
@@ -47195,9 +47195,9 @@ class GetVolumeGroupsVolumeGroupResult(dict):
         """
         :param str availability_domain: The name of the availability domain.  Example: `Uocm:PHX-AD-1`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID for the volume group.
         :param bool is_hydrated: Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
         :param str size_in_gbs: The aggregate size of the volume group in GBs.
@@ -47256,7 +47256,7 @@ class GetVolumeGroupsVolumeGroupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -47272,7 +47272,7 @@ class GetVolumeGroupsVolumeGroupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -47530,9 +47530,9 @@ class GetVolumesVolumeResult(dict):
                  block_volume_replicas_deletion: bool,
                  cluster_placement_group_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_tune_enabled: bool,
                  is_hydrated: bool,
@@ -47541,7 +47541,7 @@ class GetVolumesVolumeResult(dict):
                  size_in_mbs: str,
                  source_details: Sequence['outputs.GetVolumesVolumeSourceDetailResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  volume_backup_id: str,
                  volume_group_id: str,
@@ -47553,9 +47553,9 @@ class GetVolumesVolumeResult(dict):
         :param Sequence['GetVolumesVolumeBlockVolumeReplicaArgs'] block_volume_replicas: The list of block volume replicas of this volume.
         :param str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group Id exactly.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the block volume replica.
         :param bool is_auto_tune_enabled: Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
         :param bool is_hydrated: Specifies whether the cloned volume's data has finished copying from the source volume or backup.
@@ -47563,7 +47563,7 @@ class GetVolumesVolumeResult(dict):
         :param str size_in_gbs: The size of the volume in GBs.
         :param str size_in_mbs: The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
         :param str state: A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str time_created: The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str volume_group_id: The OCID of the volume group.
         :param str vpus_per_gb: The number of volume performance units (VPUs) that will be applied to this volume per GB, representing the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
@@ -47654,7 +47654,7 @@ class GetVolumesVolumeResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -47670,7 +47670,7 @@ class GetVolumesVolumeResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -47740,7 +47740,7 @@ class GetVolumesVolumeResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -47906,10 +47906,10 @@ class GetVtapsVtapResult(dict):
     def __init__(__self__, *,
                  capture_filter_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  encapsulation_protocol: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_vtap_enabled: bool,
                  lifecycle_state_details: str,
@@ -47929,10 +47929,10 @@ class GetVtapsVtapResult(dict):
         """
         :param str capture_filter_id: The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the given display name exactly.
         :param str encapsulation_protocol: Defines an encapsulation header type for the VTAP's mirrored traffic.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The VTAP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
         :param bool is_vtap_enabled: Indicates whether to list all VTAPs or only running VTAPs.
                * When `FALSE`, lists ALL running and stopped VTAPs.
@@ -47993,7 +47993,7 @@ class GetVtapsVtapResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -48017,7 +48017,7 @@ class GetVtapsVtapResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """

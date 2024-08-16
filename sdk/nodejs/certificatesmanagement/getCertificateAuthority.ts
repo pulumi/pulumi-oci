@@ -72,7 +72,7 @@ export interface GetCertificateAuthorityResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A brief description of the CA.
      */
@@ -80,7 +80,7 @@ export interface GetCertificateAuthorityResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The OCID of the CA.
      */

@@ -19,8 +19,8 @@ class NodePoolArgs:
                  cluster_id: pulumi.Input[str],
                  compartment_id: pulumi.Input[str],
                  node_shape: pulumi.Input[str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -28,7 +28,7 @@ class NodePoolArgs:
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
-                 node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
                  node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
                  node_source_details: Optional[pulumi.Input['NodePoolNodeSourceDetailsArgs']] = None,
@@ -40,8 +40,8 @@ class NodePoolArgs:
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -49,7 +49,7 @@ class NodePoolArgs:
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
         :param pulumi.Input['NodePoolNodeSourceDetailsArgs'] node_source_details: (Updatable) Specify the source to use to launch nodes in the node pool. Currently, image is the only supported source.
@@ -141,26 +141,26 @@ class NodePoolArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -251,14 +251,14 @@ class NodePoolArgs:
 
     @property
     @pulumi.getter(name="nodeMetadata")
-    def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         """
         return pulumi.get(self, "node_metadata")
 
     @node_metadata.setter
-    def node_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def node_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "node_metadata", value)
 
     @property
@@ -343,8 +343,8 @@ class _NodePoolState:
     def __init__(__self__, *,
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -353,7 +353,7 @@ class _NodePoolState:
                  node_eviction_node_pool_settings: Optional[pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs']] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
-                 node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  node_pool_cycling_details: Optional[pulumi.Input['NodePoolNodePoolCyclingDetailsArgs']] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input['NodePoolNodeShapeConfigArgs']] = None,
@@ -368,8 +368,8 @@ class _NodePoolState:
         Input properties used for looking up and filtering NodePool resources.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['NodePoolInitialNodeLabelArgs']]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
@@ -378,7 +378,7 @@ class _NodePoolState:
         :param pulumi.Input['NodePoolNodeEvictionNodePoolSettingsArgs'] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         :param pulumi.Input['NodePoolNodePoolCyclingDetailsArgs'] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input['NodePoolNodeShapeConfigArgs'] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -473,26 +473,26 @@ class _NodePoolState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -595,14 +595,14 @@ class _NodePoolState:
 
     @property
     @pulumi.getter(name="nodeMetadata")
-    def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def node_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         """
         return pulumi.get(self, "node_metadata")
 
     @node_metadata.setter
-    def node_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def node_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "node_metadata", value)
 
     @property
@@ -737,8 +737,8 @@ class NodePool(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -746,7 +746,7 @@ class NodePool(pulumi.CustomResource):
                  node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
-                 node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
@@ -849,8 +849,8 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] name: (Updatable) The name of the node pool. Avoid entering confidential information.
@@ -858,7 +858,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -984,8 +984,8 @@ class NodePool(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cluster_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
                  kubernetes_version: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
@@ -993,7 +993,7 @@ class NodePool(pulumi.CustomResource):
                  node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
                  node_image_id: Optional[pulumi.Input[str]] = None,
                  node_image_name: Optional[pulumi.Input[str]] = None,
-                 node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 node_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
                  node_shape: Optional[pulumi.Input[str]] = None,
                  node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
@@ -1051,8 +1051,8 @@ class NodePool(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             cluster_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             initial_node_labels: Optional[pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]]] = None,
             kubernetes_version: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -1061,7 +1061,7 @@ class NodePool(pulumi.CustomResource):
             node_eviction_node_pool_settings: Optional[pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']]] = None,
             node_image_id: Optional[pulumi.Input[str]] = None,
             node_image_name: Optional[pulumi.Input[str]] = None,
-            node_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            node_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             node_pool_cycling_details: Optional[pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']]] = None,
             node_shape: Optional[pulumi.Input[str]] = None,
             node_shape_config: Optional[pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']]] = None,
@@ -1081,8 +1081,8 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cluster_id: The OCID of the cluster to which this node pool is attached.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment in which the node pool exists.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['NodePoolInitialNodeLabelArgs', 'NodePoolInitialNodeLabelArgsDict']]]] initial_node_labels: (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
         :param pulumi.Input[str] kubernetes_version: (Updatable) The version of Kubernetes to install on the nodes in the node pool.
         :param pulumi.Input[str] lifecycle_details: Details about the state of the node.
@@ -1091,7 +1091,7 @@ class NodePool(pulumi.CustomResource):
         :param pulumi.Input[Union['NodePoolNodeEvictionNodePoolSettingsArgs', 'NodePoolNodeEvictionNodePoolSettingsArgsDict']] node_eviction_node_pool_settings: (Updatable) Node Eviction Details configuration
         :param pulumi.Input[str] node_image_id: Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         :param pulumi.Input[str] node_image_name: Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
-        :param pulumi.Input[Mapping[str, Any]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] node_metadata: (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         :param pulumi.Input[Union['NodePoolNodePoolCyclingDetailsArgs', 'NodePoolNodePoolCyclingDetailsArgsDict']] node_pool_cycling_details: (Updatable) Node Pool Cycling Details
         :param pulumi.Input[str] node_shape: (Updatable) The name of the node shape of the nodes in the node pool.
         :param pulumi.Input[Union['NodePoolNodeShapeConfigArgs', 'NodePoolNodeShapeConfigArgsDict']] node_shape_config: (Updatable) Specify the configuration of the shape to launch nodes in the node pool.
@@ -1154,7 +1154,7 @@ class NodePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1162,7 +1162,7 @@ class NodePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1236,7 +1236,7 @@ class NodePool(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="nodeMetadata")
-    def node_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def node_metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
         """

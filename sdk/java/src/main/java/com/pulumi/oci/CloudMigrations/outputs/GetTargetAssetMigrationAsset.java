@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -82,12 +81,12 @@ public final class GetTargetAssetMigrationAsset {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> snapshots;
+    private Map<String,String> snapshots;
     /**
      * @return Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> sourceAssetData;
+    private Map<String,String> sourceAssetData;
     /**
      * @return OCID that is referenced to an asset for an inventory.
      * 
@@ -215,14 +214,14 @@ public final class GetTargetAssetMigrationAsset {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> snapshots() {
+    public Map<String,String> snapshots() {
         return this.snapshots;
     }
     /**
      * @return Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> sourceAssetData() {
+    public Map<String,String> sourceAssetData() {
         return this.sourceAssetData;
     }
     /**
@@ -290,8 +289,8 @@ public final class GetTargetAssetMigrationAsset {
         private String replicationCompartmentId;
         private String replicationScheduleId;
         private String snapShotBucketName;
-        private Map<String,Object> snapshots;
-        private Map<String,Object> sourceAssetData;
+        private Map<String,String> snapshots;
+        private Map<String,String> sourceAssetData;
         private String sourceAssetId;
         private String state;
         private String tenancyId;
@@ -438,7 +437,7 @@ public final class GetTargetAssetMigrationAsset {
             return this;
         }
         @CustomType.Setter
-        public Builder snapshots(Map<String,Object> snapshots) {
+        public Builder snapshots(Map<String,String> snapshots) {
             if (snapshots == null) {
               throw new MissingRequiredPropertyException("GetTargetAssetMigrationAsset", "snapshots");
             }
@@ -446,7 +445,7 @@ public final class GetTargetAssetMigrationAsset {
             return this;
         }
         @CustomType.Setter
-        public Builder sourceAssetData(Map<String,Object> sourceAssetData) {
+        public Builder sourceAssetData(Map<String,String> sourceAssetData) {
             if (sourceAssetData == null) {
               throw new MissingRequiredPropertyException("GetTargetAssetMigrationAsset", "sourceAssetData");
             }

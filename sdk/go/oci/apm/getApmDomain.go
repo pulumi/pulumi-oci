@@ -64,13 +64,13 @@ type LookupApmDomainResult struct {
 	// The endpoint where the APM agents upload their observations and metrics.
 	DataUploadEndpoint string `pulumi:"dataUploadEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the APM domain.
 	Description string `pulumi:"description"`
 	// Display name of the APM domain, which can be updated.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Indicates if this is an Always Free resource.
@@ -136,8 +136,8 @@ func (o LookupApmDomainResultOutput) DataUploadEndpoint() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupApmDomainResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupApmDomainResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the APM domain.
@@ -151,8 +151,8 @@ func (o LookupApmDomainResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupApmDomainResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupApmDomainResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupApmDomainResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApmDomainResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.

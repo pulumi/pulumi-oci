@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The description of the alert.
         /// </summary>
@@ -49,11 +49,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FeatureDetails;
+        public readonly ImmutableDictionary<string, string> FeatureDetails;
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A filter to return alert by it's OCID.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// Array of OCIDs of the target database which are associated with the alert.
         /// </summary>
@@ -125,15 +125,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> featureDetails,
+            ImmutableDictionary<string, string> featureDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             ImmutableArray<string> targetIds,
 

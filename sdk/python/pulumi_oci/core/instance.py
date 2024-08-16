@@ -26,11 +26,11 @@ class InstanceArgs:
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
@@ -39,7 +39,7 @@ class InstanceArgs:
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
@@ -61,7 +61,7 @@ class InstanceArgs:
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
@@ -70,7 +70,7 @@ class InstanceArgs:
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
@@ -93,7 +93,7 @@ class InstanceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
                * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
@@ -349,14 +349,14 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -373,11 +373,11 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @property
@@ -400,14 +400,14 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -524,7 +524,7 @@ class InstanceArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 
@@ -565,7 +565,7 @@ class InstanceArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -715,11 +715,11 @@ class _InstanceState:
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input['InstanceCreateVnicDetailsArgs']] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
@@ -730,7 +730,7 @@ class _InstanceState:
                  launch_mode: Optional[pulumi.Input[str]] = None,
                  launch_options: Optional[pulumi.Input['InstanceLaunchOptionsArgs']] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input['InstancePlatformConfigArgs']] = None,
                  preemptible_instance_config: Optional[pulumi.Input['InstancePreemptibleInstanceConfigArgs']] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
@@ -743,7 +743,7 @@ class _InstanceState:
                  source_details: Optional[pulumi.Input['InstanceSourceDetailsArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
                  update_operation_constraint: Optional[pulumi.Input[str]] = None):
@@ -759,7 +759,7 @@ class _InstanceState:
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input['InstanceCreateVnicDetailsArgs'] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
@@ -768,7 +768,7 @@ class _InstanceState:
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
@@ -797,7 +797,7 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input['InstanceLaunchVolumeAttachmentArgs']]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
                * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
@@ -860,7 +860,7 @@ class _InstanceState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
@@ -1091,14 +1091,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -1115,11 +1115,11 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @property
@@ -1142,14 +1142,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -1294,7 +1294,7 @@ class _InstanceState:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 
@@ -1335,7 +1335,7 @@ class _InstanceState:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -1499,14 +1499,14 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -1558,11 +1558,11 @@ class Instance(pulumi.CustomResource):
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
@@ -1571,7 +1571,7 @@ class Instance(pulumi.CustomResource):
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
@@ -1649,7 +1649,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
@@ -1658,7 +1658,7 @@ class Instance(pulumi.CustomResource):
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
@@ -1681,7 +1681,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
                * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
@@ -1828,11 +1828,11 @@ class Instance(pulumi.CustomResource):
                  compute_cluster_id: Optional[pulumi.Input[str]] = None,
                  create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
                  dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fault_domain: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname_label: Optional[pulumi.Input[str]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  instance_configuration_id: Optional[pulumi.Input[str]] = None,
@@ -1841,7 +1841,7 @@ class Instance(pulumi.CustomResource):
                  is_pv_encryption_in_transit_enabled: Optional[pulumi.Input[bool]] = None,
                  launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
                  launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
                  preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
                  preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
@@ -1929,11 +1929,11 @@ class Instance(pulumi.CustomResource):
             compute_cluster_id: Optional[pulumi.Input[str]] = None,
             create_vnic_details: Optional[pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']]] = None,
             dedicated_vm_host_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             fault_domain: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             hostname_label: Optional[pulumi.Input[str]] = None,
             image: Optional[pulumi.Input[str]] = None,
             instance_configuration_id: Optional[pulumi.Input[str]] = None,
@@ -1944,7 +1944,7 @@ class Instance(pulumi.CustomResource):
             launch_mode: Optional[pulumi.Input[str]] = None,
             launch_options: Optional[pulumi.Input[Union['InstanceLaunchOptionsArgs', 'InstanceLaunchOptionsArgsDict']]] = None,
             launch_volume_attachments: Optional[pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             platform_config: Optional[pulumi.Input[Union['InstancePlatformConfigArgs', 'InstancePlatformConfigArgsDict']]] = None,
             preemptible_instance_config: Optional[pulumi.Input[Union['InstancePreemptibleInstanceConfigArgs', 'InstancePreemptibleInstanceConfigArgsDict']]] = None,
             preserve_boot_volume: Optional[pulumi.Input[bool]] = None,
@@ -1957,7 +1957,7 @@ class Instance(pulumi.CustomResource):
             source_details: Optional[pulumi.Input[Union['InstanceSourceDetailsArgs', 'InstanceSourceDetailsArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_maintenance_reboot_due: Optional[pulumi.Input[str]] = None,
             update_operation_constraint: Optional[pulumi.Input[str]] = None) -> 'Instance':
@@ -1978,7 +1978,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[str] compute_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) that the instance will be created in.
         :param pulumi.Input[Union['InstanceCreateVnicDetailsArgs', 'InstanceCreateVnicDetailsArgsDict']] create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param pulumi.Input[str] dedicated_vm_host_id: (Updatable) The OCID of the dedicated virtual machine host to place the instance on.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[str] fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
@@ -1987,7 +1987,7 @@ class Instance(pulumi.CustomResource):
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `FAULT-DOMAIN-1`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param pulumi.Input[str] image: Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         :param pulumi.Input[str] instance_configuration_id: The OCID of the Instance Configuration containing instance launch details. Any other fields supplied in this instance launch request will override the details stored in the Instance Configuration for this instance launch.
@@ -2016,7 +2016,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceLaunchVolumeAttachmentArgs', 'InstanceLaunchVolumeAttachmentArgsDict']]]] launch_volume_attachments: Volume attachments to create as part of the launch instance operation.
                
                **Note:** This property is used for initial instance provisioning only. Updates to this property will not be supported. To update volume attachments, user should use `Core.VolumeAttachment`. To update volume details, user should use `Core.Volume`
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
                
                A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
                * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
@@ -2079,7 +2079,7 @@ class Instance(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] subnet_id: Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] time_created: The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[str] time_maintenance_reboot_due: The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
         """
@@ -2219,7 +2219,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2235,7 +2235,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def extended_metadata(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "extended_metadata")
 
     @property
@@ -2254,7 +2254,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -2362,7 +2362,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
 
@@ -2515,7 +2515,7 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """

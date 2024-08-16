@@ -5,7 +5,6 @@ package com.pulumi.oci.Oce.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,7 @@ public final class GetOceInstanceResult {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return OceInstance description, can be updated
      * 
@@ -47,7 +46,7 @@ public final class GetOceInstanceResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Unique GUID identifier that is immutable on creation
      * 
@@ -99,7 +98,7 @@ public final class GetOceInstanceResult {
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> service;
+    private Map<String,String> service;
     /**
      * @return The current state of the instance lifecycle.
      * 
@@ -114,7 +113,7 @@ public final class GetOceInstanceResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Tenancy Identifier
      * 
@@ -172,7 +171,7 @@ public final class GetOceInstanceResult {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -193,7 +192,7 @@ public final class GetOceInstanceResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -269,7 +268,7 @@ public final class GetOceInstanceResult {
      * @return SERVICE data. Example: `{&#34;service&#34;: {&#34;IDCS&#34;: &#34;value&#34;}}`
      * 
      */
-    public Map<String,Object> service() {
+    public Map<String,String> service() {
         return this.service;
     }
     /**
@@ -290,7 +289,7 @@ public final class GetOceInstanceResult {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -348,10 +347,10 @@ public final class GetOceInstanceResult {
         private List<String> addOnFeatures;
         private String adminEmail;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String drRegion;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String guid;
         private String id;
         private String idcsAccessToken;
@@ -363,10 +362,10 @@ public final class GetOceInstanceResult {
         private String name;
         private String objectStorageNamespace;
         private String oceInstanceId;
-        private Map<String,Object> service;
+        private Map<String,String> service;
         private String state;
         private String stateMessage;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String tenancyId;
         private String tenancyName;
         private String timeCreated;
@@ -434,7 +433,7 @@ public final class GetOceInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetOceInstanceResult", "definedTags");
             }
@@ -458,7 +457,7 @@ public final class GetOceInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetOceInstanceResult", "freeformTags");
             }
@@ -554,7 +553,7 @@ public final class GetOceInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder service(Map<String,Object> service) {
+        public Builder service(Map<String,String> service) {
             if (service == null) {
               throw new MissingRequiredPropertyException("GetOceInstanceResult", "service");
             }
@@ -578,7 +577,7 @@ public final class GetOceInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetOceInstanceResult", "systemTags");
             }

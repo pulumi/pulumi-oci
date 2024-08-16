@@ -63,9 +63,9 @@ type LookupOperationsInsightsWarehouseUserResult struct {
 	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Hub User OCID
 	Id string `pulumi:"id"`
 	// Indicate whether user has access to AWR data.
@@ -84,7 +84,7 @@ type LookupOperationsInsightsWarehouseUserResult struct {
 	// Possible lifecycle states
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -140,13 +140,13 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) ConnectionPassword() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOperationsInsightsWarehouseUserResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOperationsInsightsWarehouseUserResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Hub User OCID
@@ -194,8 +194,8 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) State() pulumi.String
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOperationsInsightsWarehouseUserResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseUserResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

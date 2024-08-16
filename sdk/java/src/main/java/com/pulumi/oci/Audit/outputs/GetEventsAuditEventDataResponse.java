@@ -5,7 +5,6 @@ package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetEventsAuditEventDataResponse {
      * @return The headers of the response.
      * 
      */
-    private Map<String,Object> headers;
+    private Map<String,String> headers;
     /**
      * @return A friendly description of what happened during the operation. Use this for troubleshooting.
      * 
@@ -26,7 +25,7 @@ public final class GetEventsAuditEventDataResponse {
      * @return This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
      * 
      */
-    private Map<String,Object> payload;
+    private Map<String,String> payload;
     /**
      * @return The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
      * 
@@ -43,7 +42,7 @@ public final class GetEventsAuditEventDataResponse {
      * @return The headers of the response.
      * 
      */
-    public Map<String,Object> headers() {
+    public Map<String,String> headers() {
         return this.headers;
     }
     /**
@@ -57,7 +56,7 @@ public final class GetEventsAuditEventDataResponse {
      * @return This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
      * 
      */
-    public Map<String,Object> payload() {
+    public Map<String,String> payload() {
         return this.payload;
     }
     /**
@@ -84,9 +83,9 @@ public final class GetEventsAuditEventDataResponse {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> headers;
+        private Map<String,String> headers;
         private String message;
-        private Map<String,Object> payload;
+        private Map<String,String> payload;
         private String responseTime;
         private String status;
         public Builder() {}
@@ -100,7 +99,7 @@ public final class GetEventsAuditEventDataResponse {
         }
 
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
+        public Builder headers(Map<String,String> headers) {
             if (headers == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "headers");
             }
@@ -116,7 +115,7 @@ public final class GetEventsAuditEventDataResponse {
             return this;
         }
         @CustomType.Setter
-        public Builder payload(Map<String,Object> payload) {
+        public Builder payload(Map<String,String> payload) {
             if (payload == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataResponse", "payload");
             }

@@ -18,13 +18,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string Description;
         /// <summary>
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
         /// </summary>
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
         public readonly string Type;
@@ -47,13 +47,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

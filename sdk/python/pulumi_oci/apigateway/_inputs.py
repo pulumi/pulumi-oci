@@ -448,7 +448,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
                  is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
                  issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  max_clock_skew_in_seconds: Optional[pulumi.Input[float]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  public_keys: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs']] = None,
                  token_auth_scheme: Optional[pulumi.Input[str]] = None,
                  token_header: Optional[pulumi.Input[str]] = None,
@@ -464,7 +464,7 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
         :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
         :param pulumi.Input[float] max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs'] public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         :param pulumi.Input[str] token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param pulumi.Input[str] token_header: (Updatable) The name of the header containing the authentication token.
@@ -589,14 +589,14 @@ class DeploymentSpecificationRequestPoliciesAuthenticationArgs:
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "parameters", value)
 
     @property
@@ -2258,7 +2258,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  is_anonymous_access_allowed: Optional[pulumi.Input[bool]] = None,
                  issuers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  max_clock_skew_in_seconds: Optional[pulumi.Input[float]] = None,
-                 parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  public_keys: Optional[pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs']] = None,
                  token_auth_scheme: Optional[pulumi.Input[str]] = None,
                  token_header: Optional[pulumi.Input[str]] = None,
@@ -2274,7 +2274,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param pulumi.Input[bool] is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] issuers: (Updatable) A list of parties that could have issued the token.
         :param pulumi.Input[float] max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         :param pulumi.Input['DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs'] public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         :param pulumi.Input[str] token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param pulumi.Input[str] token_header: (Updatable) The name of the header containing the authentication token.
@@ -2399,14 +2399,14 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "parameters", value)
 
     @property

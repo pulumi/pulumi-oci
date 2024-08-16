@@ -123,7 +123,7 @@ export class StorageObject extends pulumi.CustomResource {
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    public readonly metadata!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly metadata!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -273,7 +273,7 @@ export interface StorageObjectState {
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    metadata?: pulumi.Input<{[key: string]: any}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The Object Storage namespace used for the request.
      */
@@ -350,7 +350,7 @@ export interface StorageObjectArgs {
      * Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      */
-    metadata?: pulumi.Input<{[key: string]: any}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The Object Storage namespace used for the request.
      */

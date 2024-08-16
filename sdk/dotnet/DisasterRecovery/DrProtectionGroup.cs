@@ -176,7 +176,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// A message describing the DR protection group's current state in more detail.
@@ -252,7 +252,7 @@ namespace Pulumi.Oci.DisasterRecovery
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -325,14 +325,14 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -353,14 +353,14 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string> DisplayName { get; set; } = null!;
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -403,14 +403,14 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -431,14 +431,14 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -497,14 +497,14 @@ namespace Pulumi.Oci.DisasterRecovery
         public Input<string>? State { get; set; }
 
         [Input("systemTags")]
-        private InputMap<object>? _systemTags;
+        private InputMap<string>? _systemTags;
 
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public InputMap<object> SystemTags
+        public InputMap<string> SystemTags
         {
-            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
 

@@ -74,13 +74,13 @@ type LookupVcnResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
 	DefaultSecurityListId string `pulumi:"defaultSecurityListId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example, `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be an alphanumeric string that begins with a letter. The value cannot be changed.
 	DnsLabel string `pulumi:"dnsLabel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
 	// For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space. The prefixes are provided by Oracle and the sizes are always /56.
@@ -176,8 +176,8 @@ func (o LookupVcnResultOutput) DefaultSecurityListId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupVcnResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVcnResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVcnResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVcnResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -191,8 +191,8 @@ func (o LookupVcnResultOutput) DnsLabel() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupVcnResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVcnResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVcnResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVcnResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The VCN's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).

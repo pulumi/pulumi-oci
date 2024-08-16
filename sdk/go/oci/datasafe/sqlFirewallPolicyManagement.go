@@ -19,18 +19,18 @@ type SqlFirewallPolicyManagement struct {
 	AllowedClientPrograms    pulumi.StringArrayOutput `pulumi:"allowedClientPrograms"`
 	CompartmentId            pulumi.StringOutput      `pulumi:"compartmentId"`
 	DbUserName               pulumi.StringOutput      `pulumi:"dbUserName"`
-	DefinedTags              pulumi.MapOutput         `pulumi:"definedTags"`
+	DefinedTags              pulumi.StringMapOutput   `pulumi:"definedTags"`
 	Description              pulumi.StringOutput      `pulumi:"description"`
 	DisplayName              pulumi.StringOutput      `pulumi:"displayName"`
 	EnforcementScope         pulumi.StringOutput      `pulumi:"enforcementScope"`
-	FreeformTags             pulumi.MapOutput         `pulumi:"freeformTags"`
+	FreeformTags             pulumi.StringMapOutput   `pulumi:"freeformTags"`
 	LifecycleDetails         pulumi.StringOutput      `pulumi:"lifecycleDetails"`
 	SecurityPolicyId         pulumi.StringOutput      `pulumi:"securityPolicyId"`
 	SqlFirewallPolicyId      pulumi.StringOutput      `pulumi:"sqlFirewallPolicyId"`
 	SqlLevel                 pulumi.StringOutput      `pulumi:"sqlLevel"`
 	State                    pulumi.StringOutput      `pulumi:"state"`
 	Status                   pulumi.StringOutput      `pulumi:"status"`
-	SystemTags               pulumi.MapOutput         `pulumi:"systemTags"`
+	SystemTags               pulumi.StringMapOutput   `pulumi:"systemTags"`
 	TargetId                 pulumi.StringOutput      `pulumi:"targetId"`
 	TimeCreated              pulumi.StringOutput      `pulumi:"timeCreated"`
 	TimeUpdated              pulumi.StringOutput      `pulumi:"timeUpdated"`
@@ -68,28 +68,28 @@ func GetSqlFirewallPolicyManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SqlFirewallPolicyManagement resources.
 type sqlFirewallPolicyManagementState struct {
-	AllowedClientIps         []string               `pulumi:"allowedClientIps"`
-	AllowedClientOsUsernames []string               `pulumi:"allowedClientOsUsernames"`
-	AllowedClientPrograms    []string               `pulumi:"allowedClientPrograms"`
-	CompartmentId            *string                `pulumi:"compartmentId"`
-	DbUserName               *string                `pulumi:"dbUserName"`
-	DefinedTags              map[string]interface{} `pulumi:"definedTags"`
-	Description              *string                `pulumi:"description"`
-	DisplayName              *string                `pulumi:"displayName"`
-	EnforcementScope         *string                `pulumi:"enforcementScope"`
-	FreeformTags             map[string]interface{} `pulumi:"freeformTags"`
-	LifecycleDetails         *string                `pulumi:"lifecycleDetails"`
-	SecurityPolicyId         *string                `pulumi:"securityPolicyId"`
-	SqlFirewallPolicyId      *string                `pulumi:"sqlFirewallPolicyId"`
-	SqlLevel                 *string                `pulumi:"sqlLevel"`
-	State                    *string                `pulumi:"state"`
-	Status                   *string                `pulumi:"status"`
-	SystemTags               map[string]interface{} `pulumi:"systemTags"`
-	TargetId                 *string                `pulumi:"targetId"`
-	TimeCreated              *string                `pulumi:"timeCreated"`
-	TimeUpdated              *string                `pulumi:"timeUpdated"`
-	ViolationAction          *string                `pulumi:"violationAction"`
-	ViolationAudit           *string                `pulumi:"violationAudit"`
+	AllowedClientIps         []string          `pulumi:"allowedClientIps"`
+	AllowedClientOsUsernames []string          `pulumi:"allowedClientOsUsernames"`
+	AllowedClientPrograms    []string          `pulumi:"allowedClientPrograms"`
+	CompartmentId            *string           `pulumi:"compartmentId"`
+	DbUserName               *string           `pulumi:"dbUserName"`
+	DefinedTags              map[string]string `pulumi:"definedTags"`
+	Description              *string           `pulumi:"description"`
+	DisplayName              *string           `pulumi:"displayName"`
+	EnforcementScope         *string           `pulumi:"enforcementScope"`
+	FreeformTags             map[string]string `pulumi:"freeformTags"`
+	LifecycleDetails         *string           `pulumi:"lifecycleDetails"`
+	SecurityPolicyId         *string           `pulumi:"securityPolicyId"`
+	SqlFirewallPolicyId      *string           `pulumi:"sqlFirewallPolicyId"`
+	SqlLevel                 *string           `pulumi:"sqlLevel"`
+	State                    *string           `pulumi:"state"`
+	Status                   *string           `pulumi:"status"`
+	SystemTags               map[string]string `pulumi:"systemTags"`
+	TargetId                 *string           `pulumi:"targetId"`
+	TimeCreated              *string           `pulumi:"timeCreated"`
+	TimeUpdated              *string           `pulumi:"timeUpdated"`
+	ViolationAction          *string           `pulumi:"violationAction"`
+	ViolationAudit           *string           `pulumi:"violationAudit"`
 }
 
 type SqlFirewallPolicyManagementState struct {
@@ -98,18 +98,18 @@ type SqlFirewallPolicyManagementState struct {
 	AllowedClientPrograms    pulumi.StringArrayInput
 	CompartmentId            pulumi.StringPtrInput
 	DbUserName               pulumi.StringPtrInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	Description              pulumi.StringPtrInput
 	DisplayName              pulumi.StringPtrInput
 	EnforcementScope         pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	LifecycleDetails         pulumi.StringPtrInput
 	SecurityPolicyId         pulumi.StringPtrInput
 	SqlFirewallPolicyId      pulumi.StringPtrInput
 	SqlLevel                 pulumi.StringPtrInput
 	State                    pulumi.StringPtrInput
 	Status                   pulumi.StringPtrInput
-	SystemTags               pulumi.MapInput
+	SystemTags               pulumi.StringMapInput
 	TargetId                 pulumi.StringPtrInput
 	TimeCreated              pulumi.StringPtrInput
 	TimeUpdated              pulumi.StringPtrInput
@@ -122,22 +122,22 @@ func (SqlFirewallPolicyManagementState) ElementType() reflect.Type {
 }
 
 type sqlFirewallPolicyManagementArgs struct {
-	AllowedClientIps         []string               `pulumi:"allowedClientIps"`
-	AllowedClientOsUsernames []string               `pulumi:"allowedClientOsUsernames"`
-	AllowedClientPrograms    []string               `pulumi:"allowedClientPrograms"`
-	CompartmentId            *string                `pulumi:"compartmentId"`
-	DbUserName               *string                `pulumi:"dbUserName"`
-	DefinedTags              map[string]interface{} `pulumi:"definedTags"`
-	Description              *string                `pulumi:"description"`
-	DisplayName              *string                `pulumi:"displayName"`
-	EnforcementScope         *string                `pulumi:"enforcementScope"`
-	FreeformTags             map[string]interface{} `pulumi:"freeformTags"`
-	SqlFirewallPolicyId      *string                `pulumi:"sqlFirewallPolicyId"`
-	State                    *string                `pulumi:"state"`
-	Status                   *string                `pulumi:"status"`
-	TargetId                 *string                `pulumi:"targetId"`
-	ViolationAction          *string                `pulumi:"violationAction"`
-	ViolationAudit           *string                `pulumi:"violationAudit"`
+	AllowedClientIps         []string          `pulumi:"allowedClientIps"`
+	AllowedClientOsUsernames []string          `pulumi:"allowedClientOsUsernames"`
+	AllowedClientPrograms    []string          `pulumi:"allowedClientPrograms"`
+	CompartmentId            *string           `pulumi:"compartmentId"`
+	DbUserName               *string           `pulumi:"dbUserName"`
+	DefinedTags              map[string]string `pulumi:"definedTags"`
+	Description              *string           `pulumi:"description"`
+	DisplayName              *string           `pulumi:"displayName"`
+	EnforcementScope         *string           `pulumi:"enforcementScope"`
+	FreeformTags             map[string]string `pulumi:"freeformTags"`
+	SqlFirewallPolicyId      *string           `pulumi:"sqlFirewallPolicyId"`
+	State                    *string           `pulumi:"state"`
+	Status                   *string           `pulumi:"status"`
+	TargetId                 *string           `pulumi:"targetId"`
+	ViolationAction          *string           `pulumi:"violationAction"`
+	ViolationAudit           *string           `pulumi:"violationAudit"`
 }
 
 // The set of arguments for constructing a SqlFirewallPolicyManagement resource.
@@ -147,11 +147,11 @@ type SqlFirewallPolicyManagementArgs struct {
 	AllowedClientPrograms    pulumi.StringArrayInput
 	CompartmentId            pulumi.StringPtrInput
 	DbUserName               pulumi.StringPtrInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	Description              pulumi.StringPtrInput
 	DisplayName              pulumi.StringPtrInput
 	EnforcementScope         pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	SqlFirewallPolicyId      pulumi.StringPtrInput
 	State                    pulumi.StringPtrInput
 	Status                   pulumi.StringPtrInput
@@ -267,8 +267,8 @@ func (o SqlFirewallPolicyManagementOutput) DbUserName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.DbUserName }).(pulumi.StringOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyManagementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) Description() pulumi.StringOutput {
@@ -283,8 +283,8 @@ func (o SqlFirewallPolicyManagementOutput) EnforcementScope() pulumi.StringOutpu
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.EnforcementScope }).(pulumi.StringOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) LifecycleDetails() pulumi.StringOutput {
@@ -311,8 +311,8 @@ func (o SqlFirewallPolicyManagementOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-func (o SqlFirewallPolicyManagementOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyManagementOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicyManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o SqlFirewallPolicyManagementOutput) TargetId() pulumi.StringOutput {

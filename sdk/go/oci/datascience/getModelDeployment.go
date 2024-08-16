@@ -65,13 +65,13 @@ type LookupModelDeploymentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model deployment.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model deployment.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource. Does not have to be unique, and can be modified. Avoid entering confidential information. Example: `My ModelDeployment`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.
 	Id string `pulumi:"id"`
 	// Details about the state of the model deployment.
@@ -146,8 +146,8 @@ func (o LookupModelDeploymentResultOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupModelDeploymentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupModelDeploymentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model deployment.
@@ -161,8 +161,8 @@ func (o LookupModelDeploymentResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupModelDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelDeploymentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupModelDeploymentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelDeploymentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model deployment.

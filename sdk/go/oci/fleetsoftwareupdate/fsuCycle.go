@@ -19,11 +19,11 @@ type FsuCycle struct {
 	BatchingStrategy         FsuCycleBatchingStrategyOutput         `pulumi:"batchingStrategy"`
 	CollectionType           pulumi.StringOutput                    `pulumi:"collectionType"`
 	CompartmentId            pulumi.StringOutput                    `pulumi:"compartmentId"`
-	DefinedTags              pulumi.MapOutput                       `pulumi:"definedTags"`
+	DefinedTags              pulumi.StringMapOutput                 `pulumi:"definedTags"`
 	DiagnosticsCollection    FsuCycleDiagnosticsCollectionOutput    `pulumi:"diagnosticsCollection"`
 	DisplayName              pulumi.StringOutput                    `pulumi:"displayName"`
 	ExecutingFsuActionId     pulumi.StringOutput                    `pulumi:"executingFsuActionId"`
-	FreeformTags             pulumi.MapOutput                       `pulumi:"freeformTags"`
+	FreeformTags             pulumi.StringMapOutput                 `pulumi:"freeformTags"`
 	FsuCollectionId          pulumi.StringOutput                    `pulumi:"fsuCollectionId"`
 	GoalVersionDetails       FsuCycleGoalVersionDetailsOutput       `pulumi:"goalVersionDetails"`
 	IsIgnoreMissingPatches   pulumi.StringArrayOutput               `pulumi:"isIgnoreMissingPatches"`
@@ -35,7 +35,7 @@ type FsuCycle struct {
 	NextActionToExecutes     FsuCycleNextActionToExecuteArrayOutput `pulumi:"nextActionToExecutes"`
 	StageActionSchedule      FsuCycleStageActionScheduleOutput      `pulumi:"stageActionSchedule"`
 	State                    pulumi.StringOutput                    `pulumi:"state"`
-	SystemTags               pulumi.MapOutput                       `pulumi:"systemTags"`
+	SystemTags               pulumi.StringMapOutput                 `pulumi:"systemTags"`
 	TimeCreated              pulumi.StringOutput                    `pulumi:"timeCreated"`
 	TimeFinished             pulumi.StringOutput                    `pulumi:"timeFinished"`
 	TimeUpdated              pulumi.StringOutput                    `pulumi:"timeUpdated"`
@@ -88,11 +88,11 @@ type fsuCycleState struct {
 	BatchingStrategy         *FsuCycleBatchingStrategy      `pulumi:"batchingStrategy"`
 	CollectionType           *string                        `pulumi:"collectionType"`
 	CompartmentId            *string                        `pulumi:"compartmentId"`
-	DefinedTags              map[string]interface{}         `pulumi:"definedTags"`
+	DefinedTags              map[string]string              `pulumi:"definedTags"`
 	DiagnosticsCollection    *FsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollection"`
 	DisplayName              *string                        `pulumi:"displayName"`
 	ExecutingFsuActionId     *string                        `pulumi:"executingFsuActionId"`
-	FreeformTags             map[string]interface{}         `pulumi:"freeformTags"`
+	FreeformTags             map[string]string              `pulumi:"freeformTags"`
 	FsuCollectionId          *string                        `pulumi:"fsuCollectionId"`
 	GoalVersionDetails       *FsuCycleGoalVersionDetails    `pulumi:"goalVersionDetails"`
 	IsIgnoreMissingPatches   []string                       `pulumi:"isIgnoreMissingPatches"`
@@ -104,7 +104,7 @@ type fsuCycleState struct {
 	NextActionToExecutes     []FsuCycleNextActionToExecute  `pulumi:"nextActionToExecutes"`
 	StageActionSchedule      *FsuCycleStageActionSchedule   `pulumi:"stageActionSchedule"`
 	State                    *string                        `pulumi:"state"`
-	SystemTags               map[string]interface{}         `pulumi:"systemTags"`
+	SystemTags               map[string]string              `pulumi:"systemTags"`
 	TimeCreated              *string                        `pulumi:"timeCreated"`
 	TimeFinished             *string                        `pulumi:"timeFinished"`
 	TimeUpdated              *string                        `pulumi:"timeUpdated"`
@@ -116,11 +116,11 @@ type FsuCycleState struct {
 	BatchingStrategy         FsuCycleBatchingStrategyPtrInput
 	CollectionType           pulumi.StringPtrInput
 	CompartmentId            pulumi.StringPtrInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	DiagnosticsCollection    FsuCycleDiagnosticsCollectionPtrInput
 	DisplayName              pulumi.StringPtrInput
 	ExecutingFsuActionId     pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	FsuCollectionId          pulumi.StringPtrInput
 	GoalVersionDetails       FsuCycleGoalVersionDetailsPtrInput
 	IsIgnoreMissingPatches   pulumi.StringArrayInput
@@ -132,7 +132,7 @@ type FsuCycleState struct {
 	NextActionToExecutes     FsuCycleNextActionToExecuteArrayInput
 	StageActionSchedule      FsuCycleStageActionSchedulePtrInput
 	State                    pulumi.StringPtrInput
-	SystemTags               pulumi.MapInput
+	SystemTags               pulumi.StringMapInput
 	TimeCreated              pulumi.StringPtrInput
 	TimeFinished             pulumi.StringPtrInput
 	TimeUpdated              pulumi.StringPtrInput
@@ -147,10 +147,10 @@ type fsuCycleArgs struct {
 	ApplyActionSchedule      *FsuCycleApplyActionSchedule   `pulumi:"applyActionSchedule"`
 	BatchingStrategy         *FsuCycleBatchingStrategy      `pulumi:"batchingStrategy"`
 	CompartmentId            string                         `pulumi:"compartmentId"`
-	DefinedTags              map[string]interface{}         `pulumi:"definedTags"`
+	DefinedTags              map[string]string              `pulumi:"definedTags"`
 	DiagnosticsCollection    *FsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollection"`
 	DisplayName              *string                        `pulumi:"displayName"`
-	FreeformTags             map[string]interface{}         `pulumi:"freeformTags"`
+	FreeformTags             map[string]string              `pulumi:"freeformTags"`
 	FsuCollectionId          string                         `pulumi:"fsuCollectionId"`
 	GoalVersionDetails       FsuCycleGoalVersionDetails     `pulumi:"goalVersionDetails"`
 	IsIgnoreMissingPatches   []string                       `pulumi:"isIgnoreMissingPatches"`
@@ -166,10 +166,10 @@ type FsuCycleArgs struct {
 	ApplyActionSchedule      FsuCycleApplyActionSchedulePtrInput
 	BatchingStrategy         FsuCycleBatchingStrategyPtrInput
 	CompartmentId            pulumi.StringInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	DiagnosticsCollection    FsuCycleDiagnosticsCollectionPtrInput
 	DisplayName              pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	FsuCollectionId          pulumi.StringInput
 	GoalVersionDetails       FsuCycleGoalVersionDetailsInput
 	IsIgnoreMissingPatches   pulumi.StringArrayInput
@@ -283,8 +283,8 @@ func (o FsuCycleOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o FsuCycleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCycle) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o FsuCycleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCycle) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCycleOutput) DiagnosticsCollection() FsuCycleDiagnosticsCollectionOutput {
@@ -299,8 +299,8 @@ func (o FsuCycleOutput) ExecutingFsuActionId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
 
-func (o FsuCycleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCycle) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o FsuCycleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCycle) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCycleOutput) FsuCollectionId() pulumi.StringOutput {
@@ -347,8 +347,8 @@ func (o FsuCycleOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCycle) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-func (o FsuCycleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCycle) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o FsuCycleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCycle) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCycleOutput) TimeCreated() pulumi.StringOutput {

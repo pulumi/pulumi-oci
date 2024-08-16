@@ -41,7 +41,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// <summary>
         /// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? ValidPropertyValues;
+        public readonly ImmutableDictionary<string, string>? ValidPropertyValues;
 
         [OutputConstructor]
         private MonitoredResourceTypeMetadata(
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
 
             ImmutableArray<string> validPropertiesForUpdates,
 
-            ImmutableDictionary<string, object>? validPropertyValues)
+            ImmutableDictionary<string, string>? validPropertyValues)
         {
             AgentProperties = agentProperties;
             Format = format;

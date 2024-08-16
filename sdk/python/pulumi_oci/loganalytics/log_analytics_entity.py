@@ -20,13 +20,13 @@ class LogAnalyticsEntityArgs:
                  entity_type_name: pulumi.Input[str],
                  namespace: pulumi.Input[str],
                  cloud_resource_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None):
@@ -36,13 +36,13 @@ class LogAnalyticsEntityArgs:
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
         :param pulumi.Input['LogAnalyticsEntityMetadataArgs'] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
@@ -127,26 +127,26 @@ class LogAnalyticsEntityArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -199,14 +199,14 @@ class LogAnalyticsEntityArgs:
 
     @property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties", value)
 
     @property
@@ -256,10 +256,10 @@ class _LogAnalyticsEntityState:
                  are_logs_collected: Optional[pulumi.Input[bool]] = None,
                  cloud_resource_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  entity_type_internal_name: Optional[pulumi.Input[str]] = None,
                  entity_type_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
@@ -268,7 +268,7 @@ class _LogAnalyticsEntityState:
                  metadata: Optional[pulumi.Input['LogAnalyticsEntityMetadataArgs']] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -280,10 +280,10 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
@@ -292,7 +292,7 @@ class _LogAnalyticsEntityState:
         :param pulumi.Input['LogAnalyticsEntityMetadataArgs'] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
@@ -387,14 +387,14 @@ class _LogAnalyticsEntityState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -423,14 +423,14 @@ class _LogAnalyticsEntityState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -531,14 +531,14 @@ class _LogAnalyticsEntityState:
 
     @property
     @pulumi.getter
-    def properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """
         return pulumi.get(self, "properties")
 
     @properties.setter
-    def properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties", value)
 
     @property
@@ -625,15 +625,15 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_resource_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  entity_type_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None,
@@ -688,15 +688,15 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] management_agent_id: (Updatable) The OCID of the Management Agent.
         :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] time_last_discovered: (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
         :param pulumi.Input[str] timezone_region: (Updatable) The timezone region of the log analytics entity. 
@@ -774,15 +774,15 @@ class LogAnalyticsEntity(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  cloud_resource_id: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  entity_type_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  hostname: Optional[pulumi.Input[str]] = None,
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
-                 properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  source_id: Optional[pulumi.Input[str]] = None,
                  time_last_discovered: Optional[pulumi.Input[str]] = None,
                  timezone_region: Optional[pulumi.Input[str]] = None,
@@ -836,10 +836,10 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             are_logs_collected: Optional[pulumi.Input[bool]] = None,
             cloud_resource_id: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             entity_type_internal_name: Optional[pulumi.Input[str]] = None,
             entity_type_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             hostname: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             management_agent_compartment_id: Optional[pulumi.Input[str]] = None,
@@ -848,7 +848,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
             metadata: Optional[pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']]] = None,
             name: Optional[pulumi.Input[str]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
-            properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             source_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -865,10 +865,10 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[bool] are_logs_collected: The Boolean flag to indicate if logs are collected for an entity for log analytics usage.
         :param pulumi.Input[str] cloud_resource_id: The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] entity_type_internal_name: Internal name for the log analytics entity type.
         :param pulumi.Input[str] entity_type_name: Log analytics entity type name.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] hostname: (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
         :param pulumi.Input[str] lifecycle_details: lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
         :param pulumi.Input[str] management_agent_compartment_id: Management agent (management-agents resource kind) compartment OCID
@@ -877,7 +877,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         :param pulumi.Input[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict']] metadata: (Updatable) Details of Entity Metadata.
         :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
         :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
-        :param pulumi.Input[Mapping[str, Any]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties: (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         :param pulumi.Input[str] source_id: This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
         :param pulumi.Input[str] state: The current state of the log analytics entity.
         :param pulumi.Input[str] time_created: The date and time the resource was created, in the format defined by RFC3339.
@@ -943,7 +943,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -967,7 +967,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1039,7 +1039,7 @@ class LogAnalyticsEntity(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def properties(self) -> pulumi.Output[Mapping[str, Any]]:
+    def properties(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
         """

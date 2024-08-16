@@ -72,13 +72,13 @@ type LookupInvokeRunResult struct {
 	// The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration map[string]interface{} `pulumi:"configuration"`
+	Configuration map[string]string `pulumi:"configuration"`
 	// The data read by the run in bytes.
 	DataReadInBytes string `pulumi:"dataReadInBytes"`
 	// The data written by the run in bytes.
 	DataWrittenInBytes string `pulumi:"dataWrittenInBytes"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. This name is not necessarily unique.
 	DisplayName string `pulumi:"displayName"`
 	// The VM shape for the driver. Sets the driver cores and memory.
@@ -94,7 +94,7 @@ type LookupInvokeRunResult struct {
 	// An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri string `pulumi:"fileUri"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ID of a run.
 	Id string `pulumi:"id"`
 	// The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
@@ -224,8 +224,8 @@ func (o LookupInvokeRunResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o LookupInvokeRunResultOutput) Configuration() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInvokeRunResult) map[string]interface{} { return v.Configuration }).(pulumi.MapOutput)
+func (o LookupInvokeRunResultOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) map[string]string { return v.Configuration }).(pulumi.StringMapOutput)
 }
 
 // The data read by the run in bytes.
@@ -239,8 +239,8 @@ func (o LookupInvokeRunResultOutput) DataWrittenInBytes() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupInvokeRunResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInvokeRunResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupInvokeRunResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. This name is not necessarily unique.
@@ -279,8 +279,8 @@ func (o LookupInvokeRunResultOutput) FileUri() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupInvokeRunResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInvokeRunResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupInvokeRunResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInvokeRunResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ID of a run.

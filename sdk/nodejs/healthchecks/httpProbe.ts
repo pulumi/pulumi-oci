@@ -76,7 +76,7 @@ export class HttpProbe extends pulumi.CustomResource {
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    public readonly headers!: pulumi.Output<{[key: string]: any}>;
+    public readonly headers!: pulumi.Output<{[key: string]: string}>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
@@ -189,7 +189,7 @@ export interface HttpProbeState {
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    headers?: pulumi.Input<{[key: string]: any}>;
+    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The region where updates must be made and where results must be fetched from.
      */
@@ -249,7 +249,7 @@ export interface HttpProbeArgs {
      *
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      */
-    headers?: pulumi.Input<{[key: string]: any}>;
+    headers?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The supported HTTP methods available for probes.
      */

@@ -21,8 +21,8 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
         /// The URL for the console.
         /// </summary>
         public readonly string ConsoleUrl;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unqiue identifier for the entitlement related to the environment.
         /// </summary>
@@ -50,9 +50,9 @@ namespace Pulumi.Oci.ServiceManagerProxy.Outputs
 
             string consoleUrl,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

@@ -81,7 +81,7 @@ type Zone struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayOutput `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -89,7 +89,7 @@ type Zone struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// The name of the zone.
@@ -161,7 +161,7 @@ type zoneState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -169,7 +169,7 @@ type zoneState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
 	// The name of the zone.
@@ -206,7 +206,7 @@ type ZoneState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -214,7 +214,7 @@ type ZoneState struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
 	// The name of the zone.
@@ -255,7 +255,7 @@ type zoneArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []ZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -263,7 +263,7 @@ type zoneArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the zone.
 	Name *string `pulumi:"name"`
 	// Specifies to operate only on resources that have a matching DNS scope.
@@ -285,7 +285,7 @@ type ZoneArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams ZoneExternalDownstreamArrayInput
 	// (Updatable) External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
@@ -293,7 +293,7 @@ type ZoneArgs struct {
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The name of the zone.
 	Name pulumi.StringPtrInput
 	// Specifies to operate only on resources that have a matching DNS scope.
@@ -403,8 +403,8 @@ func (o ZoneOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 //
 // **Example:** `{"Operations": {"CostCenter": "42"}}`
-func (o ZoneOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Zone) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ZoneOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -420,8 +420,8 @@ func (o ZoneOutput) ExternalMasters() ZoneExternalMasterArrayOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 //
 // **Example:** `{"Department": "Finance"}`
-func (o ZoneOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Zone) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ZoneOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Zone) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.

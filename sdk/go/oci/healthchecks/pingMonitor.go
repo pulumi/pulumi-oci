@@ -38,11 +38,11 @@ import (
 //				IntervalInSeconds: pulumi.Any(pingMonitorIntervalInSeconds),
 //				Protocol:          pulumi.Any(pingMonitorProtocol),
 //				Targets:           pulumi.Any(pingMonitorTargets),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsEnabled:         pulumi.Any(pingMonitorIsEnabled),
 //				Port:              pulumi.Any(pingMonitorPort),
@@ -71,11 +71,11 @@ type PingMonitor struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -149,11 +149,11 @@ type pingMonitorState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -183,11 +183,11 @@ type PingMonitorState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringPtrInput
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -221,11 +221,11 @@ type pingMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds int `pulumi:"intervalInSeconds"`
 	// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -250,11 +250,11 @@ type PingMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds pulumi.IntInput
 	// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -367,8 +367,8 @@ func (o PingMonitorOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o PingMonitorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PingMonitor) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PingMonitorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PingMonitor) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -377,8 +377,8 @@ func (o PingMonitorOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o PingMonitorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PingMonitor) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PingMonitorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PingMonitor) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The region where updates must be made and where results must be fetched from.

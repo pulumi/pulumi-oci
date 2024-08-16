@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +28,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -39,7 +38,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
@@ -90,7 +89,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -104,7 +103,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -161,9 +160,9 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
     public static final class Builder {
         private @Nullable Boolean assignPrivateDnsRecord;
         private @Nullable Boolean assignPublicIp;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable String hostnameLabel;
         private @Nullable List<String> nsgIds;
         private @Nullable String privateIp;
@@ -199,7 +198,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -211,7 +210,7 @@ public final class TargetAssetRecommendedSpecCreateVnicDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;

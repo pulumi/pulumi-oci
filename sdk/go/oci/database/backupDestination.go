@@ -36,8 +36,8 @@ import (
 //				Type:             pulumi.Any(backupDestinationType),
 //				ConnectionString: pulumi.Any(backupDestinationConnectionString),
 //				DefinedTags:      pulumi.Any(backupDestinationDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				LocalMountPointPath: pulumi.Any(backupDestinationLocalMountPointPath),
 //				MountTypeDetails: &database.BackupDestinationMountTypeDetailsArgs{
@@ -74,11 +74,11 @@ type BackupDestination struct {
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
 	ConnectionString pulumi.StringPtrOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-provided name of the backup destination.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
@@ -152,11 +152,11 @@ type backupDestinationState struct {
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name of the backup destination.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
@@ -192,11 +192,11 @@ type BackupDestinationState struct {
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-provided name of the backup destination.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A descriptive text associated with the lifecycleState. Typically contains additional displayable text
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
@@ -234,11 +234,11 @@ type backupDestinationArgs struct {
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name of the backup destination.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
 	//
 	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
@@ -261,11 +261,11 @@ type BackupDestinationArgs struct {
 	// (Updatable) The connection string for connecting to the Recovery Appliance.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-provided name of the backup destination.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
 	//
 	// Deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.
@@ -386,8 +386,8 @@ func (o BackupDestinationOutput) ConnectionString() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o BackupDestinationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BackupDestinationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-provided name of the backup destination.
@@ -396,8 +396,8 @@ func (o BackupDestinationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o BackupDestinationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BackupDestination) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BackupDestinationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BackupDestination) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A descriptive text associated with the lifecycleState. Typically contains additional displayable text

@@ -64,7 +64,7 @@ type LookupAnnouncementSubscriptionResult struct {
 	// The OCID of the compartment that contains the announcement subscription.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the announcement subscription. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -72,7 +72,7 @@ type LookupAnnouncementSubscriptionResult struct {
 	// A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
 	FilterGroups []GetAnnouncementSubscriptionFilterGroup `pulumi:"filterGroups"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
 	Id string `pulumi:"id"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
@@ -86,7 +86,7 @@ type LookupAnnouncementSubscriptionResult struct {
 	// The current lifecycle state of the announcement subscription.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -141,8 +141,8 @@ func (o LookupAnnouncementSubscriptionResultOutput) CompartmentId() pulumi.Strin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAnnouncementSubscriptionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the announcement subscription. Avoid entering confidential information.
@@ -163,8 +163,8 @@ func (o LookupAnnouncementSubscriptionResultOutput) FilterGroups() GetAnnounceme
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAnnouncementSubscriptionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
@@ -198,8 +198,8 @@ func (o LookupAnnouncementSubscriptionResultOutput) State() pulumi.StringOutput 
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAnnouncementSubscriptionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAnnouncementSubscriptionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAnnouncementSubscriptionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

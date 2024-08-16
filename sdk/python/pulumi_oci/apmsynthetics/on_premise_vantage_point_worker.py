@@ -21,8 +21,8 @@ class OnPremiseVantagePointWorkerArgs:
                  resource_principal_token_public_key: pulumi.Input[str],
                  version: pulumi.Input[str],
                  configuration_details: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
                  status: Optional[pulumi.Input[str]] = None,
@@ -34,8 +34,8 @@ class OnPremiseVantagePointWorkerArgs:
         :param pulumi.Input[str] resource_principal_token_public_key: public key for resource Principal Token based validation to be used in further calls.
         :param pulumi.Input[str] version: Image version of the On-premise VP worker.
         :param pulumi.Input[str] configuration_details: (Updatable) Configuration details of the On-premise VP worker.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input[int] priority: (Updatable) Priority of the On-premise VP worker to schedule monitors.
         :param pulumi.Input[str] status: (Updatable) Enables or disables the On-premise VP worker.
@@ -126,26 +126,26 @@ class OnPremiseVantagePointWorkerArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -206,9 +206,9 @@ class _OnPremiseVantagePointWorkerState:
     def __init__(__self__, *,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  configuration_details: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  geo_info: Optional[pulumi.Input[str]] = None,
                  identity_infos: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]]] = None,
                  monitor_lists: Optional[pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]]] = None,
@@ -230,9 +230,9 @@ class _OnPremiseVantagePointWorkerState:
         Input properties used for looking up and filtering OnPremiseVantagePointWorker resources.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[str] configuration_details: (Updatable) Configuration details of the On-premise VP worker.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] geo_info: Geographical information of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerIdentityInfoArgs']]] identity_infos: Domain details of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input['OnPremiseVantagePointWorkerMonitorListArgs']]] monitor_lists: Monitors list assigned to the On-premise VP worker.
@@ -326,14 +326,14 @@ class _OnPremiseVantagePointWorkerState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -350,14 +350,14 @@ class _OnPremiseVantagePointWorkerState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -576,8 +576,8 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  configuration_details: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
@@ -627,8 +627,8 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[str] configuration_details: (Updatable) Configuration details of the On-premise VP worker.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] name: Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
         :param pulumi.Input[str] on_premise_vantage_point_id: The OCID of the On-premise vantage point.
         :param pulumi.Input[int] priority: (Updatable) Priority of the On-premise VP worker to schedule monitors.
@@ -701,8 +701,8 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  apm_domain_id: Optional[pulumi.Input[str]] = None,
                  configuration_details: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  on_premise_vantage_point_id: Optional[pulumi.Input[str]] = None,
                  priority: Optional[pulumi.Input[int]] = None,
@@ -761,9 +761,9 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             apm_domain_id: Optional[pulumi.Input[str]] = None,
             configuration_details: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             geo_info: Optional[pulumi.Input[str]] = None,
             identity_infos: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]]] = None,
             monitor_lists: Optional[pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]]] = None,
@@ -790,9 +790,9 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM domain ID the request is intended for.
         :param pulumi.Input[str] configuration_details: (Updatable) Configuration details of the On-premise VP worker.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] geo_info: Geographical information of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict']]]] identity_infos: Domain details of the On-premise VP worker.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict']]]] monitor_lists: Monitors list assigned to the On-premise VP worker.
@@ -861,7 +861,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -877,7 +877,7 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

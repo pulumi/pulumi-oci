@@ -32,12 +32,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Waa.NewAppAccelerationPolicy(ctx, "test_web_app_acceleration_policy", &Waa.AppAccelerationPolicyArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(webAppAccelerationPolicyDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				ResponseCachingPolicy: &waa.AppAccelerationPolicyResponseCachingPolicyArgs{
 //					IsResponseHeaderBasedCachingEnabled: pulumi.Any(webAppAccelerationPolicyResponseCachingPolicyIsResponseHeaderBasedCachingEnabled),
@@ -71,11 +71,11 @@ type AppAccelerationPolicy struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An object that specifies an HTTP response caching policy.
@@ -92,7 +92,7 @@ type AppAccelerationPolicy struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
@@ -135,11 +135,11 @@ type appAccelerationPolicyState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) An object that specifies an HTTP response caching policy.
@@ -156,7 +156,7 @@ type appAccelerationPolicyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
@@ -167,11 +167,11 @@ type AppAccelerationPolicyState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) An object that specifies an HTTP response caching policy.
@@ -188,7 +188,7 @@ type AppAccelerationPolicyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the WebAppAccelerationPolicy was updated. An RFC3339 formatted datetime string.
@@ -203,11 +203,11 @@ type appAccelerationPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy *AppAccelerationPolicyResponseCachingPolicy `pulumi:"responseCachingPolicy"`
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
@@ -220,7 +220,7 @@ type appAccelerationPolicyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // The set of arguments for constructing a AppAccelerationPolicy resource.
@@ -228,11 +228,11 @@ type AppAccelerationPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) WebAppAccelerationPolicy display name, can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An object that specifies an HTTP response caching policy.
 	ResponseCachingPolicy AppAccelerationPolicyResponseCachingPolicyPtrInput
 	// (Updatable) An object that specifies a compression policy for HTTP response from ENABLEMENT POINT to the client.
@@ -245,7 +245,7 @@ type AppAccelerationPolicyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 }
 
 func (AppAccelerationPolicyArgs) ElementType() reflect.Type {
@@ -341,8 +341,8 @@ func (o AppAccelerationPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AppAccelerationPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AppAccelerationPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) WebAppAccelerationPolicy display name, can be renamed.
@@ -351,8 +351,8 @@ func (o AppAccelerationPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o AppAccelerationPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AppAccelerationPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -387,8 +387,8 @@ func (o AppAccelerationPolicyOutput) State() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AppAccelerationPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AppAccelerationPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppAccelerationPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the WebAppAccelerationPolicy was created. An RFC3339 formatted datetime string.

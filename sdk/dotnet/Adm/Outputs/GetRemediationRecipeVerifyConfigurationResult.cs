@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Additional key-value pairs passed as parameters to the build service when running an experiment.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalParameters;
+        public readonly ImmutableDictionary<string, string> AdditionalParameters;
         /// <summary>
         /// The type of Build Service.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Adm.Outputs
 
         [OutputConstructor]
         private GetRemediationRecipeVerifyConfigurationResult(
-            ImmutableDictionary<string, object> additionalParameters,
+            ImmutableDictionary<string, string> additionalParameters,
 
             string buildServiceType,
 

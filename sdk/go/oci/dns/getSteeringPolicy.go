@@ -63,11 +63,11 @@ type LookupSteeringPolicyResult struct {
 	// The OCID of the compartment containing the steering policy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
 	HealthCheckMonitorId string `pulumi:"healthCheckMonitorId"`
 	// The OCID of the resource.
@@ -136,8 +136,8 @@ func (o LookupSteeringPolicyResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupSteeringPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSteeringPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the steering policy. Does not have to be unique and can be changed. Avoid entering confidential information.
@@ -146,8 +146,8 @@ func (o LookupSteeringPolicyResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupSteeringPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSteeringPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSteeringPolicyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSteeringPolicyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.

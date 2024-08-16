@@ -2575,10 +2575,10 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionResult(dict):
 class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dvp_stack_details: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  monitor_status_count_maps: Sequence['outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapResult'],
                  name: str,
@@ -2588,10 +2588,10 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArgs'] dvp_stack_details: Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
         :param Sequence['GetDedicatedVantagePointsDedicatedVantagePointCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param str name: A filter to return only the resources that match the entire name.
@@ -2623,7 +2623,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2647,7 +2647,7 @@ class GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4013,9 +4013,9 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  batch_interval_in_seconds: int,
                  configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_ipv6: bool,
                  is_run_now: bool,
@@ -4041,9 +4041,9 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param int batch_interval_in_seconds: Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
         :param str created_by: Name of the user that created the monitor.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         :param bool is_ipv6: If enabled, domain name will resolve to an IPv6 address.
         :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
@@ -4134,7 +4134,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4150,7 +4150,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5718,9 +5718,9 @@ class GetOnPremiseVantagePointWorkersWorkerCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
                  configuration_details: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  geo_info: str,
                  id: str,
                  identity_infos: Sequence['outputs.GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoResult'],
@@ -5742,9 +5742,9 @@ class GetOnPremiseVantagePointWorkersWorkerCollectionItemResult(dict):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
         :param str configuration_details: Configuration details of the On-premise VP worker.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str geo_info: Geographical information of the On-premise VP worker.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
         :param Sequence['GetOnPremiseVantagePointWorkersWorkerCollectionItemIdentityInfoArgs'] identity_infos: Domain details of the On-premise VP worker.
@@ -5805,7 +5805,7 @@ class GetOnPremiseVantagePointWorkersWorkerCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5821,7 +5821,7 @@ class GetOnPremiseVantagePointWorkersWorkerCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6160,10 +6160,10 @@ class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionResult(dict):
 class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult(dict):
     def __init__(__self__, *,
                  apm_domain_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  time_created: str,
@@ -6172,10 +6172,10 @@ class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult(dict):
                  workers_summaries: Sequence['outputs.GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemWorkersSummaryResult']):
         """
         :param str apm_domain_id: The APM domain ID the request is intended for.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A short description about the On-premise vantage point.
         :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
         :param str name: A filter to return only the resources that match the entire name.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -6205,7 +6205,7 @@ class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6229,7 +6229,7 @@ class GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6637,9 +6637,9 @@ class GetScriptsScriptCollectionItemResult(dict):
                  content_file_name: str,
                  content_size_in_bytes: int,
                  content_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  monitor_status_count_maps: Sequence['outputs.GetScriptsScriptCollectionItemMonitorStatusCountMapResult'],
                  parameters: Sequence['outputs.GetScriptsScriptCollectionItemParameterResult'],
@@ -6652,9 +6652,9 @@ class GetScriptsScriptCollectionItemResult(dict):
         :param str content_file_name: File name of the uploaded script content.
         :param int content_size_in_bytes: Size of the script content.
         :param str content_type: A filter to return only resources that match the content type given.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
         :param Sequence['GetScriptsScriptCollectionItemMonitorStatusCountMapArgs'] monitor_status_count_maps: Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
         :param Sequence['GetScriptsScriptCollectionItemParameterArgs'] parameters: List of script parameters. Example: `[{"scriptParameter": {"paramName": "userid", "paramValue":"testuser", "isSecret": false}, "isOverwritten": false}]`
@@ -6719,7 +6719,7 @@ class GetScriptsScriptCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6735,7 +6735,7 @@ class GetScriptsScriptCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

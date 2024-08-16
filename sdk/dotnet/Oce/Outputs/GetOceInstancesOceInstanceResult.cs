@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Oce.Outputs
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// OceInstance description, can be updated
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Oce.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unique GUID identifier that is immutable on creation
         /// </summary>
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Oce.Outputs
         /// <summary>
         /// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Service;
+        public readonly ImmutableDictionary<string, string> Service;
         /// <summary>
         /// Filter results on lifecycleState.
         /// </summary>
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.Oce.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The ID of the tenancy in which to list resources.
         /// </summary>
@@ -127,13 +127,13 @@ namespace Pulumi.Oci.Oce.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string drRegion,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string guid,
 
@@ -155,13 +155,13 @@ namespace Pulumi.Oci.Oce.Outputs
 
             string objectStorageNamespace,
 
-            ImmutableDictionary<string, object> service,
+            ImmutableDictionary<string, string> service,
 
             string state,
 
             string stateMessage,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string tenancyId,
 

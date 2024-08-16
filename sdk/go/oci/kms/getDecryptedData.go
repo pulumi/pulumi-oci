@@ -56,7 +56,7 @@ func GetDecryptedData(ctx *pulumi.Context, args *GetDecryptedDataArgs, opts ...p
 // A collection of arguments for invoking getDecryptedData.
 type GetDecryptedDataArgs struct {
 	// Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The encrypted data to decrypt.
 	Ciphertext string `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -67,9 +67,9 @@ type GetDecryptedDataArgs struct {
 
 // A collection of values returned by getDecryptedData.
 type GetDecryptedDataResult struct {
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
-	Ciphertext     string                 `pulumi:"ciphertext"`
-	CryptoEndpoint string                 `pulumi:"cryptoEndpoint"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
+	Ciphertext     string            `pulumi:"ciphertext"`
+	CryptoEndpoint string            `pulumi:"cryptoEndpoint"`
 	// The provider-assigned unique ID for this managed resource.
 	Id    string `pulumi:"id"`
 	KeyId string `pulumi:"keyId"`
@@ -95,7 +95,7 @@ func GetDecryptedDataOutput(ctx *pulumi.Context, args GetDecryptedDataOutputArgs
 // A collection of arguments for invoking getDecryptedData.
 type GetDecryptedDataOutputArgs struct {
 	// Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput `pulumi:"associatedData"`
+	AssociatedData pulumi.StringMapInput `pulumi:"associatedData"`
 	// The encrypted data to decrypt.
 	Ciphertext pulumi.StringInput `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -123,8 +123,8 @@ func (o GetDecryptedDataResultOutput) ToGetDecryptedDataResultOutputWithContext(
 	return o
 }
 
-func (o GetDecryptedDataResultOutput) AssociatedData() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDecryptedDataResult) map[string]interface{} { return v.AssociatedData }).(pulumi.MapOutput)
+func (o GetDecryptedDataResultOutput) AssociatedData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDecryptedDataResult) map[string]string { return v.AssociatedData }).(pulumi.StringMapOutput)
 }
 
 func (o GetDecryptedDataResultOutput) Ciphertext() pulumi.StringOutput {

@@ -59,13 +59,13 @@ type LookupExternalAsmArgs struct {
 // A collection of values returned by getExternalAsm.
 type LookupExternalAsmResult struct {
 	// The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external ASM.
 	ComponentName string `pulumi:"componentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName   string `pulumi:"displayName"`
 	ExternalAsmId string `pulumi:"externalAsmId"`
@@ -74,7 +74,7 @@ type LookupExternalAsmResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database.
@@ -90,7 +90,7 @@ type LookupExternalAsmResult struct {
 	// The current lifecycle state of the external ASM.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external ASM was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external ASM was last updated.
@@ -138,8 +138,8 @@ func (o LookupExternalAsmResultOutput) ToLookupExternalAsmResultOutputWithContex
 }
 
 // The additional details of the external ASM defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o LookupExternalAsmResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupExternalAsmResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
@@ -153,8 +153,8 @@ func (o LookupExternalAsmResultOutput) ComponentName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupExternalAsmResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the database. The name does not have to be unique.
@@ -177,8 +177,8 @@ func (o LookupExternalAsmResultOutput) ExternalDbSystemId() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupExternalAsmResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The directory in which ASM is installed. This is the same directory in which Oracle Grid Infrastructure is installed.
@@ -217,8 +217,8 @@ func (o LookupExternalAsmResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExternalAsmResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external ASM was created.

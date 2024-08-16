@@ -43,12 +43,12 @@ import (
 //				},
 //				DatabaseId:   pulumi.Any(testDatabase.Id),
 //				DatabaseSize: pulumi.Any(protectedDatabaseDatabaseSize),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DeletionSchedule: pulumi.String("DELETE_AFTER_72_HOURS"),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsRedoLogsShipped: pulumi.Any(protectedDatabaseIsRedoLogsShipped),
 //			})
@@ -80,7 +80,7 @@ type ProtectedDatabase struct {
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringOutput `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
 	// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
 	// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
@@ -88,7 +88,7 @@ type ProtectedDatabase struct {
 	// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates the protection status of the database.
 	Health pulumi.StringOutput `pulumi:"health"`
 	// A message describing the current health of the protected database.
@@ -112,7 +112,7 @@ type ProtectedDatabase struct {
 	// The current state of the Protected Database.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -185,7 +185,7 @@ type protectedDatabaseState struct {
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName *string `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
 	// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
 	// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
@@ -193,7 +193,7 @@ type protectedDatabaseState struct {
 	// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates the protection status of the database.
 	Health *string `pulumi:"health"`
 	// A message describing the current health of the protected database.
@@ -217,7 +217,7 @@ type protectedDatabaseState struct {
 	// The current state of the Protected Database.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -236,7 +236,7 @@ type ProtectedDatabaseState struct {
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
 	// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
 	// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
@@ -244,7 +244,7 @@ type ProtectedDatabaseState struct {
 	// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates the protection status of the database.
 	Health pulumi.StringPtrInput
 	// A message describing the current health of the protected database.
@@ -268,7 +268,7 @@ type ProtectedDatabaseState struct {
 	// The current state of the Protected Database.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated pulumi.StringPtrInput
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -291,7 +291,7 @@ type protectedDatabaseArgs struct {
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
 	// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
 	// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
@@ -299,7 +299,7 @@ type protectedDatabaseArgs struct {
 	// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsShipped *bool `pulumi:"isRedoLogsShipped"`
 	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
@@ -321,7 +321,7 @@ type ProtectedDatabaseArgs struct {
 	// The dbUniqueName of the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
 	// * The default schedule is DELETE_AFTER_72_HOURS, so that the delete operation can occur 72 hours (3 days) after the source database is terminated.
 	// * The alternate schedule is DELETE_AFTER_RETENTION_PERIOD. Specify this option if you want to delete a protected database only after the policy-defined backup retention period expires.
@@ -329,7 +329,7 @@ type ProtectedDatabaseArgs struct {
 	// (Updatable) The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service. Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups.
 	IsRedoLogsShipped pulumi.BoolPtrInput
 	// (Updatable) Password credential which can be used to connect to Protected Database. It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters must be underscore (_), number sign (https://docs.cloud.oracle.com/iaas/api/#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
@@ -448,8 +448,8 @@ func (o ProtectedDatabaseOutput) DbUniqueName() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o ProtectedDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ProtectedDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Defines a preferred schedule to delete a protected database after you terminate the source database.
@@ -465,8 +465,8 @@ func (o ProtectedDatabaseOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ProtectedDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ProtectedDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates the protection status of the database.
@@ -527,8 +527,8 @@ func (o ProtectedDatabaseOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o ProtectedDatabaseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ProtectedDatabase) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ProtectedDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ProtectedDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'

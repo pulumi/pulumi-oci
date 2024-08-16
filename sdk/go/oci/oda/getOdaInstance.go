@@ -67,13 +67,13 @@ type LookupOdaInstanceResult struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl string `pulumi:"connectorUrl"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the Digital Assistant instance.
 	Description string `pulumi:"description"`
 	// User-defined name for the Digital Assistant instance. Avoid entering confidential information. You can change this value.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
 	Id string `pulumi:"id"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
@@ -166,8 +166,8 @@ func (o LookupOdaInstanceResultOutput) ConnectorUrl() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOdaInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOdaInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOdaInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOdaInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the Digital Assistant instance.
@@ -181,8 +181,8 @@ func (o LookupOdaInstanceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-func (o LookupOdaInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOdaInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOdaInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOdaInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique immutable identifier that was assigned when the instance was created.

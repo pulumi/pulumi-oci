@@ -41,12 +41,12 @@ import (
 //						ScheduleEventRecurrences: pulumi.Any(cccUpgradeScheduleEventsScheduleEventRecurrences),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(cccUpgradeScheduleDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -71,7 +71,7 @@ type AtCustomerCccUpgradeSchedule struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -82,7 +82,7 @@ type AtCustomerCccUpgradeSchedule struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds pulumi.StringArrayOutput `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
@@ -90,7 +90,7 @@ type AtCustomerCccUpgradeSchedule struct {
 	// Lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -139,7 +139,7 @@ type atCustomerCccUpgradeScheduleState struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -150,7 +150,7 @@ type atCustomerCccUpgradeScheduleState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds []string `pulumi:"infrastructureIds"`
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
@@ -158,7 +158,7 @@ type atCustomerCccUpgradeScheduleState struct {
 	// Lifecycle state of the resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -169,7 +169,7 @@ type AtCustomerCccUpgradeScheduleState struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -180,7 +180,7 @@ type AtCustomerCccUpgradeScheduleState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
 	InfrastructureIds pulumi.StringArrayInput
 	// A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
@@ -188,7 +188,7 @@ type AtCustomerCccUpgradeScheduleState struct {
 	// Lifecycle state of the resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -203,7 +203,7 @@ type atCustomerCccUpgradeScheduleArgs struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -214,7 +214,7 @@ type atCustomerCccUpgradeScheduleArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a AtCustomerCccUpgradeSchedule resource.
@@ -222,7 +222,7 @@ type AtCustomerCccUpgradeScheduleArgs struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -233,7 +233,7 @@ type AtCustomerCccUpgradeScheduleArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (AtCustomerCccUpgradeScheduleArgs) ElementType() reflect.Type {
@@ -329,8 +329,8 @@ func (o AtCustomerCccUpgradeScheduleOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AtCustomerCccUpgradeScheduleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
@@ -352,8 +352,8 @@ func (o AtCustomerCccUpgradeScheduleOutput) Events() AtCustomerCccUpgradeSchedul
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AtCustomerCccUpgradeScheduleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -372,8 +372,8 @@ func (o AtCustomerCccUpgradeScheduleOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AtCustomerCccUpgradeScheduleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AtCustomerCccUpgradeScheduleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccUpgradeSchedule) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.

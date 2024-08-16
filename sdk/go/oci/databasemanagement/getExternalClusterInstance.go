@@ -67,7 +67,7 @@ type LookupExternalClusterInstanceResult struct {
 	// The Oracle base location of Cluster Ready Services (CRS).
 	CrsBaseDirectory string `pulumi:"crsBaseDirectory"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the cluster instance. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster that the cluster instance belongs to.
@@ -80,7 +80,7 @@ type LookupExternalClusterInstanceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster instance is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the host on which the cluster instance is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster instance.
@@ -92,7 +92,7 @@ type LookupExternalClusterInstanceResult struct {
 	// The current lifecycle state of the external cluster instance.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external cluster instance was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external cluster instance was last updated.
@@ -158,8 +158,8 @@ func (o LookupExternalClusterInstanceResultOutput) CrsBaseDirectory() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupExternalClusterInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the cluster instance. The name does not have to be unique.
@@ -192,8 +192,8 @@ func (o LookupExternalClusterInstanceResultOutput) ExternalDbSystemId() pulumi.S
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupExternalClusterInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the host on which the cluster instance is running.
@@ -222,8 +222,8 @@ func (o LookupExternalClusterInstanceResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExternalClusterInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external cluster instance was created.

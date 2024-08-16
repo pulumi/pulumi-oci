@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// The OCID of the DB System.
         /// </summary>
@@ -66,11 +66,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         private MysqlDbSystemChannel(
             string? compartmentId,
 
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
             string? displayName,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             string? id,
 

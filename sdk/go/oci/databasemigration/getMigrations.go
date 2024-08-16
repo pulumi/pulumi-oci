@@ -41,7 +41,7 @@ type GetMigrationsResult struct {
 	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination string `pulumi:"databaseCombination"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -50,7 +50,7 @@ type GetMigrationsResult struct {
 	// The OCID of the resource being referenced.
 	ExecutingJobId string `pulumi:"executingJobId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Optional settings for Oracle GoldenGate processes
 	GgsDetails []GetMigrationsGgsDetail `pulumi:"ggsDetails"`
 	// Details about Oracle GoldenGate Microservices.
@@ -70,7 +70,7 @@ type GetMigrationsResult struct {
 	// The current state of the Migration resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the resource being referenced.
 	TargetDatabaseConnectionId string `pulumi:"targetDatabaseConnectionId"`
 	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -154,8 +154,8 @@ func (o GetMigrationsResultOutput) DatabaseCombination() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMigrationsResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMigrationsResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -178,8 +178,8 @@ func (o GetMigrationsResultOutput) ExecutingJobId() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-func (o GetMigrationsResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMigrationsResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Optional settings for Oracle GoldenGate processes
@@ -231,8 +231,8 @@ func (o GetMigrationsResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMigrationsResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMigrationsResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource being referenced.

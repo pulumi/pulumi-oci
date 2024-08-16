@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudGuard.SecurityZoneArgs;
 import com.pulumi.oci.CloudGuard.inputs.SecurityZoneState;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -91,14 +90,14 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -135,8 +134,8 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
@@ -144,7 +143,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
      * Avoid entering confidential information.
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**

@@ -20,27 +20,27 @@ class PipelineRunArgs:
                  pipeline_id: pulumi.Input[str],
                  project_id: pulumi.Input[str],
                  configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a PipelineRun resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs'] configuration_override_details: The configuration details of a pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
@@ -118,14 +118,14 @@ class PipelineRunArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -151,14 +151,14 @@ class PipelineRunArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -199,7 +199,7 @@ class PipelineRunArgs:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -210,7 +210,7 @@ class PipelineRunArgs:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -221,10 +221,10 @@ class _PipelineRunState:
                  configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]]] = None,
                  configuration_override_details: Optional[pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs']] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  log_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
@@ -234,7 +234,7 @@ class _PipelineRunState:
                  state: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
                  step_runs: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_accepted: Optional[pulumi.Input[str]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None,
@@ -245,9 +245,9 @@ class _PipelineRunState:
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunConfigurationDetailArgs']]] configuration_details: The configuration details of a pipeline.
         :param pulumi.Input['PipelineRunConfigurationOverrideDetailsArgs'] configuration_override_details: The configuration details of a pipeline.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]] log_details: Customer logging details for pipeline run.
@@ -257,7 +257,7 @@ class _PipelineRunState:
         :param pulumi.Input[str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepRunArgs']]] step_runs: Array of StepRun object for each step.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
@@ -362,14 +362,14 @@ class _PipelineRunState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -395,14 +395,14 @@ class _PipelineRunState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -515,7 +515,7 @@ class _PipelineRunState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 
@@ -526,7 +526,7 @@ class _PipelineRunState:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -585,16 +585,16 @@ class PipelineRun(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  pipeline_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         """
         This resource provides the Pipeline Run resource in Oracle Cloud Infrastructure Data Science service.
@@ -662,15 +662,15 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
         :param pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']] configuration_override_details: The configuration details of a pipeline.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
@@ -761,16 +761,16 @@ class PipelineRun(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
                  opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  pipeline_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -822,10 +822,10 @@ class PipelineRun(pulumi.CustomResource):
             configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunConfigurationDetailArgs', 'PipelineRunConfigurationDetailArgsDict']]]]] = None,
             configuration_override_details: Optional[pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             delete_related_job_runs: Optional[pulumi.Input[bool]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_configuration_override_details: Optional[pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']]] = None,
             log_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]]] = None,
@@ -835,7 +835,7 @@ class PipelineRun(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]]] = None,
             step_runs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict']]]]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_accepted: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
             time_started: Optional[pulumi.Input[str]] = None,
@@ -851,9 +851,9 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunConfigurationDetailArgs', 'PipelineRunConfigurationDetailArgsDict']]]] configuration_details: The configuration details of a pipeline.
         :param pulumi.Input[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict']] configuration_override_details: The configuration details of a pipeline.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline run.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict']] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict']]]] log_details: Customer logging details for pipeline run.
@@ -863,7 +863,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[str] state: The state of the step run.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict']]]] step_runs: Array of StepRun object for each step.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
                
                ** IMPORTANT **
@@ -935,7 +935,7 @@ class PipelineRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -956,7 +956,7 @@ class PipelineRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1036,7 +1036,7 @@ class PipelineRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
 

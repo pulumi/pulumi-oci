@@ -64,7 +64,7 @@ type LookupAuditArchiveRetrievalResult struct {
 	// The OCID of the compartment that contains archive retrieval.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the archive retrieval.
 	Description string `pulumi:"description"`
 	// The display name of the archive retrieval. The name does not have to be unique, and is changeable.
@@ -74,7 +74,7 @@ type LookupAuditArchiveRetrievalResult struct {
 	// The Error details of a failed archive retrieval.
 	ErrorInfo string `pulumi:"errorInfo"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the archive retrieval.
 	Id string `pulumi:"id"`
 	// Details about the current state of the archive retrieval.
@@ -84,7 +84,7 @@ type LookupAuditArchiveRetrievalResult struct {
 	// The current state of the archive retrieval.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId string `pulumi:"targetId"`
 	// The date time when archive retrieval request was fulfilled, in the format defined by RFC3339.
@@ -148,8 +148,8 @@ func (o LookupAuditArchiveRetrievalResultOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAuditArchiveRetrievalResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the archive retrieval.
@@ -173,8 +173,8 @@ func (o LookupAuditArchiveRetrievalResultOutput) ErrorInfo() pulumi.StringOutput
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupAuditArchiveRetrievalResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the archive retrieval.
@@ -198,8 +198,8 @@ func (o LookupAuditArchiveRetrievalResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAuditArchiveRetrievalResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAuditArchiveRetrievalResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAuditArchiveRetrievalResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target associated with the archive retrieval.

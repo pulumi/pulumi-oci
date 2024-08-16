@@ -72,11 +72,11 @@ type LookupCertificateAuthorityResult struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions []GetCertificateAuthorityCurrentVersion `pulumi:"currentVersions"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the CA.
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the CA.
 	Id string `pulumi:"id"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
@@ -180,8 +180,8 @@ func (o LookupCertificateAuthorityResultOutput) CurrentVersions() GetCertificate
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupCertificateAuthorityResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateAuthorityResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCertificateAuthorityResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateAuthorityResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A brief description of the CA.
@@ -190,8 +190,8 @@ func (o LookupCertificateAuthorityResultOutput) Description() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupCertificateAuthorityResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateAuthorityResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCertificateAuthorityResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateAuthorityResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the CA.

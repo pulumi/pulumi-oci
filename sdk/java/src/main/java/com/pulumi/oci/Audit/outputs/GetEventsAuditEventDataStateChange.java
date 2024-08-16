@@ -5,7 +5,6 @@ package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,26 +15,26 @@ public final class GetEventsAuditEventDataStateChange {
      * @return Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
      * 
      */
-    private Map<String,Object> current;
+    private Map<String,String> current;
     /**
      * @return Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
      * 
      */
-    private Map<String,Object> previous;
+    private Map<String,String> previous;
 
     private GetEventsAuditEventDataStateChange() {}
     /**
      * @return Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
      * 
      */
-    public Map<String,Object> current() {
+    public Map<String,String> current() {
         return this.current;
     }
     /**
      * @return Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
      * 
      */
-    public Map<String,Object> previous() {
+    public Map<String,String> previous() {
         return this.previous;
     }
 
@@ -48,8 +47,8 @@ public final class GetEventsAuditEventDataStateChange {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> current;
-        private Map<String,Object> previous;
+        private Map<String,String> current;
+        private Map<String,String> previous;
         public Builder() {}
         public Builder(GetEventsAuditEventDataStateChange defaults) {
     	      Objects.requireNonNull(defaults);
@@ -58,7 +57,7 @@ public final class GetEventsAuditEventDataStateChange {
         }
 
         @CustomType.Setter
-        public Builder current(Map<String,Object> current) {
+        public Builder current(Map<String,String> current) {
             if (current == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataStateChange", "current");
             }
@@ -66,7 +65,7 @@ public final class GetEventsAuditEventDataStateChange {
             return this;
         }
         @CustomType.Setter
-        public Builder previous(Map<String,Object> previous) {
+        public Builder previous(Map<String,String> previous) {
             if (previous == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataStateChange", "previous");
             }

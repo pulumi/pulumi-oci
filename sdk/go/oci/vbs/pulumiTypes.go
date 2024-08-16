@@ -222,11 +222,11 @@ type GetInstVbsInstancesVbsInstanceSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Service instance display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique VbsInstance identifier
 	Id              string `pulumi:"id"`
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
@@ -241,7 +241,7 @@ type GetInstVbsInstancesVbsInstanceSummaryCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
@@ -265,11 +265,11 @@ type GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Service instance display name
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique VbsInstance identifier
 	Id              pulumi.StringInput `pulumi:"id"`
 	IdcsAccessToken pulumi.StringInput `pulumi:"idcsAccessToken"`
@@ -284,7 +284,7 @@ type GetInstVbsInstancesVbsInstanceSummaryCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the VbsInstance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the VbsInstance was updated. An RFC3339 formatted datetime string
@@ -350,10 +350,8 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) CompartmentId
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Service instance display name
@@ -362,10 +360,8 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) DisplayName()
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique VbsInstance identifier
@@ -405,10 +401,8 @@ func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) State() pulum
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetInstVbsInstancesVbsInstanceSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInstVbsInstancesVbsInstanceSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the VbsInstance was created. An RFC3339 formatted datetime string

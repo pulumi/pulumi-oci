@@ -22,15 +22,15 @@ class InvokeRunArgs:
                  archive_uri: Optional[pulumi.Input[str]] = None,
                  arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asynchronous: Optional[pulumi.Input[bool]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
                  driver_shape_config: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
                  executor_shape_config: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
@@ -49,15 +49,15 @@ class InvokeRunArgs:
         :param pulumi.Input['InvokeRunApplicationLogConfigArgs'] application_log_config: Logging details of Application logs for Data Flow Run.
         :param pulumi.Input[str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
-        :param pulumi.Input[Mapping[str, Any]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
         :param pulumi.Input['InvokeRunDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param pulumi.Input['InvokeRunExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param pulumi.Input[str] logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
@@ -197,26 +197,26 @@ class InvokeRunArgs:
 
     @property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "configuration", value)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -293,14 +293,14 @@ class InvokeRunArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -450,10 +450,10 @@ class _InvokeRunState:
                  asynchronous: Optional[pulumi.Input[bool]] = None,
                  class_name: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  data_read_in_bytes: Optional[pulumi.Input[str]] = None,
                  data_written_in_bytes: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
                  driver_shape_config: Optional[pulumi.Input['InvokeRunDriverShapeConfigArgs']] = None,
@@ -461,7 +461,7 @@ class _InvokeRunState:
                  executor_shape: Optional[pulumi.Input[str]] = None,
                  executor_shape_config: Optional[pulumi.Input['InvokeRunExecutorShapeConfigArgs']] = None,
                  file_uri: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  language: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -496,10 +496,10 @@ class _InvokeRunState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param pulumi.Input[str] class_name: The class for the application.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[str] data_read_in_bytes: The data read by the run in bytes.
         :param pulumi.Input[str] data_written_in_bytes: The data written by the run in bytes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
         :param pulumi.Input['InvokeRunDriverShapeConfigArgs'] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -507,7 +507,7 @@ class _InvokeRunState:
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param pulumi.Input['InvokeRunExecutorShapeConfigArgs'] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param pulumi.Input[str] language: The Spark language.
         :param pulumi.Input[str] lifecycle_details: The detailed messages about the lifecycle state.
@@ -713,14 +713,14 @@ class _InvokeRunState:
 
     @property
     @pulumi.getter
-    def configuration(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def configuration(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
         return pulumi.get(self, "configuration")
 
     @configuration.setter
-    def configuration(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def configuration(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "configuration", value)
 
     @property
@@ -749,14 +749,14 @@ class _InvokeRunState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -845,14 +845,14 @@ class _InvokeRunState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -1183,15 +1183,15 @@ class InvokeRun(pulumi.CustomResource):
                  arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asynchronous: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
                  driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
                  executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
@@ -1278,15 +1278,15 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] archive_uri: A comma separated list of one or more archive files as Oracle Cloud Infrastructure URIs. For example, ``oci://path/to/a.zip,oci://path/to/b.zip``. An Oracle Cloud Infrastructure URI of an archive.zip file containing custom dependencies that may be used to support the execution of a Python, Java, or Scala application. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
         :param pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] execute: The input used for spark-submit command. For more details see https://spark.apache.org/docs/latest/submitting-applications.html#launching-applications-with-spark-submit. Supported options include ``--class``, ``--file``, ``--jars``, ``--conf``, ``--py-files``, and main application file with arguments. Example: ``--jars oci://path/to/a.jar,oci://path/to/b.jar --files oci://path/to/a.json,oci://path/to/b.csv --py-files oci://path/to/a.py,oci://path/to/b.py --conf spark.sql.crossJoin.enabled=true --class org.apache.spark.examples.SparkPi oci://path/to/main.jar 10`` Note: If execute is specified together with applicationId, className, configuration, fileUri, language, arguments, parameters during application create/update, or run create/submit, Data Flow service will use derived information from execute input only.
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param pulumi.Input[str] logs_bucket_uri: An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
         :param pulumi.Input[str] max_duration_in_minutes: (Updatable) The maximum duration in minutes for which an Application should run. Data Flow Run would be terminated once it reaches this duration from the time it transitions to `IN_PROGRESS` state.
@@ -1397,15 +1397,15 @@ class InvokeRun(pulumi.CustomResource):
                  arguments: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  asynchronous: Optional[pulumi.Input[bool]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  driver_shape: Optional[pulumi.Input[str]] = None,
                  driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
                  execute: Optional[pulumi.Input[str]] = None,
                  executor_shape: Optional[pulumi.Input[str]] = None,
                  executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
                  logs_bucket_uri: Optional[pulumi.Input[str]] = None,
                  max_duration_in_minutes: Optional[pulumi.Input[str]] = None,
@@ -1490,10 +1490,10 @@ class InvokeRun(pulumi.CustomResource):
             asynchronous: Optional[pulumi.Input[bool]] = None,
             class_name: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            configuration: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            configuration: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             data_read_in_bytes: Optional[pulumi.Input[str]] = None,
             data_written_in_bytes: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             driver_shape: Optional[pulumi.Input[str]] = None,
             driver_shape_config: Optional[pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']]] = None,
@@ -1501,7 +1501,7 @@ class InvokeRun(pulumi.CustomResource):
             executor_shape: Optional[pulumi.Input[str]] = None,
             executor_shape_config: Optional[pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']]] = None,
             file_uri: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             idle_timeout_in_minutes: Optional[pulumi.Input[str]] = None,
             language: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -1541,10 +1541,10 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] arguments: The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         :param pulumi.Input[str] class_name: The class for the application.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of a compartment.
-        :param pulumi.Input[Mapping[str, Any]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] configuration: The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         :param pulumi.Input[str] data_read_in_bytes: The data read by the run in bytes.
         :param pulumi.Input[str] data_written_in_bytes: The data written by the run in bytes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] display_name: A user-friendly name that does not have to be unique. Avoid entering confidential information. If this value is not specified, it will be derived from the associated application's displayName or set by API using fileUri's application file name.
         :param pulumi.Input[str] driver_shape: The VM shape for the driver. Sets the driver cores and memory.
         :param pulumi.Input[Union['InvokeRunDriverShapeConfigArgs', 'InvokeRunDriverShapeConfigArgsDict']] driver_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
@@ -1552,7 +1552,7 @@ class InvokeRun(pulumi.CustomResource):
         :param pulumi.Input[str] executor_shape: The VM shape for the executors. Sets the executor cores and memory.
         :param pulumi.Input[Union['InvokeRunExecutorShapeConfigArgs', 'InvokeRunExecutorShapeConfigArgsDict']] executor_shape_config: This is used to configure the shape of the driver or executor if a flexible shape is used.
         :param pulumi.Input[str] file_uri: An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] idle_timeout_in_minutes: (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
         :param pulumi.Input[str] language: The Spark language.
         :param pulumi.Input[str] lifecycle_details: The detailed messages about the lifecycle state.
@@ -1690,7 +1690,7 @@ class InvokeRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def configuration(self) -> pulumi.Output[Mapping[str, Any]]:
+    def configuration(self) -> pulumi.Output[Mapping[str, str]]:
         """
         The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
         """
@@ -1714,7 +1714,7 @@ class InvokeRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1778,7 +1778,7 @@ class InvokeRun(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """

@@ -88,7 +88,7 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Name of the BDS instance
      */
@@ -101,7 +101,7 @@ export class BdsInstance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */
@@ -356,7 +356,7 @@ export interface BdsInstanceState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Name of the BDS instance
      */
@@ -369,7 +369,7 @@ export interface BdsInstanceState {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */
@@ -490,7 +490,7 @@ export interface BdsInstanceArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Name of the BDS instance
      */
@@ -503,7 +503,7 @@ export interface BdsInstanceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      */

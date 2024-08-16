@@ -583,14 +583,14 @@ class GetConfigsConfigCollectionItemResult(dict):
                  apm_domain_id: str,
                  config_type: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  dimensions: Sequence['outputs.GetConfigsConfigCollectionItemDimensionResult'],
                  display_name: str,
                  etag: str,
                  filter_id: str,
                  filter_text: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  group: str,
                  id: str,
                  in_use_bies: Sequence['outputs.GetConfigsConfigCollectionItemInUseByResult'],
@@ -606,14 +606,14 @@ class GetConfigsConfigCollectionItemResult(dict):
         :param str apm_domain_id: The APM Domain ID the request is intended for.
         :param str config_type: A filter to match configuration items of a given type. Supported values are SPAN_FILTER, METRIC_GROUP, and APDEX.
         :param str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the metric.
         :param Sequence['GetConfigsConfigCollectionItemDimensionArgs'] dimensions: A list of dimensions for the metric. This variable should not be used.
         :param str display_name: A filter to return resources that match the given display name.
         :param str etag: For optimistic concurrency control. See `if-match`.
         :param str filter_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param str filter_text: The string that defines the Span Filter expression.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str group: A string that specifies the group that an OPTIONS item belongs to.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
         :param Sequence['GetConfigsConfigCollectionItemInUseByArgs'] in_use_bies: The list of configuration items that reference the span filter.
@@ -673,7 +673,7 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -729,7 +729,7 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

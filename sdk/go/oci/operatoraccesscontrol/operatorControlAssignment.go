@@ -76,7 +76,7 @@ type OperatorControlAssignment struct {
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription pulumi.StringOutput `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
@@ -84,7 +84,7 @@ type OperatorControlAssignment struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage pulumi.StringOutput `pulumi:"errorMessage"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolOutput `pulumi:"isAutoApproveDuringMaintenance"`
 	// Whether the assignment is a default assignment.
@@ -192,7 +192,7 @@ type operatorControlAssignmentState struct {
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription *string `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
@@ -200,7 +200,7 @@ type operatorControlAssignmentState struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage *string `pulumi:"errorMessage"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance *bool `pulumi:"isAutoApproveDuringMaintenance"`
 	// Whether the assignment is a default assignment.
@@ -258,7 +258,7 @@ type OperatorControlAssignmentState struct {
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription pulumi.StringPtrInput
 	// The code identifying the error occurred during Assignment operation.
@@ -266,7 +266,7 @@ type OperatorControlAssignmentState struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolPtrInput
 	// Whether the assignment is a default assignment.
@@ -326,9 +326,9 @@ type operatorControlAssignmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance *bool `pulumi:"isAutoApproveDuringMaintenance"`
 	// (Updatable) If set, then the target resource is always governed by the operator control.
@@ -371,9 +371,9 @@ type OperatorControlAssignmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the operator control assignment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The boolean if true would autoApprove during maintenance.
 	IsAutoApproveDuringMaintenance pulumi.BoolPtrInput
 	// (Updatable) If set, then the target resource is always governed by the operator control.
@@ -512,8 +512,8 @@ func (o OperatorControlAssignmentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o OperatorControlAssignmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OperatorControlAssignmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // description containing reason for releasing of OperatorControl.
@@ -532,8 +532,8 @@ func (o OperatorControlAssignmentOutput) ErrorMessage() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o OperatorControlAssignmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OperatorControlAssignmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperatorControlAssignment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The boolean if true would autoApprove during maintenance.

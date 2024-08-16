@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class PluggableDatabasesLocalCloneConnectionStringArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
-        private InputMap<object>? _allConnectionStrings;
+        private InputMap<string>? _allConnectionStrings;
 
         /// <summary>
         /// All connection strings to use to connect to the pluggable database.
         /// </summary>
-        public InputMap<object> AllConnectionStrings
+        public InputMap<string> AllConnectionStrings
         {
-            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<object>());
+            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<string>());
             set => _allConnectionStrings = value;
         }
 

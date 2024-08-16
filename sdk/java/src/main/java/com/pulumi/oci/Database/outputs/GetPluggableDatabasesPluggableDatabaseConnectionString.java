@@ -5,7 +5,6 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetPluggableDatabasesPluggableDatabaseConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private Map<String,String> allConnectionStrings;
     /**
      * @return A host name-based PDB connection string.
      * 
@@ -33,7 +32,7 @@ public final class GetPluggableDatabasesPluggableDatabaseConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetPluggableDatabasesPluggableDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
+        private Map<String,String> allConnectionStrings;
         private String pdbDefault;
         private String pdbIpDefault;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetPluggableDatabasesPluggableDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(Map<String,String> allConnectionStrings) {
             if (allConnectionStrings == null) {
               throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabaseConnectionString", "allConnectionStrings");
             }

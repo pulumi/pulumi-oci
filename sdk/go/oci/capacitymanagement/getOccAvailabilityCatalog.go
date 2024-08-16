@@ -64,7 +64,7 @@ type LookupOccAvailabilityCatalogResult struct {
 	// The OCID of the tenancy where the availability catalog resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description string `pulumi:"description"`
 	// Details about capacity available for  different resources in catalog.
@@ -72,7 +72,7 @@ type LookupOccAvailabilityCatalogResult struct {
 	// A user-friendly name for the availability catalog.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the availability catalog.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -87,7 +87,7 @@ type LookupOccAvailabilityCatalogResult struct {
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -147,8 +147,8 @@ func (o LookupOccAvailabilityCatalogResultOutput) CompartmentId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOccAvailabilityCatalogResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOccAvailabilityCatalogResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Text information about the availability catalog.
@@ -167,8 +167,8 @@ func (o LookupOccAvailabilityCatalogResultOutput) DisplayName() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOccAvailabilityCatalogResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOccAvailabilityCatalogResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the availability catalog.
@@ -208,8 +208,8 @@ func (o LookupOccAvailabilityCatalogResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOccAvailabilityCatalogResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOccAvailabilityCatalogResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccAvailabilityCatalogResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the availability catalog was created.

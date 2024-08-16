@@ -34,13 +34,13 @@ class ClusterArgs:
                  vcn_compartment_id: pulumi.Input[str],
                  vcn_id: pulumi.Input[str],
                  data_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  security_master_user_name: Optional[pulumi.Input[str]] = None,
                  security_master_user_password_hash: Optional[pulumi.Input[str]] = None,
                  security_mode: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a Cluster resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment to create the cluster in.
@@ -67,13 +67,13 @@ class ClusterArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] data_node_host_bare_metal_shape: The bare metal shape for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[str] security_mode: (Updatable) The security mode of the cluster.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_node_count", data_node_count)
@@ -357,26 +357,26 @@ class ClusterArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -429,14 +429,14 @@ class ClusterArgs:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -451,10 +451,10 @@ class _ClusterState:
                  data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_type: Optional[pulumi.Input[str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  fqdn: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
@@ -475,7 +475,7 @@ class _ClusterState:
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_deleted: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -492,10 +492,10 @@ class _ClusterState:
         :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
@@ -516,7 +516,7 @@ class _ClusterState:
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The amount of time in milliseconds since the cluster was created.
         :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
@@ -705,14 +705,14 @@ class _ClusterState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -741,14 +741,14 @@ class _ClusterState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -993,14 +993,14 @@ class _ClusterState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -1092,9 +1092,9 @@ class Cluster(pulumi.CustomResource):
                  data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_type: Optional[pulumi.Input[str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1109,7 +1109,7 @@ class Cluster(pulumi.CustomResource):
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  vcn_compartment_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1184,9 +1184,9 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
         :param pulumi.Input[int] master_node_host_memory_gb: (Updatable) The amount of memory in GB, to configure per node for the cluster's master nodes.
@@ -1201,7 +1201,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] software_version: (Updatable) The version of the software the cluster is running.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] vcn_compartment_id: The OCID for the compartment where the cluster's VCN is located.
         :param pulumi.Input[str] vcn_id: The OCID of the cluster's VCN.
                
@@ -1299,9 +1299,9 @@ class Cluster(pulumi.CustomResource):
                  data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
                  data_node_host_type: Optional[pulumi.Input[str]] = None,
                  data_node_storage_gb: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  master_node_count: Optional[pulumi.Input[int]] = None,
                  master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
                  master_node_host_memory_gb: Optional[pulumi.Input[int]] = None,
@@ -1316,7 +1316,7 @@ class Cluster(pulumi.CustomResource):
                  software_version: Optional[pulumi.Input[str]] = None,
                  subnet_compartment_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  vcn_compartment_id: Optional[pulumi.Input[str]] = None,
                  vcn_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1425,10 +1425,10 @@ class Cluster(pulumi.CustomResource):
             data_node_host_ocpu_count: Optional[pulumi.Input[int]] = None,
             data_node_host_type: Optional[pulumi.Input[str]] = None,
             data_node_storage_gb: Optional[pulumi.Input[int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             fqdn: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             master_node_count: Optional[pulumi.Input[int]] = None,
             master_node_host_bare_metal_shape: Optional[pulumi.Input[str]] = None,
@@ -1449,7 +1449,7 @@ class Cluster(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             subnet_compartment_id: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_deleted: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -1471,10 +1471,10 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[int] data_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's data nodes.
         :param pulumi.Input[str] data_node_host_type: TThe instance type for the cluster's data nodes.
         :param pulumi.Input[int] data_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) The name of the cluster. Avoid entering confidential information.
         :param pulumi.Input[str] fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state of the cluster.
         :param pulumi.Input[int] master_node_count: (Updatable) The number of master nodes to configure for the cluster.
         :param pulumi.Input[str] master_node_host_bare_metal_shape: The bare metal shape for the cluster's master nodes.
@@ -1495,7 +1495,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the cluster.
         :param pulumi.Input[str] subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param pulumi.Input[str] subnet_id: The OCID of the cluster's subnet.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The amount of time in milliseconds since the cluster was created.
         :param pulumi.Input[str] time_deleted: The amount of time in milliseconds since the cluster was updated.
         :param pulumi.Input[str] time_updated: The amount of time in milliseconds since the cluster was updated.
@@ -1618,7 +1618,7 @@ class Cluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1642,7 +1642,7 @@ class Cluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1810,7 +1810,7 @@ class Cluster(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

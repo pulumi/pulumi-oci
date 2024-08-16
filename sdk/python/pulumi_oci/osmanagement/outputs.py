@@ -514,10 +514,10 @@ class GetManagedInstanceGroupsFilterResult(dict):
 class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  managed_instance_count: int,
                  managed_instance_ids: Sequence[str],
@@ -526,10 +526,10 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
                  state: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Information specified by the user about the managed instance group
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique identifier that is immutable on creation
         :param Sequence['GetManagedInstanceGroupsManagedInstanceGroupManagedInstanceArgs'] managed_instances: list of Managed Instances in the group
         :param str os_family: The OS family for which to list resources.
@@ -557,7 +557,7 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -581,7 +581,7 @@ class GetManagedInstanceGroupsManagedInstanceGroupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1536,10 +1536,10 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
                  associated_managed_instances: Sequence['outputs.GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceResult'],
                  checksum_type: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gpg_key_fingerprint: str,
                  gpg_key_id: str,
                  gpg_key_url: str,
@@ -1559,10 +1559,10 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
         :param Sequence['GetSoftwareSourcesSoftwareSourceAssociatedManagedInstanceArgs'] associated_managed_instances: list of the Managed Instances associated with this Software Sources
         :param str checksum_type: The yum repository checksum type used by this software source
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Information specified by the user about the software source
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str gpg_key_fingerprint: Fingerprint of the GPG key for this software source
         :param str gpg_key_id: ID of the GPG key for this software source
         :param str gpg_key_url: URL of the GPG key for this software source
@@ -1635,7 +1635,7 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1659,7 +1659,7 @@ class GetSoftwareSourcesSoftwareSourceResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

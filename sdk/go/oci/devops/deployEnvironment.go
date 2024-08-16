@@ -44,13 +44,13 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(deployEnvironmentDescription),
 //				DisplayName: pulumi.Any(deployEnvironmentDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				FunctionId: pulumi.Any(testFunction.Id),
 //				NetworkChannel: &devops.DeployEnvironmentNetworkChannelArgs{
@@ -85,7 +85,7 @@ type DeployEnvironment struct {
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors DeployEnvironmentComputeInstanceGroupSelectorsOutput `pulumi:"computeInstanceGroupSelectors"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType pulumi.StringOutput `pulumi:"deployEnvironmentType"`
 	// (Updatable) Optional description about the deployment environment.
@@ -93,7 +93,7 @@ type DeployEnvironment struct {
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the Function.
 	FunctionId pulumi.StringOutput `pulumi:"functionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -108,7 +108,7 @@ type DeployEnvironment struct {
 	// The current state of the deployment environment.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -158,7 +158,7 @@ type deployEnvironmentState struct {
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors *DeployEnvironmentComputeInstanceGroupSelectors `pulumi:"computeInstanceGroupSelectors"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType *string `pulumi:"deployEnvironmentType"`
 	// (Updatable) Optional description about the deployment environment.
@@ -166,7 +166,7 @@ type deployEnvironmentState struct {
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the Function.
 	FunctionId *string `pulumi:"functionId"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -181,7 +181,7 @@ type deployEnvironmentState struct {
 	// The current state of the deployment environment.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -196,7 +196,7 @@ type DeployEnvironmentState struct {
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors DeployEnvironmentComputeInstanceGroupSelectorsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType pulumi.StringPtrInput
 	// (Updatable) Optional description about the deployment environment.
@@ -204,7 +204,7 @@ type DeployEnvironmentState struct {
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the Function.
 	FunctionId pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -219,7 +219,7 @@ type DeployEnvironmentState struct {
 	// The current state of the deployment environment.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// Time the deployment environment was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -236,7 +236,7 @@ type deployEnvironmentArgs struct {
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors *DeployEnvironmentComputeInstanceGroupSelectors `pulumi:"computeInstanceGroupSelectors"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType string `pulumi:"deployEnvironmentType"`
 	// (Updatable) Optional description about the deployment environment.
@@ -244,7 +244,7 @@ type deployEnvironmentArgs struct {
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the Function.
 	FunctionId *string `pulumi:"functionId"`
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
@@ -263,7 +263,7 @@ type DeployEnvironmentArgs struct {
 	// (Updatable) A collection of selectors. The combination of instances matching the selectors are included in the instance group.
 	ComputeInstanceGroupSelectors DeployEnvironmentComputeInstanceGroupSelectorsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Deployment environment type.
 	DeployEnvironmentType pulumi.StringInput
 	// (Updatable) Optional description about the deployment environment.
@@ -271,7 +271,7 @@ type DeployEnvironmentArgs struct {
 	// (Updatable) Deployment environment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the Function.
 	FunctionId pulumi.StringPtrInput
 	// (Updatable) Specifies the configuration needed when the target Oracle Cloud Infrastructure resource, i.e., OKE cluster, resides in customer's private network.
@@ -388,8 +388,8 @@ func (o DeployEnvironmentOutput) ComputeInstanceGroupSelectors() DeployEnvironme
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o DeployEnvironmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DeployEnvironmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Deployment environment type.
@@ -408,8 +408,8 @@ func (o DeployEnvironmentOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o DeployEnvironmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DeployEnvironmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The OCID of the Function.
@@ -441,8 +441,8 @@ func (o DeployEnvironmentOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DeployEnvironmentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeployEnvironment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DeployEnvironmentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeployEnvironment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment environment was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

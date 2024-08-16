@@ -585,7 +585,7 @@ class MediaWorkflowTaskArgs:
                  type: pulumi.Input[str],
                  version: pulumi.Input[str],
                  enable_parameter_reference: Optional[pulumi.Input[str]] = None,
-                 enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 enable_when_referenced_parameter_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  prerequisites: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] key: (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
@@ -597,7 +597,7 @@ class MediaWorkflowTaskArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] enable_parameter_reference: (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
-        :param pulumi.Input[Mapping[str, Any]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] enable_when_referenced_parameter_equals: (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] prerequisites: (Updatable) Keys to the other tasks in this workflow that must be completed before execution of this task can begin.
         """
         pulumi.set(__self__, "key", key)
@@ -677,14 +677,14 @@ class MediaWorkflowTaskArgs:
 
     @property
     @pulumi.getter(name="enableWhenReferencedParameterEquals")
-    def enable_when_referenced_parameter_equals(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def enable_when_referenced_parameter_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
         """
         return pulumi.get(self, "enable_when_referenced_parameter_equals")
 
     @enable_when_referenced_parameter_equals.setter
-    def enable_when_referenced_parameter_equals(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def enable_when_referenced_parameter_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "enable_when_referenced_parameter_equals", value)
 
     @property

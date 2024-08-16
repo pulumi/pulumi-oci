@@ -39,15 +39,15 @@ type Alert struct {
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The description of the alert.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The display name of the alert.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	FeatureDetails pulumi.MapOutput `pulumi:"featureDetails"`
+	FeatureDetails pulumi.StringMapOutput `pulumi:"featureDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The operation (event) that triggered alert.
 	Operation pulumi.StringOutput `pulumi:"operation"`
 	// The result of the operation (event) that triggered alert.
@@ -68,7 +68,7 @@ type Alert struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Array of OCIDs of the target database which are associated with the alert.
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
 	// Array of names of the target database.
@@ -125,15 +125,15 @@ type alertState struct {
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the alert.
 	Description *string `pulumi:"description"`
 	// The display name of the alert.
 	DisplayName *string `pulumi:"displayName"`
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	FeatureDetails map[string]interface{} `pulumi:"featureDetails"`
+	FeatureDetails map[string]string `pulumi:"featureDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The operation (event) that triggered alert.
 	Operation *string `pulumi:"operation"`
 	// The result of the operation (event) that triggered alert.
@@ -154,7 +154,7 @@ type alertState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Array of OCIDs of the target database which are associated with the alert.
 	TargetIds []string `pulumi:"targetIds"`
 	// Array of names of the target database.
@@ -179,15 +179,15 @@ type AlertState struct {
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The description of the alert.
 	Description pulumi.StringPtrInput
 	// The display name of the alert.
 	DisplayName pulumi.StringPtrInput
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-	FeatureDetails pulumi.MapInput
+	FeatureDetails pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The operation (event) that triggered alert.
 	Operation pulumi.StringPtrInput
 	// The result of the operation (event) that triggered alert.
@@ -208,7 +208,7 @@ type AlertState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Array of OCIDs of the target database which are associated with the alert.
 	TargetIds pulumi.StringArrayInput
 	// Array of names of the target database.
@@ -231,9 +231,9 @@ type alertArgs struct {
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The status of the alert.
 	//
 	// ** IMPORTANT **
@@ -250,9 +250,9 @@ type AlertArgs struct {
 	// (Updatable) The OCID of the compartment that contains the alert.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The status of the alert.
 	//
 	// ** IMPORTANT **
@@ -378,8 +378,8 @@ func (o AlertOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AlertOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Alert) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AlertOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the alert.
@@ -393,13 +393,13 @@ func (o AlertOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
-func (o AlertOutput) FeatureDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v *Alert) pulumi.MapOutput { return v.FeatureDetails }).(pulumi.MapOutput)
+func (o AlertOutput) FeatureDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.FeatureDetails }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AlertOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Alert) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AlertOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The operation (event) that triggered alert.
@@ -446,8 +446,8 @@ func (o AlertOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AlertOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Alert) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AlertOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Alert) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Array of OCIDs of the target database which are associated with the alert.

@@ -25,14 +25,14 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         [Input("dimensions", required: true)]
-        private Dictionary<string, object>? _dimensions;
+        private Dictionary<string, string>? _dimensions;
 
         /// <summary>
         /// list of dimensions for the metric
         /// </summary>
-        public Dictionary<string, object> Dimensions
+        public Dictionary<string, string> Dimensions
         {
-            get => _dimensions ?? (_dimensions = new Dictionary<string, object>());
+            get => _dimensions ?? (_dimensions = new Dictionary<string, string>());
             set => _dimensions = value;
         }
 

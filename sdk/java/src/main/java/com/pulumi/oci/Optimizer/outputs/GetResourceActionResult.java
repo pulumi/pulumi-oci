@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionAction;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +46,7 @@ public final class GetResourceActionResult {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return The unique OCID associated with the resource action.
      * 
@@ -58,7 +57,7 @@ public final class GetResourceActionResult {
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The name assigned to the resource.
      * 
@@ -151,7 +150,7 @@ public final class GetResourceActionResult {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -168,7 +167,7 @@ public final class GetResourceActionResult {
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -259,10 +258,10 @@ public final class GetResourceActionResult {
         private String compartmentId;
         private String compartmentName;
         private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String id;
         private @Nullable Boolean includeResourceMetadata;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String recommendationId;
         private String resourceActionId;
@@ -343,7 +342,7 @@ public final class GetResourceActionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetResourceActionResult", "extendedMetadata");
             }
@@ -365,7 +364,7 @@ public final class GetResourceActionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetResourceActionResult", "metadata");
             }

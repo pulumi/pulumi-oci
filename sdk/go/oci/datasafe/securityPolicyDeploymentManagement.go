@@ -14,18 +14,18 @@ import (
 type SecurityPolicyDeploymentManagement struct {
 	pulumi.CustomResourceState
 
-	CompartmentId    pulumi.StringOutput `pulumi:"compartmentId"`
-	DefinedTags      pulumi.MapOutput    `pulumi:"definedTags"`
-	Description      pulumi.StringOutput `pulumi:"description"`
-	DisplayName      pulumi.StringOutput `pulumi:"displayName"`
-	FreeformTags     pulumi.MapOutput    `pulumi:"freeformTags"`
-	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
-	State            pulumi.StringOutput `pulumi:"state"`
-	SystemTags       pulumi.MapOutput    `pulumi:"systemTags"`
-	TargetId         pulumi.StringOutput `pulumi:"targetId"`
-	TimeCreated      pulumi.StringOutput `pulumi:"timeCreated"`
-	TimeUpdated      pulumi.StringOutput `pulumi:"timeUpdated"`
+	CompartmentId    pulumi.StringOutput    `pulumi:"compartmentId"`
+	DefinedTags      pulumi.StringMapOutput `pulumi:"definedTags"`
+	Description      pulumi.StringOutput    `pulumi:"description"`
+	DisplayName      pulumi.StringOutput    `pulumi:"displayName"`
+	FreeformTags     pulumi.StringMapOutput `pulumi:"freeformTags"`
+	LifecycleDetails pulumi.StringOutput    `pulumi:"lifecycleDetails"`
+	SecurityPolicyId pulumi.StringOutput    `pulumi:"securityPolicyId"`
+	State            pulumi.StringOutput    `pulumi:"state"`
+	SystemTags       pulumi.StringMapOutput `pulumi:"systemTags"`
+	TargetId         pulumi.StringOutput    `pulumi:"targetId"`
+	TimeCreated      pulumi.StringOutput    `pulumi:"timeCreated"`
+	TimeUpdated      pulumi.StringOutput    `pulumi:"timeUpdated"`
 }
 
 // NewSecurityPolicyDeploymentManagement registers a new resource with the given unique name, arguments, and options.
@@ -58,30 +58,30 @@ func GetSecurityPolicyDeploymentManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SecurityPolicyDeploymentManagement resources.
 type securityPolicyDeploymentManagementState struct {
-	CompartmentId    *string                `pulumi:"compartmentId"`
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	Description      *string                `pulumi:"description"`
-	DisplayName      *string                `pulumi:"displayName"`
-	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
-	LifecycleDetails *string                `pulumi:"lifecycleDetails"`
-	SecurityPolicyId *string                `pulumi:"securityPolicyId"`
-	State            *string                `pulumi:"state"`
-	SystemTags       map[string]interface{} `pulumi:"systemTags"`
-	TargetId         *string                `pulumi:"targetId"`
-	TimeCreated      *string                `pulumi:"timeCreated"`
-	TimeUpdated      *string                `pulumi:"timeUpdated"`
+	CompartmentId    *string           `pulumi:"compartmentId"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	Description      *string           `pulumi:"description"`
+	DisplayName      *string           `pulumi:"displayName"`
+	FreeformTags     map[string]string `pulumi:"freeformTags"`
+	LifecycleDetails *string           `pulumi:"lifecycleDetails"`
+	SecurityPolicyId *string           `pulumi:"securityPolicyId"`
+	State            *string           `pulumi:"state"`
+	SystemTags       map[string]string `pulumi:"systemTags"`
+	TargetId         *string           `pulumi:"targetId"`
+	TimeCreated      *string           `pulumi:"timeCreated"`
+	TimeUpdated      *string           `pulumi:"timeUpdated"`
 }
 
 type SecurityPolicyDeploymentManagementState struct {
 	CompartmentId    pulumi.StringPtrInput
-	DefinedTags      pulumi.MapInput
+	DefinedTags      pulumi.StringMapInput
 	Description      pulumi.StringPtrInput
 	DisplayName      pulumi.StringPtrInput
-	FreeformTags     pulumi.MapInput
+	FreeformTags     pulumi.StringMapInput
 	LifecycleDetails pulumi.StringPtrInput
 	SecurityPolicyId pulumi.StringPtrInput
 	State            pulumi.StringPtrInput
-	SystemTags       pulumi.MapInput
+	SystemTags       pulumi.StringMapInput
 	TargetId         pulumi.StringPtrInput
 	TimeCreated      pulumi.StringPtrInput
 	TimeUpdated      pulumi.StringPtrInput
@@ -92,21 +92,21 @@ func (SecurityPolicyDeploymentManagementState) ElementType() reflect.Type {
 }
 
 type securityPolicyDeploymentManagementArgs struct {
-	CompartmentId *string                `pulumi:"compartmentId"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
-	Description   *string                `pulumi:"description"`
-	DisplayName   *string                `pulumi:"displayName"`
-	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
-	TargetId      *string                `pulumi:"targetId"`
+	CompartmentId *string           `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	Description   *string           `pulumi:"description"`
+	DisplayName   *string           `pulumi:"displayName"`
+	FreeformTags  map[string]string `pulumi:"freeformTags"`
+	TargetId      *string           `pulumi:"targetId"`
 }
 
 // The set of arguments for constructing a SecurityPolicyDeploymentManagement resource.
 type SecurityPolicyDeploymentManagementArgs struct {
 	CompartmentId pulumi.StringPtrInput
-	DefinedTags   pulumi.MapInput
+	DefinedTags   pulumi.StringMapInput
 	Description   pulumi.StringPtrInput
 	DisplayName   pulumi.StringPtrInput
-	FreeformTags  pulumi.MapInput
+	FreeformTags  pulumi.StringMapInput
 	TargetId      pulumi.StringPtrInput
 }
 
@@ -201,8 +201,8 @@ func (o SecurityPolicyDeploymentManagementOutput) CompartmentId() pulumi.StringO
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SecurityPolicyDeploymentManagementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) Description() pulumi.StringOutput {
@@ -213,8 +213,8 @@ func (o SecurityPolicyDeploymentManagementOutput) DisplayName() pulumi.StringOut
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SecurityPolicyDeploymentManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) LifecycleDetails() pulumi.StringOutput {
@@ -229,8 +229,8 @@ func (o SecurityPolicyDeploymentManagementOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-func (o SecurityPolicyDeploymentManagementOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SecurityPolicyDeploymentManagementOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o SecurityPolicyDeploymentManagementOutput) TargetId() pulumi.StringOutput {

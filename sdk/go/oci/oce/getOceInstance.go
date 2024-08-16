@@ -65,13 +65,13 @@ type GetOceInstanceResult struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OceInstance description, can be updated
 	Description string `pulumi:"description"`
 	// disaster recovery paired ragion name
 	DrRegion string `pulumi:"drRegion"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
 	Guid string `pulumi:"guid"`
 	// Unique identifier that is immutable on creation
@@ -93,13 +93,13 @@ type GetOceInstanceResult struct {
 	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
 	OceInstanceId          string `pulumi:"oceInstanceId"`
 	// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-	Service map[string]interface{} `pulumi:"service"`
+	Service map[string]string `pulumi:"service"`
 	// The current state of the instance lifecycle.
 	State string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Tenancy Identifier
 	TenancyId string `pulumi:"tenancyId"`
 	// Tenancy Name
@@ -168,8 +168,8 @@ func (o GetOceInstanceResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOceInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOceInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // OceInstance description, can be updated
@@ -183,8 +183,8 @@ func (o GetOceInstanceResultOutput) DrRegion() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOceInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOceInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique GUID identifier that is immutable on creation
@@ -241,8 +241,8 @@ func (o GetOceInstanceResultOutput) OceInstanceId() pulumi.StringOutput {
 }
 
 // SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-func (o GetOceInstanceResultOutput) Service() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstanceResult) map[string]interface{} { return v.Service }).(pulumi.MapOutput)
+func (o GetOceInstanceResultOutput) Service() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstanceResult) map[string]string { return v.Service }).(pulumi.StringMapOutput)
 }
 
 // The current state of the instance lifecycle.
@@ -256,8 +256,8 @@ func (o GetOceInstanceResultOutput) StateMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOceInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetOceInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Tenancy Identifier

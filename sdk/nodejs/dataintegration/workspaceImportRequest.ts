@@ -84,7 +84,7 @@ export class WorkspaceImportRequest extends pulumi.CustomResource {
     /**
      * Contains key of the error
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
     /**
      * Name of the zip file to be imported.
      */
@@ -225,7 +225,7 @@ export interface WorkspaceImportRequestState {
     /**
      * Contains key of the error
      */
-    errorMessages?: pulumi.Input<{[key: string]: any}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Name of the zip file to be imported.
      */

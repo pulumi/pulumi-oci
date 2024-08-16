@@ -10,7 +10,6 @@ import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigu
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -167,7 +166,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
-    private Map<String,Object> types;
+    private Map<String,String> types;
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParser() {}
     /**
@@ -377,7 +376,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
      * @return Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
      * 
      */
-    public Map<String,Object> types() {
+    public Map<String,String> types() {
         return this.types;
     }
 
@@ -419,7 +418,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
         private String timeFormat;
         private String timeType;
         private Integer timeoutInMilliseconds;
-        private Map<String,Object> types;
+        private Map<String,String> types;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationSourceParser defaults) {
     	      Objects.requireNonNull(defaults);
@@ -703,7 +702,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParser 
             return this;
         }
         @CustomType.Setter
-        public Builder types(Map<String,Object> types) {
+        public Builder types(Map<String,String> types) {
             if (types == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParser", "types");
             }

@@ -16,11 +16,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
         /// </summary>
@@ -50,9 +50,9 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
         [OutputConstructor]
         private NodePoolNodeConfigDetails(
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             bool? isPvEncryptionInTransitEnabled,
 

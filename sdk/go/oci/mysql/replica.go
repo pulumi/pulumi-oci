@@ -32,13 +32,13 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Mysql.NewReplica(ctx, "test_replica", &Mysql.ReplicaArgs{
 //				DbSystemId: pulumi.Any(testMysqlDbSystem.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(replicaDescription),
 //				DisplayName: pulumi.Any(replicaDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsDeleteProtected: pulumi.Any(replicaIsDeleteProtected),
 //				ReplicaOverrides: &mysql.ReplicaReplicaOverridesArgs{
@@ -75,7 +75,7 @@ type Replica struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User provided description of the read replica.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
@@ -83,7 +83,7 @@ type Replica struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringOutput `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
@@ -152,7 +152,7 @@ type replicaState struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided description of the read replica.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
@@ -160,7 +160,7 @@ type replicaState struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The IP address the read replica is configured to listen on.
 	IpAddress *string `pulumi:"ipAddress"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
@@ -197,7 +197,7 @@ type ReplicaState struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided description of the read replica.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
@@ -205,7 +205,7 @@ type ReplicaState struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The IP address the read replica is configured to listen on.
 	IpAddress pulumi.StringPtrInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
@@ -240,13 +240,13 @@ type replicaArgs struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided description of the read replica.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
@@ -258,13 +258,13 @@ type ReplicaArgs struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided description of the read replica.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the read replica. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
 	IsDeleteProtected pulumi.BoolPtrInput
 	// (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
@@ -379,8 +379,8 @@ func (o ReplicaOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ReplicaOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Replica) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ReplicaOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User provided description of the read replica.
@@ -399,8 +399,8 @@ func (o ReplicaOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ReplicaOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Replica) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ReplicaOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Replica) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The IP address the read replica is configured to listen on.

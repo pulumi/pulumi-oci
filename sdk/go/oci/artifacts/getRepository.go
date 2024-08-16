@@ -61,13 +61,13 @@ type LookupRepositoryResult struct {
 	// The OCID of the repository's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The repository description.
 	Description string `pulumi:"description"`
 	// The repository name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`
 	Id string `pulumi:"id"`
 	// Whether the repository is immutable. The artifacts of an immutable repository cannot be overwritten.
@@ -125,8 +125,8 @@ func (o LookupRepositoryResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupRepositoryResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupRepositoryResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The repository description.
@@ -140,8 +140,8 @@ func (o LookupRepositoryResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupRepositoryResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRepositoryResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupRepositoryResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRepositoryResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository.  Example: `ocid1.artifactrepository.oc1..exampleuniqueID`

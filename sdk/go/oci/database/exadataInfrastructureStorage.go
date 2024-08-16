@@ -29,11 +29,11 @@ type ExadataInfrastructureStorage struct {
 	CsiNumber                pulumi.StringOutput                                 `pulumi:"csiNumber"`
 	DataStorageSizeInTbs     pulumi.Float64Output                                `pulumi:"dataStorageSizeInTbs"`
 	DbNodeStorageSizeInGbs   pulumi.IntOutput                                    `pulumi:"dbNodeStorageSizeInGbs"`
-	DefinedTags              pulumi.MapOutput                                    `pulumi:"definedTags"`
+	DefinedTags              pulumi.StringMapOutput                              `pulumi:"definedTags"`
 	DisplayName              pulumi.StringOutput                                 `pulumi:"displayName"`
 	DnsServers               pulumi.StringArrayOutput                            `pulumi:"dnsServers"`
 	ExadataInfrastructureId  pulumi.StringPtrOutput                              `pulumi:"exadataInfrastructureId"`
-	FreeformTags             pulumi.MapOutput                                    `pulumi:"freeformTags"`
+	FreeformTags             pulumi.StringMapOutput                              `pulumi:"freeformTags"`
 	Gateway                  pulumi.StringOutput                                 `pulumi:"gateway"`
 	InfiniBandNetworkCidr    pulumi.StringOutput                                 `pulumi:"infiniBandNetworkCidr"`
 	LifecycleDetails         pulumi.StringOutput                                 `pulumi:"lifecycleDetails"`
@@ -133,11 +133,11 @@ type exadataInfrastructureStorageState struct {
 	CsiNumber                *string                                        `pulumi:"csiNumber"`
 	DataStorageSizeInTbs     *float64                                       `pulumi:"dataStorageSizeInTbs"`
 	DbNodeStorageSizeInGbs   *int                                           `pulumi:"dbNodeStorageSizeInGbs"`
-	DefinedTags              map[string]interface{}                         `pulumi:"definedTags"`
+	DefinedTags              map[string]string                              `pulumi:"definedTags"`
 	DisplayName              *string                                        `pulumi:"displayName"`
 	DnsServers               []string                                       `pulumi:"dnsServers"`
 	ExadataInfrastructureId  *string                                        `pulumi:"exadataInfrastructureId"`
-	FreeformTags             map[string]interface{}                         `pulumi:"freeformTags"`
+	FreeformTags             map[string]string                              `pulumi:"freeformTags"`
 	Gateway                  *string                                        `pulumi:"gateway"`
 	InfiniBandNetworkCidr    *string                                        `pulumi:"infiniBandNetworkCidr"`
 	LifecycleDetails         *string                                        `pulumi:"lifecycleDetails"`
@@ -172,11 +172,11 @@ type ExadataInfrastructureStorageState struct {
 	CsiNumber                pulumi.StringPtrInput
 	DataStorageSizeInTbs     pulumi.Float64PtrInput
 	DbNodeStorageSizeInGbs   pulumi.IntPtrInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	DisplayName              pulumi.StringPtrInput
 	DnsServers               pulumi.StringArrayInput
 	ExadataInfrastructureId  pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	Gateway                  pulumi.StringPtrInput
 	InfiniBandNetworkCidr    pulumi.StringPtrInput
 	LifecycleDetails         pulumi.StringPtrInput
@@ -209,11 +209,11 @@ type exadataInfrastructureStorageArgs struct {
 	ComputeCount             *int                                           `pulumi:"computeCount"`
 	Contacts                 []ExadataInfrastructureStorageContact          `pulumi:"contacts"`
 	CorporateProxy           *string                                        `pulumi:"corporateProxy"`
-	DefinedTags              map[string]interface{}                         `pulumi:"definedTags"`
+	DefinedTags              map[string]string                              `pulumi:"definedTags"`
 	DisplayName              string                                         `pulumi:"displayName"`
 	DnsServers               []string                                       `pulumi:"dnsServers"`
 	ExadataInfrastructureId  *string                                        `pulumi:"exadataInfrastructureId"`
-	FreeformTags             map[string]interface{}                         `pulumi:"freeformTags"`
+	FreeformTags             map[string]string                              `pulumi:"freeformTags"`
 	Gateway                  string                                         `pulumi:"gateway"`
 	InfiniBandNetworkCidr    string                                         `pulumi:"infiniBandNetworkCidr"`
 	MaintenanceWindow        *ExadataInfrastructureStorageMaintenanceWindow `pulumi:"maintenanceWindow"`
@@ -234,11 +234,11 @@ type ExadataInfrastructureStorageArgs struct {
 	ComputeCount             pulumi.IntPtrInput
 	Contacts                 ExadataInfrastructureStorageContactArrayInput
 	CorporateProxy           pulumi.StringPtrInput
-	DefinedTags              pulumi.MapInput
+	DefinedTags              pulumi.StringMapInput
 	DisplayName              pulumi.StringInput
 	DnsServers               pulumi.StringArrayInput
 	ExadataInfrastructureId  pulumi.StringPtrInput
-	FreeformTags             pulumi.MapInput
+	FreeformTags             pulumi.StringMapInput
 	Gateway                  pulumi.StringInput
 	InfiniBandNetworkCidr    pulumi.StringInput
 	MaintenanceWindow        ExadataInfrastructureStorageMaintenanceWindowPtrInput
@@ -394,8 +394,8 @@ func (o ExadataInfrastructureStorageOutput) DbNodeStorageSizeInGbs() pulumi.IntO
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.IntOutput { return v.DbNodeStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExadataInfrastructureStorageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) DisplayName() pulumi.StringOutput {
@@ -410,8 +410,8 @@ func (o ExadataInfrastructureStorageOutput) ExadataInfrastructureId() pulumi.Str
 	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringPtrOutput { return v.ExadataInfrastructureId }).(pulumi.StringPtrOutput)
 }
 
-func (o ExadataInfrastructureStorageOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExadataInfrastructureStorageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInfrastructureStorage) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o ExadataInfrastructureStorageOutput) Gateway() pulumi.StringOutput {

@@ -6,7 +6,6 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
      * @return Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    private Map<String,Object> customEnvironmentVariables;
+    private Map<String,String> customEnvironmentVariables;
     /**
      * @return Git configuration Details.
      * 
@@ -30,7 +29,7 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
      * @return Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    public Map<String,Object> customEnvironmentVariables() {
+    public Map<String,String> customEnvironmentVariables() {
         return this.customEnvironmentVariables;
     }
     /**
@@ -50,7 +49,7 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> customEnvironmentVariables;
+        private Map<String,String> customEnvironmentVariables;
         private List<GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetail> notebookSessionGitConfigDetails;
         public Builder() {}
         public Builder(GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail defaults) {
@@ -60,7 +59,7 @@ public final class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfi
         }
 
         @CustomType.Setter
-        public Builder customEnvironmentVariables(Map<String,Object> customEnvironmentVariables) {
+        public Builder customEnvironmentVariables(Map<String,String> customEnvironmentVariables) {
             if (customEnvironmentVariables == null) {
               throw new MissingRequiredPropertyException("GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetail", "customEnvironmentVariables");
             }

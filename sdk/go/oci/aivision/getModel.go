@@ -65,13 +65,13 @@ type LookupModelResult struct {
 	// Confidence ratio of the calculation
 	ConfidenceThreshold float64 `pulumi:"confidenceThreshold"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
 	// Model Identifier, can be renamed
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// If It's true, Training is set for recommended epochs needed for quick training.
@@ -96,7 +96,7 @@ type LookupModelResult struct {
 	// The current state of the Model.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Total number of testing Images
 	TestImageCount int `pulumi:"testImageCount"`
 	// The base entity for a Dataset, which is the input for Model creation.
@@ -169,8 +169,8 @@ func (o LookupModelResultOutput) ConfidenceThreshold() pulumi.Float64Output {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model.
@@ -184,8 +184,8 @@ func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation
@@ -248,8 +248,8 @@ func (o LookupModelResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Total number of testing Images

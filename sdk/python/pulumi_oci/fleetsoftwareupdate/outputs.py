@@ -711,16 +711,16 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  active_fsu_cycles: Sequence['outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fleet_discoveries: Sequence['outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  service_type: str,
                  source_major_version: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  target_count: int,
                  time_created: str,
                  time_updated: str,
@@ -754,7 +754,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -769,7 +769,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -799,7 +799,7 @@ class GetFsuCollectionsFsuCollectionSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -1157,11 +1157,11 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
                  batching_strategies: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemBatchingStrategyResult'],
                  collection_type: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  diagnostics_collections: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionResult'],
                  display_name: str,
                  executing_fsu_action_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  fsu_collection_id: str,
                  goal_version_details: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult'],
                  id: str,
@@ -1174,7 +1174,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
                  next_action_to_executes: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult'],
                  stage_action_schedules: Sequence['outputs.GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_finished: str,
                  time_updated: str,
@@ -1228,7 +1228,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -1248,7 +1248,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -1313,7 +1313,7 @@ class GetFsuCyclesFsuCycleSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property

@@ -66,7 +66,7 @@ export class GeneratedKey extends pulumi.CustomResource {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    public readonly associatedData!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly associatedData!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The encrypted data encryption key generated from a master encryption key.
      */
@@ -94,7 +94,7 @@ export class GeneratedKey extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly loggingContext!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly loggingContext!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
@@ -162,7 +162,7 @@ export interface GeneratedKeyState {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The encrypted data encryption key generated from a master encryption key.
      */
@@ -190,7 +190,7 @@ export interface GeneratedKeyState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    loggingContext?: pulumi.Input<{[key: string]: any}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
      */
@@ -208,7 +208,7 @@ export interface GeneratedKeyArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
@@ -232,5 +232,5 @@ export interface GeneratedKeyArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    loggingContext?: pulumi.Input<{[key: string]: any}>;
+    loggingContext?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

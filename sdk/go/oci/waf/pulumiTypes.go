@@ -3798,11 +3798,11 @@ type GetFirewallsWebAppFirewallCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -3812,7 +3812,7 @@ type GetFirewallsWebAppFirewallCollectionItem struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
@@ -3838,11 +3838,11 @@ type GetFirewallsWebAppFirewallCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -3852,7 +3852,7 @@ type GetFirewallsWebAppFirewallCollectionItemArgs struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the WebAppFirewall was updated. An RFC3339 formatted datetime string.
@@ -3923,8 +3923,8 @@ func (o GetFirewallsWebAppFirewallCollectionItemOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFirewallsWebAppFirewallCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetFirewallsWebAppFirewallCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -3933,8 +3933,8 @@ func (o GetFirewallsWebAppFirewallCollectionItemOutput) DisplayName() pulumi.Str
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFirewallsWebAppFirewallCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetFirewallsWebAppFirewallCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the WebAppFirewall with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -3958,8 +3958,8 @@ func (o GetFirewallsWebAppFirewallCollectionItemOutput) State() pulumi.StringOut
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetFirewallsWebAppFirewallCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetFirewallsWebAppFirewallCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFirewallsWebAppFirewallCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the WebAppFirewall was created. An RFC3339 formatted datetime string.
@@ -4311,11 +4311,11 @@ type GetNetworkAddressListsNetworkAddressListCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -4323,7 +4323,7 @@ type GetNetworkAddressListsNetworkAddressListCollectionItem struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
@@ -4351,11 +4351,11 @@ type GetNetworkAddressListsNetworkAddressListCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -4363,7 +4363,7 @@ type GetNetworkAddressListsNetworkAddressListCollectionItemArgs struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
@@ -4436,10 +4436,8 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) Compartmen
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -4448,10 +4446,10 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]interface{} {
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the NetworkAddressList with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -4470,10 +4468,8 @@ func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) State() pu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetNetworkAddressListsNetworkAddressListCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkAddressListsNetworkAddressListCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
@@ -5641,11 +5637,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -5663,7 +5659,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
@@ -5687,11 +5683,11 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -5709,7 +5705,7 @@ type GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemArgs struct {
 	// A filter to return only resources that match the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
@@ -5780,10 +5776,10 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) Compa
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]interface{} {
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -5792,10 +5788,10 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) Displ
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]interface{} {
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the WebAppFirewallPolicy with the given [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -5849,10 +5845,10 @@ func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) State
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]interface{} {
+func (o GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWebAppFirewallPoliciesWebAppFirewallPolicyCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.

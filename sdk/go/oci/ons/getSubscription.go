@@ -65,7 +65,7 @@ type LookupSubscriptionResult struct {
 	// The time when this suscription was created.
 	CreatedTime string `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The delivery policy of the subscription. Stored as a JSON string.
 	DeliveryPolicy string `pulumi:"deliveryPolicy"`
 	// A locator that corresponds to the subscription protocol. For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol.
@@ -73,7 +73,7 @@ type LookupSubscriptionResult struct {
 	// For optimistic concurrency control. See `if-match`.
 	Etag string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
 	Id string `pulumi:"id"`
 	// The protocol used for the subscription.
@@ -134,8 +134,8 @@ func (o LookupSubscriptionResultOutput) CreatedTime() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSubscriptionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSubscriptionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The delivery policy of the subscription. Stored as a JSON string.
@@ -154,8 +154,8 @@ func (o LookupSubscriptionResultOutput) Etag() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupSubscriptionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSubscriptionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSubscriptionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSubscriptionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.

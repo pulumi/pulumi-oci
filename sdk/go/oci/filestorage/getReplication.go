@@ -63,7 +63,7 @@ type LookupReplicationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
 	DeltaProgress string `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
@@ -71,7 +71,7 @@ type LookupReplicationResult struct {
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My replication`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot that has been replicated completely. Empty if the copy of the initial snapshot is not complete.
@@ -144,8 +144,8 @@ func (o LookupReplicationResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupReplicationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReplicationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Percentage progress of the current replication cycle.
@@ -164,8 +164,8 @@ func (o LookupReplicationResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupReplicationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReplicationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication.

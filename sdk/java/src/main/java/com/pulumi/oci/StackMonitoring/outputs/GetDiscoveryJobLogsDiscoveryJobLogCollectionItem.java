@@ -5,7 +5,6 @@ package com.pulumi.oci.StackMonitoring.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -31,7 +30,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Time the Job log was created
      * 
@@ -64,7 +63,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -87,7 +86,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
         private String id;
         private String logMessage;
         private String logType;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetDiscoveryJobLogsDiscoveryJobLogCollectionItem defaults) {
@@ -124,7 +123,7 @@ public final class GetDiscoveryJobLogsDiscoveryJobLogCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDiscoveryJobLogsDiscoveryJobLogCollectionItem", "systemTags");
             }

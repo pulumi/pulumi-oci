@@ -120,7 +120,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// The entity tag (ETag) for the bucket.
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The name of the bucket. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods. Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. example: Example: my-new-bucket1
@@ -275,26 +275,26 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -305,14 +305,14 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? KmsKeyId { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
@@ -413,14 +413,14 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? CreatedBy { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -431,14 +431,14 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Etag { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -455,14 +455,14 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? KmsKeyId { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// (Updatable) Arbitrary string, up to 4KB, of keys and values for user-defined metadata.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

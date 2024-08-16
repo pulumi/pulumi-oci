@@ -964,12 +964,12 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionResult(dict):
 @pulumi.output_type
 class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dict):
     def __init__(__self__, *,
-                 advanced_properties: Mapping[str, Any],
+                 advanced_properties: Mapping[str, str],
                  compartment_id: str,
                  connection_string: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  key_stores: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreResult'],
                  lifecycle_details: str,
@@ -979,7 +979,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  related_resources: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceResult'],
                  runtime_support: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str,
@@ -987,12 +987,12 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
                  user_name: str,
                  user_passwords: Sequence['outputs.GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemUserPasswordResult']):
         """
-        :param Mapping[str, Any] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
+        :param Mapping[str, str] advanced_properties: The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param str connection_string: The connect descriptor or Easy Connect Naming method used to connect to the database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire specified display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools connection.
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemKeyStoreArgs'] key_stores: The Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
         :param str lifecycle_details: A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
@@ -1002,7 +1002,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
         :param Sequence['GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemRelatedResourceArgs'] related_resources: A related resource
         :param str runtime_support: A filter to return only resources with one of the specified runtimeSupport values.
         :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param str type: A filter to return only resources their type matches the specified type.
@@ -1035,7 +1035,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="advancedProperties")
-    def advanced_properties(self) -> Mapping[str, Any]:
+    def advanced_properties(self) -> Mapping[str, str]:
         """
         The advanced connection properties key-value pair (for example, `oracle.net.ssl_server_dn_match`).
         """
@@ -1059,7 +1059,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1075,7 +1075,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1155,7 +1155,7 @@ class GetDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1540,28 +1540,28 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionResu
 class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the Database Tools Endpoint Service.
         :param str display_name: A filter to return only resources that match the entire specified display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Endpoint Service.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str name: A filter to return only resources that match the entire specified name.
         :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the Database Tools Endpoint Service was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Database Tools Endpoint Service was updated. An RFC3339 formatted datetime string
         """
@@ -1588,7 +1588,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1612,7 +1612,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1652,7 +1652,7 @@ class GetDatabaseToolsEndpointServicesDatabaseToolsEndpointServiceCollectionItem
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1812,12 +1812,12 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
     def __init__(__self__, *,
                  additional_fqdns: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  endpoint_fqdn: str,
                  endpoint_service_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockResult'],
@@ -1827,19 +1827,19 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
                  reverse_connection_configurations: Sequence['outputs.GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationResult'],
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  vcn_id: str):
         """
         :param Sequence[str] additional_fqdns: A list of additional FQDNs that can be also be used for the private endpoint.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the Database Tools private endpoint.
         :param str display_name: A filter to return only resources that match the entire specified display name.
         :param str endpoint_fqdn: Then FQDN to use for the private endpoint.
         :param str endpoint_service_id: A filter to return only resources their `endpointServiceId` matches the specified `endpointServiceId`.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools private endpoint.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemLockArgs'] locks: Locks associated with this resource.
@@ -1849,7 +1849,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
         :param Sequence['GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItemReverseConnectionConfigurationArgs'] reverse_connection_configurations: Reverse connection configuration details of the private endpoint.
         :param str state: A filter to return only resources their `lifecycleState` matches the specified `lifecycleState`.
         :param str subnet_id: A filter to return only resources their `subnetId` matches the specified `subnetId`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         :param str time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param str vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
@@ -1894,7 +1894,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1934,7 +1934,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2014,7 +2014,7 @@ class GetDatabaseToolsPrivateEndpointsDatabaseToolsPrivateEndpointCollectionItem
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

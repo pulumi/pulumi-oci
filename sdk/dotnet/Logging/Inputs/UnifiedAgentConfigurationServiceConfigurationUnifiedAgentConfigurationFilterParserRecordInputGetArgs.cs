@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("dimensions")]
-        private InputMap<object>? _dimensions;
+        private InputMap<string>? _dimensions;
 
         /// <summary>
         /// (Updatable) Dimensions to be added for metrics.
         /// </summary>
-        public InputMap<object> Dimensions
+        public InputMap<string> Dimensions
         {
-            get => _dimensions ?? (_dimensions = new InputMap<object>());
+            get => _dimensions ?? (_dimensions = new InputMap<string>());
             set => _dimensions = value;
         }
 

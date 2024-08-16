@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GloballyDistributedDatabase.outputs.GetShardedDatabaseShardDetailEncryptionKeyDetail;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -56,7 +55,7 @@ public final class GetShardedDatabaseShardDetail {
      * @return Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return Name of the shard.
      * 
@@ -160,7 +159,7 @@ public final class GetShardedDatabaseShardDetail {
      * @return Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -244,7 +243,7 @@ public final class GetShardedDatabaseShardDetail {
         private Double dataStorageSizeInGbs;
         private List<GetShardedDatabaseShardDetailEncryptionKeyDetail> encryptionKeyDetails;
         private Boolean isAutoScalingEnabled;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String peerCloudAutonomousVmClusterId;
         private String shardGroup;
@@ -345,7 +344,7 @@ public final class GetShardedDatabaseShardDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetShardedDatabaseShardDetail", "metadata");
             }

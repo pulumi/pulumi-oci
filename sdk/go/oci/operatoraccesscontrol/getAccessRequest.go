@@ -74,7 +74,7 @@ type GetAccessRequestResult struct {
 	// The OCID of the compartment that contains the access request.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Duration in hours for which access is sought on the target resource.
 	Duration int `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
@@ -82,7 +82,7 @@ type GetAccessRequestResult struct {
 	// Contains the user ids who have approved the accessRequest for extension.
 	ExtensionApproverDetails []GetAccessRequestExtensionApproverDetail `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
@@ -215,8 +215,8 @@ func (o GetAccessRequestResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetAccessRequestResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAccessRequestResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAccessRequestResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Duration in hours for which access is sought on the target resource.
@@ -237,8 +237,8 @@ func (o GetAccessRequestResultOutput) ExtensionApproverDetails() GetAccessReques
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetAccessRequestResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAccessRequestResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAccessRequestResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAccessRequestResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

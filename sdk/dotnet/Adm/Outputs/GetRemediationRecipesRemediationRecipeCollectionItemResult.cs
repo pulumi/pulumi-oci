@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A configuration to define the constraints when detecting vulnerable dependencies.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Adm.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
@@ -78,13 +78,13 @@ namespace Pulumi.Oci.Adm.Outputs
         private GetRemediationRecipesRemediationRecipeCollectionItemResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             ImmutableArray<Outputs.GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult> detectConfigurations,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Adm.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

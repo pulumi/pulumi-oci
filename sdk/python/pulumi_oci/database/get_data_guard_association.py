@@ -214,12 +214,12 @@ class GetDataGuardAssociationResult:
 
     @property
     @pulumi.getter(name="databaseDefinedTags")
-    def database_defined_tags(self) -> Mapping[str, Any]:
+    def database_defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "database_defined_tags")
 
     @property
     @pulumi.getter(name="databaseFreeformTags")
-    def database_freeform_tags(self) -> Mapping[str, Any]:
+    def database_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "database_freeform_tags")
 
     @property
@@ -237,12 +237,12 @@ class GetDataGuardAssociationResult:
 
     @property
     @pulumi.getter(name="dbSystemDefinedTags")
-    def db_system_defined_tags(self) -> Mapping[str, Any]:
+    def db_system_defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_defined_tags")
 
     @property
     @pulumi.getter(name="dbSystemFreeformTags")
-    def db_system_freeform_tags(self) -> Mapping[str, Any]:
+    def db_system_freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "db_system_freeform_tags")
 
     @property

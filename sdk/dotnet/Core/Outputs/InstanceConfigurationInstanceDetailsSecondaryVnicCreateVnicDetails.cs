@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// The hostname for the VNIC's primary private IP. See the `hostnameLabel` attribute of [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/) for more information.
         /// </summary>
@@ -64,11 +64,11 @@ namespace Pulumi.Oci.Core.Outputs
 
             bool? assignPublicIp,
 
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
             string? displayName,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             string? hostnameLabel,
 

@@ -34,11 +34,11 @@ import (
 //			_, err := Jms.NewJavaDownloadsJavaDownloadReport(ctx, "test_java_download_report", &Jms.JavaDownloadsJavaDownloadReportArgs{
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				Format:        pulumi.Any(javaDownloadReportFormat),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				TimeEnd:   pulumi.Any(javaDownloadReportTimeEnd),
 //				TimeStart: pulumi.Any(javaDownloadReportTimeStart),
@@ -67,7 +67,7 @@ type JavaDownloadsJavaDownloadReport struct {
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaDownloadReportCreatedByArrayOutput `pulumi:"createdBies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Display name for the Java download report.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Approximate size of the Java download report file in bytes.
@@ -75,13 +75,13 @@ type JavaDownloadsJavaDownloadReport struct {
 	// The format of the report that is generated.
 	Format pulumi.StringOutput `pulumi:"format"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapOutput    `pulumi:"freeformTags"`
-	SortBy       pulumi.StringOutput `pulumi:"sortBy"`
-	SortOrder    pulumi.StringOutput `pulumi:"sortOrder"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	SortBy       pulumi.StringOutput    `pulumi:"sortBy"`
+	SortOrder    pulumi.StringOutput    `pulumi:"sortOrder"`
 	// The current state of the Java download report.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -138,7 +138,7 @@ type javaDownloadsJavaDownloadReportState struct {
 	// An authorized principal.
 	CreatedBies []JavaDownloadsJavaDownloadReportCreatedBy `pulumi:"createdBies"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Display name for the Java download report.
 	DisplayName *string `pulumi:"displayName"`
 	// Approximate size of the Java download report file in bytes.
@@ -146,13 +146,13 @@ type javaDownloadsJavaDownloadReportState struct {
 	// The format of the report that is generated.
 	Format *string `pulumi:"format"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	SortBy       *string                `pulumi:"sortBy"`
-	SortOrder    *string                `pulumi:"sortOrder"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	SortBy       *string           `pulumi:"sortBy"`
+	SortOrder    *string           `pulumi:"sortOrder"`
 	// The current state of the Java download report.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -174,7 +174,7 @@ type JavaDownloadsJavaDownloadReportState struct {
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaDownloadReportCreatedByArrayInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Display name for the Java download report.
 	DisplayName pulumi.StringPtrInput
 	// Approximate size of the Java download report file in bytes.
@@ -182,13 +182,13 @@ type JavaDownloadsJavaDownloadReportState struct {
 	// The format of the report that is generated.
 	Format pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	SortBy       pulumi.StringPtrInput
 	SortOrder    pulumi.StringPtrInput
 	// The current state of the Java download report.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -208,11 +208,11 @@ type javaDownloadsJavaDownloadReportArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The format of the report that is generated.
 	Format string `pulumi:"format"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd *string `pulumi:"timeEnd"`
 	// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -227,11 +227,11 @@ type JavaDownloadsJavaDownloadReportArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
 	CompartmentId pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The format of the report that is generated.
 	Format pulumi.StringInput
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeEnd pulumi.StringPtrInput
 	// The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -351,8 +351,8 @@ func (o JavaDownloadsJavaDownloadReportOutput) CreatedBies() JavaDownloadsJavaDo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-func (o JavaDownloadsJavaDownloadReportOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadReportOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Display name for the Java download report.
@@ -371,8 +371,8 @@ func (o JavaDownloadsJavaDownloadReportOutput) Format() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-func (o JavaDownloadsJavaDownloadReportOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadReportOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o JavaDownloadsJavaDownloadReportOutput) SortBy() pulumi.StringOutput {
@@ -389,8 +389,8 @@ func (o JavaDownloadsJavaDownloadReportOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o JavaDownloadsJavaDownloadReportOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o JavaDownloadsJavaDownloadReportOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *JavaDownloadsJavaDownloadReport) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.

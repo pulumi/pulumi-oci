@@ -57,8 +57,8 @@ import (
 //				},
 //				CorporateProxy: pulumi.Any(exadataInfrastructureCorporateProxy),
 //				DefinedTags:    pulumi.Any(exadataInfrastructureDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsCpsOfflineReportEnabled: pulumi.Any(exadataInfrastructureIsCpsOfflineReportEnabled),
 //				IsMultiRackDeployment:     pulumi.Any(exadataInfrastructureIsMultiRackDeployment),
@@ -152,13 +152,13 @@ type ExadataInfrastructure struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations ExadataInfrastructureDefinedFileSystemConfigurationArrayOutput `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayOutput `pulumi:"dnsServers"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The gateway for the control plane network.
 	Gateway pulumi.StringOutput `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -318,13 +318,13 @@ type exadataInfrastructureState struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations []ExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers []string `pulumi:"dnsServers"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The gateway for the control plane network.
 	Gateway *string `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -419,13 +419,13 @@ type ExadataInfrastructureState struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations ExadataInfrastructureDefinedFileSystemConfigurationArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The gateway for the control plane network.
 	Gateway pulumi.StringPtrInput
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -504,13 +504,13 @@ type exadataInfrastructureArgs struct {
 	CorporateProxy *string `pulumi:"corporateProxy"`
 	CreateAsync    *bool   `pulumi:"createAsync"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers []string `pulumi:"dnsServers"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The gateway for the control plane network.
 	Gateway string `pulumi:"gateway"`
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -562,13 +562,13 @@ type ExadataInfrastructureArgs struct {
 	CorporateProxy pulumi.StringPtrInput
 	CreateAsync    pulumi.BoolPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers pulumi.StringArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The gateway for the control plane network.
 	Gateway pulumi.StringInput
 	// (Updatable) The CIDR block for the Exadata InfiniBand interconnect.
@@ -787,8 +787,8 @@ func (o ExadataInfrastructureOutput) DefinedFileSystemConfigurations() ExadataIn
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ExadataInfrastructureOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExadataInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata infrastructure. The name does not need to be unique.
@@ -802,8 +802,8 @@ func (o ExadataInfrastructureOutput) DnsServers() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ExadataInfrastructureOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExadataInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInfrastructure) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The gateway for the control plane network.

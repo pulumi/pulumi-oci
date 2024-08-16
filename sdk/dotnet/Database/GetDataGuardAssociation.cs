@@ -129,15 +129,15 @@ namespace Pulumi.Oci.Database
         public readonly ImmutableArray<Outputs.GetDataGuardAssociationDataCollectionOptionResult> DataCollectionOptions;
         public readonly string DataGuardAssociationId;
         public readonly string DatabaseAdminPassword;
-        public readonly ImmutableDictionary<string, object> DatabaseDefinedTags;
-        public readonly ImmutableDictionary<string, object> DatabaseFreeformTags;
+        public readonly ImmutableDictionary<string, string> DatabaseDefinedTags;
+        public readonly ImmutableDictionary<string, string> DatabaseFreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
         /// </summary>
         public readonly string DatabaseId;
         public readonly string DatabaseSoftwareImageId;
-        public readonly ImmutableDictionary<string, object> DbSystemDefinedTags;
-        public readonly ImmutableDictionary<string, object> DbSystemFreeformTags;
+        public readonly ImmutableDictionary<string, string> DbSystemDefinedTags;
+        public readonly ImmutableDictionary<string, string> DbSystemFreeformTags;
         public readonly string DeleteStandbyDbHomeOnDelete;
         public readonly string DisplayName;
         public readonly ImmutableArray<string> FaultDomains;
@@ -228,17 +228,17 @@ namespace Pulumi.Oci.Database
 
             string databaseAdminPassword,
 
-            ImmutableDictionary<string, object> databaseDefinedTags,
+            ImmutableDictionary<string, string> databaseDefinedTags,
 
-            ImmutableDictionary<string, object> databaseFreeformTags,
+            ImmutableDictionary<string, string> databaseFreeformTags,
 
             string databaseId,
 
             string databaseSoftwareImageId,
 
-            ImmutableDictionary<string, object> dbSystemDefinedTags,
+            ImmutableDictionary<string, string> dbSystemDefinedTags,
 
-            ImmutableDictionary<string, object> dbSystemFreeformTags,
+            ImmutableDictionary<string, string> dbSystemFreeformTags,
 
             string deleteStandbyDbHomeOnDelete,
 

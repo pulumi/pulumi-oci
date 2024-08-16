@@ -19,7 +19,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetEndpointsEndpointCollectionItemContentModerationConfigResult> ContentModerationConfigs;
         public readonly string DedicatedAiClusterId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// An optional description of the endpoint.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only resources that match the given display name exactly.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
         /// </summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// A filter to return only resources that their lifecycle state matches the given lifecycle state.
         /// </summary>
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         /// <summary>
         /// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
@@ -57,13 +57,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string dedicatedAiClusterId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -73,7 +73,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

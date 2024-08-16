@@ -65,7 +65,7 @@ type LookupOccCapacityRequestResult struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description string `pulumi:"description"`
 	// A list of resources requested as part of this request
@@ -73,7 +73,7 @@ type LookupOccCapacityRequestResult struct {
 	// The display name of the capacity request.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the capacity request.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -93,7 +93,7 @@ type LookupOccCapacityRequestResult struct {
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the capacity request was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the capacity request was updated.
@@ -154,8 +154,8 @@ func (o LookupOccCapacityRequestResultOutput) DateExpectedCapacityHandover() pul
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOccCapacityRequestResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOccCapacityRequestResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Meaningful text about the capacity request.
@@ -174,8 +174,8 @@ func (o LookupOccCapacityRequestResultOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOccCapacityRequestResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOccCapacityRequestResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the capacity request.
@@ -227,8 +227,8 @@ func (o LookupOccCapacityRequestResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOccCapacityRequestResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOccCapacityRequestResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOccCapacityRequestResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the capacity request was created.

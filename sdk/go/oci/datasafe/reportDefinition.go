@@ -69,12 +69,12 @@ import (
 //						ScimFilter:       pulumi.Any(reportDefinitionSummaryScimFilter),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(reportDefinitionDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -111,7 +111,7 @@ type ReportDefinition struct {
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource pulumi.StringOutput `pulumi:"dataSource"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the report definition.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Specifies the name of the report definition.
@@ -119,7 +119,7 @@ type ReportDefinition struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder pulumi.IntOutput `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolOutput `pulumi:"isSeeded"`
 	// Details about the current state of the report definition in Data Safe.
@@ -145,7 +145,7 @@ type ReportDefinition struct {
 	// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries ReportDefinitionSummaryArrayOutput `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the report definition was updated.
@@ -218,7 +218,7 @@ type reportDefinitionState struct {
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource *string `pulumi:"dataSource"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the report definition.
 	Description *string `pulumi:"description"`
 	// (Updatable) Specifies the name of the report definition.
@@ -226,7 +226,7 @@ type reportDefinitionState struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder *int `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded *bool `pulumi:"isSeeded"`
 	// Details about the current state of the report definition in Data Safe.
@@ -252,7 +252,7 @@ type reportDefinitionState struct {
 	// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries []ReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies the date and time the report definition was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the report definition was updated.
@@ -275,7 +275,7 @@ type ReportDefinitionState struct {
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the report definition.
 	Description pulumi.StringPtrInput
 	// (Updatable) Specifies the name of the report definition.
@@ -283,7 +283,7 @@ type ReportDefinitionState struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
 	IsSeeded pulumi.BoolPtrInput
 	// Details about the current state of the report definition in Data Safe.
@@ -309,7 +309,7 @@ type ReportDefinitionState struct {
 	// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries ReportDefinitionSummaryArrayInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Specifies the date and time the report definition was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the report definition was updated.
@@ -330,13 +330,13 @@ type reportDefinitionArgs struct {
 	// (Updatable) The OCID of the compartment containing the report definition.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the report definition.
 	Description *string `pulumi:"description"`
 	// (Updatable) Specifies the name of the report definition.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the parent report definition.
 	ParentId string `pulumi:"parentId"`
 	// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -354,13 +354,13 @@ type ReportDefinitionArgs struct {
 	// (Updatable) The OCID of the compartment containing the report definition.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the report definition.
 	Description pulumi.StringPtrInput
 	// (Updatable) Specifies the name of the report definition.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the parent report definition.
 	ParentId pulumi.StringInput
 	// (Updatable) An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
@@ -490,8 +490,8 @@ func (o ReportDefinitionOutput) DataSource() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o ReportDefinitionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReportDefinition) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ReportDefinitionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReportDefinition) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the report definition.
@@ -510,8 +510,8 @@ func (o ReportDefinitionOutput) DisplayOrder() pulumi.IntOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o ReportDefinitionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReportDefinition) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ReportDefinitionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReportDefinition) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
@@ -575,8 +575,8 @@ func (o ReportDefinitionOutput) Summaries() ReportDefinitionSummaryArrayOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ReportDefinitionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReportDefinition) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ReportDefinitionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReportDefinition) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the date and time the report definition was created.

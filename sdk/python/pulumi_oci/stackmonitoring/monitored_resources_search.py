@@ -28,7 +28,7 @@ class MonitoredResourcesSearchArgs:
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
@@ -52,7 +52,7 @@ class MonitoredResourcesSearchArgs:
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
-        :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] property_equals: Criteria based on resource property.
         :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] source_type: Source type filter.
@@ -265,14 +265,14 @@ class MonitoredResourcesSearchArgs:
 
     @property
     @pulumi.getter(name="propertyEquals")
-    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Criteria based on resource property.
         """
         return pulumi.get(self, "property_equals")
 
     @property_equals.setter
-    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "property_equals", value)
 
     @property
@@ -412,7 +412,7 @@ class _MonitoredResourcesSearchState:
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
@@ -437,7 +437,7 @@ class _MonitoredResourcesSearchState:
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
-        :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] property_equals: Criteria based on resource property.
         :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] source_type: Source type filter.
@@ -665,14 +665,14 @@ class _MonitoredResourcesSearchState:
 
     @property
     @pulumi.getter(name="propertyEquals")
-    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def property_equals(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Criteria based on resource property.
         """
         return pulumi.get(self, "property_equals")
 
     @property_equals.setter
-    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def property_equals(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "property_equals", value)
 
     @property
@@ -813,7 +813,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
@@ -882,7 +882,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
-        :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] property_equals: Criteria based on resource property.
         :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] source_type: Source type filter.
@@ -982,7 +982,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
                  management_agent_id: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  name_contains: Optional[pulumi.Input[str]] = None,
-                 property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  resource_category: Optional[pulumi.Input[str]] = None,
                  resource_time_zone: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
@@ -1049,7 +1049,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
             management_agent_id: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             name_contains: Optional[pulumi.Input[str]] = None,
-            property_equals: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            property_equals: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             resource_category: Optional[pulumi.Input[str]] = None,
             resource_time_zone: Optional[pulumi.Input[str]] = None,
             source_type: Optional[pulumi.Input[str]] = None,
@@ -1079,7 +1079,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         :param pulumi.Input[str] management_agent_id: A filter to return resources with matching management agent id.
         :param pulumi.Input[str] name: A filter to return resources that match exact resource name.
         :param pulumi.Input[str] name_contains: A filter to return resources that match resource name pattern given. The match is not case sensitive.
-        :param pulumi.Input[Mapping[str, Any]] property_equals: Criteria based on resource property.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] property_equals: Criteria based on resource property.
         :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] resource_time_zone: Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] source_type: Source type filter.
@@ -1237,7 +1237,7 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="propertyEquals")
-    def property_equals(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def property_equals(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Criteria based on resource property.
         """

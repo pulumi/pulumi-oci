@@ -33,7 +33,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object>? EncProperties;
+        public readonly ImmutableDictionary<string, string>? EncProperties;
         /// <summary>
         /// Unique external identifier of this resource in the external source system.
         /// </summary>
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             string displayName,
 
-            ImmutableDictionary<string, object>? encProperties,
+            ImmutableDictionary<string, string>? encProperties,
 
             string externalKey,
 
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             string key,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, string> properties,
 
             string state,
 

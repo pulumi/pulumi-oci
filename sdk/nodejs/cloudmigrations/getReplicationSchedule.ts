@@ -49,7 +49,7 @@ export interface GetReplicationScheduleResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A name of the replication schedule.
      */
@@ -61,7 +61,7 @@ export interface GetReplicationScheduleResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
      */
@@ -78,7 +78,7 @@ export interface GetReplicationScheduleResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time when the replication schedule was created in RFC3339 format.
      */

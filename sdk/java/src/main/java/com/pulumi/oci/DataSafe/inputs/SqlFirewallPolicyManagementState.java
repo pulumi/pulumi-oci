@@ -5,7 +5,6 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -54,9 +53,9 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
     }
 
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -82,9 +81,9 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
     }
 
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -131,9 +130,9 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
     }
 
     @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
+    private @Nullable Output<Map<String,String>> systemTags;
 
-    public Optional<Output<Map<String,Object>>> systemTags() {
+    public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
 
@@ -274,12 +273,12 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
             return dbUserName(Output.of(dbUserName));
         }
 
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
 
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -310,12 +309,12 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
             return enforcementScope(Output.of(enforcementScope));
         }
 
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
 
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -373,12 +372,12 @@ public final class SqlFirewallPolicyManagementState extends com.pulumi.resources
             return status(Output.of(status));
         }
 
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
 
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }
 

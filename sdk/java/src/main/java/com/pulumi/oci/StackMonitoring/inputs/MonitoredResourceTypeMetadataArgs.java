@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourceTypeMetadataUniquePropertySetArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -117,13 +116,13 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
      * 
      */
     @Import(name="validPropertyValues")
-    private @Nullable Output<Map<String,Object>> validPropertyValues;
+    private @Nullable Output<Map<String,String>> validPropertyValues;
 
     /**
      * @return (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{ &#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> validPropertyValues() {
+    public Optional<Output<Map<String,String>>> validPropertyValues() {
         return Optional.ofNullable(this.validPropertyValues);
     }
 
@@ -341,7 +340,7 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder validPropertyValues(@Nullable Output<Map<String,Object>> validPropertyValues) {
+        public Builder validPropertyValues(@Nullable Output<Map<String,String>> validPropertyValues) {
             $.validPropertyValues = validPropertyValues;
             return this;
         }
@@ -352,7 +351,7 @@ public final class MonitoredResourceTypeMetadataArgs extends com.pulumi.resource
          * @return builder
          * 
          */
-        public Builder validPropertyValues(Map<String,Object> validPropertyValues) {
+        public Builder validPropertyValues(Map<String,String> validPropertyValues) {
             return validPropertyValues(Output.of(validPropertyValues));
         }
 

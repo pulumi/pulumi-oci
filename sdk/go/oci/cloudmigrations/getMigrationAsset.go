@@ -86,7 +86,7 @@ type LookupMigrationAssetResult struct {
 	// Name of snapshot bucket
 	SnapShotBucketName string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId string `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
@@ -212,8 +212,8 @@ func (o LookupMigrationAssetResultOutput) SnapShotBucketName() pulumi.StringOutp
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o LookupMigrationAssetResultOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationAssetResult) map[string]interface{} { return v.Snapshots }).(pulumi.MapOutput)
+func (o LookupMigrationAssetResultOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationAssetResult) map[string]string { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.

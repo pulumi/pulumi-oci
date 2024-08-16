@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -70,7 +69,7 @@ public final class GetObjectResult {
      * @return Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The top-level namespace used for the request.
      * 
@@ -179,7 +178,7 @@ public final class GetObjectResult {
      * @return Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -234,7 +233,7 @@ public final class GetObjectResult {
         private @Nullable String httpResponseContentType;
         private @Nullable String httpResponseExpires;
         private String id;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String namespace;
         private String object;
         private String storageTier;
@@ -396,7 +395,7 @@ public final class GetObjectResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetObjectResult", "metadata");
             }

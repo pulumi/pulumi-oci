@@ -22,9 +22,9 @@ class FusionEnvironmentArgs:
                  fusion_environment_family_id: pulumi.Input[str],
                  fusion_environment_type: pulumi.Input[str],
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  maintenance_policy: Optional[pulumi.Input['FusionEnvironmentMaintenancePolicyArgs']] = None,
                  rules: Optional[pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]]] = None):
@@ -36,9 +36,9 @@ class FusionEnvironmentArgs:
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
         :param pulumi.Input['FusionEnvironmentMaintenancePolicyArgs'] maintenance_policy: (Updatable) The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
         :param pulumi.Input[Sequence[pulumi.Input['FusionEnvironmentRuleArgs']]] rules: (Updatable) Rules.
@@ -137,14 +137,14 @@ class FusionEnvironmentArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -161,14 +161,14 @@ class FusionEnvironmentArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -215,11 +215,11 @@ class _FusionEnvironmentState:
                  applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  create_fusion_environment_admin_user_details: Optional[pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
                  domain_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  idcs_domain_url: Optional[pulumi.Input[str]] = None,
@@ -245,11 +245,11 @@ class _FusionEnvironmentState:
         :param pulumi.Input[Sequence[pulumi.Input[str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         :param pulumi.Input['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs'] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[str] dns_prefix: DNS prefix.
         :param pulumi.Input[str] domain_id: The IDCS domain created for the fusion instance
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
@@ -377,14 +377,14 @@ class _FusionEnvironmentState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -425,14 +425,14 @@ class _FusionEnvironmentState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -672,10 +672,10 @@ class FusionEnvironment(pulumi.CustomResource):
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -741,10 +741,10 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] additional_language_packs: (Updatable) Language packs.
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[str] dns_prefix: DNS prefix.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] kms_key_id: (Updatable) byok kms keyId
@@ -829,10 +829,10 @@ class FusionEnvironment(pulumi.CustomResource):
                  additional_language_packs: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_prefix: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
                  fusion_environment_type: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -899,11 +899,11 @@ class FusionEnvironment(pulumi.CustomResource):
             applied_patch_bundles: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             create_fusion_environment_admin_user_details: Optional[pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns_prefix: Optional[pulumi.Input[str]] = None,
             domain_id: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             fusion_environment_family_id: Optional[pulumi.Input[str]] = None,
             fusion_environment_type: Optional[pulumi.Input[str]] = None,
             idcs_domain_url: Optional[pulumi.Input[str]] = None,
@@ -934,11 +934,11 @@ class FusionEnvironment(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[str]]] applied_patch_bundles: Patch bundle names
         :param pulumi.Input[str] compartment_id: (Updatable) The unique identifier (OCID) of the compartment where the Fusion Environment is located.
         :param pulumi.Input[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict']] create_fusion_environment_admin_user_details: The credentials for the Fusion Applications service administrator.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) FusionEnvironment Identifier can be renamed.
         :param pulumi.Input[str] dns_prefix: DNS prefix.
         :param pulumi.Input[str] domain_id: The IDCS domain created for the fusion instance
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] fusion_environment_family_id: The unique identifier (OCID) of the Fusion Environment Family that the Fusion Environment belongs to.
         :param pulumi.Input[str] fusion_environment_type: The type of environment. Valid values are Production, Test, or Development.
         :param pulumi.Input[str] idcs_domain_url: The IDCS Domain URL
@@ -1027,7 +1027,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1059,7 +1059,7 @@ class FusionEnvironment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

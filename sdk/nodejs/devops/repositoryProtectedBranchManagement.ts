@@ -61,7 +61,7 @@ export class RepositoryProtectedBranchManagement extends pulumi.CustomResource {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Level of protection to add on a branch.
      */
@@ -121,7 +121,7 @@ export interface RepositoryProtectedBranchManagementState {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Level of protection to add on a branch.
      */

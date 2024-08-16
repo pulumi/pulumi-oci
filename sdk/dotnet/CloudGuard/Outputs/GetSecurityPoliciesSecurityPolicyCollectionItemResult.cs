@@ -24,7 +24,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The security policy's description
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A shorter version of the security policy's name
         /// </summary>
@@ -76,13 +76,13 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string friendlyName,
 

@@ -639,13 +639,13 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	// The OCID of the compartment where you want to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -657,7 +657,7 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpoint struct {
 	// Subnet Identifier
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -681,13 +681,13 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs struct {
 	// The OCID of the compartment where you want to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -699,7 +699,7 @@ type GetCatalogPrivateEndpointsCatalogPrivateEndpointArgs struct {
 	// Subnet Identifier
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -768,8 +768,8 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) CompartmentId() 
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -783,8 +783,8 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) DnsZones() pulum
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable
@@ -815,8 +815,8 @@ func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SubnetId() pulum
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetCatalogPrivateEndpointsCatalogPrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogPrivateEndpointsCatalogPrivateEndpoint) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -1445,11 +1445,11 @@ type GetCatalogsCatalog struct {
 	// The OCID of the compartment where you want to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
@@ -1465,7 +1465,7 @@ type GetCatalogsCatalog struct {
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -1489,11 +1489,11 @@ type GetCatalogsCatalogArgs struct {
 	// The OCID of the compartment where you want to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
@@ -1509,7 +1509,7 @@ type GetCatalogsCatalogArgs struct {
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -1578,8 +1578,8 @@ func (o GetCatalogsCatalogOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetCatalogsCatalogOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCatalogsCatalogOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -1588,8 +1588,8 @@ func (o GetCatalogsCatalogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetCatalogsCatalogOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCatalogsCatalogOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -1628,8 +1628,8 @@ func (o GetCatalogsCatalogOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetCatalogsCatalogOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCatalogsCatalog) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetCatalogsCatalogOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCatalogsCatalog) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2002,8 +2002,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	// A description of the connection.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName   string                 `pulumi:"displayName"`
-	EncProperties map[string]interface{} `pulumi:"encProperties"`
+	DisplayName   string            `pulumi:"displayName"`
+	EncProperties map[string]string `pulumi:"encProperties"`
 	// Unique external identifier of this resource in the external source system.
 	ExternalKey string `pulumi:"externalKey"`
 	// Indicates whether this connection is the default connection.
@@ -2011,7 +2011,7 @@ type GetConnectionsConnectionCollectionItem struct {
 	// Unique connection key that is immutable.
 	Key string `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2049,8 +2049,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// A description of the connection.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
-	DisplayName   pulumi.StringInput `pulumi:"displayName"`
-	EncProperties pulumi.MapInput    `pulumi:"encProperties"`
+	DisplayName   pulumi.StringInput    `pulumi:"displayName"`
+	EncProperties pulumi.StringMapInput `pulumi:"encProperties"`
 	// Unique external identifier of this resource in the external source system.
 	ExternalKey pulumi.StringInput `pulumi:"externalKey"`
 	// Indicates whether this connection is the default connection.
@@ -2058,7 +2058,7 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// Unique connection key that is immutable.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-	Properties pulumi.MapInput `pulumi:"properties"`
+	Properties pulumi.StringMapInput `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2151,8 +2151,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.Strin
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetConnectionsConnectionCollectionItemOutput) EncProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.EncProperties }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) EncProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.EncProperties }).(pulumi.StringMapOutput)
 }
 
 // Unique external identifier of this resource in the external source system.
@@ -2171,8 +2171,8 @@ func (o GetConnectionsConnectionCollectionItemOutput) Key() pulumi.StringOutput 
 }
 
 // A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
-func (o GetConnectionsConnectionCollectionItemOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o GetConnectionsConnectionCollectionItemOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -2452,7 +2452,7 @@ type GetDataAssetsDataAssetCollectionItem struct {
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2496,7 +2496,7 @@ type GetDataAssetsDataAssetCollectionItemArgs struct {
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties pulumi.MapInput `pulumi:"properties"`
+	Properties pulumi.StringMapInput `pulumi:"properties"`
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -2600,8 +2600,8 @@ func (o GetDataAssetsDataAssetCollectionItemOutput) LifecycleDetails() pulumi.St
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-func (o GetDataAssetsDataAssetCollectionItemOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o GetDataAssetsDataAssetCollectionItemOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataAssetsDataAssetCollectionItem) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
@@ -3003,11 +3003,11 @@ type GetMetastoresMetastore struct {
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
 	DefaultManagedTableLocation string `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The metastore's OCID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3017,7 +3017,7 @@ type GetMetastoresMetastore struct {
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -3043,11 +3043,11 @@ type GetMetastoresMetastoreArgs struct {
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
 	DefaultManagedTableLocation pulumi.StringInput `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The metastore's OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -3057,7 +3057,7 @@ type GetMetastoresMetastoreArgs struct {
 	// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -3131,8 +3131,8 @@ func (o GetMetastoresMetastoreOutput) DefaultManagedTableLocation() pulumi.Strin
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMetastoresMetastoreOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMetastoresMetastoreOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -3141,8 +3141,8 @@ func (o GetMetastoresMetastoreOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMetastoresMetastoreOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMetastoresMetastoreOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The metastore's OCID.
@@ -3166,8 +3166,8 @@ func (o GetMetastoresMetastoreOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMetastoresMetastoreOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetastoresMetastore) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMetastoresMetastoreOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetastoresMetastore) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

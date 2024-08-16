@@ -61,7 +61,7 @@ type LookupWorkspaceResult struct {
 	// The OCID of the compartment that contains the workspace.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user defined description for the workspace.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -76,7 +76,7 @@ type LookupWorkspaceResult struct {
 	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
 	EndpointName string `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               string `pulumi:"id"`
 	IsForceOperation bool   `pulumi:"isForceOperation"`
@@ -146,8 +146,8 @@ func (o LookupWorkspaceResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupWorkspaceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupWorkspaceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user defined description for the workspace.
@@ -185,8 +185,8 @@ func (o LookupWorkspaceResultOutput) EndpointName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupWorkspaceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupWorkspaceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A system-generated and immutable identifier assigned to the workspace upon creation.

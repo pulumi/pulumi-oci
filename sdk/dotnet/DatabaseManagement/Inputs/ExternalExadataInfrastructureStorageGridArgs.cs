@@ -13,14 +13,14 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
     public sealed class ExternalExadataInfrastructureStorageGridArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalDetails")]
-        private InputMap<object>? _additionalDetails;
+        private InputMap<string>? _additionalDetails;
 
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> AdditionalDetails
+        public InputMap<string> AdditionalDetails
         {
-            get => _additionalDetails ?? (_additionalDetails = new InputMap<object>());
+            get => _additionalDetails ?? (_additionalDetails = new InputMap<string>());
             set => _additionalDetails = value;
         }
 

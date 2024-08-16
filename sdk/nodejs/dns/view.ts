@@ -69,7 +69,7 @@ export class View extends pulumi.CustomResource {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the view.
      */
@@ -79,7 +79,7 @@ export class View extends pulumi.CustomResource {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
@@ -166,7 +166,7 @@ export interface ViewState {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The display name of the view.
      */
@@ -176,7 +176,7 @@ export interface ViewState {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
@@ -220,7 +220,7 @@ export interface ViewArgs {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The display name of the view.
      */
@@ -230,7 +230,7 @@ export interface ViewArgs {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * If specified, must be `PRIVATE` when creating a view for private zones.
      *

@@ -15,16 +15,16 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
     {
         public readonly ImmutableArray<Outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleResult> ActiveFsuCycles;
         public readonly string CompartmentId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DisplayName;
         public readonly ImmutableArray<Outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult> FleetDiscoveries;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         public readonly string LifecycleDetails;
         public readonly string ServiceType;
         public readonly string SourceMajorVersion;
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly int TargetCount;
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
@@ -36,13 +36,13 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
             ImmutableArray<Outputs.GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryResult> fleetDiscoveries,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             int targetCount,
 

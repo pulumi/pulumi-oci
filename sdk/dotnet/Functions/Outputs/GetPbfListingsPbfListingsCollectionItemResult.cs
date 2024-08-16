@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A short overview of the PBF Listing: the purpose of the PBF and and associated information.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unique identifier that is immutable on creation.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time the PbfListing was created. An RFC3339 formatted datetime string.
         /// </summary>
@@ -60,11 +60,11 @@ namespace Pulumi.Oci.Functions.Outputs
 
         [OutputConstructor]
         private GetPbfListingsPbfListingsCollectionItemResult(
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

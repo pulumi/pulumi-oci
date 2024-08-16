@@ -136,11 +136,11 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
@@ -180,7 +180,7 @@ export class NodePool extends pulumi.CustomResource {
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    public readonly nodeMetadata!: pulumi.Output<{[key: string]: any}>;
+    public readonly nodeMetadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
@@ -317,11 +317,11 @@ export interface NodePoolState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
@@ -361,7 +361,7 @@ export interface NodePoolState {
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    nodeMetadata?: pulumi.Input<{[key: string]: any}>;
+    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Node Pool Cycling Details
      */
@@ -423,11 +423,11 @@ export interface NodePoolArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
      */
@@ -463,7 +463,7 @@ export interface NodePoolArgs {
     /**
      * (Updatable) A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      */
-    nodeMetadata?: pulumi.Input<{[key: string]: any}>;
+    nodeMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Node Pool Cycling Details
      */

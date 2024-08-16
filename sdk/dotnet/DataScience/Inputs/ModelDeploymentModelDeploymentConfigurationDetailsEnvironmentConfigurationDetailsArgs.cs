@@ -43,14 +43,14 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string> EnvironmentConfigurationType { get; set; } = null!;
 
         [Input("environmentVariables")]
-        private InputMap<object>? _environmentVariables;
+        private InputMap<string>? _environmentVariables;
 
         /// <summary>
         /// (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         /// </summary>
-        public InputMap<object> EnvironmentVariables
+        public InputMap<string> EnvironmentVariables
         {
-            get => _environmentVariables ?? (_environmentVariables = new InputMap<object>());
+            get => _environmentVariables ?? (_environmentVariables = new InputMap<string>());
             set => _environmentVariables = value;
         }
 

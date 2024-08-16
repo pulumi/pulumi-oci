@@ -6,7 +6,6 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private Map<String,String> additionalDetails;
     /**
      * @return The optional single value query filter parameter on the entity display name.
      * 
@@ -74,7 +73,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails;
     }
     /**
@@ -157,7 +156,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
+        private Map<String,String> additionalDetails;
         private String displayName;
         private String id;
         private String internalId;
@@ -185,7 +184,7 @@ public final class GetExternalExadataInfrastructuresExternalExadataInfrastructur
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(Map<String,String> additionalDetails) {
             if (additionalDetails == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataInfrastructuresExternalExadataInfrastructureCollectionItemStorageGrid", "additionalDetails");
             }

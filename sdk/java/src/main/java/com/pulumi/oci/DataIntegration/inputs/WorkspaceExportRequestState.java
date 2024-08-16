@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceExportRequestExportedItemArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -71,13 +70,13 @@ public final class WorkspaceExportRequestState extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="errorMessages")
-    private @Nullable Output<Map<String,Object>> errorMessages;
+    private @Nullable Output<Map<String,String>> errorMessages;
 
     /**
      * @return Contains key of the error
      * 
      */
-    public Optional<Output<Map<String,Object>>> errorMessages() {
+    public Optional<Output<Map<String,String>>> errorMessages() {
         return Optional.ofNullable(this.errorMessages);
     }
 
@@ -423,7 +422,7 @@ public final class WorkspaceExportRequestState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder errorMessages(@Nullable Output<Map<String,Object>> errorMessages) {
+        public Builder errorMessages(@Nullable Output<Map<String,String>> errorMessages) {
             $.errorMessages = errorMessages;
             return this;
         }
@@ -434,7 +433,7 @@ public final class WorkspaceExportRequestState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             return errorMessages(Output.of(errorMessages));
         }
 

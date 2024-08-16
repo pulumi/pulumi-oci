@@ -5,7 +5,6 @@ package com.pulumi.oci.DataCatalog.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -123,9 +122,9 @@ public final class DataAssetState extends com.pulumi.resources.ResourceArgs {
     }
 
     @Import(name="properties")
-    private @Nullable Output<Map<String,Object>> properties;
+    private @Nullable Output<Map<String,String>> properties;
 
-    public Optional<Output<Map<String,Object>>> properties() {
+    public Optional<Output<Map<String,String>>> properties() {
         return Optional.ofNullable(this.properties);
     }
 
@@ -425,12 +424,12 @@ public final class DataAssetState extends com.pulumi.resources.ResourceArgs {
             return lifecycleDetails(Output.of(lifecycleDetails));
         }
 
-        public Builder properties(@Nullable Output<Map<String,Object>> properties) {
+        public Builder properties(@Nullable Output<Map<String,String>> properties) {
             $.properties = properties;
             return this;
         }
 
-        public Builder properties(Map<String,Object> properties) {
+        public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
         }
 

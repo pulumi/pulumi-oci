@@ -8,7 +8,6 @@ import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolu
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas;
 import com.pulumi.oci.Core.outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsSourceDetails;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -52,7 +51,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -62,7 +61,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return Specifies whether the auto-tune performance is enabled for this boot volume. This field is deprecated. Use the `InstanceConfigurationDetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
      * 
@@ -134,7 +133,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -148,7 +147,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -200,9 +199,9 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         private @Nullable InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas blockVolumeReplicas;
         private @Nullable String clusterPlacementGroupId;
         private @Nullable String compartmentId;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isAutoTuneEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable String sizeInGbs;
@@ -267,7 +266,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -279,7 +278,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;

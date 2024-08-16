@@ -13,7 +13,6 @@ import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleNextActionToExecute
 import com.pulumi.oci.FleetSoftwareUpdate.outputs.GetFsuCycleStageActionSchedule;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,11 +24,11 @@ public final class GetFsuCycleResult {
     private List<GetFsuCycleBatchingStrategy> batchingStrategies;
     private String collectionType;
     private String compartmentId;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private List<GetFsuCycleDiagnosticsCollection> diagnosticsCollections;
     private String displayName;
     private String executingFsuActionId;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String fsuCollectionId;
     private String fsuCycleId;
     private List<GetFsuCycleGoalVersionDetail> goalVersionDetails;
@@ -43,7 +42,7 @@ public final class GetFsuCycleResult {
     private List<GetFsuCycleNextActionToExecute> nextActionToExecutes;
     private List<GetFsuCycleStageActionSchedule> stageActionSchedules;
     private String state;
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     private String timeCreated;
     private String timeFinished;
     private String timeUpdated;
@@ -62,7 +61,7 @@ public final class GetFsuCycleResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public List<GetFsuCycleDiagnosticsCollection> diagnosticsCollections() {
@@ -74,7 +73,7 @@ public final class GetFsuCycleResult {
     public String executingFsuActionId() {
         return this.executingFsuActionId;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String fsuCollectionId() {
@@ -116,7 +115,7 @@ public final class GetFsuCycleResult {
     public String state() {
         return this.state;
     }
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public String timeCreated() {
@@ -145,11 +144,11 @@ public final class GetFsuCycleResult {
         private List<GetFsuCycleBatchingStrategy> batchingStrategies;
         private String collectionType;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private List<GetFsuCycleDiagnosticsCollection> diagnosticsCollections;
         private String displayName;
         private String executingFsuActionId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String fsuCollectionId;
         private String fsuCycleId;
         private List<GetFsuCycleGoalVersionDetail> goalVersionDetails;
@@ -163,7 +162,7 @@ public final class GetFsuCycleResult {
         private List<GetFsuCycleNextActionToExecute> nextActionToExecutes;
         private List<GetFsuCycleStageActionSchedule> stageActionSchedules;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeFinished;
         private String timeUpdated;
@@ -239,7 +238,7 @@ public final class GetFsuCycleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCycleResult", "definedTags");
             }
@@ -274,7 +273,7 @@ public final class GetFsuCycleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCycleResult", "freeformTags");
             }
@@ -398,7 +397,7 @@ public final class GetFsuCycleResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetFsuCycleResult", "systemTags");
             }

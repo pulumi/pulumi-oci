@@ -61,13 +61,13 @@ type LookupManagementStationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the management station.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Explanation of the health status.
 	Description string `pulumi:"description"`
 	// A user-friendly name for the management station.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Overall health information of the management station.
 	Healths []GetManagementStationHealth `pulumi:"healths"`
 	// Hostname of the management station.
@@ -97,7 +97,7 @@ type LookupManagementStationResult struct {
 	// The current state of the management station.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The number of software sources that the station is mirroring.
 	TotalMirrors int `pulumi:"totalMirrors"`
 }
@@ -146,8 +146,8 @@ func (o LookupManagementStationResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupManagementStationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupManagementStationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Explanation of the health status.
@@ -161,8 +161,8 @@ func (o LookupManagementStationResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupManagementStationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupManagementStationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Overall health information of the management station.
@@ -241,8 +241,8 @@ func (o LookupManagementStationResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupManagementStationResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagementStationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupManagementStationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagementStationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The number of software sources that the station is mirroring.

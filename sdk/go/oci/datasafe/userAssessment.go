@@ -35,13 +35,13 @@ import (
 //			_, err := DataSafe.NewUserAssessment(ctx, "test_user_assessment", &DataSafe.UserAssessmentArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(userAssessmentDescription),
 //				DisplayName: pulumi.Any(userAssessmentDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsAssessmentScheduled: pulumi.Any(userAssessmentIsAssessmentScheduled),
 //				Schedule:              pulumi.Any(userAssessmentSchedule),
@@ -68,13 +68,13 @@ type UserAssessment struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the user assessment.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the user assessment.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds pulumi.StringArrayOutput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -100,7 +100,7 @@ type UserAssessment struct {
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	Statistics pulumi.StringOutput `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target database on which the user assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -159,13 +159,13 @@ type userAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the user assessment.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the user assessment.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -191,7 +191,7 @@ type userAssessmentState struct {
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	Statistics *string `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target database on which the user assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -215,13 +215,13 @@ type UserAssessmentState struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the user assessment.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the user assessment.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredAssessmentIds pulumi.StringArrayInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -247,7 +247,7 @@ type UserAssessmentState struct {
 	// Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
 	Statistics pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target database on which the user assessment is to be run.
 	//
 	// ** IMPORTANT **
@@ -275,13 +275,13 @@ type userAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the user assessment.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the user assessment.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether the assessment is scheduled to run.
 	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -300,13 +300,13 @@ type UserAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the user assessment.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the user assessment.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether the assessment is scheduled to run.
 	IsAssessmentScheduled pulumi.BoolPtrInput
 	// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
@@ -413,8 +413,8 @@ func (o UserAssessmentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o UserAssessmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o UserAssessmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the user assessment.
@@ -428,8 +428,8 @@ func (o UserAssessmentOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o UserAssessmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o UserAssessmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -490,8 +490,8 @@ func (o UserAssessmentOutput) Statistics() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o UserAssessmentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *UserAssessment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o UserAssessmentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target database on which the user assessment is to be run.

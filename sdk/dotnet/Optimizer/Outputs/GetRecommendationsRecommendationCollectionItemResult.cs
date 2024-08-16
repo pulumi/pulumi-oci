@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Additional metadata key/value pairs for the recommendation.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
         /// The unique OCID associated with the recommendation.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             double estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, string> extendedMetadata,
 
             string id,
 

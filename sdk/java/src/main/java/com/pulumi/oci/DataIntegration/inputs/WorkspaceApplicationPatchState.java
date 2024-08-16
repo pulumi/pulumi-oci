@@ -11,7 +11,6 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationPatchParentRefA
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationPatchPatchObjectMetadataArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationPatchRegistryMetadataArgs;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -89,13 +88,13 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
      * 
      */
     @Import(name="errorMessages")
-    private @Nullable Output<Map<String,Object>> errorMessages;
+    private @Nullable Output<Map<String,String>> errorMessages;
 
     /**
      * @return The errors encountered while applying the patch, if any.
      * 
      */
-    public Optional<Output<Map<String,Object>>> errorMessages() {
+    public Optional<Output<Map<String,String>>> errorMessages() {
         return Optional.ofNullable(this.errorMessages);
     }
 
@@ -134,13 +133,13 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
      * 
      */
     @Import(name="keyMap")
-    private @Nullable Output<Map<String,Object>> keyMap;
+    private @Nullable Output<Map<String,String>> keyMap;
 
     /**
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Optional<Output<Map<String,Object>>> keyMap() {
+    public Optional<Output<Map<String,String>>> keyMap() {
         return Optional.ofNullable(this.keyMap);
     }
 
@@ -505,7 +504,7 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder errorMessages(@Nullable Output<Map<String,Object>> errorMessages) {
+        public Builder errorMessages(@Nullable Output<Map<String,String>> errorMessages) {
             $.errorMessages = errorMessages;
             return this;
         }
@@ -516,7 +515,7 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             return errorMessages(Output.of(errorMessages));
         }
 
@@ -568,7 +567,7 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder keyMap(@Nullable Output<Map<String,Object>> keyMap) {
+        public Builder keyMap(@Nullable Output<Map<String,String>> keyMap) {
             $.keyMap = keyMap;
             return this;
         }
@@ -579,7 +578,7 @@ public final class WorkspaceApplicationPatchState extends com.pulumi.resources.R
          * @return builder
          * 
          */
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             return keyMap(Output.of(keyMap));
         }
 

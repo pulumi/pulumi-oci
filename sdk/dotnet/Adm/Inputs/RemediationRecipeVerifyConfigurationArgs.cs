@@ -13,14 +13,14 @@ namespace Pulumi.Oci.Adm.Inputs
     public sealed class RemediationRecipeVerifyConfigurationArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalParameters")]
-        private InputMap<object>? _additionalParameters;
+        private InputMap<string>? _additionalParameters;
 
         /// <summary>
         /// (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
         /// </summary>
-        public InputMap<object> AdditionalParameters
+        public InputMap<string> AdditionalParameters
         {
-            get => _additionalParameters ?? (_additionalParameters = new InputMap<object>());
+            get => _additionalParameters ?? (_additionalParameters = new InputMap<string>());
             set => _additionalParameters = value;
         }
 

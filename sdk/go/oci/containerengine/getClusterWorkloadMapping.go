@@ -64,9 +64,9 @@ type LookupClusterWorkloadMappingResult struct {
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ocid of the workloadMapping.
 	Id string `pulumi:"id"`
 	// The OCID of the mapped customer compartment.
@@ -128,13 +128,13 @@ func (o LookupClusterWorkloadMappingResultOutput) ClusterId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupClusterWorkloadMappingResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupClusterWorkloadMappingResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupClusterWorkloadMappingResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupClusterWorkloadMappingResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterWorkloadMappingResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ocid of the workloadMapping.

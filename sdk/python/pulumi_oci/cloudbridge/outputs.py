@@ -113,8 +113,8 @@ class AgentPluginList(dict):
 
     def __init__(__self__, *,
                  agent_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  lifecycle_details: Optional[str] = None,
                  name: Optional[str] = None,
                  plugin_version: Optional[str] = None,
@@ -123,8 +123,8 @@ class AgentPluginList(dict):
                  time_updated: Optional[str] = None):
         """
         :param str agent_id: Agent identifier.
-        :param Mapping[str, Any] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Mapping[str, Any] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str name: Plugin identifier, which can be renamed.
         :param str plugin_version: Plugin version.
@@ -161,7 +161,7 @@ class AgentPluginList(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -169,7 +169,7 @@ class AgentPluginList(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1567,37 +1567,37 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
                  bucket: str,
                  checksum: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  dependency_name: str,
                  dependency_version: str,
                  description: str,
                  display_name: str,
                  e_tag: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  namespace: str,
                  object: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str bucket: Object storage bucket where the Agent dependency is uploaded.
         :param str checksum: The checksum associated with the dependency object returned by Object Storage.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str dependency_name: Name of the dependency type. This should match the whitelisted enum of dependency names.
         :param str dependency_version: Version of the Agent dependency.
         :param str description: Description about the Agent dependency.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str e_tag: The eTag associated with the dependency object returned by Object Storage.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str namespace: Object storage namespace associated with the customer's tenancy.
         :param str object: Name of the dependency object uploaded by the customer.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the AgentDependency was created. An RFC3339 formatted datetime string.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -1644,7 +1644,7 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1692,7 +1692,7 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1740,7 +1740,7 @@ class GetAgentDependenciesAgentDependencyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -1786,8 +1786,8 @@ class GetAgentDependenciesFilterResult(dict):
 class GetAgentPluginListResult(dict):
     def __init__(__self__, *,
                  agent_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  lifecycle_details: str,
                  name: str,
                  plugin_version: str,
@@ -1796,8 +1796,8 @@ class GetAgentPluginListResult(dict):
                  time_updated: str):
         """
         :param str agent_id: Unique Agent identifier path parameter.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str name: Plugin identifier, which can be renamed.
         :param str plugin_version: Plugin version.
@@ -1825,7 +1825,7 @@ class GetAgentPluginListResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1833,7 +1833,7 @@ class GetAgentPluginListResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -1907,17 +1907,17 @@ class GetAgentsAgentCollectionItemResult(dict):
                  agent_type: str,
                  agent_version: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  environment_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  heart_beat_status: str,
                  id: str,
                  lifecycle_details: str,
                  os_version: str,
                  plugin_lists: Sequence['outputs.GetAgentsAgentCollectionItemPluginListResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_expire_agent_key_in_ms: str,
                  time_last_sync_received: str,
@@ -1927,17 +1927,17 @@ class GetAgentsAgentCollectionItemResult(dict):
         :param str agent_type: Type of the Agent.
         :param str agent_version: Agent identifier.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str environment_id: A filter to return only resources that match the given environment ID.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str heart_beat_status: The current heartbeat status of the Agent based on its timeLastSyncReceived value.
         :param str id: Unique identifier that is immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str os_version: OS version.
         :param Sequence['GetAgentsAgentCollectionItemPluginListArgs'] plugin_lists: List of plugins associated with the agent.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the Agent was created. An RFC3339 formatted datetime string.
         :param str time_expire_agent_key_in_ms: The time since epoch for when the public key will expire. An RFC3339 formatted datetime string.
         :param str time_last_sync_received: The time when the last heartbeat of the Agent was noted. An RFC3339 formatted datetime string.
@@ -1997,7 +1997,7 @@ class GetAgentsAgentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2021,7 +2021,7 @@ class GetAgentsAgentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2077,7 +2077,7 @@ class GetAgentsAgentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -2120,8 +2120,8 @@ class GetAgentsAgentCollectionItemResult(dict):
 class GetAgentsAgentCollectionItemPluginListResult(dict):
     def __init__(__self__, *,
                  agent_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  lifecycle_details: str,
                  name: str,
                  plugin_version: str,
@@ -2130,8 +2130,8 @@ class GetAgentsAgentCollectionItemPluginListResult(dict):
                  time_updated: str):
         """
         :param str agent_id: A filter to return only resources that match the given Agent ID.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str name: Plugin identifier, which can be renamed.
         :param str plugin_version: Plugin version.
@@ -2159,7 +2159,7 @@ class GetAgentsAgentCollectionItemPluginListResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2167,7 +2167,7 @@ class GetAgentsAgentCollectionItemPluginListResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2259,12 +2259,12 @@ class GetAgentsFilterResult(dict):
 class GetApplianceImageItemResult(dict):
     def __init__(__self__, *,
                  checksum: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  download_url: str,
                  file_name: str,
                  format: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  platform: str,
                  size_in_mbs: str,
@@ -2274,12 +2274,12 @@ class GetApplianceImageItemResult(dict):
                  version: str):
         """
         :param str checksum: The checksum of the image file.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str download_url: The URL from which the appliance image can be downloaded.
         :param str file_name: The name of the appliance Image file.
         :param str format: The file format of the image file.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str platform: The virtualization platform that the image file supports.
         :param str size_in_mbs: The size of the image file in megabytes.
@@ -2313,7 +2313,7 @@ class GetApplianceImageItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2353,7 +2353,7 @@ class GetApplianceImageItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2438,12 +2438,12 @@ class GetApplianceImagesApplianceImageCollectionResult(dict):
 class GetApplianceImagesApplianceImageCollectionItemResult(dict):
     def __init__(__self__, *,
                  checksum: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  download_url: str,
                  file_name: str,
                  format: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  platform: str,
                  size_in_mbs: str,
@@ -2453,12 +2453,12 @@ class GetApplianceImagesApplianceImageCollectionItemResult(dict):
                  version: str):
         """
         :param str checksum: The checksum of the image file.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str download_url: The URL from which the appliance image can be downloaded.
         :param str file_name: The name of the appliance Image file.
         :param str format: The file format of the image file.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str platform: The virtualization platform that the image file supports.
         :param str size_in_mbs: The size of the image file in megabytes.
@@ -2492,7 +2492,7 @@ class GetApplianceImagesApplianceImageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2532,7 +2532,7 @@ class GetApplianceImagesApplianceImageCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -3353,18 +3353,18 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
                  are_realtime_metrics_collected: bool,
                  assets_compartment_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  discovery_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult'],
                  discovery_schedule_id: str,
                  display_name: str,
                  environment_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  inventory_id: str,
                  lifecycle_details: str,
                  replication_credentials: Sequence['outputs.GetAssetSourcesAssetSourceCollectionItemReplicationCredentialResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  type: str,
@@ -3374,18 +3374,18 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
         :param bool are_realtime_metrics_collected: Flag indicating whether real-time metrics are collected for assets, originating from this asset source.
         :param str assets_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that is going to be used to create assets.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param Sequence['GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialArgs'] discovery_credentials: Credentials for an asset source.
         :param str discovery_schedule_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an attached discovery schedule.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str environment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the environment.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str inventory_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the inventory that will contain created assets.
         :param str lifecycle_details: The detailed state of the asset source.
         :param Sequence['GetAssetSourcesAssetSourceCollectionItemReplicationCredentialArgs'] replication_credentials: Credentials for an asset source.
         :param str state: The current state of the asset source.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the asset source was created in the RFC3339 format.
         :param str time_updated: The point in time that the asset source was last updated in the RFC3339 format.
         :param str type: The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
@@ -3446,7 +3446,7 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3486,7 +3486,7 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -3534,7 +3534,7 @@ class GetAssetSourcesAssetSourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -3914,15 +3914,15 @@ class GetAssetsAssetCollectionItemResult(dict):
                  asset_type: str,
                  compartment_id: str,
                  computes: Sequence['outputs.GetAssetsAssetCollectionItemComputeResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_asset_key: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  inventory_id: str,
                  source_key: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  vms: Sequence['outputs.GetAssetsAssetCollectionItemVmResult'],
@@ -3933,15 +3933,15 @@ class GetAssetsAssetCollectionItemResult(dict):
         :param str asset_type: The type of asset.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetAssetsAssetCollectionItemComputeArgs'] computes: Compute related properties.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str external_asset_key: External asset key.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Asset OCID that is immutable on creation.
         :param str inventory_id: Unique Inventory identifier.
         :param str source_key: Source key from where the assets originate.
         :param str state: A filter to return only assets whose lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the asset was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the asset was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetAssetsAssetCollectionItemVmArgs'] vms: Virtual machine related properties.
@@ -4001,7 +4001,7 @@ class GetAssetsAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4025,7 +4025,7 @@ class GetAssetsAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -4065,7 +4065,7 @@ class GetAssetsAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -5052,26 +5052,26 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionResult(dict):
 class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  execution_recurrences: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str execution_recurrences: Recurrence specification for the discovery schedule execution.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
         :param str lifecycle_details: The detailed state of the discovery schedule.
         :param str state: The current state of the discovery schedule.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the discovery schedule was created in RFC3339 format.
         :param str time_updated: The time when the discovery schedule was last updated in RFC3339 format.
         """
@@ -5097,7 +5097,7 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5121,7 +5121,7 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -5153,7 +5153,7 @@ class GetDiscoverySchedulesDiscoveryScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -5219,24 +5219,24 @@ class GetEnvironmentsEnvironmentCollectionResult(dict):
 class GetEnvironmentsEnvironmentCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str state: A filter to return only resources where their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the source environment was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the source environment was updated. An RFC3339 formatted datetime string.
         """
@@ -5261,7 +5261,7 @@ class GetEnvironmentsEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5277,7 +5277,7 @@ class GetEnvironmentsEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -5309,7 +5309,7 @@ class GetEnvironmentsEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """
@@ -5402,24 +5402,24 @@ class GetInventoriesInventoryCollectionResult(dict):
 class GetInventoriesInventoryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: Inventory display name.
-        :param Mapping[str, Any] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: Inventory OCID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str state: A filter to return inventory if the lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
+        :param Mapping[str, str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time when the inventory was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the inventory was updated. An RFC3339 formatted datetime string.
         """
@@ -5444,7 +5444,7 @@ class GetInventoriesInventoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5460,7 +5460,7 @@ class GetInventoriesInventoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -5492,7 +5492,7 @@ class GetInventoriesInventoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
         """

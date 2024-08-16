@@ -35,11 +35,11 @@ type Repository struct {
 	// (Updatable) The default branch of the repository.
 	DefaultBranch pulumi.StringOutput `pulumi:"defaultBranch"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Details of the repository. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl pulumi.StringOutput `pulumi:"httpUrl"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -68,7 +68,7 @@ type Repository struct {
 	// The current state of the repository.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -122,11 +122,11 @@ type repositoryState struct {
 	// (Updatable) The default branch of the repository.
 	DefaultBranch *string `pulumi:"defaultBranch"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details of the repository. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl *string `pulumi:"httpUrl"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -155,7 +155,7 @@ type repositoryState struct {
 	// The current state of the repository.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -174,11 +174,11 @@ type RepositoryState struct {
 	// (Updatable) The default branch of the repository.
 	DefaultBranch pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details of the repository. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// HTTP URL that you use to git clone, pull and push.
 	HttpUrl pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -207,7 +207,7 @@ type RepositoryState struct {
 	// The current state of the repository.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -224,11 +224,11 @@ type repositoryArgs struct {
 	// (Updatable) The default branch of the repository.
 	DefaultBranch *string `pulumi:"defaultBranch"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Details of the repository. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig *RepositoryMirrorRepositoryConfig `pulumi:"mirrorRepositoryConfig"`
 	// (Updatable) Name of the repository. Should be unique within the project.
@@ -249,11 +249,11 @@ type RepositoryArgs struct {
 	// (Updatable) The default branch of the repository.
 	DefaultBranch pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Details of the repository. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Configuration information for mirroring the repository.
 	MirrorRepositoryConfig RepositoryMirrorRepositoryConfigPtrInput
 	// (Updatable) Name of the repository. Should be unique within the project.
@@ -377,8 +377,8 @@ func (o RepositoryOutput) DefaultBranch() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o RepositoryOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Repository) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o RepositoryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Details of the repository. Avoid entering confidential information.
@@ -387,8 +387,8 @@ func (o RepositoryOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o RepositoryOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Repository) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RepositoryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // HTTP URL that you use to git clone, pull and push.
@@ -455,8 +455,8 @@ func (o RepositoryOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o RepositoryOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Repository) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o RepositoryOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

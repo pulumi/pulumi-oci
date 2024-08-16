@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -43,7 +42,7 @@ public final class GetUserAssessmentProfilesProfile {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Maximum times the user is allowed in fail login before the user account is locked.
      * 
@@ -53,7 +52,7 @@ public final class GetUserAssessmentProfilesProfile {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
      * 
@@ -190,7 +189,7 @@ public final class GetUserAssessmentProfilesProfile {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -204,7 +203,7 @@ public final class GetUserAssessmentProfilesProfile {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -355,9 +354,9 @@ public final class GetUserAssessmentProfilesProfile {
         private String connectTime;
         private String cpuPerCall;
         private String cpuPerSession;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String failedLoginAttempts;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String idleTime;
         private String inactiveAccountTime;
         private Boolean isUserCreated;
@@ -450,7 +449,7 @@ public final class GetUserAssessmentProfilesProfile {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "definedTags");
             }
@@ -466,7 +465,7 @@ public final class GetUserAssessmentProfilesProfile {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentProfilesProfile", "freeformTags");
             }

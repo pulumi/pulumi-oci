@@ -63,7 +63,7 @@ export interface GetNewsReportResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The description of the news report.
      */
@@ -71,7 +71,7 @@ export interface GetNewsReportResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the news report resource.
      */
@@ -108,7 +108,7 @@ export interface GetNewsReportResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time the the news report was first enabled. An RFC3339 formatted datetime string.
      */

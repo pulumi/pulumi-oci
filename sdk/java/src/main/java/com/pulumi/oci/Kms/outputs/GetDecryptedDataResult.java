@@ -5,7 +5,6 @@ package com.pulumi.oci.Kms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -13,7 +12,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDecryptedDataResult {
-    private @Nullable Map<String,Object> associatedData;
+    private @Nullable Map<String,String> associatedData;
     private String ciphertext;
     private String cryptoEndpoint;
     /**
@@ -34,7 +33,7 @@ public final class GetDecryptedDataResult {
     private String plaintextChecksum;
 
     private GetDecryptedDataResult() {}
-    public Map<String,Object> associatedData() {
+    public Map<String,String> associatedData() {
         return this.associatedData == null ? Map.of() : this.associatedData;
     }
     public String ciphertext() {
@@ -77,7 +76,7 @@ public final class GetDecryptedDataResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> associatedData;
+        private @Nullable Map<String,String> associatedData;
         private String ciphertext;
         private String cryptoEndpoint;
         private String id;
@@ -97,7 +96,7 @@ public final class GetDecryptedDataResult {
         }
 
         @CustomType.Setter
-        public Builder associatedData(@Nullable Map<String,Object> associatedData) {
+        public Builder associatedData(@Nullable Map<String,String> associatedData) {
 
             this.associatedData = associatedData;
             return this;

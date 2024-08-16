@@ -1338,14 +1338,14 @@ class AutonomousDatabaseBackupConfigArgs:
 @pulumi.input_type
 class AutonomousDatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  dedicated: Optional[pulumi.Input[str]] = None,
                  high: Optional[pulumi.Input[str]] = None,
                  low: Optional[pulumi.Input[str]] = None,
                  medium: Optional[pulumi.Input[str]] = None,
                  profiles: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseConnectionStringProfileArgs']]]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         :param pulumi.Input[str] dedicated: The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
         :param pulumi.Input[str] high: The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
         :param pulumi.Input[str] low: The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
@@ -1367,14 +1367,14 @@ class AutonomousDatabaseConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -4602,11 +4602,11 @@ class DataGuardAssociationDataCollectionOptionsArgs:
 @pulumi.input_type
 class DatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the Database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the Database.
         :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
         :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
         """
@@ -4619,14 +4619,14 @@ class DatabaseConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the Database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -4666,8 +4666,8 @@ class DatabaseDatabaseArgs:
                  db_backup_config: Optional[pulumi.Input['DatabaseDatabaseDbBackupConfigArgs']] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
                  ncharacter_set: Optional[pulumi.Input[str]] = None,
@@ -4690,8 +4690,8 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param pulumi.Input[str] ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
@@ -4852,26 +4852,26 @@ class DatabaseDatabaseArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -5417,11 +5417,11 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
 @pulumi.input_type
 class DatabaseUpgradeConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the Database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the Database.
         :param pulumi.Input[str] cdb_default: Host name based CDB Connection String.
         :param pulumi.Input[str] cdb_ip_default: IP based CDB Connection String.
         """
@@ -5434,14 +5434,14 @@ class DatabaseUpgradeConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the Database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -5808,8 +5808,8 @@ class DbHomeDatabaseArgs:
                  db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  key_store_id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -5839,8 +5839,8 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         :param pulumi.Input[str] key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
@@ -6045,26 +6045,26 @@ class DbHomeDatabaseArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -6251,7 +6251,7 @@ class DbHomeDatabaseArgs:
 @pulumi.input_type
 class DbHomeDatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
         if all_connection_strings is not None:
@@ -6263,11 +6263,11 @@ class DbHomeDatabaseConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -6542,9 +6542,9 @@ class DbSystemDbHomeArgs:
                  database_software_image_id: Optional[pulumi.Input[str]] = None,
                  db_home_location: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  last_patch_history_entry_id: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -6558,9 +6558,9 @@ class DbSystemDbHomeArgs:
         :param pulumi.Input[str] db_version: A valid Oracle Database version. For a list of supported versions, use the ListDbVersions operation.
                
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] last_patch_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last patch history. This value is updated as soon as a patch operation starts.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
@@ -6653,14 +6653,14 @@ class DbSystemDbHomeArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -6677,14 +6677,14 @@ class DbSystemDbHomeArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -6763,8 +6763,8 @@ class DbSystemDbHomeDatabaseArgs:
                  db_name: Optional[pulumi.Input[str]] = None,
                  db_unique_name: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  kms_key_id: Optional[pulumi.Input[str]] = None,
                  kms_key_version_id: Optional[pulumi.Input[str]] = None,
@@ -6793,8 +6793,8 @@ class DbSystemDbHomeDatabaseArgs:
         :param pulumi.Input[str] db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
         :param pulumi.Input[str] kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
@@ -7007,26 +7007,26 @@ class DbSystemDbHomeDatabaseArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -7177,7 +7177,7 @@ class DbSystemDbHomeDatabaseArgs:
 @pulumi.input_type
 class DbSystemDbHomeDatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  cdb_default: Optional[pulumi.Input[str]] = None,
                  cdb_ip_default: Optional[pulumi.Input[str]] = None):
         if all_connection_strings is not None:
@@ -7189,11 +7189,11 @@ class DbSystemDbHomeDatabaseConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -10410,11 +10410,11 @@ class MaintenanceRunEstimatedPatchingTimeArgs:
 @pulumi.input_type
 class PluggableDatabaseConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
@@ -10427,14 +10427,14 @@ class PluggableDatabaseConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -10466,7 +10466,7 @@ class PluggableDatabaseConnectionStringArgs:
 class PluggableDatabaseManagementsManagementConnectionStringArgs:
     def __init__(__self__, *,
                  enable_pluggabledatabasemanagement: pulumi.Input[bool],
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
@@ -10475,7 +10475,7 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
@@ -10505,14 +10505,14 @@ class PluggableDatabaseManagementsManagementConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -10851,11 +10851,11 @@ class PluggableDatabaseRefreshableCloneConfigArgs:
 @pulumi.input_type
 class PluggableDatabasesLocalCloneConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
@@ -10868,14 +10868,14 @@ class PluggableDatabasesLocalCloneConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property
@@ -10991,11 +10991,11 @@ class PluggableDatabasesLocalCloneRefreshableCloneConfigArgs:
 @pulumi.input_type
 class PluggableDatabasesRemoteCloneConnectionStringArgs:
     def __init__(__self__, *,
-                 all_connection_strings: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 all_connection_strings: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  pdb_default: Optional[pulumi.Input[str]] = None,
                  pdb_ip_default: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] all_connection_strings: All connection strings to use to connect to the pluggable database.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] all_connection_strings: All connection strings to use to connect to the pluggable database.
         :param pulumi.Input[str] pdb_default: A host name-based PDB connection string.
         :param pulumi.Input[str] pdb_ip_default: An IP-based PDB connection string.
         """
@@ -11008,14 +11008,14 @@ class PluggableDatabasesRemoteCloneConnectionStringArgs:
 
     @property
     @pulumi.getter(name="allConnectionStrings")
-    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def all_connection_strings(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         All connection strings to use to connect to the pluggable database.
         """
         return pulumi.get(self, "all_connection_strings")
 
     @all_connection_strings.setter
-    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def all_connection_strings(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "all_connection_strings", value)
 
     @property

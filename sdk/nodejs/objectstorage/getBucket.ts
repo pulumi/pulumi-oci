@@ -81,7 +81,7 @@ export interface GetBucketResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The entity tag (ETag) for the bucket.
      */
@@ -89,7 +89,7 @@ export interface GetBucketResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly id: string;
     /**
      * Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
@@ -102,7 +102,7 @@ export interface GetBucketResult {
     /**
      * Arbitrary string keys and values for user-defined metadata.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata: {[key: string]: string};
     /**
      * The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
      */

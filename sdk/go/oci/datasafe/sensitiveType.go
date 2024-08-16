@@ -38,13 +38,13 @@ import (
 //				CommentPattern:         pulumi.Any(sensitiveTypeCommentPattern),
 //				DataPattern:            pulumi.Any(sensitiveTypeDataPattern),
 //				DefaultMaskingFormatId: pulumi.Any(testDefaultMaskingFormat.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(sensitiveTypeDescription),
 //				DisplayName: pulumi.Any(sensitiveTypeDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				NamePattern:      pulumi.Any(sensitiveTypeNamePattern),
 //				ParentCategoryId: pulumi.Any(testCategory.Id),
@@ -79,7 +79,7 @@ type SensitiveType struct {
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringOutput `pulumi:"defaultMaskingFormatId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
@@ -87,7 +87,7 @@ type SensitiveType struct {
 	// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType pulumi.StringOutput `pulumi:"entityType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
 	IsCommon pulumi.BoolOutput `pulumi:"isCommon"`
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
@@ -106,7 +106,7 @@ type SensitiveType struct {
 	// The current state of the sensitive type.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -158,7 +158,7 @@ type sensitiveTypeState struct {
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId *string `pulumi:"defaultMaskingFormatId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
@@ -166,7 +166,7 @@ type sensitiveTypeState struct {
 	// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType *string `pulumi:"entityType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
 	IsCommon *bool `pulumi:"isCommon"`
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
@@ -185,7 +185,7 @@ type sensitiveTypeState struct {
 	// The current state of the sensitive type.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -202,7 +202,7 @@ type SensitiveTypeState struct {
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
@@ -210,7 +210,7 @@ type SensitiveTypeState struct {
 	// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
 	IsCommon pulumi.BoolPtrInput
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
@@ -229,7 +229,7 @@ type SensitiveTypeState struct {
 	// The current state of the sensitive type.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -250,7 +250,7 @@ type sensitiveTypeArgs struct {
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId *string `pulumi:"defaultMaskingFormatId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the sensitive type.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
@@ -258,7 +258,7 @@ type sensitiveTypeArgs struct {
 	// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType string `pulumi:"entityType"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
 	NamePattern *string `pulumi:"namePattern"`
 	// (Updatable) The OCID of the parent sensitive category.
@@ -283,7 +283,7 @@ type SensitiveTypeArgs struct {
 	// (Updatable) The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the sensitive type.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the sensitive type. The name does not have to be unique, and it's changeable.
@@ -291,7 +291,7 @@ type SensitiveTypeArgs struct {
 	// (Updatable) The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A regular expression to be used by data discovery for matching column names.
 	NamePattern pulumi.StringPtrInput
 	// (Updatable) The OCID of the parent sensitive category.
@@ -413,8 +413,8 @@ func (o SensitiveTypeOutput) DefaultMaskingFormatId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o SensitiveTypeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SensitiveType) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SensitiveTypeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SensitiveType) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the sensitive type.
@@ -433,8 +433,8 @@ func (o SensitiveTypeOutput) EntityType() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o SensitiveTypeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SensitiveType) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SensitiveTypeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SensitiveType) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
@@ -476,8 +476,8 @@ func (o SensitiveTypeOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SensitiveTypeOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SensitiveType) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SensitiveTypeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SensitiveType) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

@@ -5,7 +5,6 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -18,7 +17,7 @@ public final class JobParameterFileVersion {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return A description to discribe the current parameter file version
      * 
@@ -28,7 +27,7 @@ public final class JobParameterFileVersion {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {&#34;Department&#34;: &#34;Finance&#34;}
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
      * 
@@ -53,7 +52,7 @@ public final class JobParameterFileVersion {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
     /**
      * @return The time the Migration Job was created. An RFC3339 formatted datetime string
      * 
@@ -65,7 +64,7 @@ public final class JobParameterFileVersion {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -79,7 +78,7 @@ public final class JobParameterFileVersion {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {&#34;Department&#34;: &#34;Finance&#34;}
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -114,7 +113,7 @@ public final class JobParameterFileVersion {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
@@ -134,14 +133,14 @@ public final class JobParameterFileVersion {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String description;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isCurrent;
         private @Nullable Boolean isFactory;
         private @Nullable String kind;
         private @Nullable String name;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable String timeCreated;
         public Builder() {}
         public Builder(JobParameterFileVersion defaults) {
@@ -158,7 +157,7 @@ public final class JobParameterFileVersion {
         }
 
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -170,7 +169,7 @@ public final class JobParameterFileVersion {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -200,7 +199,7 @@ public final class JobParameterFileVersion {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

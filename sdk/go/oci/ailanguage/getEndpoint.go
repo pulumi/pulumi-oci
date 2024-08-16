@@ -35,13 +35,13 @@ type LookupEndpointResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the endpoint compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the endpoint.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier endpoint OCID of an endpoint that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Number of replicas required for this endpoint.
@@ -55,7 +55,7 @@ type LookupEndpointResult struct {
 	// The state of the endpoint.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the endpoint was updated. An RFC3339 formatted datetime string.
@@ -106,8 +106,8 @@ func (o LookupEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupEndpointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the endpoint.
@@ -121,8 +121,8 @@ func (o LookupEndpointResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupEndpointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier endpoint OCID of an endpoint that is immutable on creation.
@@ -156,8 +156,8 @@ func (o LookupEndpointResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupEndpointResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the endpoint was created. An RFC3339 formatted datetime string.

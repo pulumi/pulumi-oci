@@ -50,7 +50,7 @@ export class ExternalListener extends pulumi.CustomResource {
     /**
      * The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
@@ -66,7 +66,7 @@ export class ExternalListener extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
@@ -102,7 +102,7 @@ export class ExternalListener extends pulumi.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The name of the host on which the external listener is running.
      */
@@ -146,7 +146,7 @@ export class ExternalListener extends pulumi.CustomResource {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the external listener was created.
      */
@@ -251,7 +251,7 @@ export interface ExternalListenerState {
     /**
      * The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    additionalDetails?: pulumi.Input<{[key: string]: any}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
@@ -267,7 +267,7 @@ export interface ExternalListenerState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
@@ -303,7 +303,7 @@ export interface ExternalListenerState {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name of the host on which the external listener is running.
      */
@@ -347,7 +347,7 @@ export interface ExternalListenerState {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the external listener was created.
      */
@@ -373,7 +373,7 @@ export interface ExternalListenerArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      */
@@ -389,5 +389,5 @@ export interface ExternalListenerArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

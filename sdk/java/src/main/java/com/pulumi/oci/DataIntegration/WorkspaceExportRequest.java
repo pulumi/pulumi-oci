@@ -13,7 +13,6 @@ import com.pulumi.oci.DataIntegration.outputs.WorkspaceExportRequestExportedItem
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -124,14 +123,14 @@ public class WorkspaceExportRequest extends com.pulumi.resources.CustomResource 
      * Contains key of the error
      * 
      */
-    @Export(name="errorMessages", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> errorMessages;
+    @Export(name="errorMessages", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> errorMessages;
 
     /**
      * @return Contains key of the error
      * 
      */
-    public Output<Map<String,Object>> errorMessages() {
+    public Output<Map<String,String>> errorMessages() {
         return this.errorMessages;
     }
     /**

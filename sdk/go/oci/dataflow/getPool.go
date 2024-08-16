@@ -63,13 +63,13 @@ type LookupPoolResult struct {
 	// List of PoolConfig items.
 	Configurations []GetPoolConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name. It does not have to be unique. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a pool. Unique Id to indentify a dataflow pool resource.
 	Id string `pulumi:"id"`
 	// Optional timeout value in minutes used to auto stop Pools. A Pool will be auto stopped after inactivity for this amount of time period. If value not set, pool will not be auto stopped auto.
@@ -142,8 +142,8 @@ func (o LookupPoolResultOutput) Configurations() GetPoolConfigurationArrayOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupPoolResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPoolResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPoolResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPoolResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Avoid entering confidential information.
@@ -157,8 +157,8 @@ func (o LookupPoolResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupPoolResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPoolResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPoolResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPoolResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a pool. Unique Id to indentify a dataflow pool resource.

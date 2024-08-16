@@ -65,7 +65,7 @@ export interface GetWorkspaceApplicationResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A list of dependent objects in this patch.
      */
@@ -81,7 +81,7 @@ export interface GetWorkspaceApplicationResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * OCID of the resource that is used to uniquely identify the application
      */
@@ -97,7 +97,7 @@ export interface GetWorkspaceApplicationResult {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap: {[key: string]: string};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */

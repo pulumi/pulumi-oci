@@ -11,7 +11,6 @@ import com.pulumi.oci.HealthChecks.HttpProbeArgs;
 import com.pulumi.oci.HealthChecks.inputs.HttpProbeState;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -99,8 +98,8 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
-    @Export(name="headers", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> headers;
+    @Export(name="headers", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> headers;
 
     /**
      * @return A dictionary of HTTP request headers.
@@ -108,7 +107,7 @@ public class HttpProbe extends com.pulumi.resources.CustomResource {
      * *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
      * 
      */
-    public Output<Map<String,Object>> headers() {
+    public Output<Map<String,String>> headers() {
         return this.headers;
     }
     /**

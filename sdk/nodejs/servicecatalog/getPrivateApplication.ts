@@ -51,7 +51,7 @@ export interface GetPrivateApplicationResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The name used to refer to the uploaded data.
      */
@@ -59,7 +59,7 @@ export interface GetPrivateApplicationResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The unique identifier for the private application in Marketplace.
      */

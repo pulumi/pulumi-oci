@@ -66,13 +66,13 @@ type LookupOperationsInsightsWarehouseResult struct {
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed float64 `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId string `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OPSI Warehouse OCID
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -87,7 +87,7 @@ type LookupOperationsInsightsWarehouseResult struct {
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs float64 `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -150,8 +150,8 @@ func (o LookupOperationsInsightsWarehouseResultOutput) CpuUsed() pulumi.Float64O
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOperationsInsightsWarehouseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User-friedly name of Ops Insights Warehouse that does not have to be unique.
@@ -165,8 +165,8 @@ func (o LookupOperationsInsightsWarehouseResultOutput) DynamicGroupId() pulumi.S
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOperationsInsightsWarehouseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OPSI Warehouse OCID
@@ -204,8 +204,8 @@ func (o LookupOperationsInsightsWarehouseResultOutput) StorageUsedInGbs() pulumi
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOperationsInsightsWarehouseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsWarehouseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

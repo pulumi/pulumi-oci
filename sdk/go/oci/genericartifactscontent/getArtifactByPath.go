@@ -64,21 +64,21 @@ type LookupArtifactByPathArgs struct {
 
 // A collection of values returned by getArtifactByPath.
 type LookupArtifactByPathResult struct {
-	ArtifactId    string                 `pulumi:"artifactId"`
-	ArtifactPath  string                 `pulumi:"artifactPath"`
-	CompartmentId string                 `pulumi:"compartmentId"`
-	Content       string                 `pulumi:"content"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
-	DisplayName   string                 `pulumi:"displayName"`
-	FreeformTags  map[string]interface{} `pulumi:"freeformTags"`
-	Id            string                 `pulumi:"id"`
-	RepositoryId  string                 `pulumi:"repositoryId"`
-	Sha256        string                 `pulumi:"sha256"`
-	SizeInBytes   string                 `pulumi:"sizeInBytes"`
-	Source        string                 `pulumi:"source"`
-	State         string                 `pulumi:"state"`
-	TimeCreated   string                 `pulumi:"timeCreated"`
-	Version       string                 `pulumi:"version"`
+	ArtifactId    string            `pulumi:"artifactId"`
+	ArtifactPath  string            `pulumi:"artifactPath"`
+	CompartmentId string            `pulumi:"compartmentId"`
+	Content       string            `pulumi:"content"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	DisplayName   string            `pulumi:"displayName"`
+	FreeformTags  map[string]string `pulumi:"freeformTags"`
+	Id            string            `pulumi:"id"`
+	RepositoryId  string            `pulumi:"repositoryId"`
+	Sha256        string            `pulumi:"sha256"`
+	SizeInBytes   string            `pulumi:"sizeInBytes"`
+	Source        string            `pulumi:"source"`
+	State         string            `pulumi:"state"`
+	TimeCreated   string            `pulumi:"timeCreated"`
+	Version       string            `pulumi:"version"`
 }
 
 func LookupArtifactByPathOutput(ctx *pulumi.Context, args LookupArtifactByPathOutputArgs, opts ...pulumi.InvokeOption) LookupArtifactByPathResultOutput {
@@ -139,16 +139,16 @@ func (o LookupArtifactByPathResultOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.Content }).(pulumi.StringOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupArtifactByPathResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupArtifactByPathResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o LookupArtifactByPathResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupArtifactByPathResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupArtifactByPathResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupArtifactByPathResultOutput) Id() pulumi.StringOutput {

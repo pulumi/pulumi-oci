@@ -1546,11 +1546,11 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem struct
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Network Firewall Policy identifier
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1558,7 +1558,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem struct
 	// A filter to return only resources with a lifecycleState matching the given value.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -1582,11 +1582,11 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs st
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique Network Firewall Policy identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1594,7 +1594,7 @@ type GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemArgs st
 	// A filter to return only resources with a lifecycleState matching the given value.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -1667,10 +1667,10 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]interface{} {
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -1681,10 +1681,10 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]interface{} {
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique Network Firewall Policy identifier
@@ -1705,10 +1705,10 @@ func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutp
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]interface{} {
+func (o GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallPoliciesNetworkFirewallPolicySummaryCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -7638,11 +7638,11 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
 	Id string `pulumi:"id"`
 	// IPv4 address for the Network Firewall.
@@ -7660,7 +7660,7 @@ type GetNetworkFirewallsNetworkFirewallCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -7684,11 +7684,11 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// IPv4 address for the Network Firewall.
@@ -7706,7 +7706,7 @@ type GetNetworkFirewallsNetworkFirewallCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Network Firewall.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time at which the Network Firewall was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -7775,8 +7775,8 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) CompartmentId() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -7785,8 +7785,8 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) DisplayName() pu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Network Firewall resource.
@@ -7830,8 +7830,8 @@ func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) SubnetId() pulum
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetNetworkFirewallsNetworkFirewallCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkFirewallsNetworkFirewallCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the Network Firewall was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`

@@ -9,32 +9,6 @@ import * as utilities from "../utilities";
  *
  * Creates compute image capability schema.
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testComputeImageCapabilitySchema = new oci.core.ComputeImageCapabilitySchema("test_compute_image_capability_schema", {
- *     compartmentId: compartmentId,
- *     computeGlobalImageCapabilitySchemaVersionName: computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName,
- *     imageId: testImage.id,
- *     schemaData: [{
- *         descriptorType: computeImageCapabilitySchemaSchemaDataDescriptorType,
- *         source: computeImageCapabilitySchemaSchemaDataSource,
- *         defaultValue: computeImageCapabilitySchemaSchemaDataDefaultValue,
- *         values: computeImageCapabilitySchemaSchemaDataValues,
- *     }],
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     displayName: computeImageCapabilitySchemaDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- * });
- * ```
- *
  * ## Import
  *
  * ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
@@ -86,7 +60,7 @@ export class ComputeImageCapabilitySchema extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -94,7 +68,7 @@ export class ComputeImageCapabilitySchema extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The ocid of the image
      */
@@ -102,7 +76,7 @@ export class ComputeImageCapabilitySchema extends pulumi.CustomResource {
     /**
      * (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
      */
-    public readonly schemaData!: pulumi.Output<{[key: string]: any}>;
+    public readonly schemaData!: pulumi.Output<{[key: string]: string}>;
     /**
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -178,7 +152,7 @@ export interface ComputeImageCapabilitySchemaState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -186,7 +160,7 @@ export interface ComputeImageCapabilitySchemaState {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The ocid of the image
      */
@@ -194,7 +168,7 @@ export interface ComputeImageCapabilitySchemaState {
     /**
      * (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
      */
-    schemaData?: pulumi.Input<{[key: string]: any}>;
+    schemaData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      */
@@ -216,7 +190,7 @@ export interface ComputeImageCapabilitySchemaArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -224,7 +198,7 @@ export interface ComputeImageCapabilitySchemaArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The ocid of the image
      */
@@ -232,5 +206,5 @@ export interface ComputeImageCapabilitySchemaArgs {
     /**
      * (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
      */
-    schemaData: pulumi.Input<{[key: string]: any}>;
+    schemaData: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

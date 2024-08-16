@@ -32,13 +32,13 @@ import (
 //			_, err := DataSafe.NewAuditProfileManagement(ctx, "test_audit_profile_management", &DataSafe.AuditProfileManagementArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				TargetId:      pulumi.Any(testTargetDatabase.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(auditProfileManagementDescription),
 //				DisplayName: pulumi.Any(auditProfileManagementDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsPaidUsageEnabled:     pulumi.Any(auditProfileManagementIsPaidUsageEnabled),
 //				ChangeRetentionTrigger: pulumi.Bool(true),
@@ -67,13 +67,13 @@ type AuditProfileManagement struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting pulumi.BoolPtrOutput `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -134,13 +134,13 @@ type auditProfileManagementState struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -172,13 +172,13 @@ type AuditProfileManagementState struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting pulumi.BoolPtrInput
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -212,13 +212,13 @@ type auditProfileManagementArgs struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the audit profile.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting *bool `pulumi:"isOverrideGlobalRetentionSetting"`
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -241,13 +241,13 @@ type AuditProfileManagementArgs struct {
 	// The OCID of the compartment that contains the target.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the audit profile.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the audit profile. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
 	IsOverrideGlobalRetentionSetting pulumi.BoolPtrInput
 	// (Updatable) Indicates if you want to continue collecting audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. The default value is inherited from the global settings.  You can change at the global level or at the target level.
@@ -366,8 +366,8 @@ func (o AuditProfileManagementOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o AuditProfileManagementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditProfileManagement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AuditProfileManagementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the audit profile.
@@ -381,8 +381,8 @@ func (o AuditProfileManagementOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o AuditProfileManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AuditProfileManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AuditProfileManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AuditProfileManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.

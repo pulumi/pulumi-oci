@@ -6,7 +6,6 @@ package com.pulumi.oci.StackMonitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourceTypeMetadataUniquePropertySet;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +49,7 @@ public final class MonitoredResourceTypeMetadata {
      * @return (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{ &#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> validPropertyValues;
+    private @Nullable Map<String,String> validPropertyValues;
 
     private MonitoredResourceTypeMetadata() {}
     /**
@@ -100,7 +99,7 @@ public final class MonitoredResourceTypeMetadata {
      * @return (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for &#39;osType&#39; property,  supported values can be restricted to be either Linux or Windows. Example: `{ &#34;osType&#34;: &#34;Linux,Windows,Solaris&#34;}`
      * 
      */
-    public Map<String,Object> validPropertyValues() {
+    public Map<String,String> validPropertyValues() {
         return this.validPropertyValues == null ? Map.of() : this.validPropertyValues;
     }
 
@@ -119,7 +118,7 @@ public final class MonitoredResourceTypeMetadata {
         private @Nullable List<MonitoredResourceTypeMetadataUniquePropertySet> uniquePropertySets;
         private @Nullable List<String> validPropertiesForCreates;
         private @Nullable List<String> validPropertiesForUpdates;
-        private @Nullable Map<String,Object> validPropertyValues;
+        private @Nullable Map<String,String> validPropertyValues;
         public Builder() {}
         public Builder(MonitoredResourceTypeMetadata defaults) {
     	      Objects.requireNonNull(defaults);
@@ -186,7 +185,7 @@ public final class MonitoredResourceTypeMetadata {
             return validPropertiesForUpdates(List.of(validPropertiesForUpdates));
         }
         @CustomType.Setter
-        public Builder validPropertyValues(@Nullable Map<String,Object> validPropertyValues) {
+        public Builder validPropertyValues(@Nullable Map<String,String> validPropertyValues) {
 
             this.validPropertyValues = validPropertyValues;
             return this;

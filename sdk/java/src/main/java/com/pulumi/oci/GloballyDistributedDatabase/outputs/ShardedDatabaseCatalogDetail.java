@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GloballyDistributedDatabase.outputs.ShardedDatabaseCatalogDetailEncryptionKeyDetails;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -61,7 +60,7 @@ public final class ShardedDatabaseCatalogDetail {
      * @return Additional metadata related to shard&#39;s underlying supporting resource.
      * 
      */
-    private @Nullable Map<String,Object> metadata;
+    private @Nullable Map<String,String> metadata;
     /**
      * @return Name of the shard.
      * 
@@ -164,7 +163,7 @@ public final class ShardedDatabaseCatalogDetail {
      * @return Additional metadata related to shard&#39;s underlying supporting resource.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
@@ -241,7 +240,7 @@ public final class ShardedDatabaseCatalogDetail {
         private Double dataStorageSizeInGbs;
         private @Nullable ShardedDatabaseCatalogDetailEncryptionKeyDetails encryptionKeyDetails;
         private Boolean isAutoScalingEnabled;
-        private @Nullable Map<String,Object> metadata;
+        private @Nullable Map<String,String> metadata;
         private @Nullable String name;
         private @Nullable String peerCloudAutonomousVmClusterId;
         private @Nullable String shardGroup;
@@ -331,7 +330,7 @@ public final class ShardedDatabaseCatalogDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(@Nullable Map<String,Object> metadata) {
+        public Builder metadata(@Nullable Map<String,String> metadata) {
 
             this.metadata = metadata;
             return this;

@@ -1059,10 +1059,10 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
     def __init__(__self__, *,
                  ca_bundle: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_key_manager_ip: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  port: int,
@@ -1074,10 +1074,10 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
         """
         :param str ca_bundle: CABundle to validate TLS certificate of the external key manager system in PEM format
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Mutable name of the EKMS private endpoint
         :param str external_key_manager_ip: Private IP of the external key manager system to connect to from the EKMS private endpoint
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param int port: The port of the external key manager system
@@ -1120,7 +1120,7 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1144,7 +1144,7 @@ class GetEkmsPrivateEndpointsEkmsPrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1872,12 +1872,12 @@ class GetKeysKeyResult(dict):
                  auto_key_rotation_details: Sequence['outputs.GetKeysKeyAutoKeyRotationDetailResult'],
                  compartment_id: str,
                  current_key_version: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  desired_state: str,
                  display_name: str,
                  external_key_reference_details: Sequence['outputs.GetKeysKeyExternalKeyReferenceDetailResult'],
                  external_key_references: Sequence['outputs.GetKeysKeyExternalKeyReferenceResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_rotation_enabled: bool,
                  is_primary: bool,
@@ -1897,10 +1897,10 @@ class GetKeysKeyResult(dict):
         :param Sequence['GetKeysKeyAutoKeyRotationDetailArgs'] auto_key_rotation_details: The details of auto rotation schedule for the Key being create updated or imported.
         :param str compartment_id: The OCID of the compartment.
         :param str current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param Sequence['GetKeysKeyExternalKeyReferenceDetailArgs'] external_key_reference_details: Key reference data to be returned to the customer as a response.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the key.
         :param bool is_auto_rotation_enabled: A parameter specifying whether the auto key rotation is enabled or not.
         :param bool is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
@@ -1964,7 +1964,7 @@ class GetKeysKeyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1998,7 +1998,7 @@ class GetKeysKeyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -2768,11 +2768,11 @@ class GetVaultsVaultResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  crypto_endpoint: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_key_manager_metadata_summaries: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataSummaryResult'],
                  external_key_manager_metadatas: Sequence['outputs.GetVaultsVaultExternalKeyManagerMetadataResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_primary: bool,
                  management_endpoint: str,
@@ -2788,10 +2788,10 @@ class GetVaultsVaultResult(dict):
         """
         :param str compartment_id: The OCID of the compartment.
         :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param Sequence['GetVaultsVaultExternalKeyManagerMetadataSummaryArgs'] external_key_manager_metadata_summaries: Summary about metadata of external key manager to be returned to the customer as a response.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the vault.
         :param bool is_primary: A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
         :param str management_endpoint: The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
@@ -2840,7 +2840,7 @@ class GetVaultsVaultResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -2869,7 +2869,7 @@ class GetVaultsVaultResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """

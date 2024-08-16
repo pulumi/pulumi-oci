@@ -48,7 +48,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the Big Data Service resource.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             int executeBootstrapScriptTrigger,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

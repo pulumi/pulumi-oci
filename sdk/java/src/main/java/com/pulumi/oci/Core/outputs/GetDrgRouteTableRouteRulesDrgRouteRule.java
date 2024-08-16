@@ -6,7 +6,6 @@ package com.pulumi.oci.Core.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    private Map<String,Object> attributes;
+    private Map<String,String> attributes;
     /**
      * @return Represents the range of IP addresses to match against when routing traffic.
      * 
@@ -64,7 +63,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    public Map<String,Object> attributes() {
+    public Map<String,String> attributes() {
         return this.attributes;
     }
     /**
@@ -133,7 +132,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> attributes;
+        private Map<String,String> attributes;
         private String destination;
         private String destinationType;
         private String id;
@@ -157,7 +156,7 @@ public final class GetDrgRouteTableRouteRulesDrgRouteRule {
         }
 
         @CustomType.Setter
-        public Builder attributes(Map<String,Object> attributes) {
+        public Builder attributes(Map<String,String> attributes) {
             if (attributes == null) {
               throw new MissingRequiredPropertyException("GetDrgRouteTableRouteRulesDrgRouteRule", "attributes");
             }

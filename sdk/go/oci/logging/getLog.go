@@ -66,11 +66,11 @@ type LookupLogResult struct {
 	// Log object configuration.
 	Configurations []GetLogConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
@@ -143,8 +143,8 @@ func (o LookupLogResultOutput) Configurations() GetLogConfigurationArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupLogResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupLogResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -153,8 +153,8 @@ func (o LookupLogResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupLogResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupLogResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.

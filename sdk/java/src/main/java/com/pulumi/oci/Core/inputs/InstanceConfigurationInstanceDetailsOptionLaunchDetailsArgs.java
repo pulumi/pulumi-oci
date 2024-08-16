@@ -15,7 +15,6 @@ import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaun
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsArgs;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -152,13 +151,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -182,13 +181,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
      * 
      */
     @Import(name="extendedMetadata")
-    private @Nullable Output<Map<String,Object>> extendedMetadata;
+    private @Nullable Output<Map<String,String>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Optional<Output<Map<String,Object>>> extendedMetadata() {
+    public Optional<Output<Map<String,String>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
 
@@ -212,13 +211,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -310,13 +309,13 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
      * 
      */
     @Import(name="metadata")
-    private @Nullable Output<Map<String,Object>> metadata;
+    private @Nullable Output<Map<String,String>> metadata;
 
     /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    public Optional<Output<Map<String,Object>>> metadata() {
+    public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
@@ -628,7 +627,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -639,7 +638,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -670,7 +669,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder extendedMetadata(@Nullable Output<Map<String,Object>> extendedMetadata) {
+        public Builder extendedMetadata(@Nullable Output<Map<String,String>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
@@ -681,7 +680,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }
 
@@ -712,7 +711,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -723,7 +722,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -846,7 +845,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder metadata(@Nullable Output<Map<String,Object>> metadata) {
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
             $.metadata = metadata;
             return this;
         }
@@ -857,7 +856,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsArgs e
          * @return builder
          * 
          */
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
         }
 

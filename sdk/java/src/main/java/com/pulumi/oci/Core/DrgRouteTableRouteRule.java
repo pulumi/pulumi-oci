@@ -11,7 +11,6 @@ import com.pulumi.oci.Core.DrgRouteTableRouteRuleArgs;
 import com.pulumi.oci.Core.inputs.DrgRouteTableRouteRuleState;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -74,14 +73,14 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
      * Additional properties for the route, computed by the service.
      * 
      */
-    @Export(name="attributes", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> attributes;
+    @Export(name="attributes", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> attributes;
 
     /**
      * @return Additional properties for the route, computed by the service.
      * 
      */
-    public Output<Map<String,Object>> attributes() {
+    public Output<Map<String,String>> attributes() {
         return this.attributes;
     }
     /**

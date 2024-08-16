@@ -128,13 +128,13 @@ type GetNotificationTopicsNotificationTopic struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the topic.
 	Description string `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id string `pulumi:"id"`
 	// A filter to only return resources that match the given name exactly.
@@ -166,13 +166,13 @@ type GetNotificationTopicsNotificationTopicArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the topic.
 	Description pulumi.StringInput `pulumi:"description"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag pulumi.StringInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to only return resources that match the given id exactly.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to only return resources that match the given name exactly.
@@ -249,8 +249,8 @@ func (o GetNotificationTopicsNotificationTopicOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetNotificationTopicsNotificationTopicOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the topic.
@@ -264,8 +264,8 @@ func (o GetNotificationTopicsNotificationTopicOutput) Etag() pulumi.StringOutput
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetNotificationTopicsNotificationTopicOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNotificationTopicsNotificationTopicOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNotificationTopicsNotificationTopic) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to only return resources that match the given id exactly.
@@ -430,14 +430,14 @@ type GetSubscriptionsSubscription struct {
 	// The time when this suscription was created.
 	CreatedTime string `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      map[string]interface{}                       `pulumi:"definedTags"`
+	DefinedTags      map[string]string                            `pulumi:"definedTags"`
 	DeliveryPolicies []GetSubscriptionsSubscriptionDeliveryPolicy `pulumi:"deliveryPolicies"`
 	// A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
 	Endpoint string `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
 	Id string `pulumi:"id"`
 	// The protocol used for the subscription.
@@ -465,14 +465,14 @@ type GetSubscriptionsSubscriptionArgs struct {
 	// The time when this suscription was created.
 	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags      pulumi.MapInput                                      `pulumi:"definedTags"`
+	DefinedTags      pulumi.StringMapInput                                `pulumi:"definedTags"`
 	DeliveryPolicies GetSubscriptionsSubscriptionDeliveryPolicyArrayInput `pulumi:"deliveryPolicies"`
 	// A locator that corresponds to the subscription protocol.  For example, an email address for a subscription that uses the `EMAIL` protocol, or a URL for a subscription that uses an HTTP-based protocol. Avoid entering confidential information.
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 	// For optimistic concurrency control. See `if-match`.
 	Etag pulumi.StringInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The protocol used for the subscription.
@@ -545,8 +545,8 @@ func (o GetSubscriptionsSubscriptionOutput) CreatedTime() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSubscriptionsSubscriptionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSubscriptionsSubscriptionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetSubscriptionsSubscriptionOutput) DeliveryPolicies() GetSubscriptionsSubscriptionDeliveryPolicyArrayOutput {
@@ -566,8 +566,8 @@ func (o GetSubscriptionsSubscriptionOutput) Etag() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetSubscriptionsSubscriptionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSubscriptionsSubscription) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSubscriptionsSubscriptionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSubscriptionsSubscription) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription.

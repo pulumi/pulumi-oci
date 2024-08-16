@@ -56,7 +56,7 @@ export interface GetCatalogResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Data catalog identifier, which can be renamed.
      */
@@ -64,7 +64,7 @@ export interface GetCatalogResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Unique identifier that is immutable on creation.
      */
@@ -96,7 +96,7 @@ export interface GetCatalogResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */

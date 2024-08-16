@@ -25,9 +25,9 @@ class DbSystemArgs:
                  apply_config: Optional[pulumi.Input[str]] = None,
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
@@ -47,9 +47,9 @@ class DbSystemArgs:
         :param pulumi.Input[str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
@@ -208,14 +208,14 @@ class DbSystemArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -232,14 +232,14 @@ class DbSystemArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -352,10 +352,10 @@ class _DbSystemState:
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input['DbSystemCredentialsArgs']] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
@@ -369,7 +369,7 @@ class _DbSystemState:
                  source: Optional[pulumi.Input['DbSystemSourceArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  storage_details: Optional[pulumi.Input['DbSystemStorageDetailsArgs']] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  system_type: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -381,10 +381,10 @@ class _DbSystemState:
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
@@ -398,7 +398,7 @@ class _DbSystemState:
         :param pulumi.Input['DbSystemSourceArgs'] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] system_type: Type of the database system.
                
                
@@ -536,14 +536,14 @@ class _DbSystemState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -572,14 +572,14 @@ class _DbSystemState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -740,14 +740,14 @@ class _DbSystemState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -801,10 +801,10 @@ class DbSystem(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
@@ -907,10 +907,10 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
@@ -1036,10 +1036,10 @@ class DbSystem(pulumi.CustomResource):
                  config_id: Optional[pulumi.Input[str]] = None,
                  credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  instance_count: Optional[pulumi.Input[int]] = None,
                  instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  instance_ocpu_count: Optional[pulumi.Input[int]] = None,
@@ -1115,10 +1115,10 @@ class DbSystem(pulumi.CustomResource):
             config_id: Optional[pulumi.Input[str]] = None,
             credentials: Optional[pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             instance_count: Optional[pulumi.Input[int]] = None,
             instance_memory_size_in_gbs: Optional[pulumi.Input[int]] = None,
             instance_ocpu_count: Optional[pulumi.Input[int]] = None,
@@ -1132,7 +1132,7 @@ class DbSystem(pulumi.CustomResource):
             source: Optional[pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
             storage_details: Optional[pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             system_type: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'DbSystem':
@@ -1149,10 +1149,10 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[str] db_version: Version of database system software.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] instance_count: Count of database instances nodes to be created in the database system.
         :param pulumi.Input[int] instance_memory_size_in_gbs: (Updatable) The total amount of memory available to each database instance node, in gigabytes.
         :param pulumi.Input[int] instance_ocpu_count: (Updatable) The total number of OCPUs available to each database instance node.
@@ -1166,7 +1166,7 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict']] source: The source used to restore the database system.
         :param pulumi.Input[str] state: The current state of the database system.
         :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict']] storage_details: (Updatable) Storage details of the database system.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] system_type: Type of the database system.
                
                
@@ -1258,7 +1258,7 @@ class DbSystem(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1282,7 +1282,7 @@ class DbSystem(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1394,7 +1394,7 @@ class DbSystem(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

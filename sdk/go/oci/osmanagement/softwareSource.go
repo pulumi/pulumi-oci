@@ -37,12 +37,12 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(softwareSourceDisplayName),
 //				ChecksumType:  pulumi.Any(softwareSourceChecksumType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(softwareSourceDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				MaintainerEmail: pulumi.Any(softwareSourceMaintainerEmail),
 //				MaintainerName:  pulumi.Any(softwareSourceMaintainerName),
@@ -77,13 +77,13 @@ type SoftwareSource struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the software source
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User friendly name for the software source
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
 	GpgKeyFingerprint pulumi.StringOutput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
@@ -163,13 +163,13 @@ type softwareSourceState struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the software source
 	Description *string `pulumi:"description"`
 	// (Updatable) User friendly name for the software source
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
 	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
@@ -211,13 +211,13 @@ type SoftwareSourceState struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information specified by the user about the software source
 	Description pulumi.StringPtrInput
 	// (Updatable) User friendly name for the software source
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Fingerprint of the GPG key for this software source
 	GpgKeyFingerprint pulumi.StringPtrInput
 	// ID of the GPG key for this software source
@@ -261,13 +261,13 @@ type softwareSourceArgs struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information specified by the user about the software source
 	Description *string `pulumi:"description"`
 	// (Updatable) User friendly name for the software source
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Email address of the person maintaining this software source
 	MaintainerEmail *string `pulumi:"maintainerEmail"`
 	// (Updatable) Name of the person maintaining this software source
@@ -290,13 +290,13 @@ type SoftwareSourceArgs struct {
 	// (Updatable) OCID for the Compartment
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information specified by the user about the software source
 	Description pulumi.StringPtrInput
 	// (Updatable) User friendly name for the software source
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Email address of the person maintaining this software source
 	MaintainerEmail pulumi.StringPtrInput
 	// (Updatable) Name of the person maintaining this software source
@@ -420,8 +420,8 @@ func (o SoftwareSourceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o SoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SoftwareSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Information specified by the user about the software source
@@ -435,8 +435,8 @@ func (o SoftwareSourceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o SoftwareSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SoftwareSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Fingerprint of the GPG key for this software source

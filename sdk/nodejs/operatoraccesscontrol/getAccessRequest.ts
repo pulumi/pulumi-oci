@@ -76,7 +76,7 @@ export interface GetAccessRequestResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Duration in hours for which access is sought on the target resource.
      */
@@ -92,7 +92,7 @@ export interface GetAccessRequestResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */

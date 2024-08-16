@@ -185,34 +185,34 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionResult(dict)
 class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  filter_groups: Sequence['outputs.GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  ons_topic_id: str,
                  preferred_language: str,
                  preferred_time_zone: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the announcement subscription. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemFilterGroupArgs'] filter_groups: A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the announcement subscription.
         :param str lifecycle_details: A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
         :param str ons_topic_id: The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
         :param str preferred_language: (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
         :param str preferred_time_zone: The time zone that the user prefers for announcement time stamps. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example America/Los_Angeles.
         :param str state: A filter to return only announcement subscriptions that match the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
@@ -242,7 +242,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -274,7 +274,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -330,7 +330,7 @@ class GetAnnouncementSubscriptionsAnnouncementSubscriptionCollectionItemResult(d
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

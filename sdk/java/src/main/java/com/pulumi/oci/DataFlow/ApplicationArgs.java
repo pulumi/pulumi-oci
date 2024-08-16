@@ -11,7 +11,6 @@ import com.pulumi.oci.DataFlow.inputs.ApplicationDriverShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationExecutorShapeConfigArgs;
 import com.pulumi.oci.DataFlow.inputs.ApplicationParameterArgs;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -104,13 +103,13 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="configuration")
-    private @Nullable Output<Map<String,Object>> configuration;
+    private @Nullable Output<Map<String,String>> configuration;
 
     /**
      * @return (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Optional<Output<Map<String,Object>>> configuration() {
+    public Optional<Output<Map<String,String>>> configuration() {
         return Optional.ofNullable(this.configuration);
     }
 
@@ -119,13 +118,13 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -254,13 +253,13 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -622,7 +621,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder configuration(@Nullable Output<Map<String,Object>> configuration) {
+        public Builder configuration(@Nullable Output<Map<String,String>> configuration) {
             $.configuration = configuration;
             return this;
         }
@@ -633,7 +632,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder configuration(Map<String,Object> configuration) {
+        public Builder configuration(Map<String,String> configuration) {
             return configuration(Output.of(configuration));
         }
 
@@ -643,7 +642,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -654,7 +653,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -832,7 +831,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -843,7 +842,7 @@ public final class ApplicationArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

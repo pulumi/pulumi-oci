@@ -61,7 +61,7 @@ type LookupResponderRecipeResult struct {
 	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Responder rule description
 	Description string `pulumi:"description"`
 	// Responder rule display name
@@ -69,7 +69,7 @@ type LookupResponderRecipeResult struct {
 	// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 	EffectiveResponderRules []GetResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier for the responder recip
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -84,7 +84,7 @@ type LookupResponderRecipeResult struct {
 	// The current lifecycle state of the example
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the responder recipe was last updated. Format defined by RFC3339.
@@ -135,8 +135,8 @@ func (o LookupResponderRecipeResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupResponderRecipeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupResponderRecipeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Responder rule description
@@ -157,8 +157,8 @@ func (o LookupResponderRecipeResultOutput) EffectiveResponderRules() GetResponde
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupResponderRecipeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupResponderRecipeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier for the responder recip
@@ -196,8 +196,8 @@ func (o LookupResponderRecipeResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupResponderRecipeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupResponderRecipeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResponderRecipeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the responder recipe was created. Format defined by RFC3339.

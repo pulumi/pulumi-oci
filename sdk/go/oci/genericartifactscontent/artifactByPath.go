@@ -61,11 +61,11 @@ type ArtifactByPath struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content pulumi.StringPtrOutput `pulumi:"content"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId pulumi.StringOutput `pulumi:"repositoryId"`
 	// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
@@ -132,11 +132,11 @@ type artifactByPathState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content *string `pulumi:"content"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
 	DisplayName *string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId *string `pulumi:"repositoryId"`
 	// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
@@ -165,11 +165,11 @@ type ArtifactByPathState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Content pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
 	DisplayName pulumi.StringPtrInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
 	RepositoryId pulumi.StringPtrInput
 	// The SHA256 digest for the artifact. When you upload an artifact to the repository, a SHA256 digest is calculated and added to the artifact properties.
@@ -333,8 +333,8 @@ func (o ArtifactByPathOutput) Content() pulumi.StringPtrOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ArtifactByPathOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ArtifactByPathOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
@@ -343,8 +343,8 @@ func (o ArtifactByPathOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ArtifactByPathOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ArtifactByPath) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ArtifactByPathOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ArtifactByPath) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.

@@ -65,7 +65,7 @@ export interface GetLogAnalyticsEntityResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Internal name for the log analytics entity type.
      */
@@ -77,7 +77,7 @@ export interface GetLogAnalyticsEntityResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
@@ -115,7 +115,7 @@ export interface GetLogAnalyticsEntityResult {
     /**
      * The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    readonly properties: {[key: string]: any};
+    readonly properties: {[key: string]: string};
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */

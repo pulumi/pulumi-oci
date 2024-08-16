@@ -36,11 +36,11 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				CpuAllocated:  pulumi.Any(operationsInsightsWarehouseCpuAllocated),
 //				DisplayName:   pulumi.Any(operationsInsightsWarehouseDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				StorageAllocatedInGbs: pulumi.Any(operationsInsightsWarehouseStorageAllocatedInGbs),
 //			})
@@ -70,13 +70,13 @@ type OperationsInsightsWarehouse struct {
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64Output `pulumi:"cpuUsed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId pulumi.StringOutput `pulumi:"dynamicGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Tenancy Identifier of Ops Insights service
@@ -91,7 +91,7 @@ type OperationsInsightsWarehouse struct {
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs pulumi.Float64Output `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -146,13 +146,13 @@ type operationsInsightsWarehouseState struct {
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed *float64 `pulumi:"cpuUsed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId *string `pulumi:"dynamicGroupId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Tenancy Identifier of Ops Insights service
@@ -167,7 +167,7 @@ type operationsInsightsWarehouseState struct {
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs *float64 `pulumi:"storageUsedInGbs"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -184,13 +184,13 @@ type OperationsInsightsWarehouseState struct {
 	// Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
 	CpuUsed pulumi.Float64PtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Tenancy Identifier of Ops Insights service
@@ -205,7 +205,7 @@ type OperationsInsightsWarehouseState struct {
 	// Storage by OPSI Warehouse ADW in GB.
 	StorageUsedInGbs pulumi.Float64PtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
@@ -224,11 +224,11 @@ type operationsInsightsWarehouseArgs struct {
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
 	//
 	// ** IMPORTANT **
@@ -243,11 +243,11 @@ type OperationsInsightsWarehouseArgs struct {
 	// (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
 	CpuAllocated pulumi.Float64Input
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Storage allocated to OPSI Warehouse ADW.
 	//
 	// ** IMPORTANT **
@@ -358,8 +358,8 @@ func (o OperationsInsightsWarehouseOutput) CpuUsed() pulumi.Float64Output {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OperationsInsightsWarehouseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
@@ -373,8 +373,8 @@ func (o OperationsInsightsWarehouseOutput) DynamicGroupId() pulumi.StringOutput 
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OperationsInsightsWarehouseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -406,8 +406,8 @@ func (o OperationsInsightsWarehouseOutput) StorageUsedInGbs() pulumi.Float64Outp
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OperationsInsightsWarehouseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OperationsInsightsWarehouseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

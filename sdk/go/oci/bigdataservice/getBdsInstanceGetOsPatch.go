@@ -69,7 +69,7 @@ type GetBdsInstanceGetOsPatchResult struct {
 	// Minimum BDS version required to install current OS patch.
 	MinBdsVersion string `pulumi:"minBdsVersion"`
 	// Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
-	MinCompatibleOdhVersionMap map[string]interface{} `pulumi:"minCompatibleOdhVersionMap"`
+	MinCompatibleOdhVersionMap map[string]string `pulumi:"minCompatibleOdhVersionMap"`
 	// Version of the os patch.
 	OsPatchVersion string `pulumi:"osPatchVersion"`
 	// Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os patches with some customizations. EMERGENT means os patches with some emergency fixes that should be prioritized.
@@ -140,8 +140,8 @@ func (o GetBdsInstanceGetOsPatchResultOutput) MinBdsVersion() pulumi.StringOutpu
 }
 
 // Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
-func (o GetBdsInstanceGetOsPatchResultOutput) MinCompatibleOdhVersionMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) map[string]interface{} { return v.MinCompatibleOdhVersionMap }).(pulumi.MapOutput)
+func (o GetBdsInstanceGetOsPatchResultOutput) MinCompatibleOdhVersionMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBdsInstanceGetOsPatchResult) map[string]string { return v.MinCompatibleOdhVersionMap }).(pulumi.StringMapOutput)
 }
 
 // Version of the os patch.

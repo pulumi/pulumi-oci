@@ -36,12 +36,12 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(customProtectionRuleDisplayName),
 //				Template:      pulumi.Any(customProtectionRuleTemplate),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(customProtectionRuleDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -66,13 +66,13 @@ type CustomProtectionRule struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A description for the Custom Protection rule.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds pulumi.StringArrayOutput `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
@@ -144,13 +144,13 @@ type customProtectionRuleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description for the Custom Protection rule.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds []string `pulumi:"modSecurityRuleIds"`
 	// The current lifecycle state of the custom protection rule.
@@ -184,13 +184,13 @@ type CustomProtectionRuleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description for the Custom Protection rule.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
 	ModSecurityRuleIds pulumi.StringArrayInput
 	// The current lifecycle state of the custom protection rule.
@@ -228,13 +228,13 @@ type customProtectionRuleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description for the Custom Protection rule.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
 	//
 	// Additionally, each rule must include two placeholder variables that are updated by the WAF service upon publication of the rule.
@@ -263,13 +263,13 @@ type CustomProtectionRuleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description for the Custom Protection rule.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the custom protection rule.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The template text of the custom protection rule. All custom protection rules are expressed in ModSecurity Rule Language.
 	//
 	// Additionally, each rule must include two placeholder variables that are updated by the WAF service upon publication of the rule.
@@ -386,8 +386,8 @@ func (o CustomProtectionRuleOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o CustomProtectionRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CustomProtectionRule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CustomProtectionRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A description for the Custom Protection rule.
@@ -401,8 +401,8 @@ func (o CustomProtectionRuleOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CustomProtectionRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CustomProtectionRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CustomProtectionRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CustomProtectionRule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The auto-generated ID for the custom protection rule. These IDs are referenced in logs.

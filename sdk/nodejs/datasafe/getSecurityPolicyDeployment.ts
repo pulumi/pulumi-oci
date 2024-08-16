@@ -49,7 +49,7 @@ export interface GetSecurityPolicyDeploymentResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The description of the security policy deployment.
      */
@@ -61,7 +61,7 @@ export interface GetSecurityPolicyDeploymentResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The OCID of the security policy deployment.
      */
@@ -82,7 +82,7 @@ export interface GetSecurityPolicyDeploymentResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The OCID of the target where the security policy is deployed.
      */

@@ -169,7 +169,7 @@ namespace Pulumi.Oci.DataCatalog
         /// A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> EncProperties;
+        public readonly ImmutableDictionary<string, string> EncProperties;
         /// <summary>
         /// Unique external key of this object from the source system.
         /// </summary>
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
         /// The current state of the connection.
         /// </summary>
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.DataCatalog
 
             string displayName,
 
-            ImmutableDictionary<string, object> encProperties,
+            ImmutableDictionary<string, string> encProperties,
 
             string externalKey,
 
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.DataCatalog
 
             string key,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, string> properties,
 
             string state,
 

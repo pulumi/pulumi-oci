@@ -842,7 +842,7 @@ class DeploymentSpecificationRequestPoliciesAuthentication(dict):
                  is_anonymous_access_allowed: Optional[bool] = None,
                  issuers: Optional[Sequence[str]] = None,
                  max_clock_skew_in_seconds: Optional[float] = None,
-                 parameters: Optional[Mapping[str, Any]] = None,
+                 parameters: Optional[Mapping[str, str]] = None,
                  public_keys: Optional['outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys'] = None,
                  token_auth_scheme: Optional[str] = None,
                  token_header: Optional[str] = None,
@@ -858,7 +858,7 @@ class DeploymentSpecificationRequestPoliciesAuthentication(dict):
         :param bool is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[str] issuers: (Updatable) A list of parties that could have issued the token.
         :param float max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param Mapping[str, Any] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+        :param Mapping[str, str] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         :param 'DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysArgs' public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         :param str token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param str token_header: (Updatable) The name of the header containing the authentication token.
@@ -955,7 +955,7 @@ class DeploymentSpecificationRequestPoliciesAuthentication(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[Mapping[str, Any]]:
+    def parameters(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         """
@@ -2601,7 +2601,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
                  is_anonymous_access_allowed: Optional[bool] = None,
                  issuers: Optional[Sequence[str]] = None,
                  max_clock_skew_in_seconds: Optional[float] = None,
-                 parameters: Optional[Mapping[str, Any]] = None,
+                 parameters: Optional[Mapping[str, str]] = None,
                  public_keys: Optional['outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys'] = None,
                  token_auth_scheme: Optional[str] = None,
                  token_header: Optional[str] = None,
@@ -2617,7 +2617,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
         :param bool is_anonymous_access_allowed: (Updatable) Whether an unauthenticated user may access the API. Must be "true" to enable ANONYMOUS route authorization.
         :param Sequence[str] issuers: (Updatable) A list of parties that could have issued the token.
         :param float max_clock_skew_in_seconds: (Updatable) The maximum expected time difference between the system clocks of the token issuer and the API Gateway.
-        :param Mapping[str, Any] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
+        :param Mapping[str, str] parameters: (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         :param 'DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysArgs' public_keys: (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         :param str token_auth_scheme: (Updatable) The authentication scheme that is to be used when authenticating the token. This must to be provided if "tokenHeader" is specified.
         :param str token_header: (Updatable) The name of the header containing the authentication token.
@@ -2714,7 +2714,7 @@ class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationS
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[Mapping[str, Any]]:
+    def parameters(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         """
@@ -7381,7 +7381,7 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -7472,7 +7472,7 @@ class GetApiDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -8682,7 +8682,7 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -8773,7 +8773,7 @@ class GetApiDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticat
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -11800,9 +11800,9 @@ class GetApisApiCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  content: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  specification_type: str,
@@ -11812,9 +11812,9 @@ class GetApisApiCollectionItemResult(dict):
                  validation_results: Sequence['outputs.GetApisApiCollectionItemValidationResultResult']):
         """
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str lifecycle_details: A message describing the current lifecycleState in more detail. For ACTIVE state it describes if the document has been validated and the possible values are:
                * 'New' for just updated API Specifications
@@ -11858,7 +11858,7 @@ class GetApisApiCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -11874,7 +11874,7 @@ class GetApisApiCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -12023,9 +12023,9 @@ class GetCertificatesCertificateCollectionItemResult(dict):
     def __init__(__self__, *,
                  certificate: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  intermediate_certificates: str,
                  lifecycle_details: str,
@@ -12038,9 +12038,9 @@ class GetCertificatesCertificateCollectionItemResult(dict):
         """
         :param str certificate: The data of the leaf certificate in pem format.
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str intermediate_certificates: The intermediate certificate data associated with the certificate in pem format.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -12083,7 +12083,7 @@ class GetCertificatesCertificateCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -12099,7 +12099,7 @@ class GetCertificatesCertificateCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -12400,7 +12400,7 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetDeploymentSpecificationRequestPolicyAuthenticationPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -12491,7 +12491,7 @@ class GetDeploymentSpecificationRequestPolicyAuthenticationResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -13701,7 +13701,7 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -13792,7 +13792,7 @@ class GetDeploymentSpecificationRequestPolicyDynamicAuthenticationAuthentication
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -16685,10 +16685,10 @@ class GetDeploymentSpecificationRouteResponsePolicyResponseCacheStoreResult(dict
 class GetDeploymentsDeploymentCollectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  endpoint: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  gateway_id: str,
                  id: str,
                  lifecycle_details: str,
@@ -16699,10 +16699,10 @@ class GetDeploymentsDeploymentCollectionResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str endpoint: The endpoint to access this deployment on the gateway.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str gateway_id: Filter deployments by the gateway ocid.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -16736,7 +16736,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -16760,7 +16760,7 @@ class GetDeploymentsDeploymentCollectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -17029,7 +17029,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthenticationPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -17120,7 +17120,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyAuthentication
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -18330,7 +18330,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
                  is_anonymous_access_allowed: bool,
                  issuers: Sequence[str],
                  max_clock_skew_in_seconds: float,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  public_keys: Sequence['outputs.GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeyResult'],
                  token_auth_scheme: str,
                  token_header: str,
@@ -18421,7 +18421,7 @@ class GetDeploymentsDeploymentCollectionSpecificationRequestPolicyDynamicAuthent
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         return pulumi.get(self, "parameters")
 
     @property
@@ -21573,10 +21573,10 @@ class GetGatewaysGatewayCollectionResult(dict):
                  ca_bundles: Sequence['outputs.GetGatewaysGatewayCollectionCaBundleResult'],
                  certificate_id: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  endpoint_type: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname: str,
                  id: str,
                  ip_addresses: Sequence['outputs.GetGatewaysGatewayCollectionIpAddressResult'],
@@ -21591,10 +21591,10 @@ class GetGatewaysGatewayCollectionResult(dict):
         :param Sequence['GetGatewaysGatewayCollectionCaBundleArgs'] ca_bundles: An array of CA bundles that should be used on the Gateway for TLS validation.
         :param str certificate_id: Filter gateways by the certificate ocid.
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param str endpoint_type: Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str hostname: The hostname for APIs deployed on the gateway.
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param Sequence['GetGatewaysGatewayCollectionIpAddressArgs'] ip_addresses: An array of IP addresses associated with the gateway.
@@ -21650,7 +21650,7 @@ class GetGatewaysGatewayCollectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -21674,7 +21674,7 @@ class GetGatewaysGatewayCollectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22033,9 +22033,9 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
     def __init__(__self__, *,
                  clients: Sequence['outputs.GetSubscribersSubscriberCollectionItemClientResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -22045,9 +22045,9 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
         """
         :param Sequence['GetSubscribersSubscriberCollectionItemClientArgs'] clients: The clients belonging to this subscriber.
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
@@ -22085,7 +22085,7 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -22101,7 +22101,7 @@ class GetSubscribersSubscriberCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -22394,10 +22394,10 @@ class GetUsagePlansUsagePlanCollectionResult(dict):
 class GetUsagePlansUsagePlanCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  entitlements: Sequence['outputs.GetUsagePlansUsagePlanCollectionItemEntitlementResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
@@ -22405,10 +22405,10 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The ocid of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
         :param Sequence['GetUsagePlansUsagePlanCollectionItemEntitlementArgs'] entitlements: A collection of entitlements currently assigned to the usage plan.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a usage plan resource.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param str state: A filter to return only resources that match the given lifecycle state. Example: `ACTIVE`
@@ -22436,7 +22436,7 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -22460,7 +22460,7 @@ class GetUsagePlansUsagePlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """

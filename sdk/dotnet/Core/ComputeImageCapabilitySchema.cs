@@ -14,45 +14,6 @@ namespace Pulumi.Oci.Core
     /// 
     /// Creates compute image capability schema.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testComputeImageCapabilitySchema = new Oci.Core.ComputeImageCapabilitySchema("test_compute_image_capability_schema", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         ComputeGlobalImageCapabilitySchemaVersionName = computeImageCapabilitySchemaComputeGlobalImageCapabilitySchemaVersionName,
-    ///         ImageId = testImage.Id,
-    ///         SchemaData = new[]
-    ///         {
-    ///             new Dictionary&lt;string, object?&gt;
-    ///             {
-    ///                 ["descriptorType"] = computeImageCapabilitySchemaSchemaDataDescriptorType,
-    ///                 ["source"] = computeImageCapabilitySchemaSchemaDataSource,
-    ///                 ["defaultValue"] = computeImageCapabilitySchemaSchemaDataDefaultValue,
-    ///                 ["values"] = computeImageCapabilitySchemaSchemaDataValues,
-    ///             },
-    ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         DisplayName = computeImageCapabilitySchemaDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
@@ -86,7 +47,7 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -98,7 +59,7 @@ namespace Pulumi.Oci.Core
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The ocid of the image
@@ -110,7 +71,7 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
         /// </summary>
         [Output("schemaData")]
-        public Output<ImmutableDictionary<string, object>> SchemaData { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> SchemaData { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the compute image capability schema was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -177,14 +138,14 @@ namespace Pulumi.Oci.Core
         public Input<string> ComputeGlobalImageCapabilitySchemaVersionName { get; set; } = null!;
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -195,14 +156,14 @@ namespace Pulumi.Oci.Core
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -213,14 +174,14 @@ namespace Pulumi.Oci.Core
         public Input<string> ImageId { get; set; } = null!;
 
         [Input("schemaData", required: true)]
-        private InputMap<object>? _schemaData;
+        private InputMap<string>? _schemaData;
 
         /// <summary>
         /// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
         /// </summary>
-        public InputMap<object> SchemaData
+        public InputMap<string> SchemaData
         {
-            get => _schemaData ?? (_schemaData = new InputMap<object>());
+            get => _schemaData ?? (_schemaData = new InputMap<string>());
             set => _schemaData = value;
         }
 
@@ -251,14 +212,14 @@ namespace Pulumi.Oci.Core
         public Input<string>? ComputeGlobalImageCapabilitySchemaVersionName { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -269,14 +230,14 @@ namespace Pulumi.Oci.Core
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -287,14 +248,14 @@ namespace Pulumi.Oci.Core
         public Input<string>? ImageId { get; set; }
 
         [Input("schemaData")]
-        private InputMap<object>? _schemaData;
+        private InputMap<string>? _schemaData;
 
         /// <summary>
         /// (Updatable) The map of each capability name to its ImageCapabilitySchemaDescriptor.
         /// </summary>
-        public InputMap<object> SchemaData
+        public InputMap<string> SchemaData
         {
-            get => _schemaData ?? (_schemaData = new InputMap<object>());
+            get => _schemaData ?? (_schemaData = new InputMap<string>());
             set => _schemaData = value;
         }
 

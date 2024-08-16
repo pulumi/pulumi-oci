@@ -9,7 +9,6 @@ import com.pulumi.oci.ApmConfig.outputs.GetConfigDimension;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigInUseBy;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigMetric;
 import com.pulumi.oci.ApmConfig.outputs.GetConfigRule;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class GetConfigResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A description of the metric.
      * 
@@ -68,7 +67,7 @@ public final class GetConfigResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A string that specifies the group that an OPTIONS item belongs to.
      * 
@@ -142,7 +141,7 @@ public final class GetConfigResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -191,7 +190,7 @@ public final class GetConfigResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -277,14 +276,14 @@ public final class GetConfigResult {
         private String configId;
         private String configType;
         private String createdBy;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private List<GetConfigDimension> dimensions;
         private String displayName;
         private String etag;
         private String filterId;
         private String filterText;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String group;
         private String id;
         private List<GetConfigInUseBy> inUseBies;
@@ -357,7 +356,7 @@ public final class GetConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetConfigResult", "definedTags");
             }
@@ -416,7 +415,7 @@ public final class GetConfigResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetConfigResult", "freeformTags");
             }

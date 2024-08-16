@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A filter to return only the resources that match the entire display name.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
         /// </summary>
@@ -66,13 +66,13 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         private GetDedicatedVantagePointsDedicatedVantagePointCollectionItemResult(
             string apmDomainId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
             ImmutableArray<Outputs.GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailResult> dvpStackDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

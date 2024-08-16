@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given. The match is not case sensitive.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A valid Oracle Grid Infrastructure (GI) software version.
         /// </summary>
@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// Operating system version of the image.
         /// </summary>
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetExadbVmClustersExadbVmClusterDataCollectionOptionResult> dataCollectionOptions,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -197,7 +197,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string exascaleDbStorageVaultId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string giVersion,
 
@@ -245,7 +245,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             string subnetId,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string systemVersion,
 

@@ -55,12 +55,12 @@ import (
 //					VlanId:                pulumi.Any(testVlan.Id),
 //					VnicId:                pulumi.Any(testVnicAttachment.Id),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(pathAnalyzerTestDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				ProtocolParameters: &vnmonitoring.PathAnalyzerTestProtocolParametersArgs{
 //					Type:            pulumi.Any(pathAnalyzerTestProtocolParametersType),
@@ -95,13 +95,13 @@ type PathAnalyzerTest struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoint PathAnalyzerTestDestinationEndpointOutput `pulumi:"destinationEndpoint"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
 	Protocol pulumi.IntOutput `pulumi:"protocol"`
 	// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -113,7 +113,7 @@ type PathAnalyzerTest struct {
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -165,13 +165,13 @@ type pathAnalyzerTestState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoint *PathAnalyzerTestDestinationEndpoint `pulumi:"destinationEndpoint"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
 	Protocol *int `pulumi:"protocol"`
 	// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -183,7 +183,7 @@ type pathAnalyzerTestState struct {
 	// The current state of the `PathAnalyzerTest` resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -194,13 +194,13 @@ type PathAnalyzerTestState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoint PathAnalyzerTestDestinationEndpointPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
 	Protocol pulumi.IntPtrInput
 	// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -212,7 +212,7 @@ type PathAnalyzerTestState struct {
 	// The current state of the `PathAnalyzerTest` resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -227,13 +227,13 @@ type pathAnalyzerTestArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoint PathAnalyzerTestDestinationEndpoint `pulumi:"destinationEndpoint"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
 	Protocol int `pulumi:"protocol"`
 	// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -249,13 +249,13 @@ type PathAnalyzerTestArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoint PathAnalyzerTestDestinationEndpointInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
 	Protocol pulumi.IntInput
 	// (Updatable) Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
@@ -359,8 +359,8 @@ func (o PathAnalyzerTestOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o PathAnalyzerTestOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PathAnalyzerTestOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -374,8 +374,8 @@ func (o PathAnalyzerTestOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o PathAnalyzerTestOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PathAnalyzerTestOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The IP protocol to use in the `PathAnalyzerTest` resource.
@@ -404,8 +404,8 @@ func (o PathAnalyzerTestOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o PathAnalyzerTestOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o PathAnalyzerTestOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PathAnalyzerTest) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

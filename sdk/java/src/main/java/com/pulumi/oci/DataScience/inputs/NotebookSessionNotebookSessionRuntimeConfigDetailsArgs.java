@@ -6,7 +6,6 @@ package com.pulumi.oci.DataScience.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -23,13 +22,13 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs extend
      * 
      */
     @Import(name="customEnvironmentVariables")
-    private @Nullable Output<Map<String,Object>> customEnvironmentVariables;
+    private @Nullable Output<Map<String,String>> customEnvironmentVariables;
 
     /**
      * @return (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    public Optional<Output<Map<String,Object>>> customEnvironmentVariables() {
+    public Optional<Output<Map<String,String>>> customEnvironmentVariables() {
         return Optional.ofNullable(this.customEnvironmentVariables);
     }
 
@@ -79,7 +78,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs extend
          * @return builder
          * 
          */
-        public Builder customEnvironmentVariables(@Nullable Output<Map<String,Object>> customEnvironmentVariables) {
+        public Builder customEnvironmentVariables(@Nullable Output<Map<String,String>> customEnvironmentVariables) {
             $.customEnvironmentVariables = customEnvironmentVariables;
             return this;
         }
@@ -90,7 +89,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs extend
          * @return builder
          * 
          */
-        public Builder customEnvironmentVariables(Map<String,Object> customEnvironmentVariables) {
+        public Builder customEnvironmentVariables(Map<String,String> customEnvironmentVariables) {
             return customEnvironmentVariables(Output.of(customEnvironmentVariables));
         }
 

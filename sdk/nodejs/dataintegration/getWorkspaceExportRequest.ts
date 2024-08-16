@@ -65,7 +65,7 @@ export interface GetWorkspaceExportRequestResult {
     /**
      * Contains key of the error
      */
-    readonly errorMessages: {[key: string]: any};
+    readonly errorMessages: {[key: string]: string};
     readonly exportRequestKey: string;
     /**
      * The array of exported object details.

@@ -4,7 +4,6 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    private @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,String> allConnectionStrings;
     /**
      * @return A host name-based PDB connection string.
      * 
@@ -34,7 +33,7 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
     /**
@@ -61,7 +60,7 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable Map<String,String> allConnectionStrings;
         private @Nullable String pdbDefault;
         private @Nullable String pdbIpDefault;
         public Builder() {}
@@ -73,7 +72,7 @@ public final class PluggableDatabasesRemoteCloneConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(@Nullable Map<String,String> allConnectionStrings) {
 
             this.allConnectionStrings = allConnectionStrings;
             return this;

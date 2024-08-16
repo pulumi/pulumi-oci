@@ -63,11 +63,11 @@ type LookupNetworkFirewallPolicyResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly optional name for the firewall policy. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource - Network Firewall Policy.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -76,7 +76,7 @@ type LookupNetworkFirewallPolicyResult struct {
 	// The current state of the Network Firewall Policy.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time instant at which the Network Firewall Policy was updated in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
@@ -132,8 +132,8 @@ func (o LookupNetworkFirewallPolicyResultOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupNetworkFirewallPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly optional name for the firewall policy. Avoid entering confidential information.
@@ -142,8 +142,8 @@ func (o LookupNetworkFirewallPolicyResultOutput) DisplayName() pulumi.StringOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupNetworkFirewallPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallPolicyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource - Network Firewall Policy.
@@ -166,8 +166,8 @@ func (o LookupNetworkFirewallPolicyResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupNetworkFirewallPolicyResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupNetworkFirewallPolicyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkFirewallPolicyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time instant at which the Network Firewall Policy was created in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`

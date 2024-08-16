@@ -31,11 +31,11 @@ type Secret struct {
 	// The version number of the secret version that's currently in use.
 	CurrentVersionNumber pulumi.StringOutput `pulumi:"currentVersionNumber"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringOutput `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -43,7 +43,7 @@ type Secret struct {
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata pulumi.MapOutput `pulumi:"metadata"`
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime pulumi.StringOutput `pulumi:"nextRotationTime"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -118,11 +118,11 @@ type secretState struct {
 	// The version number of the secret version that's currently in use.
 	CurrentVersionNumber *string `pulumi:"currentVersionNumber"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId *string `pulumi:"keyId"`
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -130,7 +130,7 @@ type secretState struct {
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime *string `pulumi:"nextRotationTime"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -164,11 +164,11 @@ type SecretState struct {
 	// The version number of the secret version that's currently in use.
 	CurrentVersionNumber pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringPtrInput
 	// A property indicating when the secret was last rotated successfully, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
@@ -176,7 +176,7 @@ type SecretState struct {
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata pulumi.MapInput
+	Metadata pulumi.StringMapInput
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime pulumi.StringPtrInput
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
@@ -212,15 +212,15 @@ type secretArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the secret.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId string `pulumi:"keyId"`
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig *SecretRotationConfig `pulumi:"rotationConfig"`
 	// (Updatable) The content of the secret and metadata to help identify it.
@@ -241,15 +241,15 @@ type SecretArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the secret.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the secret. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
 	KeyId pulumi.StringInput
 	// (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata pulumi.MapInput
+	Metadata pulumi.StringMapInput
 	// (Updatable) Defines the frequency of the rotation and the information about the target system
 	RotationConfig SecretRotationConfigPtrInput
 	// (Updatable) The content of the secret and metadata to help identify it.
@@ -363,8 +363,8 @@ func (o SecretOutput) CurrentVersionNumber() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o SecretOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Secret) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SecretOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A brief description of the secret. Avoid entering confidential information.
@@ -373,8 +373,8 @@ func (o SecretOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o SecretOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Secret) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SecretOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -393,8 +393,8 @@ func (o SecretOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // (Updatable) Additional metadata that you can use to provide context about how to use the secret during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-func (o SecretOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *Secret) pulumi.MapOutput { return v.Metadata }).(pulumi.MapOutput)
+func (o SecretOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Secret) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`

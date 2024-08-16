@@ -63,8 +63,8 @@ type LookupModelResult struct {
 	// Describes what this model can be used for.
 	Capabilities []string `pulumi:"capabilities"`
 	// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
-	CompartmentId string                 `pulumi:"compartmentId"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A user-friendly name.
@@ -72,7 +72,7 @@ type LookupModelResult struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails []GetModelFineTuneDetail `pulumi:"fineTuneDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// An ID that uniquely identifies a pretrained or fine-tuned model.
 	Id string `pulumi:"id"`
 	// Whether a model is supported long-term. Only applicable to base models.
@@ -85,7 +85,7 @@ type LookupModelResult struct {
 	// The lifecycle state of the model.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -152,8 +152,8 @@ func (o LookupModelResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupModelResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An optional description of the model.
@@ -172,8 +172,8 @@ func (o LookupModelResultOutput) FineTuneDetails() GetModelFineTuneDetailArrayOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // An ID that uniquely identifies a pretrained or fine-tuned model.
@@ -206,8 +206,8 @@ func (o LookupModelResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the model was created in the format of an RFC3339 datetime string.

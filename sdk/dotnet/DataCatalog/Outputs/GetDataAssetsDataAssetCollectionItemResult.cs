@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
         /// <summary>
         /// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
         /// A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         /// </summary>
@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DataCatalog.Outputs
 
             string lifecycleDetails,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, string> properties,
 
             string state,
 

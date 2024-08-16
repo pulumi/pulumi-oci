@@ -69,13 +69,13 @@ type LookupTargetDatabaseResult struct {
 	// Details of the database for the registration in Data Safe.
 	DatabaseDetails []GetTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the peer target database in Data Safe.
 	Description string `pulumi:"description"`
 	// The display name of the peer target database in Data Safe.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe target database.
 	Id string `pulumi:"id"`
 	// Details about the current state of the peer target database in Data Safe.
@@ -86,8 +86,8 @@ type LookupTargetDatabaseResult struct {
 	// The current state of the target database in Data Safe.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags       map[string]interface{} `pulumi:"systemTags"`
-	TargetDatabaseId string                 `pulumi:"targetDatabaseId"`
+	SystemTags       map[string]string `pulumi:"systemTags"`
+	TargetDatabaseId string            `pulumi:"targetDatabaseId"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
@@ -160,8 +160,8 @@ func (o LookupTargetDatabaseResultOutput) DatabaseDetails() GetTargetDatabaseDat
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupTargetDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupTargetDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the peer target database in Data Safe.
@@ -175,8 +175,8 @@ func (o LookupTargetDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupTargetDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupTargetDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe target database.
@@ -208,8 +208,8 @@ func (o LookupTargetDatabaseResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupTargetDatabaseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupTargetDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTargetDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupTargetDatabaseResultOutput) TargetDatabaseId() pulumi.StringOutput {

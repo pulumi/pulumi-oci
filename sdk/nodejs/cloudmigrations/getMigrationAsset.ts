@@ -96,7 +96,7 @@ export interface GetMigrationAssetResult {
     /**
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
      */
-    readonly snapshots: {[key: string]: any};
+    readonly snapshots: {[key: string]: string};
     /**
      * OCID that is referenced to an asset for an inventory.
      */

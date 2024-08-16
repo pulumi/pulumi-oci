@@ -19,10 +19,10 @@ class MaskingPolicyArgs:
                  column_sources: pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]],
                  compartment_id: pulumi.Input[str],
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
@@ -36,10 +36,10 @@ class MaskingPolicyArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
                
                
@@ -120,14 +120,14 @@ class MaskingPolicyArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -156,14 +156,14 @@ class MaskingPolicyArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -273,10 +273,10 @@ class _MaskingPolicyState:
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
                  column_sources: Optional[pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
@@ -293,10 +293,10 @@ class _MaskingPolicyState:
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['MaskingPolicyColumnSourceArgs']]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
                
                
@@ -388,14 +388,14 @@ class _MaskingPolicyState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -424,14 +424,14 @@ class _MaskingPolicyState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -579,10 +579,10 @@ class MaskingPolicy(pulumi.CustomResource):
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
                  column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
@@ -656,10 +656,10 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
                
                
@@ -756,10 +756,10 @@ class MaskingPolicy(pulumi.CustomResource):
                  add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
                  column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
                  is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
                  is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
@@ -812,10 +812,10 @@ class MaskingPolicy(pulumi.CustomResource):
             add_masking_columns_from_sdm_trigger: Optional[pulumi.Input[int]] = None,
             column_sources: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             generate_health_report_trigger: Optional[pulumi.Input[int]] = None,
             is_drop_temp_tables_enabled: Optional[pulumi.Input[bool]] = None,
             is_redo_logging_enabled: Optional[pulumi.Input[bool]] = None,
@@ -837,10 +837,10 @@ class MaskingPolicy(pulumi.CustomResource):
         :param pulumi.Input[int] add_masking_columns_from_sdm_trigger: (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MaskingPolicyColumnSourceArgs', 'MaskingPolicyColumnSourceArgsDict']]]] column_sources: (Updatable) Details to associate a column source with a masking policy.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the masking policy should be created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the masking policy.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the masking policy. The name does not have to be unique, and it's changeable.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[int] generate_health_report_trigger: (Updatable) An optional property when incremented triggers Generate Health Report. Could be set to any integer value.
                
                
@@ -907,7 +907,7 @@ class MaskingPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -931,7 +931,7 @@ class MaskingPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """

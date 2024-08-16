@@ -37,7 +37,7 @@ type SqlFirewallPolicy struct {
 	// The database user name.
 	DbUserName pulumi.StringOutput `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL Firewall policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
@@ -45,7 +45,7 @@ type SqlFirewallPolicy struct {
 	// (Updatable) Specifies the SQL Firewall policy enforcement option.
 	EnforcementScope pulumi.StringOutput `pulumi:"enforcementScope"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the SQL Firewall policy in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy corresponding to the SQL Firewall policy.
@@ -59,7 +59,7 @@ type SqlFirewallPolicy struct {
 	// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
@@ -117,7 +117,7 @@ type sqlFirewallPolicyState struct {
 	// The database user name.
 	DbUserName *string `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL Firewall policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
@@ -125,7 +125,7 @@ type sqlFirewallPolicyState struct {
 	// (Updatable) Specifies the SQL Firewall policy enforcement option.
 	EnforcementScope *string `pulumi:"enforcementScope"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the SQL Firewall policy in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy corresponding to the SQL Firewall policy.
@@ -139,7 +139,7 @@ type sqlFirewallPolicyState struct {
 	// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
@@ -165,7 +165,7 @@ type SqlFirewallPolicyState struct {
 	// The database user name.
 	DbUserName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the SQL Firewall policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
@@ -173,7 +173,7 @@ type SqlFirewallPolicyState struct {
 	// (Updatable) Specifies the SQL Firewall policy enforcement option.
 	EnforcementScope pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the SQL Firewall policy in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the security policy corresponding to the SQL Firewall policy.
@@ -187,7 +187,7 @@ type SqlFirewallPolicyState struct {
 	// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time that the SQL Firewall policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the SQL Firewall policy was last updated, in the format defined by RFC3339.
@@ -215,7 +215,7 @@ type sqlFirewallPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the SQL Firewall policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL Firewall policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
@@ -223,7 +223,7 @@ type sqlFirewallPolicyArgs struct {
 	// (Updatable) Specifies the SQL Firewall policy enforcement option.
 	EnforcementScope *string `pulumi:"enforcementScope"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the SQL Firewall policy resource.
 	SqlFirewallPolicyId string `pulumi:"sqlFirewallPolicyId"`
 	// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
@@ -248,7 +248,7 @@ type SqlFirewallPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the SQL Firewall policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the SQL Firewall policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the SQL Firewall policy. The name does not have to be unique, and it is changeable.
@@ -256,7 +256,7 @@ type SqlFirewallPolicyArgs struct {
 	// (Updatable) Specifies the SQL Firewall policy enforcement option.
 	EnforcementScope pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the SQL Firewall policy resource.
 	SqlFirewallPolicyId pulumi.StringInput
 	// (Updatable) Specifies whether the SQL Firewall policy is enabled or disabled.
@@ -383,8 +383,8 @@ func (o SqlFirewallPolicyOutput) DbUserName() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o SqlFirewallPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the SQL Firewall policy.
@@ -403,8 +403,8 @@ func (o SqlFirewallPolicyOutput) EnforcementScope() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o SqlFirewallPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the SQL Firewall policy in Data Safe.
@@ -438,8 +438,8 @@ func (o SqlFirewallPolicyOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SqlFirewallPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SqlFirewallPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlFirewallPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time that the SQL Firewall policy was created, in the format defined by RFC3339.

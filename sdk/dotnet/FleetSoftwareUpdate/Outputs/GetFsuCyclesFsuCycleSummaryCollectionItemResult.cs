@@ -17,11 +17,11 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemBatchingStrategyResult> BatchingStrategies;
         public readonly string CollectionType;
         public readonly string CompartmentId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionResult> DiagnosticsCollections;
         public readonly string DisplayName;
         public readonly string ExecutingFsuActionId;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string FsuCollectionId;
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailResult> GoalVersionDetails;
         public readonly string Id;
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteResult> NextActionToExecutes;
         public readonly ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleResult> StageActionSchedules;
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         public readonly string TimeFinished;
         public readonly string TimeUpdated;
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             ImmutableArray<Outputs.GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionResult> diagnosticsCollections,
 
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string executingFsuActionId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string fsuCollectionId,
 
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

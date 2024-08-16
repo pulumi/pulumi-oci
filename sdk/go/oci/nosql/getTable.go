@@ -66,9 +66,9 @@ type LookupTableResult struct {
 	// A DDL statement representing the schema.
 	DdlStatement string `pulumi:"ddlStatement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
 	Id string `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
@@ -90,7 +90,7 @@ type LookupTableResult struct {
 	// The state of a table.
 	State string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Throughput and storage limits configuration of a table.
 	TableLimits   []GetTableTableLimit `pulumi:"tableLimits"`
 	TableNameOrId string               `pulumi:"tableNameOrId"`
@@ -153,13 +153,13 @@ func (o LookupTableResultOutput) DdlStatement() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o LookupTableResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTableResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupTableResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTableResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupTableResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTableResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupTableResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTableResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable.
@@ -213,8 +213,8 @@ func (o LookupTableResultOutput) State() pulumi.StringOutput {
 }
 
 // Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-func (o LookupTableResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTableResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupTableResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTableResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Throughput and storage limits configuration of a table.

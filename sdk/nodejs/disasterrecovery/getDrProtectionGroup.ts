@@ -52,7 +52,7 @@ export interface GetDrProtectionGroupResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly disassociateTrigger: number;
     /**
      * The display name of the DR protection group.  Example: `EBS PHX Group`
@@ -62,7 +62,7 @@ export interface GetDrProtectionGroupResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The OCID of the DR protection group.  Example: `ocid1.drprotectiongroup.oc1..uniqueID`
      */
@@ -102,7 +102,7 @@ export interface GetDrProtectionGroupResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */

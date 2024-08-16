@@ -102,7 +102,7 @@ class DrgRouteTableRouteRuleArgs:
 @pulumi.input_type
 class _DrgRouteTableRouteRuleState:
     def __init__(__self__, *,
-                 attributes: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  destination: Optional[pulumi.Input[str]] = None,
                  destination_type: Optional[pulumi.Input[str]] = None,
                  drg_route_table_id: Optional[pulumi.Input[str]] = None,
@@ -113,7 +113,7 @@ class _DrgRouteTableRouteRuleState:
                  route_type: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrgRouteTableRouteRule resources.
-        :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] attributes: Additional properties for the route, computed by the service.
         :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
                
                Potential values:
@@ -154,14 +154,14 @@ class _DrgRouteTableRouteRuleState:
 
     @property
     @pulumi.getter
-    def attributes(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def attributes(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional properties for the route, computed by the service.
         """
         return pulumi.get(self, "attributes")
 
     @attributes.setter
-    def attributes(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def attributes(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "attributes", value)
 
     @property
@@ -411,7 +411,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            attributes: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            attributes: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             destination: Optional[pulumi.Input[str]] = None,
             destination_type: Optional[pulumi.Input[str]] = None,
             drg_route_table_id: Optional[pulumi.Input[str]] = None,
@@ -427,7 +427,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] attributes: Additional properties for the route, computed by the service.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] attributes: Additional properties for the route, computed by the service.
         :param pulumi.Input[str] destination: (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
                
                Potential values:
@@ -464,7 +464,7 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def attributes(self) -> pulumi.Output[Mapping[str, Any]]:
+    def attributes(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Additional properties for the route, computed by the service.
         """

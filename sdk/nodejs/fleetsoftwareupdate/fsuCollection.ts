@@ -36,15 +36,15 @@ export class FsuCollection extends pulumi.CustomResource {
 
     public /*out*/ readonly activeFsuCycles!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle[]>;
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly displayName!: pulumi.Output<string>;
     public readonly fleetDiscovery!: pulumi.Output<outputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     public readonly serviceType!: pulumi.Output<string>;
     public readonly sourceMajorVersion!: pulumi.Output<string>;
     public /*out*/ readonly state!: pulumi.Output<string>;
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly targetCount!: pulumi.Output<number>;
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
@@ -119,15 +119,15 @@ export class FsuCollection extends pulumi.CustomResource {
 export interface FsuCollectionState {
     activeFsuCycles?: pulumi.Input<pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionActiveFsuCycle>[]>;
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     lifecycleDetails?: pulumi.Input<string>;
     serviceType?: pulumi.Input<string>;
     sourceMajorVersion?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     targetCount?: pulumi.Input<number>;
     timeCreated?: pulumi.Input<string>;
     timeUpdated?: pulumi.Input<string>;
@@ -139,10 +139,10 @@ export interface FsuCollectionState {
  */
 export interface FsuCollectionArgs {
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     fleetDiscovery?: pulumi.Input<inputs.FleetSoftwareUpdate.FsuCollectionFleetDiscovery>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     serviceType: pulumi.Input<string>;
     sourceMajorVersion: pulumi.Input<string>;
     type: pulumi.Input<string>;

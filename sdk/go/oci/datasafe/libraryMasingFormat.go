@@ -33,7 +33,7 @@ type LibraryMasingFormat struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
@@ -41,7 +41,7 @@ type LibraryMasingFormat struct {
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries LibraryMasingFormatFormatEntryArrayOutput `pulumi:"formatEntries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
 	//
 	// ** IMPORTANT **
@@ -96,7 +96,7 @@ type libraryMasingFormatState struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
@@ -104,7 +104,7 @@ type libraryMasingFormatState struct {
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries []LibraryMasingFormatFormatEntry `pulumi:"formatEntries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
 	//
 	// ** IMPORTANT **
@@ -124,7 +124,7 @@ type LibraryMasingFormatState struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
@@ -132,7 +132,7 @@ type LibraryMasingFormatState struct {
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries LibraryMasingFormatFormatEntryArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
 	//
 	// ** IMPORTANT **
@@ -156,7 +156,7 @@ type libraryMasingFormatArgs struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the library masking format.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
@@ -164,7 +164,7 @@ type libraryMasingFormatArgs struct {
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries []LibraryMasingFormatFormatEntry `pulumi:"formatEntries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
 	//
 	// ** IMPORTANT **
@@ -177,7 +177,7 @@ type LibraryMasingFormatArgs struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the library masking format.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the library masking format. The name does not have to be unique, and it's changeable.
@@ -185,7 +185,7 @@ type LibraryMasingFormatArgs struct {
 	// (Updatable) An array of format entries. The combined output of all the format entries is used for masking.
 	FormatEntries LibraryMasingFormatFormatEntryArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.
 	//
 	// ** IMPORTANT **
@@ -286,8 +286,8 @@ func (o LibraryMasingFormatOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LibraryMasingFormatOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LibraryMasingFormatOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the library masking format.
@@ -306,8 +306,8 @@ func (o LibraryMasingFormatOutput) FormatEntries() LibraryMasingFormatFormatEntr
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LibraryMasingFormatOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LibraryMasingFormatOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LibraryMasingFormat) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An array of OCIDs of the sensitive types compatible with the library masking format. It helps track the sensitive types for which the library masking format is being created.

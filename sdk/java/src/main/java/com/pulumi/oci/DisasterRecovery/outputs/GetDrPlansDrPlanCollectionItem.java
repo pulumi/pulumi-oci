@@ -6,7 +6,6 @@ package com.pulumi.oci.DisasterRecovery.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrPlansDrPlanCollectionItemPlanGroup;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,7 +22,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
      * 
@@ -38,7 +37,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      * 
@@ -73,7 +72,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      * 
@@ -102,7 +101,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -123,7 +122,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -172,7 +171,7 @@ public final class GetDrPlansDrPlanCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -207,17 +206,17 @@ public final class GetDrPlansDrPlanCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String drProtectionGroupId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifeCycleDetails;
         private String peerDrProtectionGroupId;
         private String peerRegion;
         private List<GetDrPlansDrPlanCollectionItemPlanGroup> planGroups;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String type;
@@ -250,7 +249,7 @@ public final class GetDrPlansDrPlanCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "definedTags");
             }
@@ -274,7 +273,7 @@ public final class GetDrPlansDrPlanCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "freeformTags");
             }
@@ -333,7 +332,7 @@ public final class GetDrPlansDrPlanCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDrPlansDrPlanCollectionItem", "systemTags");
             }

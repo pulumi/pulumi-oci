@@ -5,7 +5,6 @@ package com.pulumi.oci.DataIntegration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceTaskPollRestCallConfigConfigValues;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -38,7 +37,7 @@ public final class WorkspaceTaskPollRestCallConfig {
      * @return (Updatable) The headers for the REST call.
      * 
      */
-    private @Nullable Map<String,Object> requestHeaders;
+    private @Nullable Map<String,String> requestHeaders;
 
     private WorkspaceTaskPollRestCallConfig() {}
     /**
@@ -73,7 +72,7 @@ public final class WorkspaceTaskPollRestCallConfig {
      * @return (Updatable) The headers for the REST call.
      * 
      */
-    public Map<String,Object> requestHeaders() {
+    public Map<String,String> requestHeaders() {
         return this.requestHeaders == null ? Map.of() : this.requestHeaders;
     }
 
@@ -90,7 +89,7 @@ public final class WorkspaceTaskPollRestCallConfig {
         private @Nullable String key;
         private @Nullable String methodType;
         private @Nullable String modelType;
-        private @Nullable Map<String,Object> requestHeaders;
+        private @Nullable Map<String,String> requestHeaders;
         public Builder() {}
         public Builder(WorkspaceTaskPollRestCallConfig defaults) {
     	      Objects.requireNonNull(defaults);
@@ -126,7 +125,7 @@ public final class WorkspaceTaskPollRestCallConfig {
             return this;
         }
         @CustomType.Setter
-        public Builder requestHeaders(@Nullable Map<String,Object> requestHeaders) {
+        public Builder requestHeaders(@Nullable Map<String,String> requestHeaders) {
 
             this.requestHeaders = requestHeaders;
             return this;

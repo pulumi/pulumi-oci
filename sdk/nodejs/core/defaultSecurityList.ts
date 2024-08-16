@@ -35,10 +35,10 @@ export class DefaultSecurityList extends pulumi.CustomResource {
     }
 
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly displayName!: pulumi.Output<string>;
     public readonly egressSecurityRules!: pulumi.Output<outputs.Core.DefaultSecurityListEgressSecurityRule[] | undefined>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public readonly ingressSecurityRules!: pulumi.Output<outputs.Core.DefaultSecurityListIngressSecurityRule[] | undefined>;
     public readonly manageDefaultResourceId!: pulumi.Output<string>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -91,10 +91,10 @@ export class DefaultSecurityList extends pulumi.CustomResource {
  */
 export interface DefaultSecurityListState {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[]>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[]>;
     manageDefaultResourceId?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
@@ -106,10 +106,10 @@ export interface DefaultSecurityListState {
  */
 export interface DefaultSecurityListArgs {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     egressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListEgressSecurityRule>[]>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     ingressSecurityRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultSecurityListIngressSecurityRule>[]>;
     manageDefaultResourceId: pulumi.Input<string>;
 }

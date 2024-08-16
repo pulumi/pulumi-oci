@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -23,7 +22,7 @@ public final class JobRunJobConfigurationOverrideDetails {
      * @return Environment variables to set for the job.
      * 
      */
-    private @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Map<String,String> environmentVariables;
     /**
      * @return The type of job.
      * 
@@ -47,7 +46,7 @@ public final class JobRunJobConfigurationOverrideDetails {
      * @return Environment variables to set for the job.
      * 
      */
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
@@ -75,7 +74,7 @@ public final class JobRunJobConfigurationOverrideDetails {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String commandLineArguments;
-        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Map<String,String> environmentVariables;
         private String jobType;
         private @Nullable String maximumRuntimeInMinutes;
         public Builder() {}
@@ -94,7 +93,7 @@ public final class JobRunJobConfigurationOverrideDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(@Nullable Map<String,String> environmentVariables) {
 
             this.environmentVariables = environmentVariables;
             return this;

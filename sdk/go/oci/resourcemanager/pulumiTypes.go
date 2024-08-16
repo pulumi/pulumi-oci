@@ -219,7 +219,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the private endpoint. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
@@ -227,7 +227,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones []string `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
 	Id string `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
@@ -261,7 +261,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the private endpoint. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a resource by name. Requires `sortBy` set to `DISPLAYNAME`. Alternatively, when you know the resource OCID, use the related Get operation.
@@ -269,7 +269,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// DNS Proxy forwards any DNS FQDN queries over into the consumer DNS resolver if the DNS FQDN is included in the dns zones list otherwise it goes to service provider VCN resolver.
 	DnsZones pulumi.StringArrayInput `pulumi:"dnsZones"`
 	// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
 	Id pulumi.StringInput `pulumi:"id"`
 	// When `true`, allows the private endpoint to be used with a configuration source provider.
@@ -345,8 +345,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the private endpoint. Avoid entering confidential information.
@@ -365,8 +365,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DnsZones() pulum
 }
 
 // Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
@@ -648,13 +648,13 @@ type GetStacksStack struct {
 	CompartmentId string                     `pulumi:"compartmentId"`
 	ConfigSource  GetStacksStackConfigSource `pulumi:"configSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// General description of the stack.
 	Description string `pulumi:"description"`
 	// Display name on which to query.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id string `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -666,8 +666,8 @@ type GetStacksStack struct {
 	// * DELETED
 	State string `pulumi:"state"`
 	// The date and time at which the stack was created.
-	TimeCreated string                 `pulumi:"timeCreated"`
-	Variables   map[string]interface{} `pulumi:"variables"`
+	TimeCreated string            `pulumi:"timeCreated"`
+	Variables   map[string]string `pulumi:"variables"`
 }
 
 // GetStacksStackInput is an input type that accepts GetStacksStackArgs and GetStacksStackOutput values.
@@ -686,13 +686,13 @@ type GetStacksStackArgs struct {
 	CompartmentId pulumi.StringInput              `pulumi:"compartmentId"`
 	ConfigSource  GetStacksStackConfigSourceInput `pulumi:"configSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// General description of the stack.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Display name on which to query.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter that returns only those resources that match the specified lifecycle state. The state value is case-insensitive.
@@ -704,8 +704,8 @@ type GetStacksStackArgs struct {
 	// * DELETED
 	State pulumi.StringInput `pulumi:"state"`
 	// The date and time at which the stack was created.
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	Variables   pulumi.MapInput    `pulumi:"variables"`
+	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
+	Variables   pulumi.StringMapInput `pulumi:"variables"`
 }
 
 func (GetStacksStackArgs) ElementType() reflect.Type {
@@ -769,8 +769,8 @@ func (o GetStacksStackOutput) ConfigSource() GetStacksStackConfigSourceOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetStacksStackOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStacksStack) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetStacksStackOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // General description of the stack.
@@ -784,8 +784,8 @@ func (o GetStacksStackOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetStacksStackOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStacksStack) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetStacksStackOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) on which to query for a stack.
@@ -809,8 +809,8 @@ func (o GetStacksStackOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetStacksStack) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-func (o GetStacksStackOutput) Variables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStacksStack) map[string]interface{} { return v.Variables }).(pulumi.MapOutput)
+func (o GetStacksStackOutput) Variables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStacksStack) map[string]string { return v.Variables }).(pulumi.StringMapOutput)
 }
 
 type GetStacksStackArrayOutput struct{ *pulumi.OutputState }

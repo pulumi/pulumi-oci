@@ -91,7 +91,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) OceInstance description
      */
@@ -103,7 +103,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Unique GUID identifier that is immutable on creation
      */
@@ -143,7 +143,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    public /*out*/ readonly service!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly service!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current state of the instance lifecycle.
      */
@@ -155,7 +155,7 @@ export class Instance extends pulumi.CustomResource {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Tenancy Identifier
      */
@@ -297,7 +297,7 @@ export interface InstanceState {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) OceInstance description
      */
@@ -309,7 +309,7 @@ export interface InstanceState {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Unique GUID identifier that is immutable on creation
      */
@@ -349,7 +349,7 @@ export interface InstanceState {
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    service?: pulumi.Input<{[key: string]: any}>;
+    service?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current state of the instance lifecycle.
      */
@@ -361,7 +361,7 @@ export interface InstanceState {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    systemTags?: pulumi.Input<{[key: string]: any}>;
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Tenancy Identifier
      */
@@ -411,7 +411,7 @@ export interface InstanceArgs {
     /**
      * (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) OceInstance description
      */
@@ -423,7 +423,7 @@ export interface InstanceArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Identity Cloud Service access token identifying a stripe and service administrator user
      */

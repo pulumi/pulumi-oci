@@ -37,13 +37,13 @@ import (
 //				IdcsAccessToken:   pulumi.Any(blockchainPlatformIdcsAccessToken),
 //				PlatformRole:      pulumi.Any(blockchainPlatformPlatformRole),
 //				CaCertArchiveText: pulumi.Any(blockchainPlatformCaCertArchiveText),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description:     pulumi.Any(blockchainPlatformDescription),
 //				FederatedUserId: pulumi.Any(testUser.Id),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsByol:          pulumi.Any(blockchainPlatformIsByol),
 //				PlatformVersion: pulumi.Any(blockchainPlatformPlatformVersion),
@@ -76,7 +76,7 @@ type BlockchainPlatform struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 	ComputeShape pulumi.StringOutput `pulumi:"computeShape"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Platform Instance Description
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Platform Instance Display name, can be renamed
@@ -84,7 +84,7 @@ type BlockchainPlatform struct {
 	// Identifier for a federated user
 	FederatedUserId pulumi.StringOutput `pulumi:"federatedUserId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos BlockchainPlatformHostOcpuUtilizationInfoArrayOutput `pulumi:"hostOcpuUtilizationInfos"`
 	// IDCS access token with Identity Domain Administrator role
@@ -187,7 +187,7 @@ type blockchainPlatformState struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 	ComputeShape *string `pulumi:"computeShape"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Platform Instance Description
 	Description *string `pulumi:"description"`
 	// Platform Instance Display name, can be renamed
@@ -195,7 +195,7 @@ type blockchainPlatformState struct {
 	// Identifier for a federated user
 	FederatedUserId *string `pulumi:"federatedUserId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos []BlockchainPlatformHostOcpuUtilizationInfo `pulumi:"hostOcpuUtilizationInfos"`
 	// IDCS access token with Identity Domain Administrator role
@@ -247,7 +247,7 @@ type BlockchainPlatformState struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 	ComputeShape pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Platform Instance Description
 	Description pulumi.StringPtrInput
 	// Platform Instance Display name, can be renamed
@@ -255,7 +255,7 @@ type BlockchainPlatformState struct {
 	// Identifier for a federated user
 	FederatedUserId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of OcpuUtilization for all hosts
 	HostOcpuUtilizationInfos BlockchainPlatformHostOcpuUtilizationInfoArrayInput
 	// IDCS access token with Identity Domain Administrator role
@@ -309,7 +309,7 @@ type blockchainPlatformArgs struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 	ComputeShape string `pulumi:"computeShape"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Platform Instance Description
 	Description *string `pulumi:"description"`
 	// Platform Instance Display name, can be renamed
@@ -317,7 +317,7 @@ type blockchainPlatformArgs struct {
 	// Identifier for a federated user
 	FederatedUserId *string `pulumi:"federatedUserId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS access token with Identity Domain Administrator role
 	IdcsAccessToken string `pulumi:"idcsAccessToken"`
 	// Bring your own license
@@ -348,7 +348,7 @@ type BlockchainPlatformArgs struct {
 	// Compute shape - STANDARD or ENTERPRISE_SMALL or ENTERPRISE_MEDIUM or ENTERPRISE_LARGE or ENTERPRISE_EXTRA_LARGE
 	ComputeShape pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Platform Instance Description
 	Description pulumi.StringPtrInput
 	// Platform Instance Display name, can be renamed
@@ -356,7 +356,7 @@ type BlockchainPlatformArgs struct {
 	// Identifier for a federated user
 	FederatedUserId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// IDCS access token with Identity Domain Administrator role
 	IdcsAccessToken pulumi.StringInput
 	// Bring your own license
@@ -486,8 +486,8 @@ func (o BlockchainPlatformOutput) ComputeShape() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o BlockchainPlatformOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BlockchainPlatform) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BlockchainPlatformOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BlockchainPlatform) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Platform Instance Description
@@ -506,8 +506,8 @@ func (o BlockchainPlatformOutput) FederatedUserId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o BlockchainPlatformOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BlockchainPlatform) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BlockchainPlatformOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BlockchainPlatform) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of OcpuUtilization for all hosts

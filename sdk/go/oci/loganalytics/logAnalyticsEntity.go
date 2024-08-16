@@ -36,11 +36,11 @@ import (
 //				Name:            pulumi.Any(logAnalyticsEntityName),
 //				Namespace:       pulumi.Any(logAnalyticsEntityNamespace),
 //				CloudResourceId: pulumi.Any(testCloudResource.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Hostname:          pulumi.Any(logAnalyticsEntityHostname),
 //				ManagementAgentId: pulumi.Any(testManagementAgent.Id),
@@ -84,13 +84,13 @@ type LogAnalyticsEntity struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName pulumi.StringOutput `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName pulumi.StringOutput `pulumi:"entityTypeName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -108,7 +108,7 @@ type LogAnalyticsEntity struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties pulumi.MapOutput `pulumi:"properties"`
+	Properties pulumi.StringMapOutput `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId pulumi.StringOutput `pulumi:"sourceId"`
 	// The current state of the log analytics entity.
@@ -172,13 +172,13 @@ type logAnalyticsEntityState struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName *string `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName *string `pulumi:"entityTypeName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname *string `pulumi:"hostname"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -196,7 +196,7 @@ type logAnalyticsEntityState struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId *string `pulumi:"sourceId"`
 	// The current state of the log analytics entity.
@@ -222,13 +222,13 @@ type LogAnalyticsEntityState struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName pulumi.StringPtrInput
 	// Log analytics entity type name.
 	EntityTypeName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname pulumi.StringPtrInput
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -246,7 +246,7 @@ type LogAnalyticsEntityState struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringPtrInput
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties pulumi.MapInput
+	Properties pulumi.StringMapInput
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId pulumi.StringPtrInput
 	// The current state of the log analytics entity.
@@ -274,11 +274,11 @@ type logAnalyticsEntityArgs struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Log analytics entity type name.
 	EntityTypeName string `pulumi:"entityTypeName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname *string `pulumi:"hostname"`
 	// (Updatable) The OCID of the Management Agent.
@@ -290,7 +290,7 @@ type logAnalyticsEntityArgs struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId *string `pulumi:"sourceId"`
 	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
@@ -309,11 +309,11 @@ type LogAnalyticsEntityArgs struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Log analytics entity type name.
 	EntityTypeName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname pulumi.StringPtrInput
 	// (Updatable) The OCID of the Management Agent.
@@ -325,7 +325,7 @@ type LogAnalyticsEntityArgs struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput
 	// (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties pulumi.MapInput
+	Properties pulumi.StringMapInput
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId pulumi.StringPtrInput
 	// (Updatable) The date and time the resource was last discovered, in the format defined by RFC3339.
@@ -440,8 +440,8 @@ func (o LogAnalyticsEntityOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LogAnalyticsEntityOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LogAnalyticsEntityOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Internal name for the log analytics entity type.
@@ -455,8 +455,8 @@ func (o LogAnalyticsEntityOutput) EntityTypeName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LogAnalyticsEntityOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LogAnalyticsEntityOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
@@ -500,8 +500,8 @@ func (o LogAnalyticsEntityOutput) Namespace() pulumi.StringOutput {
 }
 
 // (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
-func (o LogAnalyticsEntityOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.MapOutput { return v.Properties }).(pulumi.MapOutput)
+func (o LogAnalyticsEntityOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogAnalyticsEntity) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // This indicates the type of source. It is primarily for Enterprise Manager Repository ID.

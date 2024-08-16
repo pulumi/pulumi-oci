@@ -83,8 +83,8 @@ type LookupDatabaseInsightResult struct {
 	DatabaseVersion      string `pulumi:"databaseVersion"`
 	DbmPrivateEndpointId string `pulumi:"dbmPrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DeploymentType string                 `pulumi:"deploymentType"`
+	DefinedTags    map[string]string `pulumi:"definedTags"`
+	DeploymentType string            `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -102,7 +102,7 @@ type LookupDatabaseInsightResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId string `pulumi:"exadataInsightId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Database insight identifier
 	Id string `pulumi:"id"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
@@ -126,7 +126,7 @@ type LookupDatabaseInsightResult struct {
 	// Indicates the status of a database insight in Operations Insights
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -237,8 +237,8 @@ func (o LookupDatabaseInsightResultOutput) DbmPrivateEndpointId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDatabaseInsightResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDatabaseInsightResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDatabaseInsightResultOutput) DeploymentType() pulumi.StringOutput {
@@ -286,8 +286,8 @@ func (o LookupDatabaseInsightResultOutput) ExadataInsightId() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDatabaseInsightResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDatabaseInsightResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Database insight identifier
@@ -346,8 +346,8 @@ func (o LookupDatabaseInsightResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDatabaseInsightResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDatabaseInsightResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the database insight was first enabled. An RFC3339 formatted datetime string

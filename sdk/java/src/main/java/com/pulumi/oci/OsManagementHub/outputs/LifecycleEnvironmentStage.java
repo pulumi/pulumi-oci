@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.OsManagementHub.outputs.LifecycleEnvironmentStageManagedInstanceId;
 import com.pulumi.oci.OsManagementHub.outputs.LifecycleEnvironmentStageSoftwareSourceId;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,7 @@ public final class LifecycleEnvironmentStage {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
@@ -42,7 +41,7 @@ public final class LifecycleEnvironmentStage {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * 
@@ -87,7 +86,7 @@ public final class LifecycleEnvironmentStage {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
     /**
      * @return The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * 
@@ -126,7 +125,7 @@ public final class LifecycleEnvironmentStage {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -140,7 +139,7 @@ public final class LifecycleEnvironmentStage {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -203,7 +202,7 @@ public final class LifecycleEnvironmentStage {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
@@ -242,9 +241,9 @@ public final class LifecycleEnvironmentStage {
     public static final class Builder {
         private @Nullable String archType;
         private @Nullable String compartmentId;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private String displayName;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
         private @Nullable String lifecycleEnvironmentId;
         private @Nullable String location;
@@ -253,7 +252,7 @@ public final class LifecycleEnvironmentStage {
         private Integer rank;
         private @Nullable List<LifecycleEnvironmentStageSoftwareSourceId> softwareSourceIds;
         private @Nullable String state;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable String timeCreated;
         private @Nullable String timeModified;
         private @Nullable String vendorName;
@@ -292,7 +291,7 @@ public final class LifecycleEnvironmentStage {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -306,7 +305,7 @@ public final class LifecycleEnvironmentStage {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -368,7 +367,7 @@ public final class LifecycleEnvironmentStage {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

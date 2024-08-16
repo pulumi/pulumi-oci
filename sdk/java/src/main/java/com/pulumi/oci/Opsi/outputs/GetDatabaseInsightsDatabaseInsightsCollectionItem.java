@@ -10,7 +10,6 @@ import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollection
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -78,7 +77,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String deploymentType;
     /**
      * @return Unique Enterprise Manager bridge identifier
@@ -124,7 +123,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
@@ -184,7 +183,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
      * 
@@ -281,7 +280,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String deploymentType() {
@@ -347,7 +346,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -431,7 +430,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -470,7 +469,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String databaseType;
         private String databaseVersion;
         private String dbmPrivateEndpointId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String deploymentType;
         private String enterpriseManagerBridgeId;
         private String enterpriseManagerEntityDisplayName;
@@ -480,7 +479,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String enterpriseManagerIdentifier;
         private String entitySource;
         private String exadataInsightId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isHeatWaveClusterAttached;
         private Boolean isHighlyAvailable;
@@ -492,7 +491,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String serviceName;
         private String state;
         private String status;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -643,7 +642,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "definedTags");
             }
@@ -723,7 +722,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "freeformTags");
             }
@@ -819,7 +818,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "systemTags");
             }

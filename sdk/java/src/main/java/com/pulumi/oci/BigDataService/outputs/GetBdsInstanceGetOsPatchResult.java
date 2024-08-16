@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchFilter;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceGetOsPatchTargetPackage;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +31,7 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      * 
      */
-    private Map<String,Object> minCompatibleOdhVersionMap;
+    private Map<String,String> minCompatibleOdhVersionMap;
     /**
      * @return Version of the os patch.
      * 
@@ -79,7 +78,7 @@ public final class GetBdsInstanceGetOsPatchResult {
      * @return Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      * 
      */
-    public Map<String,Object> minCompatibleOdhVersionMap() {
+    public Map<String,String> minCompatibleOdhVersionMap() {
         return this.minCompatibleOdhVersionMap;
     }
     /**
@@ -124,7 +123,7 @@ public final class GetBdsInstanceGetOsPatchResult {
         private @Nullable List<GetBdsInstanceGetOsPatchFilter> filters;
         private String id;
         private String minBdsVersion;
-        private Map<String,Object> minCompatibleOdhVersionMap;
+        private Map<String,String> minCompatibleOdhVersionMap;
         private String osPatchVersion;
         private String patchType;
         private String releaseDate;
@@ -177,7 +176,7 @@ public final class GetBdsInstanceGetOsPatchResult {
             return this;
         }
         @CustomType.Setter
-        public Builder minCompatibleOdhVersionMap(Map<String,Object> minCompatibleOdhVersionMap) {
+        public Builder minCompatibleOdhVersionMap(Map<String,String> minCompatibleOdhVersionMap) {
             if (minCompatibleOdhVersionMap == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceGetOsPatchResult", "minCompatibleOdhVersionMap");
             }

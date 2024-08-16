@@ -72,7 +72,7 @@ type WorkspaceProject struct {
 	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceProjectMetadataArrayOutput `pulumi:"metadatas"`
 	// The type of the object.
@@ -140,7 +140,7 @@ type workspaceProjectState struct {
 	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceProjectMetadata `pulumi:"metadatas"`
 	// The type of the object.
@@ -173,7 +173,7 @@ type WorkspaceProjectState struct {
 	// (Updatable) Generated key that can be used in API calls to identify project.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput
+	KeyMap pulumi.StringMapInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceProjectMetadataArrayInput
 	// The type of the object.
@@ -352,8 +352,8 @@ func (o WorkspaceProjectOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o WorkspaceProjectOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceProject) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
+func (o WorkspaceProjectOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceProject) pulumi.StringMapOutput { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

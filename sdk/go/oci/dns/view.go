@@ -61,13 +61,13 @@ type View struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name of the view.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolOutput `pulumi:"isProtected"`
 	// If specified, must be `PRIVATE` when creating a view for private zones.
@@ -123,13 +123,13 @@ type viewState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the view.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected *bool `pulumi:"isProtected"`
 	// If specified, must be `PRIVATE` when creating a view for private zones.
@@ -153,13 +153,13 @@ type ViewState struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the view.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
 	IsProtected pulumi.BoolPtrInput
 	// If specified, must be `PRIVATE` when creating a view for private zones.
@@ -187,13 +187,13 @@ type viewArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name of the view.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If specified, must be `PRIVATE` when creating a view for private zones.
 	//
 	// ** IMPORTANT **
@@ -208,13 +208,13 @@ type ViewArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Operations": {"CostCenter": "42"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name of the view.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//
 	// **Example:** `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// If specified, must be `PRIVATE` when creating a view for private zones.
 	//
 	// ** IMPORTANT **
@@ -317,8 +317,8 @@ func (o ViewOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 //
 // **Example:** `{"Operations": {"CostCenter": "42"}}`
-func (o ViewOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *View) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ViewOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *View) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The display name of the view.
@@ -329,8 +329,8 @@ func (o ViewOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 //
 // **Example:** `{"Department": "Finance"}`
-func (o ViewOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *View) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ViewOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *View) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.

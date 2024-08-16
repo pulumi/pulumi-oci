@@ -22,12 +22,12 @@ class BuildPipelineStageArgs:
                  build_runner_shape_config: Optional[pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs']] = None,
                  build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deliver_artifact_collection: Optional[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs']] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
@@ -42,12 +42,12 @@ class BuildPipelineStageArgs:
         :param pulumi.Input['BuildPipelineStageBuildRunnerShapeConfigArgs'] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs'] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs'] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
@@ -163,14 +163,14 @@ class BuildPipelineStageArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -223,14 +223,14 @@ class BuildPipelineStageArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -316,12 +316,12 @@ class _BuildPipelineStageState:
                  build_source_collection: Optional[pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs']] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deliver_artifact_collection: Optional[pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs']] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -330,7 +330,7 @@ class _BuildPipelineStageState:
                  project_id: Optional[pulumi.Input[str]] = None,
                  stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  wait_criteria: Optional[pulumi.Input['BuildPipelineStageWaitCriteriaArgs']] = None):
@@ -343,12 +343,12 @@ class _BuildPipelineStageState:
         :param pulumi.Input['BuildPipelineStageBuildSourceCollectionArgs'] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the pipeline is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input['BuildPipelineStageDeliverArtifactCollectionArgs'] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -357,7 +357,7 @@ class _BuildPipelineStageState:
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[str] state: The current state of the stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input['BuildPipelineStageWaitCriteriaArgs'] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -499,14 +499,14 @@ class _BuildPipelineStageState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -559,14 +559,14 @@ class _BuildPipelineStageState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -667,14 +667,14 @@ class _BuildPipelineStageState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -725,12 +725,12 @@ class BuildPipelineStage(pulumi.CustomResource):
                  build_runner_shape_config: Optional[pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']]] = None,
                  build_source_collection: Optional[pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deliver_artifact_collection: Optional[pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
@@ -819,12 +819,12 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']] build_runner_shape_config: (Updatable) The information about build runner.
         :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] primary_build_source: (Updatable) Name of the build source where the build_spec.yml file is located. If not specified, the first entry in the build source collection is chosen as primary build source.
@@ -932,12 +932,12 @@ class BuildPipelineStage(pulumi.CustomResource):
                  build_runner_shape_config: Optional[pulumi.Input[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict']]] = None,
                  build_source_collection: Optional[pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
                  build_spec_file: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  deliver_artifact_collection: Optional[pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
                  deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
                  primary_build_source: Optional[pulumi.Input[str]] = None,
@@ -1001,12 +1001,12 @@ class BuildPipelineStage(pulumi.CustomResource):
             build_source_collection: Optional[pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']]] = None,
             build_spec_file: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             deliver_artifact_collection: Optional[pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']]] = None,
             deploy_pipeline_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             image: Optional[pulumi.Input[str]] = None,
             is_pass_all_parameters_enabled: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -1015,7 +1015,7 @@ class BuildPipelineStage(pulumi.CustomResource):
             project_id: Optional[pulumi.Input[str]] = None,
             stage_execution_timeout_in_seconds: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             wait_criteria: Optional[pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']]] = None) -> 'BuildPipelineStage':
@@ -1033,12 +1033,12 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict']] build_source_collection: (Updatable) Collection of build sources.
         :param pulumi.Input[str] build_spec_file: (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment where the pipeline is created.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict']] deliver_artifact_collection: (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
         :param pulumi.Input[str] deploy_pipeline_id: (Updatable) A target deployment pipeline OCID that will run in this stage.
         :param pulumi.Input[str] description: (Updatable) Optional description about the stage.
         :param pulumi.Input[str] display_name: (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] image: (Updatable) Image name for the build environment
         :param pulumi.Input[bool] is_pass_all_parameters_enabled: (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1047,7 +1047,7 @@ class BuildPipelineStage(pulumi.CustomResource):
         :param pulumi.Input[str] project_id: The OCID of the DevOps project.
         :param pulumi.Input[int] stage_execution_timeout_in_seconds: (Updatable) Timeout for the build stage execution. Specify value in seconds.
         :param pulumi.Input[str] state: The current state of the stage.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[str] time_updated: The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param pulumi.Input[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict']] wait_criteria: (Updatable) Specifies wait criteria for the Wait stage.
@@ -1141,7 +1141,7 @@ class BuildPipelineStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1181,7 +1181,7 @@ class BuildPipelineStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
         """
@@ -1253,7 +1253,7 @@ class BuildPipelineStage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

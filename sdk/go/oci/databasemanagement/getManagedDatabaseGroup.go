@@ -61,11 +61,11 @@ type LookupManagedDatabaseGroupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The information specified by the user about the Managed Database Group.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
 	Id                     string `pulumi:"id"`
 	ManagedDatabaseGroupId string `pulumi:"managedDatabaseGroupId"`
@@ -76,7 +76,7 @@ type LookupManagedDatabaseGroupResult struct {
 	// The current lifecycle state of the Managed Database Group.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Managed Database Group was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Managed Database Group was last updated.
@@ -127,8 +127,8 @@ func (o LookupManagedDatabaseGroupResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupManagedDatabaseGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The information specified by the user about the Managed Database Group.
@@ -137,8 +137,8 @@ func (o LookupManagedDatabaseGroupResultOutput) Description() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupManagedDatabaseGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
@@ -168,8 +168,8 @@ func (o LookupManagedDatabaseGroupResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupManagedDatabaseGroupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseGroupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Managed Database Group was created.

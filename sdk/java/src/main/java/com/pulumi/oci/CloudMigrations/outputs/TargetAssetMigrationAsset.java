@@ -4,7 +4,6 @@
 package com.pulumi.oci.CloudMigrations.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -83,12 +82,12 @@ public final class TargetAssetMigrationAsset {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> snapshots;
+    private @Nullable Map<String,String> snapshots;
     /**
      * @return Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> sourceAssetData;
+    private @Nullable Map<String,String> sourceAssetData;
     /**
      * @return OCID that is referenced to an asset for an inventory.
      * 
@@ -216,14 +215,14 @@ public final class TargetAssetMigrationAsset {
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> snapshots() {
+    public Map<String,String> snapshots() {
         return this.snapshots == null ? Map.of() : this.snapshots;
     }
     /**
      * @return Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> sourceAssetData() {
+    public Map<String,String> sourceAssetData() {
         return this.sourceAssetData == null ? Map.of() : this.sourceAssetData;
     }
     /**
@@ -291,8 +290,8 @@ public final class TargetAssetMigrationAsset {
         private @Nullable String replicationCompartmentId;
         private @Nullable String replicationScheduleId;
         private @Nullable String snapShotBucketName;
-        private @Nullable Map<String,Object> snapshots;
-        private @Nullable Map<String,Object> sourceAssetData;
+        private @Nullable Map<String,String> snapshots;
+        private @Nullable Map<String,String> sourceAssetData;
         private @Nullable String sourceAssetId;
         private @Nullable String state;
         private @Nullable String tenancyId;
@@ -413,13 +412,13 @@ public final class TargetAssetMigrationAsset {
             return this;
         }
         @CustomType.Setter
-        public Builder snapshots(@Nullable Map<String,Object> snapshots) {
+        public Builder snapshots(@Nullable Map<String,String> snapshots) {
 
             this.snapshots = snapshots;
             return this;
         }
         @CustomType.Setter
-        public Builder sourceAssetData(@Nullable Map<String,Object> sourceAssetData) {
+        public Builder sourceAssetData(@Nullable Map<String,String> sourceAssetData) {
 
             this.sourceAssetData = sourceAssetData;
             return this;

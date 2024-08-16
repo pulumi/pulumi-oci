@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? CustomEnvironmentVariables;
+        public readonly ImmutableDictionary<string, string>? CustomEnvironmentVariables;
         /// <summary>
         /// (Updatable) Git configuration Details.
         /// </summary>
@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private NotebookSessionNotebookSessionRuntimeConfigDetails(
-            ImmutableDictionary<string, object>? customEnvironmentVariables,
+            ImmutableDictionary<string, string>? customEnvironmentVariables,
 
             Outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails? notebookSessionGitConfigDetails)
         {

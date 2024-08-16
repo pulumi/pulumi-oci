@@ -42,11 +42,11 @@ import (
 //					Query: pulumi.Any(adhocQueryAdhocQueryDetailsQuery),
 //				},
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -75,7 +75,7 @@ type AdhocQuery struct {
 	// Compartment OCID of adhoc query
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Error message to show on UI in case of failure
 	ErrorMessage pulumi.StringOutput `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -84,13 +84,13 @@ type AdhocQuery struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The current lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Status of the adhoc query
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the adhoc query was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the adhoc query was updated. Format defined by RFC3339.
@@ -140,7 +140,7 @@ type adhocQueryState struct {
 	// Compartment OCID of adhoc query
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Error message to show on UI in case of failure
 	ErrorMessage *string `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -149,13 +149,13 @@ type adhocQueryState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The current lifecycle state of the resource.
 	State *string `pulumi:"state"`
 	// Status of the adhoc query
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the adhoc query was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the adhoc query was updated. Format defined by RFC3339.
@@ -170,7 +170,7 @@ type AdhocQueryState struct {
 	// Compartment OCID of adhoc query
 	CompartmentId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Error message to show on UI in case of failure
 	ErrorMessage pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -179,13 +179,13 @@ type AdhocQueryState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The current lifecycle state of the resource.
 	State pulumi.StringPtrInput
 	// Status of the adhoc query
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the adhoc query was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the adhoc query was updated. Format defined by RFC3339.
@@ -202,14 +202,14 @@ type adhocQueryArgs struct {
 	// Compartment OCID of adhoc query
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a AdhocQuery resource.
@@ -219,14 +219,14 @@ type AdhocQueryArgs struct {
 	// Compartment OCID of adhoc query
 	CompartmentId pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (AdhocQueryArgs) ElementType() reflect.Type {
@@ -332,8 +332,8 @@ func (o AdhocQueryOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AdhocQueryOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AdhocQuery) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AdhocQueryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AdhocQuery) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Error message to show on UI in case of failure
@@ -347,8 +347,8 @@ func (o AdhocQueryOutput) ErrorMessage() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AdhocQueryOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AdhocQuery) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AdhocQueryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AdhocQuery) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The current lifecycle state of the resource.
@@ -362,8 +362,8 @@ func (o AdhocQueryOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AdhocQueryOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AdhocQuery) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AdhocQueryOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AdhocQuery) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the adhoc query was created. Format defined by RFC3339.

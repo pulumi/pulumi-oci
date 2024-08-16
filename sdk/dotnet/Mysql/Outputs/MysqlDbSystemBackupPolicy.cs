@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// 
         /// Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
         /// 
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// 
         /// Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// (Updatable) Specifies if automatic backups are enabled.
         /// </summary>
@@ -52,9 +52,9 @@ namespace Pulumi.Oci.Mysql.Outputs
 
         [OutputConstructor]
         private MysqlDbSystemBackupPolicy(
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             bool? isEnabled,
 

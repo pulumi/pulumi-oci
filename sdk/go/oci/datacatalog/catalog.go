@@ -33,12 +33,12 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataCatalog.NewCatalog(ctx, "test_catalog", &DataCatalog.CatalogArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(catalogDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -68,11 +68,11 @@ type Catalog struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Data catalog identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -86,7 +86,7 @@ type Catalog struct {
 	// The current state of the data catalog resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -134,11 +134,11 @@ type catalogState struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Data catalog identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -152,7 +152,7 @@ type catalogState struct {
 	// The current state of the data catalog resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -168,11 +168,11 @@ type CatalogState struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Data catalog identifier.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Locks associated with this resource.
@@ -186,7 +186,7 @@ type CatalogState struct {
 	// The current state of the data catalog resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -206,11 +206,11 @@ type catalogArgs struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Data catalog identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a Catalog resource.
@@ -223,11 +223,11 @@ type CatalogArgs struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Data catalog identifier.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (CatalogArgs) ElementType() reflect.Type {
@@ -331,8 +331,8 @@ func (o CatalogOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o CatalogOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CatalogOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Data catalog identifier.
@@ -341,8 +341,8 @@ func (o CatalogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o CatalogOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CatalogOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
@@ -376,8 +376,8 @@ func (o CatalogOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o CatalogOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Catalog) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o CatalogOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Catalog) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

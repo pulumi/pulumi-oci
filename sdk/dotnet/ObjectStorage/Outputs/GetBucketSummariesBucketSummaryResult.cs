@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The entity tag (ETag) for the bucket.
         /// </summary>
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         /// <summary>
         /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
         /// <summary>
         /// Arbitrary string keys and values for user-defined metadata.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
         /// </summary>
@@ -113,11 +113,11 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
 
             string createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string etag,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.ObjectStorage.Outputs
 
             string kmsKeyId,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string name,
 

@@ -72,12 +72,12 @@ type LookupResourceActionResult struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the resource action.
 	Id                      string `pulumi:"id"`
 	IncludeResourceMetadata *bool  `pulumi:"includeResourceMetadata"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The name assigned to the resource.
 	Name string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -167,8 +167,8 @@ func (o LookupResourceActionResultOutput) EstimatedCostSaving() pulumi.Float64Ou
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o LookupResourceActionResultOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResourceActionResult) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o LookupResourceActionResultOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResourceActionResult) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID associated with the resource action.
@@ -181,8 +181,8 @@ func (o LookupResourceActionResultOutput) IncludeResourceMetadata() pulumi.BoolP
 }
 
 // Custom metadata key/value pairs for the resource action.
-func (o LookupResourceActionResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupResourceActionResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o LookupResourceActionResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupResourceActionResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The name assigned to the resource.

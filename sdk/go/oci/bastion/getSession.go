@@ -80,7 +80,7 @@ type LookupSessionResult struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds int `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
-	SshMetadata map[string]interface{} `pulumi:"sshMetadata"`
+	SshMetadata map[string]string `pulumi:"sshMetadata"`
 	// The current state of the session.
 	State string `pulumi:"state"`
 	// Details about a bastion session's target resource.
@@ -184,8 +184,8 @@ func (o LookupSessionResultOutput) SessionTtlInSeconds() pulumi.IntOutput {
 }
 
 // The connection message for the session.
-func (o LookupSessionResultOutput) SshMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSessionResult) map[string]interface{} { return v.SshMetadata }).(pulumi.MapOutput)
+func (o LookupSessionResultOutput) SshMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSessionResult) map[string]string { return v.SshMetadata }).(pulumi.StringMapOutput)
 }
 
 // The current state of the session.

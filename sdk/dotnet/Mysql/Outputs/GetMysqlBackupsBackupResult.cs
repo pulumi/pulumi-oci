@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-supplied description for the backup.
         /// </summary>
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// OCID of the backup itself
         /// </summary>
@@ -122,13 +122,13 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotResult> dbSystemSnapshots,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

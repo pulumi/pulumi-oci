@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The type of redundancy configured for the DB system. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         /// </summary>
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The hostname for the DB system.
         /// </summary>
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<Outputs.GetDbSystemsDbSystemDbSystemOptionResult> dbSystemOptions,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string diskRedundancy,
 
@@ -251,7 +251,7 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> faultDomains,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string hostname,
 

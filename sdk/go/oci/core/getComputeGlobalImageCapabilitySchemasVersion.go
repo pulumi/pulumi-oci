@@ -71,7 +71,7 @@ type GetComputeGlobalImageCapabilitySchemasVersionResult struct {
 	// The name of the compute global image capability schema version
 	Name string `pulumi:"name"`
 	// The map of each capability name to its ImageCapabilityDescriptor.
-	SchemaData map[string]interface{} `pulumi:"schemaData"`
+	SchemaData map[string]string `pulumi:"schemaData"`
 	// The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -145,10 +145,8 @@ func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) Name() pulumi
 }
 
 // The map of each capability name to its ImageCapabilityDescriptor.
-func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) SchemaData() pulumi.MapOutput {
-	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) map[string]interface{} {
-		return v.SchemaData
-	}).(pulumi.MapOutput)
+func (o GetComputeGlobalImageCapabilitySchemasVersionResultOutput) SchemaData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetComputeGlobalImageCapabilitySchemasVersionResult) map[string]string { return v.SchemaData }).(pulumi.StringMapOutput)
 }
 
 // The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

@@ -63,9 +63,9 @@ type LookupDataSafeConfigurationResult struct {
 	// The Oracle Data Safe's NAT Gateway IP Address.
 	DataSafeNatGatewayIpAddress string `pulumi:"dataSafeNatGatewayIpAddress"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details of the tenancy level global settings in Data Safe.
 	GlobalSettings []GetDataSafeConfigurationGlobalSetting `pulumi:"globalSettings"`
 	Id             string                                  `pulumi:"id"`
@@ -128,13 +128,13 @@ func (o LookupDataSafeConfigurationResultOutput) DataSafeNatGatewayIpAddress() p
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDataSafeConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDataSafeConfigurationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupDataSafeConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataSafeConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDataSafeConfigurationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataSafeConfigurationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details of the tenancy level global settings in Data Safe.

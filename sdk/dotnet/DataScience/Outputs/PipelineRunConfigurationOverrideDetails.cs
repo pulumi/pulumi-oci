@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// Environment variables to set for steps in the pipeline.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
+        public readonly ImmutableDictionary<string, string>? EnvironmentVariables;
         /// <summary>
         /// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         private PipelineRunConfigurationOverrideDetails(
             string? commandLineArguments,
 
-            ImmutableDictionary<string, object>? environmentVariables,
+            ImmutableDictionary<string, string>? environmentVariables,
 
             string? maximumRuntimeInMinutes,
 

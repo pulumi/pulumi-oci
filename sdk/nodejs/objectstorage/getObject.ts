@@ -148,7 +148,7 @@ export interface GetObjectResult {
     /**
      * Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata: {[key: string]: string};
     /**
      * The top-level namespace used for the request.
      */

@@ -6,7 +6,6 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
      * 
@@ -47,7 +46,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment upgrade being referenced.
      * 
@@ -114,7 +113,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
@@ -173,7 +172,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -208,7 +207,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -301,7 +300,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -378,12 +377,12 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String deploymentId;
         private String deploymentUpgradeType;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isCancelAllowed;
         private Boolean isRescheduleAllowed;
@@ -396,7 +395,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
         private String previousOggVersion;
         private String releaseType;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeFinished;
         private String timeOggVersionSupportedUntil;
@@ -449,7 +448,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "definedTags");
             }
@@ -489,7 +488,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "freeformTags");
             }
@@ -593,7 +592,7 @@ public final class GetDeploymentUpgradesDeploymentUpgradeCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDeploymentUpgradesDeploymentUpgradeCollectionItem", "systemTags");
             }

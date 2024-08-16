@@ -11,7 +11,6 @@ import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerSecurity
 import com.pulumi.oci.ContainerEngine.outputs.ContainerInstanceContainerVolumeMount;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +54,7 @@ public final class ContainerInstanceContainer {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
@@ -67,7 +66,7 @@ public final class ContainerInstanceContainer {
      * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
-    private @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Map<String,String> environmentVariables;
     private @Nullable Integer exitCode;
     /**
      * @return The fault domain where the container instance runs.
@@ -78,7 +77,7 @@ public final class ContainerInstanceContainer {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
      * 
@@ -127,7 +126,7 @@ public final class ContainerInstanceContainer {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
     /**
      * @return The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * 
@@ -197,7 +196,7 @@ public final class ContainerInstanceContainer {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`.
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -213,7 +212,7 @@ public final class ContainerInstanceContainer {
      * The total size of all environment variables combined, name and values, must be 64 KB or smaller.
      * 
      */
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     public Optional<Integer> exitCode() {
@@ -230,7 +229,7 @@ public final class ContainerInstanceContainer {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -295,7 +294,7 @@ public final class ContainerInstanceContainer {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`.
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
@@ -345,12 +344,12 @@ public final class ContainerInstanceContainer {
         private @Nullable String compartmentId;
         private @Nullable String containerId;
         private @Nullable String containerInstanceId;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
-        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Map<String,String> environmentVariables;
         private @Nullable Integer exitCode;
         private @Nullable String faultDomain;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable List<ContainerInstanceContainerHealthCheck> healthChecks;
         private String imageUrl;
         private @Nullable Boolean isResourcePrincipalDisabled;
@@ -358,7 +357,7 @@ public final class ContainerInstanceContainer {
         private @Nullable ContainerInstanceContainerResourceConfig resourceConfig;
         private @Nullable ContainerInstanceContainerSecurityContext securityContext;
         private @Nullable String state;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable String timeCreated;
         private @Nullable String timeTerminated;
         private @Nullable String timeUpdated;
@@ -437,7 +436,7 @@ public final class ContainerInstanceContainer {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -449,7 +448,7 @@ public final class ContainerInstanceContainer {
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(@Nullable Map<String,String> environmentVariables) {
 
             this.environmentVariables = environmentVariables;
             return this;
@@ -467,7 +466,7 @@ public final class ContainerInstanceContainer {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -520,7 +519,7 @@ public final class ContainerInstanceContainer {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

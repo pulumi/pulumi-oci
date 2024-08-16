@@ -43,7 +43,7 @@ export interface GetEncryptedDataArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: {[key: string]: any};
+    associatedData?: {[key: string]: string};
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */
@@ -62,7 +62,7 @@ export interface GetEncryptedDataArgs {
  * A collection of values returned by getEncryptedData.
  */
 export interface GetEncryptedDataResult {
-    readonly associatedData?: {[key: string]: any};
+    readonly associatedData?: {[key: string]: string};
     /**
      * The encrypted data.
      */
@@ -107,7 +107,7 @@ export interface GetEncryptedDataOutputArgs {
     /**
      * Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
      */

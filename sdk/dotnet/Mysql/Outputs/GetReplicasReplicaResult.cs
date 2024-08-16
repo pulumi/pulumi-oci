@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// User provided description of the read replica.
         /// </summary>
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the read replica.
         /// </summary>
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

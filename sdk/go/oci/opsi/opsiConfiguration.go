@@ -43,13 +43,13 @@ import (
 //					},
 //				},
 //				ConfigItemsApplicableContexts: pulumi.Any(opsiConfigurationConfigItemsApplicableContext),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(opsiConfigurationDescription),
 //				DisplayName: pulumi.Any(opsiConfigurationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				OpsiConfigFields: pulumi.Any(opsiConfigurationOpsiConfigField),
 //				SystemTags:       pulumi.Any(opsiConfigurationSystemTags),
@@ -84,13 +84,13 @@ type OpsiConfiguration struct {
 	// Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
 	ConfigItemsApplicableContexts pulumi.StringArrayOutput `pulumi:"configItemsApplicableContexts"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of OPSI configuration.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
@@ -103,7 +103,7 @@ type OpsiConfiguration struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -154,13 +154,13 @@ type opsiConfigurationState struct {
 	// Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
 	ConfigItemsApplicableContexts []string `pulumi:"configItemsApplicableContexts"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of OPSI configuration.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
@@ -173,7 +173,7 @@ type opsiConfigurationState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -192,13 +192,13 @@ type OpsiConfigurationState struct {
 	// Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
 	ConfigItemsApplicableContexts pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of OPSI configuration.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
@@ -211,7 +211,7 @@ type OpsiConfigurationState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -234,13 +234,13 @@ type opsiConfigurationArgs struct {
 	// Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
 	ConfigItemsApplicableContexts []string `pulumi:"configItemsApplicableContexts"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of OPSI configuration.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
 	OpsiConfigFields []string `pulumi:"opsiConfigFields"`
 	// (Updatable) OPSI configuration type.
@@ -249,7 +249,7 @@ type opsiConfigurationArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // The set of arguments for constructing a OpsiConfiguration resource.
@@ -265,13 +265,13 @@ type OpsiConfigurationArgs struct {
 	// Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
 	ConfigItemsApplicableContexts pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of OPSI configuration.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
 	OpsiConfigFields pulumi.StringArrayInput
 	// (Updatable) OPSI configuration type.
@@ -280,7 +280,7 @@ type OpsiConfigurationArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 }
 
 func (OpsiConfigurationArgs) ElementType() reflect.Type {
@@ -396,8 +396,8 @@ func (o OpsiConfigurationOutput) ConfigItemsApplicableContexts() pulumi.StringAr
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OpsiConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OpsiConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of OPSI configuration.
@@ -411,8 +411,8 @@ func (o OpsiConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OpsiConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OpsiConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -439,8 +439,8 @@ func (o OpsiConfigurationOutput) State() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o OpsiConfigurationOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpsiConfiguration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OpsiConfigurationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpsiConfiguration) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

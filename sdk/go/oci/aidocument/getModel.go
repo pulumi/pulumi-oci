@@ -63,13 +63,13 @@ type LookupModelResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
 	ComponentModels []GetModelComponentModel `pulumi:"componentModels"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A human-friendly name for the model, which can be changed.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
 	Id string `pulumi:"id"`
 	// Set to true when the model is created by using multiple key value extraction models.
@@ -95,7 +95,7 @@ type LookupModelResult struct {
 	// The current state of the model.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The tenancy id of the model.
 	TenancyId string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
@@ -161,8 +161,8 @@ func (o LookupModelResultOutput) ComponentModels() GetModelComponentModelArrayOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An optional description of the model.
@@ -176,8 +176,8 @@ func (o LookupModelResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier that is immutable after creation.
@@ -241,8 +241,8 @@ func (o LookupModelResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-func (o LookupModelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The tenancy id of the model.

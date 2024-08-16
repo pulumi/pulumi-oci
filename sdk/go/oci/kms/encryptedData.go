@@ -56,7 +56,7 @@ type EncryptedData struct {
 	pulumi.CustomResourceState
 
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapOutput `pulumi:"associatedData"`
+	AssociatedData pulumi.StringMapOutput `pulumi:"associatedData"`
 	// The encrypted data.
 	Ciphertext pulumi.StringOutput `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -68,7 +68,7 @@ type EncryptedData struct {
 	// The OCID of the key version used to encrypt the ciphertext.
 	KeyVersionId pulumi.StringOutput `pulumi:"keyVersionId"`
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
+	LoggingContext pulumi.StringMapOutput `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
 	//
 	// ** IMPORTANT **
@@ -116,7 +116,7 @@ func GetEncryptedData(ctx *pulumi.Context,
 // Input properties used for looking up and filtering EncryptedData resources.
 type encryptedDataState struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The encrypted data.
 	Ciphertext *string `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -128,7 +128,7 @@ type encryptedDataState struct {
 	// The OCID of the key version used to encrypt the ciphertext.
 	KeyVersionId *string `pulumi:"keyVersionId"`
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
+	LoggingContext map[string]string `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
 	//
 	// ** IMPORTANT **
@@ -138,7 +138,7 @@ type encryptedDataState struct {
 
 type EncryptedDataState struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput
+	AssociatedData pulumi.StringMapInput
 	// The encrypted data.
 	Ciphertext pulumi.StringPtrInput
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -150,7 +150,7 @@ type EncryptedDataState struct {
 	// The OCID of the key version used to encrypt the ciphertext.
 	KeyVersionId pulumi.StringPtrInput
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-	LoggingContext pulumi.MapInput
+	LoggingContext pulumi.StringMapInput
 	// The plaintext data to encrypt.
 	//
 	// ** IMPORTANT **
@@ -164,7 +164,7 @@ func (EncryptedDataState) ElementType() reflect.Type {
 
 type encryptedDataArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
 	// The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
@@ -174,7 +174,7 @@ type encryptedDataArgs struct {
 	// The OCID of the key version used to encrypt the ciphertext.
 	KeyVersionId *string `pulumi:"keyVersionId"`
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
+	LoggingContext map[string]string `pulumi:"loggingContext"`
 	// The plaintext data to encrypt.
 	//
 	// ** IMPORTANT **
@@ -185,7 +185,7 @@ type encryptedDataArgs struct {
 // The set of arguments for constructing a EncryptedData resource.
 type EncryptedDataArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput
+	AssociatedData pulumi.StringMapInput
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringInput
 	// The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
@@ -195,7 +195,7 @@ type EncryptedDataArgs struct {
 	// The OCID of the key version used to encrypt the ciphertext.
 	KeyVersionId pulumi.StringPtrInput
 	// Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-	LoggingContext pulumi.MapInput
+	LoggingContext pulumi.StringMapInput
 	// The plaintext data to encrypt.
 	//
 	// ** IMPORTANT **
@@ -291,8 +291,8 @@ func (o EncryptedDataOutput) ToEncryptedDataOutputWithContext(ctx context.Contex
 }
 
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-func (o EncryptedDataOutput) AssociatedData() pulumi.MapOutput {
-	return o.ApplyT(func(v *EncryptedData) pulumi.MapOutput { return v.AssociatedData }).(pulumi.MapOutput)
+func (o EncryptedDataOutput) AssociatedData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EncryptedData) pulumi.StringMapOutput { return v.AssociatedData }).(pulumi.StringMapOutput)
 }
 
 // The encrypted data.
@@ -321,8 +321,8 @@ func (o EncryptedDataOutput) KeyVersionId() pulumi.StringOutput {
 }
 
 // Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
-func (o EncryptedDataOutput) LoggingContext() pulumi.MapOutput {
-	return o.ApplyT(func(v *EncryptedData) pulumi.MapOutput { return v.LoggingContext }).(pulumi.MapOutput)
+func (o EncryptedDataOutput) LoggingContext() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EncryptedData) pulumi.StringMapOutput { return v.LoggingContext }).(pulumi.StringMapOutput)
 }
 
 // The plaintext data to encrypt.

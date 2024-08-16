@@ -5,7 +5,6 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +21,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The security zone&#39;s description
      * 
@@ -37,7 +36,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The unique identifier of the security zone (`SecurityZone` resource).
      * 
@@ -91,7 +90,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -112,7 +111,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -182,10 +181,10 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<String> inheritedByCompartments;
         private String lifecycleDetails;
@@ -221,7 +220,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetSecurityZonesSecurityZoneCollectionItem", "definedTags");
             }
@@ -245,7 +244,7 @@ public final class GetSecurityZonesSecurityZoneCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetSecurityZonesSecurityZoneCollectionItem", "freeformTags");
             }

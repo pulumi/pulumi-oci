@@ -6,7 +6,6 @@ package com.pulumi.oci.LogAnalytics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -32,7 +31,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Internal name for the log analytics entity type.
      * 
@@ -47,7 +46,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
      * 
@@ -120,7 +119,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -141,7 +140,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -220,10 +219,10 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
         private Boolean areLogsCollected;
         private String cloudResourceId;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String entityTypeInternalName;
         private String entityTypeName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String managementAgentId;
@@ -279,7 +278,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "definedTags");
             }
@@ -303,7 +302,7 @@ public final class GetLogAnalyticsEntityTopologyItemNodeItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityTopologyItemNodeItem", "freeformTags");
             }

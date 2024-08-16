@@ -402,7 +402,7 @@ class GetCategoriesCategoryCollectionItemResult(dict):
                  compartment_name: str,
                  description: str,
                  estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  id: str,
                  name: str,
                  recommendation_counts: Sequence['outputs.GetCategoriesCategoryCollectionItemRecommendationCountResult'],
@@ -415,7 +415,7 @@ class GetCategoriesCategoryCollectionItemResult(dict):
         :param str compartment_name: The name associated with the compartment.
         :param str description: Text describing the category.
         :param float estimated_cost_saving: The estimated cost savings, in dollars, for the category.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs for the category.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs for the category.
         :param str id: The unique OCID of the category.
         :param str name: Optional. A filter that returns results that match the name specified.
         :param Sequence['GetCategoriesCategoryCollectionItemRecommendationCountArgs'] recommendation_counts: An array of `RecommendationCount` objects grouped by the level of importance assigned to the recommendation.
@@ -471,7 +471,7 @@ class GetCategoriesCategoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs for the category.
         """
@@ -872,9 +872,9 @@ class GetHistoriesHistoryCollectionItemResult(dict):
                  compartment_id: str,
                  compartment_name: str,
                  estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  id: str,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  recommendation_id: str,
                  recommendation_name: str,
@@ -890,9 +890,9 @@ class GetHistoriesHistoryCollectionItemResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param str compartment_name: The name assigned to the compartment.
         :param float estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str id: The unique OCID associated with the recommendation history.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs for the resource action.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs for the resource action.
         :param str name: Optional. A filter that returns results that match the name specified.
         :param str recommendation_id: The unique OCID associated with the recommendation.
         :param str recommendation_name: Optional. A filter that returns results that match the recommendation name specified.
@@ -963,7 +963,7 @@ class GetHistoriesHistoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -979,7 +979,7 @@ class GetHistoriesHistoryCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs for the resource action.
         """
@@ -1609,14 +1609,14 @@ class GetProfilesProfileCollectionItemResult(dict):
     def __init__(__self__, *,
                  aggregation_interval_in_days: int,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  levels_configurations: Sequence['outputs.GetProfilesProfileCollectionItemLevelsConfigurationResult'],
                  name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  target_compartments: Sequence['outputs.GetProfilesProfileCollectionItemTargetCompartmentResult'],
                  target_tags: Sequence['outputs.GetProfilesProfileCollectionItemTargetTagResult'],
                  time_created: str,
@@ -1624,9 +1624,9 @@ class GetProfilesProfileCollectionItemResult(dict):
         """
         :param int aggregation_interval_in_days: The time period over which to collect data for the recommendations, measured in number of days.
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Text describing the profile. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The unique OCID of the profile.
         :param Sequence['GetProfilesProfileCollectionItemLevelsConfigurationArgs'] levels_configurations: A list of configuration levels for each recommendation.
         :param str name: Optional. A filter that returns results that match the name specified.
@@ -1669,7 +1669,7 @@ class GetProfilesProfileCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1685,7 +1685,7 @@ class GetProfilesProfileCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         """
@@ -1725,7 +1725,7 @@ class GetProfilesProfileCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property
@@ -2353,7 +2353,7 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
                  compartment_id: str,
                  description: str,
                  estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  id: str,
                  importance: str,
                  name: str,
@@ -2371,7 +2371,7 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param str description: Text describing the recommendation.
         :param float estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs for the recommendation.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs for the recommendation.
         :param str id: The unique OCID associated with the recommendation.
         :param str importance: The level of importance assigned to the recommendation.
         :param str name: Optional. A filter that returns results that match the name specified.
@@ -2436,7 +2436,7 @@ class GetRecommendationsRecommendationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs for the recommendation.
         """
@@ -2694,9 +2694,9 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
                  compartment_id: str,
                  compartment_name: str,
                  estimated_cost_saving: float,
-                 extended_metadata: Mapping[str, Any],
+                 extended_metadata: Mapping[str, str],
                  id: str,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  recommendation_id: str,
                  resource_action_id: str,
@@ -2714,9 +2714,9 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param str compartment_name: The name associated with the compartment.
         :param float estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param Mapping[str, Any] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param Mapping[str, str] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         :param str id: The unique OCID associated with the resource action.
-        :param Mapping[str, Any] metadata: Custom metadata key/value pairs for the resource action.
+        :param Mapping[str, str] metadata: Custom metadata key/value pairs for the resource action.
         :param str name: Optional. A filter that returns results that match the name specified.
         :param str recommendation_id: The unique OCID associated with the recommendation.
         :param str resource_id: The unique OCID associated with the resource.
@@ -2790,7 +2790,7 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -2806,7 +2806,7 @@ class GetResourceActionsResourceActionCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs for the resource action.
         """

@@ -6,7 +6,6 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -19,7 +18,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> additionalDetails;
+    private @Nullable Map<String,String> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
      * 
@@ -34,7 +33,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
@@ -47,7 +46,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -117,7 +116,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
@@ -139,7 +138,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails == null ? Map.of() : this.additionalDetails;
     }
     /**
@@ -160,7 +159,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -177,7 +176,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -275,7 +274,7 @@ public final class ExternalExadataStorageGridStorageServer {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
@@ -309,12 +308,12 @@ public final class ExternalExadataStorageGridStorageServer {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> additionalDetails;
+        private @Nullable Map<String,String> additionalDetails;
         private @Nullable String connectorId;
         private @Nullable Double cpuCount;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String displayName;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
         private @Nullable String internalId;
         private @Nullable String ipAddress;
@@ -328,7 +327,7 @@ public final class ExternalExadataStorageGridStorageServer {
         private @Nullable String resourceType;
         private @Nullable String state;
         private @Nullable String status;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable String timeCreated;
         private @Nullable String timeUpdated;
         private @Nullable String version;
@@ -361,7 +360,7 @@ public final class ExternalExadataStorageGridStorageServer {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(@Nullable Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(@Nullable Map<String,String> additionalDetails) {
 
             this.additionalDetails = additionalDetails;
             return this;
@@ -379,7 +378,7 @@ public final class ExternalExadataStorageGridStorageServer {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -391,7 +390,7 @@ public final class ExternalExadataStorageGridStorageServer {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -475,7 +474,7 @@ public final class ExternalExadataStorageGridStorageServer {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

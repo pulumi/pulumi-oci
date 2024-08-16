@@ -90,7 +90,7 @@ namespace Pulumi.Oci.DataCatalog
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         [Output("properties")]
-        public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the data asset.
@@ -203,10 +203,10 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string> DisplayName { get; set; } = null!;
 
         [Input("properties")]
-        private InputMap<object>? _properties;
-        public InputMap<object> Properties
+        private InputMap<string>? _properties;
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 
@@ -271,10 +271,10 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string>? LifecycleDetails { get; set; }
 
         [Input("properties")]
-        private InputMap<object>? _properties;
-        public InputMap<object> Properties
+        private InputMap<string>? _properties;
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 

@@ -59,9 +59,9 @@ type RepositoryRef struct {
 	// (Updatable) Commit ID pointed to by the new branch.
 	CommitId pulumi.StringOutput `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
 	FullRefName pulumi.StringOutput `pulumi:"fullRefName"`
 	// (Updatable) SHA-1 hash value of the object pointed to by the tag.
@@ -119,9 +119,9 @@ type repositoryRefState struct {
 	// (Updatable) Commit ID pointed to by the new branch.
 	CommitId *string `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
 	FullRefName *string `pulumi:"fullRefName"`
 	// (Updatable) SHA-1 hash value of the object pointed to by the tag.
@@ -141,9 +141,9 @@ type RepositoryRefState struct {
 	// (Updatable) Commit ID pointed to by the new branch.
 	CommitId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Unique full reference name inside a repository.
 	FullRefName pulumi.StringPtrInput
 	// (Updatable) SHA-1 hash value of the object pointed to by the tag.
@@ -289,13 +289,13 @@ func (o RepositoryRefOutput) CommitId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o RepositoryRefOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RepositoryRef) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o RepositoryRefOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RepositoryRef) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o RepositoryRefOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RepositoryRef) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RepositoryRefOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RepositoryRef) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique full reference name inside a repository.

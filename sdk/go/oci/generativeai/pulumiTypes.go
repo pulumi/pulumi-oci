@@ -1297,23 +1297,23 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionArrayOutput) Index(i p
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItem struct {
 	Capacities []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string                 `pulumi:"compartmentId"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
-	Description   string                 `pulumi:"description"`
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
+	Description   string            `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  string                 `pulumi:"displayName"`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	DisplayName  string            `pulumi:"displayName"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 	Id               string `pulumi:"id"`
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
-	State       string                 `pulumi:"state"`
-	SystemTags  map[string]interface{} `pulumi:"systemTags"`
-	TimeCreated string                 `pulumi:"timeCreated"`
-	TimeUpdated string                 `pulumi:"timeUpdated"`
-	Type        string                 `pulumi:"type"`
-	UnitCount   int                    `pulumi:"unitCount"`
-	UnitShape   string                 `pulumi:"unitShape"`
+	State       string            `pulumi:"state"`
+	SystemTags  map[string]string `pulumi:"systemTags"`
+	TimeCreated string            `pulumi:"timeCreated"`
+	TimeUpdated string            `pulumi:"timeUpdated"`
+	Type        string            `pulumi:"type"`
+	UnitCount   int               `pulumi:"unitCount"`
+	UnitShape   string            `pulumi:"unitShape"`
 }
 
 // GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput is an input type that accepts GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs and GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput values.
@@ -1330,23 +1330,23 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput interface {
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs struct {
 	Capacities GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayInput `pulumi:"capacities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	DefinedTags   pulumi.MapInput    `pulumi:"definedTags"`
-	Description   pulumi.StringInput `pulumi:"description"`
+	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
+	Description   pulumi.StringInput    `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  pulumi.StringInput `pulumi:"displayName"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 	Id               pulumi.StringInput `pulumi:"id"`
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
-	State       pulumi.StringInput `pulumi:"state"`
-	SystemTags  pulumi.MapInput    `pulumi:"systemTags"`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	Type        pulumi.StringInput `pulumi:"type"`
-	UnitCount   pulumi.IntInput    `pulumi:"unitCount"`
-	UnitShape   pulumi.StringInput `pulumi:"unitShape"`
+	State       pulumi.StringInput    `pulumi:"state"`
+	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
+	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
+	TimeUpdated pulumi.StringInput    `pulumi:"timeUpdated"`
+	Type        pulumi.StringInput    `pulumi:"type"`
+	UnitCount   pulumi.IntInput       `pulumi:"unitCount"`
+	UnitShape   pulumi.StringInput    `pulumi:"unitShape"`
 }
 
 func (GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs) ElementType() reflect.Type {
@@ -1411,10 +1411,8 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Compartmen
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Description() pulumi.StringOutput {
@@ -1426,10 +1424,10 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) DisplayNam
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]interface{} {
+func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
@@ -1446,10 +1444,8 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) State() pu
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
@@ -1901,21 +1897,21 @@ type GetEndpointsEndpointCollectionItem struct {
 	CompartmentId            string                                                      `pulumi:"compartmentId"`
 	ContentModerationConfigs []GetEndpointsEndpointCollectionItemContentModerationConfig `pulumi:"contentModerationConfigs"`
 	DedicatedAiClusterId     string                                                      `pulumi:"dedicatedAiClusterId"`
-	DefinedTags              map[string]interface{}                                      `pulumi:"definedTags"`
+	DefinedTags              map[string]string                                           `pulumi:"definedTags"`
 	// An optional description of the endpoint.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  string                 `pulumi:"displayName"`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	DisplayName  string            `pulumi:"displayName"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id               string `pulumi:"id"`
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the model that's used to create this endpoint.
 	ModelId string `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State       string                 `pulumi:"state"`
-	SystemTags  map[string]interface{} `pulumi:"systemTags"`
-	TimeCreated string                 `pulumi:"timeCreated"`
+	State       string            `pulumi:"state"`
+	SystemTags  map[string]string `pulumi:"systemTags"`
+	TimeCreated string            `pulumi:"timeCreated"`
 	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
@@ -1936,21 +1932,21 @@ type GetEndpointsEndpointCollectionItemArgs struct {
 	CompartmentId            pulumi.StringInput                                                  `pulumi:"compartmentId"`
 	ContentModerationConfigs GetEndpointsEndpointCollectionItemContentModerationConfigArrayInput `pulumi:"contentModerationConfigs"`
 	DedicatedAiClusterId     pulumi.StringInput                                                  `pulumi:"dedicatedAiClusterId"`
-	DefinedTags              pulumi.MapInput                                                     `pulumi:"definedTags"`
+	DefinedTags              pulumi.StringMapInput                                               `pulumi:"definedTags"`
 	// An optional description of the endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
-	DisplayName  pulumi.StringInput `pulumi:"displayName"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	DisplayName  pulumi.StringInput    `pulumi:"displayName"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
 	Id               pulumi.StringInput `pulumi:"id"`
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The OCID of the model that's used to create this endpoint.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// A filter to return only resources that their lifecycle state matches the given lifecycle state.
-	State       pulumi.StringInput `pulumi:"state"`
-	SystemTags  pulumi.MapInput    `pulumi:"systemTags"`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	State       pulumi.StringInput    `pulumi:"state"`
+	SystemTags  pulumi.StringMapInput `pulumi:"systemTags"`
+	TimeCreated pulumi.StringInput    `pulumi:"timeCreated"`
 	// The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
@@ -2021,8 +2017,8 @@ func (o GetEndpointsEndpointCollectionItemOutput) DedicatedAiClusterId() pulumi.
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
 
-func (o GetEndpointsEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetEndpointsEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An optional description of the endpoint.
@@ -2035,8 +2031,8 @@ func (o GetEndpointsEndpointCollectionItemOutput) DisplayName() pulumi.StringOut
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetEndpointsEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetEndpointsEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
@@ -2058,8 +2054,8 @@ func (o GetEndpointsEndpointCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o GetEndpointsEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetEndpointsEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEndpointsEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetEndpointsEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
@@ -3038,8 +3034,8 @@ type GetModelsModelCollectionItem struct {
 	// Describes what this model can be used for.
 	Capabilities []string `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string                 `pulumi:"compartmentId"`
-	DefinedTags   map[string]interface{} `pulumi:"definedTags"`
+	CompartmentId string            `pulumi:"compartmentId"`
+	DefinedTags   map[string]string `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
@@ -3047,7 +3043,7 @@ type GetModelsModelCollectionItem struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails []GetModelsModelCollectionItemFineTuneDetail `pulumi:"fineTuneDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The ID of the model.
 	Id string `pulumi:"id"`
 	// Whether a model is supported long-term. Only applicable to base models.
@@ -3059,7 +3055,7 @@ type GetModelsModelCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -3090,8 +3086,8 @@ type GetModelsModelCollectionItemArgs struct {
 	// Describes what this model can be used for.
 	Capabilities pulumi.StringArrayInput `pulumi:"capabilities"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	DefinedTags   pulumi.MapInput    `pulumi:"definedTags"`
+	CompartmentId pulumi.StringInput    `pulumi:"compartmentId"`
+	DefinedTags   pulumi.StringMapInput `pulumi:"definedTags"`
 	// An optional description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the given display name exactly.
@@ -3099,7 +3095,7 @@ type GetModelsModelCollectionItemArgs struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails GetModelsModelCollectionItemFineTuneDetailArrayInput `pulumi:"fineTuneDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The ID of the model.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether a model is supported long-term. Only applicable to base models.
@@ -3111,7 +3107,7 @@ type GetModelsModelCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -3191,8 +3187,8 @@ func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An optional description of the model.
@@ -3213,8 +3209,8 @@ func (o GetModelsModelCollectionItemOutput) FineTuneDetails() GetModelsModelColl
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The ID of the model.
@@ -3243,8 +3239,8 @@ func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the model was created in the format of an RFC3339 datetime string.

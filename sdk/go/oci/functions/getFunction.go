@@ -63,14 +63,14 @@ type LookupFunctionResult struct {
 	// The OCID of the compartment that contains the function.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the function. The display name is unique within the application containing the function.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	FunctionId   string                 `pulumi:"functionId"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FunctionId   string            `pulumi:"functionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	Id string `pulumi:"id"`
 	// The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
@@ -148,13 +148,13 @@ func (o LookupFunctionResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-func (o LookupFunctionResultOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFunctionResult) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o LookupFunctionResultOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFunctionResult) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupFunctionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFunctionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupFunctionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFunctionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the function. The display name is unique within the application containing the function.
@@ -163,8 +163,8 @@ func (o LookupFunctionResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupFunctionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFunctionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupFunctionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFunctionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFunctionResultOutput) FunctionId() pulumi.StringOutput {

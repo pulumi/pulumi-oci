@@ -35,13 +35,13 @@ import (
 //				Threshold:     pulumi.Any(alertRuleThreshold),
 //				ThresholdType: pulumi.Any(alertRuleThresholdType),
 //				Type:          pulumi.Any(alertRuleType),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(alertRuleDescription),
 //				DisplayName: pulumi.Any(alertRuleDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				Message:    pulumi.Any(alertRuleMessage),
 //				Recipients: pulumi.Any(alertRuleRecipients),
@@ -68,13 +68,13 @@ type Rule struct {
 	// The unique budget OCID.
 	BudgetId pulumi.StringOutput `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringOutput `pulumi:"message"`
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -143,13 +143,13 @@ type ruleState struct {
 	// The unique budget OCID.
 	BudgetId *string `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description *string `pulumi:"description"`
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message *string `pulumi:"message"`
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -177,13 +177,13 @@ type RuleState struct {
 	// The unique budget OCID.
 	BudgetId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringPtrInput
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringPtrInput
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -215,13 +215,13 @@ type ruleArgs struct {
 	// The unique budget OCID.
 	BudgetId string `pulumi:"budgetId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the alert rule.
 	Description *string `pulumi:"description"`
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message *string `pulumi:"message"`
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -242,13 +242,13 @@ type RuleArgs struct {
 	// The unique budget OCID.
 	BudgetId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the alert rule.
 	Description pulumi.StringPtrInput
 	// (Updatable) The name of the alert rule. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The message to be sent to the recipients when the alert rule is triggered.
 	Message pulumi.StringPtrInput
 	// (Updatable) The audience that receives the alert when it triggers. An empty string is interpreted as null.
@@ -357,8 +357,8 @@ func (o RuleOutput) BudgetId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o RuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Rule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o RuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the alert rule.
@@ -372,8 +372,8 @@ func (o RuleOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o RuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Rule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The message to be sent to the recipients when the alert rule is triggered.

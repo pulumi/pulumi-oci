@@ -5,7 +5,6 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetDatabasesDatabaseConnectionString {
      * @return All connection strings to use to connect to the Database.
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private Map<String,String> allConnectionStrings;
     /**
      * @return Host name based CDB Connection String.
      * 
@@ -33,7 +32,7 @@ public final class GetDatabasesDatabaseConnectionString {
      * @return All connection strings to use to connect to the Database.
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetDatabasesDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
+        private Map<String,String> allConnectionStrings;
         private String cdbDefault;
         private String cdbIpDefault;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetDatabasesDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(Map<String,String> allConnectionStrings) {
             if (allConnectionStrings == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseConnectionString", "allConnectionStrings");
             }

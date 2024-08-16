@@ -61,11 +61,11 @@ type GetServiceCatalogResult struct {
 	// The Compartment id where the service catalog exists
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The name of the service catalog.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the Service catalog.
 	Id               string `pulumi:"id"`
 	ServiceCatalogId string `pulumi:"serviceCatalogId"`
@@ -121,8 +121,8 @@ func (o GetServiceCatalogResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetServiceCatalogResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetServiceCatalogResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the service catalog.
@@ -131,8 +131,8 @@ func (o GetServiceCatalogResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetServiceCatalogResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceCatalogResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetServiceCatalogResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceCatalogResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the Service catalog.

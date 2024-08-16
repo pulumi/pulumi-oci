@@ -12,7 +12,6 @@ import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesDy
 import com.pulumi.oci.ApiGateway.inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaimArgs;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -120,13 +119,13 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      * 
      */
     @Import(name="parameters")
-    private @Nullable Output<Map<String,Object>> parameters;
+    private @Nullable Output<Map<String,String>> parameters;
 
     /**
      * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> parameters() {
+    public Optional<Output<Map<String,String>>> parameters() {
         return Optional.ofNullable(this.parameters);
     }
 
@@ -450,7 +449,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
          * @return builder
          * 
          */
-        public Builder parameters(@Nullable Output<Map<String,Object>> parameters) {
+        public Builder parameters(@Nullable Output<Map<String,String>> parameters) {
             $.parameters = parameters;
             return this;
         }
@@ -461,7 +460,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
          * @return builder
          * 
          */
-        public Builder parameters(Map<String,Object> parameters) {
+        public Builder parameters(Map<String,String> parameters) {
             return parameters(Output.of(parameters));
         }
 

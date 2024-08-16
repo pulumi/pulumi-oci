@@ -66,7 +66,7 @@ namespace Pulumi.Oci.HealthChecks
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
         [Output("headers")]
-        public Output<ImmutableDictionary<string, object>> Headers { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Headers { get; private set; } = null!;
 
         /// <summary>
         /// The region where updates must be made and where results must be fetched from.
@@ -185,16 +185,16 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("headers")]
-        private InputMap<object>? _headers;
+        private InputMap<string>? _headers;
 
         /// <summary>
         /// A dictionary of HTTP request headers.
         /// 
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
-        public InputMap<object> Headers
+        public InputMap<string> Headers
         {
-            get => _headers ?? (_headers = new InputMap<object>());
+            get => _headers ?? (_headers = new InputMap<string>());
             set => _headers = value;
         }
 
@@ -271,16 +271,16 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string>? CompartmentId { get; set; }
 
         [Input("headers")]
-        private InputMap<object>? _headers;
+        private InputMap<string>? _headers;
 
         /// <summary>
         /// A dictionary of HTTP request headers.
         /// 
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
-        public InputMap<object> Headers
+        public InputMap<string> Headers
         {
-            get => _headers ?? (_headers = new InputMap<object>());
+            get => _headers ?? (_headers = new InputMap<string>());
             set => _headers = value;
         }
 

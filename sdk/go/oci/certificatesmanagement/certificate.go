@@ -41,11 +41,11 @@ type Certificate struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayOutput `pulumi:"currentVersions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId pulumi.StringOutput `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
@@ -120,11 +120,11 @@ type certificateState struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions []CertificateCurrentVersion `pulumi:"currentVersions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The algorithm used to create key pairs.
@@ -164,11 +164,11 @@ type CertificateState struct {
 	// The details of the certificate version. This object does not contain the certificate contents.
 	CurrentVersions CertificateCurrentVersionArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the certificate authority (CA) that issued the certificate.
 	IssuerCertificateAuthorityId pulumi.StringPtrInput
 	// The algorithm used to create key pairs.
@@ -204,11 +204,11 @@ type certificateArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	//
 	// ** IMPORTANT **
@@ -225,11 +225,11 @@ type CertificateArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the certificate.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the certificate. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A user-friendly name for the certificate. Names are unique within a compartment. Avoid entering confidential information. Valid characters are uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
 	//
 	// ** IMPORTANT **
@@ -362,8 +362,8 @@ func (o CertificateOutput) CurrentVersions() CertificateCurrentVersionArrayOutpu
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o CertificateOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CertificateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A brief description of the certificate. Avoid entering confidential information.
@@ -372,8 +372,8 @@ func (o CertificateOutput) Description() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o CertificateOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CertificateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the certificate authority (CA) that issued the certificate.

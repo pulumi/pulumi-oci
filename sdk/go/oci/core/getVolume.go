@@ -74,11 +74,11 @@ type LookupVolumeResult struct {
 	// The OCID of the compartment that contains the volume.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the block volume replica.
 	Id string `pulumi:"id"`
 	// Specifies whether the auto-tune performance is enabled for this volume. This field is deprecated. Use the `DetachedVolumeAutotunePolicy` instead to enable the volume for detached autotune.
@@ -97,7 +97,7 @@ type LookupVolumeResult struct {
 	// The current state of a volume.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated    string `pulumi:"timeCreated"`
 	VolumeBackupId string `pulumi:"volumeBackupId"`
@@ -186,8 +186,8 @@ func (o LookupVolumeResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupVolumeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVolumeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVolumeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVolumeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -196,8 +196,8 @@ func (o LookupVolumeResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupVolumeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVolumeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVolumeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVolumeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the block volume replica.
@@ -242,8 +242,8 @@ func (o LookupVolumeResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupVolumeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVolumeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupVolumeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVolumeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the volume was created. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

@@ -61,13 +61,13 @@ type LookupSenderResult struct {
 	// The OCID for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The email address of the sender.
 	EmailAddress string `pulumi:"emailAddress"`
 	// The email domain used to assert responsibility for emails sent from this sender.
 	EmailDomainId string `pulumi:"emailDomainId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique OCID of the sender.
 	Id string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
@@ -76,7 +76,7 @@ type LookupSenderResult struct {
 	// The current status of the approved sender.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -125,8 +125,8 @@ func (o LookupSenderResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSenderResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSenderResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSenderResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSenderResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The email address of the sender.
@@ -140,8 +140,8 @@ func (o LookupSenderResultOutput) EmailDomainId() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupSenderResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSenderResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSenderResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSenderResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID of the sender.
@@ -164,8 +164,8 @@ func (o LookupSenderResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSenderResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSenderResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSenderResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSenderResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).

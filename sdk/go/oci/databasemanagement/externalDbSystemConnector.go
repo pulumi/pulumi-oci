@@ -67,7 +67,7 @@ type ExternalDbSystemConnector struct {
 	// (Updatable) The type of connector.
 	ConnectorType pulumi.StringOutput `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -76,13 +76,13 @@ type ExternalDbSystemConnector struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringOutput `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external DB system connector.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the connectionStatus of the external DB system connector was last updated.
 	TimeConnectionStatusLastUpdated pulumi.StringOutput `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external DB system connector was created.
@@ -140,7 +140,7 @@ type externalDbSystemConnectorState struct {
 	// (Updatable) The type of connector.
 	ConnectorType *string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -149,13 +149,13 @@ type externalDbSystemConnectorState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId *string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external DB system connector.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the connectionStatus of the external DB system connector was last updated.
 	TimeConnectionStatusLastUpdated *string `pulumi:"timeConnectionStatusLastUpdated"`
 	// The date and time the external DB system connector was created.
@@ -178,7 +178,7 @@ type ExternalDbSystemConnectorState struct {
 	// (Updatable) The type of connector.
 	ConnectorType pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -187,13 +187,13 @@ type ExternalDbSystemConnectorState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringPtrInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current lifecycle state of the external DB system connector.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the connectionStatus of the external DB system connector was last updated.
 	TimeConnectionStatusLastUpdated pulumi.StringPtrInput
 	// The date and time the external DB system connector was created.
@@ -214,7 +214,7 @@ type externalDbSystemConnectorArgs struct {
 	// (Updatable) The type of connector.
 	ConnectorType string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -223,7 +223,7 @@ type externalDbSystemConnectorArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalDbSystemConnector resource.
@@ -235,7 +235,7 @@ type ExternalDbSystemConnectorArgs struct {
 	// (Updatable) The type of connector.
 	ConnectorType pulumi.StringInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the external connector. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
@@ -244,7 +244,7 @@ type ExternalDbSystemConnectorArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ExternalDbSystemId pulumi.StringInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (ExternalDbSystemConnectorArgs) ElementType() reflect.Type {
@@ -367,8 +367,8 @@ func (o ExternalDbSystemConnectorOutput) ConnectorType() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ExternalDbSystemConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExternalDbSystemConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the external connector. The name does not have to be unique.
@@ -385,8 +385,8 @@ func (o ExternalDbSystemConnectorOutput) ExternalDbSystemId() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ExternalDbSystemConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExternalDbSystemConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Additional information about the current lifecycle state.
@@ -400,8 +400,8 @@ func (o ExternalDbSystemConnectorOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ExternalDbSystemConnectorOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ExternalDbSystemConnectorOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDbSystemConnector) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the connectionStatus of the external DB system connector was last updated.

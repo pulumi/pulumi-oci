@@ -81,7 +81,7 @@ type LookupMysqlDbSystemResult struct {
 	// The OCID of the DB System from which a backup shall be selected to be restored when creating the new DB System. Use this together with recovery point to perform a point in time recovery operation.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlDbSystemDeletionPolicy `pulumi:"deletionPolicies"`
 	// User-provided data about the DB System.
@@ -93,7 +93,7 @@ type LookupMysqlDbSystemResult struct {
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []GetMysqlDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -232,8 +232,8 @@ func (o LookupMysqlDbSystemResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMysqlDbSystemResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMysqlDbSystemResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Deletion policy for the DB System.
@@ -262,8 +262,8 @@ func (o LookupMysqlDbSystemResultOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMysqlDbSystemResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMysqlDbSystemResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMysqlDbSystemResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A summary of a HeatWave cluster.

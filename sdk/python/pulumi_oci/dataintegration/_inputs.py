@@ -285,7 +285,7 @@ class WorkspaceApplicationMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -300,7 +300,7 @@ class WorkspaceApplicationMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -412,14 +412,14 @@ class WorkspaceApplicationMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -823,7 +823,7 @@ class WorkspaceApplicationPatchMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -838,7 +838,7 @@ class WorkspaceApplicationPatchMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -950,14 +950,14 @@ class WorkspaceApplicationPatchMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -1843,7 +1843,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -1858,7 +1858,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -1970,14 +1970,14 @@ class WorkspaceApplicationScheduleMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -2642,7 +2642,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -2657,7 +2657,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -2769,14 +2769,14 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -3552,7 +3552,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -3567,7 +3567,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs:
         :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
         :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
         :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: (Updatable) Information property fields.
         :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version of the object.
@@ -3679,14 +3679,14 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -4105,7 +4105,7 @@ class WorkspaceFolderMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -4120,7 +4120,7 @@ class WorkspaceFolderMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -4232,14 +4232,14 @@ class WorkspaceFolderMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -4832,7 +4832,7 @@ class WorkspaceProjectMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -4847,7 +4847,7 @@ class WorkspaceProjectMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version of the object.
@@ -4959,14 +4959,14 @@ class WorkspaceProjectMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -5462,13 +5462,13 @@ class WorkspaceTaskCancelRestCallConfigArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  method_type: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
-                 request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 request_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
         :param pulumi.Input[str] model_type: (Updatable) The type of the task.
-        :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -5531,14 +5531,14 @@ class WorkspaceTaskCancelRestCallConfigArgs:
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The headers for the REST call.
         """
         return pulumi.get(self, "request_headers")
 
     @request_headers.setter
-    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "request_headers", value)
 
 
@@ -6004,13 +6004,13 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  method_type: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
-                 request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 request_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
         :param pulumi.Input[str] model_type: (Updatable) The type of the task.
-        :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -6073,14 +6073,14 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The headers for the REST call.
         """
         return pulumi.get(self, "request_headers")
 
     @request_headers.setter
-    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "request_headers", value)
 
 
@@ -6766,7 +6766,7 @@ class WorkspaceTaskMetadataArgs:
                  created_by: Optional[pulumi.Input[str]] = None,
                  created_by_name: Optional[pulumi.Input[str]] = None,
                  identifier_path: Optional[pulumi.Input[str]] = None,
-                 info_fields: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 info_fields: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_favorite: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None,
@@ -6781,7 +6781,7 @@ class WorkspaceTaskMetadataArgs:
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: The registry version.
@@ -6893,14 +6893,14 @@ class WorkspaceTaskMetadataArgs:
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def info_fields(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
     @info_fields.setter
-    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def info_fields(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "info_fields", value)
 
     @property
@@ -8618,13 +8618,13 @@ class WorkspaceTaskPollRestCallConfigArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  method_type: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
-                 request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 request_headers: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
         :param pulumi.Input[str] model_type: (Updatable) The type of the task.
-        :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -8687,14 +8687,14 @@ class WorkspaceTaskPollRestCallConfigArgs:
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def request_headers(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The headers for the REST call.
         """
         return pulumi.get(self, "request_headers")
 
     @request_headers.setter
-    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def request_headers(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "request_headers", value)
 
 

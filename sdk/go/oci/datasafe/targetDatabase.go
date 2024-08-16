@@ -52,13 +52,13 @@ import (
 //					Password: pulumi.Any(targetDatabaseCredentialsPassword),
 //					UserName: pulumi.Any(testUser.Name),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(targetDatabaseDescription),
 //				DisplayName: pulumi.Any(targetDatabaseDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				PeerTargetDatabaseDetails: datasafe.TargetDatabasePeerTargetDatabaseDetailArray{
 //					&datasafe.TargetDatabasePeerTargetDatabaseDetailArgs{
@@ -123,13 +123,13 @@ type TargetDatabase struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsOutput `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The details of the database to be registered as a peer target database.
@@ -139,7 +139,7 @@ type TargetDatabase struct {
 	// The current state of the target database in Data Safe.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
@@ -195,13 +195,13 @@ type targetDatabaseState struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails *TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The details of the database to be registered as a peer target database.
@@ -211,7 +211,7 @@ type targetDatabaseState struct {
 	// The current state of the target database in Data Safe.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of the target database update in Data Safe.
@@ -232,13 +232,13 @@ type TargetDatabaseState struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the peer target database in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
 	// The details of the database to be registered as a peer target database.
@@ -248,7 +248,7 @@ type TargetDatabaseState struct {
 	// The current state of the target database in Data Safe.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the database was registered in Data Safe and created as a target database in Data Safe.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time of the target database update in Data Safe.
@@ -271,13 +271,13 @@ type targetDatabaseArgs struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the target database in Data Safe.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails []TargetDatabasePeerTargetDatabaseDetail `pulumi:"peerTargetDatabaseDetails"`
 	// (Updatable) The details required to establish a TLS enabled connection.
@@ -295,13 +295,13 @@ type TargetDatabaseArgs struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabaseDatabaseDetailsInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The details of the database to be registered as a peer target database.
 	PeerTargetDatabaseDetails TargetDatabasePeerTargetDatabaseDetailArrayInput
 	// (Updatable) The details required to establish a TLS enabled connection.
@@ -421,8 +421,8 @@ func (o TargetDatabaseOutput) DatabaseDetails() TargetDatabaseDatabaseDetailsOut
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o TargetDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the target database in Data Safe.
@@ -436,8 +436,8 @@ func (o TargetDatabaseOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o TargetDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the peer target database in Data Safe.
@@ -463,8 +463,8 @@ func (o TargetDatabaseOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o TargetDatabaseOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetDatabase) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o TargetDatabaseOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetDatabase) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the database was registered in Data Safe and created as a target database in Data Safe.

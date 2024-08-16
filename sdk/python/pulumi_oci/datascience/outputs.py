@@ -234,12 +234,12 @@ class JobJobConfigurationDetails(dict):
     def __init__(__self__, *,
                  job_type: str,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str job_type: The type of job.
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         pulumi.set(__self__, "job_type", job_type)
@@ -268,7 +268,7 @@ class JobJobConfigurationDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         Environment variables to set for the job.
         """
@@ -750,12 +750,12 @@ class JobRunJobConfigurationOverrideDetails(dict):
     def __init__(__self__, *,
                  job_type: str,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str job_type: The type of job.
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         pulumi.set(__self__, "job_type", job_type)
@@ -784,7 +784,7 @@ class JobRunJobConfigurationOverrideDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         Environment variables to set for the job.
         """
@@ -1655,7 +1655,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  environment_configuration_type: str,
                  cmds: Optional[Sequence[str]] = None,
                  entrypoints: Optional[Sequence[str]] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  health_check_port: Optional[int] = None,
                  image: Optional[str] = None,
                  image_digest: Optional[str] = None,
@@ -1664,7 +1664,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param str environment_configuration_type: (Updatable) The environment configuration type
         :param Sequence[str] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         :param Sequence[str] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param int health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param str image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param str image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
@@ -1712,7 +1712,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         """
@@ -2786,10 +2786,10 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 custom_environment_variables: Optional[Mapping[str, Any]] = None,
+                 custom_environment_variables: Optional[Mapping[str, str]] = None,
                  notebook_session_git_config_details: Optional['outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails'] = None):
         """
-        :param Mapping[str, Any] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        :param Mapping[str, str] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param 'NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs' notebook_session_git_config_details: (Updatable) Git configuration Details.
         """
         if custom_environment_variables is not None:
@@ -2799,7 +2799,7 @@ class NotebookSessionNotebookSessionRuntimeConfigDetails(dict):
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def custom_environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         """
@@ -3020,12 +3020,12 @@ class PipelineConfigurationDetails(dict):
     def __init__(__self__, *,
                  type: str,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str type: (Updatable) The type of pipeline.
         :param str command_line_arguments: (Updatable) The command line arguments to set for steps in the pipeline.
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
@@ -3054,7 +3054,7 @@ class PipelineConfigurationDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Environment variables to set for steps in the pipeline.
         """
@@ -3296,12 +3296,12 @@ class PipelineRunConfigurationDetail(dict):
 
     def __init__(__self__, *,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None,
                  type: Optional[str] = None):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -3324,7 +3324,7 @@ class PipelineRunConfigurationDetail(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         Environment variables to set for step.
         """
@@ -3373,12 +3373,12 @@ class PipelineRunConfigurationOverrideDetails(dict):
     def __init__(__self__, *,
                  type: str,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str type: The type of pipeline.
         :param str command_line_arguments: The command line arguments to set for steps in the pipeline.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for steps in the pipeline.
+        :param Mapping[str, str] environment_variables: Environment variables to set for steps in the pipeline.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
@@ -3407,7 +3407,7 @@ class PipelineRunConfigurationOverrideDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         Environment variables to set for steps in the pipeline.
         """
@@ -3637,11 +3637,11 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
 
     def __init__(__self__, *,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         if command_line_arguments is not None:
@@ -3661,7 +3661,7 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         Environment variables to set for step.
         """
@@ -4152,11 +4152,11 @@ class PipelineStepDetailStepConfigurationDetails(dict):
 
     def __init__(__self__, *,
                  command_line_arguments: Optional[str] = None,
-                 environment_variables: Optional[Mapping[str, Any]] = None,
+                 environment_variables: Optional[Mapping[str, str]] = None,
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: (Updatable) Environment variables to set for step.
         :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
         if command_line_arguments is not None:
@@ -4176,7 +4176,7 @@ class PipelineStepDetailStepConfigurationDetails(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[Mapping[str, Any]]:
+    def environment_variables(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Environment variables to set for step.
         """
@@ -4523,12 +4523,12 @@ class GetFastLaunchJobConfigsFilterResult(dict):
 class GetJobJobConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  job_type: str,
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
@@ -4547,7 +4547,7 @@ class GetJobJobConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the job.
         """
@@ -4884,12 +4884,12 @@ class GetJobJobStorageMountConfigurationDetailsListResult(dict):
 class GetJobRunJobConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  job_type: str,
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
@@ -4908,7 +4908,7 @@ class GetJobRunJobConfigurationOverrideDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the job.
         """
@@ -5303,9 +5303,9 @@ class GetJobRunsJobRunResult(dict):
                  asynchronous: bool,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  job_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobConfigurationOverrideDetailResult'],
                  job_environment_configuration_override_details: Sequence['outputs.GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailResult'],
@@ -5324,9 +5324,9 @@ class GetJobRunsJobRunResult(dict):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param Sequence['GetJobRunsJobRunJobConfigurationOverrideDetailArgs'] job_configuration_override_details: The job configuration details
         :param Sequence['GetJobRunsJobRunJobEnvironmentConfigurationOverrideDetailArgs'] job_environment_configuration_override_details: Environment configuration to capture job runtime dependencies.
@@ -5387,7 +5387,7 @@ class GetJobRunsJobRunResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -5403,7 +5403,7 @@ class GetJobRunsJobRunResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -5531,12 +5531,12 @@ class GetJobRunsJobRunResult(dict):
 class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  job_type: str,
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
@@ -5555,7 +5555,7 @@ class GetJobRunsJobRunJobConfigurationOverrideDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the job.
         """
@@ -6037,12 +6037,12 @@ class GetJobsJobResult(dict):
                  artifact_last_modified: str,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  delete_related_job_runs: bool,
                  description: str,
                  display_name: str,
                  empty_artifact: bool,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  job_artifact: str,
                  job_configuration_details: Sequence['outputs.GetJobsJobJobConfigurationDetailResult'],
@@ -6057,10 +6057,10 @@ class GetJobsJobResult(dict):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the job.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param Sequence['GetJobsJobJobConfigurationDetailArgs'] job_configuration_details: The job configuration details
         :param Sequence['GetJobsJobJobEnvironmentConfigurationDetailArgs'] job_environment_configuration_details: Environment configuration to capture job runtime dependencies.
@@ -6134,7 +6134,7 @@ class GetJobsJobResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -6168,7 +6168,7 @@ class GetJobsJobResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -6264,12 +6264,12 @@ class GetJobsJobResult(dict):
 class GetJobsJobJobConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  job_type: str,
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The arguments to pass to the job.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the job.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the job.
         :param str job_type: The type of job.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
@@ -6288,7 +6288,7 @@ class GetJobsJobJobConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the job.
         """
@@ -6880,7 +6880,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
                  cmds: Sequence[str],
                  entrypoints: Sequence[str],
                  environment_configuration_type: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  health_check_port: int,
                  image: str,
                  image_digest: str,
@@ -6889,7 +6889,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
         :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param str environment_configuration_type: The environment configuration type
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
@@ -6930,7 +6930,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailEnvironmentConfigurati
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         """
@@ -7556,10 +7556,10 @@ class GetModelDeploymentsModelDeploymentResult(dict):
                  category_log_details: Sequence['outputs.GetModelDeploymentsModelDeploymentCategoryLogDetailResult'],
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  model_deployment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult'],
@@ -7573,10 +7573,10 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         :param Sequence['GetModelDeploymentsModelDeploymentCategoryLogDetailArgs'] category_log_details: The log details for each category.
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the model deployment.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str lifecycle_details: Details about the state of the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailArgs'] model_deployment_configuration_details: The model deployment configuration details.
@@ -7629,7 +7629,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -7653,7 +7653,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -7862,7 +7862,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
                  cmds: Sequence[str],
                  entrypoints: Sequence[str],
                  environment_configuration_type: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  health_check_port: int,
                  image: str,
                  image_digest: str,
@@ -7871,7 +7871,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
         :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
         :param str environment_configuration_type: The environment configuration type
-        :param Mapping[str, Any] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        :param Mapping[str, str] environment_variables: Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param int health_check_port: The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
@@ -7912,7 +7912,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailEnviro
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         """
@@ -8459,27 +8459,27 @@ class GetModelVersionSetsModelVersionSetResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the model version set.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str name: A filter to return only resources that match the entire name given.
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         :param str time_updated: The date and time that the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
@@ -8514,7 +8514,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -8530,7 +8530,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -8570,7 +8570,7 @@ class GetModelVersionSetsModelVersionSetResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -8631,11 +8631,11 @@ class GetModelsModelResult(dict):
                  created_by: str,
                  custom_metadata_lists: Sequence['outputs.GetModelsModelCustomMetadataListResult'],
                  defined_metadata_lists: Sequence['outputs.GetModelsModelDefinedMetadataListResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  empty_model: bool,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  input_schema: str,
                  model_artifact: str,
@@ -8648,10 +8648,10 @@ class GetModelsModelResult(dict):
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
         :param Sequence['GetModelsModelCustomMetadataListArgs'] custom_metadata_lists: An array of custom metadata details for the model.
         :param Sequence['GetModelsModelDefinedMetadataListArgs'] defined_metadata_lists: An array of defined metadata details for the model.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the model.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str input_schema: Input schema file content in String format
         :param str output_schema: Output schema file content in String format
@@ -8734,7 +8734,7 @@ class GetModelsModelResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -8763,7 +8763,7 @@ class GetModelsModelResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -9134,10 +9134,10 @@ class GetNotebookSessionNotebookSessionConfigurationDetailNotebookSessionShapeCo
 @pulumi.output_type
 class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 custom_environment_variables: Mapping[str, Any],
+                 custom_environment_variables: Mapping[str, str],
                  notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']):
         """
-        :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        :param Mapping[str, str] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
         pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
@@ -9145,7 +9145,7 @@ class GetNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Mapping[str, Any]:
+    def custom_environment_variables(self) -> Mapping[str, str]:
         """
         Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         """
@@ -9407,9 +9407,9 @@ class GetNotebookSessionsNotebookSessionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  notebook_session_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailResult'],
@@ -9423,9 +9423,9 @@ class GetNotebookSessionsNotebookSessionResult(dict):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str lifecycle_details: Details about the state of the notebook session.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionConfigDetailArgs'] notebook_session_config_details: Details for the notebook session configuration.
@@ -9471,7 +9471,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -9487,7 +9487,7 @@ class GetNotebookSessionsNotebookSessionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -9759,10 +9759,10 @@ class GetNotebookSessionsNotebookSessionNotebookSessionConfigurationDetailNotebo
 @pulumi.output_type
 class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult(dict):
     def __init__(__self__, *,
-                 custom_environment_variables: Mapping[str, Any],
+                 custom_environment_variables: Mapping[str, str],
                  notebook_session_git_config_details: Sequence['outputs.GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailResult']):
         """
-        :param Mapping[str, Any] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        :param Mapping[str, str] custom_environment_variables: Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param Sequence['GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailNotebookSessionGitConfigDetailArgs'] notebook_session_git_config_details: Git configuration Details.
         """
         pulumi.set(__self__, "custom_environment_variables", custom_environment_variables)
@@ -9770,7 +9770,7 @@ class GetNotebookSessionsNotebookSessionNotebookSessionRuntimeConfigDetailResult
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Mapping[str, Any]:
+    def custom_environment_variables(self) -> Mapping[str, str]:
         """
         Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         """
@@ -9920,12 +9920,12 @@ class GetNotebookSessionsNotebookSessionNotebookSessionStorageMountConfiguration
 class GetPipelineConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -9944,7 +9944,7 @@ class GetPipelineConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -10102,12 +10102,12 @@ class GetPipelineLogConfigurationDetailResult(dict):
 class GetPipelineRunConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -10126,7 +10126,7 @@ class GetPipelineRunConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -10153,12 +10153,12 @@ class GetPipelineRunConfigurationDetailResult(dict):
 class GetPipelineRunConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -10177,7 +10177,7 @@ class GetPipelineRunConfigurationOverrideDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -10324,11 +10324,11 @@ class GetPipelineRunStepOverrideDetailResult(dict):
 class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -10345,7 +10345,7 @@ class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -10551,10 +10551,10 @@ class GetPipelineRunsPipelineRunResult(dict):
                  configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationDetailResult'],
                  configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunConfigurationOverrideDetailResult'],
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  delete_related_job_runs: bool,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
@@ -10565,7 +10565,7 @@ class GetPipelineRunsPipelineRunResult(dict):
                  state: str,
                  step_override_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailResult'],
                  step_runs: Sequence['outputs.GetPipelineRunsPipelineRunStepRunResult'],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_accepted: str,
                  time_finished: str,
                  time_started: str,
@@ -10575,9 +10575,9 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param Sequence['GetPipelineRunsPipelineRunConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
         :param Sequence['GetPipelineRunsPipelineRunConfigurationOverrideDetailArgs'] configuration_override_details: The configuration details of a pipeline.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str lifecycle_details: Details of the state of the step run.
         :param Sequence['GetPipelineRunsPipelineRunLogConfigurationOverrideDetailArgs'] log_configuration_override_details: The pipeline log configuration details.
@@ -10587,7 +10587,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         :param str state: The current state of the PipelineRun.
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailArgs'] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param Sequence['GetPipelineRunsPipelineRunStepRunArgs'] step_runs: Array of StepRun object for each step.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_accepted: The date and time the pipeline run was accepted in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_finished: The date and time the pipeline run request was finished in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_started: The date and time the pipeline run request was started in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -10651,7 +10651,7 @@ class GetPipelineRunsPipelineRunResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -10672,7 +10672,7 @@ class GetPipelineRunsPipelineRunResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -10757,7 +10757,7 @@ class GetPipelineRunsPipelineRunResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -10800,12 +10800,12 @@ class GetPipelineRunsPipelineRunResult(dict):
 class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -10824,7 +10824,7 @@ class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -10851,12 +10851,12 @@ class GetPipelineRunsPipelineRunConfigurationDetailResult(dict):
 class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -10875,7 +10875,7 @@ class GetPipelineRunsPipelineRunConfigurationOverrideDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -11022,11 +11022,11 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
 class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -11043,7 +11043,7 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -11378,11 +11378,11 @@ class GetPipelineStepDetailResult(dict):
 class GetPipelineStepDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -11399,7 +11399,7 @@ class GetPipelineStepDetailStepConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -11600,11 +11600,11 @@ class GetPipelinesPipelineResult(dict):
                  compartment_id: str,
                  configuration_details: Sequence['outputs.GetPipelinesPipelineConfigurationDetailResult'],
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  delete_related_pipeline_runs: bool,
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailResult'],
                  lifecycle_details: str,
@@ -11613,17 +11613,17 @@ class GetPipelinesPipelineResult(dict):
                  state: str,
                  step_artifacts: Sequence['outputs.GetPipelinesPipelineStepArtifactResult'],
                  step_details: Sequence['outputs.GetPipelinesPipelineStepDetailResult'],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Sequence['GetPipelinesPipelineConfigurationDetailArgs'] configuration_details: The configuration details of a pipeline.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the step.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -11631,7 +11631,7 @@ class GetPipelinesPipelineResult(dict):
         :param str project_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
         :param str state: The current state of the Pipeline.
         :param Sequence['GetPipelinesPipelineStepDetailArgs'] step_details: Array of step details for each step.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         :param str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
         """
@@ -11681,7 +11681,7 @@ class GetPipelinesPipelineResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -11710,7 +11710,7 @@ class GetPipelinesPipelineResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -11779,7 +11779,7 @@ class GetPipelinesPipelineResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -11806,12 +11806,12 @@ class GetPipelinesPipelineResult(dict):
 class GetPipelinesPipelineConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str,
                  type: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param str type: The type of pipeline.
         """
@@ -11830,7 +11830,7 @@ class GetPipelinesPipelineConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -12147,11 +12147,11 @@ class GetPipelinesPipelineStepDetailResult(dict):
 class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  command_line_arguments: str,
-                 environment_variables: Mapping[str, Any],
+                 environment_variables: Mapping[str, str],
                  maximum_runtime_in_minutes: str):
         """
         :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
+        :param Mapping[str, str] environment_variables: Environment variables to set for step.
         :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         pulumi.set(__self__, "command_line_arguments", command_line_arguments)
@@ -12168,7 +12168,7 @@ class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Mapping[str, Any]:
+    def environment_variables(self) -> Mapping[str, str]:
         """
         Environment variables to set for step.
         """
@@ -12342,35 +12342,35 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
                  compartment_id: str,
                  created_by: str,
                  data_science_resource_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  fqdn: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  nsg_ids: Sequence[str],
                  state: str,
                  sub_domain: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
         :param str data_science_resource_type: Resource types in the Data Science service such as notebooks.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A user friendly description. Avoid entering confidential information.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
         :param str fqdn: Accesing the Data Science resource using FQDN.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of a private endpoint.
         :param str lifecycle_details: Details of the state of Data Science private endpoint.
         :param Sequence[str] nsg_ids: An array of network security group OCIDs.
         :param str state: The lifecycle state of the private endpoint.
         :param str subnet_id: The OCID of a subnet.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time that the Data Science private endpoint was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         :param str time_updated: The date and time that the Data Science private endpoint was updated expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2018-04-03T21:10:29.600Z`
         """
@@ -12418,7 +12418,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -12450,7 +12450,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -12503,7 +12503,7 @@ class GetPrivateEndpointsDataSciencePrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -12585,24 +12585,24 @@ class GetProjectsProjectResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str created_by: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A short description of the project.
         :param str display_name: <b>Filter</b> results by its user-friendly name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: <b>Filter</b> results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
         :param str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -12634,7 +12634,7 @@ class GetProjectsProjectResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -12658,7 +12658,7 @@ class GetProjectsProjectResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -12682,7 +12682,7 @@ class GetProjectsProjectResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

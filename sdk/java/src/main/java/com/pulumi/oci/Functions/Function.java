@@ -14,7 +14,6 @@ import com.pulumi.oci.Functions.outputs.FunctionSourceDetails;
 import com.pulumi.oci.Functions.outputs.FunctionTraceConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -126,8 +125,8 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      * 
      */
-    @Export(name="config", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> config;
+    @Export(name="config", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> config;
 
     /**
      * @return (Updatable) Function configuration. These values are passed on to the function as environment variables, this overrides application configuration values. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
@@ -135,21 +134,21 @@ public class Function extends com.pulumi.resources.CustomResource {
      * The maximum size for all configuration keys and values is limited to 4KB. This is measured as the sum of octets necessary to represent each key and value in UTF-8.
      * 
      */
-    public Output<Map<String,Object>> config() {
+    public Output<Map<String,String>> config() {
         return this.config;
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -170,14 +169,14 @@ public class Function extends com.pulumi.resources.CustomResource {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**

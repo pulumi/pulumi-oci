@@ -20,9 +20,9 @@ class DrProtectionGroupArgs:
                  display_name: pulumi.Input[str],
                  log_location: pulumi.Input['DrProtectionGroupLogLocationArgs'],
                  association: Optional[pulumi.Input['DrProtectionGroupAssociationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]]] = None):
         """
         The set of arguments for constructing a DrProtectionGroup resource.
@@ -30,13 +30,13 @@ class DrProtectionGroupArgs:
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
         :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating a DR protection group with a peer DR protection group.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberArgs']]] members: (Updatable) A list of DR protection group members.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -103,14 +103,14 @@ class DrProtectionGroupArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -131,14 +131,14 @@ class DrProtectionGroupArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -159,10 +159,10 @@ class _DrProtectionGroupState:
     def __init__(__self__, *,
                  association: Optional[pulumi.Input['DrProtectionGroupAssociationArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  life_cycle_details: Optional[pulumi.Input[str]] = None,
                  lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
                  log_location: Optional[pulumi.Input['DrProtectionGroupLogLocationArgs']] = None,
@@ -171,21 +171,21 @@ class _DrProtectionGroupState:
                  peer_region: Optional[pulumi.Input[str]] = None,
                  role: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DrProtectionGroup resources.
         :param pulumi.Input['DrProtectionGroupAssociationArgs'] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR protection group's current state in more detail.
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the DR protection group.
         :param pulumi.Input['DrProtectionGroupLogLocationArgs'] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
@@ -194,7 +194,7 @@ class _DrProtectionGroupState:
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] role: The role of the DR protection group.
         :param pulumi.Input[str] state: The current state of the DR protection group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
@@ -259,14 +259,14 @@ class _DrProtectionGroupState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -299,14 +299,14 @@ class _DrProtectionGroupState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -407,14 +407,14 @@ class _DrProtectionGroupState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -449,10 +449,10 @@ class DrProtectionGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
                  __props__=None):
@@ -571,14 +571,14 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]] members: (Updatable) A list of DR protection group members.
         """
@@ -716,10 +716,10 @@ class DrProtectionGroup(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  disassociate_trigger: Optional[pulumi.Input[int]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
                  members: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict']]]]] = None,
                  __props__=None):
@@ -766,10 +766,10 @@ class DrProtectionGroup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             association: Optional[pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             disassociate_trigger: Optional[pulumi.Input[int]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             life_cycle_details: Optional[pulumi.Input[str]] = None,
             lifecycle_sub_state: Optional[pulumi.Input[str]] = None,
             log_location: Optional[pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']]] = None,
@@ -778,7 +778,7 @@ class DrProtectionGroup(pulumi.CustomResource):
             peer_region: Optional[pulumi.Input[str]] = None,
             role: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'DrProtectionGroup':
         """
@@ -790,14 +790,14 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict']] association: The details for associating a DR protection group with a peer DR protection group.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment in which to create the DR protection group.  Example: `ocid1.compartment.oc1..uniqueID`
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[int] disassociate_trigger: (Updatable) An optional property when incremented triggers Disassociate. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] display_name: (Updatable) The display name of the DR protection group.  Example: `EBS PHX Group`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] life_cycle_details: A message describing the DR protection group's current state in more detail.
         :param pulumi.Input[str] lifecycle_sub_state: The current sub-state of the DR protection group.
         :param pulumi.Input[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict']] log_location: (Updatable) The details for creating an object storage log location for a DR protection group.
@@ -806,7 +806,7 @@ class DrProtectionGroup(pulumi.CustomResource):
         :param pulumi.Input[str] peer_region: The region of the peer DR protection group.  Example: `us-ashburn-1`
         :param pulumi.Input[str] role: The role of the DR protection group.
         :param pulumi.Input[str] state: The current state of the DR protection group.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the DR protection group was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         :param pulumi.Input[str] time_updated: The date and time the DR protection group was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         """
@@ -851,7 +851,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -879,7 +879,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         """
@@ -951,7 +951,7 @@ class DrProtectionGroup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

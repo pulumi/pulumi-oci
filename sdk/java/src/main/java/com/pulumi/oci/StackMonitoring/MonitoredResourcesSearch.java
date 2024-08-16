@@ -11,7 +11,6 @@ import com.pulumi.oci.StackMonitoring.MonitoredResourcesSearchArgs;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourcesSearchState;
 import com.pulumi.oci.StackMonitoring.outputs.MonitoredResourcesSearchItem;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -276,14 +275,14 @@ public class MonitoredResourcesSearch extends com.pulumi.resources.CustomResourc
      * Criteria based on resource property.
      * 
      */
-    @Export(name="propertyEquals", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output</* @Nullable */ Map<String,Object>> propertyEquals;
+    @Export(name="propertyEquals", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> propertyEquals;
 
     /**
      * @return Criteria based on resource property.
      * 
      */
-    public Output<Optional<Map<String,Object>>> propertyEquals() {
+    public Output<Optional<Map<String,String>>> propertyEquals() {
         return Codegen.optional(this.propertyEquals);
     }
     /**

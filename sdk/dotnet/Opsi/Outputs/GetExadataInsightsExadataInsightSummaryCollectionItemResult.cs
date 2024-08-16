@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Unique Enterprise Manager bridge identifier
         /// </summary>
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Optional list of Exadata insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         private GetExadataInsightsExadataInsightSummaryCollectionItemResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string enterpriseManagerBridgeId,
 
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string exadataType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string status,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

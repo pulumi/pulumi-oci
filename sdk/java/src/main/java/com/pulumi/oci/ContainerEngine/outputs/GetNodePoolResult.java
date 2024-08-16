@@ -14,7 +14,6 @@ import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeShapeConfig;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSource;
 import com.pulumi.oci.ContainerEngine.outputs.GetNodePoolNodeSourceDetail;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -36,12 +35,12 @@ public final class GetNodePoolResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the compute instance backing this node.
      * 
@@ -99,7 +98,7 @@ public final class GetNodePoolResult {
      * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
-    private Map<String,Object> nodeMetadata;
+    private Map<String,String> nodeMetadata;
     /**
      * @return Node Pool Cycling Details
      * 
@@ -175,14 +174,14 @@ public final class GetNodePoolResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -260,7 +259,7 @@ public final class GetNodePoolResult {
      * @return A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
      * 
      */
-    public Map<String,Object> nodeMetadata() {
+    public Map<String,String> nodeMetadata() {
         return this.nodeMetadata;
     }
     /**
@@ -352,8 +351,8 @@ public final class GetNodePoolResult {
     public static final class Builder {
         private String clusterId;
         private String compartmentId;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetNodePoolInitialNodeLabel> initialNodeLabels;
         private String kubernetesVersion;
@@ -363,7 +362,7 @@ public final class GetNodePoolResult {
         private List<GetNodePoolNodeEvictionNodePoolSetting> nodeEvictionNodePoolSettings;
         private String nodeImageId;
         private String nodeImageName;
-        private Map<String,Object> nodeMetadata;
+        private Map<String,String> nodeMetadata;
         private List<GetNodePoolNodePoolCyclingDetail> nodePoolCyclingDetails;
         private String nodePoolId;
         private String nodeShape;
@@ -422,7 +421,7 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetNodePoolResult", "definedTags");
             }
@@ -430,7 +429,7 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetNodePoolResult", "freeformTags");
             }
@@ -519,7 +518,7 @@ public final class GetNodePoolResult {
             return this;
         }
         @CustomType.Setter
-        public Builder nodeMetadata(Map<String,Object> nodeMetadata) {
+        public Builder nodeMetadata(Map<String,String> nodeMetadata) {
             if (nodeMetadata == null) {
               throw new MissingRequiredPropertyException("GetNodePoolResult", "nodeMetadata");
             }

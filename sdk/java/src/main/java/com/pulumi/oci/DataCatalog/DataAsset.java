@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataCatalog.DataAssetArgs;
 import com.pulumi.oci.DataCatalog.inputs.DataAssetState;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -168,10 +167,10 @@ public class DataAsset extends com.pulumi.resources.CustomResource {
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    @Export(name="properties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> properties;
+    @Export(name="properties", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> properties;
 
-    public Output<Map<String,Object>> properties() {
+    public Output<Map<String,String>> properties() {
         return this.properties;
     }
     /**

@@ -35,7 +35,7 @@ type Model struct {
 	// (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name.
@@ -43,7 +43,7 @@ type Model struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails ModelFineTuneDetailsOutput `pulumi:"fineTuneDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Whether a model is supported long-term. Only applicable to base models.
 	IsLongTermSupported pulumi.BoolOutput `pulumi:"isLongTermSupported"`
 	// A message describing the current state of the model in more detail that can provide actionable information.
@@ -53,7 +53,7 @@ type Model struct {
 	// The lifecycle state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -117,7 +117,7 @@ type modelState struct {
 	// (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name.
@@ -125,7 +125,7 @@ type modelState struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails *ModelFineTuneDetails `pulumi:"fineTuneDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether a model is supported long-term. Only applicable to base models.
 	IsLongTermSupported *bool `pulumi:"isLongTermSupported"`
 	// A message describing the current state of the model in more detail that can provide actionable information.
@@ -135,7 +135,7 @@ type modelState struct {
 	// The lifecycle state of the model.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -161,7 +161,7 @@ type ModelState struct {
 	// (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name.
@@ -169,7 +169,7 @@ type ModelState struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails ModelFineTuneDetailsPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Whether a model is supported long-term. Only applicable to base models.
 	IsLongTermSupported pulumi.BoolPtrInput
 	// A message describing the current state of the model in more detail that can provide actionable information.
@@ -179,7 +179,7 @@ type ModelState struct {
 	// The lifecycle state of the model.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time that the model was created in the format of an RFC3339 datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
@@ -207,7 +207,7 @@ type modelArgs struct {
 	// (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name.
@@ -215,7 +215,7 @@ type modelArgs struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails ModelFineTuneDetails `pulumi:"fineTuneDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The provider of the model.
 	Vendor *string `pulumi:"vendor"`
 	// (Updatable) The version of the model.
@@ -232,7 +232,7 @@ type ModelArgs struct {
 	// (Updatable) The compartment OCID for fine-tuned models. For pretrained models, this value is null.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name.
@@ -240,7 +240,7 @@ type ModelArgs struct {
 	// Details about fine-tuning a custom model.
 	FineTuneDetails ModelFineTuneDetailsInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The provider of the model.
 	Vendor pulumi.StringPtrInput
 	// (Updatable) The version of the model.
@@ -353,8 +353,8 @@ func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ModelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ModelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional description of the model.
@@ -373,8 +373,8 @@ func (o ModelOutput) FineTuneDetails() ModelFineTuneDetailsOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ModelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether a model is supported long-term. Only applicable to base models.
@@ -398,8 +398,8 @@ func (o ModelOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ModelOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ModelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the model was created in the format of an RFC3339 datetime string.

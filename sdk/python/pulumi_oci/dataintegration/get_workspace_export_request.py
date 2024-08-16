@@ -113,7 +113,7 @@ class GetWorkspaceExportRequestResult:
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
+    def error_messages(self) -> Mapping[str, str]:
         """
         Contains key of the error
         """

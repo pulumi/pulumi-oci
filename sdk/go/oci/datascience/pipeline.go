@@ -71,13 +71,13 @@ import (
 //					EnvironmentVariables:    pulumi.Any(pipelineConfigurationDetailsEnvironmentVariables),
 //					MaximumRuntimeInMinutes: pulumi.Any(pipelineConfigurationDetailsMaximumRuntimeInMinutes),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(pipelineDescription),
 //				DisplayName: pulumi.Any(pipelineDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				InfrastructureConfigurationDetails: &datascience.PipelineInfrastructureConfigurationDetailsArgs{
 //					BlockStorageSizeInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
@@ -121,14 +121,14 @@ type Pipeline struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               pulumi.MapOutput     `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns pulumi.BoolPtrOutput `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags               pulumi.StringMapOutput `pulumi:"definedTags"`
+	DeleteRelatedPipelineRuns pulumi.BoolPtrOutput   `pulumi:"deleteRelatedPipelineRuns"`
 	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsOutput `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -143,7 +143,7 @@ type Pipeline struct {
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayOutput `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -196,14 +196,14 @@ type pipelineState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns *bool                  `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DeleteRelatedPipelineRuns *bool             `pulumi:"deleteRelatedPipelineRuns"`
 	// (Updatable) A short description of the pipeline.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails *PipelineInfrastructureConfigurationDetails `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -218,7 +218,7 @@ type pipelineState struct {
 	// (Updatable) Array of step details for each step.
 	StepDetails []PipelineStepDetail `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -233,14 +233,14 @@ type PipelineState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the pipeline.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               pulumi.MapInput
+	DefinedTags               pulumi.StringMapInput
 	DeleteRelatedPipelineRuns pulumi.BoolPtrInput
 	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -255,7 +255,7 @@ type PipelineState struct {
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
@@ -272,14 +272,14 @@ type pipelineArgs struct {
 	// (Updatable) The configuration details of a pipeline.
 	ConfigurationDetails *PipelineConfigurationDetails `pulumi:"configurationDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedPipelineRuns *bool                  `pulumi:"deleteRelatedPipelineRuns"`
+	DefinedTags               map[string]string `pulumi:"definedTags"`
+	DeleteRelatedPipelineRuns *bool             `pulumi:"deleteRelatedPipelineRuns"`
 	// (Updatable) A short description of the pipeline.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails *PipelineInfrastructureConfigurationDetails `pulumi:"infrastructureConfigurationDetails"`
 	// (Updatable) The pipeline log configuration details.
@@ -298,14 +298,14 @@ type PipelineArgs struct {
 	// (Updatable) The configuration details of a pipeline.
 	ConfigurationDetails PipelineConfigurationDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags               pulumi.MapInput
+	DefinedTags               pulumi.StringMapInput
 	DeleteRelatedPipelineRuns pulumi.BoolPtrInput
 	// (Updatable) A short description of the pipeline.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrInput
 	// (Updatable) The pipeline log configuration details.
@@ -420,8 +420,8 @@ func (o PipelineOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o PipelineOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PipelineOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o PipelineOutput) DeleteRelatedPipelineRuns() pulumi.BoolPtrOutput {
@@ -439,8 +439,8 @@ func (o PipelineOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o PipelineOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PipelineOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The infrastructure configuration details of a pipeline or a step.
@@ -480,8 +480,8 @@ func (o PipelineOutput) StepDetails() PipelineStepDetailArrayOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o PipelineOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Pipeline) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o PipelineOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Pipeline) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z

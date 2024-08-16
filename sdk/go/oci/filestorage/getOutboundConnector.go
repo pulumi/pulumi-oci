@@ -67,13 +67,13 @@ type LookupOutboundConnectorResult struct {
 	// The account type of this outbound connector.
 	ConnectorType string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName string `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []GetOutboundConnectorEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.
 	Id                  string `pulumi:"id"`
 	OutboundConnectorId string `pulumi:"outboundConnectorId"`
@@ -146,8 +146,8 @@ func (o LookupOutboundConnectorResultOutput) ConnectorType() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupOutboundConnectorResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOutboundConnectorResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
@@ -161,8 +161,8 @@ func (o LookupOutboundConnectorResultOutput) Endpoints() GetOutboundConnectorEnd
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupOutboundConnectorResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOutboundConnectorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOutboundConnectorResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOutboundConnectorResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the outbound connector.

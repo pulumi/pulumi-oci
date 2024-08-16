@@ -40,12 +40,12 @@ import (
 //					Values: pulumi.Any(dataMaskRuleTargetSelectedValues),
 //				},
 //				DataMaskRuleStatus: pulumi.Any(dataMaskRuleDataMaskRuleStatus),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(dataMaskRuleDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				State: pulumi.Any(dataMaskRuleState),
 //			})
@@ -75,7 +75,7 @@ type DataMaskRule struct {
 	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringOutput `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Data mask rule display name
@@ -85,7 +85,7 @@ type DataMaskRule struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringOutput `pulumi:"iamGroupId"`
 	// Additional details on the substate of the lifecycle state [DEPRECATE]
@@ -93,7 +93,7 @@ type DataMaskRule struct {
 	// The current lifecycle state of the data mask rule
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelectedOutput `pulumi:"targetSelected"`
 	// The date and time the target was created. Format defined by RFC3339.
@@ -154,7 +154,7 @@ type dataMaskRuleState struct {
 	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The data mask rule description Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Data mask rule display name
@@ -164,7 +164,7 @@ type dataMaskRuleState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId *string `pulumi:"iamGroupId"`
 	// Additional details on the substate of the lifecycle state [DEPRECATE]
@@ -172,7 +172,7 @@ type dataMaskRuleState struct {
 	// The current lifecycle state of the data mask rule
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected *DataMaskRuleTargetSelected `pulumi:"targetSelected"`
 	// The date and time the target was created. Format defined by RFC3339.
@@ -189,7 +189,7 @@ type DataMaskRuleState struct {
 	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Data mask rule display name
@@ -199,7 +199,7 @@ type DataMaskRuleState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringPtrInput
 	// Additional details on the substate of the lifecycle state [DEPRECATE]
@@ -207,7 +207,7 @@ type DataMaskRuleState struct {
 	// The current lifecycle state of the data mask rule
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
 	TargetSelected DataMaskRuleTargetSelectedPtrInput
 	// The date and time the target was created. Format defined by RFC3339.
@@ -228,7 +228,7 @@ type dataMaskRuleArgs struct {
 	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus *string `pulumi:"dataMaskRuleStatus"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The data mask rule description Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Data mask rule display name
@@ -238,7 +238,7 @@ type dataMaskRuleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId string `pulumi:"iamGroupId"`
 	// The current lifecycle state of the data mask rule
@@ -256,7 +256,7 @@ type DataMaskRuleArgs struct {
 	// (Updatable) The current status of the data mask rule
 	DataMaskRuleStatus pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The data mask rule description Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Data mask rule display name
@@ -266,7 +266,7 @@ type DataMaskRuleArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) IAM group ID associated with the data mask rule
 	IamGroupId pulumi.StringInput
 	// The current lifecycle state of the data mask rule
@@ -378,8 +378,8 @@ func (o DataMaskRuleOutput) DataMaskRuleStatus() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DataMaskRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DataMaskRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The data mask rule description Avoid entering confidential information.
@@ -397,8 +397,8 @@ func (o DataMaskRuleOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o DataMaskRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DataMaskRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) IAM group ID associated with the data mask rule
@@ -417,8 +417,8 @@ func (o DataMaskRuleOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DataMaskRuleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataMaskRule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DataMaskRuleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataMaskRule) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).

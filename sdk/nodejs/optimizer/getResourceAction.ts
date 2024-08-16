@@ -73,7 +73,7 @@ export interface GetResourceActionResult {
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata: {[key: string]: string};
     /**
      * The unique OCID associated with the resource action.
      */
@@ -82,7 +82,7 @@ export interface GetResourceActionResult {
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    readonly metadata: {[key: string]: any};
+    readonly metadata: {[key: string]: string};
     /**
      * The name assigned to the resource.
      */

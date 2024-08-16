@@ -19,14 +19,14 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string>? CommandLineArguments { get; set; }
 
         [Input("environmentVariables")]
-        private InputMap<object>? _environmentVariables;
+        private InputMap<string>? _environmentVariables;
 
         /// <summary>
         /// (Updatable) Environment variables to set for steps in the pipeline.
         /// </summary>
-        public InputMap<object> EnvironmentVariables
+        public InputMap<string> EnvironmentVariables
         {
-            get => _environmentVariables ?? (_environmentVariables = new InputMap<object>());
+            get => _environmentVariables ?? (_environmentVariables = new InputMap<string>());
             set => _environmentVariables = value;
         }
 

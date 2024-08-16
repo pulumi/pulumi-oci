@@ -70,7 +70,7 @@ type WorkspaceImportRequest struct {
 	// Name of the user who initiated import request.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages pulumi.MapOutput `pulumi:"errorMessages"`
+	ErrorMessages pulumi.StringMapOutput `pulumi:"errorMessages"`
 	// Name of the zip file to be imported.
 	FileName pulumi.StringOutput `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
@@ -148,7 +148,7 @@ type workspaceImportRequestState struct {
 	// Name of the user who initiated import request.
 	CreatedBy *string `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// Name of the zip file to be imported.
 	FileName *string `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
@@ -188,7 +188,7 @@ type WorkspaceImportRequestState struct {
 	// Name of the user who initiated import request.
 	CreatedBy pulumi.StringPtrInput
 	// Contains key of the error
-	ErrorMessages pulumi.MapInput
+	ErrorMessages pulumi.StringMapInput
 	// Name of the zip file to be imported.
 	FileName pulumi.StringPtrInput
 	// Import Objects Conflict resolution.
@@ -372,8 +372,8 @@ func (o WorkspaceImportRequestOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Contains key of the error
-func (o WorkspaceImportRequestOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.MapOutput { return v.ErrorMessages }).(pulumi.MapOutput)
+func (o WorkspaceImportRequestOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceImportRequest) pulumi.StringMapOutput { return v.ErrorMessages }).(pulumi.StringMapOutput)
 }
 
 // Name of the zip file to be imported.

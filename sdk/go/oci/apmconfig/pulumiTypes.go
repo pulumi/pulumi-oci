@@ -1134,7 +1134,7 @@ type GetConfigsConfigCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the metric.
 	Description string `pulumi:"description"`
 	// A list of dimensions for the metric. This variable should not be used.
@@ -1148,7 +1148,7 @@ type GetConfigsConfigCollectionItem struct {
 	// The string that defines the Span Filter expression.
 	FilterText string `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A string that specifies the group that an OPTIONS item belongs to.
 	Group string `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
@@ -1190,7 +1190,7 @@ type GetConfigsConfigCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A description of the metric.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A list of dimensions for the metric. This variable should not be used.
@@ -1204,7 +1204,7 @@ type GetConfigsConfigCollectionItemArgs struct {
 	// The string that defines the Span Filter expression.
 	FilterText pulumi.StringInput `pulumi:"filterText"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringInput `pulumi:"group"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item. An OCID is generated when the item is created.
@@ -1294,8 +1294,8 @@ func (o GetConfigsConfigCollectionItemOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConfigsConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the metric.
@@ -1329,8 +1329,8 @@ func (o GetConfigsConfigCollectionItemOutput) FilterText() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConfigsConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConfigsConfigCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A string that specifies the group that an OPTIONS item belongs to.

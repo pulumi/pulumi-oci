@@ -129,9 +129,9 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public readonly string ArtifactPath;
         public readonly string CompartmentId;
         public readonly string Content;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         public readonly string RepositoryId;
         public readonly string Sha256;
@@ -151,11 +151,11 @@ namespace Pulumi.Oci.GenericArtifactsContent
 
             string content,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

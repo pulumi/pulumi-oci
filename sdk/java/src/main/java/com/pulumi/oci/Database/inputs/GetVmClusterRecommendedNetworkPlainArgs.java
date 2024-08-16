@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.GetVmClusterRecommendedNetworkNetwork;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,13 +54,13 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
 
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Optional<Map<String,Object>> definedTags() {
+    public Optional<Map<String,String>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -130,13 +129,13 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
 
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Map<String,Object>> freeformTags() {
+    public Optional<Map<String,String>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -273,7 +272,7 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -338,7 +337,7 @@ public final class GetVmClusterRecommendedNetworkPlainArgs extends com.pulumi.re
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }

@@ -77,7 +77,7 @@ type WorkspaceFolder struct {
 	// (Updatable) Currently not used on folder creation. Reserved for future.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceFolderMetadataArrayOutput `pulumi:"metadatas"`
 	// The type of the object.
@@ -150,7 +150,7 @@ type workspaceFolderState struct {
 	// (Updatable) Currently not used on folder creation. Reserved for future.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceFolderMetadata `pulumi:"metadatas"`
 	// The type of the object.
@@ -185,7 +185,7 @@ type WorkspaceFolderState struct {
 	// (Updatable) Currently not used on folder creation. Reserved for future.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput
+	KeyMap pulumi.StringMapInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceFolderMetadataArrayInput
 	// The type of the object.
@@ -376,8 +376,8 @@ func (o WorkspaceFolderOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o WorkspaceFolderOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceFolder) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
+func (o WorkspaceFolderOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceFolder) pulumi.StringMapOutput { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

@@ -41,12 +41,12 @@ import (
 //				},
 //				ScheduleRecurrences: pulumi.Any(scheduleScheduleRecurrences),
 //				TimeScheduled:       pulumi.Any(scheduleTimeScheduled),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(scheduleDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				OutputFileFormat: pulumi.Any(scheduleOutputFileFormat),
 //				QueryProperties: &meteringcomputation.ScheduleQueryPropertiesArgs{
@@ -94,11 +94,11 @@ type Schedule struct {
 	// The customer tenancy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the schedule.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) Specifies the supported output file format.
@@ -114,7 +114,7 @@ type Schedule struct {
 	// The schedule lifecycle state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the schedule was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time of the next job execution.
@@ -171,11 +171,11 @@ type scheduleState struct {
 	// The customer tenancy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the schedule.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specifies the supported output file format.
@@ -191,7 +191,7 @@ type scheduleState struct {
 	// The schedule lifecycle state.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the schedule was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time of the next job execution.
@@ -207,11 +207,11 @@ type ScheduleState struct {
 	// The customer tenancy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the schedule.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique name of the user-created schedule.
 	Name pulumi.StringPtrInput
 	// (Updatable) Specifies the supported output file format.
@@ -227,7 +227,7 @@ type ScheduleState struct {
 	// The schedule lifecycle state.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the schedule was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time of the next job execution.
@@ -247,11 +247,11 @@ type scheduleArgs struct {
 	// The customer tenancy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the schedule.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique name of the user-created schedule.
 	Name *string `pulumi:"name"`
 	// (Updatable) Specifies the supported output file format.
@@ -276,11 +276,11 @@ type ScheduleArgs struct {
 	// The customer tenancy.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the schedule.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique name of the user-created schedule.
 	Name pulumi.StringPtrInput
 	// (Updatable) Specifies the supported output file format.
@@ -393,8 +393,8 @@ func (o ScheduleOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o ScheduleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the schedule.
@@ -403,8 +403,8 @@ func (o ScheduleOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o ScheduleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique name of the user-created schedule.
@@ -443,8 +443,8 @@ func (o ScheduleOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ScheduleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the schedule was created.

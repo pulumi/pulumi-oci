@@ -63,11 +63,11 @@ type LookupProtectionPolicyResult struct {
 	// The OCID of the compartment that contains the protection policy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user provided name for the protection policy.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The protection policy OCID.
 	Id string `pulumi:"id"`
 	// Set to TRUE if the policy is Oracle-defined, and FALSE for a user-defined custom policy. You can modify only the custom policies.
@@ -80,7 +80,7 @@ type LookupProtectionPolicyResult struct {
 	// The current state of the protection policy.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the updated time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.
@@ -136,8 +136,8 @@ func (o LookupProtectionPolicyResultOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o LookupProtectionPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProtectionPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user provided name for the protection policy.
@@ -146,8 +146,8 @@ func (o LookupProtectionPolicyResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupProtectionPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProtectionPolicyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The protection policy OCID.
@@ -180,8 +180,8 @@ func (o LookupProtectionPolicyResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o LookupProtectionPolicyResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProtectionPolicyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectionPolicyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for the protection policy. For example: '2020-05-22T21:10:29.600Z'.

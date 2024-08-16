@@ -6,7 +6,6 @@ package com.pulumi.oci.Monitoring.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.outputs.GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +27,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Human-readable reason for this alarm suppression. It does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -38,7 +37,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
     /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
      * 
@@ -48,7 +47,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
      * 
@@ -99,7 +98,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -113,7 +112,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{&#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}`
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
     /**
@@ -127,7 +126,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -184,11 +183,11 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
     public static final class Builder {
         private List<GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTarget> alarmSuppressionTargets;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
-        private Map<String,Object> dimensions;
+        private Map<String,String> dimensions;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String state;
         private String timeCreated;
@@ -233,7 +232,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItem", "definedTags");
             }
@@ -249,7 +248,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             if (dimensions == null) {
               throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItem", "dimensions");
             }
@@ -265,7 +264,7 @@ public final class GetAlarmSuppressionsAlarmSuppressionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetAlarmSuppressionsAlarmSuppressionCollectionItem", "freeformTags");
             }

@@ -33,12 +33,12 @@ import (
 //			_, err := ApmSynthetics.NewOnPremiseVantagePoint(ctx, "test_on_premise_vantage_point", &ApmSynthetics.OnPremiseVantagePointArgs{
 //				ApmDomainId: pulumi.Any(testApmDomain.Id),
 //				Name:        pulumi.Any(onPremiseVantagePointName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(onPremiseVantagePointDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Type: pulumi.Any(onPremiseVantagePointType),
 //			})
@@ -64,13 +64,13 @@ type OnPremiseVantagePoint struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringOutput `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description about the On-premise vantage point.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Unique permanent name of the On-premise vantage point.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -122,13 +122,13 @@ type onPremiseVantagePointState struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId *string `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description about the On-premise vantage point.
 	Description *string `pulumi:"description"`
 	// Unique permanent name of the On-premise vantage point.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
 	Name *string `pulumi:"name"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -148,13 +148,13 @@ type OnPremiseVantagePointState struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description about the On-premise vantage point.
 	Description pulumi.StringPtrInput
 	// Unique permanent name of the On-premise vantage point.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
 	Name pulumi.StringPtrInput
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
@@ -178,11 +178,11 @@ type onPremiseVantagePointArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description about the On-premise vantage point.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
 	Name *string `pulumi:"name"`
 	// Type of On-premise vantage point.
@@ -197,11 +197,11 @@ type OnPremiseVantagePointArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description about the On-premise vantage point.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.
 	Name pulumi.StringPtrInput
 	// Type of On-premise vantage point.
@@ -304,8 +304,8 @@ func (o OnPremiseVantagePointOutput) ApmDomainId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OnPremiseVantagePointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremiseVantagePoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OnPremiseVantagePointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremiseVantagePoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description about the On-premise vantage point.
@@ -319,8 +319,8 @@ func (o OnPremiseVantagePointOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OnPremiseVantagePointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremiseVantagePoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OnPremiseVantagePointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremiseVantagePoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique On-premise vantage point name that cannot be edited. The name should not contain any confidential information.

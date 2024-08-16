@@ -39,8 +39,8 @@ import (
 //					KmsKeyId: pulumi.Any(testKey.Id),
 //				},
 //				DefinedTags: pulumi.Any(streamPoolDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				KafkaSettings: &streaming.StreamPoolKafkaSettingsArgs{
 //					AutoCreateTopicsEnable: pulumi.Any(streamPoolKafkaSettingsAutoCreateTopicsEnable),
@@ -78,11 +78,11 @@ type StreamPool struct {
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
 	CustomEncryptionKey StreamPoolCustomEncryptionKeyOutput `pulumi:"customEncryptionKey"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
 	EndpointFqdn pulumi.StringOutput `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
 	IsPrivate pulumi.BoolOutput `pulumi:"isPrivate"`
 	// (Updatable) Settings for the Kafka compatibility layer.
@@ -137,11 +137,11 @@ type streamPoolState struct {
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
 	CustomEncryptionKey *StreamPoolCustomEncryptionKey `pulumi:"customEncryptionKey"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
 	EndpointFqdn *string `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
 	IsPrivate *bool `pulumi:"isPrivate"`
 	// (Updatable) Settings for the Kafka compatibility layer.
@@ -164,11 +164,11 @@ type StreamPoolState struct {
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
 	CustomEncryptionKey StreamPoolCustomEncryptionKeyPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
 	EndpointFqdn pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
 	IsPrivate pulumi.BoolPtrInput
 	// (Updatable) Settings for the Kafka compatibility layer.
@@ -195,9 +195,9 @@ type streamPoolArgs struct {
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
 	CustomEncryptionKey *StreamPoolCustomEncryptionKey `pulumi:"customEncryptionKey"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Settings for the Kafka compatibility layer.
 	KafkaSettings *StreamPoolKafkaSettings `pulumi:"kafkaSettings"`
 	// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
@@ -213,9 +213,9 @@ type StreamPoolArgs struct {
 	// (Updatable) The OCID of the custom encryption key to be used or deleted if currently being used.
 	CustomEncryptionKey StreamPoolCustomEncryptionKeyPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Settings for the Kafka compatibility layer.
 	KafkaSettings StreamPoolKafkaSettingsPtrInput
 	// (Updatable) The name of the stream pool. Avoid entering confidential information.  Example: `MyStreamPool`
@@ -322,8 +322,8 @@ func (o StreamPoolOutput) CustomEncryptionKey() StreamPoolCustomEncryptionKeyOut
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o StreamPoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o StreamPoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
@@ -332,8 +332,8 @@ func (o StreamPoolOutput) EndpointFqdn() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o StreamPoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamPool) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o StreamPoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamPool) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.

@@ -69,7 +69,7 @@ type LookupClusterResult struct {
 	// Datastores used for the Cluster.
 	Datastores []GetClusterDatastore `pulumi:"datastores"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The number of ESXi hosts in the Cluster.
@@ -77,7 +77,7 @@ type LookupClusterResult struct {
 	// In general, this is a specific version of bundled ESXi software supported by Oracle Cloud VMware Solution (see [ListSupportedVmwareSoftwareVersions](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions)).
 	EsxiSoftwareVersion string `pulumi:"esxiSoftwareVersion"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.
 	Id string `pulumi:"id"`
 	// The billing option selected during Cluster creation. [ListSupportedCommitments](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedCommitmentSummary/ListSupportedCommitments).
@@ -179,8 +179,8 @@ func (o LookupClusterResultOutput) Datastores() GetClusterDatastoreArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupClusterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A descriptive name for the Cluster. It must be unique, start with a letter, and contain only letters, digits, whitespaces, dashes and underscores. Avoid entering confidential information.
@@ -199,8 +199,8 @@ func (o LookupClusterResultOutput) EsxiSoftwareVersion() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupClusterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cluster.

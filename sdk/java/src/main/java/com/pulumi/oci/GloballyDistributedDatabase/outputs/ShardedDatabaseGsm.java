@@ -5,7 +5,6 @@ package com.pulumi.oci.GloballyDistributedDatabase.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -28,7 +27,7 @@ public final class ShardedDatabaseGsm {
      * @return Additional metadata related to shard&#39;s underlying supporting resource.
      * 
      */
-    private @Nullable Map<String,Object> metadata;
+    private @Nullable Map<String,String> metadata;
     /**
      * @return Name of the shard.
      * 
@@ -79,7 +78,7 @@ public final class ShardedDatabaseGsm {
      * @return Additional metadata related to shard&#39;s underlying supporting resource.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
@@ -136,7 +135,7 @@ public final class ShardedDatabaseGsm {
     public static final class Builder {
         private @Nullable Double computeCount;
         private @Nullable Double dataStorageSizeInGbs;
-        private @Nullable Map<String,Object> metadata;
+        private @Nullable Map<String,String> metadata;
         private @Nullable String name;
         private @Nullable String status;
         private @Nullable String supportingResourceId;
@@ -170,7 +169,7 @@ public final class ShardedDatabaseGsm {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(@Nullable Map<String,Object> metadata) {
+        public Builder metadata(@Nullable Map<String,String> metadata) {
 
             this.metadata = metadata;
             return this;

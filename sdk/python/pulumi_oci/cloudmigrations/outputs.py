@@ -1539,8 +1539,8 @@ class TargetAssetMigrationAsset(dict):
                  replication_compartment_id: Optional[str] = None,
                  replication_schedule_id: Optional[str] = None,
                  snap_shot_bucket_name: Optional[str] = None,
-                 snapshots: Optional[Mapping[str, Any]] = None,
-                 source_asset_data: Optional[Mapping[str, Any]] = None,
+                 snapshots: Optional[Mapping[str, str]] = None,
+                 source_asset_data: Optional[Mapping[str, str]] = None,
                  source_asset_id: Optional[str] = None,
                  state: Optional[str] = None,
                  tenancy_id: Optional[str] = None,
@@ -1561,8 +1561,8 @@ class TargetAssetMigrationAsset(dict):
         :param str replication_compartment_id: Replication compartment identifier
         :param str replication_schedule_id: Replication schedule identifier
         :param str snap_shot_bucket_name: Name of snapshot bucket
-        :param Mapping[str, Any] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         :param str source_asset_id: OCID that is referenced to an asset for an inventory.
         :param str state: The current state of the target asset.
         :param str tenancy_id: Tenancy identifier
@@ -1719,7 +1719,7 @@ class TargetAssetMigrationAsset(dict):
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Optional[Mapping[str, Any]]:
+    def snapshots(self) -> Optional[Mapping[str, str]]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
@@ -1727,7 +1727,7 @@ class TargetAssetMigrationAsset(dict):
 
     @property
     @pulumi.getter(name="sourceAssetData")
-    def source_asset_data(self) -> Optional[Mapping[str, Any]]:
+    def source_asset_data(self) -> Optional[Mapping[str, str]]:
         """
         Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         """
@@ -1840,10 +1840,10 @@ class TargetAssetRecommendedSpec(dict):
                  compartment_id: Optional[str] = None,
                  create_vnic_details: Optional[Sequence['outputs.TargetAssetRecommendedSpecCreateVnicDetail']] = None,
                  dedicated_vm_host_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  instance_options: Optional[Sequence['outputs.TargetAssetRecommendedSpecInstanceOption']] = None,
                  ipxe_script: Optional[str] = None,
@@ -1859,10 +1859,10 @@ class TargetAssetRecommendedSpec(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['TargetAssetRecommendedSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['TargetAssetRecommendedSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -1959,7 +1959,7 @@ class TargetAssetRecommendedSpec(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1983,7 +1983,7 @@ class TargetAssetRecommendedSpec(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -2222,9 +2222,9 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
@@ -2234,9 +2234,9 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -2285,7 +2285,7 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2301,7 +2301,7 @@ class TargetAssetRecommendedSpecCreateVnicDetail(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -2702,10 +2702,10 @@ class TargetAssetTestSpec(dict):
                  compartment_id: Optional[str] = None,
                  create_vnic_details: Optional[Sequence['outputs.TargetAssetTestSpecCreateVnicDetail']] = None,
                  dedicated_vm_host_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  instance_options: Optional[Sequence['outputs.TargetAssetTestSpecInstanceOption']] = None,
                  ipxe_script: Optional[str] = None,
@@ -2721,10 +2721,10 @@ class TargetAssetTestSpec(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['TargetAssetTestSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['TargetAssetTestSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -2821,7 +2821,7 @@ class TargetAssetTestSpec(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2845,7 +2845,7 @@ class TargetAssetTestSpec(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -3084,9 +3084,9 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
@@ -3096,9 +3096,9 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -3147,7 +3147,7 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3163,7 +3163,7 @@ class TargetAssetTestSpecCreateVnicDetail(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -3564,10 +3564,10 @@ class TargetAssetUserSpec(dict):
                  compartment_id: Optional[str] = None,
                  create_vnic_details: Optional['outputs.TargetAssetUserSpecCreateVnicDetails'] = None,
                  dedicated_vm_host_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  instance_options: Optional['outputs.TargetAssetUserSpecInstanceOptions'] = None,
                  ipxe_script: Optional[str] = None,
@@ -3583,7 +3583,7 @@ class TargetAssetUserSpec(dict):
         :param str compartment_id: (Updatable) The OCID of the compartment.
         :param 'TargetAssetUserSpecCreateVnicDetailsArgs' create_vnic_details: (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: (Updatable) The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
                
@@ -3592,7 +3592,7 @@ class TargetAssetUserSpec(dict):
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
                Example: `FAULT-DOMAIN-1`
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param 'TargetAssetUserSpecInstanceOptionsArgs' instance_options: (Updatable) Optional mutable instance options
         :param str ipxe_script: (Updatable) This is an advanced option.
@@ -3707,7 +3707,7 @@ class TargetAssetUserSpec(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3737,7 +3737,7 @@ class TargetAssetUserSpec(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -4024,9 +4024,9 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: Optional[bool] = None,
                  assign_public_ip: Optional[bool] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  nsg_ids: Optional[Sequence[str]] = None,
                  private_ip: Optional[str] = None,
@@ -4046,9 +4046,9 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
                Example: `false`
                
                If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
                
                For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -4129,7 +4129,7 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4145,7 +4145,7 @@ class TargetAssetUserSpecCreateVnicDetails(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -4585,7 +4585,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
                  replication_compartment_id: str,
                  replication_schedule_id: str,
                  snap_shot_bucket_name: str,
-                 snapshots: Mapping[str, Any],
+                 snapshots: Mapping[str, str],
                  source_asset_id: str,
                  state: str,
                  tenancy_id: str,
@@ -4605,7 +4605,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
         :param str replication_compartment_id: Replication compartment identifier
         :param str replication_schedule_id: Replication schedule identifier
         :param str snap_shot_bucket_name: Name of snapshot bucket
-        :param Mapping[str, Any] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         :param str source_asset_id: OCID that is referenced to an asset for an inventory.
         :param str state: The current state of the migration asset.
         :param str tenancy_id: Tenancy identifier
@@ -4743,7 +4743,7 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Mapping[str, Any]:
+    def snapshots(self) -> Mapping[str, str]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
@@ -4802,8 +4802,8 @@ class GetMigrationAssetsMigrationAssetCollectionItemResult(dict):
 class GetMigrationPlanAvailableShapeItemResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  gpu_description: str,
                  gpus: int,
                  local_disk_description: str,
@@ -4817,11 +4817,11 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
                  pagination_token: str,
                  processor_description: str,
                  shape: str,
-                 system_tags: Mapping[str, Any]):
+                 system_tags: Mapping[str, str]):
         """
         :param str availability_domain: The availability domain in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str gpu_description: Description of the GPUs.
         :param int gpus: Number of GPUs.
         :param str local_disk_description: Description of local disks.
@@ -4835,7 +4835,7 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
         :param str pagination_token: Shape name and availability domain.  Used for pagination.
         :param str processor_description: Description of the processor.
         :param str shape: Name of the shape.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -4865,7 +4865,7 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4873,7 +4873,7 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -4985,7 +4985,7 @@ class GetMigrationPlanAvailableShapeItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5014,8 +5014,8 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionResult(dict):
 class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
     def __init__(__self__, *,
                  availability_domain: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  gpu_description: str,
                  gpus: int,
                  local_disk_description: str,
@@ -5029,11 +5029,11 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
                  pagination_token: str,
                  processor_description: str,
                  shape: str,
-                 system_tags: Mapping[str, Any]):
+                 system_tags: Mapping[str, str]):
         """
         :param str availability_domain: The availability domain in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str gpu_description: Description of the GPUs.
         :param int gpus: Number of GPUs.
         :param str local_disk_description: Description of local disks.
@@ -5047,7 +5047,7 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
         :param str pagination_token: Shape name and availability domain.  Used for pagination.
         :param str processor_description: Description of the processor.
         :param str shape: Name of the shape.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -5077,7 +5077,7 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5085,7 +5085,7 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -5197,7 +5197,7 @@ class GetMigrationPlanAvailableShapesAvailableShapesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5824,11 +5824,11 @@ class GetMigrationPlansMigrationPlanCollectionResult(dict):
 @pulumi.output_type
 class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
     def __init__(__self__, *,
-                 calculated_limits: Mapping[str, Any],
+                 calculated_limits: Mapping[str, str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  migration_id: str,
@@ -5837,16 +5837,16 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
                  source_migration_plan_id: str,
                  state: str,
                  strategies: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemStrategyResult'],
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  target_environments: Sequence['outputs.GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentResult'],
                  time_created: str,
                  time_updated: str):
         """
-        :param Mapping[str, Any] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
+        :param Mapping[str, str] calculated_limits: Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str id: The unique Oracle ID (OCID) that is immutable on creation.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str migration_id: Unique migration identifier
@@ -5855,7 +5855,7 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
         :param str source_migration_plan_id: Source migraiton plan ID to be cloned.
         :param str state: The current state of the migration plan.
         :param Sequence['GetMigrationPlansMigrationPlanCollectionItemStrategyArgs'] strategies: List of strategies for the resources to be migrated.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArgs'] target_environments: List of target environments.
         :param str time_created: The time when the migration plan was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time when the migration plan was updated. An RFC3339 formatted datetime string.
@@ -5880,7 +5880,7 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="calculatedLimits")
-    def calculated_limits(self) -> Mapping[str, Any]:
+    def calculated_limits(self) -> Mapping[str, str]:
         """
         Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
         """
@@ -5896,7 +5896,7 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5912,7 +5912,7 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -5984,7 +5984,7 @@ class GetMigrationPlansMigrationPlanCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6609,28 +6609,28 @@ class GetMigrationsMigrationCollectionResult(dict):
 class GetMigrationsMigrationCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_completed: bool,
                  lifecycle_details: str,
                  replication_schedule_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation
         :param bool is_completed: Indicates whether migration is marked as completed.
         :param str lifecycle_details: A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
         :param str replication_schedule_id: Replication schedule identifier
         :param str state: A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the migration project was created. An RFC3339 formatted datetime string
         :param str time_updated: The time when the migration project was updated. An RFC3339 formatted datetime string
         """
@@ -6657,7 +6657,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6673,7 +6673,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -6721,7 +6721,7 @@ class GetMigrationsMigrationCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6787,26 +6787,26 @@ class GetReplicationSchedulesReplicationScheduleCollectionResult(dict):
 class GetReplicationSchedulesReplicationScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  execution_recurrences: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
         :param str execution_recurrences: Recurrence specification for the replication schedule execution.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
         :param str lifecycle_details: The detailed state of the replication schedule.
         :param str state: The current state of the replication schedule.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when the replication schedule was created in RFC3339 format.
         :param str time_updated: The time when the replication schedule was last updated in RFC3339 format.
         """
@@ -6832,7 +6832,7 @@ class GetReplicationSchedulesReplicationScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6856,7 +6856,7 @@ class GetReplicationSchedulesReplicationScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -6888,7 +6888,7 @@ class GetReplicationSchedulesReplicationScheduleCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -7299,8 +7299,8 @@ class GetTargetAssetMigrationAssetResult(dict):
                  replication_compartment_id: str,
                  replication_schedule_id: str,
                  snap_shot_bucket_name: str,
-                 snapshots: Mapping[str, Any],
-                 source_asset_data: Mapping[str, Any],
+                 snapshots: Mapping[str, str],
+                 source_asset_data: Mapping[str, str],
                  source_asset_id: str,
                  state: str,
                  tenancy_id: str,
@@ -7321,8 +7321,8 @@ class GetTargetAssetMigrationAssetResult(dict):
         :param str replication_compartment_id: Replication compartment identifier
         :param str replication_schedule_id: Replication schedule identifier
         :param str snap_shot_bucket_name: Name of snapshot bucket
-        :param Mapping[str, Any] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         :param str source_asset_id: OCID that is referenced to an asset for an inventory.
         :param str state: The current state of the target asset.
         :param str tenancy_id: Tenancy identifier
@@ -7458,7 +7458,7 @@ class GetTargetAssetMigrationAssetResult(dict):
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Mapping[str, Any]:
+    def snapshots(self) -> Mapping[str, str]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
@@ -7466,7 +7466,7 @@ class GetTargetAssetMigrationAssetResult(dict):
 
     @property
     @pulumi.getter(name="sourceAssetData")
-    def source_asset_data(self) -> Mapping[str, Any]:
+    def source_asset_data(self) -> Mapping[str, str]:
         """
         Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         """
@@ -7530,10 +7530,10 @@ class GetTargetAssetRecommendedSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetRecommendedSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetRecommendedSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -7549,10 +7549,10 @@ class GetTargetAssetRecommendedSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetRecommendedSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetRecommendedSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -7630,7 +7630,7 @@ class GetTargetAssetRecommendedSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -7654,7 +7654,7 @@ class GetTargetAssetRecommendedSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -7807,9 +7807,9 @@ class GetTargetAssetRecommendedSpecCreateVnicDetailResult(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -7819,9 +7819,9 @@ class GetTargetAssetRecommendedSpecCreateVnicDetailResult(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -7859,7 +7859,7 @@ class GetTargetAssetRecommendedSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -7875,7 +7875,7 @@ class GetTargetAssetRecommendedSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -8117,10 +8117,10 @@ class GetTargetAssetTestSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetTestSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetTestSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -8136,10 +8136,10 @@ class GetTargetAssetTestSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetTestSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetTestSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -8217,7 +8217,7 @@ class GetTargetAssetTestSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8241,7 +8241,7 @@ class GetTargetAssetTestSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -8394,9 +8394,9 @@ class GetTargetAssetTestSpecCreateVnicDetailResult(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -8406,9 +8406,9 @@ class GetTargetAssetTestSpecCreateVnicDetailResult(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -8446,7 +8446,7 @@ class GetTargetAssetTestSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8462,7 +8462,7 @@ class GetTargetAssetTestSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -8704,10 +8704,10 @@ class GetTargetAssetUserSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetUserSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetUserSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -8723,10 +8723,10 @@ class GetTargetAssetUserSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetUserSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetUserSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -8804,7 +8804,7 @@ class GetTargetAssetUserSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8828,7 +8828,7 @@ class GetTargetAssetUserSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -8981,9 +8981,9 @@ class GetTargetAssetUserSpecCreateVnicDetailResult(dict):
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -8993,9 +8993,9 @@ class GetTargetAssetUserSpecCreateVnicDetailResult(dict):
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -9033,7 +9033,7 @@ class GetTargetAssetUserSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -9049,7 +9049,7 @@ class GetTargetAssetUserSpecCreateVnicDetailResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -9953,8 +9953,8 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
                  replication_compartment_id: str,
                  replication_schedule_id: str,
                  snap_shot_bucket_name: str,
-                 snapshots: Mapping[str, Any],
-                 source_asset_data: Mapping[str, Any],
+                 snapshots: Mapping[str, str],
+                 source_asset_data: Mapping[str, str],
                  source_asset_id: str,
                  state: str,
                  tenancy_id: str,
@@ -9975,8 +9975,8 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
         :param str replication_compartment_id: Replication compartment identifier
         :param str replication_schedule_id: Replication schedule identifier
         :param str snap_shot_bucket_name: Name of snapshot bucket
-        :param Mapping[str, Any] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-        :param Mapping[str, Any] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] snapshots: Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] source_asset_data: Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         :param str source_asset_id: OCID that is referenced to an asset for an inventory.
         :param str state: The current state of the target asset.
         :param str tenancy_id: Tenancy identifier
@@ -10112,7 +10112,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
 
     @property
     @pulumi.getter
-    def snapshots(self) -> Mapping[str, Any]:
+    def snapshots(self) -> Mapping[str, str]:
         """
         Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
         """
@@ -10120,7 +10120,7 @@ class GetTargetAssetsTargetAssetCollectionItemMigrationAssetResult(dict):
 
     @property
     @pulumi.getter(name="sourceAssetData")
-    def source_asset_data(self) -> Mapping[str, Any]:
+    def source_asset_data(self) -> Mapping[str, str]:
         """
         Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
         """
@@ -10184,10 +10184,10 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -10203,10 +10203,10 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemRecommendedSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -10284,7 +10284,7 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -10308,7 +10308,7 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -10461,9 +10461,9 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailRes
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -10473,9 +10473,9 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailRes
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -10513,7 +10513,7 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailRes
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -10529,7 +10529,7 @@ class GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailRes
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -10771,10 +10771,10 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -10790,10 +10790,10 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemTestSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -10871,7 +10871,7 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -10895,7 +10895,7 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -11048,9 +11048,9 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult(dic
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -11060,9 +11060,9 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult(dic
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -11100,7 +11100,7 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult(dic
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -11116,7 +11116,7 @@ class GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailResult(dic
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -11358,10 +11358,10 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecResult(dict):
                  compartment_id: str,
                  create_vnic_details: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult'],
                  dedicated_vm_host_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  instance_options: Sequence['outputs.GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionResult'],
                  ipxe_script: str,
@@ -11377,10 +11377,10 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecResult(dict):
         :param str compartment_id: The OCID of the compartment.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArgs'] create_vnic_details: Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         :param str dedicated_vm_host_id: The OCID of the dedicated VM host.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
         :param str fault_domain: A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence['GetTargetAssetsTargetAssetCollectionItemUserSpecInstanceOptionArgs'] instance_options: Optional mutable instance options
         :param str ipxe_script: This is an advanced option.
@@ -11458,7 +11458,7 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -11482,7 +11482,7 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """
@@ -11635,9 +11635,9 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult(dic
     def __init__(__self__, *,
                  assign_private_dns_record: bool,
                  assign_public_ip: bool,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  nsg_ids: Sequence[str],
                  private_ip: str,
@@ -11647,9 +11647,9 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult(dic
         """
         :param bool assign_private_dns_record: Whether the VNIC should be assigned a DNS record. If set to false, there will be no DNS record registration for the VNIC. If set to true, the DNS record will be registered. By default, the value is true.
         :param bool assign_public_ip: Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire given display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         :param str hostname_label: Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         :param Sequence[str] nsg_ids: List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         :param str private_ip: A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -11687,7 +11687,7 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult(dic
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -11703,7 +11703,7 @@ class GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailResult(dic
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         """

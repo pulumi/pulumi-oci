@@ -11,7 +11,6 @@ import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigu
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser;
 import com.pulumi.oci.Logging.outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -93,7 +92,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      * @return Parameters of the custom filter
      * 
      */
-    private Map<String,Object> params;
+    private Map<String,String> params;
     /**
      * @return Source parser object.
      * 
@@ -238,7 +237,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      * @return Parameters of the custom filter
      * 
      */
-    public Map<String,Object> params() {
+    public Map<String,String> params() {
         return this.params;
     }
     /**
@@ -321,7 +320,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
         private List<String> keepKeys;
         private String keyName;
         private String name;
-        private Map<String,Object> params;
+        private Map<String,String> params;
         private List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser> parsers;
         private List<GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList> recordLists;
         private Boolean removeKeyNameField;
@@ -483,7 +482,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
             return this;
         }
         @CustomType.Setter
-        public Builder params(Map<String,Object> params) {
+        public Builder params(Map<String,String> params) {
             if (params == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter", "params");
             }

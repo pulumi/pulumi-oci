@@ -20,10 +20,10 @@ class TargetDatabaseArgs:
                  database_details: pulumi.Input['TargetDatabaseDatabaseDetailsArgs'],
                  connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
                  credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
         """
@@ -32,10 +32,10 @@ class TargetDatabaseArgs:
         :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
@@ -108,14 +108,14 @@ class TargetDatabaseArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -144,14 +144,14 @@ class TargetDatabaseArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -187,15 +187,15 @@ class _TargetDatabaseState:
                  connection_option: Optional[pulumi.Input['TargetDatabaseConnectionOptionArgs']] = None,
                  credentials: Optional[pulumi.Input['TargetDatabaseCredentialsArgs']] = None,
                  database_details: Optional[pulumi.Input['TargetDatabaseDatabaseDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]]] = None,
                  peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  tls_config: Optional[pulumi.Input['TargetDatabaseTlsConfigArgs']] = None):
@@ -206,15 +206,15 @@ class _TargetDatabaseState:
         :param pulumi.Input['TargetDatabaseConnectionOptionArgs'] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input['TargetDatabaseCredentialsArgs'] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input['TargetDatabaseDatabaseDetailsArgs'] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseDetailArgs']]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Sequence[pulumi.Input['TargetDatabasePeerTargetDatabaseArgs']]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[str] state: The current state of the target database in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         :param pulumi.Input[str] time_updated: The date and time of the target database update in Data Safe.
         :param pulumi.Input['TargetDatabaseTlsConfigArgs'] tls_config: (Updatable) The details required to establish a TLS enabled connection.
@@ -316,14 +316,14 @@ class _TargetDatabaseState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -352,14 +352,14 @@ class _TargetDatabaseState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -412,14 +412,14 @@ class _TargetDatabaseState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -468,10 +468,10 @@ class TargetDatabase(pulumi.CustomResource):
                  connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
                  credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
                  database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
                  tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
@@ -562,10 +562,10 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
         """
@@ -675,10 +675,10 @@ class TargetDatabase(pulumi.CustomResource):
                  connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
                  credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
                  database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
                  tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None,
                  __props__=None):
@@ -726,15 +726,15 @@ class TargetDatabase(pulumi.CustomResource):
             connection_option: Optional[pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']]] = None,
             credentials: Optional[pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']]] = None,
             database_details: Optional[pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             peer_target_database_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]]] = None,
             peer_target_databases: Optional[pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict']]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             tls_config: Optional[pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']]] = None) -> 'TargetDatabase':
@@ -750,15 +750,15 @@ class TargetDatabase(pulumi.CustomResource):
         :param pulumi.Input[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict']] connection_option: (Updatable) Types of connection supported by Data Safe.
         :param pulumi.Input[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict']] credentials: (Updatable) The database credentials required for Data Safe to connect to the database.
         :param pulumi.Input[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict']] database_details: (Updatable) Details of the database for the registration in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: (Updatable) The description of the target database in Data Safe.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: Details about the current state of the peer target database in Data Safe.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict']]]] peer_target_database_details: The details of the database to be registered as a peer target database.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict']]]] peer_target_databases: The OCIDs of associated resources like Database, Data Safe private endpoint etc.
         :param pulumi.Input[str] state: The current state of the target database in Data Safe.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The date and time the database was registered in Data Safe and created as a target database in Data Safe.
         :param pulumi.Input[str] time_updated: The date and time of the target database update in Data Safe.
         :param pulumi.Input[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict']] tls_config: (Updatable) The details required to establish a TLS enabled connection.
@@ -828,7 +828,7 @@ class TargetDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -852,7 +852,7 @@ class TargetDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
@@ -892,7 +892,7 @@ class TargetDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

@@ -20,10 +20,10 @@ class ModelArgs:
                  model_type: pulumi.Input[str],
                  project_id: pulumi.Input[str],
                  component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
                  model_id: Optional[pulumi.Input[str]] = None,
@@ -37,10 +37,10 @@ class ModelArgs:
         :param pulumi.Input[str] model_type: The type of the Document model.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[str] model_version: The model version
@@ -126,14 +126,14 @@ class ModelArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -162,14 +162,14 @@ class ModelArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -259,10 +259,10 @@ class _ModelState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  component_models: Optional[pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_composed_model: Optional[pulumi.Input[bool]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -274,7 +274,7 @@ class _ModelState:
                  model_version: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
                  testing_dataset: Optional[pulumi.Input['ModelTestingDatasetArgs']] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -286,10 +286,10 @@ class _ModelState:
         Input properties used for looking up and filtering Model resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input['ModelComponentModelArgs']]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The collection of labels used to train the custom model.
@@ -300,7 +300,7 @@ class _ModelState:
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[str] state: The current state of the model.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[str] tenancy_id: The tenancy id of the model.
         :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[str] time_created: When the model was created, as an RFC3339 datetime string.
@@ -386,14 +386,14 @@ class _ModelState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -422,14 +422,14 @@ class _ModelState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -563,14 +563,14 @@ class _ModelState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -665,10 +665,10 @@ class Model(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
                  model_id: Optional[pulumi.Input[str]] = None,
@@ -698,10 +698,10 @@ class Model(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[float] max_training_time_in_hours: The maximum model training time in hours, expressed as a decimal fraction.
         :param pulumi.Input[str] model_type: The type of the Document model.
@@ -749,10 +749,10 @@ class Model(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_quick_mode: Optional[pulumi.Input[bool]] = None,
                  max_training_time_in_hours: Optional[pulumi.Input[float]] = None,
                  model_id: Optional[pulumi.Input[str]] = None,
@@ -814,10 +814,10 @@ class Model(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             component_models: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_composed_model: Optional[pulumi.Input[bool]] = None,
             is_quick_mode: Optional[pulumi.Input[bool]] = None,
             labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -829,7 +829,7 @@ class Model(pulumi.CustomResource):
             model_version: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             tenancy_id: Optional[pulumi.Input[str]] = None,
             testing_dataset: Optional[pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -846,10 +846,10 @@ class Model(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment identifier.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict']]]] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) An optional description of the model.
         :param pulumi.Input[str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param pulumi.Input[bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: The collection of labels used to train the custom model.
@@ -860,7 +860,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] model_version: The model version
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         :param pulumi.Input[str] state: The current state of the model.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param pulumi.Input[str] tenancy_id: The tenancy id of the model.
         :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
         :param pulumi.Input[str] time_created: When the model was created, as an RFC3339 datetime string.
@@ -918,7 +918,7 @@ class Model(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -942,7 +942,7 @@ class Model(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -1035,7 +1035,7 @@ class Model(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """

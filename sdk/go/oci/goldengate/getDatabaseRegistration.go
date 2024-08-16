@@ -69,7 +69,7 @@ type LookupDatabaseRegistrationResult struct {
 	DatabaseId             string `pulumi:"databaseId"`
 	DatabaseRegistrationId string `pulumi:"databaseRegistrationId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Metadata about this specific object.
 	Description string `pulumi:"description"`
 	// An object's Display Name.
@@ -77,7 +77,7 @@ type LookupDatabaseRegistrationResult struct {
 	// A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn string `pulumi:"fqdn"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
 	Id string `pulumi:"id"`
 	// The private IP address in the customer's VCN of the customer's endpoint, typically a database.
@@ -100,7 +100,7 @@ type LookupDatabaseRegistrationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -175,8 +175,8 @@ func (o LookupDatabaseRegistrationResultOutput) DatabaseRegistrationId() pulumi.
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDatabaseRegistrationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDatabaseRegistrationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Metadata about this specific object.
@@ -195,8 +195,8 @@ func (o LookupDatabaseRegistrationResultOutput) Fqdn() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o LookupDatabaseRegistrationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDatabaseRegistrationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the databaseRegistration being referenced.
@@ -254,8 +254,8 @@ func (o LookupDatabaseRegistrationResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupDatabaseRegistrationResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDatabaseRegistrationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDatabaseRegistrationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

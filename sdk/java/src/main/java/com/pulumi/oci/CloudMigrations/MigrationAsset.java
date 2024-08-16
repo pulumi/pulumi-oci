@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.CloudMigrations.MigrationAssetArgs;
 import com.pulumi.oci.CloudMigrations.inputs.MigrationAssetState;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -216,14 +215,14 @@ public class MigrationAsset extends com.pulumi.resources.CustomResource {
      * Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="snapshots", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> snapshots;
+    @Export(name="snapshots", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> snapshots;
 
     /**
      * @return Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> snapshots() {
+    public Output<Map<String,String>> snapshots() {
         return this.snapshots;
     }
     /**

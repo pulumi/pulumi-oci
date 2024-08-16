@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A brief description of the secret. Avoid entering confidential information.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the secret.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Vault.Outputs
         /// <summary>
         /// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         /// </summary>
@@ -101,11 +101,11 @@ namespace Pulumi.Oci.Vault.Outputs
 
             string currentVersionNumber,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Vault.Outputs
 
             string lifecycleDetails,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string nextRotationTime,
 

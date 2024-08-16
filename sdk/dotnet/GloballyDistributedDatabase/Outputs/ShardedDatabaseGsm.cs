@@ -24,7 +24,7 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Outputs
         /// <summary>
         /// Additional metadata related to shard's underlying supporting resource.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Metadata;
+        public readonly ImmutableDictionary<string, string>? Metadata;
         /// <summary>
         /// Name of the shard.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Outputs
 
             double? dataStorageSizeInGbs,
 
-            ImmutableDictionary<string, object>? metadata,
+            ImmutableDictionary<string, string>? metadata,
 
             string? name,
 

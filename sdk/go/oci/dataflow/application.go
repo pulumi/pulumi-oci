@@ -46,8 +46,8 @@ import (
 //				Arguments:     pulumi.Any(applicationArguments),
 //				ClassName:     pulumi.Any(applicationClassName),
 //				Configuration: pulumi.Any(applicationConfiguration),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(applicationDescription),
 //				DriverShapeConfig: &dataflow.ApplicationDriverShapeConfigArgs{
@@ -60,8 +60,8 @@ import (
 //					Ocpus:       pulumi.Any(applicationExecutorShapeConfigOcpus),
 //				},
 //				FileUri: pulumi.Any(applicationFileUri),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IdleTimeoutInMinutes: pulumi.Any(applicationIdleTimeoutInMinutes),
 //				LogsBucketUri:        pulumi.Any(applicationLogsBucketUri),
@@ -108,9 +108,9 @@ type Application struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration pulumi.MapOutput `pulumi:"configuration"`
+	Configuration pulumi.StringMapOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -128,7 +128,7 @@ type Application struct {
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringOutput `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
 	IdleTimeoutInMinutes pulumi.StringOutput `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
@@ -230,9 +230,9 @@ type applicationState struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration map[string]interface{} `pulumi:"configuration"`
+	Configuration map[string]string `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -250,7 +250,7 @@ type applicationState struct {
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri *string `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
 	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
@@ -302,9 +302,9 @@ type ApplicationState struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration pulumi.MapInput
+	Configuration pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -322,7 +322,7 @@ type ApplicationState struct {
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
 	IdleTimeoutInMinutes pulumi.StringPtrInput
 	// (Updatable) The Spark language.
@@ -378,9 +378,9 @@ type applicationArgs struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration map[string]interface{} `pulumi:"configuration"`
+	Configuration map[string]string `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -398,7 +398,7 @@ type applicationArgs struct {
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri *string `pulumi:"fileUri"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
 	IdleTimeoutInMinutes *string `pulumi:"idleTimeoutInMinutes"`
 	// (Updatable) The Spark language.
@@ -441,9 +441,9 @@ type ApplicationArgs struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	Configuration pulumi.MapInput
+	Configuration pulumi.StringMapInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. It does not have to be unique. Avoid entering confidential information.
@@ -461,7 +461,7 @@ type ApplicationArgs struct {
 	// (Updatable) An Oracle Cloud Infrastructure URI of the file containing the application to execute. See https://docs.cloud.oracle.com/iaas/Content/API/SDKDocs/hdfsconnector.htm#uriformat.
 	FileUri pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)
 	IdleTimeoutInMinutes pulumi.StringPtrInput
 	// (Updatable) The Spark language.
@@ -604,13 +604,13 @@ func (o ApplicationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o ApplicationOutput) Configuration() pulumi.MapOutput {
-	return o.ApplyT(func(v *Application) pulumi.MapOutput { return v.Configuration }).(pulumi.MapOutput)
+func (o ApplicationOutput) Configuration() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringMapOutput { return v.Configuration }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ApplicationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Application) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ApplicationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly description. Avoid entering confidential information.
@@ -654,8 +654,8 @@ func (o ApplicationOutput) FileUri() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ApplicationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Application) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ApplicationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Application) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The timeout value in minutes used to manage Runs. A Run would be stopped after inactivity for this amount of time period. Note: This parameter is currently only applicable for Runs of type `SESSION`. Default value is 2880 minutes (2 days)

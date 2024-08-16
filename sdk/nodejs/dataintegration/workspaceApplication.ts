@@ -96,7 +96,7 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * A list of dependent objects in this patch.
      */
@@ -112,7 +112,7 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -124,7 +124,7 @@ export class WorkspaceApplication extends pulumi.CustomResource {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
@@ -285,7 +285,7 @@ export interface WorkspaceApplicationState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A list of dependent objects in this patch.
      */
@@ -301,7 +301,7 @@ export interface WorkspaceApplicationState {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -313,7 +313,7 @@ export interface WorkspaceApplicationState {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: any}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
@@ -387,7 +387,7 @@ export interface WorkspaceApplicationArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Detailed description for the object.
      */
@@ -399,7 +399,7 @@ export interface WorkspaceApplicationArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */

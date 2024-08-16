@@ -22,9 +22,9 @@ class AtCustomerCccInfrastructureArgs:
                  ccc_upgrade_schedule_id: Optional[pulumi.Input[str]] = None,
                  connection_details: Optional[pulumi.Input[str]] = None,
                  connection_state: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AtCustomerCccInfrastructure resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
@@ -37,9 +37,9 @@ class AtCustomerCccInfrastructureArgs:
         :param pulumi.Input[str] ccc_upgrade_schedule_id: (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
         :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
         :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -135,14 +135,14 @@ class AtCustomerCccInfrastructureArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -159,14 +159,14 @@ class AtCustomerCccInfrastructureArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
@@ -177,10 +177,10 @@ class _AtCustomerCccInfrastructureState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_details: Optional[pulumi.Input[str]] = None,
                  connection_state: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  infrastructure_inventories: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]]] = None,
                  infrastructure_network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -189,7 +189,7 @@ class _AtCustomerCccInfrastructureState:
                  short_name: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]]] = None):
@@ -199,10 +199,10 @@ class _AtCustomerCccInfrastructureState:
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
         :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
         :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureInventoryArgs']]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs']]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
@@ -215,7 +215,7 @@ class _AtCustomerCccInfrastructureState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[Sequence[pulumi.Input['AtCustomerCccInfrastructureUpgradeInformationArgs']]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
@@ -311,14 +311,14 @@ class _AtCustomerCccInfrastructureState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -347,14 +347,14 @@ class _AtCustomerCccInfrastructureState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -459,14 +459,14 @@ class _AtCustomerCccInfrastructureState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -515,10 +515,10 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_details: Optional[pulumi.Input[str]] = None,
                  connection_state: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -563,10 +563,10 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
         :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
         :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] subnet_id: (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
                
                
@@ -634,10 +634,10 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_details: Optional[pulumi.Input[str]] = None,
                  connection_state: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -688,10 +688,10 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_details: Optional[pulumi.Input[str]] = None,
             connection_state: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             infrastructure_inventories: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict']]]]] = None,
             infrastructure_network_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -700,7 +700,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
             short_name: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             upgrade_informations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict']]]]] = None) -> 'AtCustomerCccInfrastructure':
@@ -715,10 +715,10 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the infrastructure.
         :param pulumi.Input[str] connection_details: (Updatable) A message describing the current connection state in more detail.
         :param pulumi.Input[str] connection_state: (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict']]]] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict']]]] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param pulumi.Input[str] lifecycle_details: A message describing the current lifecycle state in more detail. For example, this can be used to provide actionable information for a resource that is in a Failed state.
@@ -731,7 +731,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict']]]] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
@@ -796,7 +796,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -820,7 +820,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -896,7 +896,7 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

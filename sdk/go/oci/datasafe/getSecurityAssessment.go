@@ -61,13 +61,13 @@ type LookupSecurityAssessmentResult struct {
 	// The OCID of the compartment that contains the security assessment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security assessment.
 	Description string `pulumi:"description"`
 	// The display name of the security assessment.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security assessment.
 	Id string `pulumi:"id"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
@@ -96,8 +96,8 @@ type LookupSecurityAssessmentResult struct {
 	// Statistics showing the number of findings for each category grouped by risk levels for all the targets in the specified security assessment.
 	Statistics []GetSecurityAssessmentStatistic `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	TargetId   string                 `pulumi:"targetId"`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	TargetId   string            `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
 	// The version of the target database.
@@ -158,8 +158,8 @@ func (o LookupSecurityAssessmentResultOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSecurityAssessmentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSecurityAssessmentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the security assessment.
@@ -173,8 +173,8 @@ func (o LookupSecurityAssessmentResultOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupSecurityAssessmentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSecurityAssessmentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security assessment.
@@ -247,8 +247,8 @@ func (o LookupSecurityAssessmentResultOutput) Statistics() GetSecurityAssessment
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSecurityAssessmentResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSecurityAssessmentResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupSecurityAssessmentResultOutput) TargetId() pulumi.StringOutput {

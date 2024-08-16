@@ -14,7 +14,6 @@ import com.pulumi.oci.Optimizer.outputs.ProfileTargetCompartments;
 import com.pulumi.oci.Optimizer.outputs.ProfileTargetTags;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -127,14 +126,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -155,14 +154,14 @@ public class Profile extends com.pulumi.resources.CustomResource {
      * (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -207,10 +206,10 @@ public class Profile extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
 
-    public Output<Map<String,Object>> systemTags() {
+    public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
     /**

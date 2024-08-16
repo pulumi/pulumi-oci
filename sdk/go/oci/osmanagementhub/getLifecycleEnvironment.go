@@ -63,13 +63,13 @@ type LookupLifecycleEnvironmentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Software source description.
 	Description string `pulumi:"description"`
 	// Software source name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle environment that contains the lifecycle stage.
@@ -85,7 +85,7 @@ type LookupLifecycleEnvironmentResult struct {
 	// The current state of the lifecycle environment.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the lifecycle environment was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
@@ -143,8 +143,8 @@ func (o LookupLifecycleEnvironmentResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupLifecycleEnvironmentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupLifecycleEnvironmentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Software source description.
@@ -158,8 +158,8 @@ func (o LookupLifecycleEnvironmentResultOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupLifecycleEnvironmentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupLifecycleEnvironmentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
@@ -200,8 +200,8 @@ func (o LookupLifecycleEnvironmentResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupLifecycleEnvironmentResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupLifecycleEnvironmentResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLifecycleEnvironmentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the lifecycle environment was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

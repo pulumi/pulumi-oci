@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// (Updatable) Log category parameters are stored here.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Parameters;
+        public readonly ImmutableDictionary<string, string>? Parameters;
         /// <summary>
         /// The unique identifier of the resource emitting the log.
         /// </summary>
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Logging.Outputs
         private LogConfigurationSource(
             string category,
 
-            ImmutableDictionary<string, object>? parameters,
+            ImmutableDictionary<string, string>? parameters,
 
             string resource,
 

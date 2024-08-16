@@ -9,7 +9,6 @@ import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemCompute;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVm;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVmwareVcenter;
 import com.pulumi.oci.CloudBridge.outputs.GetAssetsAssetCollectionItemVmwareVm;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +40,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -56,7 +55,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Asset OCID that is immutable on creation.
      * 
@@ -81,7 +80,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time when the asset was created. An RFC3339 formatted datetime string.
      * 
@@ -141,7 +140,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -162,7 +161,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -197,7 +196,7 @@ public final class GetAssetsAssetCollectionItem {
      * @return The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -249,15 +248,15 @@ public final class GetAssetsAssetCollectionItem {
         private String assetType;
         private String compartmentId;
         private List<GetAssetsAssetCollectionItemCompute> computes;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String externalAssetKey;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String inventoryId;
         private String sourceKey;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private List<GetAssetsAssetCollectionItemVm> vms;
@@ -325,7 +324,7 @@ public final class GetAssetsAssetCollectionItem {
             return computes(List.of(computes));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "definedTags");
             }
@@ -349,7 +348,7 @@ public final class GetAssetsAssetCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "freeformTags");
             }
@@ -389,7 +388,7 @@ public final class GetAssetsAssetCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetAssetsAssetCollectionItem", "systemTags");
             }

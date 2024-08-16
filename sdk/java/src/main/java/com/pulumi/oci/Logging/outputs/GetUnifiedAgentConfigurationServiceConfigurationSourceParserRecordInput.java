@@ -5,7 +5,6 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserR
      * @return Dimensions to be added for metrics.
      * 
      */
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
     /**
      * @return Namespace to emit metrics.
      * 
@@ -33,7 +32,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserR
      * @return Dimensions to be added for metrics.
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
     /**
@@ -60,7 +59,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserR
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> dimensions;
+        private Map<String,String> dimensions;
         private String namespace;
         private String resourceGroup;
         public Builder() {}
@@ -72,7 +71,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserR
         }
 
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             if (dimensions == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput", "dimensions");
             }

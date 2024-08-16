@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionAlarmSuppressionTargetArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -39,13 +38,13 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -79,7 +78,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="dimensions", required=true)
-    private Output<Map<String,Object>> dimensions;
+    private Output<Map<String,String>> dimensions;
 
     /**
      * @return A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
@@ -87,7 +86,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
      * 
      */
-    public Output<Map<String,Object>> dimensions() {
+    public Output<Map<String,String>> dimensions() {
         return this.dimensions;
     }
 
@@ -111,13 +110,13 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -215,7 +214,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -226,7 +225,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -267,7 +266,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder dimensions(Output<Map<String,Object>> dimensions) {
+        public Builder dimensions(Output<Map<String,String>> dimensions) {
             $.dimensions = dimensions;
             return this;
         }
@@ -280,7 +279,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             return dimensions(Output.of(dimensions));
         }
 
@@ -311,7 +310,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -322,7 +321,7 @@ public final class AlarmSuppressionArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

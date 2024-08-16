@@ -11,7 +11,6 @@ import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -329,13 +328,13 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -419,13 +418,13 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -1727,7 +1726,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -1738,7 +1737,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -1853,7 +1852,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -1864,7 +1863,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

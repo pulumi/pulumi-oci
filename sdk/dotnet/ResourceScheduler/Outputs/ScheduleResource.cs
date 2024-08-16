@@ -22,13 +22,13 @@ namespace Pulumi.Oci.ResourceScheduler.Outputs
         /// 
         /// { "id": "&lt;OCID_of_bucket&gt;" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Metadata;
+        public readonly ImmutableDictionary<string, string>? Metadata;
 
         [OutputConstructor]
         private ScheduleResource(
             string id,
 
-            ImmutableDictionary<string, object>? metadata)
+            ImmutableDictionary<string, string>? metadata)
         {
             Id = id;
             Metadata = metadata;

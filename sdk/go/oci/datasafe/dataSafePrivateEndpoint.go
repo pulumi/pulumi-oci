@@ -35,12 +35,12 @@ import (
 //				DisplayName:   pulumi.Any(dataSafePrivateEndpointDisplayName),
 //				SubnetId:      pulumi.Any(testSubnet.Id),
 //				VcnId:         pulumi.Any(testVcn.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(dataSafePrivateEndpointDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				NsgIds:            pulumi.Any(dataSafePrivateEndpointNsgIds),
 //				PrivateEndpointIp: pulumi.Any(dataSafePrivateEndpointPrivateEndpointIp),
@@ -67,7 +67,7 @@ type DataSafePrivateEndpoint struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the private endpoint.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
@@ -75,7 +75,7 @@ type DataSafePrivateEndpoint struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn pulumi.StringOutput `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// The OCID of the underlying private endpoint.
@@ -87,7 +87,7 @@ type DataSafePrivateEndpoint struct {
 	// The OCID of the subnet.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The OCID of the VCN.
@@ -142,7 +142,7 @@ type dataSafePrivateEndpointState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the private endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
@@ -150,7 +150,7 @@ type dataSafePrivateEndpointState struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn *string `pulumi:"endpointFqdn"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The OCID of the underlying private endpoint.
@@ -162,7 +162,7 @@ type dataSafePrivateEndpointState struct {
 	// The OCID of the subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
@@ -176,7 +176,7 @@ type DataSafePrivateEndpointState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the private endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
@@ -184,7 +184,7 @@ type DataSafePrivateEndpointState struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayInput
 	// The OCID of the underlying private endpoint.
@@ -196,7 +196,7 @@ type DataSafePrivateEndpointState struct {
 	// The OCID of the subnet.
 	SubnetId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The OCID of the VCN.
@@ -214,13 +214,13 @@ type dataSafePrivateEndpointArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the private endpoint.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
 	// The private IP address of the private endpoint.
@@ -239,13 +239,13 @@ type DataSafePrivateEndpointArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the private endpoint.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name for the private endpoint. The name does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayInput
 	// The private IP address of the private endpoint.
@@ -352,8 +352,8 @@ func (o DataSafePrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o DataSafePrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DataSafePrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the private endpoint.
@@ -372,8 +372,8 @@ func (o DataSafePrivateEndpointOutput) EndpointFqdn() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o DataSafePrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DataSafePrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The OCIDs of the network security groups that the private endpoint belongs to.
@@ -402,8 +402,8 @@ func (o DataSafePrivateEndpointOutput) SubnetId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DataSafePrivateEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DataSafePrivateEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataSafePrivateEndpoint) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

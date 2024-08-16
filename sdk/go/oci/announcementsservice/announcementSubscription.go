@@ -36,8 +36,8 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(announcementSubscriptionDisplayName),
 //				OnsTopicId:    pulumi.Any(testNotificationTopic.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(announcementSubscriptionDescription),
 //				FilterGroups: &announcementsservice.AnnouncementSubscriptionFilterGroupsArgs{
@@ -48,8 +48,8 @@ import (
 //						},
 //					},
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				PreferredLanguage: pulumi.Any(announcementSubscriptionPreferredLanguage),
 //				PreferredTimeZone: pulumi.Any(announcementSubscriptionPreferredTimeZone),
@@ -76,7 +76,7 @@ type AnnouncementSubscription struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -84,7 +84,7 @@ type AnnouncementSubscription struct {
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
 	FilterGroups AnnouncementSubscriptionFilterGroupsOutput `pulumi:"filterGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
@@ -99,7 +99,7 @@ type AnnouncementSubscription struct {
 	// The current lifecycle state of the announcement subscription.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -148,7 +148,7 @@ type announcementSubscriptionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -156,7 +156,7 @@ type announcementSubscriptionState struct {
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
 	FilterGroups *AnnouncementSubscriptionFilterGroups `pulumi:"filterGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
@@ -171,7 +171,7 @@ type announcementSubscriptionState struct {
 	// The current lifecycle state of the announcement subscription.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -182,7 +182,7 @@ type AnnouncementSubscriptionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -190,7 +190,7 @@ type AnnouncementSubscriptionState struct {
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
 	FilterGroups AnnouncementSubscriptionFilterGroupsPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
@@ -205,7 +205,7 @@ type AnnouncementSubscriptionState struct {
 	// The current lifecycle state of the announcement subscription.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -220,7 +220,7 @@ type announcementSubscriptionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -228,7 +228,7 @@ type announcementSubscriptionArgs struct {
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
 	FilterGroups *AnnouncementSubscriptionFilterGroups `pulumi:"filterGroups"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
 	OnsTopicId string `pulumi:"onsTopicId"`
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
@@ -245,7 +245,7 @@ type AnnouncementSubscriptionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the announcement subscription. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -253,7 +253,7 @@ type AnnouncementSubscriptionArgs struct {
 	// A list of filter groups for the announcement subscription. A filter group combines one or more filters that the Announcements service applies to announcements for matching purposes.
 	FilterGroups AnnouncementSubscriptionFilterGroupsPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription. The caller of the operation needs the ONS_TOPIC_PUBLISH permission for the targeted Notifications service topic. For more information about Notifications permissions, see [Details for Notifications](https://docs.cloud.oracle.com/iaas/Content/Identity/policyreference/notificationpolicyreference.htm).
 	OnsTopicId pulumi.StringInput
 	// (Updatable) (For announcement subscriptions with Oracle Fusion Applications configured as the service only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the language tag format (x-obmcs-human-language). For example fr-FR.
@@ -358,8 +358,8 @@ func (o AnnouncementSubscriptionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AnnouncementSubscriptionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AnnouncementSubscriptionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A description of the announcement subscription. Avoid entering confidential information.
@@ -378,8 +378,8 @@ func (o AnnouncementSubscriptionOutput) FilterGroups() AnnouncementSubscriptionF
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o AnnouncementSubscriptionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AnnouncementSubscriptionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
@@ -411,8 +411,8 @@ func (o AnnouncementSubscriptionOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AnnouncementSubscriptionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AnnouncementSubscriptionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AnnouncementSubscription) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

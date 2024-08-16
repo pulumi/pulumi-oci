@@ -5,7 +5,6 @@ package com.pulumi.oci.Logging.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,13 +21,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
      * 
      */
     @Import(name="dimensions")
-    private @Nullable Output<Map<String,Object>> dimensions;
+    private @Nullable Output<Map<String,String>> dimensions;
 
     /**
      * @return (Updatable) Dimensions to be added for metrics.
      * 
      */
-    public Optional<Output<Map<String,Object>>> dimensions() {
+    public Optional<Output<Map<String,String>>> dimensions() {
         return Optional.ofNullable(this.dimensions);
     }
 
@@ -94,7 +93,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
          * @return builder
          * 
          */
-        public Builder dimensions(@Nullable Output<Map<String,Object>> dimensions) {
+        public Builder dimensions(@Nullable Output<Map<String,String>> dimensions) {
             $.dimensions = dimensions;
             return this;
         }
@@ -105,7 +104,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConf
          * @return builder
          * 
          */
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             return dimensions(Output.of(dimensions));
         }
 

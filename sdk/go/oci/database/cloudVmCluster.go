@@ -59,8 +59,8 @@ import (
 //						MountPoint:       pulumi.Any(cloudVmClusterFileSystemConfigurationDetailsMountPoint),
 //					},
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsLocalBackupEnabled:     pulumi.Any(cloudVmClusterIsLocalBackupEnabled),
 //				IsSparseDiskgroupEnabled: pulumi.Any(cloudVmClusterIsSparseDiskgroupEnabled),
@@ -127,7 +127,7 @@ type CloudVmCluster struct {
 	// The list of DB servers.
 	DbServers pulumi.StringArrayOutput `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy pulumi.StringOutput `pulumi:"diskRedundancy"`
 	// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -137,7 +137,7 @@ type CloudVmCluster struct {
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringOutput `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -194,7 +194,7 @@ type CloudVmCluster struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion pulumi.StringOutput `pulumi:"systemVersion"`
 	// The date and time that the cloud VM cluster was created.
@@ -300,7 +300,7 @@ type cloudVmClusterState struct {
 	// The list of DB servers.
 	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy *string `pulumi:"diskRedundancy"`
 	// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -310,7 +310,7 @@ type cloudVmClusterState struct {
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion *string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -367,7 +367,7 @@ type cloudVmClusterState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId *string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion *string `pulumi:"systemVersion"`
 	// The date and time that the cloud VM cluster was created.
@@ -417,7 +417,7 @@ type CloudVmClusterState struct {
 	// The list of DB servers.
 	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
 	DiskRedundancy pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
@@ -427,7 +427,7 @@ type CloudVmClusterState struct {
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringPtrInput
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -484,7 +484,7 @@ type CloudVmClusterState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Operating system version of the image.
 	SystemVersion pulumi.StringPtrInput
 	// The date and time that the cloud VM cluster was created.
@@ -536,7 +536,7 @@ type cloudVmClusterArgs struct {
 	// The list of DB servers.
 	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
@@ -544,7 +544,7 @@ type cloudVmClusterArgs struct {
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion string `pulumi:"giVersion"`
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -620,7 +620,7 @@ type CloudVmClusterArgs struct {
 	// The list of DB servers.
 	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
@@ -628,7 +628,7 @@ type CloudVmClusterArgs struct {
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion pulumi.StringInput
 	// The hostname for the cloud VM cluster. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata systems.
@@ -830,8 +830,8 @@ func (o CloudVmClusterOutput) DbServers() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o CloudVmClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudVmCluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CloudVmClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
@@ -857,8 +857,8 @@ func (o CloudVmClusterOutput) FileSystemConfigurationDetails() CloudVmClusterFil
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CloudVmClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudVmCluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CloudVmClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
@@ -992,8 +992,8 @@ func (o CloudVmClusterOutput) SubscriptionId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o CloudVmClusterOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudVmCluster) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o CloudVmClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Operating system version of the image.

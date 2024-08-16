@@ -39,13 +39,13 @@ type SoftwareSource struct {
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilter SoftwareSourceCustomSoftwareSourceFilterOutput `pulumi:"customSoftwareSourceFilter"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
 	GpgKeyFingerprint pulumi.StringOutput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
@@ -86,7 +86,7 @@ type SoftwareSource struct {
 	// The current state of the software source.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
@@ -146,13 +146,13 @@ type softwareSourceState struct {
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilter *SoftwareSourceCustomSoftwareSourceFilter `pulumi:"customSoftwareSourceFilter"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source.
 	GpgKeyFingerprint *string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source.
@@ -193,7 +193,7 @@ type softwareSourceState struct {
 	// The current state of the software source.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
@@ -218,13 +218,13 @@ type SoftwareSourceState struct {
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilter SoftwareSourceCustomSoftwareSourceFilterPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Fingerprint of the GPG key for this software source.
 	GpgKeyFingerprint pulumi.StringPtrInput
 	// ID of the GPG key for this software source.
@@ -265,7 +265,7 @@ type SoftwareSourceState struct {
 	// The current state of the software source.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
 	TimeCreated pulumi.StringPtrInput
 	// URL for the repository. For vendor software sources, this is the URL to the regional yum server. For custom software sources, this is 'custom/<repoId>'.
@@ -286,13 +286,13 @@ type softwareSourceArgs struct {
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilter *SoftwareSourceCustomSoftwareSourceFilter `pulumi:"customSoftwareSourceFilter"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies *bool `pulumi:"isAutoResolveDependencies"`
 	// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
@@ -325,13 +325,13 @@ type SoftwareSourceArgs struct {
 	// (Updatable) Provides the information used to apply filters to a vendor software source to create or update a custom software source.
 	CustomSoftwareSourceFilter SoftwareSourceCustomSoftwareSourceFilterPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates whether the service should automatically resolve package dependencies when including specific packages in the software source.
 	IsAutoResolveDependencies pulumi.BoolPtrInput
 	// (Updatable) Indicates whether the service should automatically update the custom software source to use the latest package versions available. The service reviews packages levels once a day.
@@ -477,8 +477,8 @@ func (o SoftwareSourceOutput) CustomSoftwareSourceFilter() SoftwareSourceCustomS
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o SoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SoftwareSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User-specified description for the software source. Avoid entering confidential information.
@@ -492,8 +492,8 @@ func (o SoftwareSourceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o SoftwareSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SoftwareSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Fingerprint of the GPG key for this software source.
@@ -587,8 +587,8 @@ func (o SoftwareSourceOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SoftwareSourceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SoftwareSource) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SoftwareSourceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SoftwareSource) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the software source was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).

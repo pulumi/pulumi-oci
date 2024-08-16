@@ -61,7 +61,7 @@ type LookupDrgRouteDistributionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the route distribution.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Whether this distribution defines how routes get imported into route tables or exported through DRG attachments.
@@ -70,7 +70,7 @@ type LookupDrgRouteDistributionResult struct {
 	DrgId                  string `pulumi:"drgId"`
 	DrgRouteDistributionId string `pulumi:"drgRouteDistributionId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	Id string `pulumi:"id"`
 	// The route distribution's current state.
@@ -123,8 +123,8 @@ func (o LookupDrgRouteDistributionResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDrgRouteDistributionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDrgRouteDistributionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -147,8 +147,8 @@ func (o LookupDrgRouteDistributionResultOutput) DrgRouteDistributionId() pulumi.
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupDrgRouteDistributionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrgRouteDistributionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDrgRouteDistributionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrgRouteDistributionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The route distribution's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).

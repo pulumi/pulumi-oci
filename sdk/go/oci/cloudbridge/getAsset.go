@@ -68,13 +68,13 @@ type LookupAssetResult struct {
 	// Compute related properties.
 	Computes []GetAssetCompute `pulumi:"computes"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Asset display name.
 	DisplayName string `pulumi:"displayName"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey string `pulumi:"externalAssetKey"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Asset OCID that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Inventory ID to which an asset belongs to.
@@ -84,7 +84,7 @@ type LookupAssetResult struct {
 	// The current state of the asset.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
@@ -160,8 +160,8 @@ func (o LookupAssetResultOutput) Computes() GetAssetComputeArrayOutput {
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAssetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAssetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAssetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAssetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Asset display name.
@@ -175,8 +175,8 @@ func (o LookupAssetResultOutput) ExternalAssetKey() pulumi.StringOutput {
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupAssetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAssetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAssetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAssetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Asset OCID that is immutable on creation.
@@ -200,8 +200,8 @@ func (o LookupAssetResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupAssetResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAssetResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAssetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAssetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the asset was created. An RFC3339 formatted datetime string.

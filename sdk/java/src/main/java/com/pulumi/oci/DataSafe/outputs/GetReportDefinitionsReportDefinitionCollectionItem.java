@@ -11,7 +11,6 @@ import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsReportDefinitionColle
 import com.pulumi.oci.DataSafe.outputs.GetReportDefinitionsReportDefinitionCollectionItemSummary;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +57,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A description of the report definition.
      * 
@@ -78,7 +77,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the report definition.
      * 
@@ -148,7 +147,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Specifies the date and time the report definition was created.
      * 
@@ -214,7 +213,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -242,7 +241,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -340,7 +339,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -374,11 +373,11 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         private String compartmentId;
         private List<String> complianceStandards;
         private String dataSource;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private Integer displayOrder;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isSeeded;
         private String lifecycleDetails;
@@ -392,7 +391,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         private String scimFilter;
         private String state;
         private List<GetReportDefinitionsReportDefinitionCollectionItemSummary> summaries;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -497,7 +496,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItem", "definedTags");
             }
@@ -529,7 +528,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItem", "freeformTags");
             }
@@ -644,7 +643,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
             return summaries(List.of(summaries));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetReportDefinitionsReportDefinitionCollectionItem", "systemTags");
             }

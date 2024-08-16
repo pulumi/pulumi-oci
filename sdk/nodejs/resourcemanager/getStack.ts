@@ -52,7 +52,7 @@ export interface GetStackResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * General description of the stack.
      */
@@ -64,7 +64,7 @@ export interface GetStackResult {
     /**
      * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -78,7 +78,7 @@ export interface GetStackResult {
      * The date and time at which the stack was created.
      */
     readonly timeCreated: string;
-    readonly variables: {[key: string]: any};
+    readonly variables: {[key: string]: string};
 }
 /**
  * This data source provides details about a specific Stack resource in Oracle Cloud Infrastructure Resource Manager service.

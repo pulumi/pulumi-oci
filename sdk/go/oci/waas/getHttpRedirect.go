@@ -61,14 +61,14 @@ type LookupHttpRedirectResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
 	Domain string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	HttpRedirectId string                 `pulumi:"httpRedirectId"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	HttpRedirectId string            `pulumi:"httpRedirectId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
 	Id string `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
@@ -125,8 +125,8 @@ func (o LookupHttpRedirectResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupHttpRedirectResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupHttpRedirectResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
@@ -140,8 +140,8 @@ func (o LookupHttpRedirectResultOutput) Domain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupHttpRedirectResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupHttpRedirectResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupHttpRedirectResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupHttpRedirectResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupHttpRedirectResultOutput) HttpRedirectId() pulumi.StringOutput {

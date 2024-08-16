@@ -100,17 +100,17 @@ namespace Pulumi.Oci.GenerativeAi
         public readonly ImmutableArray<Outputs.GetDedicatedAiClusterCapacityResult> Capacities;
         public readonly string CompartmentId;
         public readonly string DedicatedAiClusterId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string Description;
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
         /// </summary>
         public readonly string Id;
         public readonly string LifecycleDetails;
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         public readonly string TimeCreated;
         public readonly string TimeUpdated;
         public readonly string Type;
@@ -125,13 +125,13 @@ namespace Pulumi.Oci.GenerativeAi
 
             string dedicatedAiClusterId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

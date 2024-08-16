@@ -63,13 +63,13 @@ type LookupStreamCdnConfigResult struct {
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Distribution Channel Identifier.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
@@ -83,7 +83,7 @@ type LookupStreamCdnConfigResult struct {
 	State             string `pulumi:"state"`
 	StreamCdnConfigId string `pulumi:"streamCdnConfigId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -139,8 +139,8 @@ func (o LookupStreamCdnConfigResultOutput) Configs() GetStreamCdnConfigConfigArr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupStreamCdnConfigResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupStreamCdnConfigResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The CDN Configuration identifier or display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -154,8 +154,8 @@ func (o LookupStreamCdnConfigResultOutput) DistributionChannelId() pulumi.String
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupStreamCdnConfigResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupStreamCdnConfigResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -192,8 +192,8 @@ func (o LookupStreamCdnConfigResultOutput) StreamCdnConfigId() pulumi.StringOutp
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupStreamCdnConfigResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupStreamCdnConfigResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamCdnConfigResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.

@@ -33,13 +33,13 @@ import (
 //			_, err := Mysql.NewMysqlConfiguration(ctx, "test_mysql_configuration", &Mysql.MysqlConfigurationArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ShapeName:     pulumi.Any(testShape.Name),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(mysqlConfigurationDescription),
 //				DisplayName: pulumi.Any(mysqlConfigurationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				InitVariables: &mysql.MysqlConfigurationInitVariablesArgs{
 //					LowerCaseTableNames: pulumi.Any(mysqlConfigurationInitVariablesLowerCaseTableNames),
@@ -149,13 +149,13 @@ type MysqlConfiguration struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-provided data about the Configuration.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the Configuration.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesOutput `pulumi:"initVariables"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -213,13 +213,13 @@ type mysqlConfigurationState struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-provided data about the Configuration.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the Configuration.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -242,13 +242,13 @@ type MysqlConfigurationState struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-provided data about the Configuration.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the Configuration.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -275,13 +275,13 @@ type mysqlConfigurationArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-provided data about the Configuration.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the Configuration.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables *MysqlConfigurationInitVariables `pulumi:"initVariables"`
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -297,13 +297,13 @@ type MysqlConfigurationArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-provided data about the Configuration.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the Configuration.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
 	InitVariables MysqlConfigurationInitVariablesPtrInput
 	// The OCID of the Configuration from which the new Configuration is derived. The values in CreateConfigurationDetails.variables supersede the variables of the parent Configuration.
@@ -407,8 +407,8 @@ func (o MysqlConfigurationOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User-provided data about the Configuration.
@@ -422,8 +422,8 @@ func (o MysqlConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.

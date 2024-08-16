@@ -76,7 +76,7 @@ type LookupVmClusterResult struct {
 	// The list of Db server.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -84,7 +84,7 @@ type LookupVmClusterResult struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []GetVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion string `pulumi:"giVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -203,8 +203,8 @@ func (o LookupVmClusterResultOutput) DbServers() pulumi.StringArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupVmClusterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVmClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVmClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata Cloud@Customer VM cluster. The name does not need to be unique.
@@ -225,8 +225,8 @@ func (o LookupVmClusterResultOutput) FileSystemConfigurationDetails() GetVmClust
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupVmClusterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVmClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVmClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVmClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Oracle Grid Infrastructure software version for the VM cluster.

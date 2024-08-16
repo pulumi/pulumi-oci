@@ -62,11 +62,11 @@ import (
 //					},
 //					Threshold: pulumi.Any(dataSourceDataSourceDetailsThreshold),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Status: pulumi.Any(dataSourceStatus),
 //			})
@@ -98,13 +98,13 @@ type CloudGuardDataSource struct {
 	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringOutput `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Data source display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayOutput `pulumi:"regionStatusDetails"`
 	// The current lifecycle state of the resource.
@@ -115,7 +115,7 @@ type CloudGuardDataSource struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the data source was updated. Format defined by RFC3339.
@@ -170,13 +170,13 @@ type cloudGuardDataSourceState struct {
 	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider *string `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Data source display name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []CloudGuardDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
 	// The current lifecycle state of the resource.
@@ -187,7 +187,7 @@ type cloudGuardDataSourceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the data source was updated. Format defined by RFC3339.
@@ -204,13 +204,13 @@ type CloudGuardDataSourceState struct {
 	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Data source display name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayInput
 	// The current lifecycle state of the resource.
@@ -221,7 +221,7 @@ type CloudGuardDataSourceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the data source was updated. Format defined by RFC3339.
@@ -240,13 +240,13 @@ type cloudGuardDataSourceArgs struct {
 	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Data source display name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
@@ -263,13 +263,13 @@ type CloudGuardDataSourceArgs struct {
 	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Data source display name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
@@ -387,8 +387,8 @@ func (o CloudGuardDataSourceOutput) DataSourceFeedProvider() pulumi.StringOutput
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o CloudGuardDataSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CloudGuardDataSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Data source display name
@@ -399,8 +399,8 @@ func (o CloudGuardDataSourceOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o CloudGuardDataSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CloudGuardDataSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Information about the region and status of query replication
@@ -424,8 +424,8 @@ func (o CloudGuardDataSourceOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o CloudGuardDataSourceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o CloudGuardDataSourceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Data source was created. Format defined by RFC3339.

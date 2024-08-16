@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetCategoryRecommendationCount;
 import com.pulumi.oci.Optimizer.outputs.GetCategoryResourceCount;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +40,7 @@ public final class GetCategoryResult {
      * @return Additional metadata key/value pairs for the category.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return The provider-assigned unique ID for this managed resource.
      * 
@@ -114,7 +113,7 @@ public final class GetCategoryResult {
      * @return Additional metadata key/value pairs for the category.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -181,7 +180,7 @@ public final class GetCategoryResult {
         private String compartmentName;
         private String description;
         private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String id;
         private String name;
         private List<GetCategoryRecommendationCount> recommendationCounts;
@@ -248,7 +247,7 @@ public final class GetCategoryResult {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetCategoryResult", "extendedMetadata");
             }

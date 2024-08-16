@@ -6,7 +6,6 @@ package com.pulumi.oci.Waas.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +35,7 @@ public final class PolicyPolicyConfigHealthChecks {
      * **Note:** The only currently-supported header fields are Host and User-Agent.
      * 
      */
-    private @Nullable Map<String,Object> headers;
+    private @Nullable Map<String,String> headers;
     /**
      * @return (Updatable) Number of successful health checks after which the server is marked up.
      * 
@@ -103,7 +102,7 @@ public final class PolicyPolicyConfigHealthChecks {
      * **Note:** The only currently-supported header fields are Host and User-Agent.
      * 
      */
-    public Map<String,Object> headers() {
+    public Map<String,String> headers() {
         return this.headers == null ? Map.of() : this.headers;
     }
     /**
@@ -174,7 +173,7 @@ public final class PolicyPolicyConfigHealthChecks {
     public static final class Builder {
         private @Nullable List<String> expectedResponseCodeGroups;
         private @Nullable String expectedResponseText;
-        private @Nullable Map<String,Object> headers;
+        private @Nullable Map<String,String> headers;
         private @Nullable Integer healthyThreshold;
         private @Nullable Integer intervalInSeconds;
         private @Nullable Boolean isEnabled;
@@ -215,7 +214,7 @@ public final class PolicyPolicyConfigHealthChecks {
             return this;
         }
         @CustomType.Setter
-        public Builder headers(@Nullable Map<String,Object> headers) {
+        public Builder headers(@Nullable Map<String,String> headers) {
 
             this.headers = headers;
             return this;

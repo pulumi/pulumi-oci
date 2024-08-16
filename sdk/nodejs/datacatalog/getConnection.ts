@@ -78,7 +78,7 @@ export interface GetConnectionResult {
      * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     readonly displayName: string;
-    readonly encProperties: {[key: string]: any};
+    readonly encProperties: {[key: string]: string};
     /**
      * Unique external key of this object from the source system.
      */
@@ -96,7 +96,7 @@ export interface GetConnectionResult {
     /**
      * A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
      */
-    readonly properties: {[key: string]: any};
+    readonly properties: {[key: string]: string};
     /**
      * The current state of the connection.
      */

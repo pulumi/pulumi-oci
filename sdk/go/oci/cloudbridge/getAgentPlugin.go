@@ -64,12 +64,12 @@ type LookupAgentPluginResult struct {
 	// Agent identifier.
 	AgentId string `pulumi:"agentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// State to which the customer wants the plugin to move to.
 	DesiredState string `pulumi:"desiredState"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Id           string            `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Plugin identifier, which can be renamed.
@@ -80,7 +80,7 @@ type LookupAgentPluginResult struct {
 	// The current state of the plugin.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Agent was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the Agent was updated. An RFC3339 formatted datetime string.
@@ -133,8 +133,8 @@ func (o LookupAgentPluginResultOutput) AgentId() pulumi.StringOutput {
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAgentPluginResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentPluginResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAgentPluginResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentPluginResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // State to which the customer wants the plugin to move to.
@@ -143,8 +143,8 @@ func (o LookupAgentPluginResultOutput) DesiredState() pulumi.StringOutput {
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupAgentPluginResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentPluginResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAgentPluginResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentPluginResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupAgentPluginResultOutput) Id() pulumi.StringOutput {
@@ -176,8 +176,8 @@ func (o LookupAgentPluginResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupAgentPluginResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentPluginResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAgentPluginResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentPluginResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the Agent was created. An RFC3339 formatted datetime string.

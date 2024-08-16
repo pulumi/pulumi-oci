@@ -107,7 +107,7 @@ type DbSystem struct {
 	// The DB system options.
 	DbSystemOptions DbSystemDbSystemOptionsOutput `pulumi:"dbSystemOptions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
 	DiskRedundancy pulumi.StringOutput `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -125,7 +125,7 @@ type DbSystem struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayOutput `pulumi:"faultDomains"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 	//
 	// The maximum length of the combined hostname and domain is 63 characters.
@@ -308,7 +308,7 @@ type dbSystemState struct {
 	// The DB system options.
 	DbSystemOptions *DbSystemDbSystemOptions `pulumi:"dbSystemOptions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
 	DiskRedundancy *string `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -326,7 +326,7 @@ type dbSystemState struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains []string `pulumi:"faultDomains"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 	//
 	// The maximum length of the combined hostname and domain is 63 characters.
@@ -459,7 +459,7 @@ type DbSystemState struct {
 	// The DB system options.
 	DbSystemOptions DbSystemDbSystemOptionsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
 	DiskRedundancy pulumi.StringPtrInput
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -477,7 +477,7 @@ type DbSystemState struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 	//
 	// The maximum length of the combined hostname and domain is 63 characters.
@@ -614,7 +614,7 @@ type dbSystemArgs struct {
 	// The DB system options.
 	DbSystemOptions *DbSystemDbSystemOptions `pulumi:"dbSystemOptions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
 	DiskRedundancy *string `pulumi:"diskRedundancy"`
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -632,7 +632,7 @@ type dbSystemArgs struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains []string `pulumi:"faultDomains"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 	//
 	// The maximum length of the combined hostname and domain is 63 characters.
@@ -730,7 +730,7 @@ type DbSystemArgs struct {
 	// The DB system options.
 	DbSystemOptions DbSystemDbSystemOptionsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
 	DiskRedundancy pulumi.StringPtrInput
 	// The user-friendly name for the DB system. The name does not have to be unique.
@@ -748,7 +748,7 @@ type DbSystemArgs struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomains pulumi.StringArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.
 	//
 	// The maximum length of the combined hostname and domain is 63 characters.
@@ -967,8 +967,8 @@ func (o DbSystemOutput) DbSystemOptions() DbSystemDbSystemOptionsOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o DbSystemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DbSystemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The type of redundancy configured for the DB system. Normal is 2-way redundancy, recommended for test and development systems. High is 3-way redundancy, recommended for production systems.
@@ -1000,8 +1000,8 @@ func (o DbSystemOutput) FaultDomains() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o DbSystemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DbSystemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the DB system. The hostname must begin with an alphabetic character, and can contain alphanumeric characters and hyphens (-). The maximum length of the hostname is 16 characters for bare metal and virtual machine DB systems, and 12 characters for Exadata DB systems.

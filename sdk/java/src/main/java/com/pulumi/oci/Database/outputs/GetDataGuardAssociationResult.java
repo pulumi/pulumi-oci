@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDataGuardAssociationDataCollectionOption;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,16 +33,16 @@ public final class GetDataGuardAssociationResult {
     private List<GetDataGuardAssociationDataCollectionOption> dataCollectionOptions;
     private String dataGuardAssociationId;
     private String databaseAdminPassword;
-    private Map<String,Object> databaseDefinedTags;
-    private Map<String,Object> databaseFreeformTags;
+    private Map<String,String> databaseDefinedTags;
+    private Map<String,String> databaseFreeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      * 
      */
     private String databaseId;
     private String databaseSoftwareImageId;
-    private Map<String,Object> dbSystemDefinedTags;
-    private Map<String,Object> dbSystemFreeformTags;
+    private Map<String,String> dbSystemDefinedTags;
+    private Map<String,String> dbSystemFreeformTags;
     private String deleteStandbyDbHomeOnDelete;
     private String displayName;
     private List<String> faultDomains;
@@ -164,10 +163,10 @@ public final class GetDataGuardAssociationResult {
     public String databaseAdminPassword() {
         return this.databaseAdminPassword;
     }
-    public Map<String,Object> databaseDefinedTags() {
+    public Map<String,String> databaseDefinedTags() {
         return this.databaseDefinedTags;
     }
-    public Map<String,Object> databaseFreeformTags() {
+    public Map<String,String> databaseFreeformTags() {
         return this.databaseFreeformTags;
     }
     /**
@@ -180,10 +179,10 @@ public final class GetDataGuardAssociationResult {
     public String databaseSoftwareImageId() {
         return this.databaseSoftwareImageId;
     }
-    public Map<String,Object> dbSystemDefinedTags() {
+    public Map<String,String> dbSystemDefinedTags() {
         return this.dbSystemDefinedTags;
     }
-    public Map<String,Object> dbSystemFreeformTags() {
+    public Map<String,String> dbSystemFreeformTags() {
         return this.dbSystemFreeformTags;
     }
     public String deleteStandbyDbHomeOnDelete() {
@@ -342,12 +341,12 @@ public final class GetDataGuardAssociationResult {
         private List<GetDataGuardAssociationDataCollectionOption> dataCollectionOptions;
         private String dataGuardAssociationId;
         private String databaseAdminPassword;
-        private Map<String,Object> databaseDefinedTags;
-        private Map<String,Object> databaseFreeformTags;
+        private Map<String,String> databaseDefinedTags;
+        private Map<String,String> databaseFreeformTags;
         private String databaseId;
         private String databaseSoftwareImageId;
-        private Map<String,Object> dbSystemDefinedTags;
-        private Map<String,Object> dbSystemFreeformTags;
+        private Map<String,String> dbSystemDefinedTags;
+        private Map<String,String> dbSystemFreeformTags;
         private String deleteStandbyDbHomeOnDelete;
         private String displayName;
         private List<String> faultDomains;
@@ -512,7 +511,7 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseDefinedTags(Map<String,Object> databaseDefinedTags) {
+        public Builder databaseDefinedTags(Map<String,String> databaseDefinedTags) {
             if (databaseDefinedTags == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "databaseDefinedTags");
             }
@@ -520,7 +519,7 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder databaseFreeformTags(Map<String,Object> databaseFreeformTags) {
+        public Builder databaseFreeformTags(Map<String,String> databaseFreeformTags) {
             if (databaseFreeformTags == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "databaseFreeformTags");
             }
@@ -544,7 +543,7 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemDefinedTags(Map<String,Object> dbSystemDefinedTags) {
+        public Builder dbSystemDefinedTags(Map<String,String> dbSystemDefinedTags) {
             if (dbSystemDefinedTags == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "dbSystemDefinedTags");
             }
@@ -552,7 +551,7 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder dbSystemFreeformTags(Map<String,Object> dbSystemFreeformTags) {
+        public Builder dbSystemFreeformTags(Map<String,String> dbSystemFreeformTags) {
             if (dbSystemFreeformTags == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "dbSystemFreeformTags");
             }

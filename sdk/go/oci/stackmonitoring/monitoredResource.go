@@ -95,14 +95,14 @@ import (
 //					DbUniqueName: pulumi.Any(monitoredResourceDatabaseConnectionDetailsDbUniqueName),
 //					SslSecretId:  pulumi.Any(testSecret.Id),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName:        pulumi.Any(monitoredResourceDisplayName),
 //				ExternalResourceId: pulumi.Any(monitoredResourceExternalResourceId),
 //				ExternalId:         pulumi.Any(testExternal.Id),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				HostName:          pulumi.Any(monitoredResourceHostName),
 //				License:           pulumi.Any(monitoredResourceLicense),
@@ -147,7 +147,7 @@ type MonitoredResource struct {
 	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrOutput `pulumi:"databaseConnectionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -155,7 +155,7 @@ type MonitoredResource struct {
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrOutput `pulumi:"externalResourceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrOutput `pulumi:"hostName"`
 	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
@@ -175,7 +175,7 @@ type MonitoredResource struct {
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -238,7 +238,7 @@ type monitoredResourceState struct {
 	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails *MonitoredResourceDatabaseConnectionDetails `pulumi:"databaseConnectionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -246,7 +246,7 @@ type monitoredResourceState struct {
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId *string `pulumi:"externalResourceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
 	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
@@ -266,7 +266,7 @@ type monitoredResourceState struct {
 	// Lifecycle state of the monitored resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId *string `pulumi:"tenantId"`
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -294,7 +294,7 @@ type MonitoredResourceState struct {
 	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrInput
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -302,7 +302,7 @@ type MonitoredResourceState struct {
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
 	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
@@ -322,7 +322,7 @@ type MonitoredResourceState struct {
 	// Lifecycle state of the monitored resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	TenantId pulumi.StringPtrInput
 	// The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -354,7 +354,7 @@ type monitoredResourceArgs struct {
 	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails *MonitoredResourceDatabaseConnectionDetails `pulumi:"databaseConnectionDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Monitored resource display name.
 	DisplayName *string `pulumi:"displayName"`
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -362,7 +362,7 @@ type monitoredResourceArgs struct {
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId *string `pulumi:"externalResourceId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Host name of the monitored resource.
 	HostName *string `pulumi:"hostName"`
 	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
@@ -397,7 +397,7 @@ type MonitoredResourceArgs struct {
 	// (Updatable) Connection details for the database.
 	DatabaseConnectionDetails MonitoredResourceDatabaseConnectionDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Monitored resource display name.
 	DisplayName pulumi.StringPtrInput
 	// External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only Oracle Cloud Infrastructure compute instance.
@@ -405,7 +405,7 @@ type MonitoredResourceArgs struct {
 	// Generally used by DBaaS to send the Database OCID stored on the DBaaS. The same will be passed to resource service to enable Stack Monitoring Service on DBM. This will be stored in Stack Monitoring Resource Service data store as identifier for monitored resource. If this header is not set as part of the request, then an id will be generated and stored for the resource.
 	ExternalResourceId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Host name of the monitored resource.
 	HostName pulumi.StringPtrInput
 	// (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
@@ -547,8 +547,8 @@ func (o MonitoredResourceOutput) DatabaseConnectionDetails() MonitoredResourceDa
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MonitoredResourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MonitoredResourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Monitored resource display name.
@@ -567,8 +567,8 @@ func (o MonitoredResourceOutput) ExternalResourceId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MonitoredResourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MonitoredResourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Host name of the monitored resource.
@@ -617,8 +617,8 @@ func (o MonitoredResourceOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MonitoredResourceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResource) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MonitoredResourceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResource) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

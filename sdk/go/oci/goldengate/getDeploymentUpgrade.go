@@ -61,7 +61,7 @@ type GetDeploymentUpgradeResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId        string `pulumi:"deploymentId"`
 	DeploymentUpgradeId string `pulumi:"deploymentUpgradeId"`
@@ -72,7 +72,7 @@ type GetDeploymentUpgradeResult struct {
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Indicates if cancel is allowed. Scheduled upgrade can be cancelled only if target version is not forced by service,  otherwise only reschedule allowed.
@@ -100,7 +100,7 @@ type GetDeploymentUpgradeResult struct {
 	// Possible lifecycle states.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request was finished. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -165,8 +165,8 @@ func (o GetDeploymentUpgradeResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDeploymentUpgradeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDeploymentUpgradeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -194,8 +194,8 @@ func (o GetDeploymentUpgradeResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o GetDeploymentUpgradeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDeploymentUpgradeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -261,8 +261,8 @@ func (o GetDeploymentUpgradeResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o GetDeploymentUpgradeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDeploymentUpgradeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDeploymentUpgradeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

@@ -10,7 +10,6 @@ import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionSchema;
 import com.pulumi.oci.Nosql.outputs.GetTablesTableCollectionTableLimit;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -28,12 +27,12 @@ public final class GetTablesTableCollection {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Unique identifier that is immutable.
      * 
@@ -76,7 +75,7 @@ public final class GetTablesTableCollection {
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Throughput and storage limits configuration of a table.
      * 
@@ -113,14 +112,14 @@ public final class GetTablesTableCollection {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -185,7 +184,7 @@ public final class GetTablesTableCollection {
      * @return Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `&#34;orcl-cloud&#34;`; and the only key in that namespace is `&#34;free-tier-retained&#34;`. Example: `{&#34;orcl-cloud&#34;&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -228,8 +227,8 @@ public final class GetTablesTableCollection {
     public static final class Builder {
         private String compartmentId;
         private String ddlStatement;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isAutoReclaimable;
         private Boolean isMultiRegion;
@@ -240,7 +239,7 @@ public final class GetTablesTableCollection {
         private String schemaState;
         private List<GetTablesTableCollectionSchema> schemas;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private List<GetTablesTableCollectionTableLimit> tableLimits;
         private String timeCreated;
         private String timeOfExpiration;
@@ -286,7 +285,7 @@ public final class GetTablesTableCollection {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetTablesTableCollection", "definedTags");
             }
@@ -294,7 +293,7 @@ public final class GetTablesTableCollection {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetTablesTableCollection", "freeformTags");
             }
@@ -388,7 +387,7 @@ public final class GetTablesTableCollection {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetTablesTableCollection", "systemTags");
             }

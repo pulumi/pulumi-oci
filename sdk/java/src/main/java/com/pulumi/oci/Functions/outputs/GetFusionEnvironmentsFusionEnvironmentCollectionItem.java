@@ -11,7 +11,6 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCo
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRefresh;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemRule;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +38,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -59,7 +58,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The ID of the fusion environment family in which to list resources.
      * 
@@ -190,7 +189,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -218,7 +217,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -375,11 +374,11 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
         private List<String> appliedPatchBundles;
         private String compartmentId;
         private List<GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String dnsPrefix;
         private String domainId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String fusionEnvironmentFamilyId;
         private String fusionEnvironmentType;
         private String id;
@@ -476,7 +475,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             return createFusionEnvironmentAdminUserDetails(List.of(createFusionEnvironmentAdminUserDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "definedTags");
             }
@@ -508,7 +507,7 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentsFusionEnvironmentCollectionItem", "freeformTags");
             }

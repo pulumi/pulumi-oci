@@ -20,9 +20,9 @@ class SoftwareSourceArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  checksum_type: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintainer_email: Optional[pulumi.Input[str]] = None,
                  maintainer_name: Optional[pulumi.Input[str]] = None,
                  maintainer_phone: Optional[pulumi.Input[str]] = None,
@@ -33,9 +33,9 @@ class SoftwareSourceArgs:
         :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
         :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
         :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
         :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
@@ -115,14 +115,14 @@ class SoftwareSourceArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -139,14 +139,14 @@ class SoftwareSourceArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -209,10 +209,10 @@ class _SoftwareSourceState:
                  associated_managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input['SoftwareSourceAssociatedManagedInstanceArgs']]]] = None,
                  checksum_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gpg_key_fingerprint: Optional[pulumi.Input[str]] = None,
                  gpg_key_id: Optional[pulumi.Input[str]] = None,
                  gpg_key_url: Optional[pulumi.Input[str]] = None,
@@ -232,10 +232,10 @@ class _SoftwareSourceState:
         :param pulumi.Input[Sequence[pulumi.Input['SoftwareSourceAssociatedManagedInstanceArgs']]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
         :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
         :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
         :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source
         :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source
@@ -347,14 +347,14 @@ class _SoftwareSourceState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -383,14 +383,14 @@ class _SoftwareSourceState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -562,10 +562,10 @@ class SoftwareSource(pulumi.CustomResource):
                  arch_type: Optional[pulumi.Input[str]] = None,
                  checksum_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintainer_email: Optional[pulumi.Input[str]] = None,
                  maintainer_name: Optional[pulumi.Input[str]] = None,
                  maintainer_phone: Optional[pulumi.Input[str]] = None,
@@ -615,10 +615,10 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[str] arch_type: The architecture type supported by the Software Source
         :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
         :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
         :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] maintainer_email: (Updatable) Email address of the person maintaining this software source
         :param pulumi.Input[str] maintainer_name: (Updatable) Name of the person maintaining this software source
         :param pulumi.Input[str] maintainer_phone: (Updatable) Phone number of the person maintaining this software source
@@ -691,10 +691,10 @@ class SoftwareSource(pulumi.CustomResource):
                  arch_type: Optional[pulumi.Input[str]] = None,
                  checksum_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintainer_email: Optional[pulumi.Input[str]] = None,
                  maintainer_name: Optional[pulumi.Input[str]] = None,
                  maintainer_phone: Optional[pulumi.Input[str]] = None,
@@ -749,10 +749,10 @@ class SoftwareSource(pulumi.CustomResource):
             associated_managed_instances: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceAssociatedManagedInstanceArgs', 'SoftwareSourceAssociatedManagedInstanceArgsDict']]]]] = None,
             checksum_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             gpg_key_fingerprint: Optional[pulumi.Input[str]] = None,
             gpg_key_id: Optional[pulumi.Input[str]] = None,
             gpg_key_url: Optional[pulumi.Input[str]] = None,
@@ -777,10 +777,10 @@ class SoftwareSource(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['SoftwareSourceAssociatedManagedInstanceArgs', 'SoftwareSourceAssociatedManagedInstanceArgsDict']]]] associated_managed_instances: list of the Managed Instances associated with this Software Sources
         :param pulumi.Input[str] checksum_type: (Updatable) The yum repository checksum type used by this software source
         :param pulumi.Input[str] compartment_id: (Updatable) OCID for the Compartment
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Information specified by the user about the software source
         :param pulumi.Input[str] display_name: (Updatable) User friendly name for the software source
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] gpg_key_fingerprint: Fingerprint of the GPG key for this software source
         :param pulumi.Input[str] gpg_key_id: ID of the GPG key for this software source
         :param pulumi.Input[str] gpg_key_url: URL of the GPG key for this software source
@@ -860,7 +860,7 @@ class SoftwareSource(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -884,7 +884,7 @@ class SoftwareSource(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

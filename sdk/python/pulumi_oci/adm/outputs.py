@@ -388,7 +388,7 @@ class RemediationRecipeVerifyConfiguration(dict):
 
     def __init__(__self__, *,
                  build_service_type: str,
-                 additional_parameters: Optional[Mapping[str, Any]] = None,
+                 additional_parameters: Optional[Mapping[str, str]] = None,
                  jenkins_url: Optional[str] = None,
                  job_name: Optional[str] = None,
                  pat_secret_id: Optional[str] = None,
@@ -399,7 +399,7 @@ class RemediationRecipeVerifyConfiguration(dict):
                  workflow_name: Optional[str] = None):
         """
         :param str build_service_type: (Updatable) The type of Build Service.
-        :param Mapping[str, Any] additional_parameters: (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param Mapping[str, str] additional_parameters: (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
         :param str jenkins_url: (Updatable) The URL that locates the Jenkins pipeline.
         :param str job_name: (Updatable) The name of the Jenkins pipeline job that identifies the build pipeline.
         :param str pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
@@ -439,7 +439,7 @@ class RemediationRecipeVerifyConfiguration(dict):
 
     @property
     @pulumi.getter(name="additionalParameters")
-    def additional_parameters(self) -> Optional[Mapping[str, Any]]:
+    def additional_parameters(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
         """
@@ -1039,22 +1039,22 @@ class GetKnowledgebasesKnowledgeBaseCollectionResult(dict):
 class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param str state: A filter to return only Knowledge Bases that match the specified lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the knowledge base (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_updated: The date and time the knowledge base was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
@@ -1078,7 +1078,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1094,7 +1094,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1118,7 +1118,7 @@ class GetKnowledgebasesKnowledgeBaseCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1341,7 +1341,7 @@ class GetRemediationRecipeScmConfigurationResult(dict):
 @pulumi.output_type
 class GetRemediationRecipeVerifyConfigurationResult(dict):
     def __init__(__self__, *,
-                 additional_parameters: Mapping[str, Any],
+                 additional_parameters: Mapping[str, str],
                  build_service_type: str,
                  jenkins_url: str,
                  job_name: str,
@@ -1352,7 +1352,7 @@ class GetRemediationRecipeVerifyConfigurationResult(dict):
                  username: str,
                  workflow_name: str):
         """
-        :param Mapping[str, Any] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param Mapping[str, str] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
         :param str build_service_type: The type of Build Service.
         :param str jenkins_url: The URL that locates the Jenkins pipeline.
         :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
@@ -1376,7 +1376,7 @@ class GetRemediationRecipeVerifyConfigurationResult(dict):
 
     @property
     @pulumi.getter(name="additionalParameters")
-    def additional_parameters(self) -> Mapping[str, Any]:
+    def additional_parameters(self) -> Mapping[str, str]:
         """
         Additional key-value pairs passed as parameters to the build service when running an experiment.
         """
@@ -1498,33 +1498,33 @@ class GetRemediationRecipesRemediationRecipeCollectionResult(dict):
 class GetRemediationRecipesRemediationRecipeCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  detect_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationResult'],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_run_triggered_on_kb_change: bool,
                  knowledge_base_id: str,
                  network_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationResult'],
                  scm_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  verify_configurations: Sequence['outputs.GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult']):
         """
         :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemDetectConfigurationArgs'] detect_configurations: A configuration to define the constraints when detecting vulnerable dependencies.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param bool is_run_triggered_on_kb_change: Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
         :param str knowledge_base_id: The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
         :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemNetworkConfigurationArgs'] network_configurations: A network configuration defines the required network characteristics for an ADM remediation recipe. A network configuration is required if the build service is one of: GitHub Actions, GitLab Pipeline, or Jenkins Pipeline.
         :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationArgs'] scm_configurations: A configuration for the Source Code Management tool/platform used by a remediation recipe.
         :param str state: A filter to return only Remediation Recipes that match the specified lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_updated: The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param Sequence['GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationArgs'] verify_configurations: The Verify stage configuration specifies a build service to run a pipeline for the recommended code changes. The build pipeline will be initiated to ensure that there is no breaking change after the dependency versions have been updated in source to avoid vulnerabilities.
@@ -1555,7 +1555,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1579,7 +1579,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1635,7 +1635,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1866,7 +1866,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemScmConfigurationResult
 @pulumi.output_type
 class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationResult(dict):
     def __init__(__self__, *,
-                 additional_parameters: Mapping[str, Any],
+                 additional_parameters: Mapping[str, str],
                  build_service_type: str,
                  jenkins_url: str,
                  job_name: str,
@@ -1877,7 +1877,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationRes
                  username: str,
                  workflow_name: str):
         """
-        :param Mapping[str, Any] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
+        :param Mapping[str, str] additional_parameters: Additional key-value pairs passed as parameters to the build service when running an experiment.
         :param str build_service_type: The type of Build Service.
         :param str jenkins_url: The URL that locates the Jenkins pipeline.
         :param str job_name: The name of the Jenkins pipeline job that identifies the build pipeline.
@@ -1901,7 +1901,7 @@ class GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfigurationRes
 
     @property
     @pulumi.getter(name="additionalParameters")
-    def additional_parameters(self) -> Mapping[str, Any]:
+    def additional_parameters(self) -> Mapping[str, str]:
         """
         Additional key-value pairs passed as parameters to the build service when running an experiment.
         """
@@ -2509,15 +2509,15 @@ class GetRemediationRunsRemediationRunCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  current_stage_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  remediation_recipe_id: str,
                  remediation_run_source: str,
                  stages: Sequence['outputs.GetRemediationRunsRemediationRunCollectionItemStageResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_finished: str,
                  time_started: str,
@@ -2525,15 +2525,15 @@ class GetRemediationRunsRemediationRunCollectionItemResult(dict):
         """
         :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         :param str current_stage_type: The type of the current stage of the remediation run.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param str remediation_recipe_id: A filter to return only resources that match the specified Remediation Recipe identifier.
         :param str remediation_run_source: The source that triggered the Remediation Recipe.
         :param Sequence['GetRemediationRunsRemediationRunCollectionItemStageArgs'] stages: The list of remediation run stage summaries.
         :param str state: A filter to return only Remediation Runs that match the specified lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_finished: The date and time of the finish of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_started: The date and time of the start of the remediation run (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -2573,7 +2573,7 @@ class GetRemediationRunsRemediationRunCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2589,7 +2589,7 @@ class GetRemediationRunsRemediationRunCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2637,7 +2637,7 @@ class GetRemediationRunsRemediationRunCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3386,9 +3386,9 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
                  build_type: str,
                  compartment_id: str,
                  configurations: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_success: bool,
                  knowledge_base_id: str,
@@ -3401,7 +3401,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
                  max_observed_severity_with_ignored: str,
                  sources: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  usage_datas: Sequence['outputs.GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataResult'],
@@ -3412,9 +3412,9 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         :param str build_type: The type of the build tool is restricted to only two values MAVEN or UNSET. Use UNSET when the list of application dependencies is not Maven-related or is a mix of Maven and other ecosystems. This option is soon to be deprecated.
         :param str compartment_id: A filter to return only resources that belong to the specified compartment identifier. Required only if the id query param is not specified.
         :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemConfigurationArgs'] configurations: Configuration for a vulnerability audit. A vulnerable application dependency is ignored if its name does match any of the items in `exclusions`, or all of the associated Vulnerabilies have a CVSS v2 score below `maxPermissibleCvssV2Score` and a CVSS v3 score below `maxPermissibleCvssV3Score`. type: object
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A filter to return only resources that match the specified identifier. Required only if the compartmentId query parameter is not specified.
         :param bool is_success: A filter to return only successful or failed Vulnerability Audits.
         :param str knowledge_base_id: A filter to return only Vulnerability Audits that were created against the specified knowledge base.
@@ -3427,7 +3427,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
         :param str max_observed_severity_with_ignored: Maximum ADM Severity observed for vulnerable application dependencies including ignored ones.
         :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemSourceArgs'] sources: Source that published the vulnerability
         :param str state: A filter to return only Vulnerability Audits that match the specified lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The creation date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param str time_updated: The update date and time of the vulnerability audit (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param Sequence['GetVulnerabilityAuditsVulnerabilityAuditCollectionItemUsageDataArgs'] usage_datas: The source details of the usage data in object storage. The usage data file uploaded to object storage must be a gzip archive of the JSON usage data returned from the GraalVM native-image-inspect tool after a native-image build. Set `sourceType` to `objectStorageTuple` and use [UsageDataViaObjectStorageTupleDetails](https://docs.cloud.oracle.com/iaas/api/#/en/adm/latest/requests/UsageDataViaObjectStorageTupleDetails) when specifying the namespace, bucket name, and object name.
@@ -3493,7 +3493,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3509,7 +3509,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3613,7 +3613,7 @@ class GetVulnerabilityAuditsVulnerabilityAuditCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

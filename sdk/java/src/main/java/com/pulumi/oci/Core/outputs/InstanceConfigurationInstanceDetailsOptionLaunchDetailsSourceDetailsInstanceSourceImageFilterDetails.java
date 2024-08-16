@@ -4,7 +4,6 @@
 package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private @Nullable Map<String,Object> definedTagsFilter;
+    private @Nullable Map<String,String> definedTagsFilter;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
@@ -46,7 +45,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> definedTagsFilter() {
+    public Map<String,String> definedTagsFilter() {
         return this.definedTagsFilter == null ? Map.of() : this.definedTagsFilter;
     }
     /**
@@ -74,7 +73,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String compartmentId;
-        private @Nullable Map<String,Object> definedTagsFilter;
+        private @Nullable Map<String,String> definedTagsFilter;
         private @Nullable String operatingSystem;
         private @Nullable String operatingSystemVersion;
         public Builder() {}
@@ -93,7 +92,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
             return this;
         }
         @CustomType.Setter
-        public Builder definedTagsFilter(@Nullable Map<String,Object> definedTagsFilter) {
+        public Builder definedTagsFilter(@Nullable Map<String,String> definedTagsFilter) {
 
             this.definedTagsFilter = definedTagsFilter;
             return this;

@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DataIntegration
         /// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
         [Output("keyMap")]
-        public Output<ImmutableDictionary<string, object>> KeyMap { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> KeyMap { get; private set; } = null!;
 
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -270,14 +270,14 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? Key { get; set; }
 
         [Input("keyMap")]
-        private InputMap<object>? _keyMap;
+        private InputMap<string>? _keyMap;
 
         /// <summary>
         /// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public InputMap<object> KeyMap
+        public InputMap<string> KeyMap
         {
-            get => _keyMap ?? (_keyMap = new InputMap<object>());
+            get => _keyMap ?? (_keyMap = new InputMap<string>());
             set => _keyMap = value;
         }
 

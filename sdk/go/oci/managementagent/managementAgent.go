@@ -58,12 +58,12 @@ type ManagementAgent struct {
 	DataSourceLists        ManagementAgentDataSourceListArrayOutput        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayOutput `pulumi:"dataSourceSummaryLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      pulumi.MapOutput         `pulumi:"definedTags"`
+	DefinedTags      pulumi.StringMapOutput   `pulumi:"definedTags"`
 	DeployPluginsIds pulumi.StringArrayOutput `pulumi:"deployPluginsIds"`
 	// Management Agent Name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Management Agent host machine name
 	Host pulumi.StringOutput `pulumi:"host"`
 	// Host resource ocid
@@ -144,12 +144,12 @@ type managementAgentState struct {
 	DataSourceLists        []ManagementAgentDataSourceList        `pulumi:"dataSourceLists"`
 	DataSourceSummaryLists []ManagementAgentDataSourceSummaryList `pulumi:"dataSourceSummaryLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
 	// Management Agent Name
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Management Agent host machine name
 	Host *string `pulumi:"host"`
 	// Host resource ocid
@@ -198,12 +198,12 @@ type ManagementAgentState struct {
 	DataSourceLists        ManagementAgentDataSourceListArrayInput
 	DataSourceSummaryLists ManagementAgentDataSourceSummaryListArrayInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      pulumi.MapInput
+	DefinedTags      pulumi.StringMapInput
 	DeployPluginsIds pulumi.StringArrayInput
 	// Management Agent Name
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Management Agent host machine name
 	Host pulumi.StringPtrInput
 	// Host resource ocid
@@ -252,12 +252,12 @@ func (ManagementAgentState) ElementType() reflect.Type {
 
 type managementAgentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	DeployPluginsIds []string               `pulumi:"deployPluginsIds"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	DeployPluginsIds []string          `pulumi:"deployPluginsIds"`
 	// Management Agent Name
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Management Agent identifier
 	ManagedAgentId string `pulumi:"managedAgentId"`
 }
@@ -265,12 +265,12 @@ type managementAgentArgs struct {
 // The set of arguments for constructing a ManagementAgent resource.
 type ManagementAgentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      pulumi.MapInput
+	DefinedTags      pulumi.StringMapInput
 	DeployPluginsIds pulumi.StringArrayInput
 	// Management Agent Name
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Unique Management Agent identifier
 	ManagedAgentId pulumi.StringInput
 }
@@ -381,8 +381,8 @@ func (o ManagementAgentOutput) DataSourceSummaryLists() ManagementAgentDataSourc
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ManagementAgentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagementAgent) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ManagementAgentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o ManagementAgentOutput) DeployPluginsIds() pulumi.StringArrayOutput {
@@ -395,8 +395,8 @@ func (o ManagementAgentOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ManagementAgentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagementAgent) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ManagementAgentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagementAgent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Management Agent host machine name

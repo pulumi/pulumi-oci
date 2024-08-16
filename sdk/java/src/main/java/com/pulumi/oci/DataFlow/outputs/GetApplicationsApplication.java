@@ -10,7 +10,6 @@ import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationDriverShapeConf
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationExecutorShapeConfig;
 import com.pulumi.oci.DataFlow.outputs.GetApplicationsApplicationParameter;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -47,12 +46,12 @@ public final class GetApplicationsApplication {
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    private Map<String,Object> configuration;
+    private Map<String,String> configuration;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly description.
      * 
@@ -97,7 +96,7 @@ public final class GetApplicationsApplication {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The application ID.
      * 
@@ -229,14 +228,14 @@ public final class GetApplicationsApplication {
      * @return The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { &#34;spark.app.name&#34; : &#34;My App Name&#34;, &#34;spark.shuffle.io.maxRetries&#34; : &#34;4&#34; } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
      * 
      */
-    public Map<String,Object> configuration() {
+    public Map<String,String> configuration() {
         return this.configuration;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -299,7 +298,7 @@ public final class GetApplicationsApplication {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -443,8 +442,8 @@ public final class GetApplicationsApplication {
         private List<String> arguments;
         private String className;
         private String compartmentId;
-        private Map<String,Object> configuration;
-        private Map<String,Object> definedTags;
+        private Map<String,String> configuration;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private String driverShape;
@@ -453,7 +452,7 @@ public final class GetApplicationsApplication {
         private String executorShape;
         private List<GetApplicationsApplicationExecutorShapeConfig> executorShapeConfigs;
         private String fileUri;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String idleTimeoutInMinutes;
         private String language;
@@ -558,7 +557,7 @@ public final class GetApplicationsApplication {
             return this;
         }
         @CustomType.Setter
-        public Builder configuration(Map<String,Object> configuration) {
+        public Builder configuration(Map<String,String> configuration) {
             if (configuration == null) {
               throw new MissingRequiredPropertyException("GetApplicationsApplication", "configuration");
             }
@@ -566,7 +565,7 @@ public final class GetApplicationsApplication {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetApplicationsApplication", "definedTags");
             }
@@ -644,7 +643,7 @@ public final class GetApplicationsApplication {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetApplicationsApplication", "freeformTags");
             }

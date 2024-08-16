@@ -35,13 +35,13 @@ import (
 //				CompartmentId:     pulumi.Any(compartmentId),
 //				RecurrenceDetails: pulumi.Any(scheduleRecurrenceDetails),
 //				RecurrenceType:    pulumi.Any(scheduleRecurrenceType),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(scheduleDescription),
 //				DisplayName: pulumi.Any(scheduleDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				ResourceFilters: resourcescheduler.ScheduleResourceFilterArray{
 //					&resourcescheduler.ScheduleResourceFilterArgs{
@@ -90,13 +90,13 @@ type Schedule struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) This is the description of the schedule.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringOutput `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -111,7 +111,7 @@ type Schedule struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -173,13 +173,13 @@ type scheduleState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) This is the description of the schedule.
 	Description *string `pulumi:"description"`
 	// (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails *string `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -194,7 +194,7 @@ type scheduleState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -215,13 +215,13 @@ type ScheduleState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) This is the description of the schedule.
 	Description pulumi.StringPtrInput
 	// (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringPtrInput
 	// (Updatable) Type of recurrence of a schedule
@@ -236,7 +236,7 @@ type ScheduleState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// (Updatable) This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -261,13 +261,13 @@ type scheduleArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) This is the description of the schedule.
 	Description *string `pulumi:"description"`
 	// (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails string `pulumi:"recurrenceDetails"`
 	// (Updatable) Type of recurrence of a schedule
@@ -294,13 +294,13 @@ type ScheduleArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId pulumi.StringInput
 	// (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) This is the description of the schedule.
 	Description pulumi.StringPtrInput
 	// (Updatable) This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
 	RecurrenceDetails pulumi.StringInput
 	// (Updatable) Type of recurrence of a schedule
@@ -418,8 +418,8 @@ func (o ScheduleOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ScheduleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) This is the description of the schedule.
@@ -433,8 +433,8 @@ func (o ScheduleOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ScheduleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -466,8 +466,8 @@ func (o ScheduleOutput) State() pulumi.StringOutput {
 }
 
 // These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ScheduleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Schedule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ScheduleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Schedule) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

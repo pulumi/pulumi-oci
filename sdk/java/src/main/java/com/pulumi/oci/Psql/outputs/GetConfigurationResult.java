@@ -9,7 +9,6 @@ import com.pulumi.oci.Psql.outputs.GetConfigurationConfigurationDetail;
 import com.pulumi.oci.Psql.outputs.GetConfigurationDbConfigurationOverride;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -43,7 +42,7 @@ public final class GetConfigurationResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A description for the configuration.
      * 
@@ -58,7 +57,7 @@ public final class GetConfigurationResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A unique identifier for the configuration. Immutable on creation.
      * 
@@ -98,7 +97,7 @@ public final class GetConfigurationResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time that the configuration was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -144,7 +143,7 @@ public final class GetConfigurationResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -165,7 +164,7 @@ public final class GetConfigurationResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -221,7 +220,7 @@ public final class GetConfigurationResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -247,10 +246,10 @@ public final class GetConfigurationResult {
         private String configurationId;
         private List<GetConfigurationDbConfigurationOverride> dbConfigurationOverrides;
         private String dbVersion;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Integer instanceMemorySizeInGbs;
         private Integer instanceOcpuCount;
@@ -258,7 +257,7 @@ public final class GetConfigurationResult {
         private String lifecycleDetails;
         private String shape;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         public Builder() {}
         public Builder(GetConfigurationResult defaults) {
@@ -339,7 +338,7 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "definedTags");
             }
@@ -363,7 +362,7 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "freeformTags");
             }
@@ -427,7 +426,7 @@ public final class GetConfigurationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetConfigurationResult", "systemTags");
             }

@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseOperationsInsightsConfig;
 import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabaseStackMonitoringConfig;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -65,7 +64,7 @@ public final class GetExternalNonContainerDatabaseResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The user-friendly name for the external database. The name does not have to be unique.
      * 
@@ -76,7 +75,7 @@ public final class GetExternalNonContainerDatabaseResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
      * 
@@ -186,7 +185,7 @@ public final class GetExternalNonContainerDatabaseResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -203,7 +202,7 @@ public final class GetExternalNonContainerDatabaseResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -281,10 +280,10 @@ public final class GetExternalNonContainerDatabaseResult {
         private String dbId;
         private String dbPacks;
         private String dbUniqueName;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String externalNonContainerDatabaseId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String ncharacterSet;
@@ -395,7 +394,7 @@ public final class GetExternalNonContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "definedTags");
             }
@@ -419,7 +418,7 @@ public final class GetExternalNonContainerDatabaseResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetExternalNonContainerDatabaseResult", "freeformTags");
             }

@@ -61,14 +61,14 @@ type GetFusionEnvironmentFamilyResult struct {
 	// The OCID of the compartment where the environment family is located.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
 	DisplayName string `pulumi:"displayName"`
 	// The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
 	FamilyMaintenancePolicies []GetFusionEnvironmentFamilyFamilyMaintenancePolicy `pulumi:"familyMaintenancePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags              map[string]interface{} `pulumi:"freeformTags"`
-	FusionEnvironmentFamilyId string                 `pulumi:"fusionEnvironmentFamilyId"`
+	FreeformTags              map[string]string `pulumi:"freeformTags"`
+	FusionEnvironmentFamilyId string            `pulumi:"fusionEnvironmentFamilyId"`
 	// The unique identifier (OCID) of the environment family. Can't be changed after creation.
 	Id string `pulumi:"id"`
 	// When set to True, a subscription update is required for the environment family.
@@ -130,8 +130,8 @@ func (o GetFusionEnvironmentFamilyResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetFusionEnvironmentFamilyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
@@ -147,8 +147,8 @@ func (o GetFusionEnvironmentFamilyResultOutput) FamilyMaintenancePolicies() GetF
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetFusionEnvironmentFamilyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetFusionEnvironmentFamilyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFusionEnvironmentFamilyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFusionEnvironmentFamilyResultOutput) FusionEnvironmentFamilyId() pulumi.StringOutput {

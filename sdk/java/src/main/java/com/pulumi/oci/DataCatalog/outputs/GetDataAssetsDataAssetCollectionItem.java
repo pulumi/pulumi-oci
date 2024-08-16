@@ -5,7 +5,6 @@ package com.pulumi.oci.DataCatalog.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -51,7 +50,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
      * @return A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
-    private Map<String,Object> properties;
+    private Map<String,String> properties;
     /**
      * @return A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      * 
@@ -142,7 +141,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
      * @return A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the &#34;default&#34; category. Example: `{&#34;properties&#34;: { &#34;default&#34;: { &#34;host&#34;: &#34;host1&#34;, &#34;port&#34;: &#34;1521&#34;, &#34;database&#34;: &#34;orcl&#34;}}}`
      * 
      */
-    public Map<String,Object> properties() {
+    public Map<String,String> properties() {
         return this.properties;
     }
     /**
@@ -211,7 +210,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
         private String externalKey;
         private String key;
         private String lifecycleDetails;
-        private Map<String,Object> properties;
+        private Map<String,String> properties;
         private String state;
         private String timeCreated;
         private String timeHarvested;
@@ -296,7 +295,7 @@ public final class GetDataAssetsDataAssetCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder properties(Map<String,Object> properties) {
+        public Builder properties(Map<String,String> properties) {
             if (properties == null) {
               throw new MissingRequiredPropertyException("GetDataAssetsDataAssetCollectionItem", "properties");
             }

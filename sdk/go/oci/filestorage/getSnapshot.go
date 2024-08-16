@@ -59,7 +59,7 @@ type LookupSnapshotArgs struct {
 // A collection of values returned by getSnapshot.
 type LookupSnapshotResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The time when this snapshot will be deleted.
 	ExpirationTime string `pulumi:"expirationTime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system from which the snapshot was created.
@@ -67,7 +67,7 @@ type LookupSnapshotResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that created this snapshot.
 	FilesystemSnapshotPolicyId string `pulumi:"filesystemSnapshotPolicyId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.
 	Id string `pulumi:"id"`
 	// Specifies whether the snapshot has been cloned. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
@@ -131,8 +131,8 @@ func (o LookupSnapshotResultOutput) ToLookupSnapshotResultOutputWithContext(ctx 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSnapshotResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSnapshotResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The time when this snapshot will be deleted.
@@ -151,8 +151,8 @@ func (o LookupSnapshotResultOutput) FilesystemSnapshotPolicyId() pulumi.StringOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupSnapshotResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSnapshotResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSnapshotResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSnapshotResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot.

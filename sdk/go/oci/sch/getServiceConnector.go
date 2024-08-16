@@ -63,13 +63,13 @@ type GetServiceConnectorResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the resource. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, the message might provide actionable information for a resource in a `FAILED` state.
@@ -80,7 +80,7 @@ type GetServiceConnectorResult struct {
 	// The current state of the connector.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
 	Targets []GetServiceConnectorTarget `pulumi:"targets"`
 	// The list of tasks.
@@ -135,8 +135,8 @@ func (o GetServiceConnectorResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetServiceConnectorResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetServiceConnectorResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the resource. Avoid entering confidential information.
@@ -150,8 +150,8 @@ func (o GetServiceConnectorResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetServiceConnectorResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetServiceConnectorResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connector.
@@ -179,8 +179,8 @@ func (o GetServiceConnectorResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o GetServiceConnectorResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceConnectorResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetServiceConnectorResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceConnectorResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An object that represents the target of the flow defined by the connector. An example target is a stream (Streaming service). For more information about flows defined by connectors, see [Overview of Connector Hub](https://docs.cloud.oracle.com/iaas/Content/connector-hub/overview.htm). For configuration instructions, see [Creating a Connector](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).

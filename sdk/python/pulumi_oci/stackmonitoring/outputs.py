@@ -336,16 +336,16 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemProperties(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 properties_map: Optional[Mapping[str, Any]] = None):
+                 properties_map: Optional[Mapping[str, str]] = None):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[Mapping[str, Any]]:
+    def properties_map(self) -> Optional[Mapping[str, str]]:
         """
         Key/Value pair of Property
         """
@@ -372,16 +372,16 @@ class DiscoveryJobDiscoveryDetailsProperties(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 properties_map: Optional[Mapping[str, Any]] = None):
+                 properties_map: Optional[Mapping[str, str]] = None):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[Mapping[str, Any]]:
+    def properties_map(self) -> Optional[Mapping[str, str]]:
         """
         Key/Value pair of Property
         """
@@ -408,16 +408,16 @@ class DiscoveryJobDiscoveryDetailsTags(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 properties_map: Optional[Mapping[str, Any]] = None):
+                 properties_map: Optional[Mapping[str, str]] = None):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[Mapping[str, Any]]:
+    def properties_map(self) -> Optional[Mapping[str, str]]:
         """
         Key/Value pair of Property
         """
@@ -1854,7 +1854,7 @@ class MonitoredResourceTypeMetadata(dict):
                  unique_property_sets: Optional[Sequence['outputs.MonitoredResourceTypeMetadataUniquePropertySet']] = None,
                  valid_properties_for_creates: Optional[Sequence[str]] = None,
                  valid_properties_for_updates: Optional[Sequence[str]] = None,
-                 valid_property_values: Optional[Mapping[str, Any]] = None):
+                 valid_property_values: Optional[Mapping[str, str]] = None):
         """
         :param str format: (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
                * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
@@ -1863,7 +1863,7 @@ class MonitoredResourceTypeMetadata(dict):
         :param Sequence['MonitoredResourceTypeMetadataUniquePropertySetArgs'] unique_property_sets: (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
         :param Sequence[str] valid_properties_for_creates: (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
-        :param Mapping[str, Any] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        :param Mapping[str, str] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
         pulumi.set(__self__, "format", format)
         if agent_properties is not None:
@@ -1930,7 +1930,7 @@ class MonitoredResourceTypeMetadata(dict):
 
     @property
     @pulumi.getter(name="validPropertyValues")
-    def valid_property_values(self) -> Optional[Mapping[str, Any]]:
+    def valid_property_values(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
@@ -2120,9 +2120,9 @@ class MonitoredResourcesListMemberItem(dict):
 
     def __init__(__self__, *,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  external_id: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  host_name: Optional[str] = None,
                  license: Optional[str] = None,
                  parent_id: Optional[str] = None,
@@ -2133,12 +2133,12 @@ class MonitoredResourcesListMemberItem(dict):
                  resource_type: Optional[str] = None,
                  source_type: Optional[str] = None,
                  state: Optional[str] = None,
-                 system_tags: Optional[Mapping[str, Any]] = None):
+                 system_tags: Optional[Mapping[str, str]] = None):
         """
         :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_name: Monitored Resource Host Name.
         :param str license: License edition of the monitored resource.
         :param str parent_id: Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2149,7 +2149,7 @@ class MonitoredResourcesListMemberItem(dict):
         :param str resource_type: Monitored Resource Type.
         :param str source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param str state: The current state of the Resource.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -2192,7 +2192,7 @@ class MonitoredResourcesListMemberItem(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2208,7 +2208,7 @@ class MonitoredResourcesListMemberItem(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2296,7 +2296,7 @@ class MonitoredResourcesListMemberItem(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[Mapping[str, Any]]:
+    def system_tags(self) -> Optional[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2572,10 +2572,10 @@ class MonitoredResourcesSearchItem(dict):
 
     def __init__(__self__, *,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
                  external_id: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  host_name: Optional[str] = None,
                  id: Optional[str] = None,
                  license: Optional[str] = None,
@@ -2585,16 +2585,16 @@ class MonitoredResourcesSearchItem(dict):
                  resource_category: Optional[str] = None,
                  source_type: Optional[str] = None,
                  state: Optional[str] = None,
-                 system_tags: Optional[Mapping[str, Any]] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
                  time_created: Optional[str] = None,
                  time_updated: Optional[str] = None,
                  type: Optional[str] = None):
         """
         :param str compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Monitored resource display name.
         :param str external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_name: A filter to return resources with host name match.
         :param str id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str license: License edition of the monitored resource.
@@ -2604,7 +2604,7 @@ class MonitoredResourcesSearchItem(dict):
         :param str resource_category: Resource category filter.
         :param str source_type: Source type filter.
         :param str state: A filter to return resources with matching lifecycle state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param str time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
         :param str type: A filter to return resources that match resource type. 
@@ -2660,7 +2660,7 @@ class MonitoredResourcesSearchItem(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2684,7 +2684,7 @@ class MonitoredResourcesSearchItem(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2764,7 +2764,7 @@ class MonitoredResourcesSearchItem(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[Mapping[str, Any]]:
+    def system_tags(self) -> Optional[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2950,8 +2950,8 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
                  column: str,
                  compartment_id: str,
                  created_by: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_out_of_box: bool,
                  last_updated_by: str,
@@ -2960,7 +2960,7 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
                  resource_group: str,
                  resource_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tenancy_id: str,
                  time_created: str,
                  time_last_updated: str):
@@ -2968,8 +2968,8 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
         :param str column: metric column name
         :param str compartment_id: The ID of the compartment in which data is listed.
         :param str created_by: Created user id
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: OCID of the metric
         :param bool is_out_of_box: Is the baseline enabled metric defined out of box by Oracle or by end-user
         :param str last_updated_by: last Updated user id
@@ -2978,7 +2978,7 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
         :param str resource_group: Resource Group
         :param str resource_type: Resource Type
         :param str state: The current lifecycle state of the metric extension
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str tenancy_id: OCID of the tenancy
         :param str time_created: creation date
         :param str time_last_updated: last updated time
@@ -3027,7 +3027,7 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3035,7 +3035,7 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3107,7 +3107,7 @@ class GetBaselineableMetricsBaselineableMetricSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3204,12 +3204,12 @@ class GetBaselineableMetricsEvaluateDataPointResult(dict):
 class GetBaselineableMetricsEvaluateItemResult(dict):
     def __init__(__self__, *,
                  data_points: Sequence['outputs.GetBaselineableMetricsEvaluateItemDataPointResult'],
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  evaluation_data_points: Sequence['outputs.GetBaselineableMetricsEvaluateItemEvaluationDataPointResult'],
                  training_data_points: Sequence['outputs.GetBaselineableMetricsEvaluateItemTrainingDataPointResult']):
         """
         :param Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'] data_points: list of anomaly data points for the metric
-        :param Mapping[str, Any] dimensions: list of dimensions for the metric
+        :param Mapping[str, str] dimensions: list of dimensions for the metric
         :param Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs'] evaluation_data_points: list of data points for the metric for evaluation of anomalies
         :param Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs'] training_data_points: list of data points for the metric for training of baseline
         """
@@ -3228,7 +3228,7 @@ class GetBaselineableMetricsEvaluateItemResult(dict):
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         list of dimensions for the metric
         """
@@ -3421,29 +3421,29 @@ class GetConfigsConfigCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  config_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  license: str,
                  resource_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which data is listed.
         :param str config_type: The type of configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The Unique Oracle ID (OCID) that is immutable on creation.
         :param bool is_enabled: True if automatic promotion or enterprise extensibility is enabled, false if it is not enabled.
         :param str license: License edition.
         :param str resource_type: The type of resource to configure for automatic promotion.
         :param str state: The current state of the Config.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the configuration was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the Config was updated.
         """
@@ -3479,7 +3479,7 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3495,7 +3495,7 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3543,7 +3543,7 @@ class GetConfigsConfigCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3738,15 +3738,15 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemResult(dict):
 @pulumi.output_type
 class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
     def __init__(__self__, *,
-                 properties_map: Mapping[str, Any]):
+                 properties_map: Mapping[str, str]):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Mapping[str, Any]:
+    def properties_map(self) -> Mapping[str, str]:
         """
         Key/Value pair of Property
         """
@@ -3756,15 +3756,15 @@ class GetDiscoveryJobDiscoveryDetailCredentialItemPropertyResult(dict):
 @pulumi.output_type
 class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
     def __init__(__self__, *,
-                 properties_map: Mapping[str, Any]):
+                 properties_map: Mapping[str, str]):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Mapping[str, Any]:
+    def properties_map(self) -> Mapping[str, str]:
         """
         Key/Value pair of Property
         """
@@ -3774,15 +3774,15 @@ class GetDiscoveryJobDiscoveryDetailPropertyResult(dict):
 @pulumi.output_type
 class GetDiscoveryJobDiscoveryDetailTagResult(dict):
     def __init__(__self__, *,
-                 properties_map: Mapping[str, Any]):
+                 properties_map: Mapping[str, str]):
         """
-        :param Mapping[str, Any] properties_map: Key/Value pair of Property
+        :param Mapping[str, str] properties_map: Key/Value pair of Property
         """
         pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Mapping[str, Any]:
+    def properties_map(self) -> Mapping[str, str]:
         """
         Key/Value pair of Property
         """
@@ -3813,13 +3813,13 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
                  id: str,
                  log_message: str,
                  log_type: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str):
         """
         :param str id: The OCID of Discovery job
         :param str log_message: Log message
         :param str log_type: The log type like INFO, WARNING, ERROR, SUCCESS
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time the Job log was created
         """
         pulumi.set(__self__, "id", id)
@@ -3854,7 +3854,7 @@ class GetDiscoveryJobLogsDiscoveryJobLogCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3918,31 +3918,31 @@ class GetDiscoveryJobsDiscoveryJobCollectionResult(dict):
 class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  discovery_type: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  resource_name: str,
                  resource_type: str,
                  state: str,
                  status: str,
                  status_message: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tenant_id: str,
                  time_updated: str,
                  user_id: str):
         """
         :param str compartment_id: The ID of the compartment in which data is listed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str discovery_type: Add option submits new discovery Job. Add with retry option to re-submit failed discovery job. Refresh option refreshes the existing discovered resources.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of Discovery job
         :param str resource_name: The Name of resource type
         :param str resource_type: Resource Type.
         :param str state: The current state of the DiscoveryJob Resource.
         :param str status: Specifies the status of the discovery job
         :param str status_message: The short summary of the status of the discovery job
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str tenant_id: The OCID of Tenant
         :param str time_updated: The time the discovery Job was updated.
         :param str user_id: The OCID of user in which the job is submitted
@@ -3972,7 +3972,7 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3988,7 +3988,7 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4044,7 +4044,7 @@ class GetDiscoveryJobsDiscoveryJobCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -5925,12 +5925,12 @@ class GetMonitoredResourceTasksMonitoredResourceTasksCollectionResult(dict):
 class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  task_details: Sequence['outputs.GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailResult'],
                  tenant_id: str,
                  time_created: str,
@@ -5938,12 +5938,12 @@ class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemResult(dict):
                  work_request_ids: Sequence[str]):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for which  stack monitoring resource tasks should be listed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Task identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str name: Name of the task.
         :param str state: The current state of the stack monitoring resource task.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param Sequence['GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemTaskDetailArgs'] task_details: The request details for the performing the task.
         :param str tenant_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy.
         :param str time_created: The date and time when the stack monitoring resource task was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -5973,7 +5973,7 @@ class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5981,7 +5981,7 @@ class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6013,7 +6013,7 @@ class GetMonitoredResourceTasksMonitoredResourceTasksCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6245,7 +6245,7 @@ class GetMonitoredResourceTypeMetadataResult(dict):
                  unique_property_sets: Sequence['outputs.GetMonitoredResourceTypeMetadataUniquePropertySetResult'],
                  valid_properties_for_creates: Sequence[str],
                  valid_properties_for_updates: Sequence[str],
-                 valid_property_values: Mapping[str, Any]):
+                 valid_property_values: Mapping[str, str]):
         """
         :param Sequence[str] agent_properties: List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
         :param str format: ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
@@ -6254,7 +6254,7 @@ class GetMonitoredResourceTypeMetadataResult(dict):
         :param Sequence['GetMonitoredResourceTypeMetadataUniquePropertySetArgs'] unique_property_sets: List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
         :param Sequence[str] valid_properties_for_creates: List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
-        :param Mapping[str, Any] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+        :param Mapping[str, str] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
         pulumi.set(__self__, "agent_properties", agent_properties)
         pulumi.set(__self__, "format", format)
@@ -6315,7 +6315,7 @@ class GetMonitoredResourceTypeMetadataResult(dict):
 
     @property
     @pulumi.getter(name="validPropertyValues")
-    def valid_property_values(self) -> Mapping[str, Any]:
+    def valid_property_values(self) -> Mapping[str, str]:
         """
         List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
@@ -6389,10 +6389,10 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionResult(dict):
 class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  metadatas: Sequence['outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResult'],
                  metric_namespace: str,
@@ -6400,15 +6400,15 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
                  resource_category: str,
                  source_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy for which  monitored resource types should be listed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A friendly description.
         :param str display_name: Monitored resource type display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Monitored resource type identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataArgs'] metadatas: The metadata details for resource type.
         :param str metric_namespace: A filter to return monitored resource types that has the matching namespace.
@@ -6416,7 +6416,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
         :param str resource_category: Resource Category to indicate the kind of resource type.
         :param str source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param str state: Lifecycle state of the monitored resource type.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         """
@@ -6446,7 +6446,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6470,7 +6470,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6534,7 +6534,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -6566,7 +6566,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
                  unique_property_sets: Sequence['outputs.GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetResult'],
                  valid_properties_for_creates: Sequence[str],
                  valid_properties_for_updates: Sequence[str],
-                 valid_property_values: Mapping[str, Any]):
+                 valid_property_values: Mapping[str, str]):
         """
         :param Sequence[str] agent_properties: List of properties needed by the agent for monitoring the resource.  Valid only if resource type is Oracle Cloud Infrastructure management agent based. When specified,  these properties are passed to the management agent during resource create or update.
         :param str format: ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
@@ -6575,7 +6575,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
         :param Sequence['GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataUniquePropertySetArgs'] unique_property_sets: List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
         :param Sequence[str] valid_properties_for_creates: List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param Sequence[str] valid_properties_for_updates: List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
-        :param Mapping[str, Any] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
+        :param Mapping[str, str] valid_property_values: List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
         pulumi.set(__self__, "agent_properties", agent_properties)
         pulumi.set(__self__, "format", format)
@@ -6636,7 +6636,7 @@ class GetMonitoredResourceTypesMonitoredResourceTypesCollectionItemMetadataResul
 
     @property
     @pulumi.getter(name="validPropertyValues")
-    def valid_property_values(self) -> Mapping[str, Any]:
+    def valid_property_values(self) -> Mapping[str, str]:
         """
         List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{"osType": "Linux,Windows,Solaris", "osVersion": "v6.0,v7.0"}`
         """
@@ -6715,11 +6715,11 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
                  compartment_id: str,
                  credentials: Sequence['outputs.GetMonitoredResourcesMonitoredResourceCollectionItemCredentialResult'],
                  database_connection_details: Sequence['outputs.GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  external_id: str,
                  external_resource_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host_name: str,
                  id: str,
                  license: str,
@@ -6730,7 +6730,7 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
                  resource_time_zone: str,
                  source_type: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tenant_id: str,
                  time_created: str,
                  time_updated: str,
@@ -6740,10 +6740,10 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
         :param str compartment_id: The ID of the compartment in which data is listed.
         :param Sequence['GetMonitoredResourcesMonitoredResourceCollectionItemCredentialArgs'] credentials: Monitored Resource Credential Details.
         :param Sequence['GetMonitoredResourcesMonitoredResourceCollectionItemDatabaseConnectionDetailArgs'] database_connection_details: Connection details for the database.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Monitored resource display name.
         :param str external_id: The external resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External resource is any Oracle Cloud Infrastructure resource which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_name: Monitored resource host name.
         :param str id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -6753,7 +6753,7 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
         :param str resource_time_zone: Time zone in the form of tz database canonical zone ID.
         :param str source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param str state: Lifecycle state of the monitored resource.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str tenant_id: Tenancy Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str time_created: The date and time when the monitored resource was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
         :param str time_updated: The date and time when the monitored resource was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -6830,7 +6830,7 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6859,7 +6859,7 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6944,7 +6944,7 @@ class GetMonitoredResourcesMonitoredResourceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -7612,26 +7612,26 @@ class GetProcessSetsProcessSetCollectionResult(dict):
 class GetProcessSetsProcessSetCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  revision: str,
                  specifications: Sequence['outputs.GetProcessSetsProcessSetCollectionItemSpecificationResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which data is listed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Process Set.
         :param str revision: The current revision of the Process Set.
         :param Sequence['GetProcessSetsProcessSetCollectionItemSpecificationArgs'] specifications: Collection of regular expression specifications used to identify the processes to be monitored.
         :param str state: The current state of the Resource.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the process set was created. An RFC3339 formatted datetime string.
         :param str time_updated: The time the process set was last updated. An RFC3339 formatted datetime string.
         """
@@ -7657,7 +7657,7 @@ class GetProcessSetsProcessSetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -7673,7 +7673,7 @@ class GetProcessSetsProcessSetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -7713,7 +7713,7 @@ class GetProcessSetsProcessSetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

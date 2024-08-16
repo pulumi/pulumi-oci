@@ -5,7 +5,6 @@ package com.pulumi.oci.StackMonitoring.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,13 +21,13 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs ext
      * 
      */
     @Import(name="propertiesMap")
-    private @Nullable Output<Map<String,Object>> propertiesMap;
+    private @Nullable Output<Map<String,String>> propertiesMap;
 
     /**
      * @return Key/Value pair of Property
      * 
      */
-    public Optional<Output<Map<String,Object>>> propertiesMap() {
+    public Optional<Output<Map<String,String>>> propertiesMap() {
         return Optional.ofNullable(this.propertiesMap);
     }
 
@@ -62,7 +61,7 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs ext
          * @return builder
          * 
          */
-        public Builder propertiesMap(@Nullable Output<Map<String,Object>> propertiesMap) {
+        public Builder propertiesMap(@Nullable Output<Map<String,String>> propertiesMap) {
             $.propertiesMap = propertiesMap;
             return this;
         }
@@ -73,7 +72,7 @@ public final class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs ext
          * @return builder
          * 
          */
-        public Builder propertiesMap(Map<String,Object> propertiesMap) {
+        public Builder propertiesMap(Map<String,String> propertiesMap) {
             return propertiesMap(Output.of(propertiesMap));
         }
 

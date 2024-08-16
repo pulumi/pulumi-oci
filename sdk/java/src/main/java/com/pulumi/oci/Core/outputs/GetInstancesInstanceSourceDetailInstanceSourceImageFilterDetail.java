@@ -5,7 +5,6 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDeta
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTagsFilter;
+    private Map<String,String> definedTagsFilter;
     /**
      * @return The image&#39;s operating system.  Example: `Oracle Linux`
      * 
@@ -45,7 +44,7 @@ public final class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDeta
      * @return Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> definedTagsFilter() {
+    public Map<String,String> definedTagsFilter() {
         return this.definedTagsFilter;
     }
     /**
@@ -73,7 +72,7 @@ public final class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDeta
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTagsFilter;
+        private Map<String,String> definedTagsFilter;
         private String operatingSystem;
         private String operatingSystemVersion;
         public Builder() {}
@@ -94,7 +93,7 @@ public final class GetInstancesInstanceSourceDetailInstanceSourceImageFilterDeta
             return this;
         }
         @CustomType.Setter
-        public Builder definedTagsFilter(Map<String,Object> definedTagsFilter) {
+        public Builder definedTagsFilter(Map<String,String> definedTagsFilter) {
             if (definedTagsFilter == null) {
               throw new MissingRequiredPropertyException("GetInstancesInstanceSourceDetailInstanceSourceImageFilterDetail", "definedTagsFilter");
             }

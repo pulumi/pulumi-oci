@@ -31,13 +31,13 @@ type DatabaseSecurityConfig struct {
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId pulumi.StringOutput `pulumi:"databaseSecurityConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the database security config in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -50,7 +50,7 @@ type DatabaseSecurityConfig struct {
 	// The current state of the database security config.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The target OCID corresponding to the database security config.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The time that the database security config was created, in the format defined by RFC3339.
@@ -99,13 +99,13 @@ type databaseSecurityConfigState struct {
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId *string `pulumi:"databaseSecurityConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the database security config in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -118,7 +118,7 @@ type databaseSecurityConfigState struct {
 	// The current state of the database security config.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The target OCID corresponding to the database security config.
 	TargetId *string `pulumi:"targetId"`
 	// The time that the database security config was created, in the format defined by RFC3339.
@@ -135,13 +135,13 @@ type DatabaseSecurityConfigState struct {
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the database security config in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
@@ -154,7 +154,7 @@ type DatabaseSecurityConfigState struct {
 	// The current state of the database security config.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The target OCID corresponding to the database security config.
 	TargetId pulumi.StringPtrInput
 	// The time that the database security config was created, in the format defined by RFC3339.
@@ -175,13 +175,13 @@ type databaseSecurityConfigArgs struct {
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId string `pulumi:"databaseSecurityConfigId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -198,13 +198,13 @@ type DatabaseSecurityConfigArgs struct {
 	// The OCID of the database security configuration resource.
 	DatabaseSecurityConfigId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the database security config. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 	//
 	// ** IMPORTANT **
@@ -312,8 +312,8 @@ func (o DatabaseSecurityConfigOutput) DatabaseSecurityConfigId() pulumi.StringOu
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o DatabaseSecurityConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DatabaseSecurityConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the security policy.
@@ -327,8 +327,8 @@ func (o DatabaseSecurityConfigOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o DatabaseSecurityConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DatabaseSecurityConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the database security config in Data Safe.
@@ -357,8 +357,8 @@ func (o DatabaseSecurityConfigOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DatabaseSecurityConfigOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DatabaseSecurityConfigOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseSecurityConfig) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The target OCID corresponding to the database security config.

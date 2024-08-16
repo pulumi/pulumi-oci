@@ -70,10 +70,10 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  data_node_host_ocpu_count: int,
                  data_node_host_type: str,
                  data_node_storage_gb: int,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  fqdn: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  master_node_count: int,
@@ -95,7 +95,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  state: str,
                  subnet_compartment_id: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_deleted: str,
                  time_updated: str,
@@ -111,10 +111,10 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param int data_node_host_ocpu_count: The number of OCPUs configured for the cluster's data nodes.
         :param str data_node_host_type: The instance type for the cluster's data nodes.
         :param int data_node_storage_gb: The amount of storage in GB, to configure per node for the cluster's data nodes.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: unique OpensearchCluster identifier
         :param str lifecycle_details: Additional information about the current lifecycle state of the cluster.
         :param int master_node_count: The number of master nodes configured for the cluster.
@@ -136,7 +136,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param str state: A filter to return only OpensearchClusters their lifecycleState matches the given lifecycleState.
         :param str subnet_compartment_id: The OCID for the compartment where the cluster's subnet is located.
         :param str subnet_id: The OCID of the cluster's subnet.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The amount of time in milliseconds since the cluster was created.
         :param str time_deleted: The amount of time in milliseconds since the cluster was updated.
         :param str time_updated: The amount of time in milliseconds since the cluster was updated.
@@ -251,7 +251,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -275,7 +275,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -451,7 +451,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

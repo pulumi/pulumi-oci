@@ -1230,18 +1230,18 @@ type GetBucketSummariesBucketSummary struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The entity tag (ETag) for the bucket.
 	Etag string `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	Id           string                 `pulumi:"id"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	Id           string            `pulumi:"id"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly bool `pulumi:"isReadOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// Arbitrary string keys and values for user-defined metadata.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
 	Name string `pulumi:"name"`
 	// The Object Storage namespace used for the request.
@@ -1287,18 +1287,18 @@ type GetBucketSummariesBucketSummaryArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the bucket.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The entity tag (ETag) for the bucket.
 	Etag pulumi.StringInput `pulumi:"etag"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
-	Id           pulumi.StringInput `pulumi:"id"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	Id           pulumi.StringInput    `pulumi:"id"`
 	// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
 	IsReadOnly pulumi.BoolInput `pulumi:"isReadOnly"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// Arbitrary string keys and values for user-defined metadata.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1
 	Name pulumi.StringInput `pulumi:"name"`
 	// The Object Storage namespace used for the request.
@@ -1404,8 +1404,8 @@ func (o GetBucketSummariesBucketSummaryOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetBucketSummariesBucketSummaryOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetBucketSummariesBucketSummaryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The entity tag (ETag) for the bucket.
@@ -1414,8 +1414,8 @@ func (o GetBucketSummariesBucketSummaryOutput) Etag() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetBucketSummariesBucketSummaryOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetBucketSummariesBucketSummaryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetBucketSummariesBucketSummaryOutput) Id() pulumi.StringOutput {
@@ -1433,8 +1433,8 @@ func (o GetBucketSummariesBucketSummaryOutput) KmsKeyId() pulumi.StringOutput {
 }
 
 // Arbitrary string keys and values for user-defined metadata.
-func (o GetBucketSummariesBucketSummaryOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetBucketSummariesBucketSummaryOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetBucketSummariesBucketSummary) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The name of the bucket. Avoid entering confidential information. Example: my-new-bucket1

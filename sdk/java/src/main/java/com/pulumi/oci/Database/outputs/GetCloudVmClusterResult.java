@@ -11,7 +11,6 @@ import com.pulumi.oci.Database.outputs.GetCloudVmClusterIormConfigCach;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -85,7 +84,7 @@ public final class GetCloudVmClusterResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
      * 
@@ -110,7 +109,7 @@ public final class GetCloudVmClusterResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return A valid Oracle Grid Infrastructure (GI) software version.
      * 
@@ -242,7 +241,7 @@ public final class GetCloudVmClusterResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Operating system version of the image.
      * 
@@ -364,7 +363,7 @@ public final class GetCloudVmClusterResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -399,7 +398,7 @@ public final class GetCloudVmClusterResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -585,7 +584,7 @@ public final class GetCloudVmClusterResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -647,12 +646,12 @@ public final class GetCloudVmClusterResult {
         private Double dataStorageSizeInTbs;
         private Integer dbNodeStorageSizeInGbs;
         private List<String> dbServers;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String diskRedundancy;
         private String displayName;
         private String domain;
         private List<GetCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String giVersion;
         private String hostname;
         private String id;
@@ -679,7 +678,7 @@ public final class GetCloudVmClusterResult {
         private Integer storageSizeInGbs;
         private String subnetId;
         private String subscriptionId;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String systemVersion;
         private String timeCreated;
         private String timeZone;
@@ -864,7 +863,7 @@ public final class GetCloudVmClusterResult {
             return dbServers(List.of(dbServers));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "definedTags");
             }
@@ -907,7 +906,7 @@ public final class GetCloudVmClusterResult {
             return fileSystemConfigurationDetails(List.of(fileSystemConfigurationDetails));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "freeformTags");
             }
@@ -1135,7 +1134,7 @@ public final class GetCloudVmClusterResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "systemTags");
             }

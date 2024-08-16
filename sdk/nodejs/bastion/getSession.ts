@@ -88,7 +88,7 @@ export interface GetSessionResult {
     /**
      * The connection message for the session.
      */
-    readonly sshMetadata: {[key: string]: any};
+    readonly sshMetadata: {[key: string]: string};
     /**
      * The current state of the session.
      */

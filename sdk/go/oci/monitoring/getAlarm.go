@@ -74,7 +74,7 @@ type LookupAlarmResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
@@ -82,7 +82,7 @@ type LookupAlarmResult struct {
 	// Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
 	EvaluationSlackDuration string `pulumi:"evaluationSlackDuration"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 	Id string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
@@ -188,8 +188,8 @@ func (o LookupAlarmResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAlarmResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAlarmResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAlarmResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAlarmResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
@@ -208,8 +208,8 @@ func (o LookupAlarmResultOutput) EvaluationSlackDuration() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-func (o LookupAlarmResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAlarmResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAlarmResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAlarmResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.

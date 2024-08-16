@@ -45,7 +45,7 @@ export interface GetVmClusterRecommendedNetworkArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: {[key: string]: any};
+    definedTags?: {[key: string]: string};
     /**
      * The user-friendly name for the VM cluster network. The name does not need to be unique.
      */
@@ -65,7 +65,7 @@ export interface GetVmClusterRecommendedNetworkArgs {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: {[key: string]: any};
+    freeformTags?: {[key: string]: string};
     /**
      * List of parameters for generation of the client and backup networks.
      */
@@ -96,7 +96,7 @@ export interface GetVmClusterRecommendedNetworkResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
      */
@@ -114,7 +114,7 @@ export interface GetVmClusterRecommendedNetworkResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The provider-assigned unique ID for this managed resource.
      */
@@ -165,7 +165,7 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The user-friendly name for the VM cluster network. The name does not need to be unique.
      */
@@ -185,7 +185,7 @@ export interface GetVmClusterRecommendedNetworkOutputArgs {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * List of parameters for generation of the client and backup networks.
      */

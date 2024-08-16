@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// <summary>
         /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> KeyMap;
+        public readonly ImmutableDictionary<string, string> KeyMap;
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
 
             string key,
 
-            ImmutableDictionary<string, object> keyMap,
+            ImmutableDictionary<string, string> keyMap,
 
             ImmutableArray<Outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult> metadatas,
 

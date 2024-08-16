@@ -86,7 +86,7 @@ class _RecommendationState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  estimated_cost_saving: Optional[pulumi.Input[float]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  importance: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  recommendation_id: Optional[pulumi.Input[str]] = None,
@@ -104,7 +104,7 @@ class _RecommendationState:
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[str] description: Text describing the recommendation.
         :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs for the recommendation.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] extended_metadata: Additional metadata key/value pairs for the recommendation.
         :param pulumi.Input[str] importance: The level of importance assigned to the recommendation.
         :param pulumi.Input[str] name: The name of the profile level.
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
@@ -206,14 +206,14 @@ class _RecommendationState:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional metadata key/value pairs for the recommendation.
         """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @property
@@ -479,7 +479,7 @@ class Recommendation(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             description: Optional[pulumi.Input[str]] = None,
             estimated_cost_saving: Optional[pulumi.Input[float]] = None,
-            extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             importance: Optional[pulumi.Input[str]] = None,
             name: Optional[pulumi.Input[str]] = None,
             recommendation_id: Optional[pulumi.Input[str]] = None,
@@ -502,7 +502,7 @@ class Recommendation(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the tenancy. The tenancy is the root compartment.
         :param pulumi.Input[str] description: Text describing the recommendation.
         :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the recommendation.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs for the recommendation.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] extended_metadata: Additional metadata key/value pairs for the recommendation.
         :param pulumi.Input[str] importance: The level of importance assigned to the recommendation.
         :param pulumi.Input[str] name: The name of the profile level.
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
@@ -577,7 +577,7 @@ class Recommendation(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def extended_metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Additional metadata key/value pairs for the recommendation.
         """

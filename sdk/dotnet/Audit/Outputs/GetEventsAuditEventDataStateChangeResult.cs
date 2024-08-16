@@ -16,17 +16,17 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Current;
+        public readonly ImmutableDictionary<string, string> Current;
         /// <summary>
         /// Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Previous;
+        public readonly ImmutableDictionary<string, string> Previous;
 
         [OutputConstructor]
         private GetEventsAuditEventDataStateChangeResult(
-            ImmutableDictionary<string, object> current,
+            ImmutableDictionary<string, string> current,
 
-            ImmutableDictionary<string, object> previous)
+            ImmutableDictionary<string, string> previous)
         {
             Current = current;
             Previous = previous;

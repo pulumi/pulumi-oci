@@ -2147,9 +2147,9 @@ type GetTablesTableCollection struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	DdlStatement  string `pulumi:"ddlStatement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
 	Id string `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
@@ -2168,7 +2168,7 @@ type GetTablesTableCollection struct {
 	// Filter list by the lifecycle state of the item.
 	State string `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Throughput and storage limits configuration of a table.
 	TableLimits []GetTablesTableCollectionTableLimit `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
@@ -2195,9 +2195,9 @@ type GetTablesTableCollectionArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	DdlStatement  pulumi.StringInput `pulumi:"ddlStatement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if this table can be reclaimed after an idle period.
@@ -2216,7 +2216,7 @@ type GetTablesTableCollectionArgs struct {
 	// Filter list by the lifecycle state of the item.
 	State pulumi.StringInput `pulumi:"state"`
 	// Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Throughput and storage limits configuration of a table.
 	TableLimits GetTablesTableCollectionTableLimitArrayInput `pulumi:"tableLimits"`
 	// The time the the table was created. An RFC3339 formatted datetime string.
@@ -2288,13 +2288,13 @@ func (o GetTablesTableCollectionOutput) DdlStatement() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o GetTablesTableCollectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTablesTableCollection) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTablesTableCollectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetTablesTableCollectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTablesTableCollection) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTablesTableCollectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable.
@@ -2345,8 +2345,8 @@ func (o GetTablesTableCollectionOutput) State() pulumi.StringOutput {
 }
 
 // Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
-func (o GetTablesTableCollectionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTablesTableCollection) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetTablesTableCollectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTablesTableCollection) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Throughput and storage limits configuration of a table.

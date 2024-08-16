@@ -491,7 +491,7 @@ type OccCapacityRequestPatchOperation struct {
 	// (Updatable)
 	Selection string `pulumi:"selection"`
 	// (Updatable)
-	Value map[string]interface{} `pulumi:"value"`
+	Value map[string]string `pulumi:"value"`
 }
 
 // OccCapacityRequestPatchOperationInput is an input type that accepts OccCapacityRequestPatchOperationArgs and OccCapacityRequestPatchOperationOutput values.
@@ -517,7 +517,7 @@ type OccCapacityRequestPatchOperationArgs struct {
 	// (Updatable)
 	Selection pulumi.StringInput `pulumi:"selection"`
 	// (Updatable)
-	Value pulumi.MapInput `pulumi:"value"`
+	Value pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (OccCapacityRequestPatchOperationArgs) ElementType() reflect.Type {
@@ -597,8 +597,8 @@ func (o OccCapacityRequestPatchOperationOutput) Selection() pulumi.StringOutput 
 }
 
 // (Updatable)
-func (o OccCapacityRequestPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v OccCapacityRequestPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+func (o OccCapacityRequestPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v OccCapacityRequestPatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
 }
 
 type OccCapacityRequestPatchOperationArrayOutput struct{ *pulumi.OutputState }
@@ -832,13 +832,13 @@ type GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem stru
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the availability catalog to filter the list of availability catalogs.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -852,7 +852,7 @@ type GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem stru
 	// The current lifecycle state of the customer group.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -876,13 +876,13 @@ type GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs 
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the availability catalog to filter the list of availability catalogs.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -896,7 +896,7 @@ type GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs 
 	// The current lifecycle state of the customer group.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -969,10 +969,10 @@ func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Text information about the availability catalog.
@@ -990,10 +990,10 @@ func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the availability catalog to filter the list of availability catalogs.
@@ -1035,10 +1035,10 @@ func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetInternalOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the availability catalog was created.
@@ -2039,7 +2039,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem struct {
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description string `pulumi:"description"`
 	// Details about capacity available for  different resources in catalog.
@@ -2047,7 +2047,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem struct {
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the availability catalog to filter the list of availability catalogs.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -2061,7 +2061,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem struct {
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -2086,7 +2086,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs struct {
 	// The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Text information about the availability catalog.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Details about capacity available for  different resources in catalog.
@@ -2094,7 +2094,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs struct {
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the availability catalog to filter the list of availability catalogs.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -2108,7 +2108,7 @@ type GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemArgs struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -2183,10 +2183,10 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) Co
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Text information about the availability catalog.
@@ -2207,10 +2207,10 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) Di
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the availability catalog to filter the list of availability catalogs.
@@ -2250,10 +2250,10 @@ func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) St
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]interface{} {
+func (o GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccAvailabilityCatalogsOccAvailabilityCatalogCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the availability catalog was created.
@@ -2731,12 +2731,12 @@ func (o GetOccCapacityRequestDetailArrayOutput) Index(i pulumi.IntInput) GetOccC
 }
 
 type GetOccCapacityRequestPatchOperation struct {
-	From         string                 `pulumi:"from"`
-	Operation    string                 `pulumi:"operation"`
-	Position     string                 `pulumi:"position"`
-	SelectedItem string                 `pulumi:"selectedItem"`
-	Selection    string                 `pulumi:"selection"`
-	Value        map[string]interface{} `pulumi:"value"`
+	From         string            `pulumi:"from"`
+	Operation    string            `pulumi:"operation"`
+	Position     string            `pulumi:"position"`
+	SelectedItem string            `pulumi:"selectedItem"`
+	Selection    string            `pulumi:"selection"`
+	Value        map[string]string `pulumi:"value"`
 }
 
 // GetOccCapacityRequestPatchOperationInput is an input type that accepts GetOccCapacityRequestPatchOperationArgs and GetOccCapacityRequestPatchOperationOutput values.
@@ -2751,12 +2751,12 @@ type GetOccCapacityRequestPatchOperationInput interface {
 }
 
 type GetOccCapacityRequestPatchOperationArgs struct {
-	From         pulumi.StringInput `pulumi:"from"`
-	Operation    pulumi.StringInput `pulumi:"operation"`
-	Position     pulumi.StringInput `pulumi:"position"`
-	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
-	Selection    pulumi.StringInput `pulumi:"selection"`
-	Value        pulumi.MapInput    `pulumi:"value"`
+	From         pulumi.StringInput    `pulumi:"from"`
+	Operation    pulumi.StringInput    `pulumi:"operation"`
+	Position     pulumi.StringInput    `pulumi:"position"`
+	SelectedItem pulumi.StringInput    `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput    `pulumi:"selection"`
+	Value        pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (GetOccCapacityRequestPatchOperationArgs) ElementType() reflect.Type {
@@ -2830,8 +2830,8 @@ func (o GetOccCapacityRequestPatchOperationOutput) Selection() pulumi.StringOutp
 	return o.ApplyT(func(v GetOccCapacityRequestPatchOperation) string { return v.Selection }).(pulumi.StringOutput)
 }
 
-func (o GetOccCapacityRequestPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCapacityRequestPatchOperation) map[string]interface{} { return v.Value }).(pulumi.MapOutput)
+func (o GetOccCapacityRequestPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestPatchOperation) map[string]string { return v.Value }).(pulumi.StringMapOutput)
 }
 
 type GetOccCapacityRequestPatchOperationArrayOutput struct{ *pulumi.OutputState }
@@ -3064,7 +3064,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItem struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover string `pulumi:"dateExpectedCapacityHandover"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description string `pulumi:"description"`
 	// A list of resources requested as part of this request
@@ -3072,7 +3072,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItem struct {
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -3091,7 +3091,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItem struct {
 	// The current lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the capacity request was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the capacity request was updated.
@@ -3117,7 +3117,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemArgs struct {
 	// The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
 	DateExpectedCapacityHandover pulumi.StringInput `pulumi:"dateExpectedCapacityHandover"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Meaningful text about the capacity request.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A list of resources requested as part of this request
@@ -3125,7 +3125,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemArgs struct {
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -3144,7 +3144,7 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemArgs struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringInput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the capacity request was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the capacity request was updated.
@@ -3220,10 +3220,8 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) DateExpect
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Meaningful text about the capacity request.
@@ -3244,10 +3242,10 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]interface{} {
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
@@ -3299,10 +3297,8 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) State() pu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the capacity request was created.
@@ -3504,12 +3500,12 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemDetailArrayOutput)
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation struct {
-	From         string                 `pulumi:"from"`
-	Operation    string                 `pulumi:"operation"`
-	Position     string                 `pulumi:"position"`
-	SelectedItem string                 `pulumi:"selectedItem"`
-	Selection    string                 `pulumi:"selection"`
-	Value        map[string]interface{} `pulumi:"value"`
+	From         string            `pulumi:"from"`
+	Operation    string            `pulumi:"operation"`
+	Position     string            `pulumi:"position"`
+	SelectedItem string            `pulumi:"selectedItem"`
+	Selection    string            `pulumi:"selection"`
+	Value        map[string]string `pulumi:"value"`
 }
 
 // GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationInput is an input type that accepts GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArgs and GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationOutput values.
@@ -3524,12 +3520,12 @@ type GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationInput i
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArgs struct {
-	From         pulumi.StringInput `pulumi:"from"`
-	Operation    pulumi.StringInput `pulumi:"operation"`
-	Position     pulumi.StringInput `pulumi:"position"`
-	SelectedItem pulumi.StringInput `pulumi:"selectedItem"`
-	Selection    pulumi.StringInput `pulumi:"selection"`
-	Value        pulumi.MapInput    `pulumi:"value"`
+	From         pulumi.StringInput    `pulumi:"from"`
+	Operation    pulumi.StringInput    `pulumi:"operation"`
+	Position     pulumi.StringInput    `pulumi:"position"`
+	SelectedItem pulumi.StringInput    `pulumi:"selectedItem"`
+	Selection    pulumi.StringInput    `pulumi:"selection"`
+	Value        pulumi.StringMapInput `pulumi:"value"`
 }
 
 func (GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArgs) ElementType() reflect.Type {
@@ -3609,10 +3605,10 @@ func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationOutp
 	}).(pulumi.StringOutput)
 }
 
-func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationOutput) Value() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation) map[string]interface{} {
+func (o GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationOutput) Value() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation) map[string]string {
 		return v.Value
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperationArrayOutput struct{ *pulumi.OutputState }
@@ -3976,13 +3972,13 @@ type GetOccCustomerGroupsOccCustomerGroupCollectionItem struct {
 	// A list containing all the customers that belong to this customer group
 	CustomersLists []GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersList `pulumi:"customersLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description about the customer group.
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A query filter to return the list result based on the customer group OCID. This is done for users who have INSPECT permission but do not have READ permission.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -3992,7 +3988,7 @@ type GetOccCustomerGroupsOccCustomerGroupCollectionItem struct {
 	// A query filter to return the list result based on status.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the customer group was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the customer group was last updated.
@@ -4016,13 +4012,13 @@ type GetOccCustomerGroupsOccCustomerGroupCollectionItemArgs struct {
 	// A list containing all the customers that belong to this customer group
 	CustomersLists GetOccCustomerGroupsOccCustomerGroupCollectionItemCustomersListArrayInput `pulumi:"customersLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description about the customer group.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A query filter to return the list result based on the customer group OCID. This is done for users who have INSPECT permission but do not have READ permission.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -4032,7 +4028,7 @@ type GetOccCustomerGroupsOccCustomerGroupCollectionItemArgs struct {
 	// A query filter to return the list result based on status.
 	Status pulumi.StringInput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the customer group was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the customer group was last updated.
@@ -4103,10 +4099,8 @@ func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) CustomersLists
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description about the customer group.
@@ -4120,10 +4114,8 @@ func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) DisplayName() 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A query filter to return the list result based on the customer group OCID. This is done for users who have INSPECT permission but do not have READ permission.
@@ -4147,8 +4139,8 @@ func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) Status() pulum
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetOccCustomerGroupsOccCustomerGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupsOccCustomerGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the customer group was created.

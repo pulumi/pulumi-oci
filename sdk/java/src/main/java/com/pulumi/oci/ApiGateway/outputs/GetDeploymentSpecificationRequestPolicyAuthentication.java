@@ -11,7 +11,6 @@ import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicy
 import com.pulumi.oci.ApiGateway.outputs.GetDeploymentSpecificationRequestPolicyAuthenticationVerifyClaim;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -49,7 +48,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
      * 
      */
     private Double maxClockSkewInSeconds;
-    private Map<String,Object> parameters;
+    private Map<String,String> parameters;
     /**
      * @return A set of Public Keys that will be used to verify the JWT signature.
      * 
@@ -134,7 +133,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
     public Double maxClockSkewInSeconds() {
         return this.maxClockSkewInSeconds;
     }
-    public Map<String,Object> parameters() {
+    public Map<String,String> parameters() {
         return this.parameters;
     }
     /**
@@ -209,7 +208,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
         private Boolean isAnonymousAccessAllowed;
         private List<String> issuers;
         private Double maxClockSkewInSeconds;
-        private Map<String,Object> parameters;
+        private Map<String,String> parameters;
         private List<GetDeploymentSpecificationRequestPolicyAuthenticationPublicKey> publicKeys;
         private String tokenAuthScheme;
         private String tokenHeader;
@@ -296,7 +295,7 @@ public final class GetDeploymentSpecificationRequestPolicyAuthentication {
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(Map<String,Object> parameters) {
+        public Builder parameters(Map<String,String> parameters) {
             if (parameters == null) {
               throw new MissingRequiredPropertyException("GetDeploymentSpecificationRequestPolicyAuthentication", "parameters");
             }

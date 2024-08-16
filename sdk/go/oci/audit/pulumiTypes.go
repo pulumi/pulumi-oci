@@ -175,7 +175,7 @@ func (o GetEventsAuditEventArrayOutput) Index(i pulumi.IntInput) GetEventsAuditE
 
 type GetEventsAuditEventData struct {
 	// A container object for attribues unique to the resource emitting the event.
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The availability domain where the resource resides.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -183,13 +183,13 @@ type GetEventsAuditEventData struct {
 	// The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
 	CompartmentName string `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
 	EventGroupingId string `pulumi:"eventGroupingId"`
 	// Name of the API operation that generated this event.  Example: `GetInstance`
 	EventName string `pulumi:"eventName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A container object for identity attributes.
 	Identities []GetEventsAuditEventDataIdentity `pulumi:"identities"`
 	// A container object for request attributes.
@@ -217,7 +217,7 @@ type GetEventsAuditEventDataInput interface {
 
 type GetEventsAuditEventDataArgs struct {
 	// A container object for attribues unique to the resource emitting the event.
-	AdditionalDetails pulumi.MapInput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringMapInput `pulumi:"additionalDetails"`
 	// The availability domain where the resource resides.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -225,13 +225,13 @@ type GetEventsAuditEventDataArgs struct {
 	// The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
 	CompartmentName pulumi.StringInput `pulumi:"compartmentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
 	EventGroupingId pulumi.StringInput `pulumi:"eventGroupingId"`
 	// Name of the API operation that generated this event.  Example: `GetInstance`
 	EventName pulumi.StringInput `pulumi:"eventName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A container object for identity attributes.
 	Identities GetEventsAuditEventDataIdentityArrayInput `pulumi:"identities"`
 	// A container object for request attributes.
@@ -298,8 +298,8 @@ func (o GetEventsAuditEventDataOutput) ToGetEventsAuditEventDataOutputWithContex
 }
 
 // A container object for attribues unique to the resource emitting the event.
-func (o GetEventsAuditEventDataOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The availability domain where the resource resides.
@@ -318,8 +318,8 @@ func (o GetEventsAuditEventDataOutput) CompartmentName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetEventsAuditEventDataOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
@@ -333,8 +333,8 @@ func (o GetEventsAuditEventDataOutput) EventName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetEventsAuditEventDataOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventData) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventData) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A container object for identity attributes.
@@ -569,11 +569,11 @@ type GetEventsAuditEventDataRequest struct {
 	// The HTTP method of the request.  Example: `GET`
 	Action string `pulumi:"action"`
 	// The headers of the response.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// The opc-request-id of the request.
 	Id string `pulumi:"id"`
 	// The parameters supplied by the caller during this operation.
-	Parameters map[string]interface{} `pulumi:"parameters"`
+	Parameters map[string]string `pulumi:"parameters"`
 	// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
 	Path string `pulumi:"path"`
 }
@@ -593,11 +593,11 @@ type GetEventsAuditEventDataRequestArgs struct {
 	// The HTTP method of the request.  Example: `GET`
 	Action pulumi.StringInput `pulumi:"action"`
 	// The headers of the response.
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// The opc-request-id of the request.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The parameters supplied by the caller during this operation.
-	Parameters pulumi.MapInput `pulumi:"parameters"`
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
 	// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
 	Path pulumi.StringInput `pulumi:"path"`
 }
@@ -659,8 +659,8 @@ func (o GetEventsAuditEventDataRequestOutput) Action() pulumi.StringOutput {
 }
 
 // The headers of the response.
-func (o GetEventsAuditEventDataRequestOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataRequest) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataRequestOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataRequest) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // The opc-request-id of the request.
@@ -669,8 +669,8 @@ func (o GetEventsAuditEventDataRequestOutput) Id() pulumi.StringOutput {
 }
 
 // The parameters supplied by the caller during this operation.
-func (o GetEventsAuditEventDataRequestOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataRequest) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataRequestOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataRequest) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 // The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
@@ -700,11 +700,11 @@ func (o GetEventsAuditEventDataRequestArrayOutput) Index(i pulumi.IntInput) GetE
 
 type GetEventsAuditEventDataResponse struct {
 	// The headers of the response.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// A friendly description of what happened during the operation. Use this for troubleshooting.
 	Message string `pulumi:"message"`
 	// This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
-	Payload map[string]interface{} `pulumi:"payload"`
+	Payload map[string]string `pulumi:"payload"`
 	// The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
 	ResponseTime string `pulumi:"responseTime"`
 	// The status code of the response.  Example: `200`
@@ -724,11 +724,11 @@ type GetEventsAuditEventDataResponseInput interface {
 
 type GetEventsAuditEventDataResponseArgs struct {
 	// The headers of the response.
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// A friendly description of what happened during the operation. Use this for troubleshooting.
 	Message pulumi.StringInput `pulumi:"message"`
 	// This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
-	Payload pulumi.MapInput `pulumi:"payload"`
+	Payload pulumi.StringMapInput `pulumi:"payload"`
 	// The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
 	ResponseTime pulumi.StringInput `pulumi:"responseTime"`
 	// The status code of the response.  Example: `200`
@@ -787,8 +787,8 @@ func (o GetEventsAuditEventDataResponseOutput) ToGetEventsAuditEventDataResponse
 }
 
 // The headers of the response.
-func (o GetEventsAuditEventDataResponseOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataResponse) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataResponseOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataResponse) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // A friendly description of what happened during the operation. Use this for troubleshooting.
@@ -797,8 +797,8 @@ func (o GetEventsAuditEventDataResponseOutput) Message() pulumi.StringOutput {
 }
 
 // This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
-func (o GetEventsAuditEventDataResponseOutput) Payload() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataResponse) map[string]interface{} { return v.Payload }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataResponseOutput) Payload() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataResponse) map[string]string { return v.Payload }).(pulumi.StringMapOutput)
 }
 
 // The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
@@ -833,9 +833,9 @@ func (o GetEventsAuditEventDataResponseArrayOutput) Index(i pulumi.IntInput) Get
 
 type GetEventsAuditEventDataStateChange struct {
 	// Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
-	Current map[string]interface{} `pulumi:"current"`
+	Current map[string]string `pulumi:"current"`
 	// Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
-	Previous map[string]interface{} `pulumi:"previous"`
+	Previous map[string]string `pulumi:"previous"`
 }
 
 // GetEventsAuditEventDataStateChangeInput is an input type that accepts GetEventsAuditEventDataStateChangeArgs and GetEventsAuditEventDataStateChangeOutput values.
@@ -851,9 +851,9 @@ type GetEventsAuditEventDataStateChangeInput interface {
 
 type GetEventsAuditEventDataStateChangeArgs struct {
 	// Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
-	Current pulumi.MapInput `pulumi:"current"`
+	Current pulumi.StringMapInput `pulumi:"current"`
 	// Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
-	Previous pulumi.MapInput `pulumi:"previous"`
+	Previous pulumi.StringMapInput `pulumi:"previous"`
 }
 
 func (GetEventsAuditEventDataStateChangeArgs) ElementType() reflect.Type {
@@ -908,13 +908,13 @@ func (o GetEventsAuditEventDataStateChangeOutput) ToGetEventsAuditEventDataState
 }
 
 // Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
-func (o GetEventsAuditEventDataStateChangeOutput) Current() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataStateChange) map[string]interface{} { return v.Current }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataStateChangeOutput) Current() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataStateChange) map[string]string { return v.Current }).(pulumi.StringMapOutput)
 }
 
 // Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
-func (o GetEventsAuditEventDataStateChangeOutput) Previous() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEventsAuditEventDataStateChange) map[string]interface{} { return v.Previous }).(pulumi.MapOutput)
+func (o GetEventsAuditEventDataStateChangeOutput) Previous() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEventsAuditEventDataStateChange) map[string]string { return v.Previous }).(pulumi.StringMapOutput)
 }
 
 type GetEventsAuditEventDataStateChangeArrayOutput struct{ *pulumi.OutputState }

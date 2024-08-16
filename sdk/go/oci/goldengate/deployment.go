@@ -31,7 +31,7 @@ type Deployment struct {
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntOutput `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringOutput `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
@@ -47,7 +47,7 @@ type Deployment struct {
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps DeploymentIngressIpArrayOutput `pulumi:"ingressIps"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -95,7 +95,7 @@ type Deployment struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -164,7 +164,7 @@ type deploymentState struct {
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount *int `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// Information regarding the deployment diagnostic collection
@@ -180,7 +180,7 @@ type deploymentState struct {
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps []DeploymentIngressIp `pulumi:"ingressIps"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -228,7 +228,7 @@ type deploymentState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -247,7 +247,7 @@ type DeploymentState struct {
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
 	// Information regarding the deployment diagnostic collection
@@ -263,7 +263,7 @@ type DeploymentState struct {
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
 	IngressIps DeploymentIngressIpArrayInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
@@ -311,7 +311,7 @@ type DeploymentState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringPtrInput
 	// The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -334,7 +334,7 @@ type deploymentArgs struct {
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount int `pulumi:"cpuCoreCount"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId *string `pulumi:"deploymentBackupId"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -346,7 +346,7 @@ type deploymentArgs struct {
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool  `pulumi:"isAutoScalingEnabled"`
 	IsLockOverride       *bool `pulumi:"isLockOverride"`
@@ -378,7 +378,7 @@ type DeploymentArgs struct {
 	// (Updatable) The Minimum number of OCPUs to be made available for this Deployment.
 	CpuCoreCount pulumi.IntInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	DeploymentBackupId pulumi.StringPtrInput
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -390,7 +390,7 @@ type DeploymentArgs struct {
 	// (Updatable) A three-label Fully Qualified Domain Name (FQDN) for a resource.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolInput
 	IsLockOverride       pulumi.BoolPtrInput
@@ -513,8 +513,8 @@ func (o DeploymentOutput) CpuCoreCount() pulumi.IntOutput {
 }
 
 // (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o DeploymentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DeploymentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
@@ -553,8 +553,8 @@ func (o DeploymentOutput) Fqdn() pulumi.StringOutput {
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o DeploymentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DeploymentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
@@ -676,8 +676,8 @@ func (o DeploymentOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o DeploymentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Deployment) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DeploymentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Deployment) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

@@ -449,9 +449,9 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The URL for the console.
-	ConsoleUrl   string                 `pulumi:"consoleUrl"`
-	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	ConsoleUrl   string            `pulumi:"consoleUrl"`
+	DefinedTags  map[string]string `pulumi:"definedTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unqiue identifier for the entitlement related to the environment.
 	Id string `pulumi:"id"`
 	// Details for a service definition.
@@ -479,9 +479,9 @@ type GetServiceEnvironmentsServiceEnvironmentCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The URL for the console.
-	ConsoleUrl   pulumi.StringInput `pulumi:"consoleUrl"`
-	DefinedTags  pulumi.MapInput    `pulumi:"definedTags"`
-	FreeformTags pulumi.MapInput    `pulumi:"freeformTags"`
+	ConsoleUrl   pulumi.StringInput    `pulumi:"consoleUrl"`
+	DefinedTags  pulumi.StringMapInput `pulumi:"definedTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unqiue identifier for the entitlement related to the environment.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details for a service definition.
@@ -555,16 +555,14 @@ func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) ConsoleUrl
 	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) string { return v.ConsoleUrl }).(pulumi.StringOutput)
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) map[string]interface{} {
+func (o GetServiceEnvironmentsServiceEnvironmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetServiceEnvironmentsServiceEnvironmentCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unqiue identifier for the entitlement related to the environment.

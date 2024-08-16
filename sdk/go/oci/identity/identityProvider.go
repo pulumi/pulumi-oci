@@ -53,12 +53,12 @@ import (
 //				Name:          pulumi.Any(identityProviderName),
 //				ProductType:   pulumi.Any(identityProviderProductType),
 //				Protocol:      pulumi.Any(identityProviderProtocol),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				FreeformAttributes: pulumi.Any(identityProviderFreeformAttributes),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -83,13 +83,13 @@ type IdentityProvider struct {
 	// The OCID of your tenancy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes pulumi.MapOutput `pulumi:"freeformAttributes"`
+	FreeformAttributes pulumi.StringMapOutput `pulumi:"freeformAttributes"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
 	// (Updatable) The XML that contains the information required for federating.
@@ -166,13 +166,13 @@ type identityProviderState struct {
 	// The OCID of your tenancy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description *string `pulumi:"description"`
 	// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes map[string]interface{} `pulumi:"freeformAttributes"`
+	FreeformAttributes map[string]string `pulumi:"freeformAttributes"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState *string `pulumi:"inactiveState"`
 	// (Updatable) The XML that contains the information required for federating.
@@ -202,13 +202,13 @@ type IdentityProviderState struct {
 	// The OCID of your tenancy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringPtrInput
 	// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes pulumi.MapInput
+	FreeformAttributes pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringPtrInput
 	// (Updatable) The XML that contains the information required for federating.
@@ -242,13 +242,13 @@ type identityProviderArgs struct {
 	// The OCID of your tenancy.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes map[string]interface{} `pulumi:"freeformAttributes"`
+	FreeformAttributes map[string]string `pulumi:"freeformAttributes"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The XML that contains the information required for federating.
 	Metadata string `pulumi:"metadata"`
 	// (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
@@ -269,13 +269,13 @@ type IdentityProviderArgs struct {
 	// The OCID of your tenancy.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes pulumi.MapInput
+	FreeformAttributes pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The XML that contains the information required for federating.
 	Metadata pulumi.StringInput
 	// (Updatable) The URL for retrieving the identity provider's metadata, which contains information required for federating.
@@ -384,8 +384,8 @@ func (o IdentityProviderOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o IdentityProviderOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o IdentityProviderOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
@@ -394,13 +394,13 @@ func (o IdentityProviderOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-func (o IdentityProviderOutput) FreeformAttributes() pulumi.MapOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.MapOutput { return v.FreeformAttributes }).(pulumi.MapOutput)
+func (o IdentityProviderOutput) FreeformAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringMapOutput { return v.FreeformAttributes }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o IdentityProviderOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *IdentityProvider) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o IdentityProviderOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IdentityProvider) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.

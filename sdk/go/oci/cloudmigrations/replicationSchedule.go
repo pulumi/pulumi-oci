@@ -34,11 +34,11 @@ import (
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(replicationScheduleDisplayName),
 //				ExecutionRecurrences: pulumi.Any(replicationScheduleExecutionRecurrences),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -63,7 +63,7 @@ type ReplicationSchedule struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Recurrence specification for replication schedule execution.
@@ -72,13 +72,13 @@ type ReplicationSchedule struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The detailed state of the replication schedule.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Current state of the replication schedule.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -127,7 +127,7 @@ type replicationScheduleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Recurrence specification for replication schedule execution.
@@ -136,13 +136,13 @@ type replicationScheduleState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The detailed state of the replication schedule.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Current state of the replication schedule.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -153,7 +153,7 @@ type ReplicationScheduleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Recurrence specification for replication schedule execution.
@@ -162,13 +162,13 @@ type ReplicationScheduleState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The detailed state of the replication schedule.
 	LifecycleDetails pulumi.StringPtrInput
 	// Current state of the replication schedule.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -183,7 +183,7 @@ type replicationScheduleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Recurrence specification for replication schedule execution.
@@ -192,7 +192,7 @@ type replicationScheduleArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ReplicationSchedule resource.
@@ -200,7 +200,7 @@ type ReplicationScheduleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Recurrence specification for replication schedule execution.
@@ -209,7 +209,7 @@ type ReplicationScheduleArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (ReplicationScheduleArgs) ElementType() reflect.Type {
@@ -305,8 +305,8 @@ func (o ReplicationScheduleOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ReplicationScheduleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ReplicationScheduleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name for a replication schedule. Does not have to be unique, and is mutable. Avoid entering confidential information.
@@ -323,8 +323,8 @@ func (o ReplicationScheduleOutput) ExecutionRecurrences() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ReplicationScheduleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ReplicationScheduleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The detailed state of the replication schedule.
@@ -338,8 +338,8 @@ func (o ReplicationScheduleOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ReplicationScheduleOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ReplicationSchedule) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ReplicationScheduleOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ReplicationSchedule) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the replication schedule was created in RFC3339 format.

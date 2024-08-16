@@ -121,14 +121,14 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string> Name { get; set; } = null!;
 
         [Input("params")]
-        private InputMap<object>? _params;
+        private InputMap<string>? _params;
 
         /// <summary>
         /// (Updatable) Parameters of the custom filter
         /// </summary>
-        public InputMap<object> Params
+        public InputMap<string> Params
         {
-            get => _params ?? (_params = new InputMap<object>());
+            get => _params ?? (_params = new InputMap<string>());
             set => _params = value;
         }
 

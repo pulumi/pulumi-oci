@@ -35,10 +35,10 @@ export class DefaultDhcpOptions extends pulumi.CustomResource {
     }
 
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly displayName!: pulumi.Output<string>;
     public readonly domainNameType!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public readonly manageDefaultResourceId!: pulumi.Output<string>;
     public readonly options!: pulumi.Output<outputs.Core.DefaultDhcpOptionsOption[]>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -94,10 +94,10 @@ export class DefaultDhcpOptions extends pulumi.CustomResource {
  */
 export interface DefaultDhcpOptionsState {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     domainNameType?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     manageDefaultResourceId?: pulumi.Input<string>;
     options?: pulumi.Input<pulumi.Input<inputs.Core.DefaultDhcpOptionsOption>[]>;
     state?: pulumi.Input<string>;
@@ -109,10 +109,10 @@ export interface DefaultDhcpOptionsState {
  */
 export interface DefaultDhcpOptionsArgs {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     domainNameType?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     manageDefaultResourceId: pulumi.Input<string>;
     options: pulumi.Input<pulumi.Input<inputs.Core.DefaultDhcpOptionsOption>[]>;
 }

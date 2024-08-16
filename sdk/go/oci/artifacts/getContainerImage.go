@@ -63,13 +63,13 @@ type GetContainerImageResult struct {
 	// The OCID of the user or principal that pushed the version.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The sha256 digest of the image layer.
 	Digest string `pulumi:"digest"`
 	// The repository name and the most recent version associated with the image. If there are no versions associated with the image, then last known version and digest are used instead. If the last known version is unavailable, then 'unknown' is used instead of the version.  Example: `ubuntu:latest` or `ubuntu:latest@sha256:45b23dee08af5e43a7fea6c4cf9c25ccf269ee113168c19722f87876677c5cb2`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id      string `pulumi:"id"`
 	ImageId string `pulumi:"imageId"`
@@ -88,7 +88,7 @@ type GetContainerImageResult struct {
 	// The current state of the container image.
 	State string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation time of the version.
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when the image was last pulled.
@@ -148,8 +148,8 @@ func (o GetContainerImageResultOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetContainerImageResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerImageResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetContainerImageResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerImageResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The sha256 digest of the image layer.
@@ -163,8 +163,8 @@ func (o GetContainerImageResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetContainerImageResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerImageResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetContainerImageResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerImageResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -212,8 +212,8 @@ func (o GetContainerImageResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetContainerImageResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerImageResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetContainerImageResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerImageResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation time of the version.

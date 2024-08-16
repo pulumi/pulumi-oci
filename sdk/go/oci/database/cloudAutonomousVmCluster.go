@@ -42,8 +42,8 @@ import (
 //				DbServers:                      pulumi.Any(cloudAutonomousVmClusterDbServers),
 //				DefinedTags:                    pulumi.Any(cloudAutonomousVmClusterDefinedTags),
 //				Description:                    pulumi.Any(cloudAutonomousVmClusterDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsMtlsEnabledVmCluster: pulumi.Any(cloudAutonomousVmClusterIsMtlsEnabledVmCluster),
 //				LicenseModel:           pulumi.Any(cloudAutonomousVmClusterLicenseModel),
@@ -127,7 +127,7 @@ type CloudAutonomousVmCluster struct {
 	// The list of database servers.
 	DbServers pulumi.StringArrayOutput `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User defined description of the cloud Autonomous VM cluster.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -137,7 +137,7 @@ type CloudAutonomousVmCluster struct {
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
 	ExadataStorageInTbsLowestScaledValue pulumi.Float64Output `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname pulumi.StringOutput `pulumi:"hostname"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
@@ -289,7 +289,7 @@ type cloudAutonomousVmClusterState struct {
 	// The list of database servers.
 	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User defined description of the cloud Autonomous VM cluster.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -299,7 +299,7 @@ type cloudAutonomousVmClusterState struct {
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
 	ExadataStorageInTbsLowestScaledValue *float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname *string `pulumi:"hostname"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
@@ -410,7 +410,7 @@ type CloudAutonomousVmClusterState struct {
 	// The list of database servers.
 	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User defined description of the cloud Autonomous VM cluster.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -420,7 +420,7 @@ type CloudAutonomousVmClusterState struct {
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
 	ExadataStorageInTbsLowestScaledValue pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname pulumi.StringPtrInput
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
@@ -515,13 +515,13 @@ type cloudAutonomousVmClusterArgs struct {
 	// The list of database servers.
 	DbServers []string `pulumi:"dbServers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User defined description of the cloud Autonomous VM cluster.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster *bool `pulumi:"isMtlsEnabledVmCluster"`
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -567,13 +567,13 @@ type CloudAutonomousVmClusterArgs struct {
 	// The list of database servers.
 	DbServers pulumi.StringArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User defined description of the cloud Autonomous VM cluster.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Enable mutual TLS(mTLS) authentication for database at time of provisioning a VMCluster. This is applicable to database TLS Certificates only. Default is TLS
 	IsMtlsEnabledVmCluster pulumi.BoolPtrInput
 	// (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
@@ -777,8 +777,8 @@ func (o CloudAutonomousVmClusterOutput) DbServers() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o CloudAutonomousVmClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CloudAutonomousVmClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User defined description of the cloud Autonomous VM cluster.
@@ -802,8 +802,8 @@ func (o CloudAutonomousVmClusterOutput) ExadataStorageInTbsLowestScaledValue() p
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CloudAutonomousVmClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CloudAutonomousVmClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CloudAutonomousVmCluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the cloud Autonomous VM cluster.

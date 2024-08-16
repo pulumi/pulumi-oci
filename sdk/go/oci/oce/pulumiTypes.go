@@ -130,13 +130,13 @@ type GetOceInstancesOceInstance struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OceInstance description, can be updated
 	Description string `pulumi:"description"`
 	// disaster recovery paired ragion name
 	DrRegion string `pulumi:"drRegion"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
 	Guid string `pulumi:"guid"`
 	// Unique identifier that is immutable on creation
@@ -157,13 +157,13 @@ type GetOceInstancesOceInstance struct {
 	// Object Storage Namespace of tenancy
 	ObjectStorageNamespace string `pulumi:"objectStorageNamespace"`
 	// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-	Service map[string]interface{} `pulumi:"service"`
+	Service map[string]string `pulumi:"service"`
 	// Filter results on lifecycleState.
 	State string `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The ID of the tenancy in which to list resources.
 	TenancyId string `pulumi:"tenancyId"`
 	// Tenancy Name
@@ -197,13 +197,13 @@ type GetOceInstancesOceInstanceArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// OceInstance description, can be updated
 	Description pulumi.StringInput `pulumi:"description"`
 	// disaster recovery paired ragion name
 	DrRegion pulumi.StringInput `pulumi:"drRegion"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique GUID identifier that is immutable on creation
 	Guid pulumi.StringInput `pulumi:"guid"`
 	// Unique identifier that is immutable on creation
@@ -224,13 +224,13 @@ type GetOceInstancesOceInstanceArgs struct {
 	// Object Storage Namespace of tenancy
 	ObjectStorageNamespace pulumi.StringInput `pulumi:"objectStorageNamespace"`
 	// SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-	Service pulumi.MapInput `pulumi:"service"`
+	Service pulumi.StringMapInput `pulumi:"service"`
 	// Filter results on lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringInput `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The ID of the tenancy in which to list resources.
 	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
 	// Tenancy Name
@@ -312,8 +312,8 @@ func (o GetOceInstancesOceInstanceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOceInstancesOceInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOceInstancesOceInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // OceInstance description, can be updated
@@ -327,8 +327,8 @@ func (o GetOceInstancesOceInstanceOutput) DrRegion() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOceInstancesOceInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOceInstancesOceInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique GUID identifier that is immutable on creation
@@ -381,8 +381,8 @@ func (o GetOceInstancesOceInstanceOutput) ObjectStorageNamespace() pulumi.String
 }
 
 // SERVICE data. Example: `{"service": {"IDCS": "value"}}`
-func (o GetOceInstancesOceInstanceOutput) Service() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]interface{} { return v.Service }).(pulumi.MapOutput)
+func (o GetOceInstancesOceInstanceOutput) Service() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]string { return v.Service }).(pulumi.StringMapOutput)
 }
 
 // Filter results on lifecycleState.
@@ -396,8 +396,8 @@ func (o GetOceInstancesOceInstanceOutput) StateMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOceInstancesOceInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetOceInstancesOceInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOceInstancesOceInstance) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The ID of the tenancy in which to list resources.

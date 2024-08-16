@@ -63,7 +63,7 @@ type GetReplicationTargetResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the replication.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Percentage progress of the current replication cycle.
 	DeltaProgress string `pulumi:"deltaProgress"`
 	// The current state of the snapshot during replication operations.
@@ -71,7 +71,7 @@ type GetReplicationTargetResult struct {
 	// A user-friendly name. This name is same as the replication display name for the associated resource. Example: `My Replication`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last snapshot snapshot which was completely applied to the target file system. Empty while the initial snapshot is being applied.
@@ -142,8 +142,8 @@ func (o GetReplicationTargetResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetReplicationTargetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicationTargetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetReplicationTargetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationTargetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Percentage progress of the current replication cycle.
@@ -162,8 +162,8 @@ func (o GetReplicationTargetResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetReplicationTargetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicationTargetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetReplicationTargetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationTargetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

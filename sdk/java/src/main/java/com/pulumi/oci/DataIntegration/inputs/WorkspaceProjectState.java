@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceProjectMetadataArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceProjectParentRefArgs;
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceProjectRegistryMetadataArgs;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -72,13 +71,13 @@ public final class WorkspaceProjectState extends com.pulumi.resources.ResourceAr
      * 
      */
     @Import(name="keyMap")
-    private @Nullable Output<Map<String,Object>> keyMap;
+    private @Nullable Output<Map<String,String>> keyMap;
 
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Optional<Output<Map<String,Object>>> keyMap() {
+    public Optional<Output<Map<String,String>>> keyMap() {
         return Optional.ofNullable(this.keyMap);
     }
 
@@ -336,7 +335,7 @@ public final class WorkspaceProjectState extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder keyMap(@Nullable Output<Map<String,Object>> keyMap) {
+        public Builder keyMap(@Nullable Output<Map<String,String>> keyMap) {
             $.keyMap = keyMap;
             return this;
         }
@@ -347,7 +346,7 @@ public final class WorkspaceProjectState extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             return keyMap(Output.of(keyMap));
         }
 

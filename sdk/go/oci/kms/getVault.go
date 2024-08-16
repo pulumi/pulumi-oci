@@ -68,14 +68,14 @@ type LookupVaultResult struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries []GetVaultExternalKeyManagerMetadataSummary `pulumi:"externalKeyManagerMetadataSummaries"`
 	ExternalKeyManagerMetadatas         []GetVaultExternalKeyManagerMetadata        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id string `pulumi:"id"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
@@ -152,8 +152,8 @@ func (o LookupVaultResultOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupVaultResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVaultResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVaultResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVaultResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -173,8 +173,8 @@ func (o LookupVaultResultOutput) ExternalKeyManagerMetadatas() GetVaultExternalK
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupVaultResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVaultResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVaultResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVaultResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the vault.

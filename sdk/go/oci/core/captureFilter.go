@@ -41,8 +41,8 @@ import (
 //			_, err := Core.NewCaptureFilter(ctx, "test_capture_filter", &Core.CaptureFilterArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				FilterType:    pulumi.Any(captureFilterFilterType),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(captureFilterDisplayName),
 //				FlowLogCaptureFilterRules: core.CaptureFilterFlowLogCaptureFilterRuleArray{
@@ -81,8 +81,8 @@ import (
 //						},
 //					},
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				VtapCaptureFilterRules: core.CaptureFilterVtapCaptureFilterRuleArray{
 //					&core.CaptureFilterVtapCaptureFilterRuleArgs{
@@ -140,7 +140,7 @@ type CaptureFilter struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
@@ -148,7 +148,7 @@ type CaptureFilter struct {
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules CaptureFilterFlowLogCaptureFilterRuleArrayOutput `pulumi:"flowLogCaptureFilterRules"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The capture filter's current administrative state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -196,7 +196,7 @@ type captureFilterState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
@@ -204,7 +204,7 @@ type captureFilterState struct {
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules []CaptureFilterFlowLogCaptureFilterRule `pulumi:"flowLogCaptureFilterRules"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The capture filter's current administrative state.
 	State *string `pulumi:"state"`
 	// The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -217,7 +217,7 @@ type CaptureFilterState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Indicates which service will use this capture filter
@@ -225,7 +225,7 @@ type CaptureFilterState struct {
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules CaptureFilterFlowLogCaptureFilterRuleArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The capture filter's current administrative state.
 	State pulumi.StringPtrInput
 	// The date and time the capture filter was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2021-08-25T21:10:29.600Z`
@@ -242,7 +242,7 @@ type captureFilterArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Indicates which service will use this capture filter
@@ -250,7 +250,7 @@ type captureFilterArgs struct {
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules []CaptureFilterFlowLogCaptureFilterRule `pulumi:"flowLogCaptureFilterRules"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The set of rules governing what traffic a VTAP mirrors.
 	VtapCaptureFilterRules []CaptureFilterVtapCaptureFilterRule `pulumi:"vtapCaptureFilterRules"`
 }
@@ -260,7 +260,7 @@ type CaptureFilterArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Indicates which service will use this capture filter
@@ -268,7 +268,7 @@ type CaptureFilterArgs struct {
 	// (Updatable) The set of rules governing what traffic the Flow Log collects when creating a flow log capture filter.
 	FlowLogCaptureFilterRules CaptureFilterFlowLogCaptureFilterRuleArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The set of rules governing what traffic a VTAP mirrors.
 	VtapCaptureFilterRules CaptureFilterVtapCaptureFilterRuleArrayInput
 }
@@ -366,8 +366,8 @@ func (o CaptureFilterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o CaptureFilterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CaptureFilter) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CaptureFilterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CaptureFilter) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -388,8 +388,8 @@ func (o CaptureFilterOutput) FlowLogCaptureFilterRules() CaptureFilterFlowLogCap
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CaptureFilterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CaptureFilter) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CaptureFilterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CaptureFilter) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The capture filter's current administrative state.

@@ -17,12 +17,12 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The array of profile aggregation data.
      * 
@@ -34,14 +34,14 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -61,8 +61,8 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private List<Object> items;
         public Builder() {}
         public Builder(GetUserAssessmentProfileAnalyticsProfileAggregation defaults) {
@@ -73,7 +73,7 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsProfileAggregation", "definedTags");
             }
@@ -81,7 +81,7 @@ public final class GetUserAssessmentProfileAnalyticsProfileAggregation {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentProfileAnalyticsProfileAggregation", "freeformTags");
             }

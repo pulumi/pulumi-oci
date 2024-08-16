@@ -21,10 +21,10 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly string DefaultDhcpOptionsId;
         public readonly string DefaultRouteTableId;
         public readonly string DefaultSecurityListId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DisplayName;
         public readonly string DnsLabel;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         public readonly ImmutableArray<string> Ipv6cidrBlocks;
         public readonly ImmutableArray<string> Ipv6privateCidrBlocks;
@@ -52,13 +52,13 @@ namespace Pulumi.Oci.Core.Outputs
 
             string defaultSecurityListId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
             string dnsLabel,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

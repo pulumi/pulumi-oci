@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Kms
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
         [Output("associatedData")]
-        public Output<ImmutableDictionary<string, object>?> AssociatedData { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> AssociatedData { get; private set; } = null!;
 
         /// <summary>
         /// The encrypted data encryption key generated from a master encryption key.
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.Kms
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("loggingContext")]
-        public Output<ImmutableDictionary<string, object>?> LoggingContext { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> LoggingContext { get; private set; } = null!;
 
         /// <summary>
         /// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
@@ -154,14 +154,14 @@ namespace Pulumi.Oci.Kms
     public sealed class GeneratedKeyArgs : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
-        private InputMap<object>? _associatedData;
+        private InputMap<string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
-        public InputMap<object> AssociatedData
+        public InputMap<string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new InputMap<object>());
+            get => _associatedData ?? (_associatedData = new InputMap<string>());
             set => _associatedData = value;
         }
 
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.Kms
         public Input<Inputs.GeneratedKeyKeyShapeArgs> KeyShape { get; set; } = null!;
 
         [Input("loggingContext")]
-        private InputMap<object>? _loggingContext;
+        private InputMap<string>? _loggingContext;
 
         /// <summary>
         /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
@@ -199,9 +199,9 @@ namespace Pulumi.Oci.Kms
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public InputMap<object> LoggingContext
+        public InputMap<string> LoggingContext
         {
-            get => _loggingContext ?? (_loggingContext = new InputMap<object>());
+            get => _loggingContext ?? (_loggingContext = new InputMap<string>());
             set => _loggingContext = value;
         }
 
@@ -214,14 +214,14 @@ namespace Pulumi.Oci.Kms
     public sealed class GeneratedKeyState : global::Pulumi.ResourceArgs
     {
         [Input("associatedData")]
-        private InputMap<object>? _associatedData;
+        private InputMap<string>? _associatedData;
 
         /// <summary>
         /// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         /// </summary>
-        public InputMap<object> AssociatedData
+        public InputMap<string> AssociatedData
         {
-            get => _associatedData ?? (_associatedData = new InputMap<object>());
+            get => _associatedData ?? (_associatedData = new InputMap<string>());
             set => _associatedData = value;
         }
 
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Kms
         public Input<Inputs.GeneratedKeyKeyShapeGetArgs>? KeyShape { get; set; }
 
         [Input("loggingContext")]
-        private InputMap<object>? _loggingContext;
+        private InputMap<string>? _loggingContext;
 
         /// <summary>
         /// Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled. 
@@ -265,9 +265,9 @@ namespace Pulumi.Oci.Kms
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public InputMap<object> LoggingContext
+        public InputMap<string> LoggingContext
         {
-            get => _loggingContext ?? (_loggingContext = new InputMap<object>());
+            get => _loggingContext ?? (_loggingContext = new InputMap<string>());
             set => _loggingContext = value;
         }
 

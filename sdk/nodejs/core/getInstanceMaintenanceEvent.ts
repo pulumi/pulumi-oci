@@ -45,7 +45,7 @@ export interface GetInstanceMaintenanceEventResult {
     /**
      * Additional details of the maintenance in the form of json.
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails: {[key: string]: string};
     readonly alternativeResolutionAction: string;
     /**
      * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -74,7 +74,7 @@ export interface GetInstanceMaintenanceEventResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * It is the descriptive information about the maintenance taking place on the customer instance.
      */
@@ -90,7 +90,7 @@ export interface GetInstanceMaintenanceEventResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
      */

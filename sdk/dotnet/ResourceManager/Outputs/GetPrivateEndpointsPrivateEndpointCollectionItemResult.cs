@@ -20,7 +20,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Description of the private endpoint. Avoid entering confidential information.
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         /// <summary>
         /// Free-form tags associated with the resource. Each tag is a key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unique identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the private endpoint details.
         /// </summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
         private GetPrivateEndpointsPrivateEndpointCollectionItemResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.ResourceManager.Outputs
 
             ImmutableArray<string> dnsZones,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

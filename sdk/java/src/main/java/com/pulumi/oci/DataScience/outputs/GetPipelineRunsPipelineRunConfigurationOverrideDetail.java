@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetPipelineRunsPipelineRunConfigurationOverrideDetail {
      * @return Environment variables to set for step.
      * 
      */
-    private Map<String,Object> environmentVariables;
+    private Map<String,String> environmentVariables;
     /**
      * @return A time bound for the execution of the step.
      * 
@@ -45,7 +44,7 @@ public final class GetPipelineRunsPipelineRunConfigurationOverrideDetail {
      * @return Environment variables to set for step.
      * 
      */
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables;
     }
     /**
@@ -73,7 +72,7 @@ public final class GetPipelineRunsPipelineRunConfigurationOverrideDetail {
     @CustomType.Builder
     public static final class Builder {
         private String commandLineArguments;
-        private Map<String,Object> environmentVariables;
+        private Map<String,String> environmentVariables;
         private String maximumRuntimeInMinutes;
         private String type;
         public Builder() {}
@@ -94,7 +93,7 @@ public final class GetPipelineRunsPipelineRunConfigurationOverrideDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(Map<String,String> environmentVariables) {
             if (environmentVariables == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunConfigurationOverrideDetail", "environmentVariables");
             }

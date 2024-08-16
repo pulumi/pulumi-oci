@@ -61,13 +61,13 @@ type LookupSavedQueryResult struct {
 	// Compartment OCID of the saved query
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the saved query
 	Description string `pulumi:"description"`
 	// Display name of the saved query
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID for the saved query
 	Id string `pulumi:"id"`
 	// The saved query expression
@@ -76,7 +76,7 @@ type LookupSavedQueryResult struct {
 	// The current lifecycle state of the resource
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the saved query was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the saved query was updated. Format defined by RFC3339.
@@ -127,8 +127,8 @@ func (o LookupSavedQueryResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupSavedQueryResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSavedQueryResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSavedQueryResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSavedQueryResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the saved query
@@ -142,8 +142,8 @@ func (o LookupSavedQueryResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupSavedQueryResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSavedQueryResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSavedQueryResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSavedQueryResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID for the saved query
@@ -166,8 +166,8 @@ func (o LookupSavedQueryResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSavedQueryResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSavedQueryResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSavedQueryResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSavedQueryResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the saved query was created. Format defined by RFC3339.

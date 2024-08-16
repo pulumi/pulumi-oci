@@ -32,9 +32,9 @@ class ExadataInfrastructureStorageArgs:
                  compute_count: Optional[pulumi.Input[int]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input['ExadataInfrastructureStorageContactArgs']]]] = None,
                  corporate_proxy: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maintenance_window: Optional[pulumi.Input['ExadataInfrastructureStorageMaintenanceWindowArgs']] = None,
                  storage_count: Optional[pulumi.Input[int]] = None):
         """
@@ -217,11 +217,11 @@ class ExadataInfrastructureStorageArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -235,11 +235,11 @@ class ExadataInfrastructureStorageArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -278,11 +278,11 @@ class _ExadataInfrastructureStorageState:
                  csi_number: Optional[pulumi.Input[str]] = None,
                  data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
                  db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -504,11 +504,11 @@ class _ExadataInfrastructureStorageState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -540,11 +540,11 @@ class _ExadataInfrastructureStorageState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -714,11 +714,11 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
                  compute_count: Optional[pulumi.Input[int]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
                  corporate_proxy: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
@@ -764,11 +764,11 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
                  compute_count: Optional[pulumi.Input[int]] = None,
                  contacts: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ExadataInfrastructureStorageContactArgs', 'ExadataInfrastructureStorageContactArgsDict']]]]] = None,
                  corporate_proxy: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  gateway: Optional[pulumi.Input[str]] = None,
                  infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
                  maintenance_window: Optional[pulumi.Input[Union['ExadataInfrastructureStorageMaintenanceWindowArgs', 'ExadataInfrastructureStorageMaintenanceWindowArgsDict']]] = None,
@@ -870,11 +870,11 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
             csi_number: Optional[pulumi.Input[str]] = None,
             data_storage_size_in_tbs: Optional[pulumi.Input[float]] = None,
             db_node_storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             dns_servers: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             exadata_infrastructure_id: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             gateway: Optional[pulumi.Input[str]] = None,
             infini_band_network_cidr: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
@@ -1014,7 +1014,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -1034,7 +1034,7 @@ class ExadataInfrastructureStorage(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "freeform_tags")
 
     @property

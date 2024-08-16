@@ -108,12 +108,12 @@ import (
 //					StorageProvisionedInMbs: pulumi.Any(assetComputeStorageProvisionedInMbs),
 //					ThreadsPerCoreCount:     pulumi.Any(assetComputeThreadsPerCoreCount),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(assetDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				Vm: &cloudbridge.AssetVmArgs{
 //					HypervisorHost:    pulumi.Any(assetVmHypervisorHost),
@@ -172,13 +172,13 @@ type Asset struct {
 	// (Updatable) Compute related properties.
 	Compute AssetComputeOutput `pulumi:"compute"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringOutput `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Inventory ID to which an asset belongs.
 	InventoryId pulumi.StringOutput `pulumi:"inventoryId"`
 	// The source key to which the asset belongs.
@@ -186,7 +186,7 @@ type Asset struct {
 	// The current state of the asset.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
@@ -253,13 +253,13 @@ type assetState struct {
 	// (Updatable) Compute related properties.
 	Compute *AssetCompute `pulumi:"compute"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
 	DisplayName *string `pulumi:"displayName"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey *string `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Inventory ID to which an asset belongs.
 	InventoryId *string `pulumi:"inventoryId"`
 	// The source key to which the asset belongs.
@@ -267,7 +267,7 @@ type assetState struct {
 	// The current state of the asset.
 	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the asset was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
@@ -290,13 +290,13 @@ type AssetState struct {
 	// (Updatable) Compute related properties.
 	Compute AssetComputePtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Asset display name.
 	DisplayName pulumi.StringPtrInput
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Inventory ID to which an asset belongs.
 	InventoryId pulumi.StringPtrInput
 	// The source key to which the asset belongs.
@@ -304,7 +304,7 @@ type AssetState struct {
 	// The current state of the asset.
 	State pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the asset was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the asset was updated. An RFC3339 formatted datetime string.
@@ -331,13 +331,13 @@ type assetArgs struct {
 	// (Updatable) Compute related properties.
 	Compute *AssetCompute `pulumi:"compute"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Asset display name.
 	DisplayName *string `pulumi:"displayName"`
 	// The key of the asset from the external environment.
 	ExternalAssetKey string `pulumi:"externalAssetKey"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Inventory ID to which an asset belongs.
 	InventoryId string `pulumi:"inventoryId"`
 	// The source key to which the asset belongs.
@@ -361,13 +361,13 @@ type AssetArgs struct {
 	// (Updatable) Compute related properties.
 	Compute AssetComputePtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Asset display name.
 	DisplayName pulumi.StringPtrInput
 	// The key of the asset from the external environment.
 	ExternalAssetKey pulumi.StringInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Inventory ID to which an asset belongs.
 	InventoryId pulumi.StringInput
 	// The source key to which the asset belongs.
@@ -488,8 +488,8 @@ func (o AssetOutput) Compute() AssetComputeOutput {
 }
 
 // (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o AssetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Asset) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AssetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Asset display name.
@@ -503,8 +503,8 @@ func (o AssetOutput) ExternalAssetKey() pulumi.StringOutput {
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o AssetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Asset) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AssetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Inventory ID to which an asset belongs.
@@ -523,8 +523,8 @@ func (o AssetOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o AssetOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Asset) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AssetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Asset) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the asset was created. An RFC3339 formatted datetime string.

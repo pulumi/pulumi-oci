@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Database
         public Output<int> DbNodeStorageSizeInGbs { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Database
         public Output<string?> ExadataInfrastructureId { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         [Output("gateway")]
         public Output<string> Gateway { get; private set; } = null!;
@@ -196,10 +196,10 @@ namespace Pulumi.Oci.Database
         public Input<string>? CorporateProxy { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
-        public InputMap<object> DefinedTags
+        private InputMap<string>? _definedTags;
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -218,10 +218,10 @@ namespace Pulumi.Oci.Database
         public Input<string>? ExadataInfrastructureId { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
-        public InputMap<object> FreeformTags
+        private InputMap<string>? _freeformTags;
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -310,10 +310,10 @@ namespace Pulumi.Oci.Database
         public Input<int>? DbNodeStorageSizeInGbs { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
-        public InputMap<object> DefinedTags
+        private InputMap<string>? _definedTags;
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -332,10 +332,10 @@ namespace Pulumi.Oci.Database
         public Input<string>? ExadataInfrastructureId { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
-        public InputMap<object> FreeformTags
+        private InputMap<string>? _freeformTags;
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 

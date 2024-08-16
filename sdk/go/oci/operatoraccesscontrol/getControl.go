@@ -67,13 +67,13 @@ type GetControlResult struct {
 	// The OCID of the compartment that contains the operator control.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of operator control.
 	Description string `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id string `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
@@ -162,8 +162,8 @@ func (o GetControlResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetControlResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetControlResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of operator control.
@@ -177,8 +177,8 @@ func (o GetControlResultOutput) EmailIdLists() pulumi.StringArrayOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetControlResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetControlResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the operator control.

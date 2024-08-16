@@ -34,13 +34,13 @@ import (
 //				CompartmentId:  pulumi.Any(compartmentId),
 //				IsImmutable:    pulumi.Any(repositoryIsImmutable),
 //				RepositoryType: pulumi.Any(repositoryRepositoryType),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(repositoryDescription),
 //				DisplayName: pulumi.Any(repositoryDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -65,13 +65,13 @@ type Repository struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the repository. It can be updated later.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolOutput `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
@@ -127,13 +127,13 @@ type repositoryState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the repository. It can be updated later.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable *bool `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
@@ -151,13 +151,13 @@ type RepositoryState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the repository. It can be updated later.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolPtrInput
 	// (Updatable) The repository's supported artifact type.
@@ -179,13 +179,13 @@ type repositoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the repository. It can be updated later.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable bool `pulumi:"isImmutable"`
 	// (Updatable) The repository's supported artifact type.
@@ -200,13 +200,13 @@ type RepositoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the repository's compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the repository. It can be updated later.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the repository. If not present, will be auto-generated. It can be modified later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.
 	IsImmutable pulumi.BoolInput
 	// (Updatable) The repository's supported artifact type.
@@ -309,8 +309,8 @@ func (o RepositoryOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o RepositoryOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Repository) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o RepositoryOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description of the repository. It can be updated later.
@@ -324,8 +324,8 @@ func (o RepositoryOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o RepositoryOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Repository) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RepositoryOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Repository) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether to make the repository immutable. The artifacts of an immutable repository cannot be overwritten.

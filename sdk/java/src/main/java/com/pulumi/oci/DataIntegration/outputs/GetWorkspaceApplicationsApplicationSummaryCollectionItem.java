@@ -12,7 +12,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicatio
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemRegistryMetadata;
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemSourceApplicationInfo;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A list of dependent objects in this patch.
      * 
@@ -54,7 +53,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return OCID of the resource that is used to uniquely identify the application
      * 
@@ -74,7 +73,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    private Map<String,Object> keyMap;
+    private Map<String,String> keyMap;
     /**
      * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
@@ -166,7 +165,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -194,7 +193,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -222,7 +221,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
      * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Map<String,Object> keyMap() {
+    public Map<String,String> keyMap() {
         return this.keyMap;
     }
     /**
@@ -338,15 +337,15 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
     public static final class Builder {
         private Integer applicationVersion;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private List<GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata> dependentObjectMetadatas;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String identifier;
         private String key;
-        private Map<String,Object> keyMap;
+        private Map<String,String> keyMap;
         private List<GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata> metadatas;
         private String modelType;
         private String modelVersion;
@@ -410,7 +409,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "definedTags");
             }
@@ -445,7 +444,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "freeformTags");
             }
@@ -477,7 +476,7 @@ public final class GetWorkspaceApplicationsApplicationSummaryCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder keyMap(Map<String,Object> keyMap) {
+        public Builder keyMap(Map<String,String> keyMap) {
             if (keyMap == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceApplicationsApplicationSummaryCollectionItem", "keyMap");
             }

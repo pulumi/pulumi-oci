@@ -86,12 +86,12 @@ class JobJobConfigurationDetailsArgs:
     def __init__(__self__, *,
                  job_type: pulumi.Input[str],
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] job_type: The type of job.
         :param pulumi.Input[str] command_line_arguments: The arguments to pass to the job.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: Environment variables to set for the job.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         pulumi.set(__self__, "job_type", job_type)
@@ -128,14 +128,14 @@ class JobJobConfigurationDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Environment variables to set for the job.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -584,12 +584,12 @@ class JobRunJobConfigurationOverrideDetailsArgs:
     def __init__(__self__, *,
                  job_type: pulumi.Input[str],
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] job_type: The type of job.
         :param pulumi.Input[str] command_line_arguments: The arguments to pass to the job.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for the job.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: Environment variables to set for the job.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the job. Timer starts when the job becomes active.
         """
         pulumi.set(__self__, "job_type", job_type)
@@ -626,14 +626,14 @@ class JobRunJobConfigurationOverrideDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Environment variables to set for the job.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -1467,7 +1467,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
                  environment_configuration_type: pulumi.Input[str],
                  cmds: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  entrypoints: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  health_check_port: Optional[pulumi.Input[int]] = None,
                  image: Optional[pulumi.Input[str]] = None,
                  image_digest: Optional[pulumi.Input[str]] = None,
@@ -1476,7 +1476,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
         :param pulumi.Input[str] environment_configuration_type: (Updatable) The environment configuration type
         :param pulumi.Input[Sequence[pulumi.Input[str]]] cmds: (Updatable) The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] entrypoints: (Updatable) The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         :param pulumi.Input[int] health_check_port: (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
         :param pulumi.Input[str] image: (Updatable) The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format. Acceptable format: `<region>.ocir.io/<registry>/<image>:<tag>` `<region>.ocir.io/<registry>/<image>:<tag>@digest`
         :param pulumi.Input[str] image_digest: (Updatable) The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
@@ -1536,14 +1536,14 @@ class ModelDeploymentModelDeploymentConfigurationDetailsEnvironmentConfiguration
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can't be reserved Model Deployment environment variables.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -2538,10 +2538,10 @@ class NotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConf
 @pulumi.input_type
 class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
     def __init__(__self__, *,
-                 custom_environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 custom_environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  notebook_session_git_config_details: Optional[pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs']] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] custom_environment_variables: (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         :param pulumi.Input['NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsArgs'] notebook_session_git_config_details: (Updatable) Git configuration Details.
         """
         if custom_environment_variables is not None:
@@ -2551,14 +2551,14 @@ class NotebookSessionNotebookSessionRuntimeConfigDetailsArgs:
 
     @property
     @pulumi.getter(name="customEnvironmentVariables")
-    def custom_environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def custom_environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         """
         return pulumi.get(self, "custom_environment_variables")
 
     @custom_environment_variables.setter
-    def custom_environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def custom_environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "custom_environment_variables", value)
 
     @property
@@ -2757,12 +2757,12 @@ class PipelineConfigurationDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: (Updatable) The type of pipeline.
         :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for steps in the pipeline.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
         :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
@@ -2799,14 +2799,14 @@ class PipelineConfigurationDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Environment variables to set for steps in the pipeline.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -3005,12 +3005,12 @@ class PipelineLogConfigurationDetailsArgs:
 class PipelineRunConfigurationDetailArgs:
     def __init__(__self__, *,
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] command_line_arguments: The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
         :param pulumi.Input[str] type: The type of pipeline.
         """
@@ -3037,14 +3037,14 @@ class PipelineRunConfigurationDetailArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Environment variables to set for step.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -3077,12 +3077,12 @@ class PipelineRunConfigurationOverrideDetailsArgs:
     def __init__(__self__, *,
                  type: pulumi.Input[str],
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] type: The type of pipeline.
         :param pulumi.Input[str] command_line_arguments: The command line arguments to set for steps in the pipeline.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for steps in the pipeline.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: Environment variables to set for steps in the pipeline.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
@@ -3119,14 +3119,14 @@ class PipelineRunConfigurationOverrideDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Environment variables to set for steps in the pipeline.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -3309,11 +3309,11 @@ class PipelineRunStepOverrideDetailArgs:
 class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
     def __init__(__self__, *,
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] command_line_arguments: The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: Environment variables to set for step.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: A time bound for the execution of the step.
         """
         if command_line_arguments is not None:
@@ -3337,14 +3337,14 @@ class PipelineRunStepOverrideDetailStepConfigurationDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Environment variables to set for step.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property
@@ -3821,11 +3821,11 @@ class PipelineStepDetailArgs:
 class PipelineStepDetailStepConfigurationDetailsArgs:
     def __init__(__self__, *,
                  command_line_arguments: Optional[pulumi.Input[str]] = None,
-                 environment_variables: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 environment_variables: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  maximum_runtime_in_minutes: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param pulumi.Input[Mapping[str, Any]] environment_variables: (Updatable) Environment variables to set for step.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] environment_variables: (Updatable) Environment variables to set for step.
         :param pulumi.Input[str] maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
         """
         if command_line_arguments is not None:
@@ -3849,14 +3849,14 @@ class PipelineStepDetailStepConfigurationDetailsArgs:
 
     @property
     @pulumi.getter(name="environmentVariables")
-    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def environment_variables(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Environment variables to set for step.
         """
         return pulumi.get(self, "environment_variables")
 
     @environment_variables.setter
-    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def environment_variables(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "environment_variables", value)
 
     @property

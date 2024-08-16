@@ -25,15 +25,15 @@ type GetContainerInstanceContainer struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
 	ContainerInstanceId string `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName          string                 `pulumi:"displayName"`
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
-	ExitCode             int                    `pulumi:"exitCode"`
+	DisplayName          string            `pulumi:"displayName"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	ExitCode             int               `pulumi:"exitCode"`
 	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags                map[string]interface{}                     `pulumi:"freeformTags"`
+	FreeformTags                map[string]string                          `pulumi:"freeformTags"`
 	HealthChecks                []GetContainerInstanceContainerHealthCheck `pulumi:"healthChecks"`
 	ImageUrl                    string                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                       `pulumi:"isResourcePrincipalDisabled"`
@@ -44,7 +44,7 @@ type GetContainerInstanceContainer struct {
 	// The current state of the container instance.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    string `pulumi:"timeCreated"`
 	TimeTerminated string `pulumi:"timeTerminated"`
@@ -77,15 +77,15 @@ type GetContainerInstanceContainerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
 	ContainerInstanceId pulumi.StringInput `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-	DisplayName          pulumi.StringInput `pulumi:"displayName"`
-	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
-	ExitCode             pulumi.IntInput    `pulumi:"exitCode"`
+	DisplayName          pulumi.StringInput    `pulumi:"displayName"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	ExitCode             pulumi.IntInput       `pulumi:"exitCode"`
 	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags                pulumi.MapInput                                    `pulumi:"freeformTags"`
+	FreeformTags                pulumi.StringMapInput                              `pulumi:"freeformTags"`
 	HealthChecks                GetContainerInstanceContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	ImageUrl                    pulumi.StringInput                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                   `pulumi:"isResourcePrincipalDisabled"`
@@ -96,7 +96,7 @@ type GetContainerInstanceContainerArgs struct {
 	// The current state of the container instance.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringInput `pulumi:"timeTerminated"`
@@ -186,8 +186,8 @@ func (o GetContainerInstanceContainerOutput) ContainerInstanceId() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o GetContainerInstanceContainerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetContainerInstanceContainerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -195,8 +195,8 @@ func (o GetContainerInstanceContainerOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerInstanceContainer) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetContainerInstanceContainerOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
+func (o GetContainerInstanceContainerOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]string { return v.EnvironmentVariables }).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstanceContainerOutput) ExitCode() pulumi.IntOutput {
@@ -209,8 +209,8 @@ func (o GetContainerInstanceContainerOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetContainerInstanceContainerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetContainerInstanceContainerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstanceContainerOutput) HealthChecks() GetContainerInstanceContainerHealthCheckArrayOutput {
@@ -250,8 +250,8 @@ func (o GetContainerInstanceContainerOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-func (o GetContainerInstanceContainerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetContainerInstanceContainerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceContainer) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -2603,17 +2603,17 @@ func (o GetContainerInstanceShapesFilterArrayOutput) Index(i pulumi.IntInput) Ge
 
 type GetContainerInstanceVnic struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
-	HostnameLabel       string                 `pulumi:"hostnameLabel"`
-	IsPublicIpAssigned  bool                   `pulumi:"isPublicIpAssigned"`
-	NsgIds              []string               `pulumi:"nsgIds"`
-	PrivateIp           string                 `pulumi:"privateIp"`
-	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
-	SubnetId            string                 `pulumi:"subnetId"`
+	FreeformTags        map[string]string `pulumi:"freeformTags"`
+	HostnameLabel       string            `pulumi:"hostnameLabel"`
+	IsPublicIpAssigned  bool              `pulumi:"isPublicIpAssigned"`
+	NsgIds              []string          `pulumi:"nsgIds"`
+	PrivateIp           string            `pulumi:"privateIp"`
+	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
+	SubnetId            string            `pulumi:"subnetId"`
 	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId string `pulumi:"vnicId"`
 }
@@ -2631,11 +2631,11 @@ type GetContainerInstanceVnicInput interface {
 
 type GetContainerInstanceVnicArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags        pulumi.MapInput         `pulumi:"freeformTags"`
+	FreeformTags        pulumi.StringMapInput   `pulumi:"freeformTags"`
 	HostnameLabel       pulumi.StringInput      `pulumi:"hostnameLabel"`
 	IsPublicIpAssigned  pulumi.BoolInput        `pulumi:"isPublicIpAssigned"`
 	NsgIds              pulumi.StringArrayInput `pulumi:"nsgIds"`
@@ -2698,8 +2698,8 @@ func (o GetContainerInstanceVnicOutput) ToGetContainerInstanceVnicOutputWithCont
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o GetContainerInstanceVnicOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceVnic) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetContainerInstanceVnicOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceVnic) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -2708,8 +2708,8 @@ func (o GetContainerInstanceVnicOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetContainerInstanceVnicOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstanceVnic) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetContainerInstanceVnicOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstanceVnic) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstanceVnicOutput) HostnameLabel() pulumi.StringOutput {
@@ -3108,7 +3108,7 @@ type GetContainerInstancesContainerInstanceCollectionItem struct {
 	// The containers on the container instance.
 	Containers []GetContainerInstancesContainerInstanceCollectionItemContainer `pulumi:"containers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// DNS settings for containers.
@@ -3116,7 +3116,7 @@ type GetContainerInstancesContainerInstanceCollectionItem struct {
 	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds string `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// An OCID that cannot be changed.
@@ -3132,7 +3132,7 @@ type GetContainerInstancesContainerInstanceCollectionItem struct {
 	// A filter to only return resources that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -3168,7 +3168,7 @@ type GetContainerInstancesContainerInstanceCollectionItemArgs struct {
 	// The containers on the container instance.
 	Containers GetContainerInstancesContainerInstanceCollectionItemContainerArrayInput `pulumi:"containers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// DNS settings for containers.
@@ -3176,7 +3176,7 @@ type GetContainerInstancesContainerInstanceCollectionItemArgs struct {
 	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringInput `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// An OCID that cannot be changed.
@@ -3192,7 +3192,7 @@ type GetContainerInstancesContainerInstanceCollectionItemArgs struct {
 	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -3284,10 +3284,8 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) Containers()
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o GetContainerInstancesContainerInstanceCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetContainerInstancesContainerInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -3308,10 +3306,8 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) FaultDomain(
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetContainerInstancesContainerInstanceCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetContainerInstancesContainerInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
@@ -3356,10 +3352,8 @@ func (o GetContainerInstancesContainerInstanceCollectionItemOutput) State() pulu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-func (o GetContainerInstancesContainerInstanceCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetContainerInstancesContainerInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -3422,15 +3416,15 @@ type GetContainerInstancesContainerInstanceCollectionItemContainer struct {
 	ContainerId         string `pulumi:"containerId"`
 	ContainerInstanceId string `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName          string                 `pulumi:"displayName"`
-	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
-	ExitCode             int                    `pulumi:"exitCode"`
+	DisplayName          string            `pulumi:"displayName"`
+	EnvironmentVariables map[string]string `pulumi:"environmentVariables"`
+	ExitCode             int               `pulumi:"exitCode"`
 	// The fault domain to place the container instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags                map[string]interface{}                                                     `pulumi:"freeformTags"`
+	FreeformTags                map[string]string                                                          `pulumi:"freeformTags"`
 	HealthChecks                []GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheck `pulumi:"healthChecks"`
 	ImageUrl                    string                                                                     `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled bool                                                                       `pulumi:"isResourcePrincipalDisabled"`
@@ -3441,7 +3435,7 @@ type GetContainerInstancesContainerInstanceCollectionItemContainer struct {
 	// A filter to only return resources that match the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    string `pulumi:"timeCreated"`
 	TimeTerminated string `pulumi:"timeTerminated"`
@@ -3473,15 +3467,15 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerArgs struct {
 	ContainerId         pulumi.StringInput `pulumi:"containerId"`
 	ContainerInstanceId pulumi.StringInput `pulumi:"containerInstanceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
-	DisplayName          pulumi.StringInput `pulumi:"displayName"`
-	EnvironmentVariables pulumi.MapInput    `pulumi:"environmentVariables"`
-	ExitCode             pulumi.IntInput    `pulumi:"exitCode"`
+	DisplayName          pulumi.StringInput    `pulumi:"displayName"`
+	EnvironmentVariables pulumi.StringMapInput `pulumi:"environmentVariables"`
+	ExitCode             pulumi.IntInput       `pulumi:"exitCode"`
 	// The fault domain to place the container instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags                pulumi.MapInput                                                                    `pulumi:"freeformTags"`
+	FreeformTags                pulumi.StringMapInput                                                              `pulumi:"freeformTags"`
 	HealthChecks                GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayInput `pulumi:"healthChecks"`
 	ImageUrl                    pulumi.StringInput                                                                 `pulumi:"imageUrl"`
 	IsResourcePrincipalDisabled pulumi.BoolInput                                                                   `pulumi:"isResourcePrincipalDisabled"`
@@ -3492,7 +3486,7 @@ type GetContainerInstancesContainerInstanceCollectionItemContainerArgs struct {
 	// A filter to only return resources that match the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated    pulumi.StringInput `pulumi:"timeCreated"`
 	TimeTerminated pulumi.StringInput `pulumi:"timeTerminated"`
@@ -3585,10 +3579,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Con
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -3596,10 +3590,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Dis
 	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) EnvironmentVariables() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) EnvironmentVariables() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]string {
 		return v.EnvironmentVariables
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) ExitCode() pulumi.IntOutput {
@@ -3612,10 +3606,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Fau
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) HealthChecks() GetContainerInstancesContainerInstanceCollectionItemContainerHealthCheckArrayOutput {
@@ -3659,10 +3653,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) Sta
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemContainerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemContainer) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -4866,17 +4860,17 @@ func (o GetContainerInstancesContainerInstanceCollectionItemShapeConfigArrayOutp
 
 type GetContainerInstancesContainerInstanceCollectionItemVnic struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags        map[string]interface{} `pulumi:"freeformTags"`
-	HostnameLabel       string                 `pulumi:"hostnameLabel"`
-	IsPublicIpAssigned  bool                   `pulumi:"isPublicIpAssigned"`
-	NsgIds              []string               `pulumi:"nsgIds"`
-	PrivateIp           string                 `pulumi:"privateIp"`
-	SkipSourceDestCheck bool                   `pulumi:"skipSourceDestCheck"`
-	SubnetId            string                 `pulumi:"subnetId"`
+	FreeformTags        map[string]string `pulumi:"freeformTags"`
+	HostnameLabel       string            `pulumi:"hostnameLabel"`
+	IsPublicIpAssigned  bool              `pulumi:"isPublicIpAssigned"`
+	NsgIds              []string          `pulumi:"nsgIds"`
+	PrivateIp           string            `pulumi:"privateIp"`
+	SkipSourceDestCheck bool              `pulumi:"skipSourceDestCheck"`
+	SubnetId            string            `pulumi:"subnetId"`
 	// The identifier of the virtual network interface card (VNIC) over which the containers accessing this network can communicate with the larger virtual cloud network.
 	VnicId string `pulumi:"vnicId"`
 }
@@ -4894,11 +4888,11 @@ type GetContainerInstancesContainerInstanceCollectionItemVnicInput interface {
 
 type GetContainerInstancesContainerInstanceCollectionItemVnicArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags        pulumi.MapInput         `pulumi:"freeformTags"`
+	FreeformTags        pulumi.StringMapInput   `pulumi:"freeformTags"`
 	HostnameLabel       pulumi.StringInput      `pulumi:"hostnameLabel"`
 	IsPublicIpAssigned  pulumi.BoolInput        `pulumi:"isPublicIpAssigned"`
 	NsgIds              pulumi.StringArrayInput `pulumi:"nsgIds"`
@@ -4961,10 +4955,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) ToGetCon
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -4973,10 +4967,10 @@ func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) DisplayN
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) map[string]interface{} {
+func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetContainerInstancesContainerInstanceCollectionItemVnic) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 func (o GetContainerInstancesContainerInstanceCollectionItemVnicOutput) HostnameLabel() pulumi.StringOutput {

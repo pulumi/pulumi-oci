@@ -11,7 +11,6 @@ import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurati
 import com.pulumi.oci.Logging.inputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -470,7 +469,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      * 
      */
     @Import(name="types")
-    private @Nullable Output<Map<String,Object>> types;
+    private @Nullable Output<Map<String,String>> types;
 
     /**
      * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
@@ -482,7 +481,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
-    public Optional<Output<Map<String,Object>>> types() {
+    public Optional<Output<Map<String,String>>> types() {
         return Optional.ofNullable(this.types);
     }
 
@@ -1190,7 +1189,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
          * @return builder
          * 
          */
-        public Builder types(@Nullable Output<Map<String,Object>> types) {
+        public Builder types(@Nullable Output<Map<String,String>> types) {
             $.types = types;
             return this;
         }
@@ -1207,7 +1206,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
          * @return builder
          * 
          */
-        public Builder types(Map<String,Object> types) {
+        public Builder types(Map<String,String> types) {
             return types(Output.of(types));
         }
 

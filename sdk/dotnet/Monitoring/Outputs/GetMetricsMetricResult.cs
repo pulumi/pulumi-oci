@@ -24,11 +24,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DimensionFilters;
+        public readonly ImmutableDictionary<string, string> DimensionFilters;
         /// <summary>
         /// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Dimensions;
+        public readonly ImmutableDictionary<string, string> Dimensions;
         /// <summary>
         /// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
         /// 
@@ -54,9 +54,9 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             bool compartmentIdInSubtree,
 
-            ImmutableDictionary<string, object> dimensionFilters,
+            ImmutableDictionary<string, string> dimensionFilters,
 
-            ImmutableDictionary<string, object> dimensions,
+            ImmutableDictionary<string, string> dimensions,
 
             ImmutableArray<string> groupBies,
 

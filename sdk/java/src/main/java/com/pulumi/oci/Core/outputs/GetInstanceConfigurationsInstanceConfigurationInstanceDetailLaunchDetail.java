@@ -15,7 +15,6 @@ import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfiguratio
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailShapeConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailSourceDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -67,7 +66,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -77,7 +76,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
@@ -87,7 +86,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
      * 
@@ -121,7 +120,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The platform configuration requested for the instance.
      * 
@@ -212,7 +211,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -226,7 +225,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -240,7 +239,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -286,7 +285,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -347,17 +346,17 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
         private String compartmentId;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String faultDomain;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailInstanceOption> instanceOptions;
         private String ipxeScript;
         private Boolean isPvEncryptionInTransitEnabled;
         private String launchMode;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailLaunchOption> launchOptions;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig> platformConfigs;
         private List<GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetailPreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private String preferredMaintenanceAction;
@@ -468,7 +467,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "definedTags");
             }
@@ -484,7 +483,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "extendedMetadata");
             }
@@ -500,7 +499,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "freeformTags");
             }
@@ -554,7 +553,7 @@ public final class GetInstanceConfigurationsInstanceConfigurationInstanceDetailL
             return launchOptions(List.of(launchOptions));
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationsInstanceConfigurationInstanceDetailLaunchDetail", "metadata");
             }

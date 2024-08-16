@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Ocvp
         /// SDDC vCenter/NSX/HCX password.
         /// * `passwordType` - SDDC password type.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SddcPassword;
+        public readonly ImmutableDictionary<string, string> SddcPassword;
         public readonly string Type;
 
         [OutputConstructor]
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Ocvp
 
             string sddcId,
 
-            ImmutableDictionary<string, object> sddcPassword,
+            ImmutableDictionary<string, string> sddcPassword,
 
             string type)
         {

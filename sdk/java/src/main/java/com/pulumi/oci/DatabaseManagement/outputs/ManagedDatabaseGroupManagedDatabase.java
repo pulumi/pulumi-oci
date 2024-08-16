@@ -4,7 +4,6 @@
 package com.pulumi.oci.DatabaseManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -32,7 +31,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return The infrastructure used to deploy the Oracle Database.
      * 
@@ -42,7 +41,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed database that needs to be added to the Managed Database Group.
      * 
@@ -60,7 +59,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
     /**
      * @return The date and time the Managed Database was added to the group.
      * 
@@ -98,7 +97,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -112,7 +111,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -136,7 +135,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
@@ -166,12 +165,12 @@ public final class ManagedDatabaseGroupManagedDatabase {
         private @Nullable String compartmentId;
         private @Nullable String databaseSubType;
         private @Nullable String databaseType;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String deploymentType;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable String id;
         private @Nullable String name;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         private @Nullable String timeAdded;
         private @Nullable String workloadType;
         public Builder() {}
@@ -209,7 +208,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -221,7 +220,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -239,7 +238,7 @@ public final class ManagedDatabaseGroupManagedDatabase {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

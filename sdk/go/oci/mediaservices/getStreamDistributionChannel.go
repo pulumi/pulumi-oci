@@ -61,13 +61,13 @@ type LookupStreamDistributionChannelResult struct {
 	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Stream Distribution Channel display name. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
 	DomainName string `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -77,7 +77,7 @@ type LookupStreamDistributionChannelResult struct {
 	State                       string `pulumi:"state"`
 	StreamDistributionChannelId string `pulumi:"streamDistributionChannelId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
@@ -128,8 +128,8 @@ func (o LookupStreamDistributionChannelResultOutput) CompartmentId() pulumi.Stri
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupStreamDistributionChannelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupStreamDistributionChannelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Stream Distribution Channel display name. Avoid entering confidential information.
@@ -143,8 +143,8 @@ func (o LookupStreamDistributionChannelResultOutput) DomainName() pulumi.StringO
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupStreamDistributionChannelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupStreamDistributionChannelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -171,8 +171,8 @@ func (o LookupStreamDistributionChannelResultOutput) StreamDistributionChannelId
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupStreamDistributionChannelResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupStreamDistributionChannelResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamDistributionChannelResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.

@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Kms.inputs.GeneratedKeyKeyShapeArgs;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -24,13 +23,13 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="associatedData")
-    private @Nullable Output<Map<String,Object>> associatedData;
+    private @Nullable Output<Map<String,String>> associatedData;
 
     /**
      * @return Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
      * 
      */
-    public Optional<Output<Map<String,Object>>> associatedData() {
+    public Optional<Output<Map<String,String>>> associatedData() {
         return Optional.ofNullable(this.associatedData);
     }
 
@@ -117,7 +116,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="loggingContext")
-    private @Nullable Output<Map<String,Object>> loggingContext;
+    private @Nullable Output<Map<String,String>> loggingContext;
 
     /**
      * @return Information that provides context for audit logging. You can provide this additional data by formatting it as key-value pairs to include in audit logs when audit logging is enabled.
@@ -126,7 +125,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Map<String,Object>>> loggingContext() {
+    public Optional<Output<Map<String,String>>> loggingContext() {
         return Optional.ofNullable(this.loggingContext);
     }
 
@@ -198,7 +197,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder associatedData(@Nullable Output<Map<String,Object>> associatedData) {
+        public Builder associatedData(@Nullable Output<Map<String,String>> associatedData) {
             $.associatedData = associatedData;
             return this;
         }
@@ -209,7 +208,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder associatedData(Map<String,Object> associatedData) {
+        public Builder associatedData(Map<String,String> associatedData) {
             return associatedData(Output.of(associatedData));
         }
 
@@ -327,7 +326,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder loggingContext(@Nullable Output<Map<String,Object>> loggingContext) {
+        public Builder loggingContext(@Nullable Output<Map<String,String>> loggingContext) {
             $.loggingContext = loggingContext;
             return this;
         }
@@ -341,7 +340,7 @@ public final class GeneratedKeyState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder loggingContext(Map<String,Object> loggingContext) {
+        public Builder loggingContext(Map<String,String> loggingContext) {
             return loggingContext(Output.of(loggingContext));
         }
 

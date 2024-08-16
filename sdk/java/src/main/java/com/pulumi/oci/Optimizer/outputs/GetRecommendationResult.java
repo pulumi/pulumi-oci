@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationResourceCount;
 import com.pulumi.oci.Optimizer.outputs.GetRecommendationSupportedLevel;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -40,7 +39,7 @@ public final class GetRecommendationResult {
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return The unique OCID associated with the recommendation.
      * 
@@ -131,7 +130,7 @@ public final class GetRecommendationResult {
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -228,7 +227,7 @@ public final class GetRecommendationResult {
         private String compartmentId;
         private String description;
         private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String id;
         private String importance;
         private String name;
@@ -296,7 +295,7 @@ public final class GetRecommendationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetRecommendationResult", "extendedMetadata");
             }

@@ -36,11 +36,11 @@ import (
 //				CertificateSignedRequest: pulumi.Any(wlpAgentCertificateSignedRequest),
 //				CompartmentId:            pulumi.Any(compartmentId),
 //				OsInfo:                   pulumi.Any(wlpAgentOsInfo),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -71,11 +71,11 @@ type WlpAgent struct {
 	// Compartment OCID of the host
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// OCID for instance in which WlpAgent is installed
 	HostId pulumi.StringOutput `pulumi:"hostId"`
 	// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
@@ -84,7 +84,7 @@ type WlpAgent struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsInfo pulumi.StringOutput `pulumi:"osInfo"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// TenantId of the host
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// The date and time the WlpAgent was created. Format defined by RFC3339.
@@ -144,11 +144,11 @@ type wlpAgentState struct {
 	// Compartment OCID of the host
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID for instance in which WlpAgent is installed
 	HostId *string `pulumi:"hostId"`
 	// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
@@ -157,7 +157,7 @@ type wlpAgentState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsInfo *string `pulumi:"osInfo"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// TenantId of the host
 	TenantId *string `pulumi:"tenantId"`
 	// The date and time the WlpAgent was created. Format defined by RFC3339.
@@ -176,11 +176,11 @@ type WlpAgentState struct {
 	// Compartment OCID of the host
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// OCID for instance in which WlpAgent is installed
 	HostId pulumi.StringPtrInput
 	// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
@@ -189,7 +189,7 @@ type WlpAgentState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OsInfo pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// TenantId of the host
 	TenantId pulumi.StringPtrInput
 	// The date and time the WlpAgent was created. Format defined by RFC3339.
@@ -210,11 +210,11 @@ type wlpAgentArgs struct {
 	// Compartment OCID of the host
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
 	//
 	// ** IMPORTANT **
@@ -231,11 +231,11 @@ type WlpAgentArgs struct {
 	// Compartment OCID of the host
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Concatenated OS name, OS version and agent architecture; for example, ubuntu_22.0_amd64.
 	//
 	// ** IMPORTANT **
@@ -351,15 +351,15 @@ func (o WlpAgentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o WlpAgentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *WlpAgent) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o WlpAgentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WlpAgent) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o WlpAgentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *WlpAgent) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o WlpAgentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WlpAgent) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID for instance in which WlpAgent is installed
@@ -376,8 +376,8 @@ func (o WlpAgentOutput) OsInfo() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o WlpAgentOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *WlpAgent) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o WlpAgentOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WlpAgent) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // TenantId of the host

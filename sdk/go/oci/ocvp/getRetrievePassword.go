@@ -64,8 +64,8 @@ type GetRetrievePasswordResult struct {
 	SddcId string `pulumi:"sddcId"`
 	// SDDC vCenter/NSX/HCX password.
 	// * `passwordType` - SDDC password type.
-	SddcPassword map[string]interface{} `pulumi:"sddcPassword"`
-	Type         string                 `pulumi:"type"`
+	SddcPassword map[string]string `pulumi:"sddcPassword"`
+	Type         string            `pulumi:"type"`
 }
 
 func GetRetrievePasswordOutput(ctx *pulumi.Context, args GetRetrievePasswordOutputArgs, opts ...pulumi.InvokeOption) GetRetrievePasswordResultOutput {
@@ -119,8 +119,8 @@ func (o GetRetrievePasswordResultOutput) SddcId() pulumi.StringOutput {
 
 // SDDC vCenter/NSX/HCX password.
 // * `passwordType` - SDDC password type.
-func (o GetRetrievePasswordResultOutput) SddcPassword() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRetrievePasswordResult) map[string]interface{} { return v.SddcPassword }).(pulumi.MapOutput)
+func (o GetRetrievePasswordResultOutput) SddcPassword() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRetrievePasswordResult) map[string]string { return v.SddcPassword }).(pulumi.StringMapOutput)
 }
 
 func (o GetRetrievePasswordResultOutput) Type() pulumi.StringOutput {

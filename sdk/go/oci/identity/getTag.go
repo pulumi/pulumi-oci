@@ -62,11 +62,11 @@ type LookupTagArgs struct {
 // A collection of values returned by getTag.
 type LookupTagResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the tag.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the tag definition.
 	Id string `pulumi:"id"`
 	// Indicates whether the tag is enabled for cost tracking.
@@ -127,8 +127,8 @@ func (o LookupTagResultOutput) ToLookupTagResultOutputWithContext(ctx context.Co
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupTagResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTagResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupTagResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTagResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the tag.
@@ -137,8 +137,8 @@ func (o LookupTagResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupTagResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupTagResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupTagResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupTagResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the tag definition.

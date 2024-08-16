@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ObjectStorage.inputs.StorageObjectSourceUriDetailsArgs;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -179,14 +178,14 @@ public final class StorageObjectState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="metadata")
-    private @Nullable Output<Map<String,Object>> metadata;
+    private @Nullable Output<Map<String,String>> metadata;
 
     /**
      * @return Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      * 
      */
-    public Optional<Output<Map<String,Object>>> metadata() {
+    public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
@@ -567,7 +566,7 @@ public final class StorageObjectState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder metadata(@Nullable Output<Map<String,Object>> metadata) {
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
             $.metadata = metadata;
             return this;
         }
@@ -579,7 +578,7 @@ public final class StorageObjectState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
         }
 

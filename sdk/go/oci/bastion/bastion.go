@@ -35,12 +35,12 @@ import (
 //				CompartmentId:             pulumi.Any(compartmentId),
 //				TargetSubnetId:            pulumi.Any(testSubnet.Id),
 //				ClientCidrBlockAllowLists: pulumi.Any(bastionClientCidrBlockAllowList),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DnsProxyStatus: pulumi.Any(bastionDnsProxyStatus),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				MaxSessionTtlInSeconds:    pulumi.Any(bastionMaxSessionTtlInSeconds),
 //				Name:                      pulumi.Any(bastionName),
@@ -73,11 +73,11 @@ type Bastion struct {
 	// (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus pulumi.StringOutput `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -95,7 +95,7 @@ type Bastion struct {
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayOutput `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
 	//
 	// ** IMPORTANT **
@@ -155,11 +155,11 @@ type bastionState struct {
 	// (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus *string `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -177,7 +177,7 @@ type bastionState struct {
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses []string `pulumi:"staticJumpHostIpAddresses"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
 	//
 	// ** IMPORTANT **
@@ -199,11 +199,11 @@ type BastionState struct {
 	// (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
@@ -221,7 +221,7 @@ type BastionState struct {
 	// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
 	StaticJumpHostIpAddresses pulumi.StringArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The unique identifier (OCID) of the subnet that the bastion connects to.
 	//
 	// ** IMPORTANT **
@@ -247,11 +247,11 @@ type bastionArgs struct {
 	// (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus *string `pulumi:"dnsProxyStatus"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
 	MaxSessionTtlInSeconds *int `pulumi:"maxSessionTtlInSeconds"`
 	// The name of the bastion, which can't be changed after creation.
@@ -276,11 +276,11 @@ type BastionArgs struct {
 	// (Updatable) The unique identifier (OCID) of the compartment where the bastion is located.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
 	DnsProxyStatus pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The maximum amount of time that any session on the bastion can remain active.
 	MaxSessionTtlInSeconds pulumi.IntPtrInput
 	// The name of the bastion, which can't be changed after creation.
@@ -399,8 +399,8 @@ func (o BastionOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o BastionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BastionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Flag to enable FQDN and SOCKS5 Proxy Support. Example: `ENABLED`, `DISABLED`
@@ -409,8 +409,8 @@ func (o BastionOutput) DnsProxyStatus() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o BastionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BastionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail.
@@ -454,8 +454,8 @@ func (o BastionOutput) StaticJumpHostIpAddresses() pulumi.StringArrayOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o BastionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Bastion) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o BastionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Bastion) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier (OCID) of the subnet that the bastion connects to.

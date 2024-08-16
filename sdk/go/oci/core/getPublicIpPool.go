@@ -63,11 +63,11 @@ type LookupPublicIpPoolResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing this pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.
 	Id             string `pulumi:"id"`
 	PublicIpPoolId string `pulumi:"publicIpPoolId"`
@@ -126,8 +126,8 @@ func (o LookupPublicIpPoolResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupPublicIpPoolResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPublicIpPoolResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -136,8 +136,8 @@ func (o LookupPublicIpPoolResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupPublicIpPoolResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPublicIpPoolResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPublicIpPoolResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPublicIpPoolResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the public IP pool.

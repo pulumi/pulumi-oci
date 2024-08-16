@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition;
 import com.pulumi.oci.ServiceManagerProxy.outputs.GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,8 +24,8 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
      * 
      */
     private String consoleUrl;
-    private Map<String,Object> definedTags;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> definedTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Unqiue identifier for the entitlement related to the environment.
      * 
@@ -68,10 +67,10 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
     public String consoleUrl() {
         return this.consoleUrl;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -121,8 +120,8 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
     public static final class Builder {
         private String compartmentId;
         private String consoleUrl;
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceDefinition> serviceDefinitions;
         private List<GetServiceEnvironmentsServiceEnvironmentCollectionItemServiceEnvironmentEndpoint> serviceEnvironmentEndpoints;
@@ -159,7 +158,7 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "definedTags");
             }
@@ -167,7 +166,7 @@ public final class GetServiceEnvironmentsServiceEnvironmentCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetServiceEnvironmentsServiceEnvironmentCollectionItem", "freeformTags");
             }

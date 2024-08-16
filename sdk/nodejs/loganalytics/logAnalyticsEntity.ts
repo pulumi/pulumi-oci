@@ -96,7 +96,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Internal name for the log analytics entity type.
      */
@@ -108,7 +108,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
@@ -144,7 +144,7 @@ export class LogAnalyticsEntity extends pulumi.CustomResource {
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    public readonly properties!: pulumi.Output<{[key: string]: any}>;
+    public readonly properties!: pulumi.Output<{[key: string]: string}>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
@@ -267,7 +267,7 @@ export interface LogAnalyticsEntityState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Internal name for the log analytics entity type.
      */
@@ -279,7 +279,7 @@ export interface LogAnalyticsEntityState {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
@@ -315,7 +315,7 @@ export interface LogAnalyticsEntityState {
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    properties?: pulumi.Input<{[key: string]: any}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */
@@ -361,7 +361,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Log analytics entity type name.
      */
@@ -369,7 +369,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      */
@@ -393,7 +393,7 @@ export interface LogAnalyticsEntityArgs {
     /**
      * (Updatable) The name/value pairs for parameter values to be used in file patterns specified in log sources.
      */
-    properties?: pulumi.Input<{[key: string]: any}>;
+    properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      */

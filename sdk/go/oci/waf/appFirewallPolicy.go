@@ -49,12 +49,12 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(webAppFirewallPolicyDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				RequestAccessControl: &waf.AppFirewallPolicyRequestAccessControlArgs{
 //					DefaultActionName: pulumi.Any(webAppFirewallPolicyRequestAccessControlDefaultActionName),
@@ -201,11 +201,11 @@ type AppFirewallPolicy struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) WebAppFirewallPolicy display name, can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
@@ -224,7 +224,7 @@ type AppFirewallPolicy struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
@@ -269,11 +269,11 @@ type appFirewallPolicyState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) WebAppFirewallPolicy display name, can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
@@ -292,7 +292,7 @@ type appFirewallPolicyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
@@ -305,11 +305,11 @@ type AppFirewallPolicyState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) WebAppFirewallPolicy display name, can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
@@ -328,7 +328,7 @@ type AppFirewallPolicyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the WebAppFirewallPolicy was updated. An RFC3339 formatted datetime string.
@@ -345,11 +345,11 @@ type appFirewallPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) WebAppFirewallPolicy display name, can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
 	RequestAccessControl *AppFirewallPolicyRequestAccessControl `pulumi:"requestAccessControl"`
 	// (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
@@ -364,7 +364,7 @@ type appFirewallPolicyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // The set of arguments for constructing a AppFirewallPolicy resource.
@@ -374,11 +374,11 @@ type AppFirewallPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) WebAppFirewallPolicy display name, can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Module that allows inspection of HTTP request properties and to return a defined HTTP response. In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
 	RequestAccessControl AppFirewallPolicyRequestAccessControlPtrInput
 	// (Updatable) Module that allows to enable OCI-managed protection capabilities for incoming HTTP requests.
@@ -393,7 +393,7 @@ type AppFirewallPolicyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 }
 
 func (AppFirewallPolicyArgs) ElementType() reflect.Type {
@@ -494,8 +494,8 @@ func (o AppFirewallPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AppFirewallPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AppFirewallPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) WebAppFirewallPolicy display name, can be renamed.
@@ -504,8 +504,8 @@ func (o AppFirewallPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o AppFirewallPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AppFirewallPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -549,8 +549,8 @@ func (o AppFirewallPolicyOutput) State() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o AppFirewallPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AppFirewallPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AppFirewallPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the WebAppFirewallPolicy was created. An RFC3339 formatted datetime string.

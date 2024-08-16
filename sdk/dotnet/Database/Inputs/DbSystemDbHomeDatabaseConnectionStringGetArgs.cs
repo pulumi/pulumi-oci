@@ -13,10 +13,10 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class DbSystemDbHomeDatabaseConnectionStringGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
-        private InputMap<object>? _allConnectionStrings;
-        public InputMap<object> AllConnectionStrings
+        private InputMap<string>? _allConnectionStrings;
+        public InputMap<string> AllConnectionStrings
         {
-            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<object>());
+            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<string>());
             set => _allConnectionStrings = value;
         }
 

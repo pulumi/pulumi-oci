@@ -61,14 +61,14 @@ type LookupDetectAnomalyJobResult struct {
 	// The OCID of the compartment that starts the job.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Detect anomaly job description.
 	Description        string `pulumi:"description"`
 	DetectAnomalyJobId string `pulumi:"detectAnomalyJobId"`
 	// Detect anomaly job display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Id of the job.
 	Id string `pulumi:"id"`
 	// Input details for detect anomaly job.
@@ -86,7 +86,7 @@ type LookupDetectAnomalyJobResult struct {
 	// The current state of the batch document job.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Job accepted time
 	TimeAccepted string `pulumi:"timeAccepted"`
 	// Job finished time
@@ -139,8 +139,8 @@ func (o LookupDetectAnomalyJobResultOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDetectAnomalyJobResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDetectAnomalyJobResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Detect anomaly job description.
@@ -158,8 +158,8 @@ func (o LookupDetectAnomalyJobResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDetectAnomalyJobResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDetectAnomalyJobResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Id of the job.
@@ -203,8 +203,8 @@ func (o LookupDetectAnomalyJobResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDetectAnomalyJobResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDetectAnomalyJobResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDetectAnomalyJobResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Job accepted time

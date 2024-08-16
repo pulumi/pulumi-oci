@@ -5,7 +5,6 @@ package com.pulumi.oci.GloballyDistributedDatabase.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,14 +15,14 @@ public final class GetShardedDatabaseConnectionString {
      * @return Collection of connection strings.
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private Map<String,String> allConnectionStrings;
 
     private GetShardedDatabaseConnectionString() {}
     /**
      * @return Collection of connection strings.
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings;
     }
 
@@ -36,7 +35,7 @@ public final class GetShardedDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
+        private Map<String,String> allConnectionStrings;
         public Builder() {}
         public Builder(GetShardedDatabaseConnectionString defaults) {
     	      Objects.requireNonNull(defaults);
@@ -44,7 +43,7 @@ public final class GetShardedDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(Map<String,String> allConnectionStrings) {
             if (allConnectionStrings == null) {
               throw new MissingRequiredPropertyException("GetShardedDatabaseConnectionString", "allConnectionStrings");
             }

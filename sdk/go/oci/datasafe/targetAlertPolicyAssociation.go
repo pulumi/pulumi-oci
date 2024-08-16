@@ -35,13 +35,13 @@ import (
 //				IsEnabled:     pulumi.Any(targetAlertPolicyAssociationIsEnabled),
 //				PolicyId:      pulumi.Any(testPolicy.Id),
 //				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(targetAlertPolicyAssociationDescription),
 //				DisplayName: pulumi.Any(targetAlertPolicyAssociationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -66,13 +66,13 @@ type TargetAlertPolicyAssociation struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the target-alert policy association.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// Details about the current state of the target-alert policy association.
@@ -82,7 +82,7 @@ type TargetAlertPolicyAssociation struct {
 	// The current state of the target-alert policy association.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target.
 	//
 	// ** IMPORTANT **
@@ -139,13 +139,13 @@ type targetAlertPolicyAssociationState struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the target-alert policy association.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Details about the current state of the target-alert policy association.
@@ -155,7 +155,7 @@ type targetAlertPolicyAssociationState struct {
 	// The current state of the target-alert policy association.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target.
 	//
 	// ** IMPORTANT **
@@ -171,13 +171,13 @@ type TargetAlertPolicyAssociationState struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the target-alert policy association.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput
 	// Details about the current state of the target-alert policy association.
@@ -187,7 +187,7 @@ type TargetAlertPolicyAssociationState struct {
 	// The current state of the target-alert policy association.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target.
 	//
 	// ** IMPORTANT **
@@ -207,13 +207,13 @@ type targetAlertPolicyAssociationArgs struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Describes the target-alert policy association.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the target-alert policy association.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
@@ -230,13 +230,13 @@ type TargetAlertPolicyAssociationArgs struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Describes the target-alert policy association.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the target-alert policy association.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Indicates if the target-alert policy association is enabled or disabled.
 	IsEnabled pulumi.BoolInput
 	// The OCID of the alert policy.
@@ -341,8 +341,8 @@ func (o TargetAlertPolicyAssociationOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o TargetAlertPolicyAssociationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAlertPolicyAssociationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Describes the target-alert policy association.
@@ -356,8 +356,8 @@ func (o TargetAlertPolicyAssociationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o TargetAlertPolicyAssociationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAlertPolicyAssociationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Indicates if the target-alert policy association is enabled or disabled.
@@ -381,8 +381,8 @@ func (o TargetAlertPolicyAssociationOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o TargetAlertPolicyAssociationOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o TargetAlertPolicyAssociationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target.

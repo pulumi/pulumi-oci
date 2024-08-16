@@ -11,7 +11,6 @@ import com.pulumi.oci.Kms.outputs.GetVaultReplicaDetail;
 import com.pulumi.oci.Kms.outputs.GetVaultRestoreFromFile;
 import com.pulumi.oci.Kms.outputs.GetVaultRestoreFromObjectStore;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -33,7 +32,7 @@ public final class GetVaultResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
      * 
@@ -49,7 +48,7 @@ public final class GetVaultResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the vault.
      * 
@@ -131,7 +130,7 @@ public final class GetVaultResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -155,7 +154,7 @@ public final class GetVaultResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -257,11 +256,11 @@ public final class GetVaultResult {
     public static final class Builder {
         private String compartmentId;
         private String cryptoEndpoint;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private List<GetVaultExternalKeyManagerMetadataSummary> externalKeyManagerMetadataSummaries;
         private List<GetVaultExternalKeyManagerMetadata> externalKeyManagerMetadatas;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private Boolean isPrimary;
         private String managementEndpoint;
@@ -317,7 +316,7 @@ public final class GetVaultResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetVaultResult", "definedTags");
             }
@@ -355,7 +354,7 @@ public final class GetVaultResult {
             return externalKeyManagerMetadatas(List.of(externalKeyManagerMetadatas));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetVaultResult", "freeformTags");
             }

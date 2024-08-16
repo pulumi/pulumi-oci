@@ -65,11 +65,11 @@ type LookupMetastoreResult struct {
 	// Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
 	DefaultManagedTableLocation string `pulumi:"defaultManagedTableLocation"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Mutable name of the metastore.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The metastore's OCID.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -80,7 +80,7 @@ type LookupMetastoreResult struct {
 	// The current state of the metastore.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -141,8 +141,8 @@ func (o LookupMetastoreResultOutput) DefaultManagedTableLocation() pulumi.String
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMetastoreResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMetastoreResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Mutable name of the metastore.
@@ -151,8 +151,8 @@ func (o LookupMetastoreResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupMetastoreResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMetastoreResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The metastore's OCID.
@@ -180,8 +180,8 @@ func (o LookupMetastoreResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMetastoreResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMetastoreResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMetastoreResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMetastoreResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

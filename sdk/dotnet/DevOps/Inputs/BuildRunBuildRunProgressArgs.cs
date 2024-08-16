@@ -13,14 +13,14 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class BuildRunBuildRunProgressArgs : global::Pulumi.ResourceArgs
     {
         [Input("buildPipelineStageRunProgress")]
-        private InputMap<object>? _buildPipelineStageRunProgress;
+        private InputMap<string>? _buildPipelineStageRunProgress;
 
         /// <summary>
         /// Map of stage OCIDs to build pipeline stage run progress model.
         /// </summary>
-        public InputMap<object> BuildPipelineStageRunProgress
+        public InputMap<string> BuildPipelineStageRunProgress
         {
-            get => _buildPipelineStageRunProgress ?? (_buildPipelineStageRunProgress = new InputMap<object>());
+            get => _buildPipelineStageRunProgress ?? (_buildPipelineStageRunProgress = new InputMap<string>());
             set => _buildPipelineStageRunProgress = value;
         }
 

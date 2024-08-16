@@ -61,14 +61,14 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? IdentifierPath { get; set; }
 
         [Input("infoFields")]
-        private InputMap<object>? _infoFields;
+        private InputMap<string>? _infoFields;
 
         /// <summary>
         /// Information property fields.
         /// </summary>
-        public InputMap<object> InfoFields
+        public InputMap<string> InfoFields
         {
-            get => _infoFields ?? (_infoFields = new InputMap<object>());
+            get => _infoFields ?? (_infoFields = new InputMap<string>());
             set => _infoFields = value;
         }
 

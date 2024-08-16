@@ -173,7 +173,7 @@ type LogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
 	// (Updatable) Log category parameters are stored here.
-	Parameters map[string]interface{} `pulumi:"parameters"`
+	Parameters map[string]string `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -198,7 +198,7 @@ type LogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
 	// (Updatable) Log category parameters are stored here.
-	Parameters pulumi.MapInput `pulumi:"parameters"`
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -291,8 +291,8 @@ func (o LogConfigurationSourceOutput) Category() pulumi.StringOutput {
 }
 
 // (Updatable) Log category parameters are stored here.
-func (o LogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v LogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o LogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -346,13 +346,13 @@ func (o LogConfigurationSourcePtrOutput) Category() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Log category parameters are stored here.
-func (o LogConfigurationSourcePtrOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogConfigurationSource) map[string]interface{} {
+func (o LogConfigurationSourcePtrOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogConfigurationSource) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Parameters
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -1425,7 +1425,7 @@ type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs and UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput values.
@@ -1505,7 +1505,7 @@ type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ElementType() reflect.Type {
@@ -1795,10 +1795,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]string {
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput struct{ *pulumi.OutputState }
@@ -2122,13 +2122,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPtrOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser struct {
@@ -2520,7 +2520,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 
 type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -2540,7 +2540,7 @@ type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource
 
 type UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -2625,10 +2625,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -2670,13 +2670,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -4168,7 +4168,7 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // UnifiedAgentConfigurationServiceConfigurationSourceParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationSourceParserArgs and UnifiedAgentConfigurationServiceConfigurationSourceParserOutput values.
@@ -4248,7 +4248,7 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (UnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ElementType() reflect.Type {
@@ -4492,10 +4492,8 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Timeout
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
-		return v.Types
-	}).(pulumi.MapOutput)
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]string { return v.Types }).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput struct{ *pulumi.OutputState }
@@ -4819,13 +4817,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Time
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPtrOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParser struct {
@@ -5213,7 +5211,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArrayOut
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -5233,7 +5231,7 @@ type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInput i
 
 type UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -5318,10 +5316,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutp
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -5363,13 +5361,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrO
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputPtrOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -5422,7 +5420,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// (Updatable) Unique name for the filter.
 	Name string `pulumi:"name"`
 	// (Updatable) Parameters of the custom filter
-	Params map[string]interface{} `pulumi:"params"`
+	Params map[string]string `pulumi:"params"`
 	// (Updatable) Source parser object.
 	Parser *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser `pulumi:"parser"`
 	// (Updatable) Add new key-value pairs in logs
@@ -5485,7 +5483,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// (Updatable) Unique name for the filter.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Parameters of the custom filter
-	Params pulumi.MapInput `pulumi:"params"`
+	Params pulumi.StringMapInput `pulumi:"params"`
 	// (Updatable) Source parser object.
 	Parser UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrInput `pulumi:"parser"`
 	// (Updatable) Add new key-value pairs in logs
@@ -5657,10 +5655,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 }
 
 // (Updatable) Parameters of the custom filter
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]string {
 		return v.Params
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Source parser object.
@@ -5856,7 +5854,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// (Updatable) The name of the custom section
 	Name *string `pulumi:"name"`
 	// (Updatable) Parameters in the custom section
-	Params map[string]interface{} `pulumi:"params"`
+	Params map[string]string `pulumi:"params"`
 }
 
 // UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput values.
@@ -5874,7 +5872,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// (Updatable) The name of the custom section
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) Parameters in the custom section
-	Params pulumi.MapInput `pulumi:"params"`
+	Params pulumi.StringMapInput `pulumi:"params"`
 }
 
 func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ElementType() reflect.Type {
@@ -5936,10 +5934,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 }
 
 // (Updatable) Parameters in the custom section
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]string {
 		return v.Params
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput struct{ *pulumi.OutputState }
@@ -6138,7 +6136,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput is an input type that accepts UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs and UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput values.
@@ -6218,7 +6216,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 	// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 	//
 	// record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ElementType() reflect.Type {
@@ -6508,10 +6506,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]string {
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput struct{ *pulumi.OutputState }
@@ -6835,13 +6833,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 // is parsed as: 1362020400 (2013/02/28/ 12:00:00)
 //
 // record: { "host"   : "192.168.0.1", "reqId" : "111", "user"   : "-" }
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPtrOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser struct {
@@ -7233,7 +7231,7 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 
 type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -7253,7 +7251,7 @@ type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilte
 
 type UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs struct {
 	// (Updatable) Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// (Updatable) Namespace to emit metrics.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// (Updatable) Resource group to emit metrics.
@@ -7338,10 +7336,10 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -7383,13 +7381,13 @@ func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 }
 
 // (Updatable) Dimensions to be added for metrics.
-func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+func (o UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputPtrOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Namespace to emit metrics.
@@ -7632,7 +7630,7 @@ type GetLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
 	// Log category parameters are stored here.
-	Parameters map[string]interface{} `pulumi:"parameters"`
+	Parameters map[string]string `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -7657,7 +7655,7 @@ type GetLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
 	// Log category parameters are stored here.
-	Parameters pulumi.MapInput `pulumi:"parameters"`
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -7724,8 +7722,8 @@ func (o GetLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 }
 
 // Log category parameters are stored here.
-func (o GetLogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o GetLogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -7874,13 +7872,13 @@ type GetLogGroupsLogGroup struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// The log group object state.
@@ -7906,13 +7904,13 @@ type GetLogGroupsLogGroupArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The log group object state.
@@ -7980,8 +7978,8 @@ func (o GetLogGroupsLogGroupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLogGroupsLogGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogGroupsLogGroup) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetLogGroupsLogGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogGroupsLogGroup) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -7995,8 +7993,8 @@ func (o GetLogGroupsLogGroupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetLogGroupsLogGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogGroupsLogGroup) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetLogGroupsLogGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogGroupsLogGroup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.
@@ -8248,11 +8246,11 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollectionItem struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// Resource name.
@@ -8282,11 +8280,11 @@ type GetLogSavedSearchesLogSavedSearchSummaryCollectionItemArgs struct {
 	// Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Resource name.
@@ -8358,10 +8356,8 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) Compartmen
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -8370,10 +8366,10 @@ func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) Descriptio
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) map[string]interface{} {
+func (o GetLogSavedSearchesLogSavedSearchSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogSavedSearchesLogSavedSearchSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.
@@ -8538,11 +8534,11 @@ type GetLogsLog struct {
 	// Log object configuration.
 	Configurations []GetLogsLogConfiguration `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
@@ -8580,11 +8576,11 @@ type GetLogsLogArgs struct {
 	// Log object configuration.
 	Configurations GetLogsLogConfigurationArrayInput `pulumi:"configurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
@@ -8667,8 +8663,8 @@ func (o GetLogsLogOutput) Configurations() GetLogsLogConfigurationArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetLogsLogOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogsLog) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetLogsLogOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogsLog) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Resource name.
@@ -8677,8 +8673,8 @@ func (o GetLogsLogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetLogsLogOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogsLog) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetLogsLogOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogsLog) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.
@@ -8856,7 +8852,7 @@ type GetLogsLogConfigurationSource struct {
 	// Log object category.
 	Category string `pulumi:"category"`
 	// Log category parameters are stored here.
-	Parameters map[string]interface{} `pulumi:"parameters"`
+	Parameters map[string]string `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource string `pulumi:"resource"`
 	// Service generating log.
@@ -8881,7 +8877,7 @@ type GetLogsLogConfigurationSourceArgs struct {
 	// Log object category.
 	Category pulumi.StringInput `pulumi:"category"`
 	// Log category parameters are stored here.
-	Parameters pulumi.MapInput `pulumi:"parameters"`
+	Parameters pulumi.StringMapInput `pulumi:"parameters"`
 	// The unique identifier of the resource emitting the log.
 	Resource pulumi.StringInput `pulumi:"resource"`
 	// Service generating log.
@@ -8948,8 +8944,8 @@ func (o GetLogsLogConfigurationSourceOutput) Category() pulumi.StringOutput {
 }
 
 // Log category parameters are stored here.
-func (o GetLogsLogConfigurationSourceOutput) Parameters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogsLogConfigurationSource) map[string]interface{} { return v.Parameters }).(pulumi.MapOutput)
+func (o GetLogsLogConfigurationSourceOutput) Parameters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogsLogConfigurationSource) map[string]string { return v.Parameters }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier of the resource emitting the log.
@@ -9781,7 +9777,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs and GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput values.
@@ -9855,7 +9851,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs) ElementType() reflect.Type {
@@ -10113,10 +10109,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration
 }
 
 // Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParser) map[string]string {
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArrayOutput struct{ *pulumi.OutputState }
@@ -10438,7 +10434,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration
 
 type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput struct {
 	// Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace string `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -10458,7 +10454,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSou
 
 type GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs struct {
 	// Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -10517,10 +10513,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfiguration
 }
 
 // Dimensions to be added for metrics.
-func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Namespace to emit metrics.
@@ -11660,7 +11656,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParser struct {
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationSourceParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs and GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput values.
@@ -11734,7 +11730,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs struct {
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationSourceParserArgs) ElementType() reflect.Type {
@@ -11950,10 +11946,8 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Time
 }
 
 // Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]interface{} {
-		return v.Types
-	}).(pulumi.MapOutput)
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParser) map[string]string { return v.Types }).(pulumi.StringMapOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserArrayOutput struct{ *pulumi.OutputState }
@@ -12271,7 +12265,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternArray
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput struct {
 	// Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace string `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -12291,7 +12285,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputInpu
 
 type GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs struct {
 	// Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -12350,10 +12344,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputO
 }
 
 // Dimensions to be added for metrics.
-func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Namespace to emit metrics.
@@ -12420,7 +12414,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// The name key to tag this Grok pattern.
 	Name string `pulumi:"name"`
 	// Parameters of the custom filter
-	Params map[string]interface{} `pulumi:"params"`
+	Params map[string]string `pulumi:"params"`
 	// Source parser object.
 	Parsers []GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser `pulumi:"parsers"`
 	// Add new key-value pairs in logs
@@ -12480,7 +12474,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// The name key to tag this Grok pattern.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Parameters of the custom filter
-	Params pulumi.MapInput `pulumi:"params"`
+	Params pulumi.StringMapInput `pulumi:"params"`
 	// Source parser object.
 	Parsers GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayInput `pulumi:"parsers"`
 	// Add new key-value pairs in logs
@@ -12649,10 +12643,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfiguratio
 }
 
 // Parameters of the custom filter
-func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutput) Params() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter) map[string]string {
 		return v.Params
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Source parser object.
@@ -12845,7 +12839,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// The name key to tag this Grok pattern.
 	Name string `pulumi:"name"`
 	// Parameters of the custom filter
-	Params map[string]interface{} `pulumi:"params"`
+	Params map[string]string `pulumi:"params"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput values.
@@ -12863,7 +12857,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// The name key to tag this Grok pattern.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Parameters of the custom filter
-	Params pulumi.MapInput `pulumi:"params"`
+	Params pulumi.StringMapInput `pulumi:"params"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs) ElementType() reflect.Type {
@@ -12925,10 +12919,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfiguratio
 }
 
 // Parameters of the custom filter
-func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionOutput) Params() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection) map[string]string {
 		return v.Params
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArrayOutput struct{ *pulumi.OutputState }
@@ -13121,7 +13115,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds int `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types map[string]interface{} `pulumi:"types"`
+	Types map[string]string `pulumi:"types"`
 }
 
 // GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserInput is an input type that accepts GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs and GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput values.
@@ -13195,7 +13189,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 	// Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
 	TimeoutInMilliseconds pulumi.IntInput `pulumi:"timeoutInMilliseconds"`
 	// Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-	Types pulumi.MapInput `pulumi:"types"`
+	Types pulumi.StringMapInput `pulumi:"types"`
 }
 
 func (GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs) ElementType() reflect.Type {
@@ -13453,10 +13447,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfiguratio
 }
 
 // Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user timeKey time </parse>
-func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutput) Types() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser) map[string]string {
 		return v.Types
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArrayOutput struct{ *pulumi.OutputState }
@@ -13778,7 +13772,7 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfiguratio
 
 type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput struct {
 	// Dimensions to be added for metrics.
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace string `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -13798,7 +13792,7 @@ type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFi
 
 type GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs struct {
 	// Dimensions to be added for metrics.
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// Namespace to emit metrics.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Resource group to emit metrics.
@@ -13857,10 +13851,10 @@ func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfiguratio
 }
 
 // Dimensions to be added for metrics.
-func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput) map[string]string {
 		return v.Dimensions
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Namespace to emit metrics.
@@ -14220,13 +14214,13 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem struct
 	// Type of Unified Agent service configuration.
 	ConfigurationType string `pulumi:"configurationType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// Resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id string `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
@@ -14258,13 +14252,13 @@ type GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemArgs st
 	// Type of Unified Agent service configuration.
 	ConfigurationType pulumi.StringInput `pulumi:"configurationType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Resource name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether or not this resource is currently enabled.
@@ -14350,10 +14344,10 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -14371,10 +14365,10 @@ func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem) map[string]interface{} {
+func (o GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the resource.

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Dimensions;
+        public readonly ImmutableDictionary<string, string> Dimensions;
         /// <summary>
         /// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
         /// </summary>
@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// <summary>
         /// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The name of the metric.  Example: `CpuUtilization`
         /// </summary>
@@ -78,11 +78,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             bool compartmentIdInSubtree,
 
-            ImmutableDictionary<string, object> dimensions,
+            ImmutableDictionary<string, string> dimensions,
 
             string endTime,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string name,
 

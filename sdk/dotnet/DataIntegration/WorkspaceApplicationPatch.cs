@@ -88,7 +88,7 @@ namespace Pulumi.Oci.DataIntegration
         /// The errors encountered while applying the patch, if any.
         /// </summary>
         [Output("errorMessages")]
-        public Output<ImmutableDictionary<string, object>> ErrorMessages { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> ErrorMessages { get; private set; } = null!;
 
         /// <summary>
         /// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.DataIntegration
         /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
         [Output("keyMap")]
-        public Output<ImmutableDictionary<string, object>> KeyMap { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> KeyMap { get; private set; } = null!;
 
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -357,14 +357,14 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? Description { get; set; }
 
         [Input("errorMessages")]
-        private InputMap<object>? _errorMessages;
+        private InputMap<string>? _errorMessages;
 
         /// <summary>
         /// The errors encountered while applying the patch, if any.
         /// </summary>
-        public InputMap<object> ErrorMessages
+        public InputMap<string> ErrorMessages
         {
-            get => _errorMessages ?? (_errorMessages = new InputMap<object>());
+            get => _errorMessages ?? (_errorMessages = new InputMap<string>());
             set => _errorMessages = value;
         }
 
@@ -381,14 +381,14 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? Key { get; set; }
 
         [Input("keyMap")]
-        private InputMap<object>? _keyMap;
+        private InputMap<string>? _keyMap;
 
         /// <summary>
         /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public InputMap<object> KeyMap
+        public InputMap<string> KeyMap
         {
-            get => _keyMap ?? (_keyMap = new InputMap<object>());
+            get => _keyMap ?? (_keyMap = new InputMap<string>());
             set => _keyMap = value;
         }
 

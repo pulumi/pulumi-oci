@@ -22,8 +22,8 @@ class OperatorControlAssignmentArgs:
                  resource_name: pulumi.Input[str],
                  resource_type: pulumi.Input[str],
                  comment: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
                  is_log_forwarded: Optional[pulumi.Input[bool]] = None,
@@ -43,8 +43,8 @@ class OperatorControlAssignmentArgs:
         :param pulumi.Input[str] resource_name: Name of the target resource.
         :param pulumi.Input[str] resource_type: Type of the target resource.
         :param pulumi.Input[str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
         :param pulumi.Input[bool] is_log_forwarded: (Updatable) If set, then the audit logs will be forwarded to the relevant remote logging server
@@ -189,26 +189,26 @@ class OperatorControlAssignmentArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -330,11 +330,11 @@ class _OperatorControlAssignmentState:
                  assigner_id: Optional[pulumi.Input[str]] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  detachment_description: Optional[pulumi.Input[str]] = None,
                  error_code: Optional[pulumi.Input[int]] = None,
                  error_message: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_default_assignment: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
@@ -362,11 +362,11 @@ class _OperatorControlAssignmentState:
         :param pulumi.Input[str] assigner_id: The OCID of the user who created this operator control assignment.
         :param pulumi.Input[str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] detachment_description: description containing reason for releasing of OperatorControl.
         :param pulumi.Input[int] error_code: The code identifying the error occurred during Assignment operation.
         :param pulumi.Input[str] error_message: The message describing the error occurred during Assignment operation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
@@ -493,14 +493,14 @@ class _OperatorControlAssignmentState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -541,14 +541,14 @@ class _OperatorControlAssignmentState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -827,8 +827,8 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
                  is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
@@ -889,8 +889,8 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
         :param pulumi.Input[bool] is_hypervisor_log_forwarded: (Updatable) If set, then the hypervisor audit logs will be forwarded to the relevant remote syslog server
@@ -974,8 +974,8 @@ class OperatorControlAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  comment: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
                  is_enforced_always: Optional[pulumi.Input[bool]] = None,
                  is_hypervisor_log_forwarded: Optional[pulumi.Input[bool]] = None,
@@ -1057,11 +1057,11 @@ class OperatorControlAssignment(pulumi.CustomResource):
             assigner_id: Optional[pulumi.Input[str]] = None,
             comment: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             detachment_description: Optional[pulumi.Input[str]] = None,
             error_code: Optional[pulumi.Input[int]] = None,
             error_message: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_auto_approve_during_maintenance: Optional[pulumi.Input[bool]] = None,
             is_default_assignment: Optional[pulumi.Input[bool]] = None,
             is_enforced_always: Optional[pulumi.Input[bool]] = None,
@@ -1094,11 +1094,11 @@ class OperatorControlAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] assigner_id: The OCID of the user who created this operator control assignment.
         :param pulumi.Input[str] comment: (Updatable) Comment about the assignment of the operator control to this target resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment that contains the operator control assignment.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param pulumi.Input[str] detachment_description: description containing reason for releasing of OperatorControl.
         :param pulumi.Input[int] error_code: The code identifying the error occurred during Assignment operation.
         :param pulumi.Input[str] error_message: The message describing the error occurred during Assignment operation.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param pulumi.Input[bool] is_auto_approve_during_maintenance: (Updatable) The boolean if true would autoApprove during maintenance.
         :param pulumi.Input[bool] is_default_assignment: Whether the assignment is a default assignment.
         :param pulumi.Input[bool] is_enforced_always: (Updatable) If set, then the target resource is always governed by the operator control.
@@ -1188,7 +1188,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
@@ -1220,7 +1220,7 @@ class OperatorControlAssignment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """

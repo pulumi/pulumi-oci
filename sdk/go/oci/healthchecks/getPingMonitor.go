@@ -61,11 +61,11 @@ type LookupPingMonitorResult struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion string `pulumi:"homeRegion"`
 	// The OCID of the resource.
@@ -135,8 +135,8 @@ func (o LookupPingMonitorResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupPingMonitorResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPingMonitorResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly and mutable name suitable for display in a user interface.
@@ -145,8 +145,8 @@ func (o LookupPingMonitorResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupPingMonitorResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPingMonitorResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPingMonitorResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPingMonitorResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The region where updates must be made and where results must be fetched from.

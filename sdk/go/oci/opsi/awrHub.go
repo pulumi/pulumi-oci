@@ -35,11 +35,11 @@ import (
 //				CompartmentId:                 pulumi.Any(compartmentId),
 //				DisplayName:                   pulumi.Any(awrHubDisplayName),
 //				OperationsInsightsWarehouseId: pulumi.Any(testOperationsInsightsWarehouse.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				ObjectStorageBucketName: pulumi.Any(testBucket.Name),
 //			})
@@ -67,11 +67,11 @@ type AwrHub struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of AWR Hub that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Dst Time Zone Version of the AWR Hub
 	HubDstTimezoneVersion pulumi.StringOutput `pulumi:"hubDstTimezoneVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -86,7 +86,7 @@ type AwrHub struct {
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -137,11 +137,11 @@ type awrHubState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of AWR Hub that does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Dst Time Zone Version of the AWR Hub
 	HubDstTimezoneVersion *string `pulumi:"hubDstTimezoneVersion"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -156,7 +156,7 @@ type awrHubState struct {
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -169,11 +169,11 @@ type AwrHubState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-friedly name of AWR Hub that does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Dst Time Zone Version of the AWR Hub
 	HubDstTimezoneVersion pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -188,7 +188,7 @@ type AwrHubState struct {
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
@@ -203,11 +203,11 @@ type awrHubArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User-friedly name of AWR Hub that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Object Storage Bucket Name
 	ObjectStorageBucketName *string `pulumi:"objectStorageBucketName"`
 	// OPSI Warehouse OCID
@@ -222,11 +222,11 @@ type AwrHubArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User-friedly name of AWR Hub that does not have to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Object Storage Bucket Name
 	ObjectStorageBucketName pulumi.StringPtrInput
 	// OPSI Warehouse OCID
@@ -334,8 +334,8 @@ func (o AwrHubOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AwrHubOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AwrHubOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User-friedly name of AWR Hub that does not have to be unique.
@@ -344,8 +344,8 @@ func (o AwrHubOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o AwrHubOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AwrHubOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Dst Time Zone Version of the AWR Hub
@@ -377,8 +377,8 @@ func (o AwrHubOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AwrHubOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AwrHub) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AwrHubOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AwrHub) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time at which the resource was first created. An RFC3339 formatted datetime string

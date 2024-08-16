@@ -65,14 +65,14 @@ type LookupGatewayResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the resource is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Gateway endpoint type. `PUBLIC` will have a public ip address assigned to it, while `PRIVATE` will only be accessible on a private IP address on the subnet.  Example: `PUBLIC` or `PRIVATE`
 	EndpointType string `pulumi:"endpointType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	GatewayId    string                 `pulumi:"gatewayId"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	GatewayId    string            `pulumi:"gatewayId"`
 	// The hostname for APIs deployed on the gateway.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
@@ -149,8 +149,8 @@ func (o LookupGatewayResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupGatewayResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupGatewayResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupGatewayResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGatewayResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.  Example: `My new resource`
@@ -164,8 +164,8 @@ func (o LookupGatewayResultOutput) EndpointType() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupGatewayResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupGatewayResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupGatewayResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupGatewayResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupGatewayResultOutput) GatewayId() pulumi.StringOutput {

@@ -34,12 +34,12 @@ import (
 //			_, err := Logging.NewLogGroup(ctx, "test_log_group", &Logging.LogGroupArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(logGroupDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(logGroupDescription),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -64,7 +64,7 @@ type LogGroup struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -73,7 +73,7 @@ type LogGroup struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The log group object state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Time the resource was created.
@@ -121,7 +121,7 @@ type logGroupState struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -130,7 +130,7 @@ type logGroupState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log group object state.
 	State *string `pulumi:"state"`
 	// Time the resource was created.
@@ -143,7 +143,7 @@ type LogGroupState struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -152,7 +152,7 @@ type LogGroupState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The log group object state.
 	State pulumi.StringPtrInput
 	// Time the resource was created.
@@ -169,7 +169,7 @@ type logGroupArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -178,7 +178,7 @@ type logGroupArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a LogGroup resource.
@@ -186,7 +186,7 @@ type LogGroupArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
@@ -195,7 +195,7 @@ type LogGroupArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (LogGroupArgs) ElementType() reflect.Type {
@@ -291,8 +291,8 @@ func (o LogGroupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LogGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LogGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description for this resource.
@@ -309,8 +309,8 @@ func (o LogGroupOutput) DisplayName() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o LogGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LogGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The log group object state.

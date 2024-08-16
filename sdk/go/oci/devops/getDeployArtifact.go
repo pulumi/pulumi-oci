@@ -63,8 +63,8 @@ type LookupDeployArtifactResult struct {
 	// The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	DeployArtifactId string                 `pulumi:"deployArtifactId"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	DeployArtifactId string            `pulumi:"deployArtifactId"`
 	// Specifies source of an artifact.
 	DeployArtifactSources []GetDeployArtifactDeployArtifactSource `pulumi:"deployArtifactSources"`
 	// Type of the deployment artifact.
@@ -74,7 +74,7 @@ type LookupDeployArtifactResult struct {
 	// Deployment artifact identifier, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A detailed message describing the current state. For example, can be used to provide actionable information for a resource in Failed state.
@@ -84,7 +84,7 @@ type LookupDeployArtifactResult struct {
 	// Current state of the deployment artifact.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// Time the deployment artifact was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -140,8 +140,8 @@ func (o LookupDeployArtifactResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDeployArtifactResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDeployArtifactResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDeployArtifactResultOutput) DeployArtifactId() pulumi.StringOutput {
@@ -171,8 +171,8 @@ func (o LookupDeployArtifactResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o LookupDeployArtifactResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDeployArtifactResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -196,8 +196,8 @@ func (o LookupDeployArtifactResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDeployArtifactResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDeployArtifactResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployArtifactResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Time the deployment artifact was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

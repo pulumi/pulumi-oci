@@ -67,7 +67,7 @@ type LookupRecommendationResult struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The unique OCID associated with the recommendation.
 	Id string `pulumi:"id"`
 	// The level of importance assigned to the recommendation.
@@ -152,8 +152,8 @@ func (o LookupRecommendationResultOutput) EstimatedCostSaving() pulumi.Float64Ou
 }
 
 // Additional metadata key/value pairs for the recommendation.
-func (o LookupRecommendationResultOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRecommendationResult) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o LookupRecommendationResultOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRecommendationResult) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The unique OCID associated with the recommendation.

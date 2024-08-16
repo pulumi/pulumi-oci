@@ -6,7 +6,6 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabasesAutonomousDatabaseConnectionStringProfile;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionString {
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    private Map<String,Object> allConnectionStrings;
+    private Map<String,String> allConnectionStrings;
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
@@ -50,7 +49,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionString {
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings;
     }
     /**
@@ -98,7 +97,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> allConnectionStrings;
+        private Map<String,String> allConnectionStrings;
         private String dedicated;
         private String high;
         private String low;
@@ -116,7 +115,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(Map<String,String> allConnectionStrings) {
             if (allConnectionStrings == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseConnectionString", "allConnectionStrings");
             }

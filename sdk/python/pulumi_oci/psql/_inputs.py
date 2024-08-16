@@ -777,11 +777,11 @@ class DbSystemPatchOperationArgs:
                  from_: Optional[pulumi.Input[str]] = None,
                  position: Optional[pulumi.Input[str]] = None,
                  selected_item: Optional[pulumi.Input[str]] = None,
-                 value: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] operation: The operation can be one of these values: `INSERT`, `REMOVE`.
         :param pulumi.Input[str] selection: In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
-        :param pulumi.Input[Mapping[str, Any]] value: Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] value: Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         """
         pulumi.set(__self__, "operation", operation)
         pulumi.set(__self__, "selection", selection)
@@ -847,14 +847,14 @@ class DbSystemPatchOperationArgs:
 
     @property
     @pulumi.getter
-    def value(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def value(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Specify instance details such as displayName, description or privateIp. Example: `{"displayName": "value"}`.
         """
         return pulumi.get(self, "value")
 
     @value.setter
-    def value(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def value(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "value", value)
 
 

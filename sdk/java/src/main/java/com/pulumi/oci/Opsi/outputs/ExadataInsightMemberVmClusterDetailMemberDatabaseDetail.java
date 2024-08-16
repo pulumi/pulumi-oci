@@ -6,7 +6,6 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails;
 import com.pulumi.oci.Opsi.outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -49,7 +48,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return Database Deployment Type
      * 
@@ -64,7 +63,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
      * 
@@ -79,7 +78,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> systemTags;
+    private @Nullable Map<String,String> systemTags;
 
     private ExadataInsightMemberVmClusterDetailMemberDatabaseDetail() {}
     /**
@@ -128,7 +127,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
@@ -149,7 +148,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -170,7 +169,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
 
@@ -189,13 +188,13 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         private @Nullable String databaseId;
         private @Nullable String databaseResourceType;
         private @Nullable String dbmPrivateEndpointId;
-        private @Nullable Map<String,Object> definedTags;
+        private @Nullable Map<String,String> definedTags;
         private @Nullable String deploymentType;
         private @Nullable String entitySource;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable String opsiPrivateEndpointId;
         private @Nullable String serviceName;
-        private @Nullable Map<String,Object> systemTags;
+        private @Nullable Map<String,String> systemTags;
         public Builder() {}
         public Builder(ExadataInsightMemberVmClusterDetailMemberDatabaseDetail defaults) {
     	      Objects.requireNonNull(defaults);
@@ -251,7 +250,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
@@ -269,7 +268,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;
@@ -287,7 +286,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(@Nullable Map<String,Object> systemTags) {
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
 
             this.systemTags = systemTags;
             return this;

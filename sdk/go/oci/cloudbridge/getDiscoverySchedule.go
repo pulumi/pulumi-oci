@@ -61,14 +61,14 @@ type LookupDiscoveryScheduleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule exists.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags         map[string]interface{} `pulumi:"definedTags"`
-	DiscoveryScheduleId string                 `pulumi:"discoveryScheduleId"`
+	DefinedTags         map[string]string `pulumi:"definedTags"`
+	DiscoveryScheduleId string            `pulumi:"discoveryScheduleId"`
 	// A user-friendly name for the discovery schedule. Does not have to be unique, and it's mutable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Recurrence specification for the discovery schedule execution.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
 	Id string `pulumi:"id"`
 	// The detailed state of the discovery schedule.
@@ -76,7 +76,7 @@ type LookupDiscoveryScheduleResult struct {
 	// Current state of the discovery schedule.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the discovery schedule was created in RFC3339 format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the discovery schedule was last updated in RFC3339 format.
@@ -127,8 +127,8 @@ func (o LookupDiscoveryScheduleResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDiscoveryScheduleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDiscoveryScheduleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDiscoveryScheduleResultOutput) DiscoveryScheduleId() pulumi.StringOutput {
@@ -146,8 +146,8 @@ func (o LookupDiscoveryScheduleResultOutput) ExecutionRecurrences() pulumi.Strin
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupDiscoveryScheduleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDiscoveryScheduleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the discovery schedule.
@@ -166,8 +166,8 @@ func (o LookupDiscoveryScheduleResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupDiscoveryScheduleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDiscoveryScheduleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDiscoveryScheduleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the discovery schedule was created in RFC3339 format.

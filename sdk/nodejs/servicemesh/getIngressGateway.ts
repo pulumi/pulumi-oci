@@ -55,7 +55,7 @@ export interface GetIngressGatewayResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
      */
@@ -63,7 +63,7 @@ export interface GetIngressGatewayResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Array of hostnames and their listener configuration that this gateway will bind to.
      */
@@ -96,7 +96,7 @@ export interface GetIngressGatewayResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time when this resource was created in an RFC3339 formatted datetime string.
      */

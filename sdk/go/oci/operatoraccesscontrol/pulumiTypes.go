@@ -560,7 +560,7 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Duration in hours for which access is sought on the target resource.
 	Duration int `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
@@ -568,7 +568,7 @@ type GetAccessRequestsAccessRequestCollectionItem struct {
 	// Contains the user ids who have approved the accessRequest for extension.
 	ExtensionApproverDetails []GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetail `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the access request.
 	Id string `pulumi:"id"`
 	// Whether the access request was automatically approved.
@@ -650,7 +650,7 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Duration in hours for which access is sought on the target resource.
 	Duration pulumi.IntInput `pulumi:"duration"`
 	// Duration in hours for which extension access is sought on the target resource.
@@ -658,7 +658,7 @@ type GetAccessRequestsAccessRequestCollectionItemArgs struct {
 	// Contains the user ids who have approved the accessRequest for extension.
 	ExtensionApproverDetails GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArrayInput `pulumi:"extensionApproverDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the access request.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the access request was automatically approved.
@@ -802,8 +802,8 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Duration in hours for which access is sought on the target resource.
@@ -824,8 +824,8 @@ func (o GetAccessRequestsAccessRequestCollectionItemOutput) ExtensionApproverDet
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetAccessRequestsAccessRequestCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAccessRequestsAccessRequestCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAccessRequestsAccessRequestCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the access request.
@@ -2182,7 +2182,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription string `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
@@ -2190,7 +2190,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItem struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage string `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the operator control assignment.
 	Id string `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
@@ -2257,7 +2257,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription pulumi.StringInput `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
@@ -2265,7 +2265,7 @@ type GetControlAssignmentsOperatorControlAssignmentCollectionItemArgs struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the operator control assignment.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
@@ -2380,10 +2380,10 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Comp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) map[string]interface{} {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // description containing reason for releasing of OperatorControl.
@@ -2404,10 +2404,10 @@ func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) Erro
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) map[string]interface{} {
+func (o GetControlAssignmentsOperatorControlAssignmentCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlAssignmentsOperatorControlAssignmentCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The OCID of the operator control assignment.
@@ -2776,13 +2776,13 @@ type GetControlsOperatorControlCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of operator control.
 	Description string `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id string `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
@@ -2832,13 +2832,13 @@ type GetControlsOperatorControlCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of operator control.
 	Description pulumi.StringInput `pulumi:"description"`
 	// List of emailId.
 	EmailIdLists pulumi.StringArrayInput `pulumi:"emailIdLists"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the operator control.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the operator control is a default Operator Control.
@@ -2939,8 +2939,8 @@ func (o GetControlsOperatorControlCollectionItemOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetControlsOperatorControlCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of operator control.
@@ -2954,8 +2954,8 @@ func (o GetControlsOperatorControlCollectionItemOutput) EmailIdLists() pulumi.St
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetControlsOperatorControlCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetControlsOperatorControlCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlsOperatorControlCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the operator control.

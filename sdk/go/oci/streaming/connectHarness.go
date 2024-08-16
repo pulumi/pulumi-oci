@@ -36,8 +36,8 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(connectHarnessName),
 //				DefinedTags:   pulumi.Any(connectHarnessDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -62,9 +62,9 @@ type ConnectHarness struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
@@ -114,9 +114,9 @@ type connectHarnessState struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
@@ -134,9 +134,9 @@ type ConnectHarnessState struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Any additional details about the current state of the connect harness.
 	LifecycleStateDetails pulumi.StringPtrInput
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
@@ -158,9 +158,9 @@ type connectHarnessArgs struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 	//
 	// ** IMPORTANT **
@@ -173,9 +173,9 @@ type ConnectHarnessArgs struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
 	//
 	// ** IMPORTANT **
@@ -276,13 +276,13 @@ func (o ConnectHarnessOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ConnectHarnessOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ConnectHarness) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConnectHarnessOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ConnectHarness) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ConnectHarnessOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ConnectHarness) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConnectHarnessOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ConnectHarness) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Any additional details about the current state of the connect harness.

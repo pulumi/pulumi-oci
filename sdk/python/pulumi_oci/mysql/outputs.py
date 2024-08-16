@@ -679,13 +679,13 @@ class MysqlBackupDbSystemSnapshot(dict):
                  crash_recovery: Optional[str] = None,
                  data_storage_size_in_gb: Optional[int] = None,
                  database_management: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  deletion_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotDeletionPolicy']] = None,
                  description: Optional[str] = None,
                  display_name: Optional[str] = None,
                  endpoints: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotEndpoint']] = None,
                  fault_domain: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  hostname_label: Optional[str] = None,
                  id: Optional[str] = None,
                  ip_address: Optional[str] = None,
@@ -707,13 +707,13 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param str database_management: Whether to enable monitoring via the Database Management service.
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['MysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: (Updatable) A user-supplied description for the backup.
         :param str display_name: (Updatable) A user-supplied display name for the backup.
         :param Sequence['MysqlBackupDbSystemSnapshotEndpointArgs'] endpoints: The network endpoints available for this DB System.
         :param str fault_domain: The name of the Fault Domain the DB System is located in.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
@@ -848,7 +848,7 @@ class MysqlBackupDbSystemSnapshot(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -896,7 +896,7 @@ class MysqlBackupDbSystemSnapshot(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1029,15 +1029,15 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  is_enabled: Optional[bool] = None,
                  pitr_policies: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy']] = None,
                  retention_in_days: Optional[int] = None,
                  window_start_time: Optional[str] = None):
         """
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         :param Sequence['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: (Updatable) Number of days to retain this backup.
@@ -1058,7 +1058,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1066,7 +1066,7 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2945,19 +2945,19 @@ class MysqlDbSystemBackupPolicy(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  is_enabled: Optional[bool] = None,
                  pitr_policy: Optional['outputs.MysqlDbSystemBackupPolicyPitrPolicy'] = None,
                  retention_in_days: Optional[int] = None,
                  window_start_time: Optional[str] = None):
         """
-        :param Mapping[str, Any] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        :param Mapping[str, str] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
                
                Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
                
                Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
                
                Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
                
@@ -2986,7 +2986,7 @@ class MysqlDbSystemBackupPolicy(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
 
@@ -2998,7 +2998,7 @@ class MysqlDbSystemBackupPolicy(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
 
@@ -3116,9 +3116,9 @@ class MysqlDbSystemChannel(dict):
 
     def __init__(__self__, *,
                  compartment_id: Optional[str] = None,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  display_name: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  id: Optional[str] = None,
                  is_enabled: Optional[bool] = None,
                  lifecycle_details: Optional[str] = None,
@@ -3129,9 +3129,9 @@ class MysqlDbSystemChannel(dict):
                  time_updated: Optional[str] = None):
         """
         :param str compartment_id: The OCID of the compartment.
-        :param Mapping[str, Any] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
-        :param Mapping[str, Any] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         :param str lifecycle_details: Additional information about the current lifecycleState.
@@ -3176,7 +3176,7 @@ class MysqlDbSystemChannel(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3192,7 +3192,7 @@ class MysqlDbSystemChannel(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4675,10 +4675,10 @@ class GetChannelTargetFilterResult(dict):
 class GetChannelsChannelResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  lifecycle_details: str,
@@ -4689,10 +4689,10 @@ class GetChannelsChannelResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: User provided description of the Channel.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the Channel.
         :param bool is_enabled: If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
         :param str lifecycle_details: A message describing the state of the Channel.
@@ -4726,7 +4726,7 @@ class GetChannelsChannelResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4750,7 +4750,7 @@ class GetChannelsChannelResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5194,13 +5194,13 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  crash_recovery: str,
                  data_storage_size_in_gb: int,
                  database_management: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deletion_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotDeletionPolicyResult'],
                  description: str,
                  display_name: str,
                  endpoints: Sequence['outputs.GetMysqlBackupDbSystemSnapshotEndpointResult'],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  id: str,
                  ip_address: str,
@@ -5222,13 +5222,13 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param str database_management: Whether to enable monitoring via the Database Management service.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: A user-supplied description for the backup.
         :param str display_name: A user-supplied display name for the backup.
         :param Sequence['GetMysqlBackupDbSystemSnapshotEndpointArgs'] endpoints: The network endpoints available for this DB System.
         :param str fault_domain: The name of the Fault Domain the DB System is located in.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
@@ -5336,7 +5336,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5384,7 +5384,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5490,15 +5490,15 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
 @pulumi.output_type
 class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  is_enabled: bool,
                  pitr_policies: Sequence['outputs.GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
                  retention_in_days: int,
                  window_start_time: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         :param Sequence['GetMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: Number of days to retain this backup.
@@ -5513,7 +5513,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -5521,7 +5521,7 @@ class GetMysqlBackupDbSystemSnapshotBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -5862,10 +5862,10 @@ class GetMysqlBackupsBackupResult(dict):
                  db_system_id: str,
                  db_system_snapshot_summaries: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult'],
                  db_system_snapshots: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  immediate_source_backup_id: str,
                  lifecycle_details: str,
@@ -5886,10 +5886,10 @@ class GetMysqlBackupsBackupResult(dict):
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotArgs'] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-supplied description for the backup.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: OCID of the backup itself
         :param str immediate_source_backup_id: The OCID of the immediate source DB system backup from which this DB system backup was copied.
         :param str lifecycle_details: Additional information about the current lifecycleState.
@@ -5990,7 +5990,7 @@ class GetMysqlBackupsBackupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6014,7 +6014,7 @@ class GetMysqlBackupsBackupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6125,13 +6125,13 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
                  crash_recovery: str,
                  data_storage_size_in_gb: int,
                  database_management: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deletion_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult'],
                  description: str,
                  display_name: str,
                  endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult'],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hostname_label: str,
                  id: str,
                  ip_address: str,
@@ -6153,13 +6153,13 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param str database_management: Whether to enable monitoring via the Database Management service.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: A user-supplied description for the backup.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs'] endpoints: The network endpoints available for this DB System.
         :param str fault_domain: The name of the Fault Domain the DB System is located in.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param str id: OCID of the backup itself
         :param str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
@@ -6267,7 +6267,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6315,7 +6315,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -6421,15 +6421,15 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
 @pulumi.output_type
 class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  is_enabled: bool,
                  pitr_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
                  retention_in_days: int,
                  window_start_time: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: Number of days to retain this backup.
@@ -6444,7 +6444,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -6452,7 +6452,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -7722,10 +7722,10 @@ class GetMysqlConfigurationVariableResult(dict):
 class GetMysqlConfigurationsConfigurationResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  init_variables: Sequence['outputs.GetMysqlConfigurationsConfigurationInitVariableResult'],
                  parent_configuration_id: str,
@@ -7737,10 +7737,10 @@ class GetMysqlConfigurationsConfigurationResult(dict):
                  variables: Sequence['outputs.GetMysqlConfigurationsConfigurationVariableResult']):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: User-provided data about the Configuration.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the Configuration.
         :param Sequence['GetMysqlConfigurationsConfigurationInitVariableArgs'] init_variables: User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
         :param str parent_configuration_id: The OCID of the Configuration from which this Configuration is "derived". This is entirely a metadata relationship. There is no relation between the values in this Configuration and its parent.
@@ -7776,7 +7776,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -7800,7 +7800,7 @@ class GetMysqlConfigurationsConfigurationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -8818,15 +8818,15 @@ class GetMysqlConfigurationsFilterResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemBackupPolicyResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  is_enabled: bool,
                  pitr_policies: Sequence['outputs.GetMysqlDbSystemBackupPolicyPitrPolicyResult'],
                  retention_in_days: int,
                  window_start_time: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         :param Sequence['GetMysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: The number of days automated backups are retained.
@@ -8841,7 +8841,7 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8849,7 +8849,7 @@ class GetMysqlDbSystemBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -8910,9 +8910,9 @@ class GetMysqlDbSystemBackupPolicyPitrPolicyResult(dict):
 class GetMysqlDbSystemChannelResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  lifecycle_details: str,
@@ -8923,9 +8923,9 @@ class GetMysqlDbSystemChannelResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment the DB System belongs in.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: The user-friendly name for the DB System. It does not have to be unique.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         :param str lifecycle_details: Additional information about the current lifecycleState.
@@ -8958,7 +8958,7 @@ class GetMysqlDbSystemChannelResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -8974,7 +8974,7 @@ class GetMysqlDbSystemChannelResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -9718,13 +9718,13 @@ class GetMysqlDbSystemsDbSystemResult(dict):
                  current_placements: Sequence['outputs.GetMysqlDbSystemsDbSystemCurrentPlacementResult'],
                  data_storage_size_in_gb: int,
                  database_management: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deletion_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemDeletionPolicyResult'],
                  description: str,
                  display_name: str,
                  endpoints: Sequence['outputs.GetMysqlDbSystemsDbSystemEndpointResult'],
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  heat_wave_clusters: Sequence['outputs.GetMysqlDbSystemsDbSystemHeatWaveClusterResult'],
                  hostname_label: str,
                  id: str,
@@ -9755,13 +9755,13 @@ class GetMysqlDbSystemsDbSystemResult(dict):
         :param Sequence['GetMysqlDbSystemsDbSystemCurrentPlacementArgs'] current_placements: The availability domain and fault domain a DB System is placed in.
         :param int data_storage_size_in_gb: Initial size of the data volume in GiBs that will be created and attached.
         :param str database_management: Filter DB Systems by their Database Management configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetMysqlDbSystemsDbSystemDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
         :param str description: User-provided data about the DB System.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param Sequence['GetMysqlDbSystemsDbSystemEndpointArgs'] endpoints: The network endpoints available for this DB System.
         :param str fault_domain: The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence['GetMysqlDbSystemsDbSystemHeatWaveClusterArgs'] heat_wave_clusters: A summary of a HeatWave cluster.
         :param str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
         :param str id: The OCID of the DB System.
@@ -9905,7 +9905,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -9953,7 +9953,7 @@ class GetMysqlDbSystemsDbSystemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -10120,15 +10120,15 @@ class GetMysqlDbSystemsDbSystemResult(dict):
 @pulumi.output_type
 class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  is_enabled: bool,
                  pitr_policies: Sequence['outputs.GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult'],
                  retention_in_days: int,
                  window_start_time: str):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         :param Sequence['GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: The number of days automated backups are retained.
@@ -10143,7 +10143,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -10151,7 +10151,7 @@ class GetMysqlDbSystemsDbSystemBackupPolicyResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -10212,9 +10212,9 @@ class GetMysqlDbSystemsDbSystemBackupPolicyPitrPolicyResult(dict):
 class GetMysqlDbSystemsDbSystemChannelResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  lifecycle_details: str,
@@ -10225,9 +10225,9 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resource matching the given display name exactly.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the DB System.
         :param bool is_enabled: Whether the Channel has been enabled by the user.
         :param str lifecycle_details: Additional information about the current lifecycleState.
@@ -10260,7 +10260,7 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -10276,7 +10276,7 @@ class GetMysqlDbSystemsDbSystemChannelResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -11221,11 +11221,11 @@ class GetReplicasReplicaResult(dict):
                  compartment_id: str,
                  configuration_id: str,
                  db_system_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  fault_domain: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ip_address: str,
                  is_delete_protected: bool,
@@ -11244,11 +11244,11 @@ class GetReplicasReplicaResult(dict):
         :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str configuration_id: The requested Configuration instance.
         :param str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: User provided description of the read replica.
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param str fault_domain: The name of the Fault Domain the read replica is located in.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The OCID of the read replica.
         :param str ip_address: The IP address the read replica is configured to listen on.
         :param bool is_delete_protected: Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
@@ -11320,7 +11320,7 @@ class GetReplicasReplicaResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -11352,7 +11352,7 @@ class GetReplicasReplicaResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

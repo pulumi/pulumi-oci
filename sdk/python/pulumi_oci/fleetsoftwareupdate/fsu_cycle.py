@@ -22,10 +22,10 @@ class FsuCycleArgs:
                  type: pulumi.Input[str],
                  apply_action_schedule: Optional[pulumi.Input['FsuCycleApplyActionScheduleArgs']] = None,
                  batching_strategy: Optional[pulumi.Input['FsuCycleBatchingStrategyArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  diagnostics_collection: Optional[pulumi.Input['FsuCycleDiagnosticsCollectionArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_ignore_missing_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  is_ignore_patches: Optional[pulumi.Input[bool]] = None,
                  is_keep_placement: Optional[pulumi.Input[bool]] = None,
@@ -117,11 +117,11 @@ class FsuCycleArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -144,11 +144,11 @@ class FsuCycleArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -204,11 +204,11 @@ class _FsuCycleState:
                  batching_strategy: Optional[pulumi.Input['FsuCycleBatchingStrategyArgs']] = None,
                  collection_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  diagnostics_collection: Optional[pulumi.Input['FsuCycleDiagnosticsCollectionArgs']] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  executing_fsu_action_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fsu_collection_id: Optional[pulumi.Input[str]] = None,
                  goal_version_details: Optional[pulumi.Input['FsuCycleGoalVersionDetailsArgs']] = None,
                  is_ignore_missing_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -220,7 +220,7 @@ class _FsuCycleState:
                  next_action_to_executes: Optional[pulumi.Input[Sequence[pulumi.Input['FsuCycleNextActionToExecuteArgs']]]] = None,
                  stage_action_schedule: Optional[pulumi.Input['FsuCycleStageActionScheduleArgs']] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
@@ -317,11 +317,11 @@ class _FsuCycleState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -353,11 +353,11 @@ class _FsuCycleState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -461,11 +461,11 @@ class _FsuCycleState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -513,10 +513,10 @@ class FsuCycle(pulumi.CustomResource):
                  apply_action_schedule: Optional[pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']]] = None,
                  batching_strategy: Optional[pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  diagnostics_collection: Optional[pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fsu_collection_id: Optional[pulumi.Input[str]] = None,
                  goal_version_details: Optional[pulumi.Input[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict']]] = None,
                  is_ignore_missing_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -557,10 +557,10 @@ class FsuCycle(pulumi.CustomResource):
                  apply_action_schedule: Optional[pulumi.Input[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict']]] = None,
                  batching_strategy: Optional[pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  diagnostics_collection: Optional[pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  fsu_collection_id: Optional[pulumi.Input[str]] = None,
                  goal_version_details: Optional[pulumi.Input[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict']]] = None,
                  is_ignore_missing_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -625,11 +625,11 @@ class FsuCycle(pulumi.CustomResource):
             batching_strategy: Optional[pulumi.Input[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict']]] = None,
             collection_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             diagnostics_collection: Optional[pulumi.Input[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict']]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             executing_fsu_action_id: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             fsu_collection_id: Optional[pulumi.Input[str]] = None,
             goal_version_details: Optional[pulumi.Input[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict']]] = None,
             is_ignore_missing_patches: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
@@ -641,7 +641,7 @@ class FsuCycle(pulumi.CustomResource):
             next_action_to_executes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict']]]]] = None,
             stage_action_schedule: Optional[pulumi.Input[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict']]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
@@ -707,7 +707,7 @@ class FsuCycle(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -727,7 +727,7 @@ class FsuCycle(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -787,7 +787,7 @@ class FsuCycle(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         return pulumi.get(self, "system_tags")
 
     @property

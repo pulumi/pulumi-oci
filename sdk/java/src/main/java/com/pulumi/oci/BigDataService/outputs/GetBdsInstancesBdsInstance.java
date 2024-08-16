@@ -17,7 +17,6 @@ import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceUtilNode;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstancesBdsInstanceWorkerNode;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -68,7 +67,7 @@ public final class GetBdsInstancesBdsInstance {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A filter to return only resources that match the entire display name given.
      * 
@@ -80,7 +79,7 @@ public final class GetBdsInstancesBdsInstance {
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The OCID of the Big Data Service resource.
      * 
@@ -222,7 +221,7 @@ public final class GetBdsInstancesBdsInstance {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example, `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -242,7 +241,7 @@ public final class GetBdsInstancesBdsInstance {
      * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. For example, `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -384,11 +383,11 @@ public final class GetBdsInstancesBdsInstance {
         private String compartmentId;
         private List<GetBdsInstancesBdsInstanceComputeOnlyWorkerNode> computeOnlyWorkerNodes;
         private String createdBy;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private List<GetBdsInstancesBdsInstanceEdgeNode> edgeNodes;
         private Integer executeBootstrapScriptTrigger;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<String> ignoreExistingNodesShapes;
         private Boolean isCloudSqlConfigured;
@@ -552,7 +551,7 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "definedTags");
             }
@@ -587,7 +586,7 @@ public final class GetBdsInstancesBdsInstance {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetBdsInstancesBdsInstance", "freeformTags");
             }

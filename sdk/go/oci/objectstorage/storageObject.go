@@ -95,7 +95,7 @@ type StorageObject struct {
 	DeleteAllObjectVersions pulumi.BoolPtrOutput `pulumi:"deleteAllObjectVersions"`
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
-	Metadata pulumi.MapOutput `pulumi:"metadata"`
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -177,7 +177,7 @@ type storageObjectState struct {
 	DeleteAllObjectVersions *bool `pulumi:"deleteAllObjectVersions"`
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The Object Storage namespace used for the request.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -221,7 +221,7 @@ type StorageObjectState struct {
 	DeleteAllObjectVersions pulumi.BoolPtrInput
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
-	Metadata pulumi.MapInput
+	Metadata pulumi.StringMapInput
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringPtrInput
 	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -267,7 +267,7 @@ type storageObjectArgs struct {
 	DeleteAllObjectVersions *bool `pulumi:"deleteAllObjectVersions"`
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The Object Storage namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -307,7 +307,7 @@ type StorageObjectArgs struct {
 	DeleteAllObjectVersions pulumi.BoolPtrInput
 	// Optional user-defined metadata key and value.
 	// Note: All specified keys must be in lower case.
-	Metadata pulumi.MapInput
+	Metadata pulumi.StringMapInput
 	// The Object Storage namespace used for the request.
 	Namespace pulumi.StringInput
 	// (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -464,8 +464,8 @@ func (o StorageObjectOutput) DeleteAllObjectVersions() pulumi.BoolPtrOutput {
 
 // Optional user-defined metadata key and value.
 // Note: All specified keys must be in lower case.
-func (o StorageObjectOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *StorageObject) pulumi.MapOutput { return v.Metadata }).(pulumi.MapOutput)
+func (o StorageObjectOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StorageObject) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The Object Storage namespace used for the request.

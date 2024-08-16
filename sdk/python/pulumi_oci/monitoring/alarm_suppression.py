@@ -17,17 +17,17 @@ __all__ = ['AlarmSuppressionInitArgs', 'AlarmSuppression']
 class AlarmSuppressionInitArgs:
     def __init__(__self__, *,
                  alarm_suppression_target: pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'],
-                 dimensions: pulumi.Input[Mapping[str, Any]],
+                 dimensions: pulumi.Input[Mapping[str, pulumi.Input[str]]],
                  display_name: pulumi.Input[str],
                  time_suppress_from: pulumi.Input[str],
                  time_suppress_until: pulumi.Input[str],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a AlarmSuppression resource.
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
-        :param pulumi.Input[Mapping[str, Any]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
                The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -37,13 +37,13 @@ class AlarmSuppressionInitArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
                Oracle recommends including tracking information for the event or associated work, such as a ticket number.
                
                Example: `Planned outage due to change IT-1234.`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         pulumi.set(__self__, "alarm_suppression_target", alarm_suppression_target)
         pulumi.set(__self__, "dimensions", dimensions)
@@ -71,7 +71,7 @@ class AlarmSuppressionInitArgs:
 
     @property
     @pulumi.getter
-    def dimensions(self) -> pulumi.Input[Mapping[str, Any]]:
+    def dimensions(self) -> pulumi.Input[Mapping[str, pulumi.Input[str]]]:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
@@ -80,7 +80,7 @@ class AlarmSuppressionInitArgs:
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: pulumi.Input[Mapping[str, Any]]):
+    def dimensions(self, value: pulumi.Input[Mapping[str, pulumi.Input[str]]]):
         pulumi.set(self, "dimensions", value)
 
     @property
@@ -125,14 +125,14 @@ class AlarmSuppressionInitArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -153,14 +153,14 @@ class AlarmSuppressionInitArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
 
@@ -169,11 +169,11 @@ class _AlarmSuppressionState:
     def __init__(__self__, *,
                  alarm_suppression_target: Optional[pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
@@ -183,17 +183,17 @@ class _AlarmSuppressionState:
         Input properties used for looking up and filtering AlarmSuppression resources.
         :param pulumi.Input['AlarmSuppressionAlarmSuppressionTargetArgs'] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
                Oracle recommends including tracking information for the event or associated work, such as a ticket number.
                
                Example: `Planned outage due to change IT-1234.`
-        :param pulumi.Input[Mapping[str, Any]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
                The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -255,14 +255,14 @@ class _AlarmSuppressionState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -283,7 +283,7 @@ class _AlarmSuppressionState:
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
@@ -292,7 +292,7 @@ class _AlarmSuppressionState:
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @property
@@ -309,14 +309,14 @@ class _AlarmSuppressionState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -390,11 +390,11 @@ class AlarmSuppression(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
                  time_suppress_until: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -445,17 +445,17 @@ class AlarmSuppression(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
                Oracle recommends including tracking information for the event or associated work, such as a ticket number.
                
                Example: `Planned outage due to change IT-1234.`
-        :param pulumi.Input[Mapping[str, Any]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
                The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_until: The end date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T02:02:29.600Z` 
                
@@ -529,11 +529,11 @@ class AlarmSuppression(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_suppress_from: Optional[pulumi.Input[str]] = None,
                  time_suppress_until: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -579,11 +579,11 @@ class AlarmSuppression(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             alarm_suppression_target: Optional[pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
-            dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_suppress_from: Optional[pulumi.Input[str]] = None,
@@ -598,17 +598,17 @@ class AlarmSuppression(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['AlarmSuppressionAlarmSuppressionTargetArgs', 'AlarmSuppressionAlarmSuppressionTargetArgsDict']] alarm_suppression_target: The target of the alarm suppression.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
                
                Oracle recommends including tracking information for the event or associated work, such as a ticket number.
                
                Example: `Planned outage due to change IT-1234.`
-        :param pulumi.Input[Mapping[str, Any]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
                
                The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
         :param pulumi.Input[str] display_name: A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] state: The current lifecycle state of the alarm suppression.  Example: `DELETED`
         :param pulumi.Input[str] time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
         :param pulumi.Input[str] time_suppress_from: The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
@@ -655,7 +655,7 @@ class AlarmSuppression(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
@@ -675,7 +675,7 @@ class AlarmSuppression(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def dimensions(self) -> pulumi.Output[Mapping[str, Any]]:
+    def dimensions(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "instance.region1.phx.exampleuniqueID"}, then this alarm will be included for suppression.
 
@@ -693,7 +693,7 @@ class AlarmSuppression(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """

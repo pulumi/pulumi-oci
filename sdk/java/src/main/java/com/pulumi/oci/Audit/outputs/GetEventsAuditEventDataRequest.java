@@ -5,7 +5,6 @@ package com.pulumi.oci.Audit.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetEventsAuditEventDataRequest {
      * @return The headers of the response.
      * 
      */
-    private Map<String,Object> headers;
+    private Map<String,String> headers;
     /**
      * @return The opc-request-id of the request.
      * 
@@ -31,7 +30,7 @@ public final class GetEventsAuditEventDataRequest {
      * @return The parameters supplied by the caller during this operation.
      * 
      */
-    private Map<String,Object> parameters;
+    private Map<String,String> parameters;
     /**
      * @return The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
      * 
@@ -50,7 +49,7 @@ public final class GetEventsAuditEventDataRequest {
      * @return The headers of the response.
      * 
      */
-    public Map<String,Object> headers() {
+    public Map<String,String> headers() {
         return this.headers;
     }
     /**
@@ -64,7 +63,7 @@ public final class GetEventsAuditEventDataRequest {
      * @return The parameters supplied by the caller during this operation.
      * 
      */
-    public Map<String,Object> parameters() {
+    public Map<String,String> parameters() {
         return this.parameters;
     }
     /**
@@ -85,9 +84,9 @@ public final class GetEventsAuditEventDataRequest {
     @CustomType.Builder
     public static final class Builder {
         private String action;
-        private Map<String,Object> headers;
+        private Map<String,String> headers;
         private String id;
-        private Map<String,Object> parameters;
+        private Map<String,String> parameters;
         private String path;
         public Builder() {}
         public Builder(GetEventsAuditEventDataRequest defaults) {
@@ -108,7 +107,7 @@ public final class GetEventsAuditEventDataRequest {
             return this;
         }
         @CustomType.Setter
-        public Builder headers(Map<String,Object> headers) {
+        public Builder headers(Map<String,String> headers) {
             if (headers == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "headers");
             }
@@ -124,7 +123,7 @@ public final class GetEventsAuditEventDataRequest {
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(Map<String,Object> parameters) {
+        public Builder parameters(Map<String,String> parameters) {
             if (parameters == null) {
               throw new MissingRequiredPropertyException("GetEventsAuditEventDataRequest", "parameters");
             }

@@ -19,14 +19,14 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string> Category { get; set; } = null!;
 
         [Input("parameters")]
-        private InputMap<object>? _parameters;
+        private InputMap<string>? _parameters;
 
         /// <summary>
         /// (Updatable) Log category parameters are stored here.
         /// </summary>
-        public InputMap<object> Parameters
+        public InputMap<string> Parameters
         {
-            get => _parameters ?? (_parameters = new InputMap<object>());
+            get => _parameters ?? (_parameters = new InputMap<string>());
             set => _parameters = value;
         }
 

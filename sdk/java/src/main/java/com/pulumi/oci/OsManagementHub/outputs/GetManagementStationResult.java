@@ -10,7 +10,6 @@ import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirror;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationMirrorSyncStatus;
 import com.pulumi.oci.OsManagementHub.outputs.GetManagementStationProxy;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +26,7 @@ public final class GetManagementStationResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Explanation of the health status.
      * 
@@ -42,7 +41,7 @@ public final class GetManagementStationResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Overall health information of the management station.
      * 
@@ -114,7 +113,7 @@ public final class GetManagementStationResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The number of software sources that the station is mirroring.
      * 
@@ -133,7 +132,7 @@ public final class GetManagementStationResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -154,7 +153,7 @@ public final class GetManagementStationResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -258,7 +257,7 @@ public final class GetManagementStationResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -279,10 +278,10 @@ public final class GetManagementStationResult {
     @CustomType.Builder
     public static final class Builder {
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private List<GetManagementStationHealth> healths;
         private String hostname;
         private String id;
@@ -298,7 +297,7 @@ public final class GetManagementStationResult {
         private Integer refreshTrigger;
         private String scheduledJobId;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private Integer totalMirrors;
         public Builder() {}
         public Builder(GetManagementStationResult defaults) {
@@ -336,7 +335,7 @@ public final class GetManagementStationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "definedTags");
             }
@@ -360,7 +359,7 @@ public final class GetManagementStationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "freeformTags");
             }
@@ -500,7 +499,7 @@ public final class GetManagementStationResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetManagementStationResult", "systemTags");
             }

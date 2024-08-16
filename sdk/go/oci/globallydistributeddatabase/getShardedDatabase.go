@@ -82,15 +82,15 @@ type LookupShardedDatabaseResult struct {
 	// Possible workload types.
 	DbWorkload string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Oracle sharded database display name.
 	DisplayName                                 string `pulumi:"displayName"`
 	DownloadGsmCertificateSigningRequestTrigger int    `pulumi:"downloadGsmCertificateSigningRequestTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags                                map[string]interface{} `pulumi:"freeformTags"`
-	GenerateGsmCertificateSigningRequestTrigger int                    `pulumi:"generateGsmCertificateSigningRequestTrigger"`
-	GenerateWalletTrigger                       int                    `pulumi:"generateWalletTrigger"`
-	GetConnectionStringTrigger                  int                    `pulumi:"getConnectionStringTrigger"`
+	FreeformTags                                map[string]string `pulumi:"freeformTags"`
+	GenerateGsmCertificateSigningRequestTrigger int               `pulumi:"generateGsmCertificateSigningRequestTrigger"`
+	GenerateWalletTrigger                       int               `pulumi:"generateWalletTrigger"`
+	GetConnectionStringTrigger                  int               `pulumi:"getConnectionStringTrigger"`
 	// Details of GSM instances for the sharded database.
 	Gsms []GetShardedDatabaseGsm `pulumi:"gsms"`
 	// Sharded Database identifier
@@ -125,7 +125,7 @@ type LookupShardedDatabaseResult struct {
 	State               string `pulumi:"state"`
 	StopDatabaseTrigger int    `pulumi:"stopDatabaseTrigger"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -230,8 +230,8 @@ func (o LookupShardedDatabaseResultOutput) DbWorkload() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupShardedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupShardedDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Oracle sharded database display name.
@@ -244,8 +244,8 @@ func (o LookupShardedDatabaseResultOutput) DownloadGsmCertificateSigningRequestT
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupShardedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupShardedDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupShardedDatabaseResultOutput) GenerateGsmCertificateSigningRequestTrigger() pulumi.IntOutput {
@@ -351,8 +351,8 @@ func (o LookupShardedDatabaseResultOutput) StopDatabaseTrigger() pulumi.IntOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupShardedDatabaseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupShardedDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupShardedDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Sharded Database was created. An RFC3339 formatted datetime string

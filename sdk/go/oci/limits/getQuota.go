@@ -61,11 +61,11 @@ type LookupQuotaResult struct {
 	// The OCID of the compartment containing the resource this quota applies to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the quota.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the quota.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -126,8 +126,8 @@ func (o LookupQuotaResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupQuotaResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupQuotaResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupQuotaResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupQuotaResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the quota.
@@ -136,8 +136,8 @@ func (o LookupQuotaResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupQuotaResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupQuotaResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupQuotaResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupQuotaResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the quota.

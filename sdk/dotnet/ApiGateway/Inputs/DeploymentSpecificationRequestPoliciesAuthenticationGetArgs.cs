@@ -67,14 +67,14 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<double>? MaxClockSkewInSeconds { get; set; }
 
         [Input("parameters")]
-        private InputMap<object>? _parameters;
+        private InputMap<string>? _parameters;
 
         /// <summary>
         /// (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         /// </summary>
-        public InputMap<object> Parameters
+        public InputMap<string> Parameters
         {
-            get => _parameters ?? (_parameters = new InputMap<object>());
+            get => _parameters ?? (_parameters = new InputMap<string>());
             set => _parameters = value;
         }
 

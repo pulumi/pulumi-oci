@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? AdditionalDetails;
+        public readonly ImmutableDictionary<string, string>? AdditionalDetails;
         /// <summary>
         /// (Updatable) The name of the Exadata infrastructure.
         /// </summary>
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private ExternalExadataInfrastructureStorageGrid(
-            ImmutableDictionary<string, object>? additionalDetails,
+            ImmutableDictionary<string, string>? additionalDetails,
 
             string? displayName,
 

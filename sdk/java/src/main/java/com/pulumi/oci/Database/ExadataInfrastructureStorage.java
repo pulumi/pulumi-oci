@@ -14,7 +14,6 @@ import com.pulumi.oci.Database.outputs.ExadataInfrastructureStorageMaintenanceWi
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -107,10 +106,10 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
     public Output<Integer> dbNodeStorageSizeInGbs() {
         return this.dbNodeStorageSizeInGbs;
     }
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     @Export(name="displayName", refs={String.class}, tree="[0]")
@@ -131,10 +130,10 @@ public class ExadataInfrastructureStorage extends com.pulumi.resources.CustomRes
     public Output<Optional<String>> exadataInfrastructureId() {
         return Codegen.optional(this.exadataInfrastructureId);
     }
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     @Export(name="gateway", refs={String.class}, tree="[0]")

@@ -61,13 +61,13 @@ type LookupProjectResult struct {
 	// The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// An optional description of the project.
 	Description string `pulumi:"description"`
 	// A human-friendly name for the project, which can be changed.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier that is immutable after creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail, that can provide actionable information if creation failed.
@@ -76,7 +76,7 @@ type LookupProjectResult struct {
 	// The current state of the project.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// When the project was created, as an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// When the project was updated, as an RFC3339 datetime string.
@@ -127,8 +127,8 @@ func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o LookupProjectResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // An optional description of the project.
@@ -142,8 +142,8 @@ func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o LookupProjectResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier that is immutable after creation.
@@ -166,8 +166,8 @@ func (o LookupProjectResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-func (o LookupProjectResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // When the project was created, as an RFC3339 datetime string.

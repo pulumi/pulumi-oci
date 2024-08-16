@@ -34,8 +34,8 @@ import (
 //				ApmDomainId: pulumi.Any(testApmDomain.Id),
 //				ConfigType:  pulumi.Any(configConfigType),
 //				DisplayName: pulumi.Any(configDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(configDescription),
 //				Dimensions: apmconfig.ConfigDimensionArray{
@@ -46,8 +46,8 @@ import (
 //				},
 //				FilterId:   pulumi.Any(testFilter.Id),
 //				FilterText: pulumi.Any(configFilterText),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Group: pulumi.Any(configGroup),
 //				Metrics: apmconfig.ConfigMetricArray{
@@ -99,7 +99,7 @@ type Config struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -113,7 +113,7 @@ type Config struct {
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringOutput `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringOutput `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
@@ -182,7 +182,7 @@ type configState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description *string `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -196,7 +196,7 @@ type configState struct {
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText *string `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group *string `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
@@ -227,7 +227,7 @@ type ConfigState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringPtrInput
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -241,7 +241,7 @@ type ConfigState struct {
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringPtrInput
 	// The list of configuration items that reference the span filter.
@@ -274,7 +274,7 @@ type configArgs struct {
 	// (Updatable) The type of configuration item.
 	ConfigType string `pulumi:"configType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description *string `pulumi:"description"`
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -286,7 +286,7 @@ type configArgs struct {
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText *string `pulumi:"filterText"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group *string `pulumi:"group"`
 	// The list of configuration items that reference the span filter.
@@ -310,7 +310,7 @@ type ConfigArgs struct {
 	// (Updatable) The type of configuration item.
 	ConfigType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional string that describes what the options are intended or used for.
 	Description pulumi.StringPtrInput
 	// (Updatable) A list of dimensions for the metric. This variable should not be used.
@@ -322,7 +322,7 @@ type ConfigArgs struct {
 	// (Updatable) The string that defines the Span Filter expression.
 	FilterText pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A string that specifies the group that an OPTIONS item belongs to.
 	Group pulumi.StringPtrInput
 	// The list of configuration items that reference the span filter.
@@ -442,8 +442,8 @@ func (o ConfigOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional string that describes what the options are intended or used for.
@@ -477,8 +477,8 @@ func (o ConfigOutput) FilterText() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A string that specifies the group that an OPTIONS item belongs to.

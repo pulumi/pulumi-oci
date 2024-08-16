@@ -29,7 +29,7 @@ type ManagedList struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
@@ -43,7 +43,7 @@ type ManagedList struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Is this list editable?
 	IsEditable pulumi.BoolOutput `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -60,7 +60,7 @@ type ManagedList struct {
 	// The current lifecycle state of the resource
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the managed list was last updated. Format defined by RFC3339.
@@ -106,7 +106,7 @@ type managedListState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
@@ -120,7 +120,7 @@ type managedListState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Is this list editable?
 	IsEditable *bool `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -137,7 +137,7 @@ type managedListState struct {
 	// The current lifecycle state of the resource
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the managed list was last updated. Format defined by RFC3339.
@@ -148,7 +148,7 @@ type ManagedListState struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
@@ -162,7 +162,7 @@ type ManagedListState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Is this list editable?
 	IsEditable pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -179,7 +179,7 @@ type ManagedListState struct {
 	// The current lifecycle state of the resource
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the managed list was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the managed list was last updated. Format defined by RFC3339.
@@ -194,7 +194,7 @@ type managedListArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
@@ -206,7 +206,7 @@ type managedListArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) List of items in the managed list
 	ListItems []string `pulumi:"listItems"`
 	// Type of information stored in the list
@@ -223,7 +223,7 @@ type ManagedListArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Managed list description
 	//
 	// Avoid entering confidential information.
@@ -235,7 +235,7 @@ type ManagedListArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) List of items in the managed list
 	ListItems pulumi.StringArrayInput
 	// Type of information stored in the list
@@ -340,8 +340,8 @@ func (o ManagedListOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ManagedListOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ManagedListOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Managed list description
@@ -366,8 +366,8 @@ func (o ManagedListOutput) FeedProvider() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o ManagedListOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ManagedListOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Is this list editable?
@@ -404,8 +404,8 @@ func (o ManagedListOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ManagedListOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ManagedList) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ManagedListOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the managed list was created. Format defined by RFC3339.

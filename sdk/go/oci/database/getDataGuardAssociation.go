@@ -73,17 +73,17 @@ type LookupDataGuardAssociationResult struct {
 	DataCollectionOptions  []GetDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
 	DataGuardAssociationId string                                        `pulumi:"dataGuardAssociationId"`
 	DatabaseAdminPassword  string                                        `pulumi:"databaseAdminPassword"`
-	DatabaseDefinedTags    map[string]interface{}                        `pulumi:"databaseDefinedTags"`
-	DatabaseFreeformTags   map[string]interface{}                        `pulumi:"databaseFreeformTags"`
+	DatabaseDefinedTags    map[string]string                             `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags   map[string]string                             `pulumi:"databaseFreeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
-	DatabaseId                  string                 `pulumi:"databaseId"`
-	DatabaseSoftwareImageId     string                 `pulumi:"databaseSoftwareImageId"`
-	DbSystemDefinedTags         map[string]interface{} `pulumi:"dbSystemDefinedTags"`
-	DbSystemFreeformTags        map[string]interface{} `pulumi:"dbSystemFreeformTags"`
-	DeleteStandbyDbHomeOnDelete string                 `pulumi:"deleteStandbyDbHomeOnDelete"`
-	DisplayName                 string                 `pulumi:"displayName"`
-	FaultDomains                []string               `pulumi:"faultDomains"`
-	Hostname                    string                 `pulumi:"hostname"`
+	DatabaseId                  string            `pulumi:"databaseId"`
+	DatabaseSoftwareImageId     string            `pulumi:"databaseSoftwareImageId"`
+	DbSystemDefinedTags         map[string]string `pulumi:"dbSystemDefinedTags"`
+	DbSystemFreeformTags        map[string]string `pulumi:"dbSystemFreeformTags"`
+	DeleteStandbyDbHomeOnDelete string            `pulumi:"deleteStandbyDbHomeOnDelete"`
+	DisplayName                 string            `pulumi:"displayName"`
+	FaultDomains                []string          `pulumi:"faultDomains"`
+	Hostname                    string            `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Data Guard association.
 	Id string `pulumi:"id"`
 	// True if active Data Guard is enabled.
@@ -207,12 +207,12 @@ func (o LookupDataGuardAssociationResultOutput) DatabaseAdminPassword() pulumi.S
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseAdminPassword }).(pulumi.StringOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DatabaseDefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DatabaseDefinedTags }).(pulumi.MapOutput)
+func (o LookupDataGuardAssociationResultOutput) DatabaseDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DatabaseDefinedTags }).(pulumi.StringMapOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DatabaseFreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DatabaseFreeformTags }).(pulumi.MapOutput)
+func (o LookupDataGuardAssociationResultOutput) DatabaseFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DatabaseFreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
@@ -224,12 +224,12 @@ func (o LookupDataGuardAssociationResultOutput) DatabaseSoftwareImageId() pulumi
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DbSystemDefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DbSystemDefinedTags }).(pulumi.MapOutput)
+func (o LookupDataGuardAssociationResultOutput) DbSystemDefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DbSystemDefinedTags }).(pulumi.StringMapOutput)
 }
 
-func (o LookupDataGuardAssociationResultOutput) DbSystemFreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]interface{} { return v.DbSystemFreeformTags }).(pulumi.MapOutput)
+func (o LookupDataGuardAssociationResultOutput) DbSystemFreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) map[string]string { return v.DbSystemFreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) DeleteStandbyDbHomeOnDelete() pulumi.StringOutput {

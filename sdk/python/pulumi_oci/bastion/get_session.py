@@ -159,7 +159,7 @@ class GetSessionResult:
 
     @property
     @pulumi.getter(name="sshMetadata")
-    def ssh_metadata(self) -> Mapping[str, Any]:
+    def ssh_metadata(self) -> Mapping[str, str]:
         """
         The connection message for the session.
         """

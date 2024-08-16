@@ -50,7 +50,7 @@ class GetRetrievePasswordResult:
 
     @property
     @pulumi.getter(name="sddcPassword")
-    def sddc_password(self) -> Mapping[str, Any]:
+    def sddc_password(self) -> Mapping[str, str]:
         """
         SDDC vCenter/NSX/HCX password.
         * `passwordType` - SDDC password type.

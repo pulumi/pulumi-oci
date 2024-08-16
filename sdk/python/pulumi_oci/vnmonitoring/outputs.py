@@ -389,32 +389,32 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionResult(dict):
 class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  destination_endpoints: Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointResult'],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  protocol: int,
                  protocol_parameters: Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterResult'],
                  query_options: Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionResult'],
                  source_endpoints: Sequence['outputs.GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetPathAnalyzerTestsPathAnalyzerTestCollectionItemDestinationEndpointArgs'] destination_endpoints: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param str display_name: A filter that returns only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: A unique identifier established when the resource is created. The identifier can't be changed later.
         :param int protocol: The IP protocol to use for the `PathAnalyzerTest` resource.
         :param Sequence['GetPathAnalyzerTestsPathAnalyzerTestCollectionItemProtocolParameterArgs'] protocol_parameters: Defines the IP protocol parameters for a `PathAnalyzerTest` resource.
         :param Sequence['GetPathAnalyzerTestsPathAnalyzerTestCollectionItemQueryOptionArgs'] query_options: Defines the query options required for a `PathAnalyzerTest` resource.
         :param Sequence['GetPathAnalyzerTestsPathAnalyzerTestCollectionItemSourceEndpointArgs'] source_endpoints: Information describing a source or destination in a `PathAnalyzerTest` resource.
         :param str state: A filter that returns only resources whose `lifecycleState` matches the given `lifecycleState`.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
@@ -443,7 +443,7 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -467,7 +467,7 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -523,7 +523,7 @@ class GetPathAnalyzerTestsPathAnalyzerTestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

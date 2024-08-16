@@ -94,7 +94,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db servers.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User defined description of the cloud Autonomous VM cluster.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the cloud Autonomous VM cluster. The name does not need to be unique.
@@ -104,7 +104,7 @@ type LookupCloudAutonomousVmClusterResult struct {
 	// The lowest value to which exadataStorage (in TBs) can be scaled down.
 	ExadataStorageInTbsLowestScaledValue float64 `pulumi:"exadataStorageInTbsLowestScaledValue"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the cloud Autonomous VM cluster.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Autonomous VM cluster.
@@ -303,8 +303,8 @@ func (o LookupCloudAutonomousVmClusterResultOutput) DbServers() pulumi.StringArr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupCloudAutonomousVmClusterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCloudAutonomousVmClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User defined description of the cloud Autonomous VM cluster.
@@ -328,8 +328,8 @@ func (o LookupCloudAutonomousVmClusterResultOutput) ExadataStorageInTbsLowestSca
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupCloudAutonomousVmClusterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCloudAutonomousVmClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCloudAutonomousVmClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the cloud Autonomous VM cluster.

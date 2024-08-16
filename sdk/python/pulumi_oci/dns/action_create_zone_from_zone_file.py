@@ -96,10 +96,10 @@ class _ActionCreateZoneFromZoneFileState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]]] = None,
                  external_masters: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalMasterArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_protected: Optional[pulumi.Input[bool]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  nameservers: Optional[pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileNameserverArgs']]]] = None,
@@ -116,10 +116,10 @@ class _ActionCreateZoneFromZoneFileState:
         Input properties used for looking up and filtering ActionCreateZoneFromZoneFile resources.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalDownstreamArgs']]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileExternalMasterArgs']]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[Sequence[pulumi.Input['ActionCreateZoneFromZoneFileNameserverArgs']]] nameservers: The authoritative nameservers for the zone.
@@ -200,14 +200,14 @@ class _ActionCreateZoneFromZoneFileState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -236,14 +236,14 @@ class _ActionCreateZoneFromZoneFileState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -540,10 +540,10 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             create_zone_from_zone_file_details: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             external_downstreams: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalDownstreamArgs', 'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict']]]]] = None,
             external_masters: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalMasterArgs', 'ActionCreateZoneFromZoneFileExternalMasterArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_protected: Optional[pulumi.Input[bool]] = None,
             name: Optional[pulumi.Input[str]] = None,
             nameservers: Optional[pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileNameserverArgs', 'ActionCreateZoneFromZoneFileNameserverArgsDict']]]]] = None,
@@ -565,10 +565,10 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment the resource belongs to.
         :param pulumi.Input[str] create_zone_from_zone_file_details: The zone file contents.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalDownstreamArgs', 'ActionCreateZoneFromZoneFileExternalDownstreamArgsDict']]]] external_downstreams: External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileExternalMasterArgs', 'ActionCreateZoneFromZoneFileExternalMasterArgsDict']]]] external_masters: External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
         :param pulumi.Input[str] name: The name of the zone.
         :param pulumi.Input[Sequence[pulumi.Input[Union['ActionCreateZoneFromZoneFileNameserverArgs', 'ActionCreateZoneFromZoneFileNameserverArgsDict']]]] nameservers: The authoritative nameservers for the zone.
@@ -628,7 +628,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """
@@ -652,7 +652,7 @@ class ActionCreateZoneFromZoneFile(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         """

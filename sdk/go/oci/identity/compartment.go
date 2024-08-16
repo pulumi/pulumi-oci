@@ -30,11 +30,11 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Description:   pulumi.Any(compartmentDescription),
 //				Name:          pulumi.Any(compartmentName),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -59,7 +59,7 @@ type Compartment struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration.
@@ -68,7 +68,7 @@ type Compartment struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDelete pulumi.BoolPtrOutput `pulumi:"enableDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
 	// Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
@@ -117,7 +117,7 @@ type compartmentState struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 	Description *string `pulumi:"description"`
 	// Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration.
@@ -126,7 +126,7 @@ type compartmentState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDelete *bool `pulumi:"enableDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState *string `pulumi:"inactiveState"`
 	// Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
@@ -143,7 +143,7 @@ type CompartmentState struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringPtrInput
 	// Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration.
@@ -152,7 +152,7 @@ type CompartmentState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDelete pulumi.BoolPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringPtrInput
 	// Indicates whether or not the compartment is accessible for the user making the request. Returns true when the user has INSPECT permissions directly on a resource in the compartment or indirectly (permissions can be on a resource in a subcompartment).
@@ -173,7 +173,7 @@ type compartmentArgs struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration.
@@ -182,7 +182,7 @@ type compartmentArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDelete *bool `pulumi:"enableDelete"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 }
@@ -192,7 +192,7 @@ type CompartmentArgs struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// Defaults to false. If omitted or set to false the provider will implicitly import the compartment if there is a name collision, and will not actually delete the compartment on destroy or removal of the resource declaration. If set to true, the provider will throw an error on a name collision with another compartment, and will attempt to delete the compartment on destroy or removal of the resource declaration.
@@ -201,7 +201,7 @@ type CompartmentArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	EnableDelete pulumi.BoolPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The name you assign to the compartment during creation. The name must be unique across all compartments in the parent compartment. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 }
@@ -299,8 +299,8 @@ func (o CompartmentOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o CompartmentOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CompartmentOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description you assign to the compartment during creation. Does not have to be unique, and it's changeable.
@@ -317,8 +317,8 @@ func (o CompartmentOutput) EnableDelete() pulumi.BoolPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o CompartmentOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Compartment) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CompartmentOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Compartment) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.

@@ -24,8 +24,8 @@ class ConfigArgs:
                  availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
@@ -51,8 +51,8 @@ class ConfigArgs:
         :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -205,26 +205,26 @@ class ConfigArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -368,9 +368,9 @@ class _ConfigState:
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
@@ -396,9 +396,9 @@ class _ConfigState:
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[str] created_by: Name of the user that created the monitor.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -537,14 +537,14 @@ class _ConfigState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -561,14 +561,14 @@ class _ConfigState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -801,9 +801,9 @@ class Config(pulumi.CustomResource):
                  availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
@@ -973,9 +973,9 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']] configuration: (Updatable) Details of monitor configuration.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -1168,9 +1168,9 @@ class Config(pulumi.CustomResource):
                  availability_configuration: Optional[pulumi.Input[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict']]] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
@@ -1245,9 +1245,9 @@ class Config(pulumi.CustomResource):
             batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
             configuration: Optional[pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_ipv6: Optional[pulumi.Input[bool]] = None,
             is_run_now: Optional[pulumi.Input[bool]] = None,
             is_run_once: Optional[pulumi.Input[bool]] = None,
@@ -1278,9 +1278,9 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict']] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[str] created_by: Name of the user that created the monitor.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -1378,7 +1378,7 @@ class Config(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1394,7 +1394,7 @@ class Config(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

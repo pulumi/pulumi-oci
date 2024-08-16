@@ -62,13 +62,13 @@ type LookupApplicationResult struct {
 	// The OCID of the compartment that contains the application.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the application. The display name is unique within the compartment containing the application.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.
 	Id string `pulumi:"id"`
 	// Define the image signature verification policy for an application.
@@ -139,13 +139,13 @@ func (o LookupApplicationResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-func (o LookupApplicationResultOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupApplicationResult) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o LookupApplicationResultOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApplicationResult) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupApplicationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupApplicationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupApplicationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApplicationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the application. The display name is unique within the compartment containing the application.
@@ -154,8 +154,8 @@ func (o LookupApplicationResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupApplicationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupApplicationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupApplicationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupApplicationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application.

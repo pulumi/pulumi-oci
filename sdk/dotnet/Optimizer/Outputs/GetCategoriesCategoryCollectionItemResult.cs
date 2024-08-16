@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Additional metadata key/value pairs for the category.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
         /// The unique OCID of the category.
         /// </summary>
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             double estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, string> extendedMetadata,
 
             string id,
 

@@ -49,7 +49,7 @@ type DatabaseInsight struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
 	DbmPrivateEndpointId pulumi.StringOutput `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Database Deployment Type
 	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -69,7 +69,7 @@ type DatabaseInsight struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringOutput `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
@@ -94,7 +94,7 @@ type DatabaseInsight struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -162,7 +162,7 @@ type databaseInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Database Deployment Type
 	DeploymentType *string `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -182,7 +182,7 @@ type databaseInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
 	// Specifies if MYSQL DB System is highly available.
@@ -207,7 +207,7 @@ type databaseInsightState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -240,7 +240,7 @@ type DatabaseInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
 	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Database Deployment Type
 	DeploymentType pulumi.StringPtrInput
 	// OPSI Enterprise Manager Bridge OCID
@@ -260,7 +260,7 @@ type DatabaseInsightState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Specifies if MYSQL DB System has heatwave cluster attached.
 	IsHeatWaveClusterAttached pulumi.BoolPtrInput
 	// Specifies if MYSQL DB System is highly available.
@@ -285,7 +285,7 @@ type DatabaseInsightState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the database insight was updated. An RFC3339 formatted datetime string
@@ -314,7 +314,7 @@ type databaseInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Database Deployment Type
 	DeploymentType *string `pulumi:"deploymentType"`
 	// OPSI Enterprise Manager Bridge OCID
@@ -328,7 +328,7 @@ type databaseInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId *string `pulumi:"opsiPrivateEndpointId"`
 	// Database service name used for connection requests.
@@ -359,7 +359,7 @@ type DatabaseInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
 	DbmPrivateEndpointId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Database Deployment Type
 	DeploymentType pulumi.StringPtrInput
 	// OPSI Enterprise Manager Bridge OCID
@@ -373,7 +373,7 @@ type DatabaseInsightArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
 	OpsiPrivateEndpointId pulumi.StringPtrInput
 	// Database service name used for connection requests.
@@ -535,8 +535,8 @@ func (o DatabaseInsightOutput) DbmPrivateEndpointId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DatabaseInsightOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseInsight) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DatabaseInsightOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Database Deployment Type
@@ -585,8 +585,8 @@ func (o DatabaseInsightOutput) ExadataInsightId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DatabaseInsightOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseInsight) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DatabaseInsightOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies if MYSQL DB System has heatwave cluster attached.
@@ -643,8 +643,8 @@ func (o DatabaseInsightOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DatabaseInsightOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseInsight) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DatabaseInsightOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the database insight was first enabled. An RFC3339 formatted datetime string

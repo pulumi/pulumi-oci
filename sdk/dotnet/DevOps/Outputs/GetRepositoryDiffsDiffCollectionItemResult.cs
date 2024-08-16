@@ -21,7 +21,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// List of changed section in the file.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRepositoryDiffsDiffCollectionItemChangeResult> Changes;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Indicates whether the file is binary.
         /// </summary>
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.DevOps.Outputs
 
             ImmutableArray<Outputs.GetRepositoryDiffsDiffCollectionItemChangeResult> changes,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             bool isBinary,
 

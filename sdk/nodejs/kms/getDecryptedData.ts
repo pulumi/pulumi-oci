@@ -41,7 +41,7 @@ export interface GetDecryptedDataArgs {
     /**
      * Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: {[key: string]: any};
+    associatedData?: {[key: string]: string};
     /**
      * The encrypted data to decrypt.
      */
@@ -60,7 +60,7 @@ export interface GetDecryptedDataArgs {
  * A collection of values returned by getDecryptedData.
  */
 export interface GetDecryptedDataResult {
-    readonly associatedData?: {[key: string]: any};
+    readonly associatedData?: {[key: string]: string};
     readonly ciphertext: string;
     readonly cryptoEndpoint: string;
     /**
@@ -107,7 +107,7 @@ export interface GetDecryptedDataOutputArgs {
     /**
      * Information that can be used to provide an encryption context for the  encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
      */
-    associatedData?: pulumi.Input<{[key: string]: any}>;
+    associatedData?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The encrypted data to decrypt.
      */

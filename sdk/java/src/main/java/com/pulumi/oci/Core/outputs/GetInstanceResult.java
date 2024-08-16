@@ -16,7 +16,6 @@ import com.pulumi.oci.Core.outputs.GetInstancePreemptibleInstanceConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceShapeConfig;
 import com.pulumi.oci.Core.outputs.GetInstanceSourceDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -71,7 +70,7 @@ public final class GetInstanceResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
@@ -81,7 +80,7 @@ public final class GetInstanceResult {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return The name of the fault domain the instance is running in.
      * 
@@ -91,7 +90,7 @@ public final class GetInstanceResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The hostname for the instance VNIC&#39;s primary private IP.
      * 
@@ -160,7 +159,7 @@ public final class GetInstanceResult {
      * @return Custom metadata that you provide.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return The platform configuration for the instance.
      * 
@@ -219,7 +218,7 @@ public final class GetInstanceResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -302,7 +301,7 @@ public final class GetInstanceResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -316,7 +315,7 @@ public final class GetInstanceResult {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -330,7 +329,7 @@ public final class GetInstanceResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -425,7 +424,7 @@ public final class GetInstanceResult {
      * @return Custom metadata that you provide.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -510,7 +509,7 @@ public final class GetInstanceResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -551,11 +550,11 @@ public final class GetInstanceResult {
         private String computeClusterId;
         private List<GetInstanceCreateVnicDetail> createVnicDetails;
         private String dedicatedVmHostId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String faultDomain;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostnameLabel;
         private String id;
         private String image;
@@ -568,7 +567,7 @@ public final class GetInstanceResult {
         private String launchMode;
         private List<GetInstanceLaunchOption> launchOptions;
         private List<GetInstanceLaunchVolumeAttachment> launchVolumeAttachments;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private List<GetInstancePlatformConfig> platformConfigs;
         private List<GetInstancePreemptibleInstanceConfig> preemptibleInstanceConfigs;
         private Boolean preserveBootVolume;
@@ -581,7 +580,7 @@ public final class GetInstanceResult {
         private List<GetInstanceSourceDetail> sourceDetails;
         private String state;
         private String subnetId;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeMaintenanceRebootDue;
         private String updateOperationConstraint;
@@ -733,7 +732,7 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "definedTags");
             }
@@ -749,7 +748,7 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "extendedMetadata");
             }
@@ -765,7 +764,7 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "freeformTags");
             }
@@ -878,7 +877,7 @@ public final class GetInstanceResult {
             return launchVolumeAttachments(List.of(launchVolumeAttachments));
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "metadata");
             }
@@ -994,7 +993,7 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "systemTags");
             }

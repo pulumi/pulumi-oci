@@ -35,13 +35,13 @@ type OperatorControl struct {
 	// (Updatable) The OCID of the compartment that contains this operator control.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the operator control.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) List of emailId.
 	EmailIdLists pulumi.StringArrayOutput `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Whether the operator control is a default Operator Control.
 	IsDefaultOperatorControl pulumi.BoolOutput `pulumi:"isDefaultOperatorControl"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -125,13 +125,13 @@ type operatorControlState struct {
 	// (Updatable) The OCID of the compartment that contains this operator control.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the operator control.
 	Description *string `pulumi:"description"`
 	// (Updatable) List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether the operator control is a default Operator Control.
 	IsDefaultOperatorControl *bool `pulumi:"isDefaultOperatorControl"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -171,13 +171,13 @@ type OperatorControlState struct {
 	// (Updatable) The OCID of the compartment that contains this operator control.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the operator control.
 	Description pulumi.StringPtrInput
 	// (Updatable) List of emailId.
 	EmailIdLists pulumi.StringArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Whether the operator control is a default Operator Control.
 	IsDefaultOperatorControl pulumi.BoolPtrInput
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -219,13 +219,13 @@ type operatorControlArgs struct {
 	// (Updatable) The OCID of the compartment that contains this operator control.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the operator control.
 	Description *string `pulumi:"description"`
 	// (Updatable) List of emailId.
 	EmailIdLists []string `pulumi:"emailIdLists"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved bool `pulumi:"isFullyPreApproved"`
 	// (Updatable) Number of approvers required to approve an access request.
@@ -252,13 +252,13 @@ type OperatorControlArgs struct {
 	// (Updatable) The OCID of the compartment that contains this operator control.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the operator control.
 	Description pulumi.StringPtrInput
 	// (Updatable) List of emailId.
 	EmailIdLists pulumi.StringArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
 	IsFullyPreApproved pulumi.BoolInput
 	// (Updatable) Number of approvers required to approve an access request.
@@ -384,8 +384,8 @@ func (o OperatorControlOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o OperatorControlOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OperatorControlOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the operator control.
@@ -399,8 +399,8 @@ func (o OperatorControlOutput) EmailIdLists() pulumi.StringArrayOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o OperatorControlOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OperatorControl) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OperatorControlOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OperatorControl) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether the operator control is a default Operator Control.

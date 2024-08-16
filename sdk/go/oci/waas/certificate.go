@@ -36,12 +36,12 @@ import (
 //				CertificateData: pulumi.Any(certificateCertificateData),
 //				CompartmentId:   pulumi.Any(compartmentId),
 //				PrivateKeyData:  pulumi.Any(certificatePrivateKeyData),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(certificateDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsTrustVerificationDisabled: pulumi.Any(certificateIsTrustVerificationDisabled),
 //			})
@@ -69,13 +69,13 @@ type Certificate struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions CertificateExtensionArrayOutput `pulumi:"extensions"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled pulumi.BoolOutput   `pulumi:"isTrustVerificationDisabled"`
 	IssuedBy                    pulumi.StringOutput `pulumi:"issuedBy"`
@@ -161,13 +161,13 @@ type certificateState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions []CertificateExtension `pulumi:"extensions"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled *bool   `pulumi:"isTrustVerificationDisabled"`
 	IssuedBy                    *string `pulumi:"issuedBy"`
@@ -208,13 +208,13 @@ type CertificateState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions CertificateExtensionArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled pulumi.BoolPtrInput
 	IssuedBy                    pulumi.StringPtrInput
@@ -259,11 +259,11 @@ type certificateArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled *bool `pulumi:"isTrustVerificationDisabled"`
 	// The private key of the SSL certificate.
@@ -284,11 +284,11 @@ type CertificateArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the SSL certificate.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Set to `true` if the SSL certificate is self-signed.
 	IsTrustVerificationDisabled pulumi.BoolPtrInput
 	// The private key of the SSL certificate.
@@ -400,8 +400,8 @@ func (o CertificateOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o CertificateOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CertificateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name for the SSL certificate. The name can be changed and does not need to be unique.
@@ -415,8 +415,8 @@ func (o CertificateOutput) Extensions() CertificateExtensionArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o CertificateOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Certificate) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CertificateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Certificate) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Set to `true` if the SSL certificate is self-signed.

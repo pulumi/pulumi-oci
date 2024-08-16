@@ -69,11 +69,11 @@ type LookupVbInstanceResult struct {
 	// Details for a custom endpoint for the vb instance.
 	CustomEndpoints []GetVbInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Vb Instance Identifier, can be renamed.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Information for IDCS access
@@ -98,7 +98,7 @@ type LookupVbInstanceResult struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
@@ -172,8 +172,8 @@ func (o LookupVbInstanceResultOutput) CustomEndpoints() GetVbInstanceCustomEndpo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupVbInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVbInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Vb Instance Identifier, can be renamed.
@@ -182,8 +182,8 @@ func (o LookupVbInstanceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupVbInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVbInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -246,8 +246,8 @@ func (o LookupVbInstanceResultOutput) StateMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupVbInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVbInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupVbInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVbInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the VbInstance was created. An RFC3339 formatted datetime string.

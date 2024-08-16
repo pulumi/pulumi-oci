@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// The headers of the response.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Headers;
+        public readonly ImmutableDictionary<string, string> Headers;
         /// <summary>
         /// The opc-request-id of the request.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Audit.Outputs
         /// <summary>
         /// The parameters supplied by the caller during this operation.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Parameters;
+        public readonly ImmutableDictionary<string, string> Parameters;
         /// <summary>
         /// The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.&lt;unique_ID&gt;`
         /// </summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.Audit.Outputs
         private GetEventsAuditEventDataRequestResult(
             string action,
 
-            ImmutableDictionary<string, object> headers,
+            ImmutableDictionary<string, string> headers,
 
             string id,
 
-            ImmutableDictionary<string, object> parameters,
+            ImmutableDictionary<string, string> parameters,
 
             string path)
         {

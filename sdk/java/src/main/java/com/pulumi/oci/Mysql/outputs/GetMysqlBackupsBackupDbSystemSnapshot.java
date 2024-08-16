@@ -12,7 +12,6 @@ import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotMainten
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnection;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -64,7 +63,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The Deletion policy for the DB System.
      * 
@@ -94,7 +93,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP&#39;s fully qualified domain name (FQDN) (for example, &#34;dbsystem-1&#34; in FQDN &#34;dbsystem-1.subnet123.vcn1.oraclevcn.com&#34;). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      * 
@@ -217,7 +216,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -259,7 +258,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -364,13 +363,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private String crashRecovery;
         private Integer dataStorageSizeInGb;
         private String databaseManagement;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private List<GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy> deletionPolicies;
         private String description;
         private String displayName;
         private List<GetMysqlBackupsBackupDbSystemSnapshotEndpoint> endpoints;
         private String faultDomain;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostnameLabel;
         private String id;
         private String ipAddress;
@@ -483,7 +482,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "definedTags");
             }
@@ -537,7 +536,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "freeformTags");
             }

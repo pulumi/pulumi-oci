@@ -91,7 +91,7 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
      */
@@ -99,11 +99,11 @@ export class IdentityProvider extends pulumi.CustomResource {
     /**
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
      */
-    public readonly freeformAttributes!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformAttributes!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
@@ -229,7 +229,7 @@ export interface IdentityProviderState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
      */
@@ -237,11 +237,11 @@ export interface IdentityProviderState {
     /**
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
      */
-    freeformAttributes?: pulumi.Input<{[key: string]: any}>;
+    freeformAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The detailed status of INACTIVE lifecycleState.
      */
@@ -299,7 +299,7 @@ export interface IdentityProviderArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
      */
@@ -307,11 +307,11 @@ export interface IdentityProviderArgs {
     /**
      * (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
      */
-    freeformAttributes?: pulumi.Input<{[key: string]: any}>;
+    freeformAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The XML that contains the information required for federating.
      */

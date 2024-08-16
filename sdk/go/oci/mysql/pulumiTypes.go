@@ -1161,7 +1161,7 @@ type MysqlBackupDbSystemSnapshot struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement *string `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []MysqlBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
 	// (Updatable) A user-supplied description for the backup.
@@ -1173,7 +1173,7 @@ type MysqlBackupDbSystemSnapshot struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -1229,7 +1229,7 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringPtrInput `pulumi:"databaseManagement"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies MysqlBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// (Updatable) A user-supplied description for the backup.
@@ -1241,7 +1241,7 @@ type MysqlBackupDbSystemSnapshotArgs struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -1360,8 +1360,8 @@ func (o MysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringPtr
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlBackupDbSystemSnapshotOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlBackupDbSystemSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Deletion policy for the DB System.
@@ -1392,8 +1392,8 @@ func (o MysqlBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringPtrOutput 
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlBackupDbSystemSnapshotOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlBackupDbSystemSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshot) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -1480,9 +1480,9 @@ func (o MysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) MysqlBa
 
 type MysqlBackupDbSystemSnapshotBackupPolicy struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -1506,9 +1506,9 @@ type MysqlBackupDbSystemSnapshotBackupPolicyInput interface {
 
 type MysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -1571,13 +1571,13 @@ func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) ToMysqlBackupDbSystemSnap
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -4702,13 +4702,13 @@ type MysqlDbSystemBackupPolicy struct {
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 	//
 	// Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	//
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 	//
 	// Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Specifies if automatic backups are enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) The PITR policy for the DB System.
@@ -4740,13 +4740,13 @@ type MysqlDbSystemBackupPolicyArgs struct {
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 	//
 	// Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
 	//
 	// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 	//
 	// Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// (Updatable) Specifies if automatic backups are enabled.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) The PITR policy for the DB System.
@@ -4843,8 +4843,8 @@ func (o MysqlDbSystemBackupPolicyOutput) ToMysqlDbSystemBackupPolicyPtrOutputWit
 // Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 //
 // Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -4852,8 +4852,8 @@ func (o MysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
 // Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 //
 // Example: `{"bar-key": "value"}`
-func (o MysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlDbSystemBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies if automatic backups are enabled.
@@ -4909,13 +4909,13 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) Elem() MysqlDbSystemBackupPolicyOutp
 // Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 //
 // Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlDbSystemBackupPolicyPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]interface{} {
+func (o MysqlDbSystemBackupPolicyPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
@@ -4923,13 +4923,13 @@ func (o MysqlDbSystemBackupPolicyPtrOutput) DefinedTags() pulumi.MapOutput {
 // Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
 //
 // Example: `{"bar-key": "value"}`
-func (o MysqlDbSystemBackupPolicyPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]interface{} {
+func (o MysqlDbSystemBackupPolicyPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MysqlDbSystemBackupPolicy) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies if automatic backups are enabled.
@@ -5117,11 +5117,11 @@ type MysqlDbSystemChannel struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id *string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -5155,11 +5155,11 @@ type MysqlDbSystemChannelArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -5235,8 +5235,8 @@ func (o MysqlDbSystemChannelOutput) CompartmentId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MysqlDbSystemChannelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlDbSystemChannel) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemChannelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannel) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The user-friendly name for the DB System. It does not have to be unique.
@@ -5245,8 +5245,8 @@ func (o MysqlDbSystemChannelOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MysqlDbSystemChannelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v MysqlDbSystemChannel) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MysqlDbSystemChannelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MysqlDbSystemChannel) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the DB System.
@@ -8101,13 +8101,13 @@ type GetChannelsChannel struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User provided description of the Channel.
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Channel.
 	Id string `pulumi:"id"`
 	// If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
@@ -8141,13 +8141,13 @@ type GetChannelsChannelArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// User provided description of the Channel.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Channel.
 	Id pulumi.StringInput `pulumi:"id"`
 	// If true, returns only Channels that are enabled. If false, returns only Channels that are disabled.
@@ -8223,8 +8223,8 @@ func (o GetChannelsChannelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetChannelsChannelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetChannelsChannel) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetChannelsChannelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChannelsChannel) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User provided description of the Channel.
@@ -8238,8 +8238,8 @@ func (o GetChannelsChannelOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetChannelsChannelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetChannelsChannel) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetChannelsChannelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetChannelsChannel) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Channel.
@@ -9200,7 +9200,7 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
@@ -9212,7 +9212,7 @@ type GetMysqlBackupDbSystemSnapshot struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -9268,7 +9268,7 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
@@ -9280,7 +9280,7 @@ type GetMysqlBackupDbSystemSnapshotArgs struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -9401,8 +9401,8 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupDbSystemSnapshotOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Deletion policy for the DB System.
@@ -9433,8 +9433,8 @@ func (o GetMysqlBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupDbSystemSnapshotOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupDbSystemSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshot) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -9523,9 +9523,9 @@ func (o GetMysqlBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetM
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicy struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -9549,9 +9549,9 @@ type GetMysqlBackupDbSystemSnapshotBackupPolicyInput interface {
 
 type GetMysqlBackupDbSystemSnapshotBackupPolicyArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -9614,13 +9614,13 @@ func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupDbSyst
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -10496,13 +10496,13 @@ type GetMysqlBackupsBackup struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []GetMysqlBackupsBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the backup itself
 	Id string `pulumi:"id"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -10556,13 +10556,13 @@ type GetMysqlBackupsBackupArgs struct {
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots GetMysqlBackupsBackupDbSystemSnapshotArrayInput `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the backup itself
 	Id pulumi.StringInput `pulumi:"id"`
 	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
@@ -10681,8 +10681,8 @@ func (o GetMysqlBackupsBackupOutput) DbSystemSnapshots() GetMysqlBackupsBackupDb
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupsBackupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-supplied description for the backup.
@@ -10696,8 +10696,8 @@ func (o GetMysqlBackupsBackupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupsBackupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID of the backup itself
@@ -10797,7 +10797,7 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
@@ -10809,7 +10809,7 @@ type GetMysqlBackupsBackupDbSystemSnapshot struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -10865,7 +10865,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	// Whether to enable monitoring via the Database Management service.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// A user-supplied description for the backup.
@@ -10877,7 +10877,7 @@ type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
 	// The name of the Fault Domain the DB System is located in.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// OCID of the backup itself
@@ -10998,8 +10998,8 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Deletion policy for the DB System.
@@ -11032,8 +11032,8 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FaultDomain() pulumi.String
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -11122,9 +11122,9 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInpu
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -11148,9 +11148,9 @@ type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput interface {
 
 type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Specifies if PITR is enabled or disabled.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -11213,15 +11213,13 @@ func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBacku
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies if PITR is enabled or disabled.
@@ -13142,13 +13140,13 @@ type GetMysqlConfigurationsConfiguration struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User-provided data about the Configuration.
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id string `pulumi:"id"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -13184,13 +13182,13 @@ type GetMysqlConfigurationsConfigurationArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// User-provided data about the Configuration.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the Configuration.
 	Id pulumi.StringInput `pulumi:"id"`
 	// User-defined service variables set only at DB system initialization. These variables cannot be changed later at runtime.
@@ -13268,8 +13266,8 @@ func (o GetMysqlConfigurationsConfigurationOutput) CompartmentId() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlConfigurationsConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User-provided data about the Configuration.
@@ -13283,8 +13281,8 @@ func (o GetMysqlConfigurationsConfigurationOutput) DisplayName() pulumi.StringOu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlConfigurationsConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlConfigurationsConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlConfigurationsConfiguration) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Configuration.
@@ -14416,9 +14414,9 @@ func (o GetMysqlConfigurationsFilterArrayOutput) Index(i pulumi.IntInput) GetMys
 
 type GetMysqlDbSystemBackupPolicy struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -14442,9 +14440,9 @@ type GetMysqlDbSystemBackupPolicyInput interface {
 
 type GetMysqlDbSystemBackupPolicyArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -14507,13 +14505,13 @@ func (o GetMysqlDbSystemBackupPolicyOutput) ToGetMysqlDbSystemBackupPolicyOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether the Channel has been enabled by the user.
@@ -14657,11 +14655,11 @@ type GetMysqlDbSystemChannel struct {
 	// The OCID of the compartment the DB System belongs in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -14695,11 +14693,11 @@ type GetMysqlDbSystemChannelArgs struct {
 	// The OCID of the compartment the DB System belongs in.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name for the DB System. It does not have to be unique.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -14775,8 +14773,8 @@ func (o GetMysqlDbSystemChannelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlDbSystemChannelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemChannelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the DB System. It does not have to be unique.
@@ -14785,8 +14783,8 @@ func (o GetMysqlDbSystemChannelOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlDbSystemChannelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemChannel) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemChannelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemChannel) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the DB System.
@@ -16488,7 +16486,7 @@ type GetMysqlDbSystemsDbSystem struct {
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement string `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies []GetMysqlDbSystemsDbSystemDeletionPolicy `pulumi:"deletionPolicies"`
 	// User-provided data about the DB System.
@@ -16500,7 +16498,7 @@ type GetMysqlDbSystemsDbSystem struct {
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters []GetMysqlDbSystemsDbSystemHeatWaveCluster `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -16575,7 +16573,7 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	// Filter DB Systems by their Database Management configuration.
 	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The Deletion policy for the DB System.
 	DeletionPolicies GetMysqlDbSystemsDbSystemDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
 	// User-provided data about the DB System.
@@ -16587,7 +16585,7 @@ type GetMysqlDbSystemsDbSystemArgs struct {
 	// The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A summary of a HeatWave cluster.
 	HeatWaveClusters GetMysqlDbSystemsDbSystemHeatWaveClusterArrayInput `pulumi:"heatWaveClusters"`
 	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
@@ -16736,8 +16734,8 @@ func (o GetMysqlDbSystemsDbSystemOutput) DatabaseManagement() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Deletion policy for the DB System.
@@ -16766,8 +16764,8 @@ func (o GetMysqlDbSystemsDbSystemOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A summary of a HeatWave cluster.
@@ -16897,9 +16895,9 @@ func (o GetMysqlDbSystemsDbSystemArrayOutput) Index(i pulumi.IntInput) GetMysqlD
 
 type GetMysqlDbSystemsDbSystemBackupPolicy struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -16923,9 +16921,9 @@ type GetMysqlDbSystemsDbSystemBackupPolicyInput interface {
 
 type GetMysqlDbSystemsDbSystemBackupPolicyArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Whether the Channel has been enabled by the user.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// The PITR policy for the DB System.
@@ -16988,13 +16986,13 @@ func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) ToGetMysqlDbSystemsDbSystem
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Whether the Channel has been enabled by the user.
@@ -17140,11 +17138,11 @@ type GetMysqlDbSystemsDbSystemChannel struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id string `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -17178,11 +17176,11 @@ type GetMysqlDbSystemsDbSystemChannelArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resource matching the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the DB System.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the Channel has been enabled by the user.
@@ -17258,8 +17256,8 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemChannelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resource matching the given display name exactly.
@@ -17268,8 +17266,8 @@ func (o GetMysqlDbSystemsDbSystemChannelOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlDbSystemsDbSystemChannelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMysqlDbSystemsDbSystemChannelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMysqlDbSystemsDbSystemChannel) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the DB System.
@@ -19712,7 +19710,7 @@ type GetReplicasReplica struct {
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User provided description of the read replica.
 	Description string `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
@@ -19720,7 +19718,7 @@ type GetReplicasReplica struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the read replica.
 	Id string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
@@ -19770,7 +19768,7 @@ type GetReplicasReplicaArgs struct {
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// User provided description of the read replica.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resource matching the given display name exactly.
@@ -19778,7 +19776,7 @@ type GetReplicasReplicaArgs struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the read replica.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
@@ -19879,8 +19877,8 @@ func (o GetReplicasReplicaOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetReplicasReplicaOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicasReplica) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetReplicasReplicaOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicasReplica) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User provided description of the read replica.
@@ -19899,8 +19897,8 @@ func (o GetReplicasReplicaOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetReplicasReplicaOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicasReplica) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetReplicasReplicaOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicasReplica) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the read replica.

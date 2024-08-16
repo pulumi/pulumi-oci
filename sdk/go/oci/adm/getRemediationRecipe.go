@@ -61,13 +61,13 @@ type LookupRemediationRecipeResult struct {
 	// The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A configuration to define the constraints when detecting vulnerable dependencies.
 	DetectConfigurations []GetRemediationRecipeDetectConfiguration `pulumi:"detectConfigurations"`
 	// The name of the Remediation Recipe.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	Id string `pulumi:"id"`
 	// Boolean indicating if a run should be automatically triggered once the Knowledge Base contents are updated.
@@ -82,7 +82,7 @@ type LookupRemediationRecipeResult struct {
 	// The current lifecycle state of the Remediation Recipe.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the Remediation Recipe was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -135,8 +135,8 @@ func (o LookupRemediationRecipeResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupRemediationRecipeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupRemediationRecipeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A configuration to define the constraints when detecting vulnerable dependencies.
@@ -152,8 +152,8 @@ func (o LookupRemediationRecipeResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupRemediationRecipeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupRemediationRecipeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
@@ -195,8 +195,8 @@ func (o LookupRemediationRecipeResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupRemediationRecipeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupRemediationRecipeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRemediationRecipeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the Remediation Recipe (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

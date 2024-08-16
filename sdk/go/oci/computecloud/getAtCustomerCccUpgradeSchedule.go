@@ -63,7 +63,7 @@ type LookupAtCustomerCccUpgradeScheduleResult struct {
 	// Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer upgrade schedule.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the Compute Cloud@Customer upgrade schedule time block.
 	Description string `pulumi:"description"`
 	// Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential information.
@@ -71,7 +71,7 @@ type LookupAtCustomerCccUpgradeScheduleResult struct {
 	// List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
 	Events []GetAtCustomerCccUpgradeScheduleEvent `pulumi:"events"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
 	Id string `pulumi:"id"`
 	// List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
@@ -81,7 +81,7 @@ type LookupAtCustomerCccUpgradeScheduleResult struct {
 	// Lifecycle state of the resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
@@ -136,8 +136,8 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) CompartmentId() pulumi.S
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the Compute Cloud@Customer upgrade schedule time block.
@@ -158,8 +158,8 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) Events() GetAtCustomerCc
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
@@ -183,8 +183,8 @@ func (o LookupAtCustomerCccUpgradeScheduleResultOutput) State() pulumi.StringOut
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAtCustomerCccUpgradeScheduleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAtCustomerCccUpgradeScheduleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAtCustomerCccUpgradeScheduleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the upgrade schedule was created, using an RFC3339 formatted datetime string.

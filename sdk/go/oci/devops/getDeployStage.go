@@ -81,11 +81,11 @@ type LookupDeployStageResult struct {
 	// A compute instance group environment OCID for rolling deployment.
 	ComputeInstanceGroupDeployEnvironmentId string `pulumi:"computeInstanceGroupDeployEnvironmentId"`
 	// User provided key and value pair configuration, which is assigned through constants or parameter.
-	Config map[string]interface{} `pulumi:"config"`
+	Config map[string]string `pulumi:"config"`
 	// Specifies the container configuration.
 	ContainerConfigs []GetDeployStageContainerConfig `pulumi:"containerConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
 	DeployArtifactId string `pulumi:"deployArtifactId"`
 	// The list of file artifact OCIDs to deploy.
@@ -112,7 +112,7 @@ type LookupDeployStageResult struct {
 	// Specifies a failure policy for a compute instance group rolling deployment stage.
 	FailurePolicies []GetDeployStageFailurePolicy `pulumi:"failurePolicies"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Function environment OCID.
 	FunctionDeployEnvironmentId string `pulumi:"functionDeployEnvironmentId"`
 	// Timeout for execution of the Function. Value in seconds.
@@ -186,7 +186,7 @@ type LookupDeployStageResult struct {
 	// The current state of the deployment stage.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
 	TestLoadBalancerConfigs []GetDeployStageTestLoadBalancerConfig `pulumi:"testLoadBalancerConfigs"`
 	// Time the deployment stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -297,8 +297,8 @@ func (o LookupDeployStageResultOutput) ComputeInstanceGroupDeployEnvironmentId()
 }
 
 // User provided key and value pair configuration, which is assigned through constants or parameter.
-func (o LookupDeployStageResultOutput) Config() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.Config }).(pulumi.MapOutput)
+func (o LookupDeployStageResultOutput) Config() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) map[string]string { return v.Config }).(pulumi.StringMapOutput)
 }
 
 // Specifies the container configuration.
@@ -307,8 +307,8 @@ func (o LookupDeployStageResultOutput) ContainerConfigs() GetDeployStageContaine
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDeployStageResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDeployStageResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage's execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
@@ -378,8 +378,8 @@ func (o LookupDeployStageResultOutput) FailurePolicies() GetDeployStageFailurePo
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o LookupDeployStageResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDeployStageResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Function environment OCID.
@@ -565,8 +565,8 @@ func (o LookupDeployStageResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDeployStageResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDeployStageResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDeployStageResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDeployStageResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.

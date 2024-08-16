@@ -51,7 +51,7 @@ export interface GetMediaWorkflowJobResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
      */
@@ -59,7 +59,7 @@ export interface GetMediaWorkflowJobResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The ID associated with the job output.
      */
@@ -102,7 +102,7 @@ export interface GetMediaWorkflowJobResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * Status of each task.
      */

@@ -71,15 +71,15 @@ type LookupAlarmSuppressionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id string `pulumi:"id"`
 	// The current lifecycle state of the alarm suppression.  Example: `DELETED`
@@ -149,8 +149,8 @@ func (o LookupAlarmSuppressionResultOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAlarmSuppressionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAlarmSuppressionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -159,8 +159,8 @@ func (o LookupAlarmSuppressionResultOutput) Description() pulumi.StringOutput {
 }
 
 // Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-func (o LookupAlarmSuppressionResultOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+func (o LookupAlarmSuppressionResultOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -169,8 +169,8 @@ func (o LookupAlarmSuppressionResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-func (o LookupAlarmSuppressionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAlarmSuppressionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAlarmSuppressionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.

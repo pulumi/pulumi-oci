@@ -59,13 +59,13 @@ type LookupExternalClusterArgs struct {
 // A collection of values returned by getExternalCluster.
 type LookupExternalClusterResult struct {
 	// The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The name of the external cluster.
 	ComponentName string `pulumi:"componentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the external cluster. The name does not have to be unique.
 	DisplayName       string `pulumi:"displayName"`
 	ExternalClusterId string `pulumi:"externalClusterId"`
@@ -74,7 +74,7 @@ type LookupExternalClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The directory in which Oracle Grid Infrastructure is installed.
 	GridHome string `pulumi:"gridHome"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
@@ -92,7 +92,7 @@ type LookupExternalClusterResult struct {
 	// The current lifecycle state of the external cluster.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external cluster was last updated.
@@ -142,8 +142,8 @@ func (o LookupExternalClusterResultOutput) ToLookupExternalClusterResultOutputWi
 }
 
 // The additional details of the external cluster defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o LookupExternalClusterResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupExternalClusterResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -157,8 +157,8 @@ func (o LookupExternalClusterResultOutput) ComponentName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupExternalClusterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the external cluster. The name does not have to be unique.
@@ -181,8 +181,8 @@ func (o LookupExternalClusterResultOutput) ExternalDbSystemId() pulumi.StringOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupExternalClusterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The directory in which Oracle Grid Infrastructure is installed.
@@ -228,8 +228,8 @@ func (o LookupExternalClusterResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExternalClusterResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalClusterResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExternalClusterResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external cluster was created.

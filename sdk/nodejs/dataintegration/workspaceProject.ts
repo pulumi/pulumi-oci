@@ -86,7 +86,7 @@ export class WorkspaceProject extends pulumi.CustomResource {
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
@@ -203,7 +203,7 @@ export interface WorkspaceProjectState {
     /**
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: any}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */

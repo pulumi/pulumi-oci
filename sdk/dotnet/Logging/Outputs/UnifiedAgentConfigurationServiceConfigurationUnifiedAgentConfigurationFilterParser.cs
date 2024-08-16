@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// 
         /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Types;
+        public readonly ImmutableDictionary<string, string>? Types;
 
         [OutputConstructor]
         private UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser(
@@ -200,7 +200,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
             int? timeoutInMilliseconds,
 
-            ImmutableDictionary<string, object>? types)
+            ImmutableDictionary<string, string>? types)
         {
             Delimiter = delimiter;
             Expression = expression;

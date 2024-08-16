@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Additional details of the maintenance in the form of json.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, string> AdditionalDetails;
         public readonly string AlternativeResolutionAction;
         /// <summary>
         /// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// It is the descriptive information about the maintenance taking place on the customer instance.
         /// </summary>
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
         /// </summary>
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetInstanceMaintenanceEventsInstanceMaintenanceEventResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, string> additionalDetails,
 
             string alternativeResolutionAction,
 
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string createdBy,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             string estimatedDuration,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

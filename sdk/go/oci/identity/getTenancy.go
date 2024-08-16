@@ -59,11 +59,11 @@ type GetTenancyArgs struct {
 // A collection of values returned by getTenancy.
 type GetTenancyResult struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the tenancy.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`
 	HomeRegionKey string `pulumi:"homeRegionKey"`
 	// The provider-assigned unique ID for this managed resource.
@@ -114,8 +114,8 @@ func (o GetTenancyResultOutput) ToGetTenancyResultOutputWithContext(ctx context.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetTenancyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTenancyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTenancyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTenancyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the tenancy.
@@ -124,8 +124,8 @@ func (o GetTenancyResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetTenancyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTenancyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTenancyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTenancyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The region key for the tenancy's home region. For the full list of supported regions, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).  Example: `PHX`

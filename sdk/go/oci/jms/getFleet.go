@@ -71,14 +71,14 @@ type LookupFleetResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The Fleet's description.
 	Description string `pulumi:"description"`
 	// The name of the Fleet.
 	DisplayName string `pulumi:"displayName"`
 	FleetId     string `pulumi:"fleetId"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	Id string `pulumi:"id"`
 	// Custom Log for inventory or operation log.
@@ -92,7 +92,7 @@ type LookupFleetResult struct {
 	// The lifecycle state of the Fleet.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -166,8 +166,8 @@ func (o LookupFleetResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-func (o LookupFleetResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFleetResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupFleetResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFleetResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The Fleet's description.
@@ -185,8 +185,8 @@ func (o LookupFleetResultOutput) FleetId() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-func (o LookupFleetResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFleetResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupFleetResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFleetResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
@@ -220,8 +220,8 @@ func (o LookupFleetResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupFleetResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFleetResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupFleetResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFleetResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

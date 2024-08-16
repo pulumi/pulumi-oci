@@ -72,7 +72,7 @@ export interface GetWorkspaceApplicationPatchResult {
     /**
      * The errors encountered while applying the patch, if any.
      */
-    readonly errorMessages: {[key: string]: any};
+    readonly errorMessages: {[key: string]: string};
     readonly id: string;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -85,7 +85,7 @@ export interface GetWorkspaceApplicationPatchResult {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    readonly keyMap: {[key: string]: any};
+    readonly keyMap: {[key: string]: string};
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */

@@ -35,12 +35,12 @@ import (
 //				IsPerpetual:      pulumi.Any(licenseRecordIsPerpetual),
 //				IsUnlimited:      pulumi.Any(licenseRecordIsUnlimited),
 //				ProductLicenseId: pulumi.Any(testProductLicense.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				ExpirationDate: pulumi.Any(licenseRecordExpirationDate),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				LicenseCount:   pulumi.Any(licenseRecordLicenseCount),
 //				ProductId:      pulumi.Any(testProduct.Id),
@@ -68,13 +68,13 @@ type LicenseRecord struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) License record name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	ExpirationDate pulumi.StringOutput `pulumi:"expirationDate"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Specifies if the license record term is perpertual.
 	IsPerpetual pulumi.BoolOutput `pulumi:"isPerpetual"`
 	// (Updatable) Specifies if the license count is unlimited.
@@ -97,7 +97,7 @@ type LicenseRecord struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate pulumi.StringOutput `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
@@ -149,13 +149,13 @@ type licenseRecordState struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) License record name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	ExpirationDate *string `pulumi:"expirationDate"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Specifies if the license record term is perpertual.
 	IsPerpetual *bool `pulumi:"isPerpetual"`
 	// (Updatable) Specifies if the license count is unlimited.
@@ -178,7 +178,7 @@ type licenseRecordState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate *string `pulumi:"supportEndDate"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
@@ -189,13 +189,13 @@ type LicenseRecordState struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the license record is created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) License record name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	ExpirationDate pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Specifies if the license record term is perpertual.
 	IsPerpetual pulumi.BoolPtrInput
 	// (Updatable) Specifies if the license count is unlimited.
@@ -218,7 +218,7 @@ type LicenseRecordState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SupportEndDate pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the license record was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
@@ -231,13 +231,13 @@ func (LicenseRecordState) ElementType() reflect.Type {
 
 type licenseRecordArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) License record name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	ExpirationDate *string `pulumi:"expirationDate"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Specifies if the license record term is perpertual.
 	IsPerpetual bool `pulumi:"isPerpetual"`
 	// (Updatable) Specifies if the license count is unlimited.
@@ -258,13 +258,13 @@ type licenseRecordArgs struct {
 // The set of arguments for constructing a LicenseRecord resource.
 type LicenseRecordArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) License record name.
 	DisplayName pulumi.StringInput
 	// (Updatable) The license record end date in [RFC 3339](https://tools.ietf.org/html/rfc3339) date format. Example: `2018-09-12`
 	ExpirationDate pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Specifies if the license record term is perpertual.
 	IsPerpetual pulumi.BoolInput
 	// (Updatable) Specifies if the license count is unlimited.
@@ -375,8 +375,8 @@ func (o LicenseRecordOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LicenseRecordOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LicenseRecordOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) License record name.
@@ -390,8 +390,8 @@ func (o LicenseRecordOutput) ExpirationDate() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LicenseRecordOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LicenseRecordOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies if the license record term is perpertual.
@@ -443,8 +443,8 @@ func (o LicenseRecordOutput) SupportEndDate() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LicenseRecordOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LicenseRecord) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o LicenseRecordOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LicenseRecord) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the license record was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.

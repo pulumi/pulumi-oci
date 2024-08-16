@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -84,13 +83,13 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="encProperties")
-    private @Nullable Output<Map<String,Object>> encProperties;
+    private @Nullable Output<Map<String,String>> encProperties;
 
     /**
      * @return (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it&#39;s set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the &#34;default&#34; category. To determine the set of optional and required properties for a connection type, a query can be done on &#39;/types?type=connection&#39; that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it&#39;s properties, can be identified from this collection. Example: `{&#34;encProperties&#34;: { &#34;default&#34;: { &#34;password&#34;: &#34;example-password&#34;}}}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> encProperties() {
+    public Optional<Output<Map<String,String>>> encProperties() {
         return Optional.ofNullable(this.encProperties);
     }
 
@@ -110,9 +109,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     @Import(name="properties", required=true)
-    private Output<Map<String,Object>> properties;
+    private Output<Map<String,String>> properties;
 
-    public Output<Map<String,Object>> properties() {
+    public Output<Map<String,String>> properties() {
         return this.properties;
     }
 
@@ -258,7 +257,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder encProperties(@Nullable Output<Map<String,Object>> encProperties) {
+        public Builder encProperties(@Nullable Output<Map<String,String>> encProperties) {
             $.encProperties = encProperties;
             return this;
         }
@@ -269,7 +268,7 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder encProperties(Map<String,Object> encProperties) {
+        public Builder encProperties(Map<String,String> encProperties) {
             return encProperties(Output.of(encProperties));
         }
 
@@ -294,12 +293,12 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
             return isDefault(Output.of(isDefault));
         }
 
-        public Builder properties(Output<Map<String,Object>> properties) {
+        public Builder properties(Output<Map<String,String>> properties) {
             $.properties = properties;
             return this;
         }
 
-        public Builder properties(Map<String,Object> properties) {
+        public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
         }
 

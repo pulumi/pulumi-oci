@@ -61,9 +61,9 @@ type LookupPublicationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the publication exists.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The model for upload data for images and icons.
 	Icons []GetPublicationIcon `pulumi:"icons"`
 	// The unique identifier for the publication in Marketplace.
@@ -88,7 +88,7 @@ type LookupPublicationResult struct {
 	// The list of operating systems supported by the listing.
 	SupportedOperatingSystems []GetPublicationSupportedOperatingSystem `pulumi:"supportedOperatingSystems"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -137,13 +137,13 @@ func (o LookupPublicationResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupPublicationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPublicationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPublicationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPublicationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupPublicationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPublicationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPublicationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPublicationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The model for upload data for images and icons.
@@ -211,8 +211,8 @@ func (o LookupPublicationResultOutput) SupportedOperatingSystems() GetPublicatio
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupPublicationResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPublicationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupPublicationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPublicationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the publication was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

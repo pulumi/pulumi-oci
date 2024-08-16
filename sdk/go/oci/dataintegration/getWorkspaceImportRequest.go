@@ -68,7 +68,7 @@ type LookupWorkspaceImportRequestResult struct {
 	// Name of the user who initiated import request.
 	CreatedBy string `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// Name of the zip file from which objects will be imported.
 	FileName string `pulumi:"fileName"`
 	Id       string `pulumi:"id"`
@@ -154,8 +154,8 @@ func (o LookupWorkspaceImportRequestResultOutput) CreatedBy() pulumi.StringOutpu
 }
 
 // Contains key of the error
-func (o LookupWorkspaceImportRequestResultOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceImportRequestResult) map[string]interface{} { return v.ErrorMessages }).(pulumi.MapOutput)
+func (o LookupWorkspaceImportRequestResultOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceImportRequestResult) map[string]string { return v.ErrorMessages }).(pulumi.StringMapOutput)
 }
 
 // Name of the zip file from which objects will be imported.

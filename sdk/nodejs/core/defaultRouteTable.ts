@@ -35,9 +35,9 @@ export class DefaultRouteTable extends pulumi.CustomResource {
     }
 
     public readonly compartmentId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly displayName!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public readonly manageDefaultResourceId!: pulumi.Output<string>;
     public readonly routeRules!: pulumi.Output<outputs.Core.DefaultRouteTableRouteRule[] | undefined>;
     public /*out*/ readonly state!: pulumi.Output<string>;
@@ -88,9 +88,9 @@ export class DefaultRouteTable extends pulumi.CustomResource {
  */
 export interface DefaultRouteTableState {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     manageDefaultResourceId?: pulumi.Input<string>;
     routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[]>;
     state?: pulumi.Input<string>;
@@ -102,9 +102,9 @@ export interface DefaultRouteTableState {
  */
 export interface DefaultRouteTableArgs {
     compartmentId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     manageDefaultResourceId: pulumi.Input<string>;
     routeRules?: pulumi.Input<pulumi.Input<inputs.Core.DefaultRouteTableRouteRule>[]>;
 }

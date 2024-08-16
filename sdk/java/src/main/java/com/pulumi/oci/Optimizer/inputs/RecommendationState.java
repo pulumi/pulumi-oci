@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Optimizer.inputs.RecommendationResourceCountArgs;
 import com.pulumi.oci.Optimizer.inputs.RecommendationSupportedLevelArgs;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -86,13 +85,13 @@ public final class RecommendationState extends com.pulumi.resources.ResourceArgs
      * 
      */
     @Import(name="extendedMetadata")
-    private @Nullable Output<Map<String,Object>> extendedMetadata;
+    private @Nullable Output<Map<String,String>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs for the recommendation.
      * 
      */
-    public Optional<Output<Map<String,Object>>> extendedMetadata() {
+    public Optional<Output<Map<String,String>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
 
@@ -400,7 +399,7 @@ public final class RecommendationState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder extendedMetadata(@Nullable Output<Map<String,Object>> extendedMetadata) {
+        public Builder extendedMetadata(@Nullable Output<Map<String,String>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
@@ -411,7 +410,7 @@ public final class RecommendationState extends com.pulumi.resources.ResourceArgs
          * @return builder
          * 
          */
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }
 

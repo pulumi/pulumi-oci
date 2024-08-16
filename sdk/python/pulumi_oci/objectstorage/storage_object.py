@@ -27,7 +27,7 @@ class StorageObjectArgs:
                  content_md5: Optional[pulumi.Input[str]] = None,
                  content_type: Optional[pulumi.Input[str]] = None,
                  delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
                  source: Optional[pulumi.Input[str]] = None,
                  source_uri_details: Optional[pulumi.Input['StorageObjectSourceUriDetailsArgs']] = None,
@@ -47,7 +47,7 @@ class StorageObjectArgs:
                "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
         :param pulumi.Input[str] opc_sse_kms_key_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
         :param pulumi.Input[str] source: An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
@@ -221,7 +221,7 @@ class StorageObjectArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Optional user-defined metadata key and value.
         Note: All specified keys must be in lower case.
@@ -229,7 +229,7 @@ class StorageObjectArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -295,7 +295,7 @@ class _StorageObjectState:
                  content_md5: Optional[pulumi.Input[str]] = None,
                  content_type: Optional[pulumi.Input[str]] = None,
                  delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -319,7 +319,7 @@ class _StorageObjectState:
                "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -494,7 +494,7 @@ class _StorageObjectState:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Optional user-defined metadata key and value.
         Note: All specified keys must be in lower case.
@@ -502,7 +502,7 @@ class _StorageObjectState:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -620,7 +620,7 @@ class StorageObject(pulumi.CustomResource):
                  content_md5: Optional[pulumi.Input[str]] = None,
                  content_type: Optional[pulumi.Input[str]] = None,
                  delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -683,7 +683,7 @@ class StorageObject(pulumi.CustomResource):
                "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -765,7 +765,7 @@ class StorageObject(pulumi.CustomResource):
                  content_md5: Optional[pulumi.Input[str]] = None,
                  content_type: Optional[pulumi.Input[str]] = None,
                  delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -827,7 +827,7 @@ class StorageObject(pulumi.CustomResource):
             content_md5: Optional[pulumi.Input[str]] = None,
             content_type: Optional[pulumi.Input[str]] = None,
             delete_all_object_versions: Optional[pulumi.Input[bool]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             object: Optional[pulumi.Input[str]] = None,
             opc_sse_kms_key_id: Optional[pulumi.Input[str]] = None,
@@ -856,7 +856,7 @@ class StorageObject(pulumi.CustomResource):
                "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
         :param pulumi.Input[str] content_type: The optional Content-Type header that defines the standard MIME type format of the object. Content type defaults to 'application/octet-stream' if not specified in the PutObject call. Specifying values for this header has no effect on Object Storage behavior. Programs that read the object determine what to do based on the value provided. For example, you could use this header to identify and perform special operations on text only objects.
         :param pulumi.Input[bool] delete_all_object_versions: (Updatable) A boolean to delete all object versions for an object in a bucket that has or ever had versioning enabled.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Optional user-defined metadata key and value.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Optional user-defined metadata key and value.
                Note: All specified keys must be in lower case.
         :param pulumi.Input[str] namespace: The Object Storage namespace used for the request.
         :param pulumi.Input[str] object: (Updatable) The name of the object. Avoid entering confidential information. Example: `test/object1.log`
@@ -976,7 +976,7 @@ class StorageObject(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def metadata(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Optional user-defined metadata key and value.
         Note: All specified keys must be in lower case.

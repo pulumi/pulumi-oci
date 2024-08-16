@@ -29,13 +29,13 @@ type Channel struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) User provided information about the Channel.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
@@ -91,13 +91,13 @@ type channelState struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided information about the Channel.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// A message describing the state of the Channel.
@@ -118,13 +118,13 @@ type ChannelState struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided information about the Channel.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
 	IsEnabled pulumi.BoolPtrInput
 	// A message describing the state of the Channel.
@@ -149,13 +149,13 @@ type channelArgs struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) User provided information about the Channel.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) Parameters detailing how to provision the source for the given Channel.
@@ -169,13 +169,13 @@ type ChannelArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) User provided information about the Channel.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly name for the Channel. It does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.
 	IsEnabled pulumi.BoolPtrInput
 	// (Updatable) Parameters detailing how to provision the source for the given Channel.
@@ -277,8 +277,8 @@ func (o ChannelOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ChannelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Channel) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ChannelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) User provided information about the Channel.
@@ -292,8 +292,8 @@ func (o ChannelOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ChannelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Channel) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ChannelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Channel) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether the Channel should be enabled upon creation. If set to true, the Channel will be asynchronously started as a result of the create Channel operation.

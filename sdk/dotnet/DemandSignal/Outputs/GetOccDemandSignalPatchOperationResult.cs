@@ -21,7 +21,7 @@ namespace Pulumi.Oci.DemandSignal.Outputs
         /// <summary>
         /// The Demand Signal Value.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Value;
+        public readonly ImmutableDictionary<string, string> Value;
 
         [OutputConstructor]
         private GetOccDemandSignalPatchOperationResult(
@@ -35,7 +35,7 @@ namespace Pulumi.Oci.DemandSignal.Outputs
 
             string selection,
 
-            ImmutableDictionary<string, object> value)
+            ImmutableDictionary<string, string> value)
         {
             From = from;
             Operation = operation;

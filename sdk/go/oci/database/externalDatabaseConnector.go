@@ -50,8 +50,8 @@ import (
 //				ExternalDatabaseId: pulumi.Any(testDatabase.Id),
 //				ConnectorType:      pulumi.Any(externalDatabaseConnectorConnectorType),
 //				DefinedTags:        pulumi.Any(externalDatabaseConnectorDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -86,7 +86,7 @@ type ExternalDatabaseConnector struct {
 	// (Updatable) The type of connector used by the external database resource.
 	ConnectorType pulumi.StringOutput `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -95,7 +95,7 @@ type ExternalDatabaseConnector struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external database connector resource.
@@ -164,7 +164,7 @@ type externalDatabaseConnectorState struct {
 	// (Updatable) The type of connector used by the external database resource.
 	ConnectorType *string `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -173,7 +173,7 @@ type externalDatabaseConnectorState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current lifecycle state of the external database connector resource.
@@ -198,7 +198,7 @@ type ExternalDatabaseConnectorState struct {
 	// (Updatable) The type of connector used by the external database resource.
 	ConnectorType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -207,7 +207,7 @@ type ExternalDatabaseConnectorState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current lifecycle state of the external database connector resource.
@@ -232,7 +232,7 @@ type externalDatabaseConnectorArgs struct {
 	// (Updatable) The type of connector used by the external database resource.
 	ConnectorType *string `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -241,7 +241,7 @@ type externalDatabaseConnectorArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalDatabaseConnector resource.
@@ -255,7 +255,7 @@ type ExternalDatabaseConnectorArgs struct {
 	// (Updatable) The type of connector used by the external database resource.
 	ConnectorType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
 	DisplayName pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database resource.
@@ -264,7 +264,7 @@ type ExternalDatabaseConnectorArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (ExternalDatabaseConnectorArgs) ElementType() reflect.Type {
@@ -389,8 +389,8 @@ func (o ExternalDatabaseConnectorOutput) ConnectorType() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o ExternalDatabaseConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExternalDatabaseConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The user-friendly name for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails). The name does not have to be unique.
@@ -407,8 +407,8 @@ func (o ExternalDatabaseConnectorOutput) ExternalDatabaseId() pulumi.StringOutpu
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalDatabaseConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExternalDatabaseConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalDatabaseConnector) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Additional information about the current lifecycle state.

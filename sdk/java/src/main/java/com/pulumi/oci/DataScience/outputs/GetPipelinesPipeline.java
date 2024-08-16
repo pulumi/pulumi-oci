@@ -11,7 +11,6 @@ import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineLogConfigurationDe
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepArtifact;
 import com.pulumi.oci.DataScience.outputs.GetPipelinesPipelineStepDetail;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +37,7 @@ public final class GetPipelinesPipeline {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private Boolean deleteRelatedPipelineRuns;
     /**
      * @return A short description of the step.
@@ -54,7 +53,7 @@ public final class GetPipelinesPipeline {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Must be an OCID of the correct type for the resource type.
      * 
@@ -95,7 +94,7 @@ public final class GetPipelinesPipeline {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2020-08-06T21:10:29.41Z
      * 
@@ -133,7 +132,7 @@ public final class GetPipelinesPipeline {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public Boolean deleteRelatedPipelineRuns() {
@@ -157,7 +156,7 @@ public final class GetPipelinesPipeline {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -216,7 +215,7 @@ public final class GetPipelinesPipeline {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -246,11 +245,11 @@ public final class GetPipelinesPipeline {
         private String compartmentId;
         private List<GetPipelinesPipelineConfigurationDetail> configurationDetails;
         private String createdBy;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private Boolean deleteRelatedPipelineRuns;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private List<GetPipelinesPipelineInfrastructureConfigurationDetail> infrastructureConfigurationDetails;
         private String lifecycleDetails;
@@ -259,7 +258,7 @@ public final class GetPipelinesPipeline {
         private String state;
         private List<GetPipelinesPipelineStepArtifact> stepArtifacts;
         private List<GetPipelinesPipelineStepDetail> stepDetails;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -314,7 +313,7 @@ public final class GetPipelinesPipeline {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipeline", "definedTags");
             }
@@ -346,7 +345,7 @@ public final class GetPipelinesPipeline {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipeline", "freeformTags");
             }
@@ -430,7 +429,7 @@ public final class GetPipelinesPipeline {
             return stepDetails(List.of(stepDetails));
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetPipelinesPipeline", "systemTags");
             }

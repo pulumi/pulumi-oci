@@ -61,14 +61,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DedicatedVmHostId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -79,14 +79,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DisplayName { get; set; }
 
         [Input("extendedMetadata")]
-        private InputMap<object>? _extendedMetadata;
+        private InputMap<string>? _extendedMetadata;
 
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public InputMap<object> ExtendedMetadata
+        public InputMap<string> ExtendedMetadata
         {
-            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<object>());
+            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<string>());
             set => _extendedMetadata = value;
         }
 
@@ -97,14 +97,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? FaultDomain { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -143,14 +143,14 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<Inputs.InstanceConfigurationInstanceDetailsOptionLaunchDetailsLaunchOptionsArgs>? LaunchOptions { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

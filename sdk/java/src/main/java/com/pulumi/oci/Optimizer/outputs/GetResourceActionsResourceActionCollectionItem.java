@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Optimizer.outputs.GetResourceActionsResourceActionCollectionItemAction;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,7 +43,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    private Map<String,Object> extendedMetadata;
+    private Map<String,String> extendedMetadata;
     /**
      * @return The unique OCID associated with the resource action.
      * 
@@ -54,7 +53,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     /**
      * @return Optional. A filter that returns results that match the name specified.
      * 
@@ -147,7 +146,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Map<String,Object> extendedMetadata() {
+    public Map<String,String> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
@@ -161,7 +160,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     /**
@@ -252,9 +251,9 @@ public final class GetResourceActionsResourceActionCollectionItem {
         private String compartmentId;
         private String compartmentName;
         private Double estimatedCostSaving;
-        private Map<String,Object> extendedMetadata;
+        private Map<String,String> extendedMetadata;
         private String id;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String name;
         private String recommendationId;
         private String resourceActionId;
@@ -334,7 +333,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             if (extendedMetadata == null) {
               throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "extendedMetadata");
             }
@@ -350,7 +349,7 @@ public final class GetResourceActionsResourceActionCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetResourceActionsResourceActionCollectionItem", "metadata");
             }

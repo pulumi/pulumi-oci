@@ -605,7 +605,7 @@ class WorkspaceApplicationMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -620,7 +620,7 @@ class WorkspaceApplicationMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -708,7 +708,7 @@ class WorkspaceApplicationMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -1130,7 +1130,7 @@ class WorkspaceApplicationPatchMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -1145,7 +1145,7 @@ class WorkspaceApplicationPatchMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -1233,7 +1233,7 @@ class WorkspaceApplicationPatchMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -2109,7 +2109,7 @@ class WorkspaceApplicationScheduleMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -2124,7 +2124,7 @@ class WorkspaceApplicationScheduleMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -2212,7 +2212,7 @@ class WorkspaceApplicationScheduleMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -2906,7 +2906,7 @@ class WorkspaceApplicationTaskScheduleMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -2921,7 +2921,7 @@ class WorkspaceApplicationTaskScheduleMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -3009,7 +3009,7 @@ class WorkspaceApplicationTaskScheduleMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -3769,7 +3769,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -3784,7 +3784,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadata(dict):
         :param str created_by: (Updatable) The user that created the object.
         :param str created_by_name: (Updatable) The user that created the object.
         :param str identifier_path: (Updatable) The full path to identify this object.
-        :param Mapping[str, Any] info_fields: (Updatable) Information property fields.
+        :param Mapping[str, str] info_fields: (Updatable) Information property fields.
         :param bool is_favorite: (Updatable) Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: (Updatable) The registry version of the object.
@@ -3872,7 +3872,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Information property fields.
         """
@@ -4311,7 +4311,7 @@ class WorkspaceFolderMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -4326,7 +4326,7 @@ class WorkspaceFolderMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -4414,7 +4414,7 @@ class WorkspaceFolderMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -5035,7 +5035,7 @@ class WorkspaceProjectMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -5050,7 +5050,7 @@ class WorkspaceProjectMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -5138,7 +5138,7 @@ class WorkspaceProjectMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -5658,13 +5658,13 @@ class WorkspaceTaskCancelRestCallConfig(dict):
                  key: Optional[str] = None,
                  method_type: Optional[str] = None,
                  model_type: Optional[str] = None,
-                 request_headers: Optional[Mapping[str, Any]] = None):
+                 request_headers: Optional[Mapping[str, str]] = None):
         """
         :param 'WorkspaceTaskCancelRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param str key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param str method_type: (Updatable) The REST method to use.
         :param str model_type: (Updatable) The type of the task.
-        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        :param Mapping[str, str] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -5711,7 +5711,7 @@ class WorkspaceTaskCancelRestCallConfig(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[Mapping[str, Any]]:
+    def request_headers(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) The headers for the REST call.
         """
@@ -6325,13 +6325,13 @@ class WorkspaceTaskExecuteRestCallConfig(dict):
                  key: Optional[str] = None,
                  method_type: Optional[str] = None,
                  model_type: Optional[str] = None,
-                 request_headers: Optional[Mapping[str, Any]] = None):
+                 request_headers: Optional[Mapping[str, str]] = None):
         """
         :param 'WorkspaceTaskExecuteRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param str key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param str method_type: (Updatable) The REST method to use.
         :param str model_type: (Updatable) The type of the task.
-        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        :param Mapping[str, str] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -6378,7 +6378,7 @@ class WorkspaceTaskExecuteRestCallConfig(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[Mapping[str, Any]]:
+    def request_headers(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) The headers for the REST call.
         """
@@ -7226,7 +7226,7 @@ class WorkspaceTaskMetadata(dict):
                  created_by: Optional[str] = None,
                  created_by_name: Optional[str] = None,
                  identifier_path: Optional[str] = None,
-                 info_fields: Optional[Mapping[str, Any]] = None,
+                 info_fields: Optional[Mapping[str, str]] = None,
                  is_favorite: Optional[bool] = None,
                  labels: Optional[Sequence[str]] = None,
                  registry_version: Optional[int] = None,
@@ -7241,7 +7241,7 @@ class WorkspaceTaskMetadata(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
@@ -7329,7 +7329,7 @@ class WorkspaceTaskMetadata(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Optional[Mapping[str, Any]]:
+    def info_fields(self) -> Optional[Mapping[str, str]]:
         """
         Information property fields.
         """
@@ -9137,13 +9137,13 @@ class WorkspaceTaskPollRestCallConfig(dict):
                  key: Optional[str] = None,
                  method_type: Optional[str] = None,
                  model_type: Optional[str] = None,
-                 request_headers: Optional[Mapping[str, Any]] = None):
+                 request_headers: Optional[Mapping[str, str]] = None):
         """
         :param 'WorkspaceTaskPollRestCallConfigConfigValuesArgs' config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param str key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param str method_type: (Updatable) The REST method to use.
         :param str model_type: (Updatable) The type of the task.
-        :param Mapping[str, Any] request_headers: (Updatable) The headers for the REST call.
+        :param Mapping[str, str] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -9190,7 +9190,7 @@ class WorkspaceTaskPollRestCallConfig(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Optional[Mapping[str, Any]]:
+    def request_headers(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) The headers for the REST call.
         """
@@ -10486,7 +10486,7 @@ class GetWorkspaceApplicationMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -10501,7 +10501,7 @@ class GetWorkspaceApplicationMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -10575,7 +10575,7 @@ class GetWorkspaceApplicationMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -10869,7 +10869,7 @@ class GetWorkspaceApplicationPatchMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -10884,7 +10884,7 @@ class GetWorkspaceApplicationPatchMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -10958,7 +10958,7 @@ class GetWorkspaceApplicationPatchMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -11357,10 +11357,10 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemResult(dict):
                  application_version: int,
                  dependent_object_metadatas: Sequence['outputs.GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataResult'],
                  description: str,
-                 error_messages: Mapping[str, Any],
+                 error_messages: Mapping[str, str],
                  identifier: str,
                  key: str,
-                 key_map: Mapping[str, Any],
+                 key_map: Mapping[str, str],
                  metadatas: Sequence['outputs.GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataResult'],
                  model_type: str,
                  model_version: str,
@@ -11380,10 +11380,10 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemResult(dict):
         :param int application_version: The application version of the patch.
         :param Sequence['GetWorkspaceApplicationPatchesPatchSummaryCollectionItemDependentObjectMetadataArgs'] dependent_object_metadatas: List of dependent objects in this patch.
         :param str description: The description of the aggregator.
-        :param Mapping[str, Any] error_messages: The errors encountered while applying the patch, if any.
+        :param Mapping[str, str] error_messages: The errors encountered while applying the patch, if any.
         :param str identifier: Used to filter by the identifier of the published object.
         :param str key: The key of the object.
-        :param Mapping[str, Any] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Mapping[str, str] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param Sequence['GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param str model_type: The object type.
         :param str model_version: The object's model version.
@@ -11454,7 +11454,7 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
+    def error_messages(self) -> Mapping[str, str]:
         """
         The errors encountered while applying the patch, if any.
         """
@@ -11478,7 +11478,7 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
@@ -11684,7 +11684,7 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataResult(dic
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -11699,7 +11699,7 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataResult(dic
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -11773,7 +11773,7 @@ class GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataResult(dic
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -12410,7 +12410,7 @@ class GetWorkspaceApplicationScheduleMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -12425,7 +12425,7 @@ class GetWorkspaceApplicationScheduleMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -12499,7 +12499,7 @@ class GetWorkspaceApplicationScheduleMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -13130,7 +13130,7 @@ class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataResul
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -13145,7 +13145,7 @@ class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataResul
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -13219,7 +13219,7 @@ class GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataResul
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -13695,7 +13695,7 @@ class GetWorkspaceApplicationTaskScheduleMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -13710,7 +13710,7 @@ class GetWorkspaceApplicationTaskScheduleMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -13784,7 +13784,7 @@ class GetWorkspaceApplicationTaskScheduleMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -14337,7 +14337,7 @@ class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -14352,7 +14352,7 @@ class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -14426,7 +14426,7 @@ class GetWorkspaceApplicationTaskScheduleScheduleRefMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -15137,7 +15137,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetad
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -15152,7 +15152,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetad
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -15226,7 +15226,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetad
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -15779,7 +15779,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSched
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -15794,7 +15794,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSched
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -15868,7 +15868,7 @@ class GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSched
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -16086,15 +16086,15 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  application_version: int,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  dependent_object_metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataResult'],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  identifier: str,
                  key: str,
-                 key_map: Mapping[str, Any],
+                 key_map: Mapping[str, str],
                  metadatas: Sequence['outputs.GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult'],
                  model_type: str,
                  model_version: str,
@@ -16113,15 +16113,15 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
         """
         :param int application_version: The source application version of the application.
         :param str compartment_id: OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArgs'] dependent_object_metadatas: A list of dependent objects in this patch.
         :param str description: The description of the aggregator.
         :param str display_name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: OCID of the resource that is used to uniquely identify the application
         :param str identifier: Used to filter by the identifier of the published object.
         :param str key: The key of the object.
-        :param Mapping[str, Any] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Mapping[str, str] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param Sequence['GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param str model_type: The object type.
         :param str model_version: The object's model version.
@@ -16182,7 +16182,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -16214,7 +16214,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -16246,7 +16246,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
@@ -16463,7 +16463,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dic
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -16478,7 +16478,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dic
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -16552,7 +16552,7 @@ class GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataResult(dic
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -17103,7 +17103,7 @@ class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult(dict):
                  are_references_included: bool,
                  bucket: str,
                  created_by: str,
-                 error_messages: Mapping[str, Any],
+                 error_messages: Mapping[str, str],
                  exported_items: Sequence['outputs.GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemResult'],
                  file_name: str,
                  filters: Sequence[str],
@@ -17123,7 +17123,7 @@ class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult(dict):
         :param bool are_references_included: Controls if the references will be exported along with the objects
         :param str bucket: The name of the Object Storage Bucket where the objects will be exported to
         :param str created_by: Name of the user who initiated export request.
-        :param Mapping[str, Any] error_messages: Contains key of the error
+        :param Mapping[str, str] error_messages: Contains key of the error
         :param Sequence['GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArgs'] exported_items: The array of exported object details.
         :param str file_name: Name of the exported zip file.
         :param Sequence[str] filters: Export multiple objects based on filters.
@@ -17186,7 +17186,7 @@ class GetWorkspaceExportRequestsExportRequestSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
+    def error_messages(self) -> Mapping[str, str]:
         """
         Contains key of the error
         """
@@ -17450,7 +17450,7 @@ class GetWorkspaceFolderMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -17465,7 +17465,7 @@ class GetWorkspaceFolderMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -17539,7 +17539,7 @@ class GetWorkspaceFolderMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -17855,7 +17855,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
                  folder_key: str,
                  identifier: str,
                  key: str,
-                 key_map: Mapping[str, Any],
+                 key_map: Mapping[str, str],
                  metadatas: Sequence['outputs.GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult'],
                  model_type: str,
                  model_version: str,
@@ -17870,7 +17870,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
         :param str description: The description of the aggregator.
         :param str identifier: Used to filter by the identifier of the object.
         :param str key: The key of the aggregator object.
-        :param Mapping[str, Any] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Mapping[str, str] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param Sequence['GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param str model_type: The type of the object.
         :param str model_version: The model version of an object.
@@ -17935,7 +17935,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
@@ -18020,7 +18020,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -18035,7 +18035,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -18109,7 +18109,7 @@ class GetWorkspaceFoldersFolderSummaryCollectionItemMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -18580,7 +18580,7 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(dict):
                  are_data_asset_references_included: bool,
                  bucket: str,
                  created_by: str,
-                 error_messages: Mapping[str, Any],
+                 error_messages: Mapping[str, str],
                  file_name: str,
                  import_conflict_resolution: 'outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionResult',
                  imported_objects: Sequence['outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectResult'],
@@ -18598,7 +18598,7 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(dict):
         :param bool are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param str bucket: The name of the Object Storage Bucket where the objects will be imported from
         :param str created_by: Name of the user who initiated import request.
-        :param Mapping[str, Any] error_messages: Contains key of the error
+        :param Mapping[str, str] error_messages: Contains key of the error
         :param str file_name: Name of the zip file from which objects will be imported.
         :param 'GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolutionArgs' import_conflict_resolution: Import Objects Conflict resolution.
         :param Sequence['GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObjectArgs'] imported_objects: The array of imported object details.
@@ -18657,7 +18657,7 @@ class GetWorkspaceImportRequestsImportRequestSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
+    def error_messages(self) -> Mapping[str, str]:
         """
         Contains key of the error
         """
@@ -18934,7 +18934,7 @@ class GetWorkspaceProjectMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -18949,7 +18949,7 @@ class GetWorkspaceProjectMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -19023,7 +19023,7 @@ class GetWorkspaceProjectMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -19337,7 +19337,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
                  description: str,
                  identifier: str,
                  key: str,
-                 key_map: Mapping[str, Any],
+                 key_map: Mapping[str, str],
                  metadatas: Sequence['outputs.GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult'],
                  model_type: str,
                  model_version: str,
@@ -19352,7 +19352,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
         :param str description: The description of the aggregator.
         :param str identifier: Used to filter by the identifier of the object.
         :param str key: The key of the aggregator object.
-        :param Mapping[str, Any] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Mapping[str, str] key_map: A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param Sequence['GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param str model_type: The type of the object.
         :param str model_version: The model version of an object.
@@ -19403,7 +19403,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
@@ -19493,7 +19493,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -19508,7 +19508,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version of the object.
@@ -19582,7 +19582,7 @@ class GetWorkspaceProjectsProjectSummaryCollectionItemMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -19943,13 +19943,13 @@ class GetWorkspaceTaskCancelRestCallConfigResult(dict):
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param Sequence['GetWorkspaceTaskCancelRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
         :param str key: The key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -19991,7 +19991,7 @@ class GetWorkspaceTaskCancelRestCallConfigResult(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -20330,13 +20330,13 @@ class GetWorkspaceTaskExecuteRestCallConfigResult(dict):
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param Sequence['GetWorkspaceTaskExecuteRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
         :param str key: The key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -20378,7 +20378,7 @@ class GetWorkspaceTaskExecuteRestCallConfigResult(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -20883,7 +20883,7 @@ class GetWorkspaceTaskMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -20898,7 +20898,7 @@ class GetWorkspaceTaskMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
@@ -20972,7 +20972,7 @@ class GetWorkspaceTaskMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -22207,13 +22207,13 @@ class GetWorkspaceTaskPollRestCallConfigResult(dict):
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param Sequence['GetWorkspaceTaskPollRestCallConfigConfigValueArgs'] config_values: Configuration values can be string, objects, or parameters.
         :param str key: The key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -22255,7 +22255,7 @@ class GetWorkspaceTaskPollRestCallConfigResult(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -23051,7 +23051,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemResult(dict):
                  input_ports: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemInputPortResult'],
                  is_single_load: bool,
                  key: str,
-                 key_map: Mapping[str, Any],
+                 key_map: Mapping[str, str],
                  metadatas: Sequence['outputs.GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult'],
                  model_type: str,
                  model_version: str,
@@ -23079,7 +23079,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemResult(dict):
         :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemInputPortArgs'] input_ports: An array of input ports.
         :param bool is_single_load: Defines whether Data Loader task is used for single load or multiple
         :param str key: Used to filter by the key of the object.
-        :param Mapping[str, Any] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param Mapping[str, str] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param Sequence['GetWorkspaceTasksTaskSummaryCollectionItemMetadataArgs'] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param str model_type: The type of the types object.
         :param str model_version: The model version of an object.
@@ -23207,7 +23207,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
@@ -23440,13 +23440,13 @@ class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult(dict)
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param 'GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
         :param str key: Used to filter by the key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -23488,7 +23488,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigResult(dict)
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -23827,13 +23827,13 @@ class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult(dict
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param 'GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
         :param str key: Used to filter by the key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -23875,7 +23875,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigResult(dict
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -24380,7 +24380,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult(dict):
                  created_by: str,
                  created_by_name: str,
                  identifier_path: str,
-                 info_fields: Mapping[str, Any],
+                 info_fields: Mapping[str, str],
                  is_favorite: bool,
                  labels: Sequence[str],
                  registry_version: int,
@@ -24395,7 +24395,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult(dict):
         :param str created_by: The user that created the object.
         :param str created_by_name: The user that created the object.
         :param str identifier_path: The full path to identify this object.
-        :param Mapping[str, Any] info_fields: Information property fields.
+        :param Mapping[str, str] info_fields: Information property fields.
         :param bool is_favorite: Specifies whether this object is a favorite or not.
         :param Sequence[str] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param int registry_version: The registry version.
@@ -24469,7 +24469,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemMetadataResult(dict):
 
     @property
     @pulumi.getter(name="infoFields")
-    def info_fields(self) -> Mapping[str, Any]:
+    def info_fields(self) -> Mapping[str, str]:
         """
         Information property fields.
         """
@@ -25704,13 +25704,13 @@ class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult(dict):
                  key: str,
                  method_type: str,
                  model_type: str,
-                 request_headers: Mapping[str, Any]):
+                 request_headers: Mapping[str, str]):
         """
         :param 'GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValuesArgs' config_values: Configuration values can be string, objects, or parameters.
         :param str key: Used to filter by the key of the object.
         :param str method_type: The REST method to use.
         :param str model_type: The type of the types object.
-        :param Mapping[str, Any] request_headers: The headers for the REST call.
+        :param Mapping[str, str] request_headers: The headers for the REST call.
         """
         pulumi.set(__self__, "config_values", config_values)
         pulumi.set(__self__, "key", key)
@@ -25752,7 +25752,7 @@ class GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigResult(dict):
 
     @property
     @pulumi.getter(name="requestHeaders")
-    def request_headers(self) -> Mapping[str, Any]:
+    def request_headers(self) -> Mapping[str, str]:
         """
         The headers for the REST call.
         """
@@ -26527,7 +26527,7 @@ class GetWorkspacesFilterResult(dict):
 class GetWorkspacesWorkspaceResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  dns_server_ip: str,
@@ -26535,7 +26535,7 @@ class GetWorkspacesWorkspaceResult(dict):
                  endpoint_compartment_id: str,
                  endpoint_id: str,
                  endpoint_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_force_operation: bool,
                  is_private_network_enabled: bool,
@@ -26551,14 +26551,14 @@ class GetWorkspacesWorkspaceResult(dict):
                  vcn_id: str):
         """
         :param str compartment_id: The OCID of the compartment containing the resources you want to list.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param str description: A user defined description for the workspace.
         :param str display_name: A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
         :param str dns_server_ip: The IP of the custom DNS.
         :param str dns_server_zone: The DNS zone of the custom DNS to use to resolve names.
         :param str endpoint_id: DCMS endpoint associated with the container/workspace. Returns null if there is none.
         :param str endpoint_name: Name of the private endpoint associated with the container/workspace. Returns null if there is none.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: A system-generated and immutable identifier assigned to the workspace upon creation.
         :param bool is_private_network_enabled: Specifies whether the private network connection is enabled or disabled.
         :param str registry_id: DCMS registry associated with the container/workspace. Returns null if there is none.
@@ -26603,7 +26603,7 @@ class GetWorkspacesWorkspaceResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -26664,7 +26664,7 @@ class GetWorkspacesWorkspaceResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """

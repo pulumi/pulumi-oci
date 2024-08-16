@@ -36,13 +36,13 @@ import (
 //			_, err := Oda.NewOdaInstance(ctx, "test_oda_instance", &Oda.OdaInstanceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				ShapeName:     pulumi.String("DEVELOPMENT"),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(odaInstanceDescription),
 //				DisplayName: pulumi.Any(odaInstanceDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IdentityDomain:    pulumi.Any(odaInstanceIdentityDomain),
 //				IsRoleBasedAccess: pulumi.Any(odaInstanceIsRoleBasedAccess),
@@ -75,13 +75,13 @@ type OdaInstance struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl pulumi.StringOutput `pulumi:"connectorUrl"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the Digital Assistant instance.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
 	IdentityAppConsoleUrl pulumi.StringOutput `pulumi:"identityAppConsoleUrl"`
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
@@ -160,13 +160,13 @@ type odaInstanceState struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl *string `pulumi:"connectorUrl"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the Digital Assistant instance.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
 	IdentityAppConsoleUrl *string `pulumi:"identityAppConsoleUrl"`
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
@@ -210,13 +210,13 @@ type OdaInstanceState struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the Digital Assistant instance.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
 	IdentityAppConsoleUrl pulumi.StringPtrInput
 	// If isRoleBasedAccess is set to true, this property specifies the GUID of the Identity Application instance Digital Assistant has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this Digital Assistant instance for users within the identity domain.
@@ -258,13 +258,13 @@ type odaInstanceArgs struct {
 	// (Updatable) Identifier of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the Digital Assistant instance.
 	Description *string `pulumi:"description"`
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
 	IdentityDomain *string `pulumi:"identityDomain"`
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
@@ -283,13 +283,13 @@ type OdaInstanceArgs struct {
 	// (Updatable) Identifier of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the Digital Assistant instance.
 	Description pulumi.StringPtrInput
 	// (Updatable) User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// If isRoleBasedAccess is set to true, this property specifies the identity domain that is to be used to implement this type of authorzation. Digital Assistant will create an Identity Application instance and Application Roles within this identity domain. The caller may then perform and user roll mappings they like to grant access to users within the identity domain.
 	IdentityDomain pulumi.StringPtrInput
 	// Should this Digital Assistant instance use role-based authorization via an identity domain (true) or use the default policy-based authorization via IAM policies (false)
@@ -411,8 +411,8 @@ func (o OdaInstanceOutput) ConnectorUrl() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OdaInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OdaInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the Digital Assistant instance.
@@ -426,8 +426,8 @@ func (o OdaInstanceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-func (o OdaInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OdaInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OdaInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OdaInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.

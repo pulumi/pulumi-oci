@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SqlFirewallPolicyManagementArgs;
 import com.pulumi.oci.DataSafe.inputs.SqlFirewallPolicyManagementState;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -48,10 +47,10 @@ public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomReso
     public Output<String> dbUserName() {
         return this.dbUserName;
     }
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     @Export(name="description", refs={String.class}, tree="[0]")
@@ -72,10 +71,10 @@ public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomReso
     public Output<String> enforcementScope() {
         return this.enforcementScope;
     }
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
@@ -114,10 +113,10 @@ public class SqlFirewallPolicyManagement extends com.pulumi.resources.CustomReso
     public Output<String> status() {
         return this.status;
     }
-    @Export(name="systemTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> systemTags;
+    @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> systemTags;
 
-    public Output<Map<String,Object>> systemTags() {
+    public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
     @Export(name="targetId", refs={String.class}, tree="[0]")

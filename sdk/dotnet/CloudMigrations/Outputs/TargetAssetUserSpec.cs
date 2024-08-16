@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         /// </summary>
@@ -124,13 +124,13 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
 
             string? dedicatedVmHostId,
 
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
             string? displayName,
 
             string? faultDomain,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             string? hostnameLabel,
 

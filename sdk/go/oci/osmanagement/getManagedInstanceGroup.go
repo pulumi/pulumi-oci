@@ -61,13 +61,13 @@ type LookupManagedInstanceGroupResult struct {
 	// OCID for the Compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
 	Description string `pulumi:"description"`
 	// User friendly name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
 	Id                     string   `pulumi:"id"`
 	ManagedInstanceCount   int      `pulumi:"managedInstanceCount"`
@@ -125,8 +125,8 @@ func (o LookupManagedInstanceGroupResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupManagedInstanceGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupManagedInstanceGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Information specified by the user about the managed instance group
@@ -140,8 +140,8 @@ func (o LookupManagedInstanceGroupResultOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupManagedInstanceGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupManagedInstanceGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedInstanceGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique identifier that is immutable on creation

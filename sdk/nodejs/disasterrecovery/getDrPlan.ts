@@ -51,7 +51,7 @@ export interface GetDrPlanResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The display name of the group.  Example: `DATABASE_SWITCHOVER`
      */
@@ -64,7 +64,7 @@ export interface GetDrPlanResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
      */
@@ -92,7 +92,7 @@ export interface GetDrPlanResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
      */

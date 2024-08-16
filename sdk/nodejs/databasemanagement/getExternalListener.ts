@@ -47,7 +47,7 @@ export interface GetExternalListenerResult {
     /**
      * The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails: {[key: string]: string};
     /**
      * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      */
@@ -63,7 +63,7 @@ export interface GetExternalListenerResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * The user-friendly name for the database. The name does not have to be unique.
      */
@@ -92,7 +92,7 @@ export interface GetExternalListenerResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The name of the host on which the external listener is running.
      */
@@ -140,7 +140,7 @@ export interface GetExternalListenerResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The date and time the external listener was created.
      */

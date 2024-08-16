@@ -67,11 +67,11 @@ type LookupQueueResult struct {
 	// The number of times a message can be delivered to a consumer before being moved to the dead letter queue. A value of 0 indicates that the DLQ is not used.
 	DeadLetterQueueDeliveryCount int `pulumi:"deadLetterQueueDeliveryCount"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier for the queue that is immutable on creation.
 	Id string `pulumi:"id"`
 	// Any additional details about the current state of the queue.
@@ -86,7 +86,7 @@ type LookupQueueResult struct {
 	// The current state of the queue.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time that the queue was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`
@@ -156,8 +156,8 @@ func (o LookupQueueResultOutput) DeadLetterQueueDeliveryCount() pulumi.IntOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupQueueResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupQueueResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupQueueResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupQueueResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the queue. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -166,8 +166,8 @@ func (o LookupQueueResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupQueueResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupQueueResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupQueueResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupQueueResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for the queue that is immutable on creation.
@@ -208,8 +208,8 @@ func (o LookupQueueResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupQueueResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupQueueResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupQueueResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupQueueResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time that the queue was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2018-04-20T00:00:07.405Z`

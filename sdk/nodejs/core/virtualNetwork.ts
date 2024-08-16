@@ -42,10 +42,10 @@ export class VirtualNetwork extends pulumi.CustomResource {
     public /*out*/ readonly defaultDhcpOptionsId!: pulumi.Output<string>;
     public /*out*/ readonly defaultRouteTableId!: pulumi.Output<string>;
     public /*out*/ readonly defaultSecurityListId!: pulumi.Output<string>;
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     public readonly displayName!: pulumi.Output<string>;
     public readonly dnsLabel!: pulumi.Output<string>;
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     public /*out*/ readonly ipv6cidrBlocks!: pulumi.Output<string[]>;
     public readonly ipv6privateCidrBlocks!: pulumi.Output<string[]>;
     public readonly isIpv6enabled!: pulumi.Output<boolean>;
@@ -128,10 +128,10 @@ export interface VirtualNetworkState {
     defaultDhcpOptionsId?: pulumi.Input<string>;
     defaultRouteTableId?: pulumi.Input<string>;
     defaultSecurityListId?: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     dnsLabel?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     ipv6cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     isIpv6enabled?: pulumi.Input<boolean>;
@@ -149,10 +149,10 @@ export interface VirtualNetworkArgs {
     cidrBlock?: pulumi.Input<string>;
     cidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     compartmentId: pulumi.Input<string>;
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     displayName?: pulumi.Input<string>;
     dnsLabel?: pulumi.Input<string>;
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     ipv6privateCidrBlocks?: pulumi.Input<pulumi.Input<string>[]>;
     isIpv6enabled?: pulumi.Input<boolean>;
     isOracleGuaAllocationEnabled?: pulumi.Input<boolean>;

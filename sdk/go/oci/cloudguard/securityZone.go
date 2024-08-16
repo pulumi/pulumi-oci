@@ -35,12 +35,12 @@ import (
 //				CompartmentId:        pulumi.Any(compartmentId),
 //				DisplayName:          pulumi.Any(securityZoneDisplayName),
 //				SecurityZoneRecipeId: pulumi.Any(testSecurityZoneRecipe.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(securityZoneDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -65,7 +65,7 @@ type SecurityZone struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The security zone's display name
@@ -73,7 +73,7 @@ type SecurityZone struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
@@ -135,7 +135,7 @@ type securityZoneState struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description *string `pulumi:"description"`
 	// (Updatable) The security zone's display name
@@ -143,7 +143,7 @@ type securityZoneState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
@@ -167,7 +167,7 @@ type SecurityZoneState struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The security zone's description
 	Description pulumi.StringPtrInput
 	// (Updatable) The security zone's display name
@@ -175,7 +175,7 @@ type SecurityZoneState struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of inherited compartments
 	InheritedByCompartments pulumi.StringArrayInput
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
@@ -203,7 +203,7 @@ type securityZoneArgs struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description *string `pulumi:"description"`
 	// (Updatable) The security zone's display name
@@ -211,7 +211,7 @@ type securityZoneArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
@@ -224,7 +224,7 @@ type SecurityZoneArgs struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The security zone's description
 	Description pulumi.StringPtrInput
 	// (Updatable) The security zone's display name
@@ -232,7 +232,7 @@ type SecurityZoneArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
@@ -333,8 +333,8 @@ func (o SecurityZoneOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o SecurityZoneOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SecurityZoneOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The security zone's description
@@ -350,8 +350,8 @@ func (o SecurityZoneOutput) DisplayName() pulumi.StringOutput {
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 //
 // Avoid entering confidential information.
-func (o SecurityZoneOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityZone) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SecurityZoneOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityZone) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // List of inherited compartments

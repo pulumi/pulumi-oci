@@ -61,7 +61,7 @@ type LookupExadataInsightResult struct {
 	// Compartment identifier of the Exadata insight resource
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -92,7 +92,7 @@ type LookupExadataInsightResult struct {
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType string `pulumi:"exadataType"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Exadata insight identifier
 	Id                string `pulumi:"id"`
 	IsAutoSyncEnabled bool   `pulumi:"isAutoSyncEnabled"`
@@ -106,7 +106,7 @@ type LookupExadataInsightResult struct {
 	// Indicates the status of an Exadata insight in Operations Insights
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -157,8 +157,8 @@ func (o LookupExadataInsightResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupExadataInsightResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExadataInsightResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // OPSI Enterprise Manager Bridge OCID
@@ -236,8 +236,8 @@ func (o LookupExadataInsightResultOutput) ExadataType() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupExadataInsightResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExadataInsightResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Exadata insight identifier
@@ -276,8 +276,8 @@ func (o LookupExadataInsightResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExadataInsightResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadataInsightResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExadataInsightResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInsightResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string

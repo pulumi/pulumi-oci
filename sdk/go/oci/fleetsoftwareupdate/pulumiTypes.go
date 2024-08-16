@@ -2113,16 +2113,16 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionArrayOutput) Index(i pulu
 type GetFsuCollectionsFsuCollectionSummaryCollectionItem struct {
 	ActiveFsuCycles    []GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycle `pulumi:"activeFsuCycles"`
 	CompartmentId      string                                                              `pulumi:"compartmentId"`
-	DefinedTags        map[string]interface{}                                              `pulumi:"definedTags"`
+	DefinedTags        map[string]string                                                   `pulumi:"definedTags"`
 	DisplayName        string                                                              `pulumi:"displayName"`
 	FleetDiscoveries   []GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscovery `pulumi:"fleetDiscoveries"`
-	FreeformTags       map[string]interface{}                                              `pulumi:"freeformTags"`
+	FreeformTags       map[string]string                                                   `pulumi:"freeformTags"`
 	Id                 string                                                              `pulumi:"id"`
 	LifecycleDetails   string                                                              `pulumi:"lifecycleDetails"`
 	ServiceType        string                                                              `pulumi:"serviceType"`
 	SourceMajorVersion string                                                              `pulumi:"sourceMajorVersion"`
 	State              string                                                              `pulumi:"state"`
-	SystemTags         map[string]interface{}                                              `pulumi:"systemTags"`
+	SystemTags         map[string]string                                                   `pulumi:"systemTags"`
 	TargetCount        int                                                                 `pulumi:"targetCount"`
 	TimeCreated        string                                                              `pulumi:"timeCreated"`
 	TimeUpdated        string                                                              `pulumi:"timeUpdated"`
@@ -2143,16 +2143,16 @@ type GetFsuCollectionsFsuCollectionSummaryCollectionItemInput interface {
 type GetFsuCollectionsFsuCollectionSummaryCollectionItemArgs struct {
 	ActiveFsuCycles    GetFsuCollectionsFsuCollectionSummaryCollectionItemActiveFsuCycleArrayInput `pulumi:"activeFsuCycles"`
 	CompartmentId      pulumi.StringInput                                                          `pulumi:"compartmentId"`
-	DefinedTags        pulumi.MapInput                                                             `pulumi:"definedTags"`
+	DefinedTags        pulumi.StringMapInput                                                       `pulumi:"definedTags"`
 	DisplayName        pulumi.StringInput                                                          `pulumi:"displayName"`
 	FleetDiscoveries   GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayInput `pulumi:"fleetDiscoveries"`
-	FreeformTags       pulumi.MapInput                                                             `pulumi:"freeformTags"`
+	FreeformTags       pulumi.StringMapInput                                                       `pulumi:"freeformTags"`
 	Id                 pulumi.StringInput                                                          `pulumi:"id"`
 	LifecycleDetails   pulumi.StringInput                                                          `pulumi:"lifecycleDetails"`
 	ServiceType        pulumi.StringInput                                                          `pulumi:"serviceType"`
 	SourceMajorVersion pulumi.StringInput                                                          `pulumi:"sourceMajorVersion"`
 	State              pulumi.StringInput                                                          `pulumi:"state"`
-	SystemTags         pulumi.MapInput                                                             `pulumi:"systemTags"`
+	SystemTags         pulumi.StringMapInput                                                       `pulumi:"systemTags"`
 	TargetCount        pulumi.IntInput                                                             `pulumi:"targetCount"`
 	TimeCreated        pulumi.StringInput                                                          `pulumi:"timeCreated"`
 	TimeUpdated        pulumi.StringInput                                                          `pulumi:"timeUpdated"`
@@ -2220,10 +2220,8 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) CompartmentId
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) DisplayName() pulumi.StringOutput {
@@ -2236,10 +2234,8 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FleetDiscover
 	}).(GetFsuCollectionsFsuCollectionSummaryCollectionItemFleetDiscoveryArrayOutput)
 }
 
-func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) Id() pulumi.StringOutput {
@@ -2262,10 +2258,8 @@ func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) State() pulum
 	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCollectionsFsuCollectionSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCollectionsFsuCollectionSummaryCollectionItemOutput) TargetCount() pulumi.IntOutput {
@@ -3617,11 +3611,11 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	BatchingStrategies       []GetFsuCyclesFsuCycleSummaryCollectionItemBatchingStrategy      `pulumi:"batchingStrategies"`
 	CollectionType           string                                                           `pulumi:"collectionType"`
 	CompartmentId            string                                                           `pulumi:"compartmentId"`
-	DefinedTags              map[string]interface{}                                           `pulumi:"definedTags"`
+	DefinedTags              map[string]string                                                `pulumi:"definedTags"`
 	DiagnosticsCollections   []GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollection `pulumi:"diagnosticsCollections"`
 	DisplayName              string                                                           `pulumi:"displayName"`
 	ExecutingFsuActionId     string                                                           `pulumi:"executingFsuActionId"`
-	FreeformTags             map[string]interface{}                                           `pulumi:"freeformTags"`
+	FreeformTags             map[string]string                                                `pulumi:"freeformTags"`
 	FsuCollectionId          string                                                           `pulumi:"fsuCollectionId"`
 	GoalVersionDetails       []GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetail     `pulumi:"goalVersionDetails"`
 	Id                       string                                                           `pulumi:"id"`
@@ -3634,7 +3628,7 @@ type GetFsuCyclesFsuCycleSummaryCollectionItem struct {
 	NextActionToExecutes     []GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecute   `pulumi:"nextActionToExecutes"`
 	StageActionSchedules     []GetFsuCyclesFsuCycleSummaryCollectionItemStageActionSchedule   `pulumi:"stageActionSchedules"`
 	State                    string                                                           `pulumi:"state"`
-	SystemTags               map[string]interface{}                                           `pulumi:"systemTags"`
+	SystemTags               map[string]string                                                `pulumi:"systemTags"`
 	TimeCreated              string                                                           `pulumi:"timeCreated"`
 	TimeFinished             string                                                           `pulumi:"timeFinished"`
 	TimeUpdated              string                                                           `pulumi:"timeUpdated"`
@@ -3657,11 +3651,11 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	BatchingStrategies       GetFsuCyclesFsuCycleSummaryCollectionItemBatchingStrategyArrayInput      `pulumi:"batchingStrategies"`
 	CollectionType           pulumi.StringInput                                                       `pulumi:"collectionType"`
 	CompartmentId            pulumi.StringInput                                                       `pulumi:"compartmentId"`
-	DefinedTags              pulumi.MapInput                                                          `pulumi:"definedTags"`
+	DefinedTags              pulumi.StringMapInput                                                    `pulumi:"definedTags"`
 	DiagnosticsCollections   GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayInput `pulumi:"diagnosticsCollections"`
 	DisplayName              pulumi.StringInput                                                       `pulumi:"displayName"`
 	ExecutingFsuActionId     pulumi.StringInput                                                       `pulumi:"executingFsuActionId"`
-	FreeformTags             pulumi.MapInput                                                          `pulumi:"freeformTags"`
+	FreeformTags             pulumi.StringMapInput                                                    `pulumi:"freeformTags"`
 	FsuCollectionId          pulumi.StringInput                                                       `pulumi:"fsuCollectionId"`
 	GoalVersionDetails       GetFsuCyclesFsuCycleSummaryCollectionItemGoalVersionDetailArrayInput     `pulumi:"goalVersionDetails"`
 	Id                       pulumi.StringInput                                                       `pulumi:"id"`
@@ -3674,7 +3668,7 @@ type GetFsuCyclesFsuCycleSummaryCollectionItemArgs struct {
 	NextActionToExecutes     GetFsuCyclesFsuCycleSummaryCollectionItemNextActionToExecuteArrayInput   `pulumi:"nextActionToExecutes"`
 	StageActionSchedules     GetFsuCyclesFsuCycleSummaryCollectionItemStageActionScheduleArrayInput   `pulumi:"stageActionSchedules"`
 	State                    pulumi.StringInput                                                       `pulumi:"state"`
-	SystemTags               pulumi.MapInput                                                          `pulumi:"systemTags"`
+	SystemTags               pulumi.StringMapInput                                                    `pulumi:"systemTags"`
 	TimeCreated              pulumi.StringInput                                                       `pulumi:"timeCreated"`
 	TimeFinished             pulumi.StringInput                                                       `pulumi:"timeFinished"`
 	TimeUpdated              pulumi.StringInput                                                       `pulumi:"timeUpdated"`
@@ -3752,8 +3746,8 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) CompartmentId() pulumi.
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) DiagnosticsCollections() GetFsuCyclesFsuCycleSummaryCollectionItemDiagnosticsCollectionArrayOutput {
@@ -3770,8 +3764,8 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) ExecutingFsuActionId() 
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
 
-func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) FsuCollectionId() pulumi.StringOutput {
@@ -3828,8 +3822,8 @@ func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) State() pulumi.StringOu
 	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetFsuCyclesFsuCycleSummaryCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetFsuCyclesFsuCycleSummaryCollectionItemOutput) TimeCreated() pulumi.StringOutput {

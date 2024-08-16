@@ -134,7 +134,7 @@ export class MonitoredResourcesSearch extends pulumi.CustomResource {
     /**
      * Criteria based on resource property.
      */
-    public readonly propertyEquals!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly propertyEquals!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Resource category filter.
      */
@@ -313,7 +313,7 @@ export interface MonitoredResourcesSearchState {
     /**
      * Criteria based on resource property.
      */
-    propertyEquals?: pulumi.Input<{[key: string]: any}>;
+    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Resource category filter.
      */
@@ -419,7 +419,7 @@ export interface MonitoredResourcesSearchArgs {
     /**
      * Criteria based on resource property.
      */
-    propertyEquals?: pulumi.Input<{[key: string]: any}>;
+    propertyEquals?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Resource category filter.
      */

@@ -1677,7 +1677,7 @@ type PolicyPolicyConfigHealthChecks struct {
 	// (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	//
 	// **Note:** The only currently-supported header fields are Host and User-Agent.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// (Updatable) Number of successful health checks after which the server is marked up.
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
 	// (Updatable) Time between health checks of an individual origin server, in seconds.
@@ -1719,7 +1719,7 @@ type PolicyPolicyConfigHealthChecksArgs struct {
 	// (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 	//
 	// **Note:** The only currently-supported header fields are Host and User-Agent.
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// (Updatable) Number of successful health checks after which the server is marked up.
 	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
 	// (Updatable) Time between health checks of an individual origin server, in seconds.
@@ -1832,8 +1832,8 @@ func (o PolicyPolicyConfigHealthChecksOutput) ExpectedResponseText() pulumi.Stri
 // (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 //
 // **Note:** The only currently-supported header fields are Host and User-Agent.
-func (o PolicyPolicyConfigHealthChecksOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o PolicyPolicyConfigHealthChecksOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Number of successful health checks after which the server is marked up.
@@ -1927,13 +1927,13 @@ func (o PolicyPolicyConfigHealthChecksPtrOutput) ExpectedResponseText() pulumi.S
 // (Updatable) HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
 //
 // **Note:** The only currently-supported header fields are Host and User-Agent.
-func (o PolicyPolicyConfigHealthChecksPtrOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v *PolicyPolicyConfigHealthChecks) map[string]interface{} {
+func (o PolicyPolicyConfigHealthChecksPtrOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PolicyPolicyConfigHealthChecks) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.Headers
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Number of successful health checks after which the server is marked up.
@@ -6964,11 +6964,11 @@ type GetAddressListsAddressList struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the address list.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
 	Id string `pulumi:"id"`
 	// The current lifecycle state of the address list.
@@ -6996,11 +6996,11 @@ type GetAddressListsAddressListArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name of the address list.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The current lifecycle state of the address list.
@@ -7076,8 +7076,8 @@ func (o GetAddressListsAddressListOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetAddressListsAddressListOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAddressListsAddressListOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the address list.
@@ -7086,8 +7086,8 @@ func (o GetAddressListsAddressListOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetAddressListsAddressListOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAddressListsAddressList) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAddressListsAddressListOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAddressListsAddressList) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the address list.
@@ -7769,13 +7769,13 @@ type GetCertificatesCertificate struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
 	DisplayName string `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions []GetCertificatesCertificateExtension `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
 	Id string `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
@@ -7821,13 +7821,13 @@ type GetCertificatesCertificateArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions GetCertificatesCertificateExtensionArrayInput `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
 	Id pulumi.StringInput `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
@@ -7918,8 +7918,8 @@ func (o GetCertificatesCertificateOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetCertificatesCertificateOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCertificatesCertificateOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the SSL certificate.
@@ -7933,8 +7933,8 @@ func (o GetCertificatesCertificateOutput) Extensions() GetCertificatesCertificat
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetCertificatesCertificateOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCertificatesCertificate) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCertificatesCertificateOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCertificatesCertificate) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
@@ -8670,13 +8670,13 @@ type GetCustomProtectionRulesCustomProtectionRule struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the custom protection rule.
 	Description string `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id string `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
@@ -8704,13 +8704,13 @@ type GetCustomProtectionRulesCustomProtectionRuleArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description of the custom protection rule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The user-friendly name of the custom protection rule.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The auto-generated ID for the custom protection rule. These IDs are referenced in logs.
@@ -8780,8 +8780,8 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the custom protection rule.
@@ -8795,8 +8795,8 @@ func (o GetCustomProtectionRulesCustomProtectionRuleOutput) DisplayName() pulumi
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetCustomProtectionRulesCustomProtectionRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetCustomProtectionRulesCustomProtectionRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetCustomProtectionRulesCustomProtectionRule) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
@@ -9414,13 +9414,13 @@ type GetHttpRedirectsHttpRedirect struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
 	Domain string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
 	Id string `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
@@ -9448,13 +9448,13 @@ type GetHttpRedirectsHttpRedirectArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The domain from which traffic will be redirected.
 	Domain pulumi.StringInput `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The response code returned for the redirect to the client. For more information, see [RFC 7231](https://tools.ietf.org/html/rfc7231#section-6.4).
@@ -9524,8 +9524,8 @@ func (o GetHttpRedirectsHttpRedirectOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetHttpRedirectsHttpRedirectOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the HTTP Redirect. The name can be changed and does not need to be unique.
@@ -9539,8 +9539,8 @@ func (o GetHttpRedirectsHttpRedirectOutput) Domain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetHttpRedirectsHttpRedirectOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetHttpRedirectsHttpRedirectOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHttpRedirectsHttpRedirect) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirect.
@@ -10321,13 +10321,13 @@ type GetWaasPoliciesWaasPolicy struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
 	Domain string `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id string `pulumi:"id"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -10363,13 +10363,13 @@ type GetWaasPoliciesWaasPolicyArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment. This number is generated when the compartment is created.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The domain for which the cookie is set, defaults to WAAS policy domain.
 	Domain pulumi.StringInput `pulumi:"domain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The map of origin groups and their keys used to associate origins to the `wafConfig`. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests. To add additional origins to your WAAS policy, update the `origins` field of a `UpdateWaasPolicy` request.
@@ -10453,8 +10453,8 @@ func (o GetWaasPoliciesWaasPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetWaasPoliciesWaasPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the WAAS policy. The name can be changed and does not need to be unique.
@@ -10468,8 +10468,8 @@ func (o GetWaasPoliciesWaasPolicyOutput) Domain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetWaasPoliciesWaasPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetWaasPoliciesWaasPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
@@ -11213,7 +11213,7 @@ type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck struct {
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
 	ExpectedResponseText string `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
 	HealthyThreshold int `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
@@ -11256,7 +11256,7 @@ type GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckArgs struct {
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
 	ExpectedResponseText pulumi.StringInput `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
 	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
@@ -11344,8 +11344,8 @@ func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) ExpectedResponse
 }
 
 // HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o GetWaasPoliciesWaasPolicyPolicyConfigHealthCheckOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWaasPoliciesWaasPolicyPolicyConfigHealthCheck) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // Number of successful health checks after which the server is marked up.
@@ -15558,7 +15558,7 @@ type GetWaasPolicyPolicyConfigHealthChecks struct {
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
 	ExpectedResponseText string `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
 	HealthyThreshold int `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
@@ -15601,7 +15601,7 @@ type GetWaasPolicyPolicyConfigHealthChecksArgs struct {
 	// Health check will search for the given text in a case-sensitive manner within the response body and will fail if the text is not found.
 	ExpectedResponseText pulumi.StringInput `pulumi:"expectedResponseText"`
 	// HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// Number of successful health checks after which the server is marked up.
 	HealthyThreshold pulumi.IntInput `pulumi:"healthyThreshold"`
 	// Time between health checks of an individual origin server, in seconds.
@@ -15664,8 +15664,8 @@ func (o GetWaasPolicyPolicyConfigHealthChecksOutput) ExpectedResponseText() pulu
 }
 
 // HTTP header fields to include in health check requests, expressed as `"name": "value"` properties. Because HTTP header field names are case-insensitive, any use of names that are case-insensitive equal to other names will be rejected. If Host is not specified, requests will include a Host header field with value matching the policy's protected domain. If User-Agent is not specified, requests will include a User-Agent header field with value "waf health checks".
-func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o GetWaasPolicyPolicyConfigHealthChecksOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWaasPolicyPolicyConfigHealthChecks) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // Number of successful health checks after which the server is marked up.

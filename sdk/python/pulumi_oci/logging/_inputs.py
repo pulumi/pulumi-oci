@@ -94,14 +94,14 @@ class LogConfigurationSourceArgs:
                  resource: pulumi.Input[str],
                  service: pulumi.Input[str],
                  source_type: pulumi.Input[str],
-                 parameters: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 parameters: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] category: Log object category.
         :param pulumi.Input[str] resource: The unique identifier of the resource emitting the log.
         :param pulumi.Input[str] service: Service generating log.
         :param pulumi.Input[str] source_type: The log source.
                * **OCISERVICE:** Oracle Service.
-        :param pulumi.Input[Mapping[str, Any]] parameters: (Updatable) Log category parameters are stored here.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] parameters: (Updatable) Log category parameters are stored here.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "resource", resource)
@@ -161,14 +161,14 @@ class LogConfigurationSourceArgs:
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def parameters(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Log category parameters are stored here.
         """
         return pulumi.get(self, "parameters")
 
     @parameters.setter
-    def parameters(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def parameters(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "parameters", value)
 
 
@@ -547,7 +547,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None,
                  timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
@@ -578,7 +578,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
         :param pulumi.Input[str] time_type: (Updatable) JSON parser time type.
         :param pulumi.Input[int] timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param pulumi.Input[Mapping[str, Any]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -996,7 +996,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -1009,7 +1009,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "types", value)
 
 
@@ -1206,11 +1206,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[str] namespace: (Updatable) Namespace to emit metrics.
         :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -1223,14 +1223,14 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @property
@@ -1690,7 +1690,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None,
                  timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
@@ -1721,7 +1721,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
         :param pulumi.Input[str] time_type: (Updatable) JSON parser time type.
         :param pulumi.Input[int] timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param pulumi.Input[Mapping[str, Any]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -2139,7 +2139,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -2152,7 +2152,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "types", value)
 
 
@@ -2349,11 +2349,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs:
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[str] namespace: (Updatable) Namespace to emit metrics.
         :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -2366,14 +2366,14 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputArgs:
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @property
@@ -2418,7 +2418,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  is_ruby_enabled: Optional[pulumi.Input[bool]] = None,
                  keep_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  key_name: Optional[pulumi.Input[str]] = None,
-                 params: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 params: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  parser: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs']] = None,
                  record_lists: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]]] = None,
                  remove_key_name_field: Optional[pulumi.Input[bool]] = None,
@@ -2442,7 +2442,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param pulumi.Input[bool] is_ruby_enabled: (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] keep_keys: (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
         :param pulumi.Input[str] key_name: (Updatable) The field name in the record to parse.
-        :param pulumi.Input[Mapping[str, Any]] params: (Updatable) Parameters of the custom filter
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] params: (Updatable) Parameters of the custom filter
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs'] parser: (Updatable) Source parser object.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs']]] record_lists: (Updatable) Add new key-value pairs in logs
         :param pulumi.Input[bool] remove_key_name_field: (Updatable) If true, remove the keyName field when parsing is succeeded.
@@ -2671,14 +2671,14 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def params(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def params(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Parameters of the custom filter
         """
         return pulumi.get(self, "params")
 
     @params.setter
-    def params(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def params(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "params", value)
 
     @property
@@ -2825,10 +2825,10 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
-                 params: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 params: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] name: (Updatable) The name of the custom section
-        :param pulumi.Input[Mapping[str, Any]] params: (Updatable) Parameters in the custom section
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] params: (Updatable) Parameters in the custom section
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2849,14 +2849,14 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def params(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def params(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Parameters in the custom section
         """
         return pulumi.get(self, "params")
 
     @params.setter
-    def params(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def params(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "params", value)
 
 
@@ -2931,7 +2931,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None,
                  timeout_in_milliseconds: Optional[pulumi.Input[int]] = None,
-                 types: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 types: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
@@ -2962,7 +2962,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
         :param pulumi.Input[str] time_type: (Updatable) JSON parser time type.
         :param pulumi.Input[int] timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param pulumi.Input[Mapping[str, Any]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -3380,7 +3380,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def types(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -3393,7 +3393,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         return pulumi.get(self, "types")
 
     @types.setter
-    def types(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def types(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "types", value)
 
 
@@ -3590,11 +3590,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 @pulumi.input_type
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputArgs:
     def __init__(__self__, *,
-                 dimensions: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 dimensions: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] dimensions: (Updatable) Dimensions to be added for metrics.
         :param pulumi.Input[str] namespace: (Updatable) Namespace to emit metrics.
         :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -3607,14 +3607,14 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def dimensions(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def dimensions(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "dimensions", value)
 
     @property

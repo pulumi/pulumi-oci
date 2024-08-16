@@ -74,7 +74,7 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
@@ -82,7 +82,7 @@ export class ArtifactByPath extends pulumi.CustomResource {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */
@@ -194,7 +194,7 @@ export interface ArtifactByPathState {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The artifact name with the format of `<artifact-path>:<artifact-version>`. The artifact name is truncated to a maximum length of 255.  Example: `project01/my-web-app/artifact-abc:1.0.0`
      */
@@ -202,7 +202,7 @@ export interface ArtifactByPathState {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The [OCID](https://www.terraform.io/iaas/Content/General/Concepts/identifiers.htm) of the repository.
      */

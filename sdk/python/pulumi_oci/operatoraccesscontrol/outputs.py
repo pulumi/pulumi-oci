@@ -284,11 +284,11 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
                  audit_types: Sequence[str],
                  closure_comment: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  duration: int,
                  extend_duration: int,
                  extension_approver_details: Sequence['outputs.GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_approved: bool,
                  is_validate_assignment: bool,
@@ -323,11 +323,11 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
         :param Sequence[str] audit_types: Specifies the type of auditing to be enabled. There are two levels of auditing: command-level and keystroke-level.  By default, auditing is enabled at the command level i.e., each command issued by the operator is audited. When keystroke-level is chosen,  in addition to command level logging, key strokes are also logged.
         :param str closure_comment: The comment entered by the operator while closing the request.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param int duration: Duration in hours for which access is sought on the target resource.
         :param int extend_duration: Duration in hours for which extension access is sought on the target resource.
         :param Sequence['GetAccessRequestsAccessRequestCollectionItemExtensionApproverDetailArgs'] extension_approver_details: Contains the user ids who have approved the accessRequest for extension.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the access request.
         :param bool is_auto_approved: Whether the access request was automatically approved.
         :param bool is_validate_assignment: Whether the access request was requested for Validate Assignment.
@@ -452,7 +452,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
@@ -484,7 +484,7 @@ class GetAccessRequestsAccessRequestCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
@@ -1128,11 +1128,11 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
                  assigner_id: str,
                  comment: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  detachment_description: str,
                  error_code: int,
                  error_message: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_approve_during_maintenance: bool,
                  is_default_assignment: bool,
@@ -1160,11 +1160,11 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
         :param str assigner_id: The OCID of the user who created this operator control assignment.
         :param str comment: Comment about the assignment of the operator control to this target resource.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param str detachment_description: description containing reason for releasing of OperatorControl.
         :param int error_code: The code identifying the error occurred during Assignment operation.
         :param str error_message: The message describing the error occurred during Assignment operation.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the operator control assignment.
         :param bool is_auto_approve_during_maintenance: The boolean if true would autoApprove during maintenance.
         :param bool is_default_assignment: Whether the assignment is a default assignment.
@@ -1246,7 +1246,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
@@ -1278,7 +1278,7 @@ class GetControlAssignmentsOperatorControlAssignmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """
@@ -1512,10 +1512,10 @@ class GetControlsOperatorControlCollectionItemResult(dict):
                  approver_groups_lists: Sequence[str],
                  approvers_lists: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  email_id_lists: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_default_operator_control: bool,
                  is_fully_pre_approved: bool,
@@ -1534,10 +1534,10 @@ class GetControlsOperatorControlCollectionItemResult(dict):
         :param Sequence[str] approver_groups_lists: List of user groups who can approve an access request associated with a target resource under the governance of this operator control.
         :param Sequence[str] approvers_lists: List of users who can approve an access request associated with a target resource under the governance of this operator control.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.
         :param str description: Description of operator control.
         :param Sequence[str] email_id_lists: List of emailId.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         :param str id: The OCID of the operator control.
         :param bool is_default_operator_control: Whether the operator control is a default Operator Control.
         :param bool is_fully_pre_approved: Whether all the operator actions have been pre-approved. If yes, all access requests associated with a resource governed by this operator control  will be auto-approved.
@@ -1608,7 +1608,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.
         """
@@ -1632,7 +1632,7 @@ class GetControlsOperatorControlCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
         """

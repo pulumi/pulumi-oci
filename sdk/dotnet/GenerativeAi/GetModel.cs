@@ -109,7 +109,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
         /// </summary>
         public readonly string CompartmentId;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// An optional description of the model.
         /// </summary>
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// An ID that uniquely identifies a pretrained or fine-tuned model.
         /// </summary>
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time that the model was created in the format of an RFC3339 datetime string.
         /// </summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -189,7 +189,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             ImmutableArray<Outputs.GetModelFineTuneDetailResult> fineTuneDetails,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

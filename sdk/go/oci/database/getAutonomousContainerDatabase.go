@@ -84,7 +84,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	// Oracle Database version of the Autonomous Container Database.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-provided name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -93,7 +93,7 @@ type LookupAutonomousContainerDatabaseResult struct {
 	DstFileVersion                     string `pulumi:"dstFileVersion"`
 	FastStartFailOverLagLimitInSeconds int    `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
 	Id string `pulumi:"id"`
 	// The infrastructure type this resource belongs to.
@@ -279,8 +279,8 @@ func (o LookupAutonomousContainerDatabaseResultOutput) DbVersion() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupAutonomousContainerDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-provided name for the Autonomous Container Database.
@@ -303,8 +303,8 @@ func (o LookupAutonomousContainerDatabaseResultOutput) FastStartFailOverLagLimit
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupAutonomousContainerDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAutonomousContainerDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutonomousContainerDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.

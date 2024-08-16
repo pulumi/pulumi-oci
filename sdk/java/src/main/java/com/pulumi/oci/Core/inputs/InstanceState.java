@@ -16,7 +16,6 @@ import com.pulumi.oci.Core.inputs.InstancePreemptibleInstanceConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceShapeConfigArgs;
 import com.pulumi.oci.Core.inputs.InstanceSourceDetailsArgs;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -191,13 +190,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -217,9 +216,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     @Import(name="extendedMetadata")
-    private @Nullable Output<Map<String,Object>> extendedMetadata;
+    private @Nullable Output<Map<String,String>> extendedMetadata;
 
-    public Optional<Output<Map<String,Object>>> extendedMetadata() {
+    public Optional<Output<Map<String,String>>> extendedMetadata() {
         return Optional.ofNullable(this.extendedMetadata);
     }
 
@@ -255,13 +254,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -496,7 +495,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="metadata")
-    private @Nullable Output<Map<String,Object>> metadata;
+    private @Nullable Output<Map<String,String>> metadata;
 
     /**
      * @return (Updatable) Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
@@ -526,7 +525,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * **Note:** Both the &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; fields cannot be changed after an instance has launched. Any request which updates, removes, or adds either of these fields will be rejected. You must provide the same values for &#39;user_data&#39; and &#39;ssh_authorized_keys&#39; that already exist on the instance.
      * 
      */
-    public Optional<Output<Map<String,Object>>> metadata() {
+    public Optional<Output<Map<String,String>>> metadata() {
         return Optional.ofNullable(this.metadata);
     }
 
@@ -749,13 +748,13 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
+    private @Nullable Output<Map<String,String>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> systemTags() {
+    public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
 
@@ -1087,7 +1086,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -1098,7 +1097,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -1123,12 +1122,12 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
             return displayName(Output.of(displayName));
         }
 
-        public Builder extendedMetadata(@Nullable Output<Map<String,Object>> extendedMetadata) {
+        public Builder extendedMetadata(@Nullable Output<Map<String,String>> extendedMetadata) {
             $.extendedMetadata = extendedMetadata;
             return this;
         }
 
-        public Builder extendedMetadata(Map<String,Object> extendedMetadata) {
+        public Builder extendedMetadata(Map<String,String> extendedMetadata) {
             return extendedMetadata(Output.of(extendedMetadata));
         }
 
@@ -1171,7 +1170,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -1182,7 +1181,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -1490,7 +1489,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder metadata(@Nullable Output<Map<String,Object>> metadata) {
+        public Builder metadata(@Nullable Output<Map<String,String>> metadata) {
             $.metadata = metadata;
             return this;
         }
@@ -1525,7 +1524,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             return metadata(Output.of(metadata));
         }
 
@@ -1817,7 +1816,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
@@ -1828,7 +1827,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }
 

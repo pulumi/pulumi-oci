@@ -9,7 +9,6 @@ import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsNodePoolP
 import com.pulumi.oci.ContainerEngine.outputs.NodePoolNodeConfigDetailsPlacementConfig;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,12 +22,12 @@ public final class NodePoolNodeConfigDetails {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> definedTags;
+    private @Nullable Map<String,String> definedTags;
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> freeformTags;
+    private @Nullable Map<String,String> freeformTags;
     /**
      * @return (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. The default value is false.
      * 
@@ -67,14 +66,14 @@ public final class NodePoolNodeConfigDetails {
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
@@ -131,8 +130,8 @@ public final class NodePoolNodeConfigDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> definedTags;
-        private @Nullable Map<String,Object> freeformTags;
+        private @Nullable Map<String,String> definedTags;
+        private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isPvEncryptionInTransitEnabled;
         private @Nullable String kmsKeyId;
         private @Nullable NodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetails nodePoolPodNetworkOptionDetails;
@@ -153,13 +152,13 @@ public final class NodePoolNodeConfigDetails {
         }
 
         @CustomType.Setter
-        public Builder definedTags(@Nullable Map<String,Object> definedTags) {
+        public Builder definedTags(@Nullable Map<String,String> definedTags) {
 
             this.definedTags = definedTags;
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(@Nullable Map<String,Object> freeformTags) {
+        public Builder freeformTags(@Nullable Map<String,String> freeformTags) {
 
             this.freeformTags = freeformTags;
             return this;

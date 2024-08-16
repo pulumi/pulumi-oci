@@ -33,8 +33,8 @@ import (
 //			_, err := DataIntegration.NewWorkspace(ctx, "test_workspace", &DataIntegration.WorkspaceArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(workspaceDisplayName),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description:           pulumi.Any(workspaceDescription),
 //				DnsServerIp:           pulumi.Any(workspaceDnsServerIp),
@@ -42,8 +42,8 @@ import (
 //				EndpointCompartmentId: pulumi.Any(testCompartment.Id),
 //				EndpointId:            pulumi.Any(testEndpoint.Id),
 //				EndpointName:          pulumi.Any(workspaceEndpointName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsPrivateNetworkEnabled: pulumi.Any(workspaceIsPrivateNetworkEnabled),
 //				RegistryCompartmentId:   pulumi.Any(testCompartment.Id),
@@ -74,7 +74,7 @@ type Workspace struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user defined description for the workspace.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -90,8 +90,8 @@ type Workspace struct {
 	// DCMS Private Endpoint Name
 	EndpointName pulumi.StringOutput `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags     pulumi.MapOutput     `pulumi:"freeformTags"`
-	IsForceOperation pulumi.BoolPtrOutput `pulumi:"isForceOperation"`
+	FreeformTags     pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsForceOperation pulumi.BoolPtrOutput   `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled pulumi.BoolOutput `pulumi:"isPrivateNetworkEnabled"`
 	QuiesceTimeout          pulumi.IntOutput  `pulumi:"quiesceTimeout"`
@@ -157,7 +157,7 @@ type workspaceState struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user defined description for the workspace.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -173,8 +173,8 @@ type workspaceState struct {
 	// DCMS Private Endpoint Name
 	EndpointName *string `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
-	IsForceOperation *bool                  `pulumi:"isForceOperation"`
+	FreeformTags     map[string]string `pulumi:"freeformTags"`
+	IsForceOperation *bool             `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled *bool `pulumi:"isPrivateNetworkEnabled"`
 	QuiesceTimeout          *int  `pulumi:"quiesceTimeout"`
@@ -205,7 +205,7 @@ type WorkspaceState struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user defined description for the workspace.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -221,7 +221,7 @@ type WorkspaceState struct {
 	// DCMS Private Endpoint Name
 	EndpointName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags     pulumi.MapInput
+	FreeformTags     pulumi.StringMapInput
 	IsForceOperation pulumi.BoolPtrInput
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled pulumi.BoolPtrInput
@@ -257,7 +257,7 @@ type workspaceArgs struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user defined description for the workspace.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -273,8 +273,8 @@ type workspaceArgs struct {
 	// DCMS Private Endpoint Name
 	EndpointName *string `pulumi:"endpointName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
-	IsForceOperation *bool                  `pulumi:"isForceOperation"`
+	FreeformTags     map[string]string `pulumi:"freeformTags"`
+	IsForceOperation *bool             `pulumi:"isForceOperation"`
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled *bool `pulumi:"isPrivateNetworkEnabled"`
 	QuiesceTimeout          *int  `pulumi:"quiesceTimeout"`
@@ -298,7 +298,7 @@ type WorkspaceArgs struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user defined description for the workspace.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -314,7 +314,7 @@ type WorkspaceArgs struct {
 	// DCMS Private Endpoint Name
 	EndpointName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags     pulumi.MapInput
+	FreeformTags     pulumi.StringMapInput
 	IsForceOperation pulumi.BoolPtrInput
 	// Specifies whether the private network connection is enabled or disabled.
 	IsPrivateNetworkEnabled pulumi.BoolPtrInput
@@ -427,8 +427,8 @@ func (o WorkspaceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o WorkspaceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o WorkspaceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user defined description for the workspace.
@@ -467,8 +467,8 @@ func (o WorkspaceOutput) EndpointName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o WorkspaceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Workspace) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o WorkspaceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Workspace) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o WorkspaceOutput) IsForceOperation() pulumi.BoolPtrOutput {

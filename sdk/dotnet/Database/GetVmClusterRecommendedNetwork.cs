@@ -50,14 +50,14 @@ namespace Pulumi.Oci.Database
         }
 
         [Input("definedTags")]
-        private Dictionary<string, object>? _definedTags;
+        private Dictionary<string, string>? _definedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public Dictionary<string, object> DefinedTags
+        public Dictionary<string, string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new Dictionary<string, object>());
+            get => _definedTags ?? (_definedTags = new Dictionary<string, string>());
             set => _definedTags = value;
         }
 
@@ -92,14 +92,14 @@ namespace Pulumi.Oci.Database
         public string ExadataInfrastructureId { get; set; } = null!;
 
         [Input("freeformTags")]
-        private Dictionary<string, object>? _freeformTags;
+        private Dictionary<string, string>? _freeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public Dictionary<string, object> FreeformTags
+        public Dictionary<string, string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new Dictionary<string, object>());
+            get => _freeformTags ?? (_freeformTags = new Dictionary<string, string>());
             set => _freeformTags = value;
         }
 
@@ -166,14 +166,14 @@ namespace Pulumi.Oci.Database
         }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -208,14 +208,14 @@ namespace Pulumi.Oci.Database
         public Input<string> ExadataInfrastructureId { get; set; } = null!;
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -273,7 +273,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
         /// </summary>
@@ -291,7 +291,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<string> dbServers,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -336,7 +336,7 @@ namespace Pulumi.Oci.Database
 
             string exadataInfrastructureId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

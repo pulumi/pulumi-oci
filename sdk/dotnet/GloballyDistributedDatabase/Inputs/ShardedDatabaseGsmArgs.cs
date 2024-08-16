@@ -25,14 +25,14 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Inputs
         public Input<double>? DataStorageSizeInGbs { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// Additional metadata related to shard's underlying supporting resource.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

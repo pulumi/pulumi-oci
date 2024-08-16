@@ -40,7 +40,7 @@ type Recommendation struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving pulumi.Float64Output `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata pulumi.MapOutput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapOutput `pulumi:"extendedMetadata"`
 	// The level of importance assigned to the recommendation.
 	Importance pulumi.StringOutput `pulumi:"importance"`
 	// The name of the profile level.
@@ -115,7 +115,7 @@ type recommendationState struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The level of importance assigned to the recommendation.
 	Importance *string `pulumi:"importance"`
 	// The name of the profile level.
@@ -155,7 +155,7 @@ type RecommendationState struct {
 	// The estimated cost savings, in dollars, for the recommendation.
 	EstimatedCostSaving pulumi.Float64PtrInput
 	// Additional metadata key/value pairs for the recommendation.
-	ExtendedMetadata pulumi.MapInput
+	ExtendedMetadata pulumi.StringMapInput
 	// The level of importance assigned to the recommendation.
 	Importance pulumi.StringPtrInput
 	// The name of the profile level.
@@ -326,8 +326,8 @@ func (o RecommendationOutput) EstimatedCostSaving() pulumi.Float64Output {
 }
 
 // Additional metadata key/value pairs for the recommendation.
-func (o RecommendationOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *Recommendation) pulumi.MapOutput { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o RecommendationOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Recommendation) pulumi.StringMapOutput { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The level of importance assigned to the recommendation.

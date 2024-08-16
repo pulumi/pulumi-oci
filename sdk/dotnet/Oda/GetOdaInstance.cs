@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Oda
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Description of the Digital Assistant instance.
         /// </summary>
@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Oda
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Unique immutable identifier that was assigned when the instance was created.
         /// </summary>
@@ -201,13 +201,13 @@ namespace Pulumi.Oci.Oda
 
             string connectorUrl,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

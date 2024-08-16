@@ -1871,10 +1871,10 @@ class GetManagementAgentsManagementAgentResult(dict):
                  compartment_id: str,
                  data_source_lists: Sequence['outputs.GetManagementAgentsManagementAgentDataSourceListResult'],
                  data_source_summary_lists: Sequence['outputs.GetManagementAgentsManagementAgentDataSourceSummaryListResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  deploy_plugins_ids: Sequence[str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host: str,
                  host_id: str,
                  id: str,
@@ -1900,9 +1900,9 @@ class GetManagementAgentsManagementAgentResult(dict):
         :param str availability_status: Filter to return only Management Agents in the particular availability status.
         :param str compartment_id: The OCID of the compartment to which a request will be scoped.
         :param Sequence['GetManagementAgentsManagementAgentDataSourceSummaryListArgs'] data_source_summary_lists: list of dataSources associated with the agent
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: Filter to return only Management Agents having the particular display name.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host: Management Agent host machine name
         :param str host_id: Filter to return only Management Agents having the particular agent host id.
         :param str id: agent identifier
@@ -1985,7 +1985,7 @@ class GetManagementAgentsManagementAgentResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2006,7 +2006,7 @@ class GetManagementAgentsManagementAgentResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """

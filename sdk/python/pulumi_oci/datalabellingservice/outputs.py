@@ -869,15 +869,15 @@ class GetDatasetsDatasetCollectionResult(dict):
 @pulumi.output_type
 class GetDatasetsDatasetCollectionItemResult(dict):
     def __init__(__self__, *,
-                 additional_properties: Mapping[str, Any],
+                 additional_properties: Mapping[str, str],
                  annotation_format: str,
                  compartment_id: str,
                  dataset_format_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetFormatDetailResult'],
                  dataset_source_details: Sequence['outputs.GetDatasetsDatasetCollectionItemDatasetSourceDetailResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  initial_import_dataset_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationResult'],
                  initial_record_generation_configurations: Sequence['outputs.GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationResult'],
@@ -889,15 +889,15 @@ class GetDatasetsDatasetCollectionItemResult(dict):
                  time_created: str,
                  time_updated: str):
         """
-        :param Mapping[str, Any] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param Mapping[str, str] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str annotation_format: A filter to return only resources that match the entire annotation format given.
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetDatasetsDatasetCollectionItemDatasetFormatDetailArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param Sequence['GetDatasetsDatasetCollectionItemDatasetSourceDetailArgs'] dataset_source_details: This allows the customer to specify the source of the dataset.
-        :param Mapping[str, Any] defined_tags: The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param Mapping[str, str] defined_tags: The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param str description: A user provided description of the dataset
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: Unique Dataset OCID
         :param Sequence['GetDatasetsDatasetCollectionItemInitialImportDatasetConfigurationArgs'] initial_import_dataset_configurations: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param Sequence['GetDatasetsDatasetCollectionItemInitialRecordGenerationConfigurationArgs'] initial_record_generation_configurations: The initial generate records configuration. It generates records from the dataset's source.
@@ -931,7 +931,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Mapping[str, Any]:
+    def additional_properties(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -971,7 +971,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -995,7 +995,7 @@ class GetDatasetsDatasetCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """

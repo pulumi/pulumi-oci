@@ -5,7 +5,6 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,14 +15,14 @@ public final class GetAlertAnalyticItemDimension {
      * @return A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      * 
      */
-    private Map<String,Object> groupBy;
+    private Map<String,String> groupBy;
 
     private GetAlertAnalyticItemDimension() {}
     /**
      * @return A groupBy can only be used in combination with summaryField parameter. A groupBy value has to be a subset of the values mentioned in summaryField parameter.
      * 
      */
-    public Map<String,Object> groupBy() {
+    public Map<String,String> groupBy() {
         return this.groupBy;
     }
 
@@ -36,7 +35,7 @@ public final class GetAlertAnalyticItemDimension {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> groupBy;
+        private Map<String,String> groupBy;
         public Builder() {}
         public Builder(GetAlertAnalyticItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -44,7 +43,7 @@ public final class GetAlertAnalyticItemDimension {
         }
 
         @CustomType.Setter
-        public Builder groupBy(Map<String,Object> groupBy) {
+        public Builder groupBy(Map<String,String> groupBy) {
             if (groupBy == null) {
               throw new MissingRequiredPropertyException("GetAlertAnalyticItemDimension", "groupBy");
             }

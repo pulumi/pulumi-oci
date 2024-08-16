@@ -123,13 +123,13 @@ type GetHttpMonitorsHttpMonitor struct {
 	// Filters results by compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A dictionary of HTTP request headers.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// Filters results that match the `homeRegion`.
 	HomeRegion string `pulumi:"homeRegion"`
 	// The OCID of the resource.
@@ -173,13 +173,13 @@ type GetHttpMonitorsHttpMonitorArgs struct {
 	// Filters results by compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A dictionary of HTTP request headers.
-	Headers pulumi.MapInput `pulumi:"headers"`
+	Headers pulumi.StringMapInput `pulumi:"headers"`
 	// Filters results that match the `homeRegion`.
 	HomeRegion pulumi.StringInput `pulumi:"homeRegion"`
 	// The OCID of the resource.
@@ -265,8 +265,8 @@ func (o GetHttpMonitorsHttpMonitorOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetHttpMonitorsHttpMonitorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Filters results that exactly match the `displayName` field.
@@ -275,13 +275,13 @@ func (o GetHttpMonitorsHttpMonitorOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetHttpMonitorsHttpMonitorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A dictionary of HTTP request headers.
-func (o GetHttpMonitorsHttpMonitorOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]interface{} { return v.Headers }).(pulumi.MapOutput)
+func (o GetHttpMonitorsHttpMonitorOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetHttpMonitorsHttpMonitor) map[string]string { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // Filters results that match the `homeRegion`.
@@ -1136,11 +1136,11 @@ type GetPingMonitorsPingMonitor struct {
 	// Filters results by compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Filters results that match the `homeRegion`.
 	HomeRegion string `pulumi:"homeRegion"`
 	// The OCID of the resource.
@@ -1180,11 +1180,11 @@ type GetPingMonitorsPingMonitorArgs struct {
 	// Filters results by compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Filters results that exactly match the `displayName` field.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Filters results that match the `homeRegion`.
 	HomeRegion pulumi.StringInput `pulumi:"homeRegion"`
 	// The OCID of the resource.
@@ -1266,8 +1266,8 @@ func (o GetPingMonitorsPingMonitorOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPingMonitorsPingMonitorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPingMonitorsPingMonitorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Filters results that exactly match the `displayName` field.
@@ -1276,8 +1276,8 @@ func (o GetPingMonitorsPingMonitorOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPingMonitorsPingMonitorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPingMonitorsPingMonitor) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPingMonitorsPingMonitorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPingMonitorsPingMonitor) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Filters results that match the `homeRegion`.

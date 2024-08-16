@@ -41,8 +41,8 @@ import (
 //					VaultId:       pulumi.Any(testVault.Id),
 //				},
 //				DefinedTags: pulumi.Any(keyStoreDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -70,11 +70,11 @@ type KeyStore struct {
 	CompartmentId         pulumi.StringOutput `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger pulumi.IntPtrOutput `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the key store.
@@ -130,11 +130,11 @@ type keyStoreState struct {
 	CompartmentId         *string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger *int    `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the key store.
@@ -152,11 +152,11 @@ type KeyStoreState struct {
 	CompartmentId         pulumi.StringPtrInput
 	ConfirmDetailsTrigger pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the key store.
@@ -176,11 +176,11 @@ type keyStoreArgs struct {
 	CompartmentId         string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger *int   `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Key store type details.
 	TypeDetails KeyStoreTypeDetails `pulumi:"typeDetails"`
 }
@@ -191,11 +191,11 @@ type KeyStoreArgs struct {
 	CompartmentId         pulumi.StringInput
 	ConfirmDetailsTrigger pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Key store type details.
 	TypeDetails KeyStoreTypeDetailsInput
 }
@@ -302,8 +302,8 @@ func (o KeyStoreOutput) ConfirmDetailsTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o KeyStoreOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *KeyStore) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o KeyStoreOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *KeyStore) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the key store. The name does not need to be unique.
@@ -312,8 +312,8 @@ func (o KeyStoreOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o KeyStoreOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *KeyStore) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o KeyStoreOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *KeyStore) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Additional information about the current lifecycle state.

@@ -65,7 +65,7 @@ type LookupExternalAsmInstanceResult struct {
 	// The name of the external ASM instance.
 	ComponentName string `pulumi:"componentName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the ASM instance. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM that the ASM instance belongs to.
@@ -76,7 +76,7 @@ type LookupExternalAsmInstanceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the ASM instance is a part of.
 	ExternalDbSystemId string `pulumi:"externalDbSystemId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the host on which the ASM instance is running.
 	HostName string `pulumi:"hostName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
@@ -86,7 +86,7 @@ type LookupExternalAsmInstanceResult struct {
 	// The current lifecycle state of the external ASM instance.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external ASM instance was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the external ASM instance was last updated.
@@ -147,8 +147,8 @@ func (o LookupExternalAsmInstanceResultOutput) ComponentName() pulumi.StringOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupExternalAsmInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the ASM instance. The name does not have to be unique.
@@ -176,8 +176,8 @@ func (o LookupExternalAsmInstanceResultOutput) ExternalDbSystemId() pulumi.Strin
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupExternalAsmInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the host on which the ASM instance is running.
@@ -201,8 +201,8 @@ func (o LookupExternalAsmInstanceResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupExternalAsmInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExternalAsmInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExternalAsmInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external ASM instance was created.

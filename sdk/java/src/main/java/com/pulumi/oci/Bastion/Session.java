@@ -13,7 +13,6 @@ import com.pulumi.oci.Bastion.outputs.SessionKeyDetails;
 import com.pulumi.oci.Bastion.outputs.SessionTargetResourceDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -215,14 +214,14 @@ public class Session extends com.pulumi.resources.CustomResource {
      * The connection message for the session.
      * 
      */
-    @Export(name="sshMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> sshMetadata;
+    @Export(name="sshMetadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> sshMetadata;
 
     /**
      * @return The connection message for the session.
      * 
      */
-    public Output<Map<String,Object>> sshMetadata() {
+    public Output<Map<String,String>> sshMetadata() {
         return this.sshMetadata;
     }
     /**

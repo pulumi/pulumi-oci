@@ -5,14 +5,13 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem {
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Mirror status of current mirror entry. QUEUED - Mirroring Queued RUNNING - Mirroring is Running PASSED - Mirroring Passed FAILED - Mirroring Failed
      * 
@@ -36,7 +35,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
     private String workRequestId;
 
     private GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem() {}
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -80,7 +79,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String mirrorStatus;
         private String timeCompleted;
         private String timeEnqueued;
@@ -98,7 +97,7 @@ public final class GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionIte
         }
 
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItem", "freeformTags");
             }

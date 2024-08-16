@@ -75,11 +75,11 @@ export class ResourceAction extends pulumi.CustomResource {
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly extendedMetadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly metadata!: pulumi.Output<{[key: string]: string}>;
     /**
      * The name assigned to the resource.
      */
@@ -221,11 +221,11 @@ export interface ResourceActionState {
     /**
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      */
-    extendedMetadata?: pulumi.Input<{[key: string]: any}>;
+    extendedMetadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Custom metadata key/value pairs for the resource action.
      */
-    metadata?: pulumi.Input<{[key: string]: any}>;
+    metadata?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The name assigned to the resource.
      */

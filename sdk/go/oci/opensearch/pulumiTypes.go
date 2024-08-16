@@ -233,13 +233,13 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn string `pulumi:"fqdn"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state of the cluster.
@@ -283,7 +283,7 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The OCID of the cluster's subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
@@ -327,13 +327,13 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntInput `pulumi:"dataNodeStorageGb"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn pulumi.StringInput `pulumi:"fqdn"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique OpensearchCluster identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state of the cluster.
@@ -377,7 +377,7 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The OCID of the cluster's subnet.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
@@ -486,10 +486,8 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DataNodeStor
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given.
@@ -503,10 +501,8 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) Fqdn() pulum
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique OpensearchCluster identifier
@@ -623,10 +619,8 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SubnetId() p
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]interface{} {
-		return v.SystemTags
-	}).(pulumi.MapOutput)
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The amount of time in milliseconds since the cluster was created.

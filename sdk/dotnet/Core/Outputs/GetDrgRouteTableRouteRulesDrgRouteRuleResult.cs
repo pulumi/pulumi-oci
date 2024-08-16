@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Additional properties for the route, computed by the service.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Attributes;
+        public readonly ImmutableDictionary<string, string> Attributes;
         /// <summary>
         /// Represents the range of IP addresses to match against when routing traffic.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.Core.Outputs
 
         [OutputConstructor]
         private GetDrgRouteTableRouteRulesDrgRouteRuleResult(
-            ImmutableDictionary<string, object> attributes,
+            ImmutableDictionary<string, string> attributes,
 
             string destination,
 

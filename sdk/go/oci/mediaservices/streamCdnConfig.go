@@ -47,11 +47,11 @@ import (
 //				},
 //				DisplayName:           pulumi.Any(streamCdnConfigDisplayName),
 //				DistributionChannelId: pulumi.Any(testChannel.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsEnabled: pulumi.Any(streamCdnConfigIsEnabled),
 //				Locks: mediaservices.StreamCdnConfigLockArray{
@@ -88,13 +88,13 @@ type StreamCdnConfig struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigOutput `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Distribution Channel Identifier.
 	DistributionChannelId pulumi.StringOutput `pulumi:"distributionChannelId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
 	IsEnabled      pulumi.BoolOutput `pulumi:"isEnabled"`
 	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
@@ -105,7 +105,7 @@ type StreamCdnConfig struct {
 	// The current state of the CDN Configuration.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -156,13 +156,13 @@ type streamCdnConfigState struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config *StreamCdnConfigConfig `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Distribution Channel Identifier.
 	DistributionChannelId *string `pulumi:"distributionChannelId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
 	IsEnabled      *bool `pulumi:"isEnabled"`
 	IsLockOverride *bool `pulumi:"isLockOverride"`
@@ -173,7 +173,7 @@ type streamCdnConfigState struct {
 	// The current state of the CDN Configuration.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -186,13 +186,13 @@ type StreamCdnConfigState struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Distribution Channel Identifier.
 	DistributionChannelId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether publishing to CDN is enabled.
 	IsEnabled      pulumi.BoolPtrInput
 	IsLockOverride pulumi.BoolPtrInput
@@ -203,7 +203,7 @@ type StreamCdnConfigState struct {
 	// The current state of the CDN Configuration.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -218,13 +218,13 @@ type streamCdnConfigArgs struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfig `pulumi:"config"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Distribution Channel Identifier.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether publishing to CDN is enabled.
 	IsEnabled      *bool `pulumi:"isEnabled"`
 	IsLockOverride *bool `pulumi:"isLockOverride"`
@@ -237,13 +237,13 @@ type StreamCdnConfigArgs struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfigInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// Distribution Channel Identifier.
 	DistributionChannelId pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether publishing to CDN is enabled.
 	IsEnabled      pulumi.BoolPtrInput
 	IsLockOverride pulumi.BoolPtrInput
@@ -349,8 +349,8 @@ func (o StreamCdnConfigOutput) Config() StreamCdnConfigConfigOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o StreamCdnConfigOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o StreamCdnConfigOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) CDN Config display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
@@ -364,8 +364,8 @@ func (o StreamCdnConfigOutput) DistributionChannelId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o StreamCdnConfigOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o StreamCdnConfigOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether publishing to CDN is enabled.
@@ -393,8 +393,8 @@ func (o StreamCdnConfigOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o StreamCdnConfigOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *StreamCdnConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o StreamCdnConfigOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *StreamCdnConfig) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.

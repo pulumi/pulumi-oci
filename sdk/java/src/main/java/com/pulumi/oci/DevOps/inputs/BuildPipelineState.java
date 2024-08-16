@@ -6,7 +6,6 @@ package com.pulumi.oci.DevOps.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DevOps.inputs.BuildPipelineBuildPipelineParametersArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -53,13 +52,13 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -98,13 +97,13 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -164,13 +163,13 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
      * 
      */
     @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
+    private @Nullable Output<Map<String,String>> systemTags;
 
     /**
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> systemTags() {
+    public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
 
@@ -287,7 +286,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -298,7 +297,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -350,7 +349,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -361,7 +360,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -440,7 +439,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
@@ -451,7 +450,7 @@ public final class BuildPipelineState extends com.pulumi.resources.ResourceArgs 
          * @return builder
          * 
          */
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }
 

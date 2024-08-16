@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Bastion
         /// The connection message for the session.
         /// </summary>
         [Output("sshMetadata")]
-        public Output<ImmutableDictionary<string, object>> SshMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> SshMetadata { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the session.
@@ -288,14 +288,14 @@ namespace Pulumi.Oci.Bastion
         public Input<int>? SessionTtlInSeconds { get; set; }
 
         [Input("sshMetadata")]
-        private InputMap<object>? _sshMetadata;
+        private InputMap<string>? _sshMetadata;
 
         /// <summary>
         /// The connection message for the session.
         /// </summary>
-        public InputMap<object> SshMetadata
+        public InputMap<string> SshMetadata
         {
-            get => _sshMetadata ?? (_sshMetadata = new InputMap<object>());
+            get => _sshMetadata ?? (_sshMetadata = new InputMap<string>());
             set => _sshMetadata = value;
         }
 

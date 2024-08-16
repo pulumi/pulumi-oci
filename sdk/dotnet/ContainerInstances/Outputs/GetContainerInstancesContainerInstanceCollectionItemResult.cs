@@ -36,7 +36,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
         /// </summary>
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             ImmutableArray<Outputs.GetContainerInstancesContainerInstanceCollectionItemContainerResult> containers,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             string faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string gracefulShutdownTimeoutInSeconds,
 
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.ContainerInstances.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

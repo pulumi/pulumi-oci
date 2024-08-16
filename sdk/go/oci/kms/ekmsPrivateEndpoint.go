@@ -36,11 +36,11 @@ import (
 //				DisplayName:          pulumi.Any(ekmsPrivateEndpointDisplayName),
 //				ExternalKeyManagerIp: pulumi.Any(ekmsPrivateEndpointExternalKeyManagerIp),
 //				SubnetId:             pulumi.Any(testSubnet.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Port: pulumi.Any(ekmsPrivateEndpointPort),
 //			})
@@ -68,13 +68,13 @@ type EkmsPrivateEndpoint struct {
 	// Compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Display name of the EKMS private endpoint resource being created.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// External private IP to connect to from this EKMS private endpoint
 	ExternalKeyManagerIp pulumi.StringOutput `pulumi:"externalKeyManagerIp"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The port of the external key manager system
@@ -144,13 +144,13 @@ type ekmsPrivateEndpointState struct {
 	// Compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display name of the EKMS private endpoint resource being created.
 	DisplayName *string `pulumi:"displayName"`
 	// External private IP to connect to from this EKMS private endpoint
 	ExternalKeyManagerIp *string `pulumi:"externalKeyManagerIp"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The port of the external key manager system
@@ -176,13 +176,13 @@ type EkmsPrivateEndpointState struct {
 	// Compartment identifier.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display name of the EKMS private endpoint resource being created.
 	DisplayName pulumi.StringPtrInput
 	// External private IP to connect to from this EKMS private endpoint
 	ExternalKeyManagerIp pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The port of the external key manager system
@@ -212,13 +212,13 @@ type ekmsPrivateEndpointArgs struct {
 	// Compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Display name of the EKMS private endpoint resource being created.
 	DisplayName string `pulumi:"displayName"`
 	// External private IP to connect to from this EKMS private endpoint
 	ExternalKeyManagerIp string `pulumi:"externalKeyManagerIp"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The port of the external key manager system
 	Port *int `pulumi:"port"`
 	// The OCID of subnet in which the EKMS private endpoint is to be created
@@ -235,13 +235,13 @@ type EkmsPrivateEndpointArgs struct {
 	// Compartment identifier.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Display name of the EKMS private endpoint resource being created.
 	DisplayName pulumi.StringInput
 	// External private IP to connect to from this EKMS private endpoint
 	ExternalKeyManagerIp pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The port of the external key manager system
 	Port pulumi.IntPtrInput
 	// The OCID of subnet in which the EKMS private endpoint is to be created
@@ -349,8 +349,8 @@ func (o EkmsPrivateEndpointOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o EkmsPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o EkmsPrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Display name of the EKMS private endpoint resource being created.
@@ -364,8 +364,8 @@ func (o EkmsPrivateEndpointOutput) ExternalKeyManagerIp() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o EkmsPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o EkmsPrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *EkmsPrivateEndpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.

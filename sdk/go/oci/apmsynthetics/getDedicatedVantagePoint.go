@@ -64,13 +64,13 @@ type LookupDedicatedVantagePointResult struct {
 	ApmDomainId             string `pulumi:"apmDomainId"`
 	DedicatedVantagePointId string `pulumi:"dedicatedVantagePointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
 	Id string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -136,8 +136,8 @@ func (o LookupDedicatedVantagePointResultOutput) DedicatedVantagePointId() pulum
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupDedicatedVantagePointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDedicatedVantagePointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique dedicated vantage point name that cannot be edited. The name should not contain any confidential information.
@@ -153,8 +153,8 @@ func (o LookupDedicatedVantagePointResultOutput) DvpStackDetails() GetDedicatedV
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupDedicatedVantagePointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDedicatedVantagePointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDedicatedVantagePointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDedicatedVantagePointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.

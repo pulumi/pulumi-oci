@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -37,13 +36,13 @@ public final class PipelineStepDetailStepConfigurationDetailsArgs extends com.pu
      * 
      */
     @Import(name="environmentVariables")
-    private @Nullable Output<Map<String,Object>> environmentVariables;
+    private @Nullable Output<Map<String,String>> environmentVariables;
 
     /**
      * @return (Updatable) Environment variables to set for step.
      * 
      */
-    public Optional<Output<Map<String,Object>>> environmentVariables() {
+    public Optional<Output<Map<String,String>>> environmentVariables() {
         return Optional.ofNullable(this.environmentVariables);
     }
 
@@ -115,7 +114,7 @@ public final class PipelineStepDetailStepConfigurationDetailsArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder environmentVariables(@Nullable Output<Map<String,Object>> environmentVariables) {
+        public Builder environmentVariables(@Nullable Output<Map<String,String>> environmentVariables) {
             $.environmentVariables = environmentVariables;
             return this;
         }
@@ -126,7 +125,7 @@ public final class PipelineStepDetailStepConfigurationDetailsArgs extends com.pu
          * @return builder
          * 
          */
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(Map<String,String> environmentVariables) {
             return environmentVariables(Output.of(environmentVariables));
         }
 

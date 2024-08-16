@@ -17,10 +17,10 @@ class EncryptedDataArgs:
                  crypto_endpoint: pulumi.Input[str],
                  key_id: pulumi.Input[str],
                  plaintext: pulumi.Input[str],
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a EncryptedData resource.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -30,10 +30,10 @@ class EncryptedDataArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] encryption_algorithm: The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """
         pulumi.set(__self__, "crypto_endpoint", crypto_endpoint)
         pulumi.set(__self__, "key_id", key_id)
@@ -89,14 +89,14 @@ class EncryptedDataArgs:
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @property
@@ -125,37 +125,37 @@ class EncryptedDataArgs:
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "logging_context", value)
 
 
 @pulumi.input_type
 class _EncryptedDataState:
     def __init__(__self__, *,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ciphertext: Optional[pulumi.Input[str]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  plaintext: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering EncryptedData resources.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] ciphertext: The encrypted data.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[str] encryption_algorithm: The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         :param pulumi.Input[str] key_id: The OCID of the key to encrypt with.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
                
                
@@ -181,14 +181,14 @@ class _EncryptedDataState:
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def associated_data(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
         return pulumi.get(self, "associated_data")
 
     @associated_data.setter
-    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def associated_data(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "associated_data", value)
 
     @property
@@ -253,14 +253,14 @@ class _EncryptedDataState:
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def logging_context(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """
         return pulumi.get(self, "logging_context")
 
     @logging_context.setter
-    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def logging_context(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "logging_context", value)
 
     @property
@@ -285,12 +285,12 @@ class EncryptedData(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  plaintext: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -321,12 +321,12 @@ class EncryptedData(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[str] encryption_algorithm: The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         :param pulumi.Input[str] key_id: The OCID of the key to encrypt with.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
                
                
@@ -380,12 +380,12 @@ class EncryptedData(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
-                 associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  crypto_endpoint: Optional[pulumi.Input[str]] = None,
                  encryption_algorithm: Optional[pulumi.Input[str]] = None,
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_version_id: Optional[pulumi.Input[str]] = None,
-                 logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  plaintext: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -420,13 +420,13 @@ class EncryptedData(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            associated_data: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            associated_data: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             ciphertext: Optional[pulumi.Input[str]] = None,
             crypto_endpoint: Optional[pulumi.Input[str]] = None,
             encryption_algorithm: Optional[pulumi.Input[str]] = None,
             key_id: Optional[pulumi.Input[str]] = None,
             key_version_id: Optional[pulumi.Input[str]] = None,
-            logging_context: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            logging_context: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             plaintext: Optional[pulumi.Input[str]] = None) -> 'EncryptedData':
         """
         Get an existing EncryptedData resource's state with the given name, id, and optional extra
@@ -435,13 +435,13 @@ class EncryptedData(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         :param pulumi.Input[str] ciphertext: The encrypted data.
         :param pulumi.Input[str] crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
         :param pulumi.Input[str] encryption_algorithm: The encryption algorithm to use to encrypt and decrypt data with a customer-managed key. `AES_256_GCM` indicates that the key is a symmetric key that uses the Advanced Encryption Standard (AES) algorithm and that the mode of encryption is the Galois/Counter Mode (GCM). `RSA_OAEP_SHA_1` indicates that the key is an asymmetric key that uses the RSA encryption algorithm and uses Optimal Asymmetric Encryption Padding (OAEP). `RSA_OAEP_SHA_256` indicates that the key is an asymmetric key that uses the RSA encryption algorithm with a SHA-256 hash and uses OAEP.
         :param pulumi.Input[str] key_id: The OCID of the key to encrypt with.
         :param pulumi.Input[str] key_version_id: The OCID of the key version used to encrypt the ciphertext.
-        :param pulumi.Input[Mapping[str, Any]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] logging_context: Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         :param pulumi.Input[str] plaintext: The plaintext data to encrypt.
                
                
@@ -464,7 +464,7 @@ class EncryptedData(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def associated_data(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
         """
@@ -512,7 +512,7 @@ class EncryptedData(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="loggingContext")
-    def logging_context(self) -> pulumi.Output[Optional[Mapping[str, Any]]]:
+    def logging_context(self) -> pulumi.Output[Optional[Mapping[str, str]]]:
         """
         Information that provides context for audit logging. You can provide this additional data as key-value pairs to include in the audit logs when audit logging is enabled.
         """

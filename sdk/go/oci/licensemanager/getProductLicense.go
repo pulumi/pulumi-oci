@@ -63,11 +63,11 @@ type LookupProductLicenseResult struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the product license is created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// License record name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The image ID associated with the product license.
 	Id string `pulumi:"id"`
 	// The images associated with the product license.
@@ -88,7 +88,7 @@ type LookupProductLicenseResult struct {
 	// Status description for the current product license status.
 	StatusDescription string `pulumi:"statusDescription"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the product license was updated. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.
@@ -152,8 +152,8 @@ func (o LookupProductLicenseResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupProductLicenseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProductLicenseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // License record name
@@ -162,8 +162,8 @@ func (o LookupProductLicenseResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupProductLicenseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProductLicenseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The image ID associated with the product license.
@@ -216,8 +216,8 @@ func (o LookupProductLicenseResultOutput) StatusDescription() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupProductLicenseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProductLicenseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProductLicenseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProductLicenseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the product license was created. An [RFC 3339](https://tools.ietf.org/html/rfc3339)-formatted datetime string.

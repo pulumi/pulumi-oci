@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// A map contains the statistics for the SQL execution using the plan. The key of the map is the metric's name. The value of the map is the metric's value.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> PlanStats;
+        public readonly ImmutableDictionary<string, string> PlanStats;
         /// <summary>
         /// The status of the execution using the plan.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
         [OutputConstructor]
         private GetManagedDatabaseSqlTuningAdvisorTasksExecutionPlanStatsComparisonModifiedResult(
-            ImmutableDictionary<string, object> planStats,
+            ImmutableDictionary<string, string> planStats,
 
             string planStatus,
 

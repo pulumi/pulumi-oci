@@ -51,7 +51,7 @@ export interface GetExadataInsightResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * OPSI Enterprise Manager Bridge OCID
      */
@@ -112,7 +112,7 @@ export interface GetExadataInsightResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Exadata insight identifier
      */
@@ -138,7 +138,7 @@ export interface GetExadataInsightResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
      */

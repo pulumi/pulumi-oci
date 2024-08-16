@@ -145,13 +145,13 @@ namespace Pulumi.Oci.Database
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("databaseDefinedTags")]
-        public Output<ImmutableDictionary<string, object>?> DatabaseDefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> DatabaseDefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("databaseFreeformTags")]
-        public Output<ImmutableDictionary<string, object>?> DatabaseFreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> DatabaseFreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -169,13 +169,13 @@ namespace Pulumi.Oci.Database
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         [Output("dbSystemDefinedTags")]
-        public Output<ImmutableDictionary<string, object>?> DbSystemDefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> DbSystemDefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("dbSystemFreeformTags")]
-        public Output<ImmutableDictionary<string, object>?> DbSystemFreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> DbSystemFreeformTags { get; private set; } = null!;
 
         [Output("deleteStandbyDbHomeOnDelete")]
         public Output<string> DeleteStandbyDbHomeOnDelete { get; private set; } = null!;
@@ -477,26 +477,26 @@ namespace Pulumi.Oci.Database
         }
 
         [Input("databaseDefinedTags")]
-        private InputMap<object>? _databaseDefinedTags;
+        private InputMap<string>? _databaseDefinedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DatabaseDefinedTags
+        public InputMap<string> DatabaseDefinedTags
         {
-            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<object>());
+            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<string>());
             set => _databaseDefinedTags = value;
         }
 
         [Input("databaseFreeformTags")]
-        private InputMap<object>? _databaseFreeformTags;
+        private InputMap<string>? _databaseFreeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> DatabaseFreeformTags
+        public InputMap<string> DatabaseFreeformTags
         {
-            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<object>());
+            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<string>());
             set => _databaseFreeformTags = value;
         }
 
@@ -513,26 +513,26 @@ namespace Pulumi.Oci.Database
         public Input<string>? DatabaseSoftwareImageId { get; set; }
 
         [Input("dbSystemDefinedTags")]
-        private InputMap<object>? _dbSystemDefinedTags;
+        private InputMap<string>? _dbSystemDefinedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DbSystemDefinedTags
+        public InputMap<string> DbSystemDefinedTags
         {
-            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<object>());
+            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<string>());
             set => _dbSystemDefinedTags = value;
         }
 
         [Input("dbSystemFreeformTags")]
-        private InputMap<object>? _dbSystemFreeformTags;
+        private InputMap<string>? _dbSystemFreeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> DbSystemFreeformTags
+        public InputMap<string> DbSystemFreeformTags
         {
-            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<object>());
+            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<string>());
             set => _dbSystemFreeformTags = value;
         }
 
@@ -776,26 +776,26 @@ namespace Pulumi.Oci.Database
         }
 
         [Input("databaseDefinedTags")]
-        private InputMap<object>? _databaseDefinedTags;
+        private InputMap<string>? _databaseDefinedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DatabaseDefinedTags
+        public InputMap<string> DatabaseDefinedTags
         {
-            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<object>());
+            get => _databaseDefinedTags ?? (_databaseDefinedTags = new InputMap<string>());
             set => _databaseDefinedTags = value;
         }
 
         [Input("databaseFreeformTags")]
-        private InputMap<object>? _databaseFreeformTags;
+        private InputMap<string>? _databaseFreeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> DatabaseFreeformTags
+        public InputMap<string> DatabaseFreeformTags
         {
-            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<object>());
+            get => _databaseFreeformTags ?? (_databaseFreeformTags = new InputMap<string>());
             set => _databaseFreeformTags = value;
         }
 
@@ -812,26 +812,26 @@ namespace Pulumi.Oci.Database
         public Input<string>? DatabaseSoftwareImageId { get; set; }
 
         [Input("dbSystemDefinedTags")]
-        private InputMap<object>? _dbSystemDefinedTags;
+        private InputMap<string>? _dbSystemDefinedTags;
 
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public InputMap<object> DbSystemDefinedTags
+        public InputMap<string> DbSystemDefinedTags
         {
-            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<object>());
+            get => _dbSystemDefinedTags ?? (_dbSystemDefinedTags = new InputMap<string>());
             set => _dbSystemDefinedTags = value;
         }
 
         [Input("dbSystemFreeformTags")]
-        private InputMap<object>? _dbSystemFreeformTags;
+        private InputMap<string>? _dbSystemFreeformTags;
 
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> DbSystemFreeformTags
+        public InputMap<string> DbSystemFreeformTags
         {
-            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<object>());
+            get => _dbSystemFreeformTags ?? (_dbSystemFreeformTags = new InputMap<string>());
             set => _dbSystemFreeformTags = value;
         }
 

@@ -100,7 +100,7 @@ type MonitoredResourcesSearch struct {
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains pulumi.StringPtrOutput `pulumi:"nameContains"`
 	// Criteria based on resource property.
-	PropertyEquals pulumi.MapOutput `pulumi:"propertyEquals"`
+	PropertyEquals pulumi.StringMapOutput `pulumi:"propertyEquals"`
 	// Resource category filter.
 	ResourceCategory pulumi.StringPtrOutput `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -192,7 +192,7 @@ type monitoredResourcesSearchState struct {
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains *string `pulumi:"nameContains"`
 	// Criteria based on resource property.
-	PropertyEquals map[string]interface{} `pulumi:"propertyEquals"`
+	PropertyEquals map[string]string `pulumi:"propertyEquals"`
 	// Resource category filter.
 	ResourceCategory *string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -252,7 +252,7 @@ type MonitoredResourcesSearchState struct {
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains pulumi.StringPtrInput
 	// Criteria based on resource property.
-	PropertyEquals pulumi.MapInput
+	PropertyEquals pulumi.StringMapInput
 	// Resource category filter.
 	ResourceCategory pulumi.StringPtrInput
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -314,7 +314,7 @@ type monitoredResourcesSearchArgs struct {
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains *string `pulumi:"nameContains"`
 	// Criteria based on resource property.
-	PropertyEquals map[string]interface{} `pulumi:"propertyEquals"`
+	PropertyEquals map[string]string `pulumi:"propertyEquals"`
 	// Resource category filter.
 	ResourceCategory *string `pulumi:"resourceCategory"`
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -373,7 +373,7 @@ type MonitoredResourcesSearchArgs struct {
 	// A filter to return resources that match resource name pattern given. The match is not case sensitive.
 	NameContains pulumi.StringPtrInput
 	// Criteria based on resource property.
-	PropertyEquals pulumi.MapInput
+	PropertyEquals pulumi.StringMapInput
 	// Resource category filter.
 	ResourceCategory pulumi.StringPtrInput
 	// Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -558,8 +558,8 @@ func (o MonitoredResourcesSearchOutput) NameContains() pulumi.StringPtrOutput {
 }
 
 // Criteria based on resource property.
-func (o MonitoredResourcesSearchOutput) PropertyEquals() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.MapOutput { return v.PropertyEquals }).(pulumi.MapOutput)
+func (o MonitoredResourcesSearchOutput) PropertyEquals() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourcesSearch) pulumi.StringMapOutput { return v.PropertyEquals }).(pulumi.StringMapOutput)
 }
 
 // Resource category filter.

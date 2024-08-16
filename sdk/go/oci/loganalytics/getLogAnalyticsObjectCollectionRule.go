@@ -68,13 +68,13 @@ type LookupLogAnalyticsObjectCollectionRuleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
 	EntityId string `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
@@ -177,8 +177,8 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
@@ -192,8 +192,8 @@ func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) EntityId() pulumi.St
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupLogAnalyticsObjectCollectionRuleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsObjectCollectionRuleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.

@@ -45,11 +45,11 @@ import (
 //					Hostname:            pulumi.Any(vbInstanceCustomEndpointHostname),
 //					CertificateSecretId: pulumi.Any(testSecret.Id),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IdcsOpenId:             pulumi.Any(testIdcsOpen.Id),
 //				IsVisualBuilderEnabled: pulumi.Any(vbInstanceIsVisualBuilderEnabled),
@@ -84,11 +84,11 @@ type VbInstance struct {
 	// (Updatable) Details for a custom endpoint for the vb instance (update).
 	CustomEndpoint VbInstanceCustomEndpointOutput `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Vb Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Information for IDCS access
 	IdcsInfos VbInstanceIdcsInfoArrayOutput `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
@@ -115,7 +115,7 @@ type VbInstance struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
@@ -179,11 +179,11 @@ type vbInstanceState struct {
 	// (Updatable) Details for a custom endpoint for the vb instance (update).
 	CustomEndpoint *VbInstanceCustomEndpoint `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Vb Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Information for IDCS access
 	IdcsInfos []VbInstanceIdcsInfo `pulumi:"idcsInfos"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
@@ -210,7 +210,7 @@ type vbInstanceState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
@@ -229,11 +229,11 @@ type VbInstanceState struct {
 	// (Updatable) Details for a custom endpoint for the vb instance (update).
 	CustomEndpoint VbInstanceCustomEndpointPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Vb Instance Identifier.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Information for IDCS access
 	IdcsInfos VbInstanceIdcsInfoArrayInput
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
@@ -260,7 +260,7 @@ type VbInstanceState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the VbInstance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the VbInstance was updated. An RFC3339 formatted datetime string.
@@ -281,11 +281,11 @@ type vbInstanceArgs struct {
 	// (Updatable) Details for a custom endpoint for the vb instance (update).
 	CustomEndpoint *VbInstanceCustomEndpoint `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Vb Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId *string `pulumi:"idcsOpenId"`
 	// (Updatable) Visual Builder is enabled or not.
@@ -308,11 +308,11 @@ type VbInstanceArgs struct {
 	// (Updatable) Details for a custom endpoint for the vb instance (update).
 	CustomEndpoint VbInstanceCustomEndpointPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Vb Instance Identifier.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Encrypted IDCS Open ID token. This is required for pre-UCPIS cloud accounts, but not UCPIS, hence not a required parameter
 	IdcsOpenId pulumi.StringPtrInput
 	// (Updatable) Visual Builder is enabled or not.
@@ -437,8 +437,8 @@ func (o VbInstanceOutput) CustomEndpoint() VbInstanceCustomEndpointOutput {
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o VbInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VbInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VbInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Vb Instance Identifier.
@@ -447,8 +447,8 @@ func (o VbInstanceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o VbInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VbInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VbInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Information for IDCS access
@@ -510,8 +510,8 @@ func (o VbInstanceOutput) StateMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o VbInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VbInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o VbInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VbInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the VbInstance was created. An RFC3339 formatted datetime string.

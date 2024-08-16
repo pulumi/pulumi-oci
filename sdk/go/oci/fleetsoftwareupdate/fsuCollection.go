@@ -17,15 +17,15 @@ type FsuCollection struct {
 
 	ActiveFsuCycles    FsuCollectionActiveFsuCycleArrayOutput `pulumi:"activeFsuCycles"`
 	CompartmentId      pulumi.StringOutput                    `pulumi:"compartmentId"`
-	DefinedTags        pulumi.MapOutput                       `pulumi:"definedTags"`
+	DefinedTags        pulumi.StringMapOutput                 `pulumi:"definedTags"`
 	DisplayName        pulumi.StringOutput                    `pulumi:"displayName"`
 	FleetDiscovery     FsuCollectionFleetDiscoveryOutput      `pulumi:"fleetDiscovery"`
-	FreeformTags       pulumi.MapOutput                       `pulumi:"freeformTags"`
+	FreeformTags       pulumi.StringMapOutput                 `pulumi:"freeformTags"`
 	LifecycleDetails   pulumi.StringOutput                    `pulumi:"lifecycleDetails"`
 	ServiceType        pulumi.StringOutput                    `pulumi:"serviceType"`
 	SourceMajorVersion pulumi.StringOutput                    `pulumi:"sourceMajorVersion"`
 	State              pulumi.StringOutput                    `pulumi:"state"`
-	SystemTags         pulumi.MapOutput                       `pulumi:"systemTags"`
+	SystemTags         pulumi.StringMapOutput                 `pulumi:"systemTags"`
 	TargetCount        pulumi.IntOutput                       `pulumi:"targetCount"`
 	TimeCreated        pulumi.StringOutput                    `pulumi:"timeCreated"`
 	TimeUpdated        pulumi.StringOutput                    `pulumi:"timeUpdated"`
@@ -76,15 +76,15 @@ func GetFsuCollection(ctx *pulumi.Context,
 type fsuCollectionState struct {
 	ActiveFsuCycles    []FsuCollectionActiveFsuCycle `pulumi:"activeFsuCycles"`
 	CompartmentId      *string                       `pulumi:"compartmentId"`
-	DefinedTags        map[string]interface{}        `pulumi:"definedTags"`
+	DefinedTags        map[string]string             `pulumi:"definedTags"`
 	DisplayName        *string                       `pulumi:"displayName"`
 	FleetDiscovery     *FsuCollectionFleetDiscovery  `pulumi:"fleetDiscovery"`
-	FreeformTags       map[string]interface{}        `pulumi:"freeformTags"`
+	FreeformTags       map[string]string             `pulumi:"freeformTags"`
 	LifecycleDetails   *string                       `pulumi:"lifecycleDetails"`
 	ServiceType        *string                       `pulumi:"serviceType"`
 	SourceMajorVersion *string                       `pulumi:"sourceMajorVersion"`
 	State              *string                       `pulumi:"state"`
-	SystemTags         map[string]interface{}        `pulumi:"systemTags"`
+	SystemTags         map[string]string             `pulumi:"systemTags"`
 	TargetCount        *int                          `pulumi:"targetCount"`
 	TimeCreated        *string                       `pulumi:"timeCreated"`
 	TimeUpdated        *string                       `pulumi:"timeUpdated"`
@@ -94,15 +94,15 @@ type fsuCollectionState struct {
 type FsuCollectionState struct {
 	ActiveFsuCycles    FsuCollectionActiveFsuCycleArrayInput
 	CompartmentId      pulumi.StringPtrInput
-	DefinedTags        pulumi.MapInput
+	DefinedTags        pulumi.StringMapInput
 	DisplayName        pulumi.StringPtrInput
 	FleetDiscovery     FsuCollectionFleetDiscoveryPtrInput
-	FreeformTags       pulumi.MapInput
+	FreeformTags       pulumi.StringMapInput
 	LifecycleDetails   pulumi.StringPtrInput
 	ServiceType        pulumi.StringPtrInput
 	SourceMajorVersion pulumi.StringPtrInput
 	State              pulumi.StringPtrInput
-	SystemTags         pulumi.MapInput
+	SystemTags         pulumi.StringMapInput
 	TargetCount        pulumi.IntPtrInput
 	TimeCreated        pulumi.StringPtrInput
 	TimeUpdated        pulumi.StringPtrInput
@@ -115,10 +115,10 @@ func (FsuCollectionState) ElementType() reflect.Type {
 
 type fsuCollectionArgs struct {
 	CompartmentId      string                       `pulumi:"compartmentId"`
-	DefinedTags        map[string]interface{}       `pulumi:"definedTags"`
+	DefinedTags        map[string]string            `pulumi:"definedTags"`
 	DisplayName        *string                      `pulumi:"displayName"`
 	FleetDiscovery     *FsuCollectionFleetDiscovery `pulumi:"fleetDiscovery"`
-	FreeformTags       map[string]interface{}       `pulumi:"freeformTags"`
+	FreeformTags       map[string]string            `pulumi:"freeformTags"`
 	ServiceType        string                       `pulumi:"serviceType"`
 	SourceMajorVersion string                       `pulumi:"sourceMajorVersion"`
 	Type               string                       `pulumi:"type"`
@@ -127,10 +127,10 @@ type fsuCollectionArgs struct {
 // The set of arguments for constructing a FsuCollection resource.
 type FsuCollectionArgs struct {
 	CompartmentId      pulumi.StringInput
-	DefinedTags        pulumi.MapInput
+	DefinedTags        pulumi.StringMapInput
 	DisplayName        pulumi.StringPtrInput
 	FleetDiscovery     FsuCollectionFleetDiscoveryPtrInput
-	FreeformTags       pulumi.MapInput
+	FreeformTags       pulumi.StringMapInput
 	ServiceType        pulumi.StringInput
 	SourceMajorVersion pulumi.StringInput
 	Type               pulumi.StringInput
@@ -231,8 +231,8 @@ func (o FsuCollectionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCollection) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o FsuCollectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCollection) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o FsuCollectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCollection) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCollectionOutput) DisplayName() pulumi.StringOutput {
@@ -243,8 +243,8 @@ func (o FsuCollectionOutput) FleetDiscovery() FsuCollectionFleetDiscoveryOutput 
 	return o.ApplyT(func(v *FsuCollection) FsuCollectionFleetDiscoveryOutput { return v.FleetDiscovery }).(FsuCollectionFleetDiscoveryOutput)
 }
 
-func (o FsuCollectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCollection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o FsuCollectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCollection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCollectionOutput) LifecycleDetails() pulumi.StringOutput {
@@ -263,8 +263,8 @@ func (o FsuCollectionOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *FsuCollection) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-func (o FsuCollectionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *FsuCollection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o FsuCollectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *FsuCollection) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o FsuCollectionOutput) TargetCount() pulumi.IntOutput {

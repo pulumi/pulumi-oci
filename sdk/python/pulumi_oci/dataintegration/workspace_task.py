@@ -422,7 +422,7 @@ class _WorkspaceTaskState:
                  input_ports: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskInputPortArgs']]]] = None,
                  is_single_load: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
-                 key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  metadatas: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataArgs']]]] = None,
                  model_type: Optional[pulumi.Input[str]] = None,
                  model_version: Optional[pulumi.Input[str]] = None,
@@ -451,7 +451,7 @@ class _WorkspaceTaskState:
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskInputPortArgs']]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[str] model_version: (Updatable) The object's model version.
@@ -650,14 +650,14 @@ class _WorkspaceTaskState:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def key_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
     @key_map.setter
-    def key_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def key_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "key_map", value)
 
     @property
@@ -1053,7 +1053,7 @@ class WorkspaceTask(pulumi.CustomResource):
             input_ports: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]]] = None,
             is_single_load: Optional[pulumi.Input[bool]] = None,
             key: Optional[pulumi.Input[str]] = None,
-            key_map: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            key_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             metadatas: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict']]]]] = None,
             model_type: Optional[pulumi.Input[str]] = None,
             model_version: Optional[pulumi.Input[str]] = None,
@@ -1087,7 +1087,7 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskInputPortArgs', 'WorkspaceTaskInputPortArgsDict']]]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
         :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
-        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceTaskMetadataArgs', 'WorkspaceTaskMetadataArgsDict']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[str] model_version: (Updatable) The object's model version.
@@ -1224,7 +1224,7 @@ class WorkspaceTask(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
+    def key_map(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

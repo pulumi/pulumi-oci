@@ -5,7 +5,6 @@ package com.pulumi.oci.MediaServices.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +23,7 @@ public final class MediaWorkflowTask {
      * @return (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    private @Nullable Map<String,Object> enableWhenReferencedParameterEquals;
+    private @Nullable Map<String,String> enableWhenReferencedParameterEquals;
     /**
      * @return (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
      * 
@@ -66,7 +65,7 @@ public final class MediaWorkflowTask {
      * @return (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    public Map<String,Object> enableWhenReferencedParameterEquals() {
+    public Map<String,String> enableWhenReferencedParameterEquals() {
         return this.enableWhenReferencedParameterEquals == null ? Map.of() : this.enableWhenReferencedParameterEquals;
     }
     /**
@@ -118,7 +117,7 @@ public final class MediaWorkflowTask {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String enableParameterReference;
-        private @Nullable Map<String,Object> enableWhenReferencedParameterEquals;
+        private @Nullable Map<String,String> enableWhenReferencedParameterEquals;
         private String key;
         private String parameters;
         private @Nullable List<String> prerequisites;
@@ -143,7 +142,7 @@ public final class MediaWorkflowTask {
             return this;
         }
         @CustomType.Setter
-        public Builder enableWhenReferencedParameterEquals(@Nullable Map<String,Object> enableWhenReferencedParameterEquals) {
+        public Builder enableWhenReferencedParameterEquals(@Nullable Map<String,String> enableWhenReferencedParameterEquals) {
 
             this.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
             return this;

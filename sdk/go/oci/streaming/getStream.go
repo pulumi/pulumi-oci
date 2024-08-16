@@ -61,9 +61,9 @@ type LookupStreamResult struct {
 	// The OCID of the compartment that contains the stream.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the stream.
 	Id string `pulumi:"id"`
 	// Any additional details about the current state of the stream.
@@ -129,13 +129,13 @@ func (o LookupStreamResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-func (o LookupStreamResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupStreamResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupStreamResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupStreamResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupStreamResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupStreamResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the stream.

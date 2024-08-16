@@ -65,13 +65,13 @@ type LookupOpaInstanceResult struct {
 	// The entitlement used for billing purposes
 	ConsumptionModel string `pulumi:"consumptionModel"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the Process Automation instance.
 	Description string `pulumi:"description"`
 	// OpaInstance Identifier, can be renamed
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id     string `pulumi:"id"`
 	IdcsAt string `pulumi:"idcsAt"`
@@ -95,7 +95,7 @@ type LookupOpaInstanceResult struct {
 	// The current state of the OpaInstance.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -156,8 +156,8 @@ func (o LookupOpaInstanceResultOutput) ConsumptionModel() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOpaInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOpaInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the Process Automation instance.
@@ -171,8 +171,8 @@ func (o LookupOpaInstanceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOpaInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOpaInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation
@@ -234,8 +234,8 @@ func (o LookupOpaInstanceResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOpaInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOpaInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOpaInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when OpaInstance was created. An RFC3339 formatted datetime string

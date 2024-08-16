@@ -67,11 +67,11 @@ type LookupJmsPluginResult struct {
 	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
 	FleetId string `pulumi:"fleetId"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname of the agent.
 	Hostname string `pulumi:"hostname"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this JmsPlugin.
@@ -88,7 +88,7 @@ type LookupJmsPluginResult struct {
 	// The lifecycle state.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
 	TimeLastSeen string `pulumi:"timeLastSeen"`
 	// The date and time the plugin was registered.
@@ -154,8 +154,8 @@ func (o LookupJmsPluginResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-func (o LookupJmsPluginResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupJmsPluginResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupJmsPluginResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupJmsPluginResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
@@ -164,8 +164,8 @@ func (o LookupJmsPluginResultOutput) FleetId() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-func (o LookupJmsPluginResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupJmsPluginResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupJmsPluginResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupJmsPluginResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname of the agent.
@@ -208,8 +208,8 @@ func (o LookupJmsPluginResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupJmsPluginResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupJmsPluginResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupJmsPluginResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupJmsPluginResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.

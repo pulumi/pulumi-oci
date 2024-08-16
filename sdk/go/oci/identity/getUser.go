@@ -65,7 +65,7 @@ type LookupUserResult struct {
 	// DB username of the DB credential. Has to be unique across the tenancy.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the user. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// The email address you assign to the user. The email address must be unique across all users in the tenancy.
@@ -75,7 +75,7 @@ type LookupUserResult struct {
 	// Identifier of the user in the identity provider
 	ExternalIdentifier string `pulumi:"externalIdentifier"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the user.
 	Id string `pulumi:"id"`
 	// The OCID of the `IdentityProvider` this user belongs to.
@@ -152,8 +152,8 @@ func (o LookupUserResultOutput) DbUserName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupUserResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupUserResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupUserResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupUserResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the user. Does not have to be unique, and it's changeable.
@@ -177,8 +177,8 @@ func (o LookupUserResultOutput) ExternalIdentifier() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupUserResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupUserResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupUserResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupUserResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the user.

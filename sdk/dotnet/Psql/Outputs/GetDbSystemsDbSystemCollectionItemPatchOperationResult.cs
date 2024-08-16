@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Psql.Outputs
         public readonly string Position;
         public readonly string SelectedItem;
         public readonly string Selection;
-        public readonly ImmutableDictionary<string, object> Value;
+        public readonly ImmutableDictionary<string, string> Value;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemCollectionItemPatchOperationResult(
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Psql.Outputs
 
             string selection,
 
-            ImmutableDictionary<string, object> value)
+            ImmutableDictionary<string, string> value)
         {
             From = from;
             Operation = operation;

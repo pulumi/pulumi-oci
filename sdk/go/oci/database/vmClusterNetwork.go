@@ -72,8 +72,8 @@ import (
 //						ScanListenerPortTcp: pulumi.Any(vmClusterNetworkDrScansScanListenerPortTcp),
 //					},
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				Ntps:                     pulumi.Any(vmClusterNetworkNtp),
 //				ValidateVmClusterNetwork: pulumi.Any(vmClusterNetworkValidateVmClusterNetwork),
@@ -101,7 +101,7 @@ type VmClusterNetwork struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -111,7 +111,7 @@ type VmClusterNetwork struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringOutput `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -179,7 +179,7 @@ type vmClusterNetworkState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -189,7 +189,7 @@ type vmClusterNetworkState struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId *string `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -213,7 +213,7 @@ type VmClusterNetworkState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -223,7 +223,7 @@ type VmClusterNetworkState struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -251,7 +251,7 @@ type vmClusterNetworkArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -261,7 +261,7 @@ type vmClusterNetworkArgs struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps []string `pulumi:"ntps"`
 	// (Updatable) The SCAN details.
@@ -278,7 +278,7 @@ type VmClusterNetworkArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -288,7 +288,7 @@ type VmClusterNetworkArgs struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The list of NTP server IP addresses. Maximum of 3 allowed.
 	Ntps pulumi.StringArrayInput
 	// (Updatable) The SCAN details.
@@ -396,8 +396,8 @@ func (o VmClusterNetworkOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o VmClusterNetworkOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VmClusterNetworkOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
@@ -421,8 +421,8 @@ func (o VmClusterNetworkOutput) ExadataInfrastructureId() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o VmClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VmClusterNetwork) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VmClusterNetworkOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VmClusterNetwork) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Additional information about the current lifecycle state.

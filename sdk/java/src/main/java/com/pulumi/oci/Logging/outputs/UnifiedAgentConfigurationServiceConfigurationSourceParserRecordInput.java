@@ -4,7 +4,6 @@
 package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserReco
      * @return (Updatable) Dimensions to be added for metrics.
      * 
      */
-    private @Nullable Map<String,Object> dimensions;
+    private @Nullable Map<String,String> dimensions;
     /**
      * @return (Updatable) Namespace to emit metrics.
      * 
@@ -34,7 +33,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserReco
      * @return (Updatable) Dimensions to be added for metrics.
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions == null ? Map.of() : this.dimensions;
     }
     /**
@@ -61,7 +60,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserReco
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> dimensions;
+        private @Nullable Map<String,String> dimensions;
         private @Nullable String namespace;
         private @Nullable String resourceGroup;
         public Builder() {}
@@ -73,7 +72,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserReco
         }
 
         @CustomType.Setter
-        public Builder dimensions(@Nullable Map<String,Object> dimensions) {
+        public Builder dimensions(@Nullable Map<String,String> dimensions) {
 
             this.dimensions = dimensions;
             return this;

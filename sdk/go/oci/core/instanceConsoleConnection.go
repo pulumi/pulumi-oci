@@ -37,11 +37,11 @@ import (
 //			_, err := Core.NewInstanceConsoleConnection(ctx, "test_instance_console_connection", &Core.InstanceConsoleConnectionArgs{
 //				InstanceId: pulumi.Any(testInstance.Id),
 //				PublicKey:  pulumi.Any(instanceConsoleConnectionPublicKey),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -68,11 +68,11 @@ type InstanceConsoleConnection struct {
 	// The SSH connection string for the console connection.
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The SSH public key's fingerprint for client authentication to the console connection.
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringOutput `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
@@ -129,11 +129,11 @@ type instanceConsoleConnectionState struct {
 	// The SSH connection string for the console connection.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The SSH public key's fingerprint for client authentication to the console connection.
 	Fingerprint *string `pulumi:"fingerprint"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the instance to create the console connection to.
 	InstanceId *string `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
@@ -155,11 +155,11 @@ type InstanceConsoleConnectionState struct {
 	// The SSH connection string for the console connection.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The SSH public key's fingerprint for client authentication to the console connection.
 	Fingerprint pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringPtrInput
 	// The SSH public key used to authenticate the console connection.
@@ -181,9 +181,9 @@ func (InstanceConsoleConnectionState) ElementType() reflect.Type {
 
 type instanceConsoleConnectionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the instance to create the console connection to.
 	InstanceId string `pulumi:"instanceId"`
 	// The SSH public key used to authenticate the console connection.
@@ -196,9 +196,9 @@ type instanceConsoleConnectionArgs struct {
 // The set of arguments for constructing a InstanceConsoleConnection resource.
 type InstanceConsoleConnectionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the instance to create the console connection to.
 	InstanceId pulumi.StringInput
 	// The SSH public key used to authenticate the console connection.
@@ -306,8 +306,8 @@ func (o InstanceConsoleConnectionOutput) ConnectionString() pulumi.StringOutput 
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o InstanceConsoleConnectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o InstanceConsoleConnectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The SSH public key's fingerprint for client authentication to the console connection.
@@ -316,8 +316,8 @@ func (o InstanceConsoleConnectionOutput) Fingerprint() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o InstanceConsoleConnectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o InstanceConsoleConnectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *InstanceConsoleConnection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the instance to create the console connection to.

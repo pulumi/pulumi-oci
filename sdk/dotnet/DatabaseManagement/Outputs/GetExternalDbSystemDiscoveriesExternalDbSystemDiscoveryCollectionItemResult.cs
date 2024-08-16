@@ -24,7 +24,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The list of DB system components that were found in the DB system discovery.
         /// </summary>
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The directory in which Oracle Grid Infrastructure is installed.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time the external DB system discovery was created.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             ImmutableArray<Outputs.GetExternalDbSystemDiscoveriesExternalDbSystemDiscoveryCollectionItemDiscoveredComponentResult> discoveredComponents,
 
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string externalDbSystemDiscoveryId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string gridHome,
 
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

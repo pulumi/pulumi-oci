@@ -6,7 +6,6 @@ package com.pulumi.oci.Opsi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -27,7 +26,7 @@ public final class GetHostInsightResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return OPSI Enterprise Manager Bridge OCID
      * 
@@ -72,7 +71,7 @@ public final class GetHostInsightResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The user-friendly name for the host. The name does not have to be unique.
      * 
@@ -134,7 +133,7 @@ public final class GetHostInsightResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The time the the host insight was first enabled. An RFC3339 formatted datetime string
      * 
@@ -165,7 +164,7 @@ public final class GetHostInsightResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -228,7 +227,7 @@ public final class GetHostInsightResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -318,7 +317,7 @@ public final class GetHostInsightResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -347,7 +346,7 @@ public final class GetHostInsightResult {
     public static final class Builder {
         private String compartmentId;
         private String computeId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String enterpriseManagerBridgeId;
         private String enterpriseManagerEntityDisplayName;
         private String enterpriseManagerEntityIdentifier;
@@ -356,7 +355,7 @@ public final class GetHostInsightResult {
         private String enterpriseManagerIdentifier;
         private String entitySource;
         private String exadataInsightId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostDisplayName;
         private String hostInsightId;
         private String hostName;
@@ -370,7 +369,7 @@ public final class GetHostInsightResult {
         private Integer processorCount;
         private String state;
         private String status;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -423,7 +422,7 @@ public final class GetHostInsightResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetHostInsightResult", "definedTags");
             }
@@ -495,7 +494,7 @@ public final class GetHostInsightResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetHostInsightResult", "freeformTags");
             }
@@ -607,7 +606,7 @@ public final class GetHostInsightResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetHostInsightResult", "systemTags");
             }

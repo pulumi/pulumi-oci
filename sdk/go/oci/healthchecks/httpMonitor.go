@@ -38,11 +38,11 @@ import (
 //				IntervalInSeconds: pulumi.Any(httpMonitorIntervalInSeconds),
 //				Protocol:          pulumi.Any(httpMonitorProtocol),
 //				Targets:           pulumi.Any(httpMonitorTargets),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				Headers:           pulumi.Any(httpMonitorHeaders),
 //				IsEnabled:         pulumi.Any(httpMonitorIsEnabled),
@@ -74,15 +74,15 @@ type HttpMonitor struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapOutput `pulumi:"headers"`
+	Headers pulumi.StringMapOutput `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringOutput `pulumi:"homeRegion"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -160,15 +160,15 @@ type httpMonitorState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion *string `pulumi:"homeRegion"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -202,15 +202,15 @@ type HttpMonitorState struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapInput
+	Headers pulumi.StringMapInput
 	// The region where updates must be made and where results must be fetched from.
 	HomeRegion pulumi.StringPtrInput
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
@@ -248,15 +248,15 @@ type httpMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers map[string]interface{} `pulumi:"headers"`
+	Headers map[string]string `pulumi:"headers"`
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds int `pulumi:"intervalInSeconds"`
 	// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -285,15 +285,15 @@ type HttpMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A dictionary of HTTP request headers.
 	//
 	// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-	Headers pulumi.MapInput
+	Headers pulumi.StringMapInput
 	// (Updatable) The monitor interval in seconds. Valid values: 10, 30, and 60.
 	IntervalInSeconds pulumi.IntInput
 	// (Updatable) Enables or disables the monitor. Set to 'true' to launch monitoring.
@@ -410,8 +410,8 @@ func (o HttpMonitorOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o HttpMonitorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o HttpMonitorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -420,15 +420,15 @@ func (o HttpMonitorOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o HttpMonitorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o HttpMonitorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A dictionary of HTTP request headers.
 //
 // *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
-func (o HttpMonitorOutput) Headers() pulumi.MapOutput {
-	return o.ApplyT(func(v *HttpMonitor) pulumi.MapOutput { return v.Headers }).(pulumi.MapOutput)
+func (o HttpMonitorOutput) Headers() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *HttpMonitor) pulumi.StringMapOutput { return v.Headers }).(pulumi.StringMapOutput)
 }
 
 // The region where updates must be made and where results must be fetched from.

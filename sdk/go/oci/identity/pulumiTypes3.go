@@ -386,13 +386,13 @@ type GetIdentityProvidersIdentityProvider struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes map[string]interface{} `pulumi:"freeformAttributes"`
+	FreeformAttributes map[string]string `pulumi:"freeformAttributes"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the `IdentityProvider`.
 	Id string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -432,13 +432,13 @@ type GetIdentityProvidersIdentityProviderArgs struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-	FreeformAttributes pulumi.MapInput `pulumi:"freeformAttributes"`
+	FreeformAttributes pulumi.StringMapInput `pulumi:"freeformAttributes"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the `IdentityProvider`.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -520,8 +520,8 @@ func (o GetIdentityProvidersIdentityProviderOutput) CompartmentId() pulumi.Strin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetIdentityProvidersIdentityProviderOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetIdentityProvidersIdentityProviderOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the `IdentityProvider` during creation. Does not have to be unique, and it's changeable.
@@ -530,13 +530,13 @@ func (o GetIdentityProvidersIdentityProviderOutput) Description() pulumi.StringO
 }
 
 // Extra name value pairs associated with this identity provider. Example: `{"clientId": "appSf3kdjf3"}`
-func (o GetIdentityProvidersIdentityProviderOutput) FreeformAttributes() pulumi.MapOutput {
-	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.FreeformAttributes }).(pulumi.MapOutput)
+func (o GetIdentityProvidersIdentityProviderOutput) FreeformAttributes() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]string { return v.FreeformAttributes }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetIdentityProvidersIdentityProviderOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetIdentityProvidersIdentityProviderOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetIdentityProvidersIdentityProvider) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the `IdentityProvider`.
@@ -1093,11 +1093,11 @@ type GetNetworkSourcesNetworkSource struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the network source. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the network source.
 	Id string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -1131,11 +1131,11 @@ type GetNetworkSourcesNetworkSourceArgs struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the network source. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the network source.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -1211,8 +1211,8 @@ func (o GetNetworkSourcesNetworkSourceOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetNetworkSourcesNetworkSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNetworkSourcesNetworkSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the network source. Does not have to be unique, and it's changeable.
@@ -1221,8 +1221,8 @@ func (o GetNetworkSourcesNetworkSourceOutput) Description() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetNetworkSourcesNetworkSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNetworkSourcesNetworkSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNetworkSourcesNetworkSource) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the network source.
@@ -1502,11 +1502,11 @@ type GetPoliciesPolicy struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the policy. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the policy.
 	Id string `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -1544,11 +1544,11 @@ type GetPoliciesPolicyArgs struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the policy. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the policy.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The detailed status of INACTIVE lifecycleState.
@@ -1631,8 +1631,8 @@ func (o GetPoliciesPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetPoliciesPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPoliciesPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPoliciesPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the policy. Does not have to be unique, and it's changeable.
@@ -1641,8 +1641,8 @@ func (o GetPoliciesPolicyOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetPoliciesPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPoliciesPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPoliciesPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPoliciesPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the policy.
@@ -2827,11 +2827,11 @@ type GetTagNamespacesTagNamespace struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the tag namespace.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the tag namespace.
 	Id string `pulumi:"id"`
 	// Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
@@ -2859,11 +2859,11 @@ type GetTagNamespacesTagNamespaceArgs struct {
 	// The OCID of the compartment (remember that the tenancy is simply the root compartment).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the tag namespace.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the tag namespace.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the tag namespace is retired. For more information, see [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#Retiring).
@@ -2933,8 +2933,8 @@ func (o GetTagNamespacesTagNamespaceOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetTagNamespacesTagNamespaceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTagNamespacesTagNamespaceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the tag namespace.
@@ -2943,8 +2943,8 @@ func (o GetTagNamespacesTagNamespaceOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetTagNamespacesTagNamespaceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTagNamespacesTagNamespaceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTagNamespacesTagNamespace) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the tag namespace.
@@ -3577,11 +3577,11 @@ func (o GetTagsFilterArrayOutput) Index(i pulumi.IntInput) GetTagsFilterOutput {
 
 type GetTagsTag struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the tag.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the tag definition.
 	Id string `pulumi:"id"`
 	// Indicates whether the tag is enabled for cost tracking.
@@ -3613,11 +3613,11 @@ type GetTagsTagInput interface {
 
 type GetTagsTagArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the tag.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the tag definition.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether the tag is enabled for cost tracking.
@@ -3688,8 +3688,8 @@ func (o GetTagsTagOutput) ToGetTagsTagOutputWithContext(ctx context.Context) Get
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetTagsTagOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTagsTag) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTagsTagOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTagsTag) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the tag.
@@ -3698,8 +3698,8 @@ func (o GetTagsTagOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetTagsTagOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTagsTag) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTagsTagOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTagsTag) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the tag definition.
@@ -4393,7 +4393,7 @@ type GetUsersUser struct {
 	// DB username of the DB credential. Has to be unique across the tenancy.
 	DbUserName string `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description you assign to the user. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// The email address you assign to the user. The email address must be unique across all users in the tenancy.
@@ -4403,7 +4403,7 @@ type GetUsersUser struct {
 	// The id of a user in the identity provider.
 	ExternalIdentifier string `pulumi:"externalIdentifier"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the user.
 	Id string `pulumi:"id"`
 	// The id of the identity provider.
@@ -4444,7 +4444,7 @@ type GetUsersUserArgs struct {
 	// DB username of the DB credential. Has to be unique across the tenancy.
 	DbUserName pulumi.StringInput `pulumi:"dbUserName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The description you assign to the user. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The email address you assign to the user. The email address must be unique across all users in the tenancy.
@@ -4454,7 +4454,7 @@ type GetUsersUserArgs struct {
 	// The id of a user in the identity provider.
 	ExternalIdentifier pulumi.StringInput `pulumi:"externalIdentifier"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the user.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The id of the identity provider.
@@ -4543,8 +4543,8 @@ func (o GetUsersUserOutput) DbUserName() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetUsersUserOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUsersUser) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetUsersUserOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUsersUser) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description you assign to the user. Does not have to be unique, and it's changeable.
@@ -4568,8 +4568,8 @@ func (o GetUsersUserOutput) ExternalIdentifier() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetUsersUserOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetUsersUser) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetUsersUserOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUsersUser) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the user.

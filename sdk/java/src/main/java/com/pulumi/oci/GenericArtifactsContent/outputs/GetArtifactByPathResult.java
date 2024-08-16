@@ -5,7 +5,6 @@ package com.pulumi.oci.GenericArtifactsContent.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,9 +15,9 @@ public final class GetArtifactByPathResult {
     private String artifactPath;
     private String compartmentId;
     private String content;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     private String displayName;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String id;
     private String repositoryId;
     private String sha256;
@@ -41,13 +40,13 @@ public final class GetArtifactByPathResult {
     public String content() {
         return this.content;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     public String displayName() {
         return this.displayName;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String id() {
@@ -88,9 +87,9 @@ public final class GetArtifactByPathResult {
         private String artifactPath;
         private String compartmentId;
         private String content;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String repositoryId;
         private String sha256;
@@ -152,7 +151,7 @@ public final class GetArtifactByPathResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetArtifactByPathResult", "definedTags");
             }
@@ -168,7 +167,7 @@ public final class GetArtifactByPathResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetArtifactByPathResult", "freeformTags");
             }

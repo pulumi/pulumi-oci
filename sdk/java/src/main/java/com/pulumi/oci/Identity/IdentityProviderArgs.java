@@ -6,7 +6,6 @@ package com.pulumi.oci.Identity;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -38,13 +37,13 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -68,13 +67,13 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="freeformAttributes")
-    private @Nullable Output<Map<String,Object>> freeformAttributes;
+    private @Nullable Output<Map<String,String>> freeformAttributes;
 
     /**
      * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformAttributes() {
+    public Optional<Output<Map<String,String>>> freeformAttributes() {
         return Optional.ofNullable(this.freeformAttributes);
     }
 
@@ -83,13 +82,13 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -234,7 +233,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -245,7 +244,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -276,7 +275,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformAttributes(@Nullable Output<Map<String,Object>> freeformAttributes) {
+        public Builder freeformAttributes(@Nullable Output<Map<String,String>> freeformAttributes) {
             $.freeformAttributes = freeformAttributes;
             return this;
         }
@@ -287,7 +286,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformAttributes(Map<String,Object> freeformAttributes) {
+        public Builder freeformAttributes(Map<String,String> freeformAttributes) {
             return freeformAttributes(Output.of(freeformAttributes));
         }
 
@@ -297,7 +296,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -308,7 +307,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

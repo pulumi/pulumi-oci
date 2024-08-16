@@ -6,7 +6,6 @@ package com.pulumi.oci.DatabaseManagement.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseManagement.outputs.GetExternalExadataStorageConnectorCredentialInfo;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,7 +17,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> additionalDetails;
+    private Map<String,String> additionalDetails;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
      * 
@@ -35,7 +34,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The name of the Exadata resource. English letters, numbers, &#34;-&#34;, &#34;_&#34; and &#34;.&#34; only.
      * 
@@ -51,7 +50,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      * 
@@ -86,7 +85,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return The timestamp of the creation of the Exadata resource.
      * 
@@ -108,7 +107,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> additionalDetails() {
+    public Map<String,String> additionalDetails() {
         return this.additionalDetails;
     }
     /**
@@ -135,7 +134,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -159,7 +158,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -208,7 +207,7 @@ public final class GetExternalExadataStorageConnectorResult {
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -242,23 +241,23 @@ public final class GetExternalExadataStorageConnectorResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalDetails;
+        private Map<String,String> additionalDetails;
         private String agentId;
         private String connectionUri;
         private String connectorName;
         private List<GetExternalExadataStorageConnectorCredentialInfo> credentialInfos;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String exadataInfrastructureId;
         private String externalExadataStorageConnectorId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String internalId;
         private String lifecycleDetails;
         private String state;
         private String status;
         private String storageServerId;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         private String version;
@@ -288,7 +287,7 @@ public final class GetExternalExadataStorageConnectorResult {
         }
 
         @CustomType.Setter
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(Map<String,String> additionalDetails) {
             if (additionalDetails == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "additionalDetails");
             }
@@ -331,7 +330,7 @@ public final class GetExternalExadataStorageConnectorResult {
             return credentialInfos(List.of(credentialInfos));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "definedTags");
             }
@@ -363,7 +362,7 @@ public final class GetExternalExadataStorageConnectorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "freeformTags");
             }
@@ -419,7 +418,7 @@ public final class GetExternalExadataStorageConnectorResult {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetExternalExadataStorageConnectorResult", "systemTags");
             }

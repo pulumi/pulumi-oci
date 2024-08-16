@@ -31,7 +31,7 @@ type GetVmClusterRecommendedNetworkArgs struct {
 	// The list of Db server Ids to configure network.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the VM cluster network. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -41,7 +41,7 @@ type GetVmClusterRecommendedNetworkArgs struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of parameters for generation of the client and backup networks.
 	Networks []GetVmClusterRecommendedNetworkNetwork `pulumi:"networks"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -58,7 +58,7 @@ type GetVmClusterRecommendedNetworkResult struct {
 	CompartmentId string   `pulumi:"compartmentId"`
 	DbServers     []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -68,7 +68,7 @@ type GetVmClusterRecommendedNetworkResult struct {
 	DrScans                 []GetVmClusterRecommendedNetworkDrScan `pulumi:"drScans"`
 	ExadataInfrastructureId string                                 `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id       string                                  `pulumi:"id"`
 	Networks []GetVmClusterRecommendedNetworkNetwork `pulumi:"networks"`
@@ -104,7 +104,7 @@ type GetVmClusterRecommendedNetworkOutputArgs struct {
 	// The list of Db server Ids to configure network.
 	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name for the VM cluster network. The name does not need to be unique.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -114,7 +114,7 @@ type GetVmClusterRecommendedNetworkOutputArgs struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// List of parameters for generation of the client and backup networks.
 	Networks GetVmClusterRecommendedNetworkNetworkArrayInput `pulumi:"networks"`
 	// The list of NTP server IP addresses. Maximum of 3 allowed.
@@ -154,8 +154,8 @@ func (o GetVmClusterRecommendedNetworkResultOutput) DbServers() pulumi.StringArr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetVmClusterRecommendedNetworkResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVmClusterRecommendedNetworkResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata Cloud@Customer VM cluster network. The name does not need to be unique.
@@ -182,8 +182,8 @@ func (o GetVmClusterRecommendedNetworkResultOutput) ExadataInfrastructureId() pu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetVmClusterRecommendedNetworkResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVmClusterRecommendedNetworkResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClusterRecommendedNetworkResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

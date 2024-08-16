@@ -14,7 +14,6 @@ import com.pulumi.oci.DataIntegration.outputs.WorkspaceFolderParentRef;
 import com.pulumi.oci.DataIntegration.outputs.WorkspaceFolderRegistryMetadata;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -153,14 +152,14 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
      * A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> keyMap;
+    @Export(name="keyMap", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> keyMap;
 
     /**
      * @return A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
-    public Output<Map<String,Object>> keyMap() {
+    public Output<Map<String,String>> keyMap() {
         return this.keyMap;
     }
     /**

@@ -11,7 +11,6 @@ import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentMaintenancePolicy;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRefresh;
 import com.pulumi.oci.Functions.outputs.GetFusionEnvironmentRule;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,7 +38,7 @@ public final class GetFusionEnvironmentResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return FusionEnvironment Identifier, can be renamed
      * 
@@ -59,7 +58,7 @@ public final class GetFusionEnvironmentResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return FusionEnvironmentFamily Identifier
      * 
@@ -191,7 +190,7 @@ public final class GetFusionEnvironmentResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -219,7 +218,7 @@ public final class GetFusionEnvironmentResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -379,11 +378,11 @@ public final class GetFusionEnvironmentResult {
         private List<String> appliedPatchBundles;
         private String compartmentId;
         private List<GetFusionEnvironmentCreateFusionEnvironmentAdminUserDetail> createFusionEnvironmentAdminUserDetails;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String displayName;
         private String dnsPrefix;
         private String domainId;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String fusionEnvironmentFamilyId;
         private String fusionEnvironmentId;
         private String fusionEnvironmentType;
@@ -482,7 +481,7 @@ public final class GetFusionEnvironmentResult {
             return createFusionEnvironmentAdminUserDetails(List.of(createFusionEnvironmentAdminUserDetails));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentResult", "definedTags");
             }
@@ -514,7 +513,7 @@ public final class GetFusionEnvironmentResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFusionEnvironmentResult", "freeformTags");
             }

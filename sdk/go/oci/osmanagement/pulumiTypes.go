@@ -1439,13 +1439,13 @@ type GetManagedInstanceGroupsManagedInstanceGroup struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
 	Id                   string   `pulumi:"id"`
 	ManagedInstanceCount int      `pulumi:"managedInstanceCount"`
@@ -1473,13 +1473,13 @@ type GetManagedInstanceGroupsManagedInstanceGroupArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Information specified by the user about the managed instance group
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique identifier that is immutable on creation
 	Id                   pulumi.StringInput      `pulumi:"id"`
 	ManagedInstanceCount pulumi.IntInput         `pulumi:"managedInstanceCount"`
@@ -1549,8 +1549,8 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Information specified by the user about the managed instance group
@@ -1564,8 +1564,8 @@ func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetManagedInstanceGroupsManagedInstanceGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedInstanceGroupsManagedInstanceGroup) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique identifier that is immutable on creation
@@ -3877,13 +3877,13 @@ type GetSoftwareSourcesSoftwareSource struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Information specified by the user about the software source
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
 	GpgKeyFingerprint string `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
@@ -3935,13 +3935,13 @@ type GetSoftwareSourcesSoftwareSourceArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Information specified by the user about the software source
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Fingerprint of the GPG key for this software source
 	GpgKeyFingerprint pulumi.StringInput `pulumi:"gpgKeyFingerprint"`
 	// ID of the GPG key for this software source
@@ -4046,8 +4046,8 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) CompartmentId() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetSoftwareSourcesSoftwareSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Information specified by the user about the software source
@@ -4061,8 +4061,8 @@ func (o GetSoftwareSourcesSoftwareSourceOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetSoftwareSourcesSoftwareSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSoftwareSourcesSoftwareSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSoftwareSourcesSoftwareSource) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Fingerprint of the GPG key for this software source

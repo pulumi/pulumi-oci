@@ -64,15 +64,15 @@ import (
 //				DatabaseId:         pulumi.Any(testDatabase.Id),
 //				DatabaseName:       pulumi.Any(testDatabase.Name),
 //				DbSystemId:         pulumi.Any(testDbSystem.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DeploymentId: pulumi.Any(testDeployment.Id),
 //				Description:  pulumi.Any(connectionDescription),
 //				Endpoint:     pulumi.Any(connectionEndpoint),
 //				Fingerprint:  pulumi.Any(connectionFingerprint),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Host:                      pulumi.Any(connectionHost),
 //				JndiConnectionFactory:     pulumi.Any(connectionJndiConnectionFactory),
@@ -188,7 +188,7 @@ type Connection struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// (Updatable) Metadata about this specific object.
@@ -200,7 +200,7 @@ type Connection struct {
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringOutput `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringOutput `pulumi:"host"`
@@ -291,7 +291,7 @@ type Connection struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The Kafka (e.g. Confluent) Schema Registry technology type.
 	TechnologyType pulumi.StringOutput `pulumi:"technologyType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -429,7 +429,7 @@ type connectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// (Updatable) Metadata about this specific object.
@@ -441,7 +441,7 @@ type connectionState struct {
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host *string `pulumi:"host"`
@@ -532,7 +532,7 @@ type connectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId *string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The Kafka (e.g. Confluent) Schema Registry technology type.
 	TechnologyType *string `pulumi:"technologyType"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -602,7 +602,7 @@ type ConnectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringPtrInput
 	// (Updatable) Metadata about this specific object.
@@ -614,7 +614,7 @@ type ConnectionState struct {
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringPtrInput
@@ -705,7 +705,7 @@ type ConnectionState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The Kafka (e.g. Confluent) Schema Registry technology type.
 	TechnologyType pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -779,7 +779,7 @@ type connectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId *string `pulumi:"dbSystemId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// (Updatable) Metadata about this specific object.
@@ -791,7 +791,7 @@ type connectionArgs struct {
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint *string `pulumi:"fingerprint"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host           *string `pulumi:"host"`
@@ -941,7 +941,7 @@ type ConnectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId pulumi.StringPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringPtrInput
 	// (Updatable) Metadata about this specific object.
@@ -953,7 +953,7 @@ type ConnectionArgs struct {
 	// (Updatable) Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host           pulumi.StringPtrInput
@@ -1248,8 +1248,8 @@ func (o ConnectionOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o ConnectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ConnectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -1278,8 +1278,8 @@ func (o ConnectionOutput) Fingerprint() pulumi.StringOutput {
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o ConnectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ConnectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
@@ -1504,8 +1504,8 @@ func (o ConnectionOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o ConnectionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Connection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ConnectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The Kafka (e.g. Confluent) Schema Registry technology type.

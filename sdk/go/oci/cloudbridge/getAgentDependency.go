@@ -66,7 +66,7 @@ type LookupAgentDependencyResult struct {
 	// Compartment identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Name of the dependency type. This should match the whitelisted enum of dependency names.
 	DependencyName string `pulumi:"dependencyName"`
 	// Version of the Agent dependency.
@@ -78,7 +78,7 @@ type LookupAgentDependencyResult struct {
 	// The eTag associated with the dependency object returned by Object Storage.
 	ETag string `pulumi:"eTag"`
 	// The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -90,7 +90,7 @@ type LookupAgentDependencyResult struct {
 	// The current state of AgentDependency.
 	State string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the AgentDependency was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 }
@@ -153,8 +153,8 @@ func (o LookupAgentDependencyResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAgentDependencyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAgentDependencyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Name of the dependency type. This should match the whitelisted enum of dependency names.
@@ -183,8 +183,8 @@ func (o LookupAgentDependencyResultOutput) ETag() pulumi.StringOutput {
 }
 
 // The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupAgentDependencyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAgentDependencyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -213,8 +213,8 @@ func (o LookupAgentDependencyResultOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupAgentDependencyResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAgentDependencyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAgentDependencyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the AgentDependency was created. An RFC3339 formatted datetime string.

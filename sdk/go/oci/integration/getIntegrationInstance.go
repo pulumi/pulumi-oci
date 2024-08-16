@@ -69,13 +69,13 @@ type LookupIntegrationInstanceResult struct {
 	// Details for a custom endpoint for the integration instance.
 	CustomEndpoints []GetIntegrationInstanceCustomEndpoint `pulumi:"customEndpoints"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Integration Instance Identifier, can be renamed.
 	DisplayName                    string `pulumi:"displayName"`
 	DomainId                       string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger int    `pulumi:"enableProcessAutomationTrigger"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Virtual Cloud Network OCID.
 	Id     string `pulumi:"id"`
 	IdcsAt string `pulumi:"idcsAt"`
@@ -105,7 +105,7 @@ type LookupIntegrationInstanceResult struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -180,8 +180,8 @@ func (o LookupIntegrationInstanceResultOutput) CustomEndpoints() GetIntegrationI
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupIntegrationInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Integration Instance Identifier, can be renamed.
@@ -198,8 +198,8 @@ func (o LookupIntegrationInstanceResultOutput) EnableProcessAutomationTrigger() 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupIntegrationInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupIntegrationInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Virtual Cloud Network OCID.
@@ -280,8 +280,8 @@ func (o LookupIntegrationInstanceResultOutput) StateMessage() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupIntegrationInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupIntegrationInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupIntegrationInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.

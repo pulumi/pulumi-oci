@@ -36,8 +36,8 @@ import (
 //				DisplayName:   pulumi.Any(oneoffPatchDisplayName),
 //				ReleaseUpdate: pulumi.Any(oneoffPatchReleaseUpdate),
 //				DefinedTags:   pulumi.Any(oneoffPatchDefinedTags),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				OneOffPatches: pulumi.Any(oneoffPatchOneOffPatches),
 //			})
@@ -65,7 +65,7 @@ type OneoffPatch struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// One-off patch name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
@@ -74,7 +74,7 @@ type OneoffPatch struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DownloadOneoffPatchTrigger pulumi.IntPtrOutput `pulumi:"downloadOneoffPatchTrigger"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// List of one-off patches for Database Homes.
@@ -142,7 +142,7 @@ type oneoffPatchState struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// One-off patch name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
@@ -151,7 +151,7 @@ type oneoffPatchState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DownloadOneoffPatchTrigger *int `pulumi:"downloadOneoffPatchTrigger"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Detailed message for the lifecycle state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of one-off patches for Database Homes.
@@ -178,7 +178,7 @@ type OneoffPatchState struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// One-off patch name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
@@ -187,7 +187,7 @@ type OneoffPatchState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DownloadOneoffPatchTrigger pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Detailed message for the lifecycle state.
 	LifecycleDetails pulumi.StringPtrInput
 	// List of one-off patches for Database Homes.
@@ -218,7 +218,7 @@ type oneoffPatchArgs struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// One-off patch name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
@@ -227,7 +227,7 @@ type oneoffPatchArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DownloadOneoffPatchTrigger *int `pulumi:"downloadOneoffPatchTrigger"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// List of one-off patches for Database Homes.
 	OneOffPatches []string `pulumi:"oneOffPatches"`
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -241,7 +241,7 @@ type OneoffPatchArgs struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// One-off patch name.
 	DisplayName pulumi.StringInput
 	// (Updatable) An optional property when incremented triggers Download Oneoff Patch. Could be set to any integer value.
@@ -250,7 +250,7 @@ type OneoffPatchArgs struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	DownloadOneoffPatchTrigger pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// List of one-off patches for Database Homes.
 	OneOffPatches pulumi.StringArrayInput
 	// The PSU or PBP or Release Updates. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
@@ -355,8 +355,8 @@ func (o OneoffPatchOutput) DbVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o OneoffPatchOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OneoffPatchOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // One-off patch name.
@@ -373,8 +373,8 @@ func (o OneoffPatchOutput) DownloadOneoffPatchTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o OneoffPatchOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OneoffPatch) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OneoffPatchOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OneoffPatch) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Detailed message for the lifecycle state.

@@ -63,7 +63,7 @@ export interface GetOdaInstanceResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * Description of the Digital Assistant instance.
      */
@@ -75,7 +75,7 @@ export interface GetOdaInstanceResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Unique immutable identifier that was assigned when the instance was created.
      */

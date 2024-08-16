@@ -65,7 +65,7 @@ type GetControlAssignmentResult struct {
 	// The OCID of the comparment that contains the operator control assignment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// description containing reason for releasing of OperatorControl.
 	DetachmentDescription string `pulumi:"detachmentDescription"`
 	// The code identifying the error occurred during Assignment operation.
@@ -73,7 +73,7 @@ type GetControlAssignmentResult struct {
 	// The message describing the error occurred during Assignment operation.
 	ErrorMessage string `pulumi:"errorMessage"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the operator control assignment.
 	Id string `pulumi:"id"`
 	// The boolean if true would autoApprove during maintenance.
@@ -176,8 +176,8 @@ func (o GetControlAssignmentResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.
-func (o GetControlAssignmentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlAssignmentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetControlAssignmentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // description containing reason for releasing of OperatorControl.
@@ -196,8 +196,8 @@ func (o GetControlAssignmentResultOutput) ErrorMessage() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-func (o GetControlAssignmentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetControlAssignmentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetControlAssignmentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetControlAssignmentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the operator control assignment.

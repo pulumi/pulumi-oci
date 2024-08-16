@@ -12,7 +12,6 @@ import com.pulumi.oci.ObjectStorage.inputs.StorageObjectState;
 import com.pulumi.oci.ObjectStorage.outputs.StorageObjectSourceUriDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Optional;
@@ -237,15 +236,15 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
      * Note: All specified keys must be in lower case.
      * 
      */
-    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output</* @Nullable */ Map<String,Object>> metadata;
+    @Export(name="metadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output</* @Nullable */ Map<String,String>> metadata;
 
     /**
      * @return Optional user-defined metadata key and value.
      * Note: All specified keys must be in lower case.
      * 
      */
-    public Output<Optional<Map<String,Object>>> metadata() {
+    public Output<Optional<Map<String,String>>> metadata() {
         return Codegen.optional(this.metadata);
     }
     /**

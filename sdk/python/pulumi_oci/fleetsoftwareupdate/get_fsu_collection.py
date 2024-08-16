@@ -87,7 +87,7 @@ class GetFsuCollectionResult:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "defined_tags")
 
     @property
@@ -102,7 +102,7 @@ class GetFsuCollectionResult:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -137,7 +137,7 @@ class GetFsuCollectionResult:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "system_tags")
 
     @property

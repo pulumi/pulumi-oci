@@ -30,17 +30,17 @@ type LookupFsuCollectionArgs struct {
 type LookupFsuCollectionResult struct {
 	ActiveFsuCycles    []GetFsuCollectionActiveFsuCycle `pulumi:"activeFsuCycles"`
 	CompartmentId      string                           `pulumi:"compartmentId"`
-	DefinedTags        map[string]interface{}           `pulumi:"definedTags"`
+	DefinedTags        map[string]string                `pulumi:"definedTags"`
 	DisplayName        string                           `pulumi:"displayName"`
 	FleetDiscoveries   []GetFsuCollectionFleetDiscovery `pulumi:"fleetDiscoveries"`
-	FreeformTags       map[string]interface{}           `pulumi:"freeformTags"`
+	FreeformTags       map[string]string                `pulumi:"freeformTags"`
 	FsuCollectionId    string                           `pulumi:"fsuCollectionId"`
 	Id                 string                           `pulumi:"id"`
 	LifecycleDetails   string                           `pulumi:"lifecycleDetails"`
 	ServiceType        string                           `pulumi:"serviceType"`
 	SourceMajorVersion string                           `pulumi:"sourceMajorVersion"`
 	State              string                           `pulumi:"state"`
-	SystemTags         map[string]interface{}           `pulumi:"systemTags"`
+	SystemTags         map[string]string                `pulumi:"systemTags"`
 	TargetCount        int                              `pulumi:"targetCount"`
 	TimeCreated        string                           `pulumi:"timeCreated"`
 	TimeUpdated        string                           `pulumi:"timeUpdated"`
@@ -92,8 +92,8 @@ func (o LookupFsuCollectionResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupFsuCollectionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupFsuCollectionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCollectionResultOutput) DisplayName() pulumi.StringOutput {
@@ -104,8 +104,8 @@ func (o LookupFsuCollectionResultOutput) FleetDiscoveries() GetFsuCollectionFlee
 	return o.ApplyT(func(v LookupFsuCollectionResult) []GetFsuCollectionFleetDiscovery { return v.FleetDiscoveries }).(GetFsuCollectionFleetDiscoveryArrayOutput)
 }
 
-func (o LookupFsuCollectionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupFsuCollectionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCollectionResultOutput) FsuCollectionId() pulumi.StringOutput {
@@ -132,8 +132,8 @@ func (o LookupFsuCollectionResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCollectionResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o LookupFsuCollectionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupFsuCollectionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCollectionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCollectionResultOutput) TargetCount() pulumi.IntOutput {

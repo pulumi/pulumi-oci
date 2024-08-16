@@ -33,13 +33,13 @@ import (
 //			_, err := StackMonitoring.NewMonitoredResourceType(ctx, "test_monitored_resource_type", &StackMonitoring.MonitoredResourceTypeArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				Name:          pulumi.Any(monitoredResourceTypeName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(monitoredResourceTypeDescription),
 //				DisplayName: pulumi.Any(monitoredResourceTypeDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Metadata: &stackmonitoring.MonitoredResourceTypeMetadataArgs{
 //					Format:             pulumi.Any(monitoredResourceTypeMetadataFormat),
@@ -80,13 +80,13 @@ type MonitoredResourceType struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A friendly description.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Monitored resource type display name.
 	DisplayName pulumi.StringPtrOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The metadata details for resource type.
 	Metadata MonitoredResourceTypeMetadataOutput `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
@@ -103,7 +103,7 @@ type MonitoredResourceType struct {
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -146,13 +146,13 @@ type monitoredResourceTypeState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A friendly description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Monitored resource type display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The metadata details for resource type.
 	Metadata *MonitoredResourceTypeMetadata `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
@@ -169,7 +169,7 @@ type monitoredResourceTypeState struct {
 	// Lifecycle state of the monitored resource type.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -180,13 +180,13 @@ type MonitoredResourceTypeState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A friendly description.
 	Description pulumi.StringPtrInput
 	// (Updatable) Monitored resource type display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The metadata details for resource type.
 	Metadata MonitoredResourceTypeMetadataPtrInput
 	// (Updatable) Metric namespace for resource type.
@@ -203,7 +203,7 @@ type MonitoredResourceTypeState struct {
 	// Lifecycle state of the monitored resource type.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time when the monitored resource was updated, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -218,13 +218,13 @@ type monitoredResourceTypeArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A friendly description.
 	Description *string `pulumi:"description"`
 	// (Updatable) Monitored resource type display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The metadata details for resource type.
 	Metadata *MonitoredResourceTypeMetadata `pulumi:"metadata"`
 	// (Updatable) Metric namespace for resource type.
@@ -245,13 +245,13 @@ type MonitoredResourceTypeArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy containing the resource type.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A friendly description.
 	Description pulumi.StringPtrInput
 	// (Updatable) Monitored resource type display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The metadata details for resource type.
 	Metadata MonitoredResourceTypeMetadataPtrInput
 	// (Updatable) Metric namespace for resource type.
@@ -360,8 +360,8 @@ func (o MonitoredResourceTypeOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MonitoredResourceTypeOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MonitoredResourceTypeOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A friendly description.
@@ -375,8 +375,8 @@ func (o MonitoredResourceTypeOutput) DisplayName() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MonitoredResourceTypeOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MonitoredResourceTypeOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The metadata details for resource type.
@@ -413,8 +413,8 @@ func (o MonitoredResourceTypeOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MonitoredResourceTypeOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MonitoredResourceType) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MonitoredResourceTypeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MonitoredResourceType) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time when the monitored resource type was created, expressed in  [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

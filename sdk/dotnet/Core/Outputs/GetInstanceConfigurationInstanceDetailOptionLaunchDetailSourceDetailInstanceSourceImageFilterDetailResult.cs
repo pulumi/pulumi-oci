@@ -20,7 +20,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Filter based on these defined tags. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTagsFilter;
+        public readonly ImmutableDictionary<string, string> DefinedTagsFilter;
         /// <summary>
         /// The image's operating system.  Example: `Oracle Linux`
         /// </summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         private GetInstanceConfigurationInstanceDetailOptionLaunchDetailSourceDetailInstanceSourceImageFilterDetailResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTagsFilter,
+            ImmutableDictionary<string, string> definedTagsFilter,
 
             string operatingSystem,
 

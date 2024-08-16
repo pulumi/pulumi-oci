@@ -1137,10 +1137,10 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
                  compartment_id: str,
                  connection_details: str,
                  connection_state: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  infrastructure_inventories: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryResult'],
                  infrastructure_network_configurations: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationResult'],
@@ -1150,7 +1150,7 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
                  short_name: str,
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  upgrade_informations: Sequence['outputs.GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationResult']):
@@ -1159,10 +1159,10 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param str connection_details: A message describing the current connection state in more detail.
         :param str connection_state: The current connection state of the infrastructure. A user can only update it from REQUEST to READY or from any state back to REJECT. The system automatically handles the REJECT to REQUEST, READY to CONNECTED, or CONNECTED to DISCONNECTED transitions.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
         :param Sequence['GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureInventoryArgs'] infrastructure_inventories: Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
         :param Sequence['GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemInfrastructureNetworkConfigurationArgs'] infrastructure_network_configurations: Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -1172,7 +1172,7 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
         :param str short_name: The Compute Cloud@Customer infrastructure short name. This cannot be changed once created. The short name is used to refer to the infrastructure in several contexts and is unique.
         :param str state: A filter used to return only resources that match the given lifecycleState.
         :param str subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
         :param str time_updated: Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
         :param Sequence['GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemUpgradeInformationArgs'] upgrade_informations: Upgrade information that relates to a Compute Cloud@Customer infrastructure. This information cannot be updated.
@@ -1233,7 +1233,7 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1257,7 +1257,7 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1337,7 +1337,7 @@ class GetAtCustomerCccInfrastructuresCccInfrastructureCollectionItemResult(dict)
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1885,30 +1885,30 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionResult(dict):
 class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
                  events: Sequence['outputs.GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  infrastructure_ids: Sequence[str],
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description of the Compute Cloud@Customer upgrade schedule time block.
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemEventArgs'] events: List of preferred times for Compute Cloud@Customer infrastructures associated with this schedule to be upgraded.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Upgrade schedule [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
         :param Sequence[str] infrastructure_ids: List of Compute Cloud@Customer infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade schedule.
         :param str lifecycle_details: A message describing the current state in more detail. For example, the message can be used to provide actionable information for a resource in a Failed state.
         :param str state: A filter to return resources only when their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
         :param str time_updated: The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
         """
@@ -1936,7 +1936,7 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1968,7 +1968,7 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2008,7 +2008,7 @@ class GetAtCustomerCccUpgradeSchedulesCccUpgradeScheduleCollectionItemResult(dic
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

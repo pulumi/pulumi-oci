@@ -67,7 +67,7 @@ type LookupSensitiveTypeResult struct {
 	// The OCID of the library masking format that should be used to mask the sensitive columns associated with the sensitive type.
 	DefaultMaskingFormatId string `pulumi:"defaultMaskingFormatId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the sensitive type.
 	Description string `pulumi:"description"`
 	// The display name of the sensitive type.
@@ -75,7 +75,7 @@ type LookupSensitiveTypeResult struct {
 	// The entity type. It can be either a sensitive type with regular expressions or a sensitive category used for grouping similar sensitive types.
 	EntityType string `pulumi:"entityType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the sensitive type.
 	Id string `pulumi:"id"`
 	// Specifies whether the sensitive type is common. Common sensitive types belong to  library sensitive types which are frequently used to perform sensitive data discovery.
@@ -94,7 +94,7 @@ type LookupSensitiveTypeResult struct {
 	// The current state of the sensitive type.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the sensitive type was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -160,8 +160,8 @@ func (o LookupSensitiveTypeResultOutput) DefaultMaskingFormatId() pulumi.StringO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSensitiveTypeResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSensitiveTypeResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the sensitive type.
@@ -180,8 +180,8 @@ func (o LookupSensitiveTypeResultOutput) EntityType() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupSensitiveTypeResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSensitiveTypeResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the sensitive type.
@@ -229,8 +229,8 @@ func (o LookupSensitiveTypeResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSensitiveTypeResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSensitiveTypeResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSensitiveTypeResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the sensitive type was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

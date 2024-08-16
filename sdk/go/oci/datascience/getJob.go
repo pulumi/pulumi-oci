@@ -67,15 +67,15 @@ type LookupJobResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the project.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags          map[string]interface{} `pulumi:"definedTags"`
-	DeleteRelatedJobRuns bool                   `pulumi:"deleteRelatedJobRuns"`
+	DefinedTags          map[string]string `pulumi:"definedTags"`
+	DeleteRelatedJobRuns bool              `pulumi:"deleteRelatedJobRuns"`
 	// A short description of the job.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource.
 	DisplayName   string `pulumi:"displayName"`
 	EmptyArtifact bool   `pulumi:"emptyArtifact"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
 	Id          string `pulumi:"id"`
 	JobArtifact string `pulumi:"jobArtifact"`
@@ -165,8 +165,8 @@ func (o LookupJobResultOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupJobResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupJobResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupJobResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupJobResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupJobResultOutput) DeleteRelatedJobRuns() pulumi.BoolOutput {
@@ -188,8 +188,8 @@ func (o LookupJobResultOutput) EmptyArtifact() pulumi.BoolOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupJobResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupJobResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupJobResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupJobResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.

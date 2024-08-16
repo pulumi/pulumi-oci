@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Text describing the profile. Avoid entering confidential information.
         /// </summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The unique OCID of the profile.
         /// </summary>
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// A filter that returns results that match the lifecycle state specified.
         /// </summary>
         public readonly string State;
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// Optional. The compartments specified in the profile override for a recommendation.
         /// </summary>
@@ -73,11 +73,11 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             ImmutableArray<Outputs.GetProfilesProfileCollectionItemTargetCompartmentResult> targetCompartments,
 

@@ -67,12 +67,12 @@ type LookupProtectedDatabaseResult struct {
 	// The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	DefinedTags      map[string]interface{} `pulumi:"definedTags"`
-	DeletionSchedule string                 `pulumi:"deletionSchedule"`
+	DefinedTags      map[string]string `pulumi:"definedTags"`
+	DeletionSchedule string            `pulumi:"deletionSchedule"`
 	// The protected database name. You can change the displayName. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates the protection status of the database.
 	Health string `pulumi:"health"`
 	// A message describing the current health of the protected database.
@@ -98,7 +98,7 @@ type LookupProtectedDatabaseResult struct {
 	// The current state of the Protected Database.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
@@ -166,8 +166,8 @@ func (o LookupProtectedDatabaseResultOutput) DbUniqueName() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o LookupProtectedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProtectedDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupProtectedDatabaseResultOutput) DeletionSchedule() pulumi.StringOutput {
@@ -180,8 +180,8 @@ func (o LookupProtectedDatabaseResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupProtectedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProtectedDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Indicates the protection status of the database.
@@ -250,8 +250,8 @@ func (o LookupProtectedDatabaseResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-func (o LookupProtectedDatabaseResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProtectedDatabaseResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProtectedDatabaseResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'

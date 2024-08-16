@@ -71,7 +71,7 @@ type LookupExadbVmClusterResult struct {
 	// Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
 	DataCollectionOptions []GetExadbVmClusterDataCollectionOption `pulumi:"dataCollectionOptions"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
@@ -80,7 +80,7 @@ type LookupExadbVmClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A valid Oracle Grid Infrastructure (GI) software version.
 	GiVersion string `pulumi:"giVersion"`
 	// Grid Setup will be done using this grid image id
@@ -129,7 +129,7 @@ type LookupExadbVmClusterResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Operating system version of the image.
 	SystemVersion string `pulumi:"systemVersion"`
 	// The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
@@ -213,8 +213,8 @@ func (o LookupExadbVmClusterResultOutput) DataCollectionOptions() GetExadbVmClus
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupExadbVmClusterResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExadbVmClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata VM cluster on Exascale Infrastructure. The name does not need to be unique.
@@ -237,8 +237,8 @@ func (o LookupExadbVmClusterResultOutput) ExascaleDbStorageVaultId() pulumi.Stri
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupExadbVmClusterResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExadbVmClusterResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A valid Oracle Grid Infrastructure (GI) software version.
@@ -358,8 +358,8 @@ func (o LookupExadbVmClusterResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupExadbVmClusterResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupExadbVmClusterResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadbVmClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Operating system version of the image.

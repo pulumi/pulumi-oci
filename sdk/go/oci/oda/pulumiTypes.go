@@ -456,13 +456,13 @@ type GetOdaInstancesOdaInstance struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl string `pulumi:"connectorUrl"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the Digital Assistant instance.
 	Description string `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
 	Id string `pulumi:"id"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
@@ -516,13 +516,13 @@ type GetOdaInstancesOdaInstanceArgs struct {
 	// URL for the connector's endpoint.
 	ConnectorUrl pulumi.StringInput `pulumi:"connectorUrl"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the Digital Assistant instance.
 	Description pulumi.StringInput `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique immutable identifier that was assigned when the instance was created.
 	Id pulumi.StringInput `pulumi:"id"`
 	// If isRoleBasedAccess is set to true, this property specifies the URL for the administration console used to manage the Identity Application instance Digital Assistant has created inside the user-specified identity domain.
@@ -627,8 +627,8 @@ func (o GetOdaInstancesOdaInstanceOutput) ConnectorUrl() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOdaInstancesOdaInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOdaInstancesOdaInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the Digital Assistant instance.
@@ -642,8 +642,8 @@ func (o GetOdaInstancesOdaInstanceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-func (o GetOdaInstancesOdaInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOdaInstancesOdaInstance) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOdaInstancesOdaInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOdaInstancesOdaInstance) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique immutable identifier that was assigned when the instance was created.
@@ -2021,13 +2021,13 @@ type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem struct {
 	// List the ODA Private Endpoints that belong to this compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the ODA private endpoint.
 	Description string `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
 	Id string `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
@@ -2057,13 +2057,13 @@ type GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemArgs struct {
 	// List the ODA Private Endpoints that belong to this compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description of the ODA private endpoint.
 	Description pulumi.StringInput `pulumi:"description"`
 	// List only the information for the Digital Assistant instance with this user-friendly name. These names don't have to be unique and may change.  Example: `My new resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
@@ -2135,10 +2135,8 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) Compartmen
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the ODA private endpoint.
@@ -2152,10 +2150,10 @@ func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) DisplayNam
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Example: `{"bar-key": "value"}`
-func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) map[string]interface{} {
+func (o GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOdaPrivateEndpointsOdaPrivateEndpointCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was assigned when the ODA private endpoint was created.

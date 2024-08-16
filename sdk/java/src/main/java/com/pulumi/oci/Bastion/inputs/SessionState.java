@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Bastion.inputs.SessionKeyDetailsArgs;
 import com.pulumi.oci.Bastion.inputs.SessionTargetResourceDetailsArgs;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -160,13 +159,13 @@ public final class SessionState extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="sshMetadata")
-    private @Nullable Output<Map<String,Object>> sshMetadata;
+    private @Nullable Output<Map<String,String>> sshMetadata;
 
     /**
      * @return The connection message for the session.
      * 
      */
-    public Optional<Output<Map<String,Object>>> sshMetadata() {
+    public Optional<Output<Map<String,String>>> sshMetadata() {
         return Optional.ofNullable(this.sshMetadata);
     }
 
@@ -462,7 +461,7 @@ public final class SessionState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder sshMetadata(@Nullable Output<Map<String,Object>> sshMetadata) {
+        public Builder sshMetadata(@Nullable Output<Map<String,String>> sshMetadata) {
             $.sshMetadata = sshMetadata;
             return this;
         }
@@ -473,7 +472,7 @@ public final class SessionState extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder sshMetadata(Map<String,Object> sshMetadata) {
+        public Builder sshMetadata(Map<String,String> sshMetadata) {
             return sshMetadata(Output.of(sshMetadata));
         }
 

@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -70,13 +69,13 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      * 
      */
     @Import(name="environmentVariables")
-    private @Nullable Output<Map<String,Object>> environmentVariables;
+    private @Nullable Output<Map<String,String>> environmentVariables;
 
     /**
      * @return (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can&#39;t be reserved Model Deployment environment variables.
      * 
      */
-    public Optional<Output<Map<String,Object>>> environmentVariables() {
+    public Optional<Output<Map<String,String>>> environmentVariables() {
         return Optional.ofNullable(this.environmentVariables);
     }
 
@@ -260,7 +259,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          * @return builder
          * 
          */
-        public Builder environmentVariables(@Nullable Output<Map<String,Object>> environmentVariables) {
+        public Builder environmentVariables(@Nullable Output<Map<String,String>> environmentVariables) {
             $.environmentVariables = environmentVariables;
             return this;
         }
@@ -271,7 +270,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
          * @return builder
          * 
          */
-        public Builder environmentVariables(Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(Map<String,String> environmentVariables) {
             return environmentVariables(Output.of(environmentVariables));
         }
 

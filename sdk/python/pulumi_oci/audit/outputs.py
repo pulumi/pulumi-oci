@@ -118,14 +118,14 @@ class GetEventsAuditEventResult(dict):
 @pulumi.output_type
 class GetEventsAuditEventDataResult(dict):
     def __init__(__self__, *,
-                 additional_details: Mapping[str, Any],
+                 additional_details: Mapping[str, str],
                  availability_domain: str,
                  compartment_id: str,
                  compartment_name: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  event_grouping_id: str,
                  event_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  identities: Sequence['outputs.GetEventsAuditEventDataIdentityResult'],
                  requests: Sequence['outputs.GetEventsAuditEventDataRequestResult'],
                  resource_id: str,
@@ -133,14 +133,14 @@ class GetEventsAuditEventDataResult(dict):
                  responses: Sequence['outputs.GetEventsAuditEventDataResponseResult'],
                  state_changes: Sequence['outputs.GetEventsAuditEventDataStateChangeResult']):
         """
-        :param Mapping[str, Any] additional_details: A container object for attribues unique to the resource emitting the event.
+        :param Mapping[str, str] additional_details: A container object for attribues unique to the resource emitting the event.
         :param str availability_domain: The availability domain where the resource resides.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str compartment_name: The name of the compartment. This value is the friendly name associated with compartmentId. This value can change, but the service logs the value that appeared at the time of the audit event.  Example: `CompartmentA`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str event_grouping_id: This value links multiple audit events that are part of the same API operation. For example,  a long running API operations that emit an event at the start and the end of an operation would use the same value in this field for both events.
         :param str event_name: Name of the API operation that generated this event.  Example: `GetInstance`
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetEventsAuditEventDataIdentityArgs'] identities: A container object for identity attributes.
         :param Sequence['GetEventsAuditEventDataRequestArgs'] requests: A container object for request attributes.
         :param str resource_id: An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) or some other ID for the resource emitting the event.
@@ -165,7 +165,7 @@ class GetEventsAuditEventDataResult(dict):
 
     @property
     @pulumi.getter(name="additionalDetails")
-    def additional_details(self) -> Mapping[str, Any]:
+    def additional_details(self) -> Mapping[str, str]:
         """
         A container object for attribues unique to the resource emitting the event.
         """
@@ -197,7 +197,7 @@ class GetEventsAuditEventDataResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -221,7 +221,7 @@ class GetEventsAuditEventDataResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name,  type, or namespace. Exists for cross-compatibility only. For more information,  see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -397,15 +397,15 @@ class GetEventsAuditEventDataIdentityResult(dict):
 class GetEventsAuditEventDataRequestResult(dict):
     def __init__(__self__, *,
                  action: str,
-                 headers: Mapping[str, Any],
+                 headers: Mapping[str, str],
                  id: str,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  path: str):
         """
         :param str action: The HTTP method of the request.  Example: `GET`
-        :param Mapping[str, Any] headers: The headers of the response.
+        :param Mapping[str, str] headers: The headers of the response.
         :param str id: The opc-request-id of the request.
-        :param Mapping[str, Any] parameters: The parameters supplied by the caller during this operation.
+        :param Mapping[str, str] parameters: The parameters supplied by the caller during this operation.
         :param str path: The full path of the API request.  Example: `/20160918/instances/ocid1.instance.oc1.phx.<unique_ID>`
         """
         pulumi.set(__self__, "action", action)
@@ -424,7 +424,7 @@ class GetEventsAuditEventDataRequestResult(dict):
 
     @property
     @pulumi.getter
-    def headers(self) -> Mapping[str, Any]:
+    def headers(self) -> Mapping[str, str]:
         """
         The headers of the response.
         """
@@ -440,7 +440,7 @@ class GetEventsAuditEventDataRequestResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         """
         The parameters supplied by the caller during this operation.
         """
@@ -458,15 +458,15 @@ class GetEventsAuditEventDataRequestResult(dict):
 @pulumi.output_type
 class GetEventsAuditEventDataResponseResult(dict):
     def __init__(__self__, *,
-                 headers: Mapping[str, Any],
+                 headers: Mapping[str, str],
                  message: str,
-                 payload: Mapping[str, Any],
+                 payload: Mapping[str, str],
                  response_time: str,
                  status: str):
         """
-        :param Mapping[str, Any] headers: The headers of the response.
+        :param Mapping[str, str] headers: The headers of the response.
         :param str message: A friendly description of what happened during the operation. Use this for troubleshooting.
-        :param Mapping[str, Any] payload: This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
+        :param Mapping[str, str] payload: This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
         :param str response_time: The time of the response to the audited request, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.  Example: `2019-09-18T00:10:59.278Z`
         :param str status: The status code of the response.  Example: `200`
         """
@@ -478,7 +478,7 @@ class GetEventsAuditEventDataResponseResult(dict):
 
     @property
     @pulumi.getter
-    def headers(self) -> Mapping[str, Any]:
+    def headers(self) -> Mapping[str, str]:
         """
         The headers of the response.
         """
@@ -494,7 +494,7 @@ class GetEventsAuditEventDataResponseResult(dict):
 
     @property
     @pulumi.getter
-    def payload(self) -> Mapping[str, Any]:
+    def payload(self) -> Mapping[str, str]:
         """
         This value is included for backward compatibility with the Audit version 1 schema, where  it contained metadata of interest from the response payload.
         """
@@ -520,18 +520,18 @@ class GetEventsAuditEventDataResponseResult(dict):
 @pulumi.output_type
 class GetEventsAuditEventDataStateChangeResult(dict):
     def __init__(__self__, *,
-                 current: Mapping[str, Any],
-                 previous: Mapping[str, Any]):
+                 current: Mapping[str, str],
+                 previous: Mapping[str, str]):
         """
-        :param Mapping[str, Any] current: Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
-        :param Mapping[str, Any] previous: Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
+        :param Mapping[str, str] current: Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
+        :param Mapping[str, str] previous: Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
         """
         pulumi.set(__self__, "current", current)
         pulumi.set(__self__, "previous", previous)
 
     @property
     @pulumi.getter
-    def current(self) -> Mapping[str, Any]:
+    def current(self) -> Mapping[str, str]:
         """
         Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
         """
@@ -539,7 +539,7 @@ class GetEventsAuditEventDataStateChangeResult(dict):
 
     @property
     @pulumi.getter
-    def previous(self) -> Mapping[str, Any]:
+    def previous(self) -> Mapping[str, str]:
         """
         Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
         """

@@ -44,11 +44,11 @@ import (
 //						},
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				OpcDryRun: pulumi.Any(clusterPlacementGroupOpcDryRun),
 //				PlacementInstruction: &clusterplacementgroups.ClusterPlacementGroupPlacementInstructionArgs{
@@ -84,11 +84,11 @@ type ClusterPlacementGroup struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A description of the cluster placement group.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The friendly name of the cluster placement group.
@@ -103,7 +103,7 @@ type ClusterPlacementGroup struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -161,11 +161,11 @@ type clusterPlacementGroupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the cluster placement group.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The friendly name of the cluster placement group.
@@ -180,7 +180,7 @@ type clusterPlacementGroupState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -197,11 +197,11 @@ type ClusterPlacementGroupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the cluster placement group.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
 	LifecycleDetails pulumi.StringPtrInput
 	// The friendly name of the cluster placement group.
@@ -216,7 +216,7 @@ type ClusterPlacementGroupState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
 	TimeCreated pulumi.StringPtrInput
 	// The time the cluster placement group was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
@@ -237,11 +237,11 @@ type clusterPlacementGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A description of the cluster placement group.
 	Description string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The friendly name of the cluster placement group.
 	Name *string `pulumi:"name"`
 	// When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
@@ -266,11 +266,11 @@ type ClusterPlacementGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the cluster placement group.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A description of the cluster placement group.
 	Description pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The friendly name of the cluster placement group.
 	Name pulumi.StringPtrInput
 	// When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
@@ -392,8 +392,8 @@ func (o ClusterPlacementGroupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ClusterPlacementGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterPlacementGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A description of the cluster placement group.
@@ -402,8 +402,8 @@ func (o ClusterPlacementGroupOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ClusterPlacementGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterPlacementGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, lifecycle details for a resource in a Failed state might include information to act on.
@@ -437,8 +437,8 @@ func (o ClusterPlacementGroupOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ClusterPlacementGroupOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ClusterPlacementGroupOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ClusterPlacementGroup) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the cluster placement group was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.

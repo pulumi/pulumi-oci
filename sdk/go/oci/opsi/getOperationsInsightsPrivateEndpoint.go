@@ -61,13 +61,13 @@ type LookupOperationsInsightsPrivateEndpointResult struct {
 	// The compartment OCID of the Private service accessed database.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
 	// The display name of the private endpoint.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
 	Id string `pulumi:"id"`
 	// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
@@ -86,7 +86,7 @@ type LookupOperationsInsightsPrivateEndpointResult struct {
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
@@ -137,8 +137,8 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) CompartmentId() pul
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the private endpoint.
@@ -152,8 +152,8 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) DisplayName() pulum
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Private service accessed database.
@@ -203,8 +203,8 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) SubnetId() pulumi.S
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupOperationsInsightsPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupOperationsInsightsPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

@@ -509,13 +509,13 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnector struct {
 	// The type of connector used by the external database resource.
 	ConnectorType string `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
 	ExternalDatabaseId string `pulumi:"externalDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -553,13 +553,13 @@ type GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs struct {
 	// The type of connector used by the external database resource.
 	ConnectorType pulumi.StringInput `pulumi:"connectorType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
 	ExternalDatabaseId pulumi.StringInput `pulumi:"externalDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -658,10 +658,8 @@ func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectorT
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -675,10 +673,10 @@ func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ExternalDa
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]interface{} {
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -1475,11 +1473,11 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -1529,11 +1527,11 @@ type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs struct {
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -1653,10 +1651,10 @@ func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DbUn
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]interface{} {
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -1665,10 +1663,10 @@ func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) Disp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]interface{} {
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
@@ -2533,13 +2531,13 @@ type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName string `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -2591,13 +2589,13 @@ type GetExternalPluggableDatabasesExternalPluggableDatabaseArgs struct {
 	// The `DB_UNIQUE_NAME` of the external database.
 	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExternalContainerDatabaseId pulumi.StringInput `pulumi:"externalContainerDatabaseId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -2717,10 +2715,8 @@ func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DbUniqueNa
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -2736,10 +2732,10 @@ func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) ExternalCo
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]interface{} {
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
@@ -4354,11 +4350,11 @@ type GetKeyStoresKeyStore struct {
 	CompartmentId         string `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -4389,11 +4385,11 @@ type GetKeyStoresKeyStoreArgs struct {
 	CompartmentId         pulumi.StringInput `pulumi:"compartmentId"`
 	ConfirmDetailsTrigger pulumi.IntInput    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -4472,8 +4468,8 @@ func (o GetKeyStoresKeyStoreOutput) ConfirmDetailsTrigger() pulumi.IntOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetKeyStoresKeyStoreOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetKeyStoresKeyStoreOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the key store. The name does not need to be unique.
@@ -4482,8 +4478,8 @@ func (o GetKeyStoresKeyStoreOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetKeyStoresKeyStoreOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetKeyStoresKeyStoreOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
@@ -5967,12 +5963,12 @@ type GetOneoffPatchesOneoffPatch struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion string `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName                string `pulumi:"displayName"`
 	DownloadOneoffPatchTrigger int    `pulumi:"downloadOneoffPatchTrigger"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
 	Id string `pulumi:"id"`
 	// Detailed message for the lifecycle state.
@@ -6012,12 +6008,12 @@ type GetOneoffPatchesOneoffPatchArgs struct {
 	// A valid Oracle Database version. To get a list of supported versions, use the [ListDbVersions](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/DbVersionSummary/ListDbVersions) operation.
 	DbVersion pulumi.StringInput `pulumi:"dbVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName                pulumi.StringInput `pulumi:"displayName"`
 	DownloadOneoffPatchTrigger pulumi.IntInput    `pulumi:"downloadOneoffPatchTrigger"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Detailed message for the lifecycle state.
@@ -6102,8 +6098,8 @@ func (o GetOneoffPatchesOneoffPatchOutput) DbVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetOneoffPatchesOneoffPatchOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOneoffPatchesOneoffPatchOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -6116,8 +6112,8 @@ func (o GetOneoffPatchesOneoffPatchOutput) DownloadOneoffPatchTrigger() pulumi.I
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetOneoffPatchesOneoffPatchOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOneoffPatchesOneoffPatchOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOneoffPatchesOneoffPatch) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the one-off patch.
@@ -6192,7 +6188,7 @@ func (o GetOneoffPatchesOneoffPatchArrayOutput) Index(i pulumi.IntInput) GetOneo
 
 type GetPluggableDatabaseConnectionString struct {
 	// All connection strings to use to connect to the pluggable database.
-	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
 	// A host name-based PDB connection string.
 	PdbDefault string `pulumi:"pdbDefault"`
 	// An IP-based PDB connection string.
@@ -6212,7 +6208,7 @@ type GetPluggableDatabaseConnectionStringInput interface {
 
 type GetPluggableDatabaseConnectionStringArgs struct {
 	// All connection strings to use to connect to the pluggable database.
-	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
 	// A host name-based PDB connection string.
 	PdbDefault pulumi.StringInput `pulumi:"pdbDefault"`
 	// An IP-based PDB connection string.
@@ -6271,8 +6267,8 @@ func (o GetPluggableDatabaseConnectionStringOutput) ToGetPluggableDatabaseConnec
 }
 
 // All connection strings to use to connect to the pluggable database.
-func (o GetPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPluggableDatabaseConnectionString) map[string]interface{} { return v.AllConnectionStrings }).(pulumi.MapOutput)
+func (o GetPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabaseConnectionString) map[string]string { return v.AllConnectionStrings }).(pulumi.StringMapOutput)
 }
 
 // A host name-based PDB connection string.
@@ -6954,9 +6950,9 @@ type GetPluggableDatabasesPluggableDatabase struct {
 	ContainerDatabaseId     string `pulumi:"containerDatabaseId"`
 	ConvertToRegularTrigger int    `pulumi:"convertToRegularTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id string `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
@@ -7007,9 +7003,9 @@ type GetPluggableDatabasesPluggableDatabaseArgs struct {
 	ContainerDatabaseId     pulumi.StringInput `pulumi:"containerDatabaseId"`
 	ConvertToRegularTrigger pulumi.IntInput    `pulumi:"convertToRegularTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
@@ -7116,13 +7112,13 @@ func (o GetPluggableDatabasesPluggableDatabaseOutput) ConvertToRegularTrigger() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetPluggableDatabasesPluggableDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPluggableDatabasesPluggableDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetPluggableDatabasesPluggableDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPluggableDatabasesPluggableDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabase) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pluggable database.
@@ -7233,7 +7229,7 @@ func (o GetPluggableDatabasesPluggableDatabaseArrayOutput) Index(i pulumi.IntInp
 
 type GetPluggableDatabasesPluggableDatabaseConnectionString struct {
 	// All connection strings to use to connect to the pluggable database.
-	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
 	// A host name-based PDB connection string.
 	PdbDefault string `pulumi:"pdbDefault"`
 	// An IP-based PDB connection string.
@@ -7253,7 +7249,7 @@ type GetPluggableDatabasesPluggableDatabaseConnectionStringInput interface {
 
 type GetPluggableDatabasesPluggableDatabaseConnectionStringArgs struct {
 	// All connection strings to use to connect to the pluggable database.
-	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
 	// A host name-based PDB connection string.
 	PdbDefault pulumi.StringInput `pulumi:"pdbDefault"`
 	// An IP-based PDB connection string.
@@ -7312,10 +7308,10 @@ func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) ToGetPlugg
 }
 
 // All connection strings to use to connect to the pluggable database.
-func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseConnectionString) map[string]interface{} {
+func (o GetPluggableDatabasesPluggableDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabaseConnectionString) map[string]string {
 		return v.AllConnectionStrings
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A host name-based PDB connection string.
@@ -9071,7 +9067,7 @@ type GetVmClusterNetworksVmClusterNetwork struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -9081,7 +9077,7 @@ type GetVmClusterNetworksVmClusterNetwork struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId string `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	Id string `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -9117,7 +9113,7 @@ type GetVmClusterNetworksVmClusterNetworkArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
@@ -9127,7 +9123,7 @@ type GetVmClusterNetworksVmClusterNetworkArgs struct {
 	// The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ExadataInfrastructureId pulumi.StringInput `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Additional information about the current lifecycle state.
@@ -9208,8 +9204,8 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) CompartmentId() pulumi.Strin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetVmClusterNetworksVmClusterNetworkOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -9235,8 +9231,8 @@ func (o GetVmClusterNetworksVmClusterNetworkOutput) ExadataInfrastructureId() pu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetVmClusterNetworksVmClusterNetworkOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVmClusterNetworksVmClusterNetworkOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClusterNetworksVmClusterNetwork) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster network.
@@ -11715,7 +11711,7 @@ type GetVmClustersVmCluster struct {
 	// The list of Db server.
 	DbServers []string `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
@@ -11723,7 +11719,7 @@ type GetVmClustersVmCluster struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []GetVmClustersVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion string `pulumi:"giVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -11788,7 +11784,7 @@ type GetVmClustersVmClusterArgs struct {
 	// The list of Db server.
 	DbServers pulumi.StringArrayInput `pulumi:"dbServers"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// If provided, filters the results for the given Exadata Infrastructure.
@@ -11796,7 +11792,7 @@ type GetVmClustersVmClusterArgs struct {
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The Oracle Grid Infrastructure software version for the VM cluster.
 	GiVersion pulumi.StringInput `pulumi:"giVersion"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
@@ -11929,8 +11925,8 @@ func (o GetVmClustersVmClusterOutput) DbServers() pulumi.StringArrayOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetVmClustersVmClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVmClustersVmClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -11951,8 +11947,8 @@ func (o GetVmClustersVmClusterOutput) FileSystemConfigurationDetails() GetVmClus
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetVmClustersVmClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVmClustersVmCluster) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVmClustersVmClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVmClustersVmCluster) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The Oracle Grid Infrastructure software version for the VM cluster.

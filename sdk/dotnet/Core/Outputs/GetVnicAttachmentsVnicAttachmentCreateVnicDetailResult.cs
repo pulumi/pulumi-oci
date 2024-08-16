@@ -16,12 +16,12 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly bool AssignIpv6ip;
         public readonly bool AssignPrivateDnsRecord;
         public readonly string AssignPublicIp;
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string HostnameLabel;
         public readonly ImmutableArray<Outputs.GetVnicAttachmentsVnicAttachmentCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
@@ -44,11 +44,11 @@ namespace Pulumi.Oci.Core.Outputs
 
             string assignPublicIp,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string hostnameLabel,
 

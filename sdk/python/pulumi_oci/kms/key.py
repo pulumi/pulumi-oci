@@ -21,10 +21,10 @@ class KeyArgs:
                  key_shape: pulumi.Input['KeyKeyShapeArgs'],
                  management_endpoint: pulumi.Input[str],
                  auto_key_rotation_details: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
                  protection_mode: Optional[pulumi.Input[str]] = None,
                  restore_from_file: Optional[pulumi.Input['KeyRestoreFromFileArgs']] = None,
@@ -38,10 +38,10 @@ class KeyArgs:
         :param pulumi.Input['KeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
         :param pulumi.Input['KeyAutoKeyRotationDetailsArgs'] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input['KeyExternalKeyReferenceArgs'] external_key_reference: A reference to the key on external key manager.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         :param pulumi.Input[str] protection_mode: The key's protection mode indicates how the key persists and where cryptographic operations that use the key are performed. A protection mode of `HSM` means that the key persists on a hardware security module (HSM) and all cryptographic operations are performed inside the HSM. A protection mode of `SOFTWARE` means that the key persists on the server, protected by the vault's RSA wrapping key which persists on the HSM. All cryptographic operations that use a key with a protection mode of `SOFTWARE` are performed on the server. By default, a key's protection mode is set to `HSM`. You can't change a key's protection mode after the key is created or imported. A protection mode of `EXTERNAL` mean that the key persists on the customer's external key manager which is hosted externally outside of oracle. Oracle only hold a reference to that key. All cryptographic operations that use a key with a protection mode of `EXTERNAL` are performed by external key manager.
         :param pulumi.Input['KeyRestoreFromFileArgs'] restore_from_file: (Updatable) Details where key was backed up.
@@ -141,14 +141,14 @@ class KeyArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -177,14 +177,14 @@ class KeyArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -269,12 +269,12 @@ class _KeyState:
                  auto_key_rotation_details: Optional[pulumi.Input['KeyAutoKeyRotationDetailsArgs']] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  current_key_version: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_key_reference: Optional[pulumi.Input['KeyExternalKeyReferenceArgs']] = None,
                  external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
                  is_primary: Optional[pulumi.Input[bool]] = None,
                  key_shape: Optional[pulumi.Input['KeyKeyShapeArgs']] = None,
@@ -294,12 +294,12 @@ class _KeyState:
         :param pulumi.Input['KeyAutoKeyRotationDetailsArgs'] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[str] current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input['KeyExternalKeyReferenceArgs'] external_key_reference: A reference to the key on external key manager.
         :param pulumi.Input[Sequence[pulumi.Input['KeyExternalKeyReferenceDetailArgs']]] external_key_reference_details: Key reference data to be returned to the customer as a response.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         :param pulumi.Input['KeyKeyShapeArgs'] key_shape: The cryptographic properties of a key.
@@ -403,14 +403,14 @@ class _KeyState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -463,14 +463,14 @@ class _KeyState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -652,11 +652,11 @@ class Key(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
                  key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -688,11 +688,11 @@ class Key(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']] external_key_reference: A reference to the key on external key manager.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         :param pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
         :param pulumi.Input[str] management_endpoint: The service endpoint to perform management operations against. Management operations include 'Create,' 'Update,' 'List,' 'Get,' and 'Delete' operations. See Vault Management endpoint.
@@ -746,11 +746,11 @@ class Key(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  desired_state: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
                  key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
                  management_endpoint: Optional[pulumi.Input[str]] = None,
@@ -812,12 +812,12 @@ class Key(pulumi.CustomResource):
             auto_key_rotation_details: Optional[pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             current_key_version: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             desired_state: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             external_key_reference: Optional[pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']]] = None,
             external_key_reference_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             is_auto_rotation_enabled: Optional[pulumi.Input[bool]] = None,
             is_primary: Optional[pulumi.Input[bool]] = None,
             key_shape: Optional[pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']]] = None,
@@ -842,12 +842,12 @@ class Key(pulumi.CustomResource):
         :param pulumi.Input[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict']] auto_key_rotation_details: (Updatable) The details of auto rotation schedule for the Key being create updated or imported.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where you want to create the master encryption key.
         :param pulumi.Input[str] current_key_version: The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[str] desired_state: (Updatable) Desired state of the key. Possible values : `ENABLED` or `DISABLED`
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
         :param pulumi.Input[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict']] external_key_reference: A reference to the key on external key manager.
         :param pulumi.Input[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict']]]] external_key_reference_details: Key reference data to be returned to the customer as a response.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_auto_rotation_enabled: (Updatable) A parameter specifying whether the auto key rotation is enabled or not.
         :param pulumi.Input[bool] is_primary: A Boolean value that indicates whether the Key belongs to primary Vault or replica vault.
         :param pulumi.Input[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict']] key_shape: The cryptographic properties of a key.
@@ -921,7 +921,7 @@ class Key(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         """
@@ -961,7 +961,7 @@ class Key(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """

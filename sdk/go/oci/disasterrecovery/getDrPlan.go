@@ -61,14 +61,14 @@ type LookupDrPlanResult struct {
 	// The OCID of the compartment containing the DR plan.  Example: `ocid1.compartment.oc1..uniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The display name of the group.  Example: `DATABASE_SWITCHOVER`
 	DisplayName string `pulumi:"displayName"`
 	DrPlanId    string `pulumi:"drPlanId"`
 	// The OCID of the DR protection group to which this DR plan belongs.  Example: `ocid1.drplan.oc1..uniqueID`
 	DrProtectionGroupId string `pulumi:"drProtectionGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
 	Id string `pulumi:"id"`
 	// A message describing the DR plan's current state in more detail.
@@ -82,7 +82,7 @@ type LookupDrPlanResult struct {
 	// The current state of the DR plan.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the DR plan was updated. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
@@ -135,8 +135,8 @@ func (o LookupDrPlanResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDrPlanResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDrPlanResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The display name of the group.  Example: `DATABASE_SWITCHOVER`
@@ -154,8 +154,8 @@ func (o LookupDrPlanResultOutput) DrProtectionGroupId() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
-func (o LookupDrPlanResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDrPlanResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique id of the step. Must not be modified by the user.  Example: `sgid1.step..uniqueID`
@@ -189,8 +189,8 @@ func (o LookupDrPlanResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDrPlanResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDrPlanResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDrPlanResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDrPlanResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the DR plan was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`

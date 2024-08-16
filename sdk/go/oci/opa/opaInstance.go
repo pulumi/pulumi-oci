@@ -35,12 +35,12 @@ import (
 //				DisplayName:      pulumi.Any(opaInstanceDisplayName),
 //				ShapeName:        pulumi.Any(testShape.Name),
 //				ConsumptionModel: pulumi.Any(opaInstanceConsumptionModel),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(opaInstanceDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IdcsAt:              pulumi.Any(opaInstanceIdcsAt),
 //				IsBreakglassEnabled: pulumi.Any(opaInstanceIsBreakglassEnabled),
@@ -72,13 +72,13 @@ type OpaInstance struct {
 	// Parameter specifying which entitlement to use for billing purposes
 	ConsumptionModel pulumi.StringOutput `pulumi:"consumptionModel"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the Oracle Process Automation instance.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
 	IdcsAt pulumi.StringOutput `pulumi:"idcsAt"`
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
@@ -103,7 +103,7 @@ type OpaInstance struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -156,13 +156,13 @@ type opaInstanceState struct {
 	// Parameter specifying which entitlement to use for billing purposes
 	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the Oracle Process Automation instance.
 	Description *string `pulumi:"description"`
 	// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
@@ -187,7 +187,7 @@ type opaInstanceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -202,13 +202,13 @@ type OpaInstanceState struct {
 	// Parameter specifying which entitlement to use for billing purposes
 	ConsumptionModel pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the Oracle Process Automation instance.
 	Description pulumi.StringPtrInput
 	// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
 	IdcsAt pulumi.StringPtrInput
 	// This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
@@ -233,7 +233,7 @@ type OpaInstanceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when OpaInstance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the OpaInstance was updated. An RFC3339 formatted datetime string
@@ -250,13 +250,13 @@ type opaInstanceArgs struct {
 	// Parameter specifying which entitlement to use for billing purposes
 	ConsumptionModel *string `pulumi:"consumptionModel"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the Oracle Process Automation instance.
 	Description *string `pulumi:"description"`
 	// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
 	// indicates if breakGlass is enabled for the opa instance.
@@ -279,13 +279,13 @@ type OpaInstanceArgs struct {
 	// Parameter specifying which entitlement to use for billing purposes
 	ConsumptionModel pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the Oracle Process Automation instance.
 	Description pulumi.StringPtrInput
 	// (Updatable) OpaInstance Identifier. User-friendly name for the instance. Avoid entering confidential information. You can change this value anytime.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
 	IdcsAt pulumi.StringPtrInput
 	// indicates if breakGlass is enabled for the opa instance.
@@ -404,8 +404,8 @@ func (o OpaInstanceOutput) ConsumptionModel() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OpaInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpaInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OpaInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpaInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the Oracle Process Automation instance.
@@ -419,8 +419,8 @@ func (o OpaInstanceOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OpaInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpaInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OpaInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpaInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // IDCS Authentication token. This is required for all realms with IDCS. This property is optional, as it is not required for non-IDCS realms.
@@ -477,8 +477,8 @@ func (o OpaInstanceOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OpaInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OpaInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OpaInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OpaInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when OpaInstance was created. An RFC3339 formatted datetime string

@@ -452,10 +452,10 @@ class GetApplicationTraceConfigResult(dict):
 class GetApplicationsApplicationResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 config: Mapping[str, Any],
-                 defined_tags: Mapping[str, Any],
+                 config: Mapping[str, str],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image_policy_configs: Sequence['outputs.GetApplicationsApplicationImagePolicyConfigResult'],
                  network_security_group_ids: Sequence[str],
@@ -468,10 +468,10 @@ class GetApplicationsApplicationResult(dict):
                  trace_configs: Sequence['outputs.GetApplicationsApplicationTraceConfigResult']):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
-        :param Mapping[str, Any] config: Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] config: Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only applications with display names that match the display name string. Matching is exact.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: A filter to return only applications with the specified OCID.
         :param Sequence['GetApplicationsApplicationImagePolicyConfigArgs'] image_policy_configs: Define the image signature verification policy for an application.
         :param Sequence[str] network_security_group_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the Network Security Groups to add the application to.
@@ -509,7 +509,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter
-    def config(self) -> Mapping[str, Any]:
+    def config(self) -> Mapping[str, str]:
         """
         Application configuration for functions in this application (passed as environment variables). Can be overridden by function configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
         """
@@ -517,7 +517,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -533,7 +533,7 @@ class GetApplicationsApplicationResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -831,10 +831,10 @@ class GetFunctionsFunctionResult(dict):
     def __init__(__self__, *,
                  application_id: str,
                  compartment_id: str,
-                 config: Mapping[str, Any],
-                 defined_tags: Mapping[str, Any],
+                 config: Mapping[str, str],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  image: str,
                  image_digest: str,
@@ -851,10 +851,10 @@ class GetFunctionsFunctionResult(dict):
         """
         :param str application_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the application to which this function belongs.
         :param str compartment_id: The OCID of the compartment that contains the function.
-        :param Mapping[str, Any] config: Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] config: Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: A filter to return only functions with display names that match the display name string. Matching is exact.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: A filter to return only functions with the specified OCID.
         :param str image: The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         :param str image_digest: The image digest for the version of the image that will be pulled when invoking this function. If no value is specified, the digest currently associated with the image in the Oracle Cloud Infrastructure Registry will be used. Example: `sha256:ca0eeb6fb05351dfc8759c20733c91def84cb8007aa89a5bf606bc8b315b9fc7`
@@ -907,7 +907,7 @@ class GetFunctionsFunctionResult(dict):
 
     @property
     @pulumi.getter
-    def config(self) -> Mapping[str, Any]:
+    def config(self) -> Mapping[str, str]:
         """
         Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the '_' (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{"MY_FUNCTION_CONFIG": "ConfVal"}`
         """
@@ -915,7 +915,7 @@ class GetFunctionsFunctionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -931,7 +931,7 @@ class GetFunctionsFunctionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         """
@@ -1543,10 +1543,10 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionResult(dict):
 class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  family_maintenance_policies: Sequence['outputs.GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyResult'],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_subscription_update_needed: bool,
                  lifecycle_details: str,
@@ -1557,10 +1557,10 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(di
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemFamilyMaintenancePolicyArgs'] family_maintenance_policies: The policy that specifies the maintenance and upgrade preferences for an environment. For more information about the options, see [Understanding Environment Maintenance](https://docs.cloud.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm#about-env-maintenance).
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The unique identifier (OCID) of the environment family. Can't be changed after creation.
         :param bool is_subscription_update_needed: When set to True, a subscription update is required for the environment family.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1593,7 +1593,7 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(di
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1617,7 +1617,7 @@ class GetFusionEnvironmentFamiliesFusionEnvironmentFamilyCollectionItemResult(di
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2458,7 +2458,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResu
                  actions: Sequence['outputs.GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemActionResult'],
                  delay_in_hours: int,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  fusion_environment_id: str,
                  id: str,
                  lifecycle_details: str,
@@ -2527,7 +2527,7 @@ class GetFusionEnvironmentScheduledActivitiesScheduledActivityCollectionItemResu
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         return pulumi.get(self, "freeform_tags")
 
     @property
@@ -2871,9 +2871,9 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionResult(di
 class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  fusion_environment_id: str,
                  id: str,
                  is_sku_based: bool,
@@ -2885,9 +2885,9 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
                  time_updated: str):
         """
         :param str compartment_id: Compartment Identifier
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str fusion_environment_id: unique FusionEnvironment identifier
         :param str id: Unique identifier that is immutable on creation
         :param bool is_sku_based: Whether this service is provisioned due to the customer being subscribed to a specific SKU
@@ -2922,7 +2922,7 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2938,7 +2938,7 @@ class GetFusionEnvironmentServiceAttachmentsServiceAttachmentCollectionItemResul
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3144,11 +3144,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
                  applied_patch_bundles: Sequence[str],
                  compartment_id: str,
                  create_fusion_environment_admin_user_details: Sequence['outputs.GetFusionEnvironmentsFusionEnvironmentCollectionItemCreateFusionEnvironmentAdminUserDetailResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_prefix: str,
                  domain_id: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  fusion_environment_family_id: str,
                  fusion_environment_type: str,
                  id: str,
@@ -3173,11 +3173,11 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
         :param Sequence[str] additional_language_packs: Language packs
         :param Sequence[str] applied_patch_bundles: Patch bundle names
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given.
         :param str dns_prefix: DNS prefix
         :param str domain_id: The IDCS domain created for the fusion instance
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str fusion_environment_family_id: The ID of the fusion environment family in which to list resources.
         :param str fusion_environment_type: Type of the FusionEnvironment.
         :param str id: Unique identifier that is immutable on creation
@@ -3260,7 +3260,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3292,7 +3292,7 @@ class GetFusionEnvironmentsFusionEnvironmentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4004,28 +4004,28 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
     def __init__(__self__, *,
                  change_summary: str,
                  configs: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemConfigResult'],
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  pbf_listing_id: str,
                  requirements: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  triggers: Sequence['outputs.GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerResult']):
         """
         :param str change_summary: Details changes are included in this version.
         :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemConfigArgs'] configs: Details about the required and optional Function configurations needed for proper performance of the PBF.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation
         :param str name: Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.  Each PbfListingVersion name is unique with respect to its associated PbfListing.
         :param str pbf_listing_id: unique PbfListing identifier
         :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemRequirementArgs'] requirements: Minimum memory required by this PBF. The user should use memory greater than or equal to this value  while configuring the Function.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the PbfListingVersion was created. An RFC3339 formatted datetime string.
         :param str time_updated: The last time the PbfListingVersion was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetPbfListingVersionsPbfListingVersionsCollectionItemTriggerArgs'] triggers: An array of Trigger. A list of triggers that may activate the PBF.
@@ -4062,7 +4062,7 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4070,7 +4070,7 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4118,7 +4118,7 @@ class GetPbfListingVersionsPbfListingVersionsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4319,26 +4319,26 @@ class GetPbfListingsPbfListingsCollectionResult(dict):
 @pulumi.output_type
 class GetPbfListingsPbfListingsCollectionItemResult(dict):
     def __init__(__self__, *,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  publisher_details: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemPublisherDetailResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  triggers: Sequence['outputs.GetPbfListingsPbfListingsCollectionItemTriggerResult']):
         """
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A short overview of the PBF Listing: the purpose of the PBF and and associated information.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str name: A filter to return only resources that match the entire PBF name given.
         :param Sequence['GetPbfListingsPbfListingsCollectionItemPublisherDetailArgs'] publisher_details: Contains details about the publisher of this PBF Listing.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the PbfListing was created. An RFC3339 formatted datetime string.
         :param str time_updated: The last time the PbfListing was updated. An RFC3339 formatted datetime string.
         :param Sequence['GetPbfListingsPbfListingsCollectionItemTriggerArgs'] triggers: An array of Trigger. A list of triggers that may activate the PBF.
@@ -4357,7 +4357,7 @@ class GetPbfListingsPbfListingsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4373,7 +4373,7 @@ class GetPbfListingsPbfListingsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4413,7 +4413,7 @@ class GetPbfListingsPbfListingsCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

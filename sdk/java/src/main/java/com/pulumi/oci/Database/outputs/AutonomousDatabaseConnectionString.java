@@ -5,7 +5,6 @@ package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseConnectionStringProfile;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,7 +18,7 @@ public final class AutonomousDatabaseConnectionString {
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    private @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,String> allConnectionStrings;
     /**
      * @return The database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * 
@@ -51,7 +50,7 @@ public final class AutonomousDatabaseConnectionString {
      * @return Returns all connection strings that can be used to connect to the Autonomous Database. For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      * 
      */
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
     /**
@@ -99,7 +98,7 @@ public final class AutonomousDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable Map<String,String> allConnectionStrings;
         private @Nullable String dedicated;
         private @Nullable String high;
         private @Nullable String low;
@@ -117,7 +116,7 @@ public final class AutonomousDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(@Nullable Map<String,String> allConnectionStrings) {
 
             this.allConnectionStrings = allConnectionStrings;
             return this;

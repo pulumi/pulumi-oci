@@ -65,7 +65,7 @@ export interface GetWorkspaceImportRequestResult {
     /**
      * Contains key of the error
      */
-    readonly errorMessages: {[key: string]: any};
+    readonly errorMessages: {[key: string]: string};
     /**
      * Name of the zip file from which objects will be imported.
      */

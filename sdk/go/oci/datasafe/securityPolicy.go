@@ -29,13 +29,13 @@ type SecurityPolicy struct {
 	// (Updatable) The OCID of the compartment containing the security policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the security policy in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy resource.
@@ -46,7 +46,7 @@ type SecurityPolicy struct {
 	// The current state of the security policy.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
@@ -89,13 +89,13 @@ type securityPolicyState struct {
 	// (Updatable) The OCID of the compartment containing the security policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the security policy in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the security policy resource.
@@ -106,7 +106,7 @@ type securityPolicyState struct {
 	// The current state of the security policy.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time that the security policy was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
@@ -117,13 +117,13 @@ type SecurityPolicyState struct {
 	// (Updatable) The OCID of the compartment containing the security policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the security policy in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the security policy resource.
@@ -134,7 +134,7 @@ type SecurityPolicyState struct {
 	// The current state of the security policy.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time that the security policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
 	// The last date and time the security policy was updated, in the format defined by RFC3339.
@@ -149,13 +149,13 @@ type securityPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the security policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security policy resource.
 	//
 	// ** IMPORTANT **
@@ -168,13 +168,13 @@ type SecurityPolicyArgs struct {
 	// (Updatable) The OCID of the compartment containing the security policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security policy. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the security policy resource.
 	//
 	// ** IMPORTANT **
@@ -275,8 +275,8 @@ func (o SecurityPolicyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o SecurityPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SecurityPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the security policy.
@@ -290,8 +290,8 @@ func (o SecurityPolicyOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o SecurityPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SecurityPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details about the current state of the security policy in Data Safe.
@@ -313,8 +313,8 @@ func (o SecurityPolicyOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SecurityPolicyOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SecurityPolicy) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SecurityPolicyOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SecurityPolicy) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time that the security policy was created, in the format defined by RFC3339.

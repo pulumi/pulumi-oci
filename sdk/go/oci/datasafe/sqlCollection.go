@@ -34,13 +34,13 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DbUserName:    pulumi.Any(testUser.Name),
 //				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(sqlCollectionDescription),
 //				DisplayName: pulumi.Any(sqlCollectionDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				SqlLevel: pulumi.Any(sqlCollectionSqlLevel),
 //				Status:   pulumi.Any(sqlCollectionStatus),
@@ -69,13 +69,13 @@ type SqlCollection struct {
 	// The database user name.
 	DbUserName pulumi.StringOutput `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL collection.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger pulumi.BoolPtrOutput `pulumi:"generateSqlFirewallPolicyTrigger"`
 	// Details about the current state of the SQL collection in Data Safe.
@@ -98,7 +98,7 @@ type SqlCollection struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StopTrigger pulumi.BoolPtrOutput `pulumi:"stopTrigger"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The time that the SQL collection was created, in the format defined by RFC3339.
@@ -155,13 +155,13 @@ type sqlCollectionState struct {
 	// The database user name.
 	DbUserName *string `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL collection.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger *bool `pulumi:"generateSqlFirewallPolicyTrigger"`
 	// Details about the current state of the SQL collection in Data Safe.
@@ -184,7 +184,7 @@ type sqlCollectionState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StopTrigger *bool `pulumi:"stopTrigger"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId *string `pulumi:"targetId"`
 	// The time that the SQL collection was created, in the format defined by RFC3339.
@@ -203,13 +203,13 @@ type SqlCollectionState struct {
 	// The database user name.
 	DbUserName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the SQL collection.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger pulumi.BoolPtrInput
 	// Details about the current state of the SQL collection in Data Safe.
@@ -232,7 +232,7 @@ type SqlCollectionState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StopTrigger pulumi.BoolPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID of the target corresponding to the security policy deployment.
 	TargetId pulumi.StringPtrInput
 	// The time that the SQL collection was created, in the format defined by RFC3339.
@@ -255,13 +255,13 @@ type sqlCollectionArgs struct {
 	// The database user name.
 	DbUserName string `pulumi:"dbUserName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the SQL collection.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger *bool `pulumi:"generateSqlFirewallPolicyTrigger"`
 	// (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
@@ -290,13 +290,13 @@ type SqlCollectionArgs struct {
 	// The database user name.
 	DbUserName pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the SQL collection.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the SQL collection. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
 	GenerateSqlFirewallPolicyTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property when incremented triggers Purge Logs. Could be set to any integer value.
@@ -416,8 +416,8 @@ func (o SqlCollectionOutput) DbUserName() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o SqlCollectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SqlCollectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the SQL collection.
@@ -431,8 +431,8 @@ func (o SqlCollectionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o SqlCollectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SqlCollectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional property when incremented triggers Generate Sql Firewall Policy. Could be set to any integer value.
@@ -484,8 +484,8 @@ func (o SqlCollectionOutput) StopTrigger() pulumi.BoolPtrOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o SqlCollectionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlCollection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SqlCollectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlCollection) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target corresponding to the security policy deployment.

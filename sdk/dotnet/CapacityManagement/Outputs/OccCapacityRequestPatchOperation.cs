@@ -36,7 +36,7 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
         /// <summary>
         /// (Updatable)
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Value;
+        public readonly ImmutableDictionary<string, string> Value;
 
         [OutputConstructor]
         private OccCapacityRequestPatchOperation(
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.CapacityManagement.Outputs
 
             string selection,
 
-            ImmutableDictionary<string, object> value)
+            ImmutableDictionary<string, string> value)
         {
             From = from;
             Operation = operation;

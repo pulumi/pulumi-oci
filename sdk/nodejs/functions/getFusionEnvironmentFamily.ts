@@ -51,7 +51,7 @@ export interface GetFusionEnvironmentFamilyResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      */
@@ -63,7 +63,7 @@ export interface GetFusionEnvironmentFamilyResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly fusionEnvironmentFamilyId: string;
     /**
      * The unique identifier (OCID) of the environment family. Can't be changed after creation.

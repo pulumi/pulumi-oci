@@ -4,7 +4,6 @@
 package com.pulumi.oci.Database.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -13,12 +12,12 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DbSystemDbHomeDatabaseConnectionString {
-    private @Nullable Map<String,Object> allConnectionStrings;
+    private @Nullable Map<String,String> allConnectionStrings;
     private @Nullable String cdbDefault;
     private @Nullable String cdbIpDefault;
 
     private DbSystemDbHomeDatabaseConnectionString() {}
-    public Map<String,Object> allConnectionStrings() {
+    public Map<String,String> allConnectionStrings() {
         return this.allConnectionStrings == null ? Map.of() : this.allConnectionStrings;
     }
     public Optional<String> cdbDefault() {
@@ -37,7 +36,7 @@ public final class DbSystemDbHomeDatabaseConnectionString {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> allConnectionStrings;
+        private @Nullable Map<String,String> allConnectionStrings;
         private @Nullable String cdbDefault;
         private @Nullable String cdbIpDefault;
         public Builder() {}
@@ -49,7 +48,7 @@ public final class DbSystemDbHomeDatabaseConnectionString {
         }
 
         @CustomType.Setter
-        public Builder allConnectionStrings(@Nullable Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(@Nullable Map<String,String> allConnectionStrings) {
 
             this.allConnectionStrings = allConnectionStrings;
             return this;

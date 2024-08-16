@@ -93,7 +93,7 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
     /**
      * The errors encountered while applying the patch, if any.
      */
-    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly errorMessages!: pulumi.Output<{[key: string]: string}>;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -105,7 +105,7 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly keyMap!: pulumi.Output<{[key: string]: string}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
@@ -264,7 +264,7 @@ export interface WorkspaceApplicationPatchState {
     /**
      * The errors encountered while applying the patch, if any.
      */
-    errorMessages?: pulumi.Input<{[key: string]: any}>;
+    errorMessages?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
@@ -276,7 +276,7 @@ export interface WorkspaceApplicationPatchState {
     /**
      * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      */
-    keyMap?: pulumi.Input<{[key: string]: any}>;
+    keyMap?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A summary type containing information about the object including its key, name and when/who created/updated it.
      */

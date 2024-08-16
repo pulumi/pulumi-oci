@@ -6,7 +6,6 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointsEndpointCollectionItemContentModerationConfig;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +20,7 @@ public final class GetEndpointsEndpointCollectionItem {
     private String compartmentId;
     private List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs;
     private String dedicatedAiClusterId;
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return An optional description of the endpoint.
      * 
@@ -32,7 +31,7 @@ public final class GetEndpointsEndpointCollectionItem {
      * 
      */
     private String displayName;
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the endpoint.
      * 
@@ -49,7 +48,7 @@ public final class GetEndpointsEndpointCollectionItem {
      * 
      */
     private String state;
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     private String timeCreated;
     /**
      * @return The date and time that the endpoint was updated in the format of an RFC3339 datetime string.
@@ -71,7 +70,7 @@ public final class GetEndpointsEndpointCollectionItem {
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -88,7 +87,7 @@ public final class GetEndpointsEndpointCollectionItem {
     public String displayName() {
         return this.displayName;
     }
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -115,7 +114,7 @@ public final class GetEndpointsEndpointCollectionItem {
     public String state() {
         return this.state;
     }
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     public String timeCreated() {
@@ -141,15 +140,15 @@ public final class GetEndpointsEndpointCollectionItem {
         private String compartmentId;
         private List<GetEndpointsEndpointCollectionItemContentModerationConfig> contentModerationConfigs;
         private String dedicatedAiClusterId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String description;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
         private String modelId;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -199,7 +198,7 @@ public final class GetEndpointsEndpointCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "definedTags");
             }
@@ -223,7 +222,7 @@ public final class GetEndpointsEndpointCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "freeformTags");
             }
@@ -263,7 +262,7 @@ public final class GetEndpointsEndpointCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetEndpointsEndpointCollectionItem", "systemTags");
             }

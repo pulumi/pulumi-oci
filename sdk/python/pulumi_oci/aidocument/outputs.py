@@ -1671,10 +1671,10 @@ class GetModelsModelCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  component_models: Sequence['outputs.GetModelsModelCollectionItemComponentModelResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_composed_model: bool,
                  is_quick_mode: bool,
@@ -1687,7 +1687,7 @@ class GetModelsModelCollectionItemResult(dict):
                  model_version: str,
                  project_id: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tenancy_id: str,
                  testing_datasets: Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult'],
                  time_created: str,
@@ -1698,10 +1698,10 @@ class GetModelsModelCollectionItemResult(dict):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetModelsModelCollectionItemComponentModelArgs'] component_models: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) collection of active custom Key Value models that need to be composed.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param str description: An optional description of the model.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: The filter to find the model with the given identifier.
         :param bool is_composed_model: Set to true when the model is created by using multiple key value extraction models.
         :param bool is_quick_mode: Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
@@ -1714,7 +1714,7 @@ class GetModelsModelCollectionItemResult(dict):
         :param str model_version: The version of the model.
         :param str project_id: The ID of the project for which to list the objects.
         :param str state: The filter to match models with the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param str tenancy_id: The tenancy id of the model.
         :param Sequence['GetModelsModelCollectionItemTestingDatasetArgs'] testing_datasets: The base entity which is the input for creating and training a model.
         :param str time_created: When the model was created, as an RFC3339 datetime string.
@@ -1768,7 +1768,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -1792,7 +1792,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -1896,7 +1896,7 @@ class GetModelsModelCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
@@ -2770,26 +2770,26 @@ class GetProjectsProjectCollectionResult(dict):
 class GetProjectsProjectCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param str description: An optional description of the project.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param str id: The filter to find the project with the given identifier.
         :param str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
         :param str state: The filter to match projects with the given lifecycleState.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         :param str time_created: When the project was created, as an RFC3339 datetime string.
         :param str time_updated: When the project was updated, as an RFC3339 datetime string.
         """
@@ -2815,7 +2815,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -2839,7 +2839,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -2871,7 +2871,7 @@ class GetProjectsProjectCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """

@@ -63,13 +63,13 @@ type GetOccCustomerGroupResult struct {
 	// A list containing all the customers that belong to this customer group
 	CustomersLists []GetOccCustomerGroupCustomersList `pulumi:"customersLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description about the customer group.
 	Description string `pulumi:"description"`
 	// The display name of the customer group.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -81,7 +81,7 @@ type GetOccCustomerGroupResult struct {
 	// To determine whether the customer group is enabled/disabled.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the customer group was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the customer group was last updated.
@@ -137,8 +137,8 @@ func (o GetOccCustomerGroupResultOutput) CustomersLists() GetOccCustomerGroupCus
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOccCustomerGroupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetOccCustomerGroupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description about the customer group.
@@ -152,8 +152,8 @@ func (o GetOccCustomerGroupResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOccCustomerGroupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetOccCustomerGroupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -182,8 +182,8 @@ func (o GetOccCustomerGroupResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetOccCustomerGroupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetOccCustomerGroupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOccCustomerGroupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the customer group was created.

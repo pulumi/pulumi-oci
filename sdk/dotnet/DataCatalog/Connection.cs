@@ -84,7 +84,7 @@ namespace Pulumi.Oci.DataCatalog
         /// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         /// </summary>
         [Output("encProperties")]
-        public Output<ImmutableDictionary<string, object>?> EncProperties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> EncProperties { get; private set; } = null!;
 
         /// <summary>
         /// Unique external key of this object from the source system.
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.DataCatalog
         public Output<string> Key { get; private set; } = null!;
 
         [Output("properties")]
-        public Output<ImmutableDictionary<string, object>> Properties { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the connection.
@@ -228,17 +228,17 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string> DisplayName { get; set; } = null!;
 
         [Input("encProperties")]
-        private InputMap<object>? _encProperties;
+        private InputMap<string>? _encProperties;
 
         /// <summary>
         /// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         /// </summary>
-        public InputMap<object> EncProperties
+        public InputMap<string> EncProperties
         {
-            get => _encProperties ?? (_encProperties = new InputMap<object>());
+            get => _encProperties ?? (_encProperties = new InputMap<string>());
             set
             {
-                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, object>());
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, string>());
                 _encProperties = Output.All(value, emptySecret).Apply(v => v[0]);
             }
         }
@@ -250,10 +250,10 @@ namespace Pulumi.Oci.DataCatalog
         public Input<bool>? IsDefault { get; set; }
 
         [Input("properties", required: true)]
-        private InputMap<object>? _properties;
-        public InputMap<object> Properties
+        private InputMap<string>? _properties;
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 
@@ -306,17 +306,17 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string>? DisplayName { get; set; }
 
         [Input("encProperties")]
-        private InputMap<object>? _encProperties;
+        private InputMap<string>? _encProperties;
 
         /// <summary>
         /// (Updatable) A map of maps that contains the encrypted values for sensitive properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. To determine the set of optional and required properties for a connection type, a query can be done on '/types?type=connection' that returns a collection of all connection types. The appropriate connection type, which will include definitions of all of it's properties, can be identified from this collection. Example: `{"encProperties": { "default": { "password": "example-password"}}}`
         /// </summary>
-        public InputMap<object> EncProperties
+        public InputMap<string> EncProperties
         {
-            get => _encProperties ?? (_encProperties = new InputMap<object>());
+            get => _encProperties ?? (_encProperties = new InputMap<string>());
             set
             {
-                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, object>());
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, string>());
                 _encProperties = Output.All(value, emptySecret).Apply(v => v[0]);
             }
         }
@@ -340,10 +340,10 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string>? Key { get; set; }
 
         [Input("properties")]
-        private InputMap<object>? _properties;
-        public InputMap<object> Properties
+        private InputMap<string>? _properties;
+        public InputMap<string> Properties
         {
-            get => _properties ?? (_properties = new InputMap<object>());
+            get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
 

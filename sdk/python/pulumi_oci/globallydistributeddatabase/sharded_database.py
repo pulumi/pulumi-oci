@@ -34,9 +34,9 @@ class ShardedDatabaseArgs:
                  chunks: Optional[pulumi.Input[int]] = None,
                  cluster_certificate_common_name: Optional[pulumi.Input[str]] = None,
                  configure_sharding_trigger: Optional[pulumi.Input[int]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
                  get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
                  patch_operations: Optional[pulumi.Input[Sequence[pulumi.Input['ShardedDatabasePatchOperationArgs']]]] = None,
@@ -63,9 +63,9 @@ class ShardedDatabaseArgs:
         :param pulumi.Input[int] chunks: The default number of unique chunks in a shardspace. The value of chunks must be greater than 2 times the size of the largest shardgroup in any shardspace.
         :param pulumi.Input[str] cluster_certificate_common_name: The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production. All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
         :param pulumi.Input[int] configure_sharding_trigger: (Updatable) An optional property when incremented triggers Configure Sharding. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[int] download_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] generate_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         :param pulumi.Input[int] get_connection_string_trigger: (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
         :param pulumi.Input[Sequence[pulumi.Input['ShardedDatabasePatchOperationArgs']]] patch_operations: (Updatable)
@@ -335,14 +335,14 @@ class ShardedDatabaseArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -359,14 +359,14 @@ class ShardedDatabaseArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -460,10 +460,10 @@ class _ShardedDatabaseState:
                  db_deployment_type: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
                  generate_wallet_trigger: Optional[pulumi.Input[int]] = None,
                  get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
@@ -484,7 +484,7 @@ class _ShardedDatabaseState:
                  start_database_trigger: Optional[pulumi.Input[int]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  stop_database_trigger: Optional[pulumi.Input[int]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
@@ -503,10 +503,10 @@ class _ShardedDatabaseState:
         :param pulumi.Input[str] db_deployment_type: The database deployment type.
         :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
         :param pulumi.Input[str] db_workload: Possible workload types.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Oracle sharded database display name.
         :param pulumi.Input[int] download_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] generate_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         :param pulumi.Input[int] generate_wallet_trigger: (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[int] get_connection_string_trigger: (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
@@ -525,7 +525,7 @@ class _ShardedDatabaseState:
         :param pulumi.Input[int] start_database_trigger: (Updatable) An optional property when incremented triggers Start Database. Could be set to any integer value.
         :param pulumi.Input[str] state: Lifecycle states for sharded databases.
         :param pulumi.Input[int] stop_database_trigger: (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the Sharded Database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Sharded Database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_zone: Timezone associated with the sharded database.
@@ -753,14 +753,14 @@ class _ShardedDatabaseState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -789,14 +789,14 @@ class _ShardedDatabaseState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -1035,14 +1035,14 @@ class _ShardedDatabaseState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -1124,10 +1124,10 @@ class ShardedDatabase(pulumi.CustomResource):
                  db_deployment_type: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
                  get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
                  listener_port: Optional[pulumi.Input[int]] = None,
@@ -1171,10 +1171,10 @@ class ShardedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] db_deployment_type: The database deployment type.
         :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
         :param pulumi.Input[str] db_workload: Possible workload types.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Oracle sharded database display name.
         :param pulumi.Input[int] download_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] generate_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         :param pulumi.Input[int] get_connection_string_trigger: (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
         :param pulumi.Input[int] listener_port: The listener port number for sharded database.
@@ -1241,10 +1241,10 @@ class ShardedDatabase(pulumi.CustomResource):
                  db_deployment_type: Optional[pulumi.Input[str]] = None,
                  db_version: Optional[pulumi.Input[str]] = None,
                  db_workload: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
                  get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
                  listener_port: Optional[pulumi.Input[int]] = None,
@@ -1360,10 +1360,10 @@ class ShardedDatabase(pulumi.CustomResource):
             db_deployment_type: Optional[pulumi.Input[str]] = None,
             db_version: Optional[pulumi.Input[str]] = None,
             db_workload: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             download_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             generate_gsm_certificate_signing_request_trigger: Optional[pulumi.Input[int]] = None,
             generate_wallet_trigger: Optional[pulumi.Input[int]] = None,
             get_connection_string_trigger: Optional[pulumi.Input[int]] = None,
@@ -1384,7 +1384,7 @@ class ShardedDatabase(pulumi.CustomResource):
             start_database_trigger: Optional[pulumi.Input[int]] = None,
             state: Optional[pulumi.Input[str]] = None,
             stop_database_trigger: Optional[pulumi.Input[int]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None,
             time_zone: Optional[pulumi.Input[str]] = None,
@@ -1408,10 +1408,10 @@ class ShardedDatabase(pulumi.CustomResource):
         :param pulumi.Input[str] db_deployment_type: The database deployment type.
         :param pulumi.Input[str] db_version: Oracle Database version of the Autonomous Container Database.
         :param pulumi.Input[str] db_workload: Possible workload types.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Oracle sharded database display name.
         :param pulumi.Input[int] download_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Download Gsm Certificate Signing Request. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[int] generate_gsm_certificate_signing_request_trigger: (Updatable) An optional property when incremented triggers Generate Gsm Certificate Signing Request. Could be set to any integer value.
         :param pulumi.Input[int] generate_wallet_trigger: (Updatable) An optional property when incremented triggers Generate Wallet. Could be set to any integer value.
         :param pulumi.Input[int] get_connection_string_trigger: (Updatable) An optional property when incremented triggers Get Connection String. Could be set to any integer value.
@@ -1430,7 +1430,7 @@ class ShardedDatabase(pulumi.CustomResource):
         :param pulumi.Input[int] start_database_trigger: (Updatable) An optional property when incremented triggers Start Database. Could be set to any integer value.
         :param pulumi.Input[str] state: Lifecycle states for sharded databases.
         :param pulumi.Input[int] stop_database_trigger: (Updatable) An optional property when incremented triggers Stop Database. Could be set to any integer value.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time the the Sharded Database was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Sharded Database was last updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_zone: Timezone associated with the sharded database.
@@ -1578,7 +1578,7 @@ class ShardedDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1602,7 +1602,7 @@ class ShardedDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1764,7 +1764,7 @@ class ShardedDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

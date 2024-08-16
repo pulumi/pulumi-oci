@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<int>? TimeoutInMilliseconds { get; set; }
 
         [Input("types")]
-        private InputMap<object>? _types;
+        private InputMap<string>? _types;
 
         /// <summary>
         /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
@@ -216,9 +216,9 @@ namespace Pulumi.Oci.Logging.Inputs
         /// 
         /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
         /// </summary>
-        public InputMap<object> Types
+        public InputMap<string> Types
         {
-            get => _types ?? (_types = new InputMap<object>());
+            get => _types ?? (_types = new InputMap<string>());
             set => _types = value;
         }
 

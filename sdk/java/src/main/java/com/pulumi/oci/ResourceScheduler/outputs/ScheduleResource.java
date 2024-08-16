@@ -5,7 +5,6 @@ package com.pulumi.oci.ResourceScheduler.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -24,7 +23,7 @@ public final class ScheduleResource {
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
-    private @Nullable Map<String,Object> metadata;
+    private @Nullable Map<String,String> metadata;
 
     private ScheduleResource() {}
     /**
@@ -40,7 +39,7 @@ public final class ScheduleResource {
      * { &#34;id&#34;: &#34;&lt;OCID_of_bucket&gt;&#34; &#34;metadata&#34;: { &#34;namespaceName&#34;: &#34;sampleNamespace&#34;, &#34;bucketName&#34;: &#34;sampleBucket&#34; } }
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata == null ? Map.of() : this.metadata;
     }
 
@@ -54,7 +53,7 @@ public final class ScheduleResource {
     @CustomType.Builder
     public static final class Builder {
         private String id;
-        private @Nullable Map<String,Object> metadata;
+        private @Nullable Map<String,String> metadata;
         public Builder() {}
         public Builder(ScheduleResource defaults) {
     	      Objects.requireNonNull(defaults);
@@ -71,7 +70,7 @@ public final class ScheduleResource {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(@Nullable Map<String,Object> metadata) {
+        public Builder metadata(@Nullable Map<String,String> metadata) {
 
             this.metadata = metadata;
             return this;

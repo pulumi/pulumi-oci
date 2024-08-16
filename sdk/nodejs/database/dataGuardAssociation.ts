@@ -140,11 +140,11 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly databaseDefinedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly databaseDefinedTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly databaseFreeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly databaseFreeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -156,11 +156,11 @@ export class DataGuardAssociation extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    public readonly dbSystemDefinedTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly dbSystemDefinedTags!: pulumi.Output<{[key: string]: string} | undefined>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly dbSystemFreeformTags!: pulumi.Output<{[key: string]: any} | undefined>;
+    public readonly dbSystemFreeformTags!: pulumi.Output<{[key: string]: string} | undefined>;
     public readonly deleteStandbyDbHomeOnDelete!: pulumi.Output<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -467,11 +467,11 @@ export interface DataGuardAssociationState {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    databaseDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    databaseDefinedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    databaseFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    databaseFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -483,11 +483,11 @@ export interface DataGuardAssociationState {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    dbSystemDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    dbSystemDefinedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    dbSystemFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    dbSystemFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     deleteStandbyDbHomeOnDelete?: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.
@@ -662,11 +662,11 @@ export interface DataGuardAssociationArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    databaseDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    databaseDefinedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    databaseFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    databaseFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -678,11 +678,11 @@ export interface DataGuardAssociationArgs {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
-    dbSystemDefinedTags?: pulumi.Input<{[key: string]: any}>;
+    dbSystemDefinedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    dbSystemFreeformTags?: pulumi.Input<{[key: string]: any}>;
+    dbSystemFreeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     deleteStandbyDbHomeOnDelete: pulumi.Input<string>;
     /**
      * The user-friendly name of the DB system that will contain the the standby database. The display name does not have to be unique.

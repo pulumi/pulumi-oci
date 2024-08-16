@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// (Updatable) Parameters of the custom filter
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Params;
+        public readonly ImmutableDictionary<string, string>? Params;
         /// <summary>
         /// (Updatable) Source parser object.
         /// </summary>
@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Logging.Outputs
 
             string name,
 
-            ImmutableDictionary<string, object>? @params,
+            ImmutableDictionary<string, string>? @params,
 
             Outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser? parser,
 

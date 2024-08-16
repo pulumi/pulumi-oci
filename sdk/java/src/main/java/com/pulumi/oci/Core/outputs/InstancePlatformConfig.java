@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -25,7 +24,7 @@ public final class InstancePlatformConfig {
      * @return Instance Platform Configuration Configuration Map for flexible setting input.
      * 
      */
-    private @Nullable Map<String,Object> configMap;
+    private @Nullable Map<String,String> configMap;
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
@@ -93,7 +92,7 @@ public final class InstancePlatformConfig {
      * @return Instance Platform Configuration Configuration Map for flexible setting input.
      * 
      */
-    public Map<String,Object> configMap() {
+    public Map<String,String> configMap() {
         return this.configMap == null ? Map.of() : this.configMap;
     }
     /**
@@ -181,7 +180,7 @@ public final class InstancePlatformConfig {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable Boolean areVirtualInstructionsEnabled;
-        private @Nullable Map<String,Object> configMap;
+        private @Nullable Map<String,String> configMap;
         private @Nullable Boolean isAccessControlServiceEnabled;
         private @Nullable Boolean isInputOutputMemoryManagementUnitEnabled;
         private @Nullable Boolean isMeasuredBootEnabled;
@@ -216,7 +215,7 @@ public final class InstancePlatformConfig {
             return this;
         }
         @CustomType.Setter
-        public Builder configMap(@Nullable Map<String,Object> configMap) {
+        public Builder configMap(@Nullable Map<String,String> configMap) {
 
             this.configMap = configMap;
             return this;

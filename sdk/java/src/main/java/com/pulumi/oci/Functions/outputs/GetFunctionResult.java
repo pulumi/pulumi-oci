@@ -9,7 +9,6 @@ import com.pulumi.oci.Functions.outputs.GetFunctionProvisionedConcurrencyConfig;
 import com.pulumi.oci.Functions.outputs.GetFunctionSourceDetail;
 import com.pulumi.oci.Functions.outputs.GetFunctionTraceConfig;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -31,12 +30,12 @@ public final class GetFunctionResult {
      * @return Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
-    private Map<String,Object> config;
+    private Map<String,String> config;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return The display name of the function. The display name is unique within the application containing the function.
      * 
@@ -46,7 +45,7 @@ public final class GetFunctionResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     private String functionId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
@@ -133,14 +132,14 @@ public final class GetFunctionResult {
      * @return Function configuration. Overrides application configuration. Keys must be ASCII strings consisting solely of letters, digits, and the &#39;_&#39; (underscore) character, and must not begin with a digit. Values should be limited to printable unicode characters.  Example: `{&#34;MY_FUNCTION_CONFIG&#34;: &#34;ConfVal&#34;}`
      * 
      */
-    public Map<String,Object> config() {
+    public Map<String,String> config() {
         return this.config;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -154,7 +153,7 @@ public final class GetFunctionResult {
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     public String functionId() {
@@ -263,10 +262,10 @@ public final class GetFunctionResult {
     public static final class Builder {
         private String applicationId;
         private String compartmentId;
-        private Map<String,Object> config;
-        private Map<String,Object> definedTags;
+        private Map<String,String> config;
+        private Map<String,String> definedTags;
         private String displayName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String functionId;
         private String id;
         private String image;
@@ -323,7 +322,7 @@ public final class GetFunctionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder config(Map<String,Object> config) {
+        public Builder config(Map<String,String> config) {
             if (config == null) {
               throw new MissingRequiredPropertyException("GetFunctionResult", "config");
             }
@@ -331,7 +330,7 @@ public final class GetFunctionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetFunctionResult", "definedTags");
             }
@@ -347,7 +346,7 @@ public final class GetFunctionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetFunctionResult", "freeformTags");
             }

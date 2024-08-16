@@ -81,15 +81,15 @@ type LookupInstanceResult struct {
 	// The OCID of the dedicated virtual machine host that the instance is placed on.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// The name of the fault domain the instance is running in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname for the instance VNIC's primary private IP.
 	//
 	// Deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.
@@ -121,7 +121,7 @@ type LookupInstanceResult struct {
 	LaunchOptions           []GetInstanceLaunchOption           `pulumi:"launchOptions"`
 	LaunchVolumeAttachments []GetInstanceLaunchVolumeAttachment `pulumi:"launchVolumeAttachments"`
 	// Custom metadata that you provide.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The platform configuration for the instance.
 	PlatformConfigs []GetInstancePlatformConfig `pulumi:"platformConfigs"`
 	// (Optional) Configuration options for preemptible instances.
@@ -145,7 +145,7 @@ type LookupInstanceResult struct {
 	// Deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the instance is expected to be stopped / started,  in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). After that time if instance hasn't been rebooted, Oracle will reboot the instance within 24 hours of the due time. Regardless of how the instance was stopped, the flag will be reset to empty as soon as instance reaches Stopped state. Example: `2018-05-25T21:10:29.600Z`
@@ -244,8 +244,8 @@ func (o LookupInstanceResultOutput) DedicatedVmHostId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupInstanceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupInstanceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -254,8 +254,8 @@ func (o LookupInstanceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o LookupInstanceResultOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o LookupInstanceResultOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // The name of the fault domain the instance is running in.
@@ -264,8 +264,8 @@ func (o LookupInstanceResultOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupInstanceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupInstanceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname for the instance VNIC's primary private IP.
@@ -335,8 +335,8 @@ func (o LookupInstanceResultOutput) LaunchVolumeAttachments() GetInstanceLaunchV
 }
 
 // Custom metadata that you provide.
-func (o LookupInstanceResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o LookupInstanceResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The platform configuration for the instance.
@@ -400,8 +400,8 @@ func (o LookupInstanceResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupInstanceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupInstanceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

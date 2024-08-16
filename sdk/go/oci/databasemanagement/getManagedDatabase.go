@@ -59,7 +59,7 @@ type LookupManagedDatabaseArgs struct {
 // A collection of values returned by getManagedDatabase.
 type LookupManagedDatabaseResult struct {
 	// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The status of the Oracle Database. Indicates whether the status of the database is UP, DOWN, or UNKNOWN at the current time.
@@ -73,11 +73,11 @@ type LookupManagedDatabaseResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that this Managed Database is part of.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The infrastructure used to deploy the Oracle Database.
 	DeploymentType string `pulumi:"deploymentType"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Indicates whether the Oracle Database is part of a cluster.
@@ -138,8 +138,8 @@ func (o LookupManagedDatabaseResultOutput) ToLookupManagedDatabaseResultOutputWi
 }
 
 // The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o LookupManagedDatabaseResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
@@ -173,8 +173,8 @@ func (o LookupManagedDatabaseResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupManagedDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The infrastructure used to deploy the Oracle Database.
@@ -183,8 +183,8 @@ func (o LookupManagedDatabaseResultOutput) DeploymentType() pulumi.StringOutput 
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupManagedDatabaseResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupManagedDatabaseResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupManagedDatabaseResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.

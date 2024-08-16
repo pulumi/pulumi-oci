@@ -5,7 +5,6 @@ package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -18,7 +17,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
      * @return (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    private @Nullable Map<String,Object> customEnvironmentVariables;
+    private @Nullable Map<String,String> customEnvironmentVariables;
     /**
      * @return (Updatable) Git configuration Details.
      * 
@@ -30,7 +29,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
      * @return (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
      * 
      */
-    public Map<String,Object> customEnvironmentVariables() {
+    public Map<String,String> customEnvironmentVariables() {
         return this.customEnvironmentVariables == null ? Map.of() : this.customEnvironmentVariables;
     }
     /**
@@ -50,7 +49,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> customEnvironmentVariables;
+        private @Nullable Map<String,String> customEnvironmentVariables;
         private @Nullable NotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails notebookSessionGitConfigDetails;
         public Builder() {}
         public Builder(NotebookSessionNotebookSessionRuntimeConfigDetails defaults) {
@@ -60,7 +59,7 @@ public final class NotebookSessionNotebookSessionRuntimeConfigDetails {
         }
 
         @CustomType.Setter
-        public Builder customEnvironmentVariables(@Nullable Map<String,Object> customEnvironmentVariables) {
+        public Builder customEnvironmentVariables(@Nullable Map<String,String> customEnvironmentVariables) {
 
             this.customEnvironmentVariables = customEnvironmentVariables;
             return this;

@@ -48,7 +48,7 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
     /**
      * Additional details of the maintenance in the form of json.
      */
-    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly additionalDetails!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
      */
@@ -84,7 +84,7 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * It is the descriptive information about the maintenance taking place on the customer instance.
      */
@@ -100,7 +100,7 @@ export class InstanceMaintenanceEvent extends pulumi.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
      */
@@ -237,7 +237,7 @@ export interface InstanceMaintenanceEventState {
     /**
      * Additional details of the maintenance in the form of json.
      */
-    additionalDetails?: pulumi.Input<{[key: string]: any}>;
+    additionalDetails?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
      */
@@ -273,7 +273,7 @@ export interface InstanceMaintenanceEventState {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * It is the descriptive information about the maintenance taking place on the customer instance.
      */
@@ -289,7 +289,7 @@ export interface InstanceMaintenanceEventState {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
      */
@@ -365,7 +365,7 @@ export interface InstanceMaintenanceEventArgs {
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -373,7 +373,7 @@ export interface InstanceMaintenanceEventArgs {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The OCID of the instance maintenance event.
      */

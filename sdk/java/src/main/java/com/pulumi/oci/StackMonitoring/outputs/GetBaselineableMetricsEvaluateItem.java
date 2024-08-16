@@ -8,7 +8,6 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemDataPoint;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemEvaluationDataPoint;
 import com.pulumi.oci.StackMonitoring.outputs.GetBaselineableMetricsEvaluateItemTrainingDataPoint;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +24,7 @@ public final class GetBaselineableMetricsEvaluateItem {
      * @return list of dimensions for the metric
      * 
      */
-    private Map<String,Object> dimensions;
+    private Map<String,String> dimensions;
     /**
      * @return list of data points for the metric for evaluation of anomalies
      * 
@@ -49,7 +48,7 @@ public final class GetBaselineableMetricsEvaluateItem {
      * @return list of dimensions for the metric
      * 
      */
-    public Map<String,Object> dimensions() {
+    public Map<String,String> dimensions() {
         return this.dimensions;
     }
     /**
@@ -77,7 +76,7 @@ public final class GetBaselineableMetricsEvaluateItem {
     @CustomType.Builder
     public static final class Builder {
         private List<GetBaselineableMetricsEvaluateItemDataPoint> dataPoints;
-        private Map<String,Object> dimensions;
+        private Map<String,String> dimensions;
         private List<GetBaselineableMetricsEvaluateItemEvaluationDataPoint> evaluationDataPoints;
         private List<GetBaselineableMetricsEvaluateItemTrainingDataPoint> trainingDataPoints;
         public Builder() {}
@@ -101,7 +100,7 @@ public final class GetBaselineableMetricsEvaluateItem {
             return dataPoints(List.of(dataPoints));
         }
         @CustomType.Setter
-        public Builder dimensions(Map<String,Object> dimensions) {
+        public Builder dimensions(Map<String,String> dimensions) {
             if (dimensions == null) {
               throw new MissingRequiredPropertyException("GetBaselineableMetricsEvaluateItem", "dimensions");
             }

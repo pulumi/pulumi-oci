@@ -94,7 +94,7 @@ export interface GetCatalogTypeResult {
     /**
      * A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
      */
-    readonly properties: {[key: string]: any};
+    readonly properties: {[key: string]: string};
     /**
      * The current state of the type.
      */

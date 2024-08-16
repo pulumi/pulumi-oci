@@ -42,8 +42,8 @@ import (
 //				CompartmentId: pulumi.Any(compartmentId),
 //				DisplayName:   pulumi.Any(vaultDisplayName),
 //				VaultType:     pulumi.Any(vaultVaultType),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				ExternalKeyManagerMetadata: &kms.VaultExternalKeyManagerMetadataArgs{
 //					ExternalVaultEndpointUrl: pulumi.Any(vaultExternalKeyManagerMetadataExternalVaultEndpointUrl),
@@ -54,8 +54,8 @@ import (
 //					},
 //					PrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -82,7 +82,7 @@ type Vault struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint pulumi.StringOutput `pulumi:"cryptoEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Metadata required for accessing External Key manager
@@ -90,7 +90,7 @@ type Vault struct {
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries VaultExternalKeyManagerMetadataSummaryArrayOutput `pulumi:"externalKeyManagerMetadataSummaries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolOutput `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
@@ -161,7 +161,7 @@ type vaultState struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint *string `pulumi:"cryptoEndpoint"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Metadata required for accessing External Key manager
@@ -169,7 +169,7 @@ type vaultState struct {
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries []VaultExternalKeyManagerMetadataSummary `pulumi:"externalKeyManagerMetadataSummaries"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary *bool `pulumi:"isPrimary"`
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
@@ -202,7 +202,7 @@ type VaultState struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Metadata required for accessing External Key manager
@@ -210,7 +210,7 @@ type VaultState struct {
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries VaultExternalKeyManagerMetadataSummaryArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
 	IsPrimary pulumi.BoolPtrInput
 	// The service endpoint to perform management operations against. Management operations include "Create," "Update," "List," "Get," and "Delete" operations.
@@ -245,13 +245,13 @@ type vaultArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create this vault.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Metadata required for accessing External Key manager
 	ExternalKeyManagerMetadata *VaultExternalKeyManagerMetadata `pulumi:"externalKeyManagerMetadata"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Details where vault was backed up.
 	RestoreFromFile *VaultRestoreFromFile `pulumi:"restoreFromFile"`
 	// (Updatable) Details where vault was backed up
@@ -271,13 +271,13 @@ type VaultArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create this vault.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// Metadata required for accessing External Key manager
 	ExternalKeyManagerMetadata VaultExternalKeyManagerMetadataPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Details where vault was backed up.
 	RestoreFromFile VaultRestoreFromFilePtrInput
 	// (Updatable) Details where vault was backed up
@@ -390,8 +390,8 @@ func (o VaultOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o VaultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Vault) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VaultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -412,8 +412,8 @@ func (o VaultOutput) ExternalKeyManagerMetadataSummaries() VaultExternalKeyManag
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o VaultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Vault) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VaultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Vault) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A Boolean value that indicates whether the Vault is primary Vault or replica Vault.

@@ -90,7 +90,7 @@ export class AlarmSuppression extends pulumi.CustomResource {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -104,7 +104,7 @@ export class AlarmSuppression extends pulumi.CustomResource {
      *
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    public readonly dimensions!: pulumi.Output<{[key: string]: any}>;
+    public readonly dimensions!: pulumi.Output<{[key: string]: string}>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -112,7 +112,7 @@ export class AlarmSuppression extends pulumi.CustomResource {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
@@ -213,7 +213,7 @@ export interface AlarmSuppressionState {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -227,7 +227,7 @@ export interface AlarmSuppressionState {
      *
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    dimensions?: pulumi.Input<{[key: string]: any}>;
+    dimensions?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -235,7 +235,7 @@ export interface AlarmSuppressionState {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current lifecycle state of the alarm suppression.  Example: `DELETED`
      */
@@ -273,7 +273,7 @@ export interface AlarmSuppressionArgs {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
@@ -287,7 +287,7 @@ export interface AlarmSuppressionArgs {
      *
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an "dimensions values are too long" message.
      */
-    dimensions: pulumi.Input<{[key: string]: any}>;
+    dimensions: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
@@ -295,7 +295,7 @@ export interface AlarmSuppressionArgs {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The start date and time for the suppression to take place, inclusive. Format defined by RFC3339.  Example: `2023-02-01T01:02:29.600Z`
      */

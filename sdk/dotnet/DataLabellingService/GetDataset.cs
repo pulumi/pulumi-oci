@@ -100,7 +100,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalProperties;
+        public readonly ImmutableDictionary<string, string> AdditionalProperties;
         /// <summary>
         /// The annotation format name required for labeling records.
         /// </summary>
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user provided description of the dataset
         /// </summary>
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.DataLabellingService
         /// <summary>
         /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the Dataset.
         /// </summary>
@@ -177,7 +177,7 @@ namespace Pulumi.Oci.DataLabellingService
 
         [OutputConstructor]
         private GetDatasetResult(
-            ImmutableDictionary<string, object> additionalProperties,
+            ImmutableDictionary<string, string> additionalProperties,
 
             string annotationFormat,
 
@@ -189,13 +189,13 @@ namespace Pulumi.Oci.DataLabellingService
 
             ImmutableArray<Outputs.GetDatasetDatasetSourceDetailResult> datasetSourceDetails,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

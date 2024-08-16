@@ -40,7 +40,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// <summary>
         /// (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{"foo": "request.header[abc]"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? Parameters;
+        public readonly ImmutableDictionary<string, string>? Parameters;
         /// <summary>
         /// (Updatable) A set of Public Keys that will be used to verify the JWT signature.
         /// </summary>
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
 
             double? maxClockSkewInSeconds,
 
-            ImmutableDictionary<string, object>? parameters,
+            ImmutableDictionary<string, string>? parameters,
 
             Outputs.DeploymentSpecificationRequestPoliciesAuthenticationPublicKeys? publicKeys,
 

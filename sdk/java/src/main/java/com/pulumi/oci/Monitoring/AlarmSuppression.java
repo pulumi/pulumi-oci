@@ -11,7 +11,6 @@ import com.pulumi.oci.Monitoring.AlarmSuppressionArgs;
 import com.pulumi.oci.Monitoring.inputs.AlarmSuppressionState;
 import com.pulumi.oci.Monitoring.outputs.AlarmSuppressionAlarmSuppressionTarget;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -117,14 +116,14 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -155,8 +154,8 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
      * 
      */
-    @Export(name="dimensions", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> dimensions;
+    @Export(name="dimensions", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> dimensions;
 
     /**
      * @return A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs. If you specify {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34;} and the alarm state entry corresponds to the set {&#34;availabilityDomain&#34;: &#34;phx-ad-1&#34; and &#34;resourceId&#34;: &#34;instance.region1.phx.exampleuniqueID&#34;}, then this alarm will be included for suppression.
@@ -164,7 +163,7 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * The value cannot be an empty object. Only a single value is allowed per key. No grouping of multiple values is allowed under the same key. Maximum characters (after serialization): 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is `HTTP 400` with an &#34;dimensions values are too long&#34; message.
      * 
      */
-    public Output<Map<String,Object>> dimensions() {
+    public Output<Map<String,String>> dimensions() {
         return this.dimensions;
     }
     /**
@@ -185,14 +184,14 @@ public class AlarmSuppression extends com.pulumi.resources.CustomResource {
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**

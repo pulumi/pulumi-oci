@@ -77,13 +77,13 @@ type WorkspaceApplicationPatch struct {
 	// Detailed description for the object.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages pulumi.MapOutput `pulumi:"errorMessages"`
+	ErrorMessages pulumi.StringMapOutput `pulumi:"errorMessages"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringOutput `pulumi:"identifier"`
 	// The object's key.
 	Key pulumi.StringOutput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapOutput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationPatchMetadataArrayOutput `pulumi:"metadatas"`
 	// The object type.
@@ -165,13 +165,13 @@ type workspaceApplicationPatchState struct {
 	// Detailed description for the object.
 	Description *string `pulumi:"description"`
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier *string `pulumi:"identifier"`
 	// The object's key.
 	Key *string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceApplicationPatchMetadata `pulumi:"metadatas"`
 	// The object type.
@@ -215,13 +215,13 @@ type WorkspaceApplicationPatchState struct {
 	// Detailed description for the object.
 	Description pulumi.StringPtrInput
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages pulumi.MapInput
+	ErrorMessages pulumi.StringMapInput
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier pulumi.StringPtrInput
 	// The object's key.
 	Key pulumi.StringPtrInput
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput
+	KeyMap pulumi.StringMapInput
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceApplicationPatchMetadataArrayInput
 	// The object type.
@@ -426,8 +426,8 @@ func (o WorkspaceApplicationPatchOutput) Description() pulumi.StringOutput {
 }
 
 // The errors encountered while applying the patch, if any.
-func (o WorkspaceApplicationPatchOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.MapOutput { return v.ErrorMessages }).(pulumi.MapOutput)
+func (o WorkspaceApplicationPatchOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.StringMapOutput { return v.ErrorMessages }).(pulumi.StringMapOutput)
 }
 
 // Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -441,8 +441,8 @@ func (o WorkspaceApplicationPatchOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o WorkspaceApplicationPatchOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
+func (o WorkspaceApplicationPatchOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationPatch) pulumi.StringMapOutput { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

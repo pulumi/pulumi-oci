@@ -6,7 +6,6 @@ package com.pulumi.oci.StackMonitoring.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.StackMonitoring.inputs.MonitoredResourcesSearchItemArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -219,13 +218,13 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
      * 
      */
     @Import(name="propertyEquals")
-    private @Nullable Output<Map<String,Object>> propertyEquals;
+    private @Nullable Output<Map<String,String>> propertyEquals;
 
     /**
      * @return Criteria based on resource property.
      * 
      */
-    public Optional<Output<Map<String,Object>>> propertyEquals() {
+    public Optional<Output<Map<String,String>>> propertyEquals() {
         return Optional.ofNullable(this.propertyEquals);
     }
 
@@ -761,7 +760,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder propertyEquals(@Nullable Output<Map<String,Object>> propertyEquals) {
+        public Builder propertyEquals(@Nullable Output<Map<String,String>> propertyEquals) {
             $.propertyEquals = propertyEquals;
             return this;
         }
@@ -772,7 +771,7 @@ public final class MonitoredResourcesSearchState extends com.pulumi.resources.Re
          * @return builder
          * 
          */
-        public Builder propertyEquals(Map<String,Object> propertyEquals) {
+        public Builder propertyEquals(Map<String,String> propertyEquals) {
             return propertyEquals(Output.of(propertyEquals));
         }
 

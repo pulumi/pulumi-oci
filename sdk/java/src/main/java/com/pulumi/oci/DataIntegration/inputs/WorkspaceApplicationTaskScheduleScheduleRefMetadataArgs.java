@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleSch
 import com.pulumi.oci.DataIntegration.inputs.WorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -117,13 +116,13 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs exten
      * 
      */
     @Import(name="infoFields")
-    private @Nullable Output<Map<String,Object>> infoFields;
+    private @Nullable Output<Map<String,String>> infoFields;
 
     /**
      * @return (Updatable) Information property fields.
      * 
      */
-    public Optional<Output<Map<String,Object>>> infoFields() {
+    public Optional<Output<Map<String,String>>> infoFields() {
         return Optional.ofNullable(this.infoFields);
     }
 
@@ -401,7 +400,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs exten
          * @return builder
          * 
          */
-        public Builder infoFields(@Nullable Output<Map<String,Object>> infoFields) {
+        public Builder infoFields(@Nullable Output<Map<String,String>> infoFields) {
             $.infoFields = infoFields;
             return this;
         }
@@ -412,7 +411,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs exten
          * @return builder
          * 
          */
-        public Builder infoFields(Map<String,Object> infoFields) {
+        public Builder infoFields(Map<String,String> infoFields) {
             return infoFields(Output.of(infoFields));
         }
 

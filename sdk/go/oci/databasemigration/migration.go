@@ -66,8 +66,8 @@ import (
 //						WalletLocation: pulumi.Any(migrationDataTransferMediumDetailsTargetWalletLocation),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(migrationDescription),
 //				DisplayName: pulumi.Any(migrationDisplayName),
@@ -192,7 +192,7 @@ type Migration struct {
 	// (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination pulumi.StringOutput `pulumi:"databaseCombination"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -202,7 +202,7 @@ type Migration struct {
 	// The OCID of the resource being referenced.
 	ExecutingJobId pulumi.StringOutput `pulumi:"executingJobId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Optional settings for Oracle GoldenGate processes
 	GgsDetails MigrationGgsDetailsOutput `pulumi:"ggsDetails"`
 	// (Updatable) Details about Oracle GoldenGate Microservices.
@@ -220,7 +220,7 @@ type Migration struct {
 	// The current state of the Migration resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) The OCID of the resource being referenced.
 	TargetDatabaseConnectionId pulumi.StringOutput `pulumi:"targetDatabaseConnectionId"`
 	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -296,7 +296,7 @@ type migrationState struct {
 	// (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination *string `pulumi:"databaseCombination"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -306,7 +306,7 @@ type migrationState struct {
 	// The OCID of the resource being referenced.
 	ExecutingJobId *string `pulumi:"executingJobId"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Optional settings for Oracle GoldenGate processes
 	GgsDetails *MigrationGgsDetails `pulumi:"ggsDetails"`
 	// (Updatable) Details about Oracle GoldenGate Microservices.
@@ -324,7 +324,7 @@ type migrationState struct {
 	// The current state of the Migration resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) The OCID of the resource being referenced.
 	TargetDatabaseConnectionId *string `pulumi:"targetDatabaseConnectionId"`
 	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -356,7 +356,7 @@ type MigrationState struct {
 	// (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -366,7 +366,7 @@ type MigrationState struct {
 	// The OCID of the resource being referenced.
 	ExecutingJobId pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Optional settings for Oracle GoldenGate processes
 	GgsDetails MigrationGgsDetailsPtrInput
 	// (Updatable) Details about Oracle GoldenGate Microservices.
@@ -384,7 +384,7 @@ type MigrationState struct {
 	// The current state of the Migration resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) The OCID of the resource being referenced.
 	TargetDatabaseConnectionId pulumi.StringPtrInput
 	// An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -420,7 +420,7 @@ type migrationArgs struct {
 	// (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination string `pulumi:"databaseCombination"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -428,7 +428,7 @@ type migrationArgs struct {
 	// Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
 	ExcludeObjects []MigrationExcludeObject `pulumi:"excludeObjects"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Optional settings for Oracle GoldenGate processes
 	GgsDetails *MigrationGgsDetails `pulumi:"ggsDetails"`
 	// (Updatable) Details about Oracle GoldenGate Microservices.
@@ -465,7 +465,7 @@ type MigrationArgs struct {
 	// (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
 	DatabaseCombination pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -473,7 +473,7 @@ type MigrationArgs struct {
 	// Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
 	ExcludeObjects MigrationExcludeObjectArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Optional settings for Oracle GoldenGate processes
 	GgsDetails MigrationGgsDetailsPtrInput
 	// (Updatable) Details about Oracle GoldenGate Microservices.
@@ -613,8 +613,8 @@ func (o MigrationOutput) DatabaseCombination() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MigrationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MigrationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -638,8 +638,8 @@ func (o MigrationOutput) ExecutingJobId() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-func (o MigrationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MigrationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Optional settings for Oracle GoldenGate processes
@@ -683,8 +683,8 @@ func (o MigrationOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MigrationOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Migration) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MigrationOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Migration) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The OCID of the resource being referenced.

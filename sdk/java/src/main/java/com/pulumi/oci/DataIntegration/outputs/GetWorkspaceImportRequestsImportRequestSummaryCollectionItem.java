@@ -9,7 +9,6 @@ import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsImportRe
 import com.pulumi.oci.DataIntegration.outputs.GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -36,7 +35,7 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
      * @return Contains key of the error
      * 
      */
-    private Map<String,Object> errorMessages;
+    private Map<String,String> errorMessages;
     /**
      * @return Name of the zip file from which objects will be imported.
      * 
@@ -129,7 +128,7 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
      * @return Contains key of the error
      * 
      */
-    public Map<String,Object> errorMessages() {
+    public Map<String,String> errorMessages() {
         return this.errorMessages;
     }
     /**
@@ -236,7 +235,7 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
         private Boolean areDataAssetReferencesIncluded;
         private String bucket;
         private String createdBy;
-        private Map<String,Object> errorMessages;
+        private Map<String,String> errorMessages;
         private String fileName;
         private GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportConflictResolution importConflictResolution;
         private List<GetWorkspaceImportRequestsImportRequestSummaryCollectionItemImportedObject> importedObjects;
@@ -297,7 +296,7 @@ public final class GetWorkspaceImportRequestsImportRequestSummaryCollectionItem 
             return this;
         }
         @CustomType.Setter
-        public Builder errorMessages(Map<String,Object> errorMessages) {
+        public Builder errorMessages(Map<String,String> errorMessages) {
             if (errorMessages == null) {
               throw new MissingRequiredPropertyException("GetWorkspaceImportRequestsImportRequestSummaryCollectionItem", "errorMessages");
             }

@@ -102,7 +102,7 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database system being referenced.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	// Metadata about this specific object.
@@ -113,7 +113,7 @@ type LookupConnectionResult struct {
 	Endpoint    string `pulumi:"endpoint"`
 	Fingerprint string `pulumi:"fingerprint"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name or address of a host.
 	// In case of Generic connection type it represents the Host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
@@ -192,7 +192,7 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The technology type.
 	TechnologyType string `pulumi:"technologyType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -359,8 +359,8 @@ func (o LookupConnectionResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupConnectionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -388,8 +388,8 @@ func (o LookupConnectionResultOutput) Fingerprint() pulumi.StringOutput {
 }
 
 // A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o LookupConnectionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The name or address of a host.
@@ -605,8 +605,8 @@ func (o LookupConnectionResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o LookupConnectionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The technology type.

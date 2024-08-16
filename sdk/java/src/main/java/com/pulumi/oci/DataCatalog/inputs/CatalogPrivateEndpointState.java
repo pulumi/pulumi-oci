@@ -6,7 +6,6 @@ package com.pulumi.oci.DataCatalog.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataCatalog.inputs.CatalogPrivateEndpointLockArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -54,13 +53,13 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -99,13 +98,13 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -180,13 +179,13 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="systemTags")
-    private @Nullable Output<Map<String,Object>> systemTags;
+    private @Nullable Output<Map<String,String>> systemTags;
 
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> systemTags() {
+    public Optional<Output<Map<String,String>>> systemTags() {
         return Optional.ofNullable(this.systemTags);
     }
 
@@ -314,7 +313,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -325,7 +324,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -387,7 +386,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -398,7 +397,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 
@@ -508,7 +507,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder systemTags(@Nullable Output<Map<String,Object>> systemTags) {
+        public Builder systemTags(@Nullable Output<Map<String,String>> systemTags) {
             $.systemTags = systemTags;
             return this;
         }
@@ -519,7 +518,7 @@ public final class CatalogPrivateEndpointState extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             return systemTags(Output.of(systemTags));
         }
 

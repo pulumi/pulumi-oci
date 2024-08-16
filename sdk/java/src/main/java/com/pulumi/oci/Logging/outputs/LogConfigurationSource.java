@@ -5,7 +5,6 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public final class LogConfigurationSource {
      * @return (Updatable) Log category parameters are stored here.
      * 
      */
-    private @Nullable Map<String,Object> parameters;
+    private @Nullable Map<String,String> parameters;
     /**
      * @return The unique identifier of the resource emitting the log.
      * 
@@ -52,7 +51,7 @@ public final class LogConfigurationSource {
      * @return (Updatable) Log category parameters are stored here.
      * 
      */
-    public Map<String,Object> parameters() {
+    public Map<String,String> parameters() {
         return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
@@ -88,7 +87,7 @@ public final class LogConfigurationSource {
     @CustomType.Builder
     public static final class Builder {
         private String category;
-        private @Nullable Map<String,Object> parameters;
+        private @Nullable Map<String,String> parameters;
         private String resource;
         private String service;
         private String sourceType;
@@ -111,7 +110,7 @@ public final class LogConfigurationSource {
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(@Nullable Map<String,Object> parameters) {
+        public Builder parameters(@Nullable Map<String,String> parameters) {
 
             this.parameters = parameters;
             return this;

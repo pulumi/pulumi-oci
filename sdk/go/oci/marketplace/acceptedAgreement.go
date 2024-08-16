@@ -37,12 +37,12 @@ import (
 //				ListingId:      pulumi.Any(testListing.Id),
 //				PackageVersion: pulumi.Any(acceptedAgreementPackageVersion),
 //				Signature:      pulumi.Any(acceptedAgreementSignature),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(acceptedAgreementDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -69,11 +69,11 @@ type AcceptedAgreement struct {
 	// The unique identifier for the compartment where the agreement will be accepted.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A display name for the accepted agreement.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The unique identifier for the listing associated with the agreement.
 	ListingId pulumi.StringOutput `pulumi:"listingId"`
 	// The package version associated with the agreement.
@@ -137,11 +137,11 @@ type acceptedAgreementState struct {
 	// The unique identifier for the compartment where the agreement will be accepted.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A display name for the accepted agreement.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the listing associated with the agreement.
 	ListingId *string `pulumi:"listingId"`
 	// The package version associated with the agreement.
@@ -161,11 +161,11 @@ type AcceptedAgreementState struct {
 	// The unique identifier for the compartment where the agreement will be accepted.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A display name for the accepted agreement.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique identifier for the listing associated with the agreement.
 	ListingId pulumi.StringPtrInput
 	// The package version associated with the agreement.
@@ -189,11 +189,11 @@ type acceptedAgreementArgs struct {
 	// The unique identifier for the compartment where the agreement will be accepted.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A display name for the accepted agreement.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique identifier for the listing associated with the agreement.
 	ListingId string `pulumi:"listingId"`
 	// The package version associated with the agreement.
@@ -212,11 +212,11 @@ type AcceptedAgreementArgs struct {
 	// The unique identifier for the compartment where the agreement will be accepted.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A display name for the accepted agreement.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The unique identifier for the listing associated with the agreement.
 	ListingId pulumi.StringInput
 	// The package version associated with the agreement.
@@ -326,8 +326,8 @@ func (o AcceptedAgreementOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o AcceptedAgreementOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AcceptedAgreement) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AcceptedAgreementOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A display name for the accepted agreement.
@@ -336,8 +336,8 @@ func (o AcceptedAgreementOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o AcceptedAgreementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AcceptedAgreement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AcceptedAgreementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AcceptedAgreement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique identifier for the listing associated with the agreement.

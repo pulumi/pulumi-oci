@@ -16,10 +16,10 @@ type DefaultSecurityList struct {
 	pulumi.CustomResourceState
 
 	CompartmentId           pulumi.StringOutput                               `pulumi:"compartmentId"`
-	DefinedTags             pulumi.MapOutput                                  `pulumi:"definedTags"`
+	DefinedTags             pulumi.StringMapOutput                            `pulumi:"definedTags"`
 	DisplayName             pulumi.StringOutput                               `pulumi:"displayName"`
 	EgressSecurityRules     DefaultSecurityListEgressSecurityRuleArrayOutput  `pulumi:"egressSecurityRules"`
-	FreeformTags            pulumi.MapOutput                                  `pulumi:"freeformTags"`
+	FreeformTags            pulumi.StringMapOutput                            `pulumi:"freeformTags"`
 	IngressSecurityRules    DefaultSecurityListIngressSecurityRuleArrayOutput `pulumi:"ingressSecurityRules"`
 	ManageDefaultResourceId pulumi.StringOutput                               `pulumi:"manageDefaultResourceId"`
 	State                   pulumi.StringOutput                               `pulumi:"state"`
@@ -60,10 +60,10 @@ func GetDefaultSecurityList(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DefaultSecurityList resources.
 type defaultSecurityListState struct {
 	CompartmentId           *string                                  `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}                   `pulumi:"definedTags"`
+	DefinedTags             map[string]string                        `pulumi:"definedTags"`
 	DisplayName             *string                                  `pulumi:"displayName"`
 	EgressSecurityRules     []DefaultSecurityListEgressSecurityRule  `pulumi:"egressSecurityRules"`
-	FreeformTags            map[string]interface{}                   `pulumi:"freeformTags"`
+	FreeformTags            map[string]string                        `pulumi:"freeformTags"`
 	IngressSecurityRules    []DefaultSecurityListIngressSecurityRule `pulumi:"ingressSecurityRules"`
 	ManageDefaultResourceId *string                                  `pulumi:"manageDefaultResourceId"`
 	State                   *string                                  `pulumi:"state"`
@@ -72,10 +72,10 @@ type defaultSecurityListState struct {
 
 type DefaultSecurityListState struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
 	EgressSecurityRules     DefaultSecurityListEgressSecurityRuleArrayInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	IngressSecurityRules    DefaultSecurityListIngressSecurityRuleArrayInput
 	ManageDefaultResourceId pulumi.StringPtrInput
 	State                   pulumi.StringPtrInput
@@ -88,10 +88,10 @@ func (DefaultSecurityListState) ElementType() reflect.Type {
 
 type defaultSecurityListArgs struct {
 	CompartmentId           *string                                  `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}                   `pulumi:"definedTags"`
+	DefinedTags             map[string]string                        `pulumi:"definedTags"`
 	DisplayName             *string                                  `pulumi:"displayName"`
 	EgressSecurityRules     []DefaultSecurityListEgressSecurityRule  `pulumi:"egressSecurityRules"`
-	FreeformTags            map[string]interface{}                   `pulumi:"freeformTags"`
+	FreeformTags            map[string]string                        `pulumi:"freeformTags"`
 	IngressSecurityRules    []DefaultSecurityListIngressSecurityRule `pulumi:"ingressSecurityRules"`
 	ManageDefaultResourceId string                                   `pulumi:"manageDefaultResourceId"`
 }
@@ -99,10 +99,10 @@ type defaultSecurityListArgs struct {
 // The set of arguments for constructing a DefaultSecurityList resource.
 type DefaultSecurityListArgs struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
 	EgressSecurityRules     DefaultSecurityListEgressSecurityRuleArrayInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	IngressSecurityRules    DefaultSecurityListIngressSecurityRuleArrayInput
 	ManageDefaultResourceId pulumi.StringInput
 }
@@ -198,8 +198,8 @@ func (o DefaultSecurityListOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o DefaultSecurityListOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DefaultSecurityListOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultSecurityListOutput) DisplayName() pulumi.StringOutput {
@@ -212,8 +212,8 @@ func (o DefaultSecurityListOutput) EgressSecurityRules() DefaultSecurityListEgre
 	}).(DefaultSecurityListEgressSecurityRuleArrayOutput)
 }
 
-func (o DefaultSecurityListOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultSecurityList) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DefaultSecurityListOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultSecurityList) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultSecurityListOutput) IngressSecurityRules() DefaultSecurityListIngressSecurityRuleArrayOutput {

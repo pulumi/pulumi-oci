@@ -58,8 +58,8 @@ import (
 //					},
 //				},
 //				BuildSpecFile: pulumi.Any(buildPipelineStageBuildSpecFile),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DeliverArtifactCollection: &devops.BuildPipelineStageDeliverArtifactCollectionArgs{
 //					Items: devops.BuildPipelineStageDeliverArtifactCollectionItemArray{
@@ -72,8 +72,8 @@ import (
 //				DeployPipelineId: pulumi.Any(testDeployPipeline.Id),
 //				Description:      pulumi.Any(buildPipelineStageDescription),
 //				DisplayName:      pulumi.Any(buildPipelineStageDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Image:                      pulumi.Any(buildPipelineStageImage),
 //				IsPassAllParametersEnabled: pulumi.Any(buildPipelineStageIsPassAllParametersEnabled),
@@ -123,7 +123,7 @@ type BuildPipelineStage struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection BuildPipelineStageDeliverArtifactCollectionOutput `pulumi:"deliverArtifactCollection"`
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
@@ -133,7 +133,7 @@ type BuildPipelineStage struct {
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Image name for the build environment
 	Image pulumi.StringOutput `pulumi:"image"`
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -151,7 +151,7 @@ type BuildPipelineStage struct {
 	// The current state of the stage.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -214,7 +214,7 @@ type buildPipelineStageState struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection *BuildPipelineStageDeliverArtifactCollection `pulumi:"deliverArtifactCollection"`
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
@@ -224,7 +224,7 @@ type buildPipelineStageState struct {
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Image name for the build environment
 	Image *string `pulumi:"image"`
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -242,7 +242,7 @@ type buildPipelineStageState struct {
 	// The current state of the stage.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -267,7 +267,7 @@ type BuildPipelineStageState struct {
 	// The OCID of the compartment where the pipeline is created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection BuildPipelineStageDeliverArtifactCollectionPtrInput
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
@@ -277,7 +277,7 @@ type BuildPipelineStageState struct {
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Image name for the build environment
 	Image pulumi.StringPtrInput
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -295,7 +295,7 @@ type BuildPipelineStageState struct {
 	// The current state of the stage.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The time the stage was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -322,7 +322,7 @@ type buildPipelineStageArgs struct {
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
 	BuildSpecFile *string `pulumi:"buildSpecFile"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection *BuildPipelineStageDeliverArtifactCollection `pulumi:"deliverArtifactCollection"`
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
@@ -332,7 +332,7 @@ type buildPipelineStageArgs struct {
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Image name for the build environment
 	Image *string `pulumi:"image"`
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -362,7 +362,7 @@ type BuildPipelineStageArgs struct {
 	// (Updatable) The path to the build specification file for this environment. The default location of the file if not specified is build_spec.yaml.
 	BuildSpecFile pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
 	DeliverArtifactCollection BuildPipelineStageDeliverArtifactCollectionPtrInput
 	// (Updatable) A target deployment pipeline OCID that will run in this stage.
@@ -372,7 +372,7 @@ type BuildPipelineStageArgs struct {
 	// (Updatable) Stage display name, which can be renamed and is not necessarily unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Image name for the build environment
 	Image pulumi.StringPtrInput
 	// (Updatable) A boolean flag that specifies whether all the parameters must be passed when the deployment is triggered.
@@ -516,8 +516,8 @@ func (o BuildPipelineStageOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o BuildPipelineStageOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BuildPipelineStageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies an array of artifacts that need to be pushed to the artifactory stores.
@@ -543,8 +543,8 @@ func (o BuildPipelineStageOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o BuildPipelineStageOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BuildPipelineStageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Image name for the build environment
@@ -588,8 +588,8 @@ func (o BuildPipelineStageOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o BuildPipelineStageOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BuildPipelineStage) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o BuildPipelineStageOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BuildPipelineStage) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the stage was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).

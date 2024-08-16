@@ -62,7 +62,7 @@ type LookupDataSafePrivateEndpointResult struct {
 	CompartmentId             string `pulumi:"compartmentId"`
 	DataSafePrivateEndpointId string `pulumi:"dataSafePrivateEndpointId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the private endpoint.
 	Description string `pulumi:"description"`
 	// The display name of the private endpoint.
@@ -70,7 +70,7 @@ type LookupDataSafePrivateEndpointResult struct {
 	// The three-label fully qualified domain name (FQDN) of the private endpoint. The customer VCN's DNS records are updated with this FQDN.
 	EndpointFqdn string `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Data Safe private endpoint.
 	Id string `pulumi:"id"`
 	// The OCIDs of the network security groups that the private endpoint belongs to.
@@ -84,7 +84,7 @@ type LookupDataSafePrivateEndpointResult struct {
 	// The OCID of the subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The OCID of the VCN.
@@ -139,8 +139,8 @@ func (o LookupDataSafePrivateEndpointResultOutput) DataSafePrivateEndpointId() p
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupDataSafePrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the private endpoint.
@@ -159,8 +159,8 @@ func (o LookupDataSafePrivateEndpointResultOutput) EndpointFqdn() pulumi.StringO
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupDataSafePrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the Data Safe private endpoint.
@@ -194,8 +194,8 @@ func (o LookupDataSafePrivateEndpointResultOutput) SubnetId() pulumi.StringOutpu
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupDataSafePrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupDataSafePrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataSafePrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the private endpoint was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

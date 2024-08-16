@@ -177,7 +177,7 @@ namespace Pulumi.Oci.DataCatalog
         /// <summary>
         /// A map of arrays which defines the type specific properties, both required and optional. The map keys are category names and the values are arrays contiaing all property details. Every property is contained inside of a category. Most types have required properties within the "default" category. Example: `{ "properties": { "default": { "attributes:": [ { "name": "host", "type": "string", "isRequired": true, "isUpdatable": false }, ... ] } } }`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Properties;
+        public readonly ImmutableDictionary<string, string> Properties;
         /// <summary>
         /// The current state of the type.
         /// </summary>
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.DataCatalog
 
             string name,
 
-            ImmutableDictionary<string, object> properties,
+            ImmutableDictionary<string, string> properties,
 
             string state,
 

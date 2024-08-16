@@ -718,13 +718,13 @@ type GetRulesRule struct {
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	Condition string `pulumi:"condition"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
@@ -757,13 +757,13 @@ type GetRulesRuleArgs struct {
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only rules with descriptions that match the displayName string in this parameter.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
@@ -844,8 +844,8 @@ func (o GetRulesRuleOutput) Condition() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetRulesRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRulesRule) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetRulesRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRulesRule) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -859,8 +859,8 @@ func (o GetRulesRuleOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetRulesRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetRulesRule) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetRulesRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetRulesRule) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.

@@ -6,7 +6,6 @@ package com.pulumi.oci.DatabaseManagement.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -23,13 +22,13 @@ public final class ExternalExadataInfrastructureStorageGridArgs extends com.pulu
      * 
      */
     @Import(name="additionalDetails")
-    private @Nullable Output<Map<String,Object>> additionalDetails;
+    private @Nullable Output<Map<String,String>> additionalDetails;
 
     /**
      * @return The additional details of the resource defined in `{&#34;key&#34;: &#34;value&#34;}` format. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> additionalDetails() {
+    public Optional<Output<Map<String,String>>> additionalDetails() {
         return Optional.ofNullable(this.additionalDetails);
     }
 
@@ -223,7 +222,7 @@ public final class ExternalExadataInfrastructureStorageGridArgs extends com.pulu
          * @return builder
          * 
          */
-        public Builder additionalDetails(@Nullable Output<Map<String,Object>> additionalDetails) {
+        public Builder additionalDetails(@Nullable Output<Map<String,String>> additionalDetails) {
             $.additionalDetails = additionalDetails;
             return this;
         }
@@ -234,7 +233,7 @@ public final class ExternalExadataInfrastructureStorageGridArgs extends com.pulu
          * @return builder
          * 
          */
-        public Builder additionalDetails(Map<String,Object> additionalDetails) {
+        public Builder additionalDetails(Map<String,String> additionalDetails) {
             return additionalDetails(Output.of(additionalDetails));
         }
 

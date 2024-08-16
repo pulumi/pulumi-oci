@@ -40,16 +40,16 @@ import (
 //						CniType: pulumi.Any(clusterClusterPodNetworkOptionsCniType),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				EndpointConfig: &containerengine.ClusterEndpointConfigArgs{
 //					IsPublicIpEnabled: pulumi.Any(clusterEndpointConfigIsPublicIpEnabled),
 //					NsgIds:            pulumi.Any(clusterEndpointConfigNsgIds),
 //					SubnetId:          pulumi.Any(testSubnet.Id),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				ImagePolicyConfig: &containerengine.ClusterImagePolicyConfigArgs{
 //					IsPolicyEnabled: pulumi.Any(clusterImagePolicyConfigIsPolicyEnabled),
@@ -73,19 +73,19 @@ import (
 //						ServicesCidr: pulumi.Any(clusterOptionsKubernetesNetworkConfigServicesCidr),
 //					},
 //					PersistentVolumeConfig: &containerengine.ClusterOptionsPersistentVolumeConfigArgs{
-//						DefinedTags: pulumi.Map{
-//							"Operations.CostCenter": pulumi.Any("42"),
+//						DefinedTags: pulumi.StringMap{
+//							"Operations.CostCenter": pulumi.String("42"),
 //						},
-//						FreeformTags: pulumi.Map{
-//							"Department": pulumi.Any("Finance"),
+//						FreeformTags: pulumi.StringMap{
+//							"Department": pulumi.String("Finance"),
 //						},
 //					},
 //					ServiceLbConfig: &containerengine.ClusterOptionsServiceLbConfigArgs{
-//						DefinedTags: pulumi.Map{
-//							"Operations.CostCenter": pulumi.Any("42"),
+//						DefinedTags: pulumi.StringMap{
+//							"Operations.CostCenter": pulumi.String("42"),
 //						},
-//						FreeformTags: pulumi.Map{
-//							"Department": pulumi.Any("Finance"),
+//						FreeformTags: pulumi.StringMap{
+//							"Department": pulumi.String("Finance"),
 //						},
 //					},
 //					ServiceLbSubnetIds: pulumi.Any(clusterOptionsServiceLbSubnetIds),
@@ -118,13 +118,13 @@ type Cluster struct {
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfig ClusterEndpointConfigPtrOutput `pulumi:"endpointConfig"`
 	// Endpoints served up by the cluster masters.
 	Endpoints ClusterEndpointArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
 	ImagePolicyConfig ClusterImagePolicyConfigOutput `pulumi:"imagePolicyConfig"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -196,13 +196,13 @@ type clusterState struct {
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfig *ClusterEndpointConfig `pulumi:"endpointConfig"`
 	// Endpoints served up by the cluster masters.
 	Endpoints []ClusterEndpoint `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
 	ImagePolicyConfig *ClusterImagePolicyConfig `pulumi:"imagePolicyConfig"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -236,13 +236,13 @@ type ClusterState struct {
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfig ClusterEndpointConfigPtrInput
 	// Endpoints served up by the cluster masters.
 	Endpoints ClusterEndpointArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
 	ImagePolicyConfig ClusterImagePolicyConfigPtrInput
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -278,11 +278,11 @@ type clusterArgs struct {
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfig *ClusterEndpointConfig `pulumi:"endpointConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
 	ImagePolicyConfig *ClusterImagePolicyConfig `pulumi:"imagePolicyConfig"`
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -309,11 +309,11 @@ type ClusterArgs struct {
 	// The OCID of the compartment in which to create the cluster.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The network configuration for access to the Cluster control plane.
 	EndpointConfig ClusterEndpointConfigPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.
 	ImagePolicyConfig ClusterImagePolicyConfigPtrInput
 	// The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
@@ -436,8 +436,8 @@ func (o ClusterOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The network configuration for access to the Cluster control plane.
@@ -451,8 +451,8 @@ func (o ClusterOutput) Endpoints() ClusterEndpointArrayOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o ClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The image verification policy for signature validation. Once a policy is created and enabled with one or more kms keys, the policy will ensure all images deployed has been signed with the key(s) attached to the policy.

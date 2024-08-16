@@ -126,7 +126,7 @@ class GetResourceActionResult:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Mapping[str, Any]:
+    def extended_metadata(self) -> Mapping[str, str]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -147,7 +147,7 @@ class GetResourceActionResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Custom metadata key/value pairs for the resource action.
         """

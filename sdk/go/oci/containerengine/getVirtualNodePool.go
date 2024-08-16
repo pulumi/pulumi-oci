@@ -63,11 +63,11 @@ type LookupVirtualNodePoolResult struct {
 	// Compartment of the virtual node pool.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Display name of the virtual node pool. This is a non-unique value.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the virtual node pool.
 	Id string `pulumi:"id"`
 	// Initial labels that will be added to the Kubernetes Virtual Node object when it registers. This is the same as virtualNodePool resources.
@@ -87,7 +87,7 @@ type LookupVirtualNodePoolResult struct {
 	// The state of the Virtual Node Pool.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.
 	Taints []GetVirtualNodePoolTaint `pulumi:"taints"`
 	// The time the virtual node pool was created.
@@ -148,8 +148,8 @@ func (o LookupVirtualNodePoolResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupVirtualNodePoolResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupVirtualNodePoolResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Display name of the virtual node pool. This is a non-unique value.
@@ -158,8 +158,8 @@ func (o LookupVirtualNodePoolResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupVirtualNodePoolResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupVirtualNodePoolResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the virtual node pool.
@@ -212,8 +212,8 @@ func (o LookupVirtualNodePoolResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupVirtualNodePoolResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupVirtualNodePoolResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupVirtualNodePoolResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // A taint is a collection of <key, value, effect>. These taints will be applied to the Virtual Nodes of this Virtual Node Pool for Kubernetes scheduling.

@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.LogAnalytics.outputs.GetLogAnalyticsEntityMetadata;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -34,7 +33,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Internal name for the log analytics entity type.
      * 
@@ -49,7 +48,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
      * 
@@ -96,7 +95,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
-    private Map<String,Object> properties;
+    private Map<String,String> properties;
     /**
      * @return This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
      * 
@@ -154,7 +153,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -175,7 +174,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -244,7 +243,7 @@ public final class GetLogAnalyticsEntityResult {
      * @return The name/value pairs for parameter values to be used in file patterns specified in log sources.
      * 
      */
-    public Map<String,Object> properties() {
+    public Map<String,String> properties() {
         return this.properties;
     }
     /**
@@ -302,10 +301,10 @@ public final class GetLogAnalyticsEntityResult {
         private Boolean areLogsCollected;
         private String cloudResourceId;
         private String compartmentId;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String entityTypeInternalName;
         private String entityTypeName;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String hostname;
         private String id;
         private String lifecycleDetails;
@@ -316,7 +315,7 @@ public final class GetLogAnalyticsEntityResult {
         private List<GetLogAnalyticsEntityMetadata> metadatas;
         private String name;
         private String namespace;
-        private Map<String,Object> properties;
+        private Map<String,String> properties;
         private String sourceId;
         private String state;
         private String timeCreated;
@@ -377,7 +376,7 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "definedTags");
             }
@@ -401,7 +400,7 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "freeformTags");
             }
@@ -492,7 +491,7 @@ public final class GetLogAnalyticsEntityResult {
             return this;
         }
         @CustomType.Setter
-        public Builder properties(Map<String,Object> properties) {
+        public Builder properties(Map<String,String> properties) {
             if (properties == null) {
               throw new MissingRequiredPropertyException("GetLogAnalyticsEntityResult", "properties");
             }

@@ -72,14 +72,14 @@ type LookupExadataInfrastructureResult struct {
 	// Details of the file system configuration of the Exadata infrastructure.
 	DefinedFileSystemConfigurations []GetExadataInfrastructureDefinedFileSystemConfiguration `pulumi:"definedFileSystemConfigurations"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// The list of DNS server IP addresses. Maximum of 3 allowed.
 	DnsServers              []string `pulumi:"dnsServers"`
 	ExadataInfrastructureId string   `pulumi:"exadataInfrastructureId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The gateway for the control plane network.
 	Gateway string `pulumi:"gateway"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -271,8 +271,8 @@ func (o LookupExadataInfrastructureResultOutput) DefinedFileSystemConfigurations
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupExadataInfrastructureResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadataInfrastructureResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupExadataInfrastructureResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the Exadata Cloud@Customer infrastructure. The name does not need to be unique.
@@ -290,8 +290,8 @@ func (o LookupExadataInfrastructureResultOutput) ExadataInfrastructureId() pulum
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupExadataInfrastructureResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupExadataInfrastructureResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupExadataInfrastructureResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupExadataInfrastructureResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The gateway for the control plane network.

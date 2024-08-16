@@ -19,7 +19,7 @@ type ScheduleResource struct {
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
 	//
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 }
 
 // ScheduleResourceInput is an input type that accepts ScheduleResourceArgs and ScheduleResourceOutput values.
@@ -39,7 +39,7 @@ type ScheduleResourceArgs struct {
 	// (Updatable) This is additional information that helps to identity the resource for the schedule.
 	//
 	// { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 }
 
 func (ScheduleResourceArgs) ElementType() reflect.Type {
@@ -101,8 +101,8 @@ func (o ScheduleResourceOutput) Id() pulumi.StringOutput {
 // (Updatable) This is additional information that helps to identity the resource for the schedule.
 //
 // { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
-func (o ScheduleResourceOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v ScheduleResource) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o ScheduleResourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ScheduleResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 type ScheduleResourceArrayOutput struct{ *pulumi.OutputState }
@@ -368,7 +368,7 @@ type GetScheduleResource struct {
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 }
 
 // GetScheduleResourceInput is an input type that accepts GetScheduleResourceArgs and GetScheduleResourceOutput values.
@@ -386,7 +386,7 @@ type GetScheduleResourceArgs struct {
 	// This is the resource OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 }
 
 func (GetScheduleResourceArgs) ElementType() reflect.Type {
@@ -446,8 +446,8 @@ func (o GetScheduleResourceOutput) Id() pulumi.StringOutput {
 }
 
 // This is additional information that helps to identity the resource for the schedule.
-func (o GetScheduleResourceOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetScheduleResource) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetScheduleResourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScheduleResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 type GetScheduleResourceArrayOutput struct{ *pulumi.OutputState }
@@ -915,13 +915,13 @@ type GetSchedulesScheduleCollectionItem struct {
 	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// This is the description of the schedule.
 	Description string `pulumi:"description"`
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -935,7 +935,7 @@ type GetSchedulesScheduleCollectionItem struct {
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State string `pulumi:"state"`
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -967,13 +967,13 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// This is the description of the schedule.
 	Description pulumi.StringInput `pulumi:"description"`
 	// This is a filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -987,7 +987,7 @@ type GetSchedulesScheduleCollectionItemArgs struct {
 	// This is a filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringInput `pulumi:"state"`
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -1064,8 +1064,8 @@ func (o GetSchedulesScheduleCollectionItemOutput) CompartmentId() pulumi.StringO
 }
 
 // These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSchedulesScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // This is the description of the schedule.
@@ -1079,8 +1079,8 @@ func (o GetSchedulesScheduleCollectionItemOutput) DisplayName() pulumi.StringOut
 }
 
 // These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetSchedulesScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // This is the resource OCID.
@@ -1118,8 +1118,8 @@ func (o GetSchedulesScheduleCollectionItemOutput) State() pulumi.StringOutput {
 }
 
 // These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSchedulesScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSchedulesScheduleCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
@@ -1176,7 +1176,7 @@ type GetSchedulesScheduleCollectionItemResource struct {
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 }
 
 // GetSchedulesScheduleCollectionItemResourceInput is an input type that accepts GetSchedulesScheduleCollectionItemResourceArgs and GetSchedulesScheduleCollectionItemResourceOutput values.
@@ -1194,7 +1194,7 @@ type GetSchedulesScheduleCollectionItemResourceArgs struct {
 	// This is the resource OCID.
 	Id pulumi.StringInput `pulumi:"id"`
 	// This is additional information that helps to identity the resource for the schedule.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 }
 
 func (GetSchedulesScheduleCollectionItemResourceArgs) ElementType() reflect.Type {
@@ -1254,8 +1254,8 @@ func (o GetSchedulesScheduleCollectionItemResourceOutput) Id() pulumi.StringOutp
 }
 
 // This is additional information that helps to identity the resource for the schedule.
-func (o GetSchedulesScheduleCollectionItemResourceOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResource) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetSchedulesScheduleCollectionItemResourceOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSchedulesScheduleCollectionItemResource) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 type GetSchedulesScheduleCollectionItemResourceArrayOutput struct{ *pulumi.OutputState }

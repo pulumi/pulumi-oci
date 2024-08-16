@@ -102,7 +102,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// The additional details specific to a type of database defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> AdditionalDetails;
+        public readonly ImmutableDictionary<string, string> AdditionalDetails;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
         /// </summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// The infrastructure used to deploy the Oracle Database.
         /// </summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.DatabaseManagement
 
         [OutputConstructor]
         private GetManagedDatabaseResult(
-            ImmutableDictionary<string, object> additionalDetails,
+            ImmutableDictionary<string, string> additionalDetails,
 
             string compartmentId,
 
@@ -193,11 +193,11 @@ namespace Pulumi.Oci.DatabaseManagement
 
             string dbSystemId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string deploymentType,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

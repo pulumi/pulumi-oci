@@ -4,7 +4,6 @@
 package com.pulumi.oci.DataScience.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -22,7 +21,7 @@ public final class PipelineStepDetailStepConfigurationDetails {
      * @return (Updatable) Environment variables to set for step.
      * 
      */
-    private @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Map<String,String> environmentVariables;
     /**
      * @return (Updatable) A time bound for the execution of the step.
      * 
@@ -41,7 +40,7 @@ public final class PipelineStepDetailStepConfigurationDetails {
      * @return (Updatable) Environment variables to set for step.
      * 
      */
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
@@ -62,7 +61,7 @@ public final class PipelineStepDetailStepConfigurationDetails {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String commandLineArguments;
-        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Map<String,String> environmentVariables;
         private @Nullable String maximumRuntimeInMinutes;
         public Builder() {}
         public Builder(PipelineStepDetailStepConfigurationDetails defaults) {
@@ -79,7 +78,7 @@ public final class PipelineStepDetailStepConfigurationDetails {
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(@Nullable Map<String,String> environmentVariables) {
 
             this.environmentVariables = environmentVariables;
             return this;

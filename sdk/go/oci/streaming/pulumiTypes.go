@@ -554,9 +554,9 @@ type GetConnectHarnessesConnectHarness struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id string `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
@@ -584,9 +584,9 @@ type GetConnectHarnessesConnectHarnessArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Any additional details about the current state of the connect harness.
@@ -656,13 +656,13 @@ func (o GetConnectHarnessesConnectHarnessOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-func (o GetConnectHarnessesConnectHarnessOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetConnectHarnessesConnectHarnessOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetConnectHarnessesConnectHarnessOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetConnectHarnessesConnectHarness) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given ID exactly.
@@ -1279,11 +1279,11 @@ type GetStreamPoolsStreamPool struct {
 	// Custom Encryption Key which will be used for encryption by all the streams in the pool.
 	CustomEncryptionKeys []GetStreamPoolsStreamPoolCustomEncryptionKey `pulumi:"customEncryptionKeys"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
 	EndpointFqdn string `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id string `pulumi:"id"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
@@ -1319,11 +1319,11 @@ type GetStreamPoolsStreamPoolArgs struct {
 	// Custom Encryption Key which will be used for encryption by all the streams in the pool.
 	CustomEncryptionKeys GetStreamPoolsStreamPoolCustomEncryptionKeyArrayInput `pulumi:"customEncryptionKeys"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
 	EndpointFqdn pulumi.StringInput `pulumi:"endpointFqdn"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if the stream pool is private, false otherwise. The associated endpoint and subnetId of a private stream pool can be retrieved through the [GetStreamPool](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/StreamPool/GetStreamPool) API.
@@ -1406,8 +1406,8 @@ func (o GetStreamPoolsStreamPoolOutput) CustomEncryptionKeys() GetStreamPoolsStr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-func (o GetStreamPoolsStreamPoolOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetStreamPoolsStreamPoolOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The FQDN used to access the streams inside the stream pool (same FQDN as the messagesEndpoint attribute of a [Stream](https://docs.cloud.oracle.com/iaas/api/#/en/streaming/20180418/Stream) object). If the stream pool is private, the FQDN is customized and can only be accessed from inside the associated subnetId, otherwise the FQDN is publicly resolvable. Depending on which protocol you attempt to use, you need to either prepend https or append the Kafka port.
@@ -1416,8 +1416,8 @@ func (o GetStreamPoolsStreamPoolOutput) EndpointFqdn() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetStreamPoolsStreamPoolOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamPoolsStreamPool) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetStreamPoolsStreamPoolOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPoolsStreamPool) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given ID exactly.
@@ -1940,9 +1940,9 @@ type GetStreamsStream struct {
 	// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id string `pulumi:"id"`
 	// Any additional details about the current state of the stream.
@@ -1978,9 +1978,9 @@ type GetStreamsStreamArgs struct {
 	// The OCID of the compartment. Is exclusive with the `streamPoolId` parameter. One of them is required.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only resources that match the given ID exactly.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Any additional details about the current state of the stream.
@@ -2058,13 +2058,13 @@ func (o GetStreamsStreamOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations": {"CostCenter": "42"}}'
-func (o GetStreamsStreamOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamsStream) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetStreamsStreamOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamsStream) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair that is applied with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetStreamsStreamOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamsStream) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetStreamsStreamOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamsStream) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given ID exactly.

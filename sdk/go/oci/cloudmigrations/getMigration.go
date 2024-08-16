@@ -61,11 +61,11 @@ type LookupMigrationResult struct {
 	// Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Migration Identifier that can be renamed
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Indicates whether migration is marked as completed.
@@ -78,7 +78,7 @@ type LookupMigrationResult struct {
 	// The current state of migration.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -129,8 +129,8 @@ func (o LookupMigrationResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMigrationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMigrationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Migration Identifier that can be renamed
@@ -139,8 +139,8 @@ func (o LookupMigrationResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o LookupMigrationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMigrationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation
@@ -173,8 +173,8 @@ func (o LookupMigrationResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMigrationResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMigrationResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the migration project was created. An RFC3339 formatted datetime string

@@ -25,11 +25,11 @@ class MigrationArgs:
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ggs_details: Optional[pulumi.Input['MigrationGgsDetailsArgs']] = None,
                  hub_details: Optional[pulumi.Input['MigrationHubDetailsArgs']] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
@@ -50,11 +50,11 @@ class MigrationArgs:
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input['MigrationGgsDetailsArgs'] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
         :param pulumi.Input['MigrationHubDetailsArgs'] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -209,14 +209,14 @@ class MigrationArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -257,14 +257,14 @@ class MigrationArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -337,12 +337,12 @@ class _MigrationState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
                  database_combination: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]]] = None,
                  executing_job_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ggs_details: Optional[pulumi.Input['MigrationGgsDetailsArgs']] = None,
                  hub_details: Optional[pulumi.Input['MigrationHubDetailsArgs']] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]]] = None,
@@ -351,7 +351,7 @@ class _MigrationState:
                  source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
                  source_database_connection_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  target_database_connection_id: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_last_migration: Optional[pulumi.Input[str]] = None,
@@ -366,12 +366,12 @@ class _MigrationState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationExcludeObjectArgs']]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[str] executing_job_id: The OCID of the resource being referenced.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input['MigrationGgsDetailsArgs'] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
         :param pulumi.Input['MigrationHubDetailsArgs'] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
         :param pulumi.Input[Sequence[pulumi.Input['MigrationIncludeObjectArgs']]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -380,7 +380,7 @@ class _MigrationState:
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] state: The current state of the Migration resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_last_migration: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -521,14 +521,14 @@ class _MigrationState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -581,14 +581,14 @@ class _MigrationState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -689,14 +689,14 @@ class _MigrationState:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -787,11 +787,11 @@ class Migration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
                  database_combination: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
                  hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
@@ -951,11 +951,11 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
         :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -1138,11 +1138,11 @@ class Migration(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
                  database_combination: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
                  hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
                  include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
@@ -1213,12 +1213,12 @@ class Migration(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             data_transfer_medium_details: Optional[pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']]] = None,
             database_combination: Optional[pulumi.Input[str]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             exclude_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]]] = None,
             executing_job_id: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             ggs_details: Optional[pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']]] = None,
             hub_details: Optional[pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']]] = None,
             include_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]]] = None,
@@ -1227,7 +1227,7 @@ class Migration(pulumi.CustomResource):
             source_container_database_connection_id: Optional[pulumi.Input[str]] = None,
             source_database_connection_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             target_database_connection_id: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_last_migration: Optional[pulumi.Input[str]] = None,
@@ -1247,12 +1247,12 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict']] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
         :param pulumi.Input[str] database_combination: (Updatable) The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict']]]] exclude_objects: Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
         :param pulumi.Input[str] executing_job_id: The OCID of the resource being referenced.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param pulumi.Input[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict']] ggs_details: (Updatable) Optional settings for Oracle GoldenGate processes
         :param pulumi.Input[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict']] hub_details: (Updatable) Details about Oracle GoldenGate Microservices.
         :param pulumi.Input[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict']]]] include_objects: Database objects to include from migration, cannot be specified alongside 'excludeObjects'
@@ -1261,7 +1261,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.Input[str] source_container_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] state: The current state of the Migration resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the resource being referenced.
         :param pulumi.Input[str] time_created: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param pulumi.Input[str] time_last_migration: An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -1356,7 +1356,7 @@ class Migration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1396,7 +1396,7 @@ class Migration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
@@ -1468,7 +1468,7 @@ class Migration(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def system_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

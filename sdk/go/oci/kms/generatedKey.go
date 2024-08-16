@@ -58,7 +58,7 @@ type GeneratedKey struct {
 	pulumi.CustomResourceState
 
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapOutput `pulumi:"associatedData"`
+	AssociatedData pulumi.StringMapOutput `pulumi:"associatedData"`
 	// The encrypted data encryption key generated from a master encryption key.
 	Ciphertext pulumi.StringOutput `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -73,7 +73,7 @@ type GeneratedKey struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LoggingContext pulumi.MapOutput `pulumi:"loggingContext"`
+	LoggingContext pulumi.StringMapOutput `pulumi:"loggingContext"`
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext pulumi.StringOutput `pulumi:"plaintext"`
 	// The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
@@ -123,7 +123,7 @@ func GetGeneratedKey(ctx *pulumi.Context,
 // Input properties used for looking up and filtering GeneratedKey resources.
 type generatedKeyState struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The encrypted data encryption key generated from a master encryption key.
 	Ciphertext *string `pulumi:"ciphertext"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -138,7 +138,7 @@ type generatedKeyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
+	LoggingContext map[string]string `pulumi:"loggingContext"`
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext *string `pulumi:"plaintext"`
 	// The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
@@ -147,7 +147,7 @@ type generatedKeyState struct {
 
 type GeneratedKeyState struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput
+	AssociatedData pulumi.StringMapInput
 	// The encrypted data encryption key generated from a master encryption key.
 	Ciphertext pulumi.StringPtrInput
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
@@ -162,7 +162,7 @@ type GeneratedKeyState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LoggingContext pulumi.MapInput
+	LoggingContext pulumi.StringMapInput
 	// The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
 	Plaintext pulumi.StringPtrInput
 	// The checksum of the plaintext data encryption key, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".
@@ -175,7 +175,7 @@ func (GeneratedKeyState) ElementType() reflect.Type {
 
 type generatedKeyArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData map[string]interface{} `pulumi:"associatedData"`
+	AssociatedData map[string]string `pulumi:"associatedData"`
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
 	// If true, the generated key is also returned unencrypted.
@@ -188,13 +188,13 @@ type generatedKeyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LoggingContext map[string]interface{} `pulumi:"loggingContext"`
+	LoggingContext map[string]string `pulumi:"loggingContext"`
 }
 
 // The set of arguments for constructing a GeneratedKey resource.
 type GeneratedKeyArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-	AssociatedData pulumi.MapInput
+	AssociatedData pulumi.StringMapInput
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
 	CryptoEndpoint pulumi.StringInput
 	// If true, the generated key is also returned unencrypted.
@@ -207,7 +207,7 @@ type GeneratedKeyArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	LoggingContext pulumi.MapInput
+	LoggingContext pulumi.StringMapInput
 }
 
 func (GeneratedKeyArgs) ElementType() reflect.Type {
@@ -298,8 +298,8 @@ func (o GeneratedKeyOutput) ToGeneratedKeyOutputWithContext(ctx context.Context)
 }
 
 // Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
-func (o GeneratedKeyOutput) AssociatedData() pulumi.MapOutput {
-	return o.ApplyT(func(v *GeneratedKey) pulumi.MapOutput { return v.AssociatedData }).(pulumi.MapOutput)
+func (o GeneratedKeyOutput) AssociatedData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *GeneratedKey) pulumi.StringMapOutput { return v.AssociatedData }).(pulumi.StringMapOutput)
 }
 
 // The encrypted data encryption key generated from a master encryption key.
@@ -331,8 +331,8 @@ func (o GeneratedKeyOutput) KeyShape() GeneratedKeyKeyShapeOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o GeneratedKeyOutput) LoggingContext() pulumi.MapOutput {
-	return o.ApplyT(func(v *GeneratedKey) pulumi.MapOutput { return v.LoggingContext }).(pulumi.MapOutput)
+func (o GeneratedKeyOutput) LoggingContext() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *GeneratedKey) pulumi.StringMapOutput { return v.LoggingContext }).(pulumi.StringMapOutput)
 }
 
 // The plaintext data encryption key, a base64-encoded sequence of random bytes, which is included if the [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) request includes the `includePlaintextKey` parameter and sets its value to "true".

@@ -1000,7 +1000,7 @@ type MediaWorkflowTask struct {
 	// (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference *string `pulumi:"enableParameterReference"`
 	// (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals map[string]string `pulumi:"enableWhenReferencedParameterEquals"`
 	// (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key string `pulumi:"key"`
 	// (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -1031,7 +1031,7 @@ type MediaWorkflowTaskArgs struct {
 	// (Updatable) Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference pulumi.StringPtrInput `pulumi:"enableParameterReference"`
 	// (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals pulumi.StringMapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key pulumi.StringInput `pulumi:"key"`
 	// (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -1104,8 +1104,8 @@ func (o MediaWorkflowTaskOutput) EnableParameterReference() pulumi.StringPtrOutp
 }
 
 // (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-func (o MediaWorkflowTaskOutput) EnableWhenReferencedParameterEquals() pulumi.MapOutput {
-	return o.ApplyT(func(v MediaWorkflowTask) map[string]interface{} { return v.EnableWhenReferencedParameterEquals }).(pulumi.MapOutput)
+func (o MediaWorkflowTaskOutput) EnableWhenReferencedParameterEquals() pulumi.StringMapOutput {
+	return o.ApplyT(func(v MediaWorkflowTask) map[string]string { return v.EnableWhenReferencedParameterEquals }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
@@ -2750,11 +2750,11 @@ type GetMediaAssetsMediaAssetCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -2787,7 +2787,7 @@ type GetMediaAssetsMediaAssetCollectionItem struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
@@ -2813,11 +2813,11 @@ type GetMediaAssetsMediaAssetCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -2850,7 +2850,7 @@ type GetMediaAssetsMediaAssetCollectionItemArgs struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the MediaAsset was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the MediaAsset was updated. An RFC3339 formatted datetime string.
@@ -2921,8 +2921,8 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) CompartmentId() pulumi.Str
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -2931,8 +2931,8 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -3021,8 +3021,8 @@ func (o GetMediaAssetsMediaAssetCollectionItemOutput) State() pulumi.StringOutpu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMediaAssetsMediaAssetCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMediaAssetsMediaAssetCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaAssetsMediaAssetCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the MediaAsset was created. An RFC3339 formatted datetime string.
@@ -3735,11 +3735,11 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem stru
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -3752,7 +3752,7 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem stru
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
@@ -3774,11 +3774,11 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs 
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflowConfiguration identifier.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -3791,7 +3791,7 @@ type GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemArgs 
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the MediaWorkflowConfiguration was updated. An RFC3339 formatted datetime string.
@@ -3857,10 +3857,10 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]interface{} {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -3871,10 +3871,10 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]interface{} {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique MediaWorkflowConfiguration identifier.
@@ -3915,10 +3915,10 @@ func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOu
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]interface{} {
+func (o GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowConfigurationsMediaWorkflowConfigurationCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
@@ -5023,11 +5023,11 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -5049,7 +5049,7 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItem struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleState `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
@@ -5078,11 +5078,11 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// unique MediaWorkflowJob identifier
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -5104,7 +5104,7 @@ type GetMediaWorkflowJobsMediaWorkflowJobCollectionItemArgs struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates GetMediaWorkflowJobsMediaWorkflowJobCollectionItemTaskLifecycleStateArrayInput `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
@@ -5175,10 +5175,8 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) CompartmentId(
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -5187,10 +5185,8 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) DisplayName() 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // unique MediaWorkflowJob identifier
@@ -5253,8 +5249,8 @@ func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) State() pulumi
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMediaWorkflowJobsMediaWorkflowJobCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowJobsMediaWorkflowJobCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Status of each task.
@@ -5828,7 +5824,7 @@ type GetMediaWorkflowTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals map[string]string `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -5856,7 +5852,7 @@ type GetMediaWorkflowTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals pulumi.StringMapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -5926,8 +5922,8 @@ func (o GetMediaWorkflowTaskOutput) EnableParameterReference() pulumi.StringOutp
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-func (o GetMediaWorkflowTaskOutput) EnableWhenReferencedParameterEquals() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowTask) map[string]interface{} { return v.EnableWhenReferencedParameterEquals }).(pulumi.MapOutput)
+func (o GetMediaWorkflowTaskOutput) EnableWhenReferencedParameterEquals() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowTask) map[string]string { return v.EnableWhenReferencedParameterEquals }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
@@ -6305,11 +6301,11 @@ type GetMediaWorkflowsMediaWorkflowCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -6324,7 +6320,7 @@ type GetMediaWorkflowsMediaWorkflowCollectionItem struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks []GetMediaWorkflowsMediaWorkflowCollectionItemTask `pulumi:"tasks"`
 	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
@@ -6350,11 +6346,11 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique MediaWorkflow identifier.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -6369,7 +6365,7 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemArgs struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
 	Tasks GetMediaWorkflowsMediaWorkflowCollectionItemTaskArrayInput `pulumi:"tasks"`
 	// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
@@ -6437,8 +6433,8 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -6447,8 +6443,8 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique MediaWorkflow identifier.
@@ -6488,8 +6484,8 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) State() pulumi.Strin
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique within the array.  The order of the items is preserved from the order of the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
@@ -6671,7 +6667,7 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals map[string]string `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -6699,7 +6695,7 @@ type GetMediaWorkflowsMediaWorkflowCollectionItemTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals pulumi.StringMapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -6769,10 +6765,10 @@ func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableParameterR
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableWhenReferencedParameterEquals() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) map[string]interface{} {
+func (o GetMediaWorkflowsMediaWorkflowCollectionItemTaskOutput) EnableWhenReferencedParameterEquals() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMediaWorkflowsMediaWorkflowCollectionItemTask) map[string]string {
 		return v.EnableWhenReferencedParameterEquals
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
@@ -7357,13 +7353,13 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItem struct {
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs []GetStreamCdnConfigsStreamCdnConfigCollectionItemConfig `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// The Stream Distribution Channel identifier this CdnConfig belongs to.
 	DistributionChannelId string `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique StreamCdnConfig identifier.
 	Id string `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
@@ -7376,7 +7372,7 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItem struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -7400,13 +7396,13 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs struct {
 	// Base fields of the StreamCdnConfig configuration object.
 	Configs GetStreamCdnConfigsStreamCdnConfigCollectionItemConfigArrayInput `pulumi:"configs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The Stream Distribution Channel identifier this CdnConfig belongs to.
 	DistributionChannelId pulumi.StringInput `pulumi:"distributionChannelId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique StreamCdnConfig identifier.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether publishing to CDN is enabled.
@@ -7419,7 +7415,7 @@ type GetStreamCdnConfigsStreamCdnConfigCollectionItemArgs struct {
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the CDN Config was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the CDN Config was updated. An RFC3339 formatted datetime string.
@@ -7490,8 +7486,8 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) Configs() GetStr
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -7505,8 +7501,8 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) DistributionChan
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique StreamCdnConfig identifier.
@@ -7541,8 +7537,8 @@ func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) State() pulumi.S
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetStreamCdnConfigsStreamCdnConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamCdnConfigsStreamCdnConfigCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the CDN Config was created. An RFC3339 formatted datetime string.
@@ -8249,13 +8245,13 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItem struct
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
 	DomainName string `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -8264,7 +8260,7 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItem struct
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
@@ -8286,13 +8282,13 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs st
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Unique domain name of the Distribution Channel.
 	DomainName pulumi.StringInput `pulumi:"domainName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique Stream Distribution Channel identifier.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -8301,7 +8297,7 @@ type GetStreamDistributionChannelsStreamDistributionChannelCollectionItemArgs st
 	// A filter to return only the resources with lifecycleState matching the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the Stream Distribution Channel was updated. An RFC3339 formatted datetime string.
@@ -8367,10 +8363,10 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]interface{} {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -8388,10 +8384,10 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]interface{} {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique Stream Distribution Channel identifier.
@@ -8418,10 +8414,10 @@ func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutp
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]interface{} {
+func (o GetStreamDistributionChannelsStreamDistributionChannelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamDistributionChannelsStreamDistributionChannelCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
@@ -9044,7 +9040,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
 	// The compartment ID of the lock.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Unique Stream Distribution Channel identifier.
@@ -9052,7 +9048,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
 	// The encryption used by the stream packaging configuration.
 	Encryptions []GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryption `pulumi:"encryptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             string `pulumi:"id"`
 	IsLockOverride bool   `pulumi:"isLockOverride"`
@@ -9065,7 +9061,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItem struct {
 	// The output format for the package.
 	StreamPackagingFormat string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -9087,7 +9083,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
 	// The compartment ID of the lock.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Unique Stream Distribution Channel identifier.
@@ -9095,7 +9091,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
 	// The encryption used by the stream packaging configuration.
 	Encryptions GetStreamPackagingConfigsStreamPackagingConfigCollectionItemEncryptionArrayInput `pulumi:"encryptions"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id             pulumi.StringInput `pulumi:"id"`
 	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
@@ -9108,7 +9104,7 @@ type GetStreamPackagingConfigsStreamPackagingConfigCollectionItemArgs struct {
 	// The output format for the package.
 	StreamPackagingFormat pulumi.StringInput `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
@@ -9172,10 +9168,10 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Comp
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]interface{} {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name given.
@@ -9198,10 +9194,10 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Encr
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]interface{} {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -9240,10 +9236,10 @@ func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) Stre
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]interface{} {
+func (o GetStreamPackagingConfigsStreamPackagingConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamPackagingConfigsStreamPackagingConfigCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
@@ -9651,7 +9647,7 @@ type GetSystemMediaWorkflowItemTask struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference string `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals map[string]interface{} `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals map[string]string `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key string `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -9679,7 +9675,7 @@ type GetSystemMediaWorkflowItemTaskArgs struct {
 	// Allows this task to be conditionally enabled.  If no value or a blank value is given, the task is unconditionally enbled.  Otherwise the given string specifies a parameter of the job created for this task's workflow using the JSON pointer syntax. The JSON pointer is validated when a job is created from the workflow of this task.
 	EnableParameterReference pulumi.StringInput `pulumi:"enableParameterReference"`
 	// Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-	EnableWhenReferencedParameterEquals pulumi.MapInput `pulumi:"enableWhenReferencedParameterEquals"`
+	EnableWhenReferencedParameterEquals pulumi.StringMapInput `pulumi:"enableWhenReferencedParameterEquals"`
 	// A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.
 	Key pulumi.StringInput `pulumi:"key"`
 	// Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
@@ -9749,10 +9745,8 @@ func (o GetSystemMediaWorkflowItemTaskOutput) EnableParameterReference() pulumi.
 }
 
 // Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
-func (o GetSystemMediaWorkflowItemTaskOutput) EnableWhenReferencedParameterEquals() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) map[string]interface{} {
-		return v.EnableWhenReferencedParameterEquals
-	}).(pulumi.MapOutput)
+func (o GetSystemMediaWorkflowItemTaskOutput) EnableWhenReferencedParameterEquals() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSystemMediaWorkflowItemTask) map[string]string { return v.EnableWhenReferencedParameterEquals }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier for this task within its workflow. Keys are used to reference a task within workflows and MediaWorkflowJobs. Tasks are referenced as prerequisites and to track output and state.

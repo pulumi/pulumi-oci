@@ -5,7 +5,6 @@ package com.pulumi.oci.Logging.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,7 +20,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      * @return Parameters of the custom filter
      * 
      */
-    private Map<String,Object> params;
+    private Map<String,String> params;
 
     private GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection() {}
     /**
@@ -35,7 +34,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
      * @return Parameters of the custom filter
      * 
      */
-    public Map<String,Object> params() {
+    public Map<String,String> params() {
         return this.params;
     }
 
@@ -49,7 +48,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
     @CustomType.Builder
     public static final class Builder {
         private String name;
-        private Map<String,Object> params;
+        private Map<String,String> params;
         public Builder() {}
         public Builder(GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection defaults) {
     	      Objects.requireNonNull(defaults);
@@ -66,7 +65,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentC
             return this;
         }
         @CustomType.Setter
-        public Builder params(Map<String,Object> params) {
+        public Builder params(Map<String,String> params) {
             if (params == null) {
               throw new MissingRequiredPropertyException("GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection", "params");
             }

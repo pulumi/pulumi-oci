@@ -65,7 +65,7 @@ export interface GetAtCustomerCccInfrastructureResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
      */
@@ -77,7 +77,7 @@ export interface GetAtCustomerCccInfrastructureResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The Compute Cloud@Customer infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be changed once created.
      */
@@ -117,7 +117,7 @@ export interface GetAtCustomerCccInfrastructureResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
      */

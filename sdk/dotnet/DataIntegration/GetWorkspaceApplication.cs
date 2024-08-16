@@ -126,7 +126,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A list of dependent objects in this patch.
         /// </summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// OCID of the resource that is used to uniquely identify the application
         /// </summary>
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.DataIntegration
         /// <summary>
         /// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> KeyMap;
+        public readonly ImmutableDictionary<string, string> KeyMap;
         /// <summary>
         /// A summary type containing information about the object including its key, name and when/who created/updated it.
         /// </summary>
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.DataIntegration
 
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             ImmutableArray<Outputs.GetWorkspaceApplicationDependentObjectMetadataResult> dependentObjectMetadatas,
 
@@ -233,7 +233,7 @@ namespace Pulumi.Oci.DataIntegration
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.DataIntegration
 
             string key,
 
-            ImmutableDictionary<string, object> keyMap,
+            ImmutableDictionary<string, string> keyMap,
 
             ImmutableArray<Outputs.GetWorkspaceApplicationMetadataResult> metadatas,
 

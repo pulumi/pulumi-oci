@@ -40,13 +40,13 @@ import (
 //				OsNamespace:    pulumi.Any(logAnalyticsObjectCollectionRuleOsNamespace),
 //				CharEncoding:   pulumi.Any(logAnalyticsObjectCollectionRuleCharEncoding),
 //				CollectionType: pulumi.Any(logAnalyticsObjectCollectionRuleCollectionType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(logAnalyticsObjectCollectionRuleDescription),
 //				EntityId:    pulumi.Any(testEntity.Id),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsEnabled:                 pulumi.Any(logAnalyticsObjectCollectionRuleIsEnabled),
 //				IsForceHistoricCollection: pulumi.Any(logAnalyticsObjectCollectionRuleIsForceHistoricCollection),
@@ -86,13 +86,13 @@ type LogAnalyticsObjectCollectionRule struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringOutput `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -195,13 +195,13 @@ type logAnalyticsObjectCollectionRuleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -257,13 +257,13 @@ type LogAnalyticsObjectCollectionRuleState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -323,13 +323,13 @@ type logAnalyticsObjectCollectionRuleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId *string `pulumi:"entityId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -378,13 +378,13 @@ type LogAnalyticsObjectCollectionRuleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Logging Analytics entity OCID. Associates the processed logs with the given entity (optional).
 	EntityId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether or not this rule is currently enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// Flag to allow historic collection if poll period overlaps with existing ACTIVE collection rule
@@ -527,8 +527,8 @@ func (o LogAnalyticsObjectCollectionRuleOutput) CompartmentId() pulumi.StringOut
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LogAnalyticsObjectCollectionRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LogAnalyticsObjectCollectionRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
@@ -542,8 +542,8 @@ func (o LogAnalyticsObjectCollectionRuleOutput) EntityId() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LogAnalyticsObjectCollectionRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LogAnalyticsObjectCollectionRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *LogAnalyticsObjectCollectionRule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether or not this rule is currently enabled.

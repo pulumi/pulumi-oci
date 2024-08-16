@@ -5465,13 +5465,13 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItem struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails []GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetail `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
 	Id string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -5503,13 +5503,13 @@ type GetDedicatedVantagePointsDedicatedVantagePointCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Details of a Dedicated Vantage Point (DVP) stack in Resource Manager.
 	DvpStackDetails GetDedicatedVantagePointsDedicatedVantagePointCollectionItemDvpStackDetailArrayInput `pulumi:"dvpStackDetails"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -5583,10 +5583,10 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) ApmD
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]interface{} {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name.
@@ -5602,10 +5602,10 @@ func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) DvpS
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]interface{} {
+func (o GetDedicatedVantagePointsDedicatedVantagePointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDedicatedVantagePointsDedicatedVantagePointCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated vantage point.
@@ -8919,11 +8919,11 @@ type GetMonitorsMonitorCollectionItem struct {
 	// Name of the user that created the monitor.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
 	// If enabled, domain name will resolve to an IPv6 address.
@@ -8987,11 +8987,11 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	// Name of the user that created the monitor.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id pulumi.StringInput `pulumi:"id"`
 	// If enabled, domain name will resolve to an IPv6 address.
@@ -9113,8 +9113,8 @@ func (o GetMonitorsMonitorCollectionItemOutput) CreatedBy() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMonitorsMonitorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name.
@@ -9123,8 +9123,8 @@ func (o GetMonitorsMonitorCollectionItemOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMonitorsMonitorCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMonitorsMonitorCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
@@ -12798,11 +12798,11 @@ type GetOnPremiseVantagePointWorkersWorkerCollectionItem struct {
 	// Configuration details of the On-premise VP worker.
 	ConfigurationDetails string `pulumi:"configurationDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Geographical information of the On-premise VP worker.
 	GeoInfo string `pulumi:"geoInfo"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
@@ -12857,11 +12857,11 @@ type GetOnPremiseVantagePointWorkersWorkerCollectionItemArgs struct {
 	// Configuration details of the On-premise VP worker.
 	ConfigurationDetails pulumi.StringInput `pulumi:"configurationDetails"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Geographical information of the On-premise VP worker.
 	GeoInfo pulumi.StringInput `pulumi:"geoInfo"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
@@ -12961,10 +12961,8 @@ func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) Configuration
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name.
@@ -12973,10 +12971,8 @@ func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) DisplayName()
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetOnPremiseVantagePointWorkersWorkerCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointWorkersWorkerCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Geographical information of the On-premise VP worker.
@@ -13674,13 +13670,13 @@ type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description about the On-premise vantage point.
 	Description string `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
 	Id string `pulumi:"id"`
 	// A filter to return only the resources that match the entire name.
@@ -13710,13 +13706,13 @@ type GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemArgs struct {
 	// The APM domain ID the request is intended for.
 	ApmDomainId pulumi.StringInput `pulumi:"apmDomainId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A short description about the On-premise vantage point.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only the resources that match the entire name.
@@ -13788,10 +13784,10 @@ func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) ApmD
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]interface{} {
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A short description about the On-premise vantage point.
@@ -13805,10 +13801,10 @@ func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) Disp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]interface{} {
+func (o GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOnPremiseVantagePointsOnPremiseVantagePointCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the On-premise vantage point.
@@ -14831,11 +14827,11 @@ type GetScriptsScriptCollectionItem struct {
 	// A filter to return only resources that match the content type given.
 	ContentType string `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	Id string `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -14873,11 +14869,11 @@ type GetScriptsScriptCollectionItemArgs struct {
 	// A filter to return only resources that match the content type given.
 	ContentType pulumi.StringInput `pulumi:"contentType"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
@@ -14969,8 +14965,8 @@ func (o GetScriptsScriptCollectionItemOutput) ContentType() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetScriptsScriptCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetScriptsScriptCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only the resources that match the entire display name.
@@ -14979,8 +14975,8 @@ func (o GetScriptsScriptCollectionItemOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetScriptsScriptCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetScriptsScriptCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetScriptsScriptCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetScriptsScriptCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the script. scriptId is mandatory for creation of SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null.

@@ -73,7 +73,7 @@ type LookupReportDefinitionResult struct {
 	// Specifies the name of a resource that provides data for the report. For example alerts, events.
 	DataSource string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description of the report definition.
 	Description string `pulumi:"description"`
 	// Name of the report definition.
@@ -81,7 +81,7 @@ type LookupReportDefinitionResult struct {
 	// Specifies the order in which the summary must be displayed.
 	DisplayOrder int `pulumi:"displayOrder"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the report definition.
 	Id string `pulumi:"id"`
 	// Signifies whether the definition is seeded or user defined. Values can either be 'true' or 'false'.
@@ -110,7 +110,7 @@ type LookupReportDefinitionResult struct {
 	// An array of report summary objects in the order (left to right)  displayed in the report.  A  report summary object stores all information about summary of report to be displayed, including the name displayed on UI, the display order, corresponding group by and count of values, summary visibility (if the summary is visible to user).
 	Summaries []GetReportDefinitionSummary `pulumi:"summaries"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Specifies the date and time the report definition was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the report definition was updated.
@@ -191,8 +191,8 @@ func (o LookupReportDefinitionResultOutput) DataSource() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupReportDefinitionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReportDefinitionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description of the report definition.
@@ -211,8 +211,8 @@ func (o LookupReportDefinitionResultOutput) DisplayOrder() pulumi.IntOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupReportDefinitionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReportDefinitionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the report definition.
@@ -285,8 +285,8 @@ func (o LookupReportDefinitionResultOutput) Summaries() GetReportDefinitionSumma
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupReportDefinitionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupReportDefinitionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReportDefinitionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies the date and time the report definition was created.

@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// Platform Instance Description
         /// </summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Blockchain
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// List of OcpuUtilization for all hosts
         /// </summary>
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.Blockchain
 
             string computeShape,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -222,7 +222,7 @@ namespace Pulumi.Oci.Blockchain
 
             string federatedUserId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             ImmutableArray<Outputs.GetBlockchainPlatformHostOcpuUtilizationInfoResult> hostOcpuUtilizationInfos,
 

@@ -63,9 +63,9 @@ type LookupNodePoolResult struct {
 	// The OCID of the compartment in which the node pool exists.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the compute instance backing this node.
 	Id string `pulumi:"id"`
 	// A list of key/value pairs to add to nodes after they join the Kubernetes cluster.
@@ -89,7 +89,7 @@ type LookupNodePoolResult struct {
 	// Deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.
 	NodeImageName string `pulumi:"nodeImageName"`
 	// A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-	NodeMetadata map[string]interface{} `pulumi:"nodeMetadata"`
+	NodeMetadata map[string]string `pulumi:"nodeMetadata"`
 	// Node Pool Cycling Details
 	NodePoolCyclingDetails []GetNodePoolNodePoolCyclingDetail `pulumi:"nodePoolCyclingDetails"`
 	// The OCID of the node pool to which this node belongs.
@@ -163,13 +163,13 @@ func (o LookupNodePoolResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupNodePoolResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNodePoolResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupNodePoolResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNodePoolResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the compute instance backing this node.
@@ -224,8 +224,8 @@ func (o LookupNodePoolResultOutput) NodeImageName() pulumi.StringOutput {
 }
 
 // A list of key/value pairs to add to each underlying Oracle Cloud Infrastructure instance in the node pool on launch.
-func (o LookupNodePoolResultOutput) NodeMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNodePoolResult) map[string]interface{} { return v.NodeMetadata }).(pulumi.MapOutput)
+func (o LookupNodePoolResultOutput) NodeMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) map[string]string { return v.NodeMetadata }).(pulumi.StringMapOutput)
 }
 
 // Node Pool Cycling Details

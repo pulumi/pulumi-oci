@@ -162,14 +162,14 @@ class LogConfigurationSource(dict):
                  resource: str,
                  service: str,
                  source_type: str,
-                 parameters: Optional[Mapping[str, Any]] = None):
+                 parameters: Optional[Mapping[str, str]] = None):
         """
         :param str category: Log object category.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
                * **OCISERVICE:** Oracle Service.
-        :param Mapping[str, Any] parameters: (Updatable) Log category parameters are stored here.
+        :param Mapping[str, str] parameters: (Updatable) Log category parameters are stored here.
         """
         pulumi.set(__self__, "category", category)
         pulumi.set(__self__, "resource", resource)
@@ -213,7 +213,7 @@ class LogConfigurationSource(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Optional[Mapping[str, Any]]:
+    def parameters(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Log category parameters are stored here.
         """
@@ -692,7 +692,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
                  time_format: Optional[str] = None,
                  time_type: Optional[str] = None,
                  timeout_in_milliseconds: Optional[int] = None,
-                 types: Optional[Mapping[str, Any]] = None):
+                 types: Optional[Mapping[str, str]] = None):
         """
         :param str parser_type: (Updatable) Type of fluent parser.
         :param str delimiter: (Updatable) CSV delimiter.
@@ -723,7 +723,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         :param str time_format: (Updatable) Process time value using the specified format.
         :param str time_type: (Updatable) JSON parser time type.
         :param int timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -1025,7 +1025,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[Mapping[str, Any]]:
+    def types(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -1250,11 +1250,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 dimensions: Optional[Mapping[str, Any]] = None,
+                 dimensions: Optional[Mapping[str, str]] = None,
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
         """
-        :param Mapping[str, Any] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: (Updatable) Dimensions to be added for metrics.
         :param str namespace: (Updatable) Namespace to emit metrics.
         :param str resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -1267,7 +1267,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[Mapping[str, Any]]:
+    def dimensions(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
@@ -1824,7 +1824,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
                  time_format: Optional[str] = None,
                  time_type: Optional[str] = None,
                  timeout_in_milliseconds: Optional[int] = None,
-                 types: Optional[Mapping[str, Any]] = None):
+                 types: Optional[Mapping[str, str]] = None):
         """
         :param str parser_type: (Updatable) Type of fluent parser.
         :param str delimiter: (Updatable) CSV delimiter.
@@ -1855,7 +1855,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
         :param str time_format: (Updatable) Process time value using the specified format.
         :param str time_type: (Updatable) JSON parser time type.
         :param int timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -2157,7 +2157,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParser(dict):
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[Mapping[str, Any]]:
+    def types(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -2382,11 +2382,11 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput(dict)
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 dimensions: Optional[Mapping[str, Any]] = None,
+                 dimensions: Optional[Mapping[str, str]] = None,
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
         """
-        :param Mapping[str, Any] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: (Updatable) Dimensions to be added for metrics.
         :param str namespace: (Updatable) Namespace to emit metrics.
         :param str resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -2399,7 +2399,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserRecordInput(dict)
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[Mapping[str, Any]]:
+    def dimensions(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
@@ -2494,7 +2494,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  is_ruby_enabled: Optional[bool] = None,
                  keep_keys: Optional[Sequence[str]] = None,
                  key_name: Optional[str] = None,
-                 params: Optional[Mapping[str, Any]] = None,
+                 params: Optional[Mapping[str, str]] = None,
                  parser: Optional['outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser'] = None,
                  record_lists: Optional[Sequence['outputs.UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordList']] = None,
                  remove_key_name_field: Optional[bool] = None,
@@ -2518,7 +2518,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param bool is_ruby_enabled: (Updatable) When set to true, the full Ruby syntax is enabled in the ${} expression.
         :param Sequence[str] keep_keys: (Updatable) A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
         :param str key_name: (Updatable) The field name in the record to parse.
-        :param Mapping[str, Any] params: (Updatable) Parameters of the custom filter
+        :param Mapping[str, str] params: (Updatable) Parameters of the custom filter
         :param 'UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs' parser: (Updatable) Source parser object.
         :param Sequence['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs'] record_lists: (Updatable) Add new key-value pairs in logs
         :param bool remove_key_name_field: (Updatable) If true, remove the keyName field when parsing is succeeded.
@@ -2691,7 +2691,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def params(self) -> Optional[Mapping[str, Any]]:
+    def params(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Parameters of the custom filter
         """
@@ -2801,10 +2801,10 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSection(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None,
-                 params: Optional[Mapping[str, Any]] = None):
+                 params: Optional[Mapping[str, str]] = None):
         """
         :param str name: (Updatable) The name of the custom section
-        :param Mapping[str, Any] params: (Updatable) Parameters in the custom section
+        :param Mapping[str, str] params: (Updatable) Parameters in the custom section
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2821,7 +2821,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def params(self) -> Optional[Mapping[str, Any]]:
+    def params(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Parameters in the custom section
         """
@@ -2952,7 +2952,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  time_format: Optional[str] = None,
                  time_type: Optional[str] = None,
                  timeout_in_milliseconds: Optional[int] = None,
-                 types: Optional[Mapping[str, Any]] = None):
+                 types: Optional[Mapping[str, str]] = None):
         """
         :param str parser_type: (Updatable) Type of fluent parser.
         :param str delimiter: (Updatable) CSV delimiter.
@@ -2983,7 +2983,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param str time_format: (Updatable) Process time value using the specified format.
         :param str time_type: (Updatable) JSON parser time type.
         :param int timeout_in_milliseconds: (Updatable) Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
                
                This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
                
@@ -3285,7 +3285,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def types(self) -> Optional[Mapping[str, Any]]:
+    def types(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
 
@@ -3510,11 +3510,11 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 dimensions: Optional[Mapping[str, Any]] = None,
+                 dimensions: Optional[Mapping[str, str]] = None,
                  namespace: Optional[str] = None,
                  resource_group: Optional[str] = None):
         """
-        :param Mapping[str, Any] dimensions: (Updatable) Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: (Updatable) Dimensions to be added for metrics.
         :param str namespace: (Updatable) Namespace to emit metrics.
         :param str resource_group: (Updatable) Resource group to emit metrics.
         """
@@ -3527,7 +3527,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Optional[Mapping[str, Any]]:
+    def dimensions(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Dimensions to be added for metrics.
         """
@@ -3614,13 +3614,13 @@ class GetLogConfigurationResult(dict):
 class GetLogConfigurationSourceResult(dict):
     def __init__(__self__, *,
                  category: str,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  resource: str,
                  service: str,
                  source_type: str):
         """
         :param str category: Log object category.
-        :param Mapping[str, Any] parameters: Log category parameters are stored here.
+        :param Mapping[str, str] parameters: Log category parameters are stored here.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
@@ -3642,7 +3642,7 @@ class GetLogConfigurationSourceResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         """
         Log category parameters are stored here.
         """
@@ -3705,20 +3705,20 @@ class GetLogGroupsFilterResult(dict):
 class GetLogGroupsLogGroupResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str,
                  time_last_modified: str):
         """
         :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description for this resource.
         :param str display_name: Resource name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param str state: The log group object state.
         :param str time_created: Time the resource was created.
@@ -3744,7 +3744,7 @@ class GetLogGroupsLogGroupResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3768,7 +3768,7 @@ class GetLogGroupsLogGroupResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -3856,9 +3856,9 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionResult(dict):
 class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  name: str,
                  query: str,
@@ -3867,9 +3867,9 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
                  time_last_modified: str):
         """
         :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description for this resource.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param str name: Resource name.
         :param str query: The search query that is saved.
@@ -3898,7 +3898,7 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -3914,7 +3914,7 @@ class GetLogSavedSearchesLogSavedSearchSummaryCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -4001,9 +4001,9 @@ class GetLogsLogResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  configurations: Sequence['outputs.GetLogsLogConfigurationResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  log_group_id: str,
@@ -4016,9 +4016,9 @@ class GetLogsLogResult(dict):
         """
         :param str compartment_id: The OCID of the compartment that the resource belongs to.
         :param Sequence['GetLogsLogConfigurationArgs'] configurations: Log object configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str display_name: Resource name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param bool is_enabled: Whether or not this resource is currently enabled.
         :param str log_group_id: OCID of a log group to work with.
@@ -4062,7 +4062,7 @@ class GetLogsLogResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -4078,7 +4078,7 @@ class GetLogsLogResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """
@@ -4190,13 +4190,13 @@ class GetLogsLogConfigurationResult(dict):
 class GetLogsLogConfigurationSourceResult(dict):
     def __init__(__self__, *,
                  category: str,
-                 parameters: Mapping[str, Any],
+                 parameters: Mapping[str, str],
                  resource: str,
                  service: str,
                  source_type: str):
         """
         :param str category: Log object category.
-        :param Mapping[str, Any] parameters: Log category parameters are stored here.
+        :param Mapping[str, str] parameters: Log category parameters are stored here.
         :param str resource: The unique identifier of the resource emitting the log.
         :param str service: Service generating log.
         :param str source_type: The log source.
@@ -4218,7 +4218,7 @@ class GetLogsLogConfigurationSourceResult(dict):
 
     @property
     @pulumi.getter
-    def parameters(self) -> Mapping[str, Any]:
+    def parameters(self) -> Mapping[str, str]:
         """
         Log category parameters are stored here.
         """
@@ -4533,7 +4533,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSo
                  time_format: str,
                  time_type: str,
                  timeout_in_milliseconds: int,
-                 types: Mapping[str, Any]):
+                 types: Mapping[str, str]):
         """
         :param str delimiter: CSV delimiter.
         :param str expression: Regex pattern.
@@ -4564,7 +4564,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSo
         :param str time_format: Process time value using the specified format.
         :param str time_type: JSON parser time type.
         :param int timeout_in_milliseconds: Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
         pulumi.set(__self__, "delimiter", delimiter)
         pulumi.set(__self__, "expression", expression)
@@ -4831,7 +4831,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSo
 
     @property
     @pulumi.getter
-    def types(self) -> Mapping[str, Any]:
+    def types(self) -> Mapping[str, str]:
         """
         Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
@@ -4976,11 +4976,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSo
 @pulumi.output_type
 class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserRecordInputResult(dict):
     def __init__(__self__, *,
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  namespace: str,
                  resource_group: str):
         """
-        :param Mapping[str, Any] dimensions: Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: Dimensions to be added for metrics.
         :param str namespace: Namespace to emit metrics.
         :param str resource_group: Resource group to emit metrics.
         """
@@ -4990,7 +4990,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSo
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Dimensions to be added for metrics.
         """
@@ -5343,7 +5343,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
                  time_format: str,
                  time_type: str,
                  timeout_in_milliseconds: int,
-                 types: Mapping[str, Any]):
+                 types: Mapping[str, str]):
         """
         :param str delimiter: CSV delimiter.
         :param str expression: Regex pattern.
@@ -5374,7 +5374,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
         :param str time_format: Process time value using the specified format.
         :param str time_type: JSON parser time type.
         :param int timeout_in_milliseconds: Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
         pulumi.set(__self__, "delimiter", delimiter)
         pulumi.set(__self__, "expression", expression)
@@ -5641,7 +5641,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserResult(dict):
 
     @property
     @pulumi.getter
-    def types(self) -> Mapping[str, Any]:
+    def types(self) -> Mapping[str, str]:
         """
         Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
@@ -5786,11 +5786,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserPatternResult(
 @pulumi.output_type
 class GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputResult(dict):
     def __init__(__self__, *,
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  namespace: str,
                  resource_group: str):
         """
-        :param Mapping[str, Any] dimensions: Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: Dimensions to be added for metrics.
         :param str namespace: Namespace to emit metrics.
         :param str resource_group: Resource group to emit metrics.
         """
@@ -5800,7 +5800,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationSourceParserRecordInputRes
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Dimensions to be added for metrics.
         """
@@ -5840,7 +5840,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
                  keep_keys: Sequence[str],
                  key_name: str,
                  name: str,
-                 params: Mapping[str, Any],
+                 params: Mapping[str, str],
                  parsers: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserResult'],
                  record_lists: Sequence['outputs.GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListResult'],
                  remove_key_name_field: bool,
@@ -5864,7 +5864,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
         :param Sequence[str] keep_keys: A list of keys to keep. Only relevant if isRenewRecordEnabled is set to true
         :param str key_name: The field name in the record to parse.
         :param str name: The name key to tag this Grok pattern.
-        :param Mapping[str, Any] params: Parameters of the custom filter
+        :param Mapping[str, str] params: Parameters of the custom filter
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserArgs'] parsers: Source parser object.
         :param Sequence['GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListArgs'] record_lists: Add new key-value pairs in logs
         :param bool remove_key_name_field: If true, remove the keyName field when parsing is succeeded.
@@ -6012,7 +6012,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 
     @property
     @pulumi.getter
-    def params(self) -> Mapping[str, Any]:
+    def params(self) -> Mapping[str, str]:
         """
         Parameters of the custom filter
         """
@@ -6116,10 +6116,10 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionResult(dict):
     def __init__(__self__, *,
                  name: str,
-                 params: Mapping[str, Any]):
+                 params: Mapping[str, str]):
         """
         :param str name: The name key to tag this Grok pattern.
-        :param Mapping[str, Any] params: Parameters of the custom filter
+        :param Mapping[str, str] params: Parameters of the custom filter
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "params", params)
@@ -6134,7 +6134,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 
     @property
     @pulumi.getter
-    def params(self) -> Mapping[str, Any]:
+    def params(self) -> Mapping[str, str]:
         """
         Parameters of the custom filter
         """
@@ -6202,7 +6202,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
                  time_format: str,
                  time_type: str,
                  timeout_in_milliseconds: int,
-                 types: Mapping[str, Any]):
+                 types: Mapping[str, str]):
         """
         :param str delimiter: CSV delimiter.
         :param str expression: Regex pattern.
@@ -6233,7 +6233,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
         :param str time_format: Process time value using the specified format.
         :param str time_type: JSON parser time type.
         :param int timeout_in_milliseconds: Specify the timeout for parse processing. This is mainly for detecting an incorrect regexp pattern.
-        :param Mapping[str, Any] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
+        :param Mapping[str, str] types: Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
         pulumi.set(__self__, "delimiter", delimiter)
         pulumi.set(__self__, "expression", expression)
@@ -6500,7 +6500,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 
     @property
     @pulumi.getter
-    def types(self) -> Mapping[str, Any]:
+    def types(self) -> Mapping[str, str]:
         """
         Specify types for converting a field into another type. For example, With this configuration: <parse> @type csv keys time,host,req_id,user time_key time </parse>
         """
@@ -6645,11 +6645,11 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 @pulumi.output_type
 class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputResult(dict):
     def __init__(__self__, *,
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  namespace: str,
                  resource_group: str):
         """
-        :param Mapping[str, Any] dimensions: Dimensions to be added for metrics.
+        :param Mapping[str, str] dimensions: Dimensions to be added for metrics.
         :param str namespace: Namespace to emit metrics.
         :param str resource_group: Resource group to emit metrics.
         """
@@ -6659,7 +6659,7 @@ class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationF
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Dimensions to be added for metrics.
         """
@@ -6762,10 +6762,10 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
                  compartment_id: str,
                  configuration_state: str,
                  configuration_type: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  state: str,
@@ -6775,10 +6775,10 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
         :param str compartment_id: Compartment OCID to list resources in. See compartmentIdInSubtree for nested compartments traversal.
         :param str configuration_state: State of unified agent service configuration.
         :param str configuration_type: Type of Unified Agent service configuration.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param str description: Description for this resource.
         :param str display_name: Resource name.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param str id: The OCID of the resource.
         :param bool is_enabled: Whether or not this resource is currently enabled.
         :param str state: Lifecycle state of the log object
@@ -6824,7 +6824,7 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         """
@@ -6848,7 +6848,7 @@ class GetUnifiedAgentConfigurationsUnifiedAgentConfigurationCollectionItemResult
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         """

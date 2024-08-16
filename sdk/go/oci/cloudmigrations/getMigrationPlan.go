@@ -59,15 +59,15 @@ type LookupMigrationPlanArgs struct {
 // A collection of values returned by getMigrationPlan.
 type LookupMigrationPlanResult struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits map[string]interface{} `pulumi:"calculatedLimits"`
+	CalculatedLimits map[string]string `pulumi:"calculatedLimits"`
 	// The OCID of the compartment containing the migration plan.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -86,7 +86,7 @@ type LookupMigrationPlanResult struct {
 	// List of strategies for the resources to be migrated.
 	Strategies []GetMigrationPlanStrategy `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// List of target environments.
 	TargetEnvironments []GetMigrationPlanTargetEnvironment `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -134,8 +134,8 @@ func (o LookupMigrationPlanResultOutput) ToLookupMigrationPlanResultOutputWithCo
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-func (o LookupMigrationPlanResultOutput) CalculatedLimits() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]interface{} { return v.CalculatedLimits }).(pulumi.MapOutput)
+func (o LookupMigrationPlanResultOutput) CalculatedLimits() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]string { return v.CalculatedLimits }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the compartment containing the migration plan.
@@ -144,8 +144,8 @@ func (o LookupMigrationPlanResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupMigrationPlanResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupMigrationPlanResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -154,8 +154,8 @@ func (o LookupMigrationPlanResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o LookupMigrationPlanResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupMigrationPlanResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique Oracle ID (OCID) that is immutable on creation.
@@ -203,8 +203,8 @@ func (o LookupMigrationPlanResultOutput) Strategies() GetMigrationPlanStrategyAr
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupMigrationPlanResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupMigrationPlanResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupMigrationPlanResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // List of target environments.

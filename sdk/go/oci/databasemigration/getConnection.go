@@ -70,13 +70,13 @@ type LookupConnectionResult struct {
 	// The OCID of the database system being referenced.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The IP Address of the host.
 	Host string `pulumi:"host"`
 	// The OCID of the connection being referenced.
@@ -122,7 +122,7 @@ type LookupConnectionResult struct {
 	// Oracle Cloud Infrastructure resource ID.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service
 	TechnologyType string `pulumi:"technologyType"`
 	// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -214,8 +214,8 @@ func (o LookupConnectionResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupConnectionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
@@ -229,8 +229,8 @@ func (o LookupConnectionResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
-func (o LookupConnectionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The IP Address of the host.
@@ -350,8 +350,8 @@ func (o LookupConnectionResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupConnectionResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupConnectionResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupConnectionResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The type of MySQL source or target connection. Example: OCI_MYSQL represents Oracle Cloud Infrastructure MySQL HeatWave Database Service

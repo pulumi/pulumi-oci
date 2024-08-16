@@ -146,7 +146,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// The metadata of the object
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         public readonly string Namespace;
         public readonly string Object;
         /// <summary>
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.ObjectStorage
 
             string id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string @namespace,
 

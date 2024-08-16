@@ -53,12 +53,12 @@ import (
 //					CreateVnicDetails: &cloudmigrations.TargetAssetUserSpecCreateVnicDetailsArgs{
 //						AssignPrivateDnsRecord: pulumi.Any(targetAssetUserSpecCreateVnicDetailsAssignPrivateDnsRecord),
 //						AssignPublicIp:         pulumi.Any(targetAssetUserSpecCreateVnicDetailsAssignPublicIp),
-//						DefinedTags: pulumi.Map{
-//							"foo-namespace.bar-key": pulumi.Any("value"),
+//						DefinedTags: pulumi.StringMap{
+//							"foo-namespace.bar-key": pulumi.String("value"),
 //						},
 //						DisplayName: pulumi.Any(targetAssetUserSpecCreateVnicDetailsDisplayName),
-//						FreeformTags: pulumi.Map{
-//							"bar-key": pulumi.Any("value"),
+//						FreeformTags: pulumi.StringMap{
+//							"bar-key": pulumi.String("value"),
 //						},
 //						HostnameLabel:       pulumi.Any(targetAssetUserSpecCreateVnicDetailsHostnameLabel),
 //						NsgIds:              pulumi.Any(targetAssetUserSpecCreateVnicDetailsNsgIds),
@@ -68,13 +68,13 @@ import (
 //						VlanId:              pulumi.Any(testVlan.Id),
 //					},
 //					DedicatedVmHostId: pulumi.Any(testDedicatedVmHost.Id),
-//					DefinedTags: pulumi.Map{
-//						"foo-namespace.bar-key": pulumi.Any("value"),
+//					DefinedTags: pulumi.StringMap{
+//						"foo-namespace.bar-key": pulumi.String("value"),
 //					},
 //					DisplayName: pulumi.Any(targetAssetUserSpecDisplayName),
 //					FaultDomain: pulumi.Any(targetAssetUserSpecFaultDomain),
-//					FreeformTags: pulumi.Map{
-//						"bar-key": pulumi.Any("value"),
+//					FreeformTags: pulumi.StringMap{
+//						"bar-key": pulumi.String("value"),
 //					},
 //					HostnameLabel: pulumi.Any(targetAssetUserSpecHostnameLabel),
 //					InstanceOptions: &cloudmigrations.TargetAssetUserSpecInstanceOptionsArgs{

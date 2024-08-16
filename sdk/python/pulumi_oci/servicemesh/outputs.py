@@ -1444,30 +1444,30 @@ class GetAccessPoliciesAccessPolicyCollectionResult(dict):
 class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  mesh_id: str,
                  name: str,
                  rules: Sequence['outputs.GetAccessPoliciesAccessPolicyCollectionItemRuleResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique AccessPolicy identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param str mesh_id: Unique Mesh identifier.
         :param str name: A filter to return only resources that match the entire name given.
         :param Sequence['GetAccessPoliciesAccessPolicyCollectionItemRuleArgs'] rules: List of applicable rules.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
@@ -1495,7 +1495,7 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1511,7 +1511,7 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1567,7 +1567,7 @@ class GetAccessPoliciesAccessPolicyCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2539,9 +2539,9 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionResult(dict)
 class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  ingress_gateway_id: str,
                  lifecycle_details: str,
@@ -2549,14 +2549,14 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
                  priority: int,
                  route_rules: Sequence['outputs.GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique IngressGatewayRouteTable identifier.
         :param str ingress_gateway_id: Unique IngressGateway identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -2564,7 +2564,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
         :param int priority: The priority of the route table. A lower value means a higher priority. The routes are declared based on the priority.
         :param Sequence['GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemRouteRuleArgs'] route_rules: The route rules for the ingress gateway.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
@@ -2593,7 +2593,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2609,7 +2609,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -2673,7 +2673,7 @@ class GetIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2921,9 +2921,9 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
     def __init__(__self__, *,
                  access_loggings: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hosts: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemHostResult'],
                  id: str,
                  lifecycle_details: str,
@@ -2931,15 +2931,15 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
                  mtls: Sequence['outputs.GetIngressGatewaysIngressGatewayCollectionItemMtlResult'],
                  name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemAccessLoggingArgs'] access_loggings: This configuration determines if logging is enabled and where the logs will be output.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemHostArgs'] hosts: Array of hostnames and their listener configuration that this gateway will bind to.
         :param str id: Unique IngressGateway identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -2947,7 +2947,7 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
         :param Sequence['GetIngressGatewaysIngressGatewayCollectionItemMtlArgs'] mtls: Mutual TLS settings used when sending requests to virtual services within the mesh.
         :param str name: A filter to return only resources that match the entire name given.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
@@ -2985,7 +2985,7 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3001,7 +3001,7 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3065,7 +3065,7 @@ class GetIngressGatewaysIngressGatewayCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3444,29 +3444,29 @@ class GetMeshesMeshCollectionItemResult(dict):
     def __init__(__self__, *,
                  certificate_authorities: Sequence['outputs.GetMeshesMeshCollectionItemCertificateAuthorityResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  mtls: Sequence['outputs.GetMeshesMeshCollectionItemMtlResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence['GetMeshesMeshCollectionItemCertificateAuthorityArgs'] certificate_authorities: A list of certificate authority resources to use for creating leaf certificates for mTLS authentication. Currently we only support one certificate authority, but this may expand in future releases. Request with more than one certificate authority will be rejected.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param str display_name: A filter to return only resources that match the entire displayName given.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Mesh identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetMeshesMeshCollectionItemMtlArgs'] mtls: Sets a minimum level of mTLS authentication for all virtual services within the mesh.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
@@ -3502,7 +3502,7 @@ class GetMeshesMeshCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3526,7 +3526,7 @@ class GetMeshesMeshCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3566,7 +3566,7 @@ class GetMeshesMeshCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -3773,32 +3773,32 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
     def __init__(__self__, *,
                  access_loggings: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  listeners: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerResult'],
                  name: str,
                  service_discoveries: Sequence['outputs.GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  virtual_service_id: str):
         """
         :param Sequence['GetVirtualDeploymentsVirtualDeploymentCollectionItemAccessLoggingArgs'] access_loggings: This configuration determines if logging is enabled and where the logs will be output.
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique VirtualDeployment identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetVirtualDeploymentsVirtualDeploymentCollectionItemListenerArgs'] listeners: The listeners for the virtual deployment
         :param str name: A filter to return only resources that match the entire name given.
         :param Sequence['GetVirtualDeploymentsVirtualDeploymentCollectionItemServiceDiscoveryArgs'] service_discoveries: Service Discovery configuration for virtual deployments.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
@@ -3837,7 +3837,7 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -3853,7 +3853,7 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -3909,7 +3909,7 @@ class GetVirtualDeploymentsVirtualDeploymentCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4258,31 +4258,31 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionResult(dict)
 class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  name: str,
                  priority: int,
                  route_rules: Sequence['outputs.GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str,
                  virtual_service_id: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique VirtualServiceRouteTable identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
         :param str name: A filter to return only resources that match the entire name given.
         :param int priority: The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param Sequence['GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemRouteRuleArgs'] route_rules: The route rules for the virtual service.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         :param str virtual_service_id: Unique VirtualService identifier.
@@ -4312,7 +4312,7 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4328,7 +4328,7 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4384,7 +4384,7 @@ class GetVirtualServiceRouteTablesVirtualServiceRouteTableCollectionItemResult(d
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -4578,9 +4578,9 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  default_routing_policies: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyResult'],
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  hosts: Sequence[str],
                  id: str,
                  lifecycle_details: str,
@@ -4588,15 +4588,15 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
                  mtls: Sequence['outputs.GetVirtualServicesVirtualServiceCollectionItemMtlResult'],
                  name: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of the compartment in which to list resources.
         :param Sequence['GetVirtualServicesVirtualServiceCollectionItemDefaultRoutingPolicyArgs'] default_routing_policies: Routing policy for the virtual service.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param Sequence[str] hosts: The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
         :param str id: Unique VirtualService identifier.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -4604,7 +4604,7 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
         :param Sequence['GetVirtualServicesVirtualServiceCollectionItemMtlArgs'] mtls: Mutual TLS settings used when communicating with other virtual services or ingress gateways within the mesh.
         :param str name: A filter to return only resources that match the entire name given.
         :param str state: A filter to return only resources that match the life cycle state given.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time when this resource was created in an RFC3339 formatted datetime string.
         :param str time_updated: The time when this resource was updated in an RFC3339 formatted datetime string.
         """
@@ -4642,7 +4642,7 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -4658,7 +4658,7 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -4722,7 +4722,7 @@ class GetVirtualServicesVirtualServiceCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

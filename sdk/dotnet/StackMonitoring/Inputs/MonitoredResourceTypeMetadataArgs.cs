@@ -80,14 +80,14 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         }
 
         [Input("validPropertyValues")]
-        private InputMap<object>? _validPropertyValues;
+        private InputMap<string>? _validPropertyValues;
 
         /// <summary>
         /// (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         /// </summary>
-        public InputMap<object> ValidPropertyValues
+        public InputMap<string> ValidPropertyValues
         {
-            get => _validPropertyValues ?? (_validPropertyValues = new InputMap<object>());
+            get => _validPropertyValues ?? (_validPropertyValues = new InputMap<string>());
             set => _validPropertyValues = value;
         }
 

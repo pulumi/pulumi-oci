@@ -33,13 +33,13 @@ type Model struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
 	ComponentModels ModelComponentModelArrayOutput `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel pulumi.BoolOutput `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -62,7 +62,7 @@ type Model struct {
 	// The current state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The tenancy id of the model.
 	TenancyId pulumi.StringOutput `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
@@ -123,13 +123,13 @@ type modelState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
 	ComponentModels []ModelComponentModel `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel *bool `pulumi:"isComposedModel"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -152,7 +152,7 @@ type modelState struct {
 	// The current state of the model.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The tenancy id of the model.
 	TenancyId *string `pulumi:"tenancyId"`
 	// The base entity which is the input for creating and training a model.
@@ -175,13 +175,13 @@ type ModelState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
 	ComponentModels ModelComponentModelArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Set to true when the model is created by using multiple key value extraction models.
 	IsComposedModel pulumi.BoolPtrInput
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
@@ -204,7 +204,7 @@ type ModelState struct {
 	// The current state of the model.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The tenancy id of the model.
 	TenancyId pulumi.StringPtrInput
 	// The base entity which is the input for creating and training a model.
@@ -231,13 +231,13 @@ type modelArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
 	ComponentModels []ModelComponentModel `pulumi:"componentModels"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
 	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
 	// The maximum model training time in hours, expressed as a decimal fraction.
@@ -264,13 +264,13 @@ type ModelArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) list of active custom Key Value models that need to be composed.
 	ComponentModels ModelComponentModelArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
 	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
 	// The maximum model training time in hours, expressed as a decimal fraction.
@@ -388,8 +388,8 @@ func (o ModelOutput) ComponentModels() ModelComponentModelArrayOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
-func (o ModelOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ModelOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) An optional description of the model.
@@ -403,8 +403,8 @@ func (o ModelOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
-func (o ModelOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Set to true when the model is created by using multiple key value extraction models.
@@ -462,8 +462,8 @@ func (o ModelOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
-func (o ModelOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Model) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ModelOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The tenancy id of the model.

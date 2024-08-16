@@ -2214,13 +2214,13 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
 	// A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
 	EntityTypeName string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A filter to return only log analytics entities whose hostname matches the entire hostname given.
 	Hostname string `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -2240,7 +2240,7 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace string `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
 	SourceId string `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
@@ -2274,13 +2274,13 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName pulumi.StringInput `pulumi:"entityTypeInternalName"`
 	// A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of one of the entityTypeNames given in the list. The match is case-insensitive.
 	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A filter to return only log analytics entities whose hostname matches the entire hostname given.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -2300,7 +2300,7 @@ type GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemArgs struct {
 	// The Logging Analytics namespace used for the request.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties pulumi.MapInput `pulumi:"properties"`
+	Properties pulumi.StringMapInput `pulumi:"properties"`
 	// A filter to return only log analytics entities whose sourceId matches the sourceId given.
 	SourceId pulumi.StringInput `pulumi:"sourceId"`
 	// A filter to return only those log analytics entities with the specified lifecycle state. The state value is case-insensitive.
@@ -2382,10 +2382,10 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Compartme
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Internal name for the log analytics entity type.
@@ -2401,10 +2401,10 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) EntityTyp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only log analytics entities whose hostname matches the entire hostname given.
@@ -2459,10 +2459,8 @@ func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Namespace
 }
 
 // The name/value pairs for parameter values to be used in file patterns specified in log sources.
-func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]interface{} {
-		return v.Properties
-	}).(pulumi.MapOutput)
+func (o GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItemOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntitiesLogAnalyticsEntityCollectionItem) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only log analytics entities whose sourceId matches the sourceId given.
@@ -3359,13 +3357,13 @@ type GetLogAnalyticsEntityTopologyItemNodeItem struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id string `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -3405,13 +3403,13 @@ type GetLogAnalyticsEntityTopologyItemNodeItemArgs struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName pulumi.StringInput `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName pulumi.StringInput `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id pulumi.StringInput `pulumi:"id"`
 	// lifecycleDetails has additional information regarding substeps such as management agent plugin deployment.
@@ -3499,8 +3497,8 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) CompartmentId() pulumi.
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Internal name for the log analytics entity type.
@@ -3514,8 +3512,8 @@ func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) EntityTypeName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetLogAnalyticsEntityTopologyItemNodeItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsEntityTopologyItemNodeItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -3789,13 +3787,13 @@ type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id string `pulumi:"id"`
 	// The Logging Analytics namespace used for the request.
@@ -3821,13 +3819,13 @@ type GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemArgs struc
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only log analytics log groups whose displayName matches the entire display name given. The match is case-insensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The Logging Analytics namespace used for the request.
@@ -3897,10 +3895,10 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -3914,10 +3912,10 @@ func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsLogGroupsLogAnalyticsLogGroupSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -4285,13 +4283,13 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
 	EntityId string `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
@@ -4357,13 +4355,13 @@ type GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollect
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Logging Analytics entity OCID to associate the processed logs with.
 	EntityId pulumi.StringInput `pulumi:"entityId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether or not this rule is currently enabled.
@@ -4483,10 +4481,10 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and can be changed. Avoid entering confidential information.
@@ -4504,10 +4502,10 @@ func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleColl
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) map[string]interface{} {
+func (o GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLogAnalyticsObjectCollectionRulesLogAnalyticsObjectCollectionRuleCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
@@ -6218,7 +6216,7 @@ type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem struct {
 	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
 	ConditionKind string `pulumi:"conditionKind"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
@@ -6228,7 +6226,7 @@ type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem struct {
 	// The field value used for filtering. Only rules using the specified field value will be returned.
 	FieldValue string `pulumi:"fieldValue"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id string `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule is enabled.
@@ -6258,7 +6256,7 @@ type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs struct {
 	// The ingest time rule condition kind used for filtering. Only rules with conditions of the specified kind will be returned.
 	ConditionKind pulumi.StringInput `pulumi:"conditionKind"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
@@ -6268,7 +6266,7 @@ type GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemArgs struct {
 	// The field value used for filtering. Only rules using the specified field value will be returned.
 	FieldValue pulumi.StringInput `pulumi:"fieldValue"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule is enabled.
@@ -6343,10 +6341,10 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Co
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]interface{} {
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -6370,10 +6368,10 @@ func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) Fi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]interface{} {
+func (o GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceIngestTimeRulesIngestTimeRuleSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -7087,13 +7085,13 @@ type GetNamespaceRulesRuleSummaryCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description for this resource.
 	Description string `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id string `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
@@ -7129,13 +7127,13 @@ type GetNamespaceRulesRuleSummaryCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Description for this resource.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return rules whose displayName matches in whole or in part the specified value. The match is case-insensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A flag indicating whether or not the ingest time rule or scheduled task is enabled.
@@ -7213,8 +7211,8 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) CompartmentId() pulumi
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description for this resource.
@@ -7228,8 +7226,8 @@ func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) DisplayName() pulumi.S
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetNamespaceRulesRuleSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceRulesRuleSummaryCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -8029,11 +8027,11 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
 	Id   string `pulumi:"id"`
 	Kind string `pulumi:"kind"`
@@ -8077,11 +8075,11 @@ type GetNamespaceScheduledTasksScheduledTaskCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the given display name exactly.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.
 	Id   pulumi.StringInput `pulumi:"id"`
 	Kind pulumi.StringInput `pulumi:"kind"`
@@ -8172,10 +8170,8 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) Compartment
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly.
@@ -8184,10 +8180,8 @@ func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) DisplayName
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetNamespaceScheduledTasksScheduledTaskCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNamespaceScheduledTasksScheduledTaskCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data plane resource.

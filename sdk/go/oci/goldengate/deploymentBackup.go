@@ -37,11 +37,11 @@ import (
 //				DisplayName:   pulumi.Any(deploymentBackupDisplayName),
 //				Namespace:     pulumi.Any(deploymentBackupNamespace),
 //				Object:        pulumi.Any(deploymentBackupObject),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Locks: goldengate.DeploymentBackupLockArray{
 //					&goldengate.DeploymentBackupLockArgs{
@@ -76,7 +76,7 @@ type DeploymentBackup struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -84,7 +84,7 @@ type DeploymentBackup struct {
 	// An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// True if this object is automatically created
 	IsAutomatic    pulumi.BoolOutput `pulumi:"isAutomatic"`
 	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
@@ -106,7 +106,7 @@ type DeploymentBackup struct {
 	// Possible lifecycle states.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished pulumi.StringOutput `pulumi:"timeBackupFinished"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -172,7 +172,7 @@ type deploymentBackupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -180,7 +180,7 @@ type deploymentBackupState struct {
 	// An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if this object is automatically created
 	IsAutomatic    *bool `pulumi:"isAutomatic"`
 	IsLockOverride *bool `pulumi:"isLockOverride"`
@@ -202,7 +202,7 @@ type deploymentBackupState struct {
 	// Possible lifecycle states.
 	State *string `pulumi:"state"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished *string `pulumi:"timeBackupFinished"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -221,7 +221,7 @@ type DeploymentBackupState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringPtrInput
 	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
@@ -229,7 +229,7 @@ type DeploymentBackupState struct {
 	// An object's Display Name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// True if this object is automatically created
 	IsAutomatic    pulumi.BoolPtrInput
 	IsLockOverride pulumi.BoolPtrInput
@@ -251,7 +251,7 @@ type DeploymentBackupState struct {
 	// Possible lifecycle states.
 	State pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeBackupFinished pulumi.StringPtrInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -272,14 +272,14 @@ type deploymentBackupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []DeploymentBackupLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
@@ -298,13 +298,13 @@ type DeploymentBackupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringInput
 	// An object's Display Name.
 	DisplayName pulumi.StringInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapInput
+	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// Locks associated with this resource.
 	Locks DeploymentBackupLockArrayInput
@@ -420,8 +420,8 @@ func (o DeploymentBackupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
-func (o DeploymentBackupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DeploymentBackupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -440,8 +440,8 @@ func (o DeploymentBackupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o DeploymentBackupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DeploymentBackupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // True if this object is automatically created
@@ -492,8 +492,8 @@ func (o DeploymentBackupOutput) State() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o DeploymentBackupOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DeploymentBackup) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DeploymentBackupOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time of the resource backup finish. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.

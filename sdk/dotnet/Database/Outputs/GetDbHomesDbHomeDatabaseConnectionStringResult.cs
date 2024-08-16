@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class GetDbHomesDbHomeDatabaseConnectionStringResult
     {
-        public readonly ImmutableDictionary<string, object> AllConnectionStrings;
+        public readonly ImmutableDictionary<string, string> AllConnectionStrings;
         public readonly string CdbDefault;
         public readonly string CdbIpDefault;
 
         [OutputConstructor]
         private GetDbHomesDbHomeDatabaseConnectionStringResult(
-            ImmutableDictionary<string, object> allConnectionStrings,
+            ImmutableDictionary<string, string> allConnectionStrings,
 
             string cdbDefault,
 

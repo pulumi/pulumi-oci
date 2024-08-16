@@ -36,11 +36,11 @@ import (
 //				EnterpriseManagerEntityIdentifier: pulumi.Any(exadataInsightEnterpriseManagerEntityIdentifier),
 //				EnterpriseManagerIdentifier:       pulumi.Any(exadataInsightEnterpriseManagerIdentifier),
 //				EntitySource:                      pulumi.Any(exadataInsightEntitySource),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IsAutoSyncEnabled: pulumi.Any(exadataInsightIsAutoSyncEnabled),
 //				MemberVmClusterDetails: opsi.ExadataInsightMemberVmClusterDetailArray{
@@ -107,7 +107,7 @@ type ExadataInsight struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringOutput `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -134,7 +134,7 @@ type ExadataInsight struct {
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringOutput `pulumi:"exadataType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled pulumi.BoolOutput `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
@@ -150,7 +150,7 @@ type ExadataInsight struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -196,7 +196,7 @@ type exadataInsightState struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Display Name
@@ -223,7 +223,7 @@ type exadataInsightState struct {
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType *string `pulumi:"exadataType"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled *bool `pulumi:"isAutoSyncEnabled"`
 	// true if virtualization is used in the Exadata system
@@ -239,7 +239,7 @@ type exadataInsightState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -250,7 +250,7 @@ type ExadataInsightState struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
 	// Enterprise Manager Entity Display Name
@@ -277,7 +277,7 @@ type ExadataInsightState struct {
 	// Operations Insights internal representation of the the Exadata system type.
 	ExadataType pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled pulumi.BoolPtrInput
 	// true if virtualization is used in the Exadata system
@@ -293,7 +293,7 @@ type ExadataInsightState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Exadata insight was updated. An RFC3339 formatted datetime string
@@ -308,7 +308,7 @@ type exadataInsightArgs struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
 	// Enterprise Manager Entity Unique Identifier
@@ -319,7 +319,7 @@ type exadataInsightArgs struct {
 	EntitySource   string  `pulumi:"entitySource"`
 	ExadataInfraId *string `pulumi:"exadataInfraId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled      *bool                                 `pulumi:"isAutoSyncEnabled"`
 	MemberVmClusterDetails []ExadataInsightMemberVmClusterDetail `pulumi:"memberVmClusterDetails"`
@@ -335,7 +335,7 @@ type ExadataInsightArgs struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId pulumi.StringPtrInput
 	// Enterprise Manager Entity Unique Identifier
@@ -346,7 +346,7 @@ type ExadataInsightArgs struct {
 	EntitySource   pulumi.StringInput
 	ExadataInfraId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
 	IsAutoSyncEnabled      pulumi.BoolPtrInput
 	MemberVmClusterDetails ExadataInsightMemberVmClusterDetailArrayInput
@@ -450,8 +450,8 @@ func (o ExadataInsightOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ExadataInsightOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInsight) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExadataInsightOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // OPSI Enterprise Manager Bridge OCID
@@ -522,8 +522,8 @@ func (o ExadataInsightOutput) ExadataType() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ExadataInsightOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInsight) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExadataInsightOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Set to true to enable automatic enablement and disablement of related targets from Enterprise Manager. New resources (e.g. Database Insights) will be placed in the same compartment as the related Exadata Insight.
@@ -561,8 +561,8 @@ func (o ExadataInsightOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ExadataInsightOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExadataInsight) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ExadataInsightOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExadataInsight) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Exadata insight was first enabled. An RFC3339 formatted datetime string

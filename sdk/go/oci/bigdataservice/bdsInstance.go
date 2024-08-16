@@ -47,14 +47,14 @@ type BdsInstance struct {
 	// The user who created the cluster.
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringOutput          `pulumi:"displayName"`
 	EdgeNode    BdsInstanceEdgeNodePtrOutput `pulumi:"edgeNode"`
 	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
 	ExecuteBootstrapScriptTrigger pulumi.IntPtrOutput `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes pulumi.StringArrayOutput `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -186,14 +186,14 @@ type bdsInstanceState struct {
 	// The user who created the cluster.
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
 	DisplayName *string              `pulumi:"displayName"`
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
 	ExecuteBootstrapScriptTrigger *int `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -259,14 +259,14 @@ type BdsInstanceState struct {
 	// The user who created the cluster.
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringPtrInput
 	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
 	ExecuteBootstrapScriptTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -332,14 +332,14 @@ type bdsInstanceArgs struct {
 	CompartmentId         string                            `pulumi:"compartmentId"`
 	ComputeOnlyWorkerNode *BdsInstanceComputeOnlyWorkerNode `pulumi:"computeOnlyWorkerNode"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the BDS instance
 	DisplayName string               `pulumi:"displayName"`
 	EdgeNode    *BdsInstanceEdgeNode `pulumi:"edgeNode"`
 	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
 	ExecuteBootstrapScriptTrigger *int `pulumi:"executeBootstrapScriptTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes []string `pulumi:"ignoreExistingNodesShapes"`
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -392,14 +392,14 @@ type BdsInstanceArgs struct {
 	CompartmentId         pulumi.StringInput
 	ComputeOnlyWorkerNode BdsInstanceComputeOnlyWorkerNodePtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the BDS instance
 	DisplayName pulumi.StringInput
 	EdgeNode    BdsInstanceEdgeNodePtrInput
 	// (Updatable) An optional property when incremented triggers Execute Bootstrap Script. Could be set to any integer value.
 	ExecuteBootstrapScriptTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
 	IgnoreExistingNodesShapes pulumi.StringArrayInput
 	// (Updatable) Boolean flag specifying whether we configure Cloud SQL or not
@@ -574,8 +574,8 @@ func (o BdsInstanceOutput) CreatedBy() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o BdsInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BdsInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Name of the BDS instance
@@ -593,8 +593,8 @@ func (o BdsInstanceOutput) ExecuteBootstrapScriptTrigger() pulumi.IntPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o BdsInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *BdsInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BdsInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *BdsInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.

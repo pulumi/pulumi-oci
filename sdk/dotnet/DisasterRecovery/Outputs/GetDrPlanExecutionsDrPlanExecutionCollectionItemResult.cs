@@ -20,7 +20,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A filter to return only resources that match the given display name.  Example: `MyResourceDisplayName`
         /// </summary>
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// A list of groups executed in this DR plan execution.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.  Example: `2019-03-29T09:36:42Z`
         /// </summary>
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         private GetDrPlanExecutionsDrPlanExecutionCollectionItemResult(
             string compartmentId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
@@ -112,7 +112,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemExecutionOptionResult> executionOptions,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             ImmutableArray<Outputs.GetDrPlanExecutionsDrPlanExecutionCollectionItemGroupExecutionResult> groupExecutions,
 
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
 

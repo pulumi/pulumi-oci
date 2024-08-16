@@ -74,12 +74,12 @@ import (
 //					},
 //				},
 //				CoolDownInSeconds: pulumi.Any(autoScalingConfigurationCoolDownInSeconds),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(autoScalingConfigurationDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				IsEnabled: pulumi.Any(autoScalingConfigurationIsEnabled),
 //			})
@@ -113,11 +113,11 @@ type AutoScalingConfiguration struct {
 	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntOutput `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Whether the autoscaling configuration is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The maximum number of resources to scale out to.
@@ -180,11 +180,11 @@ type autoScalingConfigurationState struct {
 	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds *int `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether the autoscaling configuration is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The maximum number of resources to scale out to.
@@ -209,11 +209,11 @@ type AutoScalingConfigurationState struct {
 	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether the autoscaling configuration is enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// The maximum number of resources to scale out to.
@@ -242,11 +242,11 @@ type autoScalingConfigurationArgs struct {
 	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds *int `pulumi:"coolDownInSeconds"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Whether the autoscaling configuration is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -266,11 +266,11 @@ type AutoScalingConfigurationArgs struct {
 	// For schedule-based autoscaling policies, this value is not used.
 	CoolDownInSeconds pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Whether the autoscaling configuration is enabled.
 	IsEnabled pulumi.BoolPtrInput
 	// Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -386,8 +386,8 @@ func (o AutoScalingConfigurationOutput) CoolDownInSeconds() pulumi.IntOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o AutoScalingConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AutoScalingConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -396,8 +396,8 @@ func (o AutoScalingConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o AutoScalingConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AutoScalingConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutoScalingConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Whether the autoscaling configuration is enabled.

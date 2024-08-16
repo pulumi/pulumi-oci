@@ -57,7 +57,7 @@ export interface GetOceInstanceResult {
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     /**
      * OceInstance description, can be updated
      */
@@ -69,7 +69,7 @@ export interface GetOceInstanceResult {
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * Unique GUID identifier that is immutable on creation
      */
@@ -111,7 +111,7 @@ export interface GetOceInstanceResult {
     /**
      * SERVICE data. Example: `{"service": {"IDCS": "value"}}`
      */
-    readonly service: {[key: string]: any};
+    readonly service: {[key: string]: string};
     /**
      * The current state of the instance lifecycle.
      */
@@ -123,7 +123,7 @@ export interface GetOceInstanceResult {
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * Tenancy Identifier
      */

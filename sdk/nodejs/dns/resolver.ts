@@ -71,7 +71,7 @@ export class Resolver extends pulumi.CustomResource {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * (Updatable) The display name of the resolver.
      */
@@ -85,7 +85,7 @@ export class Resolver extends pulumi.CustomResource {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
@@ -204,7 +204,7 @@ export interface ResolverState {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The display name of the resolver.
      */
@@ -218,7 +218,7 @@ export interface ResolverState {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
      */
@@ -274,7 +274,7 @@ export interface ResolverArgs {
      *
      * **Example:** `{"Operations": {"CostCenter": "42"}}`
      */
-    definedTags?: pulumi.Input<{[key: string]: any}>;
+    definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * (Updatable) The display name of the resolver.
      */
@@ -284,7 +284,7 @@ export interface ResolverArgs {
      *
      * **Example:** `{"Department": "Finance"}`
      */
-    freeformTags?: pulumi.Input<{[key: string]: any}>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The OCID of the target resolver.
      */

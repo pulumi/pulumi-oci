@@ -146,7 +146,7 @@ namespace Pulumi.Oci.StackMonitoring
         /// Criteria based on resource property.
         /// </summary>
         [Output("propertyEquals")]
-        public Output<ImmutableDictionary<string, object>?> PropertyEquals { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> PropertyEquals { get; private set; } = null!;
 
         /// <summary>
         /// Resource category filter.
@@ -357,14 +357,14 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? NameContains { get; set; }
 
         [Input("propertyEquals")]
-        private InputMap<object>? _propertyEquals;
+        private InputMap<string>? _propertyEquals;
 
         /// <summary>
         /// Criteria based on resource property.
         /// </summary>
-        public InputMap<object> PropertyEquals
+        public InputMap<string> PropertyEquals
         {
-            get => _propertyEquals ?? (_propertyEquals = new InputMap<object>());
+            get => _propertyEquals ?? (_propertyEquals = new InputMap<string>());
             set => _propertyEquals = value;
         }
 
@@ -551,14 +551,14 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? NameContains { get; set; }
 
         [Input("propertyEquals")]
-        private InputMap<object>? _propertyEquals;
+        private InputMap<string>? _propertyEquals;
 
         /// <summary>
         /// Criteria based on resource property.
         /// </summary>
-        public InputMap<object> PropertyEquals
+        public InputMap<string> PropertyEquals
         {
-            get => _propertyEquals ?? (_propertyEquals = new InputMap<object>());
+            get => _propertyEquals ?? (_propertyEquals = new InputMap<string>());
             set => _propertyEquals = value;
         }
 

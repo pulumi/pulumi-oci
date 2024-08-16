@@ -38,12 +38,12 @@ import (
 //				CccUpgradeScheduleId: pulumi.Any(testCccUpgradeSchedule.Id),
 //				ConnectionDetails:    pulumi.Any(cccInfrastructureConnectionDetails),
 //				ConnectionState:      pulumi.Any(cccInfrastructureConnectionState),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(cccInfrastructureDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -74,13 +74,13 @@ type AtCustomerCccInfrastructure struct {
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
 	ConnectionState pulumi.StringOutput `pulumi:"connectionState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories AtCustomerCccInfrastructureInfrastructureInventoryArrayOutput `pulumi:"infrastructureInventories"`
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -101,7 +101,7 @@ type AtCustomerCccInfrastructure struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -158,13 +158,13 @@ type atCustomerCccInfrastructureState struct {
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
 	ConnectionState *string `pulumi:"connectionState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories []AtCustomerCccInfrastructureInfrastructureInventory `pulumi:"infrastructureInventories"`
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -185,7 +185,7 @@ type atCustomerCccInfrastructureState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId *string `pulumi:"subnetId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -204,13 +204,13 @@ type AtCustomerCccInfrastructureState struct {
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
 	ConnectionState pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
 	InfrastructureInventories AtCustomerCccInfrastructureInfrastructureInventoryArrayInput
 	// Configuration information for the Compute Cloud@Customer infrastructure. This  network configuration information cannot be updated and is retrieved from the data center. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -231,7 +231,7 @@ type AtCustomerCccInfrastructureState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// Compute Cloud@Customer infrastructure updated date and time, using an RFC3339 formatted datetime string.
@@ -254,13 +254,13 @@ type atCustomerCccInfrastructureArgs struct {
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
 	ConnectionState *string `pulumi:"connectionState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
 	//
 	// ** IMPORTANT **
@@ -279,13 +279,13 @@ type AtCustomerCccInfrastructureArgs struct {
 	// (Updatable) The current connection state of the Compute Cloud@Customer infrastructure. This value will default to REJECT if the value is not provided. The only valid value at creation time is REJECT.
 	ConnectionState pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Identifier for network subnet that will be used to communicate with Compute Cloud@Customer infrastructure.
 	//
 	// ** IMPORTANT **
@@ -401,8 +401,8 @@ func (o AtCustomerCccInfrastructureOutput) ConnectionState() pulumi.StringOutput
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o AtCustomerCccInfrastructureOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AtCustomerCccInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure. Avoid entering confidential information.
@@ -416,8 +416,8 @@ func (o AtCustomerCccInfrastructureOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o AtCustomerCccInfrastructureOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AtCustomerCccInfrastructureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Inventory for a Compute Cloud@Customer infrastructure. This information cannot be updated and is from the infrastructure. The information will only be available after the connectionState is transitioned to CONNECTED.
@@ -468,8 +468,8 @@ func (o AtCustomerCccInfrastructureOutput) SubnetId() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o AtCustomerCccInfrastructureOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o AtCustomerCccInfrastructureOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AtCustomerCccInfrastructure) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Compute Cloud@Customer infrastructure creation date and time, using an RFC3339 formatted datetime string.

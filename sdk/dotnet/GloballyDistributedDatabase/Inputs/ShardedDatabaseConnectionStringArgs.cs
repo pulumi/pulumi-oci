@@ -13,14 +13,14 @@ namespace Pulumi.Oci.GloballyDistributedDatabase.Inputs
     public sealed class ShardedDatabaseConnectionStringArgs : global::Pulumi.ResourceArgs
     {
         [Input("allConnectionStrings")]
-        private InputMap<object>? _allConnectionStrings;
+        private InputMap<string>? _allConnectionStrings;
 
         /// <summary>
         /// Collection of connection strings.
         /// </summary>
-        public InputMap<object> AllConnectionStrings
+        public InputMap<string> AllConnectionStrings
         {
-            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<object>());
+            get => _allConnectionStrings ?? (_allConnectionStrings = new InputMap<string>());
             set => _allConnectionStrings = value;
         }
 

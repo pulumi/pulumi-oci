@@ -5,7 +5,6 @@ package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -18,7 +17,7 @@ public final class RemediationRecipeVerifyConfiguration {
      * @return (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
      * 
      */
-    private @Nullable Map<String,Object> additionalParameters;
+    private @Nullable Map<String,String> additionalParameters;
     /**
      * @return (Updatable) The type of Build Service.
      * 
@@ -70,7 +69,7 @@ public final class RemediationRecipeVerifyConfiguration {
      * @return (Updatable) Additional key-value pairs passed as parameters to the build service when running an experiment.
      * 
      */
-    public Map<String,Object> additionalParameters() {
+    public Map<String,String> additionalParameters() {
         return this.additionalParameters == null ? Map.of() : this.additionalParameters;
     }
     /**
@@ -146,7 +145,7 @@ public final class RemediationRecipeVerifyConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> additionalParameters;
+        private @Nullable Map<String,String> additionalParameters;
         private String buildServiceType;
         private @Nullable String jenkinsUrl;
         private @Nullable String jobName;
@@ -172,7 +171,7 @@ public final class RemediationRecipeVerifyConfiguration {
         }
 
         @CustomType.Setter
-        public Builder additionalParameters(@Nullable Map<String,Object> additionalParameters) {
+        public Builder additionalParameters(@Nullable Map<String,String> additionalParameters) {
 
             this.additionalParameters = additionalParameters;
             return this;

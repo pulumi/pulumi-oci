@@ -87,8 +87,8 @@ class _ResourceActionState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compartment_name: Optional[pulumi.Input[str]] = None,
                  estimated_cost_saving: Optional[pulumi.Input[float]] = None,
-                 extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  recommendation_id: Optional[pulumi.Input[str]] = None,
                  resource_action_id: Optional[pulumi.Input[str]] = None,
@@ -107,8 +107,8 @@ class _ResourceActionState:
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] compartment_name: The name associated with the compartment.
         :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs for the resource action.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Custom metadata key/value pairs for the resource action.
         :param pulumi.Input[str] name: The name assigned to the resource.
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
         :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
@@ -226,26 +226,26 @@ class _ResourceActionState:
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def extended_metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
         return pulumi.get(self, "extended_metadata")
 
     @extended_metadata.setter
-    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def extended_metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "extended_metadata", value)
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Custom metadata key/value pairs for the resource action.
         """
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
     @property
@@ -514,8 +514,8 @@ class ResourceAction(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             compartment_name: Optional[pulumi.Input[str]] = None,
             estimated_cost_saving: Optional[pulumi.Input[float]] = None,
-            extended_metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-            metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            extended_metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
+            metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             name: Optional[pulumi.Input[str]] = None,
             recommendation_id: Optional[pulumi.Input[str]] = None,
             resource_action_id: Optional[pulumi.Input[str]] = None,
@@ -539,8 +539,8 @@ class ResourceAction(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The OCID of the compartment.
         :param pulumi.Input[str] compartment_name: The name associated with the compartment.
         :param pulumi.Input[float] estimated_cost_saving: The estimated cost savings, in dollars, for the resource action.
-        :param pulumi.Input[Mapping[str, Any]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-        :param pulumi.Input[Mapping[str, Any]] metadata: Custom metadata key/value pairs for the resource action.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] extended_metadata: Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: Custom metadata key/value pairs for the resource action.
         :param pulumi.Input[str] name: The name assigned to the resource.
         :param pulumi.Input[str] recommendation_id: The unique OCID associated with the recommendation.
         :param pulumi.Input[str] resource_action_id: The unique OCID associated with the resource action.
@@ -625,7 +625,7 @@ class ResourceAction(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="extendedMetadata")
-    def extended_metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def extended_metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         """
@@ -633,7 +633,7 @@ class ResourceAction(pulumi.CustomResource):
 
     @property
     @pulumi.getter
-    def metadata(self) -> pulumi.Output[Mapping[str, Any]]:
+    def metadata(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Custom metadata key/value pairs for the resource action.
         """

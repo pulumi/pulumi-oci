@@ -61,14 +61,14 @@ type GetDiscoveryJobResult struct {
 	// The OCID of the compartment that contains the discovery job.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags    map[string]interface{} `pulumi:"definedTags"`
-	DiscoveryJobId string                 `pulumi:"discoveryJobId"`
+	DefinedTags    map[string]string `pulumi:"definedTags"`
+	DiscoveryJobId string            `pulumi:"discoveryJobId"`
 	// The type of the discovery job. It defines the job's scope. NEW identifies new sensitive columns in the target database that are not in the sensitive data model. DELETED identifies columns that are present in the sensitive data model but have been deleted from the target database. MODIFIED identifies columns that are present in the target database as well as the sensitive data model but some of their attributes have been modified. ALL covers all the above three scenarios and reports new, deleted and modified columns.
 	DiscoveryType string `pulumi:"discoveryType"`
 	// The display name of the discovery job.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the discovery job.
 	Id string `pulumi:"id"`
 	// Indicates if the discovery job should identify potential application-level (non-dictionary) referential relationships between columns. Note that data discovery automatically identifies and adds database-level (dictionary-defined) relationships. This option helps identify application-level relationships that are not defined in the database dictionary, which in turn, helps identify additional sensitive columns and preserve referential integrity during data masking. It's disabled by default and should be used only if there is a need to identify application-level relationships.
@@ -88,7 +88,7 @@ type GetDiscoveryJobResult struct {
 	// The current state of the discovery job.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The data discovery jobs will scan the tables specified here, including both schemas and tables.
 	TablesForDiscoveries []GetDiscoveryJobTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// The OCID of the target database associated with the discovery job.
@@ -155,8 +155,8 @@ func (o GetDiscoveryJobResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetDiscoveryJobResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetDiscoveryJobResultOutput) DiscoveryJobId() pulumi.StringOutput {
@@ -174,8 +174,8 @@ func (o GetDiscoveryJobResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetDiscoveryJobResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the discovery job.
@@ -224,8 +224,8 @@ func (o GetDiscoveryJobResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDiscoveryJobResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDiscoveryJobResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The data discovery jobs will scan the tables specified here, including both schemas and tables.

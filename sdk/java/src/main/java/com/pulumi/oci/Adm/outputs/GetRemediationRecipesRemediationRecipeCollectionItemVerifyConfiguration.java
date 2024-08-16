@@ -5,7 +5,6 @@ package com.pulumi.oci.Adm.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -16,7 +15,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemVerifyCon
      * @return Additional key-value pairs passed as parameters to the build service when running an experiment.
      * 
      */
-    private Map<String,Object> additionalParameters;
+    private Map<String,String> additionalParameters;
     /**
      * @return The type of Build Service.
      * 
@@ -68,7 +67,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemVerifyCon
      * @return Additional key-value pairs passed as parameters to the build service when running an experiment.
      * 
      */
-    public Map<String,Object> additionalParameters() {
+    public Map<String,String> additionalParameters() {
         return this.additionalParameters;
     }
     /**
@@ -144,7 +143,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemVerifyCon
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> additionalParameters;
+        private Map<String,String> additionalParameters;
         private String buildServiceType;
         private String jenkinsUrl;
         private String jobName;
@@ -170,7 +169,7 @@ public final class GetRemediationRecipesRemediationRecipeCollectionItemVerifyCon
         }
 
         @CustomType.Setter
-        public Builder additionalParameters(Map<String,Object> additionalParameters) {
+        public Builder additionalParameters(Map<String,String> additionalParameters) {
             if (additionalParameters == null) {
               throw new MissingRequiredPropertyException("GetRemediationRecipesRemediationRecipeCollectionItemVerifyConfiguration", "additionalParameters");
             }

@@ -50,11 +50,11 @@ import (
 //				CompartmentId: pulumi.Any(tenancyOcid),
 //				Description:   pulumi.Any(networkSourceDescription),
 //				Name:          pulumi.Any(networkSourceName),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				PublicSourceLists:  pulumi.Any(networkSourcePublicSourceList),
 //				Services:           pulumi.Any(networkSourceServices),
@@ -82,11 +82,11 @@ type NetworkSource struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringOutput `pulumi:"inactiveState"`
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -145,11 +145,11 @@ type networkSourceState struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
 	Description *string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState *string `pulumi:"inactiveState"`
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -173,11 +173,11 @@ type NetworkSourceState struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The detailed status of INACTIVE lifecycleState.
 	InactiveState pulumi.StringPtrInput
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
@@ -205,11 +205,11 @@ type networkSourceArgs struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
 	Name *string `pulumi:"name"`
 	// (Updatable) A list of allowed public IP addresses and CIDR ranges.
@@ -228,11 +228,11 @@ type NetworkSourceArgs struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
 	Description pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The name you assign to the network source during creation. The name must be unique across all groups in the tenancy and cannot be changed.
 	Name pulumi.StringPtrInput
 	// (Updatable) A list of allowed public IP addresses and CIDR ranges.
@@ -339,8 +339,8 @@ func (o NetworkSourceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o NetworkSourceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NetworkSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NetworkSourceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkSource) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description you assign to the network source during creation. Does not have to be unique, and it's changeable.
@@ -349,8 +349,8 @@ func (o NetworkSourceOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o NetworkSourceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NetworkSource) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NetworkSourceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkSource) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The detailed status of INACTIVE lifecycleState.

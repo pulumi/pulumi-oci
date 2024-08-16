@@ -65,13 +65,13 @@ type GetSecurityPolicyResult struct {
 	// The OCID of the security policy's compartment
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The security policy's description
 	Description string `pulumi:"description"`
 	// The security policy's display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A shorter version of the security policy's name
 	FriendlyName string `pulumi:"friendlyName"`
 	// The provider-assigned unique ID for this managed resource.
@@ -140,8 +140,8 @@ func (o GetSecurityPolicyResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetSecurityPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSecurityPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The security policy's description
@@ -155,8 +155,8 @@ func (o GetSecurityPolicyResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetSecurityPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSecurityPolicyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A shorter version of the security policy's name

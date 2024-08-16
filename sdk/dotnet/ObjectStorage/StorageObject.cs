@@ -129,7 +129,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// Note: All specified keys must be in lower case.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>?> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>?> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The Object Storage namespace used for the request.
@@ -280,15 +280,15 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<bool>? DeleteAllObjectVersions { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// Optional user-defined metadata key and value.
         /// Note: All specified keys must be in lower case.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 
@@ -400,15 +400,15 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<bool>? DeleteAllObjectVersions { get; set; }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// Optional user-defined metadata key and value.
         /// Note: All specified keys must be in lower case.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

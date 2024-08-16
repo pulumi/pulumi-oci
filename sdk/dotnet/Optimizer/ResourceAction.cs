@@ -64,13 +64,13 @@ namespace Pulumi.Oci.Optimizer
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
         [Output("extendedMetadata")]
-        public Output<ImmutableDictionary<string, object>> ExtendedMetadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> ExtendedMetadata { get; private set; } = null!;
 
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
         [Output("metadata")]
-        public Output<ImmutableDictionary<string, object>> Metadata { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
 
         /// <summary>
         /// The name assigned to the resource.
@@ -259,26 +259,26 @@ namespace Pulumi.Oci.Optimizer
         public Input<double>? EstimatedCostSaving { get; set; }
 
         [Input("extendedMetadata")]
-        private InputMap<object>? _extendedMetadata;
+        private InputMap<string>? _extendedMetadata;
 
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public InputMap<object> ExtendedMetadata
+        public InputMap<string> ExtendedMetadata
         {
-            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<object>());
+            get => _extendedMetadata ?? (_extendedMetadata = new InputMap<string>());
             set => _extendedMetadata = value;
         }
 
         [Input("metadata")]
-        private InputMap<object>? _metadata;
+        private InputMap<string>? _metadata;
 
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
-        public InputMap<object> Metadata
+        public InputMap<string> Metadata
         {
-            get => _metadata ?? (_metadata = new InputMap<object>());
+            get => _metadata ?? (_metadata = new InputMap<string>());
             set => _metadata = value;
         }
 

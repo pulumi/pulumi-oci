@@ -23,7 +23,6 @@ import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemTes
 import com.pulumi.oci.DevOps.outputs.GetDeployStagesDeployStageCollectionItemWaitCriteria;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -90,7 +89,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
-    private Map<String,Object> config;
+    private Map<String,String> config;
     /**
      * @return Specifies the container configuration.
      * 
@@ -100,7 +99,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Optional artifact OCID. The artifact will be included in the body for the function invocation during the stage&#39;s execution. If the DeployArtifact.argumentSubstituitionMode is set to SUBSTITUTE_PLACEHOLDERS, then the pipeline parameter values will be used to replace the placeholders in the artifact content.
      * 
@@ -165,7 +164,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return Function environment OCID.
      * 
@@ -350,7 +349,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    private Map<String,Object> systemTags;
+    private Map<String,String> systemTags;
     /**
      * @return Specifies config for load balancer traffic shift stages. The Load Balancer specified here should be an Application Load Balancer type. Network Load Balancers are not supported.
      * 
@@ -469,7 +468,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
-    public Map<String,Object> config() {
+    public Map<String,String> config() {
         return this.config;
     }
     /**
@@ -483,7 +482,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
@@ -574,7 +573,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -833,7 +832,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
      * @return Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
      * 
      */
-    public Map<String,Object> systemTags() {
+    public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
@@ -906,9 +905,9 @@ public final class GetDeployStagesDeployStageCollectionItem {
         private String computeInstanceGroupCanaryDeployStageId;
         private String computeInstanceGroupCanaryTrafficShiftDeployStageId;
         private String computeInstanceGroupDeployEnvironmentId;
-        private Map<String,Object> config;
+        private Map<String,String> config;
         private List<GetDeployStagesDeployStageCollectionItemContainerConfig> containerConfigs;
-        private Map<String,Object> definedTags;
+        private Map<String,String> definedTags;
         private String deployArtifactId;
         private List<String> deployArtifactIds;
         private String deployEnvironmentIdA;
@@ -921,7 +920,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
         private String displayName;
         private String dockerImageDeployArtifactId;
         private List<GetDeployStagesDeployStageCollectionItemFailurePolicy> failurePolicies;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> freeformTags;
         private String functionDeployEnvironmentId;
         private Integer functionTimeoutInSeconds;
         private List<GetDeployStagesDeployStageCollectionItemGreenBackendIp> greenBackendIps;
@@ -958,7 +957,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
         private Boolean shouldSkipCrds;
         private Boolean shouldSkipRenderSubchartNotes;
         private String state;
-        private Map<String,Object> systemTags;
+        private Map<String,String> systemTags;
         private List<GetDeployStagesDeployStageCollectionItemTestLoadBalancerConfig> testLoadBalancerConfigs;
         private String timeCreated;
         private String timeUpdated;
@@ -1143,7 +1142,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder config(Map<String,Object> config) {
+        public Builder config(Map<String,String> config) {
             if (config == null) {
               throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItem", "config");
             }
@@ -1162,7 +1161,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
             return containerConfigs(List.of(containerConfigs));
         }
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItem", "definedTags");
             }
@@ -1275,7 +1274,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
             return failurePolicies(List.of(failurePolicies));
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItem", "freeformTags");
             }
@@ -1598,7 +1597,7 @@ public final class GetDeployStagesDeployStageCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder systemTags(Map<String,Object> systemTags) {
+        public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDeployStagesDeployStageCollectionItem", "systemTags");
             }

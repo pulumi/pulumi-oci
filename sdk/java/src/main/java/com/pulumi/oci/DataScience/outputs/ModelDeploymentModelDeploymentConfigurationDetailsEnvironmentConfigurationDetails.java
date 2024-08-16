@@ -6,7 +6,6 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +34,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      * @return (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can&#39;t be reserved Model Deployment environment variables.
      * 
      */
-    private @Nullable Map<String,Object> environmentVariables;
+    private @Nullable Map<String,String> environmentVariables;
     /**
      * @return (Updatable) The port on which the container [HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) would listen. The port can be anything between `1024` and `65535`. The following ports cannot be used `24224`, `8446`, `8447`.
      * 
@@ -83,7 +82,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
      * @return (Updatable) Environment variables to set for the web server container. The size of envVars must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall environment variables is limited to 2048 bytes. Key can&#39;t be reserved Model Deployment environment variables.
      * 
      */
-    public Map<String,Object> environmentVariables() {
+    public Map<String,String> environmentVariables() {
         return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
@@ -127,7 +126,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
         private @Nullable List<String> cmds;
         private @Nullable List<String> entrypoints;
         private String environmentConfigurationType;
-        private @Nullable Map<String,Object> environmentVariables;
+        private @Nullable Map<String,String> environmentVariables;
         private @Nullable Integer healthCheckPort;
         private @Nullable String image;
         private @Nullable String imageDigest;
@@ -172,7 +171,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsEnvironment
             return this;
         }
         @CustomType.Setter
-        public Builder environmentVariables(@Nullable Map<String,Object> environmentVariables) {
+        public Builder environmentVariables(@Nullable Map<String,String> environmentVariables) {
 
             this.environmentVariables = environmentVariables;
             return this;

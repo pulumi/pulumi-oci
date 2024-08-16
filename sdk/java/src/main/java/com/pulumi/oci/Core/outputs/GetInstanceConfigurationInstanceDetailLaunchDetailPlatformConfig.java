@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -23,7 +22,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
      * @return Instance Platform Configuration Configuration Map for flexible setting input.
      * 
      */
-    private Map<String,Object> configMap;
+    private Map<String,String> configMap;
     /**
      * @return Whether the Access Control Service is enabled on the instance. When enabled, the platform can enforce PCIe device isolation, required for VFIO device pass-through.
      * 
@@ -87,7 +86,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
      * @return Instance Platform Configuration Configuration Map for flexible setting input.
      * 
      */
-    public Map<String,Object> configMap() {
+    public Map<String,String> configMap() {
         return this.configMap;
     }
     /**
@@ -171,7 +170,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
     @CustomType.Builder
     public static final class Builder {
         private Boolean areVirtualInstructionsEnabled;
-        private Map<String,Object> configMap;
+        private Map<String,String> configMap;
         private Boolean isAccessControlServiceEnabled;
         private Boolean isInputOutputMemoryManagementUnitEnabled;
         private Boolean isMeasuredBootEnabled;
@@ -208,7 +207,7 @@ public final class GetInstanceConfigurationInstanceDetailLaunchDetailPlatformCon
             return this;
         }
         @CustomType.Setter
-        public Builder configMap(Map<String,Object> configMap) {
+        public Builder configMap(Map<String,String> configMap) {
             if (configMap == null) {
               throw new MissingRequiredPropertyException("GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfig", "configMap");
             }

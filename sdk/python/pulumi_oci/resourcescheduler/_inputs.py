@@ -20,10 +20,10 @@ __all__ = [
 class ScheduleResourceArgs:
     def __init__(__self__, *,
                  id: pulumi.Input[str],
-                 metadata: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 metadata: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] id: (Updatable) This is the resource OCID.
-        :param pulumi.Input[Mapping[str, Any]] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] metadata: (Updatable) This is additional information that helps to identity the resource for the schedule.
                
                { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
         """
@@ -45,7 +45,7 @@ class ScheduleResourceArgs:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def metadata(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) This is additional information that helps to identity the resource for the schedule.
 
@@ -54,7 +54,7 @@ class ScheduleResourceArgs:
         return pulumi.get(self, "metadata")
 
     @metadata.setter
-    def metadata(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def metadata(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "metadata", value)
 
 

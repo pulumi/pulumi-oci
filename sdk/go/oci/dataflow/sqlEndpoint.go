@@ -32,7 +32,7 @@ type SqlEndpoint struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The description of CreateSQLEndpointDetails.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// The SQL Endpoint name, which can be changed.
@@ -46,7 +46,7 @@ type SqlEndpoint struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig SqlEndpointExecutorShapeConfigOutput `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl pulumi.StringOutput `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
@@ -62,7 +62,7 @@ type SqlEndpoint struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationOutput `pulumi:"networkConfiguration"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations pulumi.MapOutput `pulumi:"sparkAdvancedConfigurations"`
+	SparkAdvancedConfigurations pulumi.StringMapOutput `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringOutput `pulumi:"sqlEndpointVersion"`
 	// The current state of the Sql Endpoint.
@@ -70,7 +70,7 @@ type SqlEndpoint struct {
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
@@ -142,7 +142,7 @@ type sqlEndpointState struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of CreateSQLEndpointDetails.
 	Description *string `pulumi:"description"`
 	// The SQL Endpoint name, which can be changed.
@@ -156,7 +156,7 @@ type sqlEndpointState struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig *SqlEndpointExecutorShapeConfig `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl *string `pulumi:"jdbcEndpointUrl"`
 	// Oracle Cloud Infrastructure lake OCID
@@ -172,7 +172,7 @@ type sqlEndpointState struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration *SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations map[string]interface{} `pulumi:"sparkAdvancedConfigurations"`
+	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion *string `pulumi:"sqlEndpointVersion"`
 	// The current state of the Sql Endpoint.
@@ -180,7 +180,7 @@ type sqlEndpointState struct {
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
@@ -196,7 +196,7 @@ type SqlEndpointState struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The description of CreateSQLEndpointDetails.
 	Description pulumi.StringPtrInput
 	// The SQL Endpoint name, which can be changed.
@@ -210,7 +210,7 @@ type SqlEndpointState struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig SqlEndpointExecutorShapeConfigPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
 	JdbcEndpointUrl pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure lake OCID
@@ -226,7 +226,7 @@ type SqlEndpointState struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationPtrInput
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations pulumi.MapInput
+	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringPtrInput
 	// The current state of the Sql Endpoint.
@@ -234,7 +234,7 @@ type SqlEndpointState struct {
 	// A message describing the reason why the resource is in it's current state. Helps bubble up errors in state changes. For example, it can be used to provide actionable information for a resource in the Failed state.
 	StateMessage pulumi.StringPtrInput
 	// The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the Sql Endpoint was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the Sql Endpoint was updated. An RFC3339 formatted datetime string.
@@ -254,7 +254,7 @@ type sqlEndpointArgs struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of CreateSQLEndpointDetails.
 	Description *string `pulumi:"description"`
 	// The SQL Endpoint name, which can be changed.
@@ -268,7 +268,7 @@ type sqlEndpointArgs struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig *SqlEndpointExecutorShapeConfig `pulumi:"executorShapeConfig"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The maximum number of executors.
 	MaxExecutorCount int `pulumi:"maxExecutorCount"`
 	// Metastore OCID
@@ -278,7 +278,7 @@ type sqlEndpointArgs struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfiguration `pulumi:"networkConfiguration"`
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations map[string]interface{} `pulumi:"sparkAdvancedConfigurations"`
+	SparkAdvancedConfigurations map[string]string `pulumi:"sparkAdvancedConfigurations"`
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion string `pulumi:"sqlEndpointVersion"`
 }
@@ -288,7 +288,7 @@ type SqlEndpointArgs struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The description of CreateSQLEndpointDetails.
 	Description pulumi.StringPtrInput
 	// The SQL Endpoint name, which can be changed.
@@ -302,7 +302,7 @@ type SqlEndpointArgs struct {
 	// This is used to configure the shape of the driver or executor if a flexible shape is used.
 	ExecutorShapeConfig SqlEndpointExecutorShapeConfigPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The maximum number of executors.
 	MaxExecutorCount pulumi.IntInput
 	// Metastore OCID
@@ -312,7 +312,7 @@ type SqlEndpointArgs struct {
 	// The network configuration of a SQL Endpoint.
 	NetworkConfiguration SqlEndpointNetworkConfigurationInput
 	// The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-	SparkAdvancedConfigurations pulumi.MapInput
+	SparkAdvancedConfigurations pulumi.StringMapInput
 	// The version of the SQL Endpoint.
 	SqlEndpointVersion pulumi.StringInput
 }
@@ -410,8 +410,8 @@ func (o SqlEndpointOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o SqlEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o SqlEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of CreateSQLEndpointDetails.
@@ -445,8 +445,8 @@ func (o SqlEndpointOutput) ExecutorShapeConfig() SqlEndpointExecutorShapeConfigO
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o SqlEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o SqlEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The JDBC URL field. For example, jdbc:spark://{serviceFQDN}:443/default;SparkServerType=DFI
@@ -485,8 +485,8 @@ func (o SqlEndpointOutput) NetworkConfiguration() SqlEndpointNetworkConfiguratio
 }
 
 // The Spark configuration passed to the running process. See https://spark.apache.org/docs/latest/configuration.html#available-properties. Example: { "spark.app.name" : "My App Name", "spark.shuffle.io.maxRetries" : "4" } Note: Not all Spark properties are permitted to be set.  Attempting to set a property that is not allowed to be overwritten will cause a 400 status to be returned.
-func (o SqlEndpointOutput) SparkAdvancedConfigurations() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.MapOutput { return v.SparkAdvancedConfigurations }).(pulumi.MapOutput)
+func (o SqlEndpointOutput) SparkAdvancedConfigurations() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.SparkAdvancedConfigurations }).(pulumi.StringMapOutput)
 }
 
 // The version of the SQL Endpoint.
@@ -505,8 +505,8 @@ func (o SqlEndpointOutput) StateMessage() pulumi.StringOutput {
 }
 
 // The system tags associated with this resource, if any. The system tags are set by Oracle cloud infrastructure services. Each key is predefined and scoped to namespaces. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{orcl-cloud: {free-tier-retain: true}}`
-func (o SqlEndpointOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *SqlEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o SqlEndpointOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *SqlEndpoint) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Sql Endpoint was created. An RFC3339 formatted datetime string.

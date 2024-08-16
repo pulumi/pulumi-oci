@@ -24,7 +24,6 @@ import com.pulumi.oci.DevOps.inputs.DeployStageTestLoadBalancerConfigArgs;
 import com.pulumi.oci.DevOps.inputs.DeployStageWaitCriteriaArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -192,13 +191,13 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="config")
-    private @Nullable Output<Map<String,Object>> config;
+    private @Nullable Output<Map<String,String>> config;
 
     /**
      * @return (Updatable) User provided key and value pair configuration, which is assigned through constants or parameter.
      * 
      */
-    public Optional<Output<Map<String,Object>>> config() {
+    public Optional<Output<Map<String,String>>> config() {
         return Optional.ofNullable(this.config);
     }
 
@@ -222,13 +221,13 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -417,13 +416,13 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -1284,7 +1283,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder config(@Nullable Output<Map<String,Object>> config) {
+        public Builder config(@Nullable Output<Map<String,String>> config) {
             $.config = config;
             return this;
         }
@@ -1295,7 +1294,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder config(Map<String,Object> config) {
+        public Builder config(Map<String,String> config) {
             return config(Output.of(config));
         }
 
@@ -1326,7 +1325,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -1337,7 +1336,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -1609,7 +1608,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -1620,7 +1619,7 @@ public final class DeployStageArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

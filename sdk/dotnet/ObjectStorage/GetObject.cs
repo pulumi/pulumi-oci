@@ -288,7 +288,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// Optional user-defined metadata key and value. Note: Metadata keys are case-insensitive and all returned keys will be lower case.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The top-level namespace used for the request.
         /// </summary>
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.ObjectStorage
 
             string id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string @namespace,
 

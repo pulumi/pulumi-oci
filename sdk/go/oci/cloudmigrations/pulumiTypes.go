@@ -1985,9 +1985,9 @@ type TargetAssetMigrationAsset struct {
 	// Name of snapshot bucket
 	SnapShotBucketName *string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData map[string]interface{} `pulumi:"sourceAssetData"`
+	SourceAssetData map[string]string `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId *string `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -2041,9 +2041,9 @@ type TargetAssetMigrationAssetArgs struct {
 	// Name of snapshot bucket
 	SnapShotBucketName pulumi.StringPtrInput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapInput `pulumi:"snapshots"`
+	Snapshots pulumi.StringMapInput `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData pulumi.MapInput `pulumi:"sourceAssetData"`
+	SourceAssetData pulumi.StringMapInput `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringPtrInput `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -2175,13 +2175,13 @@ func (o TargetAssetMigrationAssetOutput) SnapShotBucketName() pulumi.StringPtrOu
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o TargetAssetMigrationAssetOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetMigrationAsset) map[string]interface{} { return v.Snapshots }).(pulumi.MapOutput)
+func (o TargetAssetMigrationAssetOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAsset) map[string]string { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-func (o TargetAssetMigrationAssetOutput) SourceAssetData() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetMigrationAsset) map[string]interface{} { return v.SourceAssetData }).(pulumi.MapOutput)
+func (o TargetAssetMigrationAssetOutput) SourceAssetData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetMigrationAsset) map[string]string { return v.SourceAssetData }).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.
@@ -2248,13 +2248,13 @@ type TargetAssetRecommendedSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -2298,13 +2298,13 @@ type TargetAssetRecommendedSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringPtrInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -2407,8 +2407,8 @@ func (o TargetAssetRecommendedSpecOutput) DedicatedVmHostId() pulumi.StringPtrOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetRecommendedSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetRecommendedSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetRecommendedSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetRecommendedSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -2422,8 +2422,8 @@ func (o TargetAssetRecommendedSpecOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetRecommendedSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetRecommendedSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetRecommendedSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetRecommendedSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -2728,11 +2728,11 @@ type TargetAssetRecommendedSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp *bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -2764,11 +2764,11 @@ type TargetAssetRecommendedSpecCreateVnicDetailArgs struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolPtrInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -2845,8 +2845,8 @@ func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) AssignPublicIp() pulum
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetRecommendedSpecCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetRecommendedSpecCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -2855,8 +2855,8 @@ func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) DisplayName() pulumi.S
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetRecommendedSpecCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetRecommendedSpecCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -3484,13 +3484,13 @@ type TargetAssetTestSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -3534,13 +3534,13 @@ type TargetAssetTestSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringPtrInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -3641,8 +3641,8 @@ func (o TargetAssetTestSpecOutput) DedicatedVmHostId() pulumi.StringPtrOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetTestSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetTestSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetTestSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetTestSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -3656,8 +3656,8 @@ func (o TargetAssetTestSpecOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetTestSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetTestSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetTestSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetTestSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -3960,11 +3960,11 @@ type TargetAssetTestSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp *bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -3996,11 +3996,11 @@ type TargetAssetTestSpecCreateVnicDetailArgs struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolPtrInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -4077,8 +4077,8 @@ func (o TargetAssetTestSpecCreateVnicDetailOutput) AssignPublicIp() pulumi.BoolP
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetTestSpecCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetTestSpecCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -4087,8 +4087,8 @@ func (o TargetAssetTestSpecCreateVnicDetailOutput) DisplayName() pulumi.StringPt
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetTestSpecCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetTestSpecCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -4716,7 +4716,7 @@ type TargetAssetUserSpec struct {
 	// (Updatable) The OCID of the dedicated VM host.
 	DedicatedVmHostId *string `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -4728,7 +4728,7 @@ type TargetAssetUserSpec struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel *string `pulumi:"hostnameLabel"`
 	// (Updatable) Optional mutable instance options
@@ -4790,7 +4790,7 @@ type TargetAssetUserSpecArgs struct {
 	// (Updatable) The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringPtrInput `pulumi:"dedicatedVmHostId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
@@ -4802,7 +4802,7 @@ type TargetAssetUserSpecArgs struct {
 	// Example: `FAULT-DOMAIN-1`
 	FaultDomain pulumi.StringPtrInput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringPtrInput `pulumi:"hostnameLabel"`
 	// (Updatable) Optional mutable instance options
@@ -4947,8 +4947,8 @@ func (o TargetAssetUserSpecOutput) DedicatedVmHostId() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetUserSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetUserSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetUserSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetUserSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -4968,8 +4968,8 @@ func (o TargetAssetUserSpecOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetUserSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetUserSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetUserSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetUserSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -5117,13 +5117,13 @@ func (o TargetAssetUserSpecPtrOutput) DedicatedVmHostId() pulumi.StringPtrOutput
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetUserSpecPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAssetUserSpec) map[string]interface{} {
+func (o TargetAssetUserSpecPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAssetUserSpec) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -5153,13 +5153,13 @@ func (o TargetAssetUserSpecPtrOutput) FaultDomain() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetUserSpecPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAssetUserSpec) map[string]interface{} {
+func (o TargetAssetUserSpecPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAssetUserSpec) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -5640,11 +5640,11 @@ type TargetAssetUserSpecCreateVnicDetails struct {
 	// If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 	AssignPublicIp *bool `pulumi:"assignPublicIp"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
 	//
 	// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -5708,11 +5708,11 @@ type TargetAssetUserSpecCreateVnicDetailsArgs struct {
 	// If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
 	AssignPublicIp pulumi.BoolPtrInput `pulumi:"assignPublicIp"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
 	//
 	// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
@@ -5847,8 +5847,8 @@ func (o TargetAssetUserSpecCreateVnicDetailsOutput) AssignPublicIp() pulumi.Bool
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetUserSpecCreateVnicDetailsOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetUserSpecCreateVnicDetails) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o TargetAssetUserSpecCreateVnicDetailsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetUserSpecCreateVnicDetails) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -5857,8 +5857,8 @@ func (o TargetAssetUserSpecCreateVnicDetailsOutput) DisplayName() pulumi.StringP
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetUserSpecCreateVnicDetailsOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v TargetAssetUserSpecCreateVnicDetails) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o TargetAssetUserSpecCreateVnicDetailsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v TargetAssetUserSpecCreateVnicDetails) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -5968,13 +5968,13 @@ func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) AssignPublicIp() pulumi.B
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAssetUserSpecCreateVnicDetails) map[string]interface{} {
+func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAssetUserSpecCreateVnicDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -5988,13 +5988,13 @@ func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) DisplayName() pulumi.Stri
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *TargetAssetUserSpecCreateVnicDetails) map[string]interface{} {
+func (o TargetAssetUserSpecCreateVnicDetailsPtrOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *TargetAssetUserSpecCreateVnicDetails) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The hostname for the VNIC's primary private IP. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, `bminstance-1` in FQDN `bminstance-1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123). The value appears in the [Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/) object and also the [PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/) object returned by [ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps) and [GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp).
@@ -7190,7 +7190,7 @@ type GetMigrationAssetsMigrationAssetCollectionItem struct {
 	// Name of snapshot bucket
 	SnapShotBucketName string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId string `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
@@ -7244,7 +7244,7 @@ type GetMigrationAssetsMigrationAssetCollectionItemArgs struct {
 	// Name of snapshot bucket
 	SnapShotBucketName pulumi.StringInput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapInput `pulumi:"snapshots"`
+	Snapshots pulumi.StringMapInput `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringInput `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
@@ -7379,8 +7379,8 @@ func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) SnapShotBucketName
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) map[string]interface{} { return v.Snapshots }).(pulumi.MapOutput)
+func (o GetMigrationAssetsMigrationAssetCollectionItemOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationAssetsMigrationAssetCollectionItem) map[string]string { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.
@@ -7437,9 +7437,9 @@ type GetMigrationPlanAvailableShapeItem struct {
 	// The availability domain in which to list resources.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Description of the GPUs.
 	GpuDescription string `pulumi:"gpuDescription"`
 	// Number of GPUs.
@@ -7467,7 +7467,7 @@ type GetMigrationPlanAvailableShapeItem struct {
 	// Name of the shape.
 	Shape string `pulumi:"shape"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetMigrationPlanAvailableShapeItemInput is an input type that accepts GetMigrationPlanAvailableShapeItemArgs and GetMigrationPlanAvailableShapeItemOutput values.
@@ -7485,9 +7485,9 @@ type GetMigrationPlanAvailableShapeItemArgs struct {
 	// The availability domain in which to list resources.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Description of the GPUs.
 	GpuDescription pulumi.StringInput `pulumi:"gpuDescription"`
 	// Number of GPUs.
@@ -7515,7 +7515,7 @@ type GetMigrationPlanAvailableShapeItemArgs struct {
 	// Name of the shape.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetMigrationPlanAvailableShapeItemArgs) ElementType() reflect.Type {
@@ -7575,13 +7575,13 @@ func (o GetMigrationPlanAvailableShapeItemOutput) AvailabilityDomain() pulumi.St
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMigrationPlanAvailableShapeItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMigrationPlanAvailableShapeItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetMigrationPlanAvailableShapeItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMigrationPlanAvailableShapeItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the GPUs.
@@ -7650,8 +7650,8 @@ func (o GetMigrationPlanAvailableShapeItemOutput) Shape() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMigrationPlanAvailableShapeItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMigrationPlanAvailableShapeItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapeItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type GetMigrationPlanAvailableShapeItemArrayOutput struct{ *pulumi.OutputState }
@@ -7777,9 +7777,9 @@ type GetMigrationPlanAvailableShapesAvailableShapesCollectionItem struct {
 	// The availability domain in which to list resources.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Description of the GPUs.
 	GpuDescription string `pulumi:"gpuDescription"`
 	// Number of GPUs.
@@ -7807,7 +7807,7 @@ type GetMigrationPlanAvailableShapesAvailableShapesCollectionItem struct {
 	// Name of the shape.
 	Shape string `pulumi:"shape"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetMigrationPlanAvailableShapesAvailableShapesCollectionItemInput is an input type that accepts GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs and GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput values.
@@ -7825,9 +7825,9 @@ type GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs struct {
 	// The availability domain in which to list resources.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Description of the GPUs.
 	GpuDescription pulumi.StringInput `pulumi:"gpuDescription"`
 	// Number of GPUs.
@@ -7855,7 +7855,7 @@ type GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs struct {
 	// Name of the shape.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArgs) ElementType() reflect.Type {
@@ -7917,17 +7917,17 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) Avai
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]interface{} {
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]interface{} {
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Description of the GPUs.
@@ -8006,10 +8006,10 @@ func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) Shap
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]interface{} {
+func (o GetMigrationPlanAvailableShapesAvailableShapesCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlanAvailableShapesAvailableShapesCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetMigrationPlanAvailableShapesAvailableShapesCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -9479,15 +9479,15 @@ func (o GetMigrationPlansMigrationPlanCollectionArrayOutput) Index(i pulumi.IntI
 
 type GetMigrationPlansMigrationPlanCollectionItem struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits map[string]interface{} `pulumi:"calculatedLimits"`
+	CalculatedLimits map[string]string `pulumi:"calculatedLimits"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The unique Oracle ID (OCID) that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -9505,7 +9505,7 @@ type GetMigrationPlansMigrationPlanCollectionItem struct {
 	// List of strategies for the resources to be migrated.
 	Strategies []GetMigrationPlansMigrationPlanCollectionItemStrategy `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// List of target environments.
 	TargetEnvironments []GetMigrationPlansMigrationPlanCollectionItemTargetEnvironment `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -9527,15 +9527,15 @@ type GetMigrationPlansMigrationPlanCollectionItemInput interface {
 
 type GetMigrationPlansMigrationPlanCollectionItemArgs struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits pulumi.MapInput `pulumi:"calculatedLimits"`
+	CalculatedLimits pulumi.StringMapInput `pulumi:"calculatedLimits"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The unique Oracle ID (OCID) that is immutable on creation.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -9553,7 +9553,7 @@ type GetMigrationPlansMigrationPlanCollectionItemArgs struct {
 	// List of strategies for the resources to be migrated.
 	Strategies GetMigrationPlansMigrationPlanCollectionItemStrategyArrayInput `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// List of target environments.
 	TargetEnvironments GetMigrationPlansMigrationPlanCollectionItemTargetEnvironmentArrayInput `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -9614,8 +9614,8 @@ func (o GetMigrationPlansMigrationPlanCollectionItemOutput) ToGetMigrationPlansM
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-func (o GetMigrationPlansMigrationPlanCollectionItemOutput) CalculatedLimits() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]interface{} { return v.CalculatedLimits }).(pulumi.MapOutput)
+func (o GetMigrationPlansMigrationPlanCollectionItemOutput) CalculatedLimits() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]string { return v.CalculatedLimits }).(pulumi.StringMapOutput)
 }
 
 // The ID of the compartment in which to list resources.
@@ -9624,8 +9624,8 @@ func (o GetMigrationPlansMigrationPlanCollectionItemOutput) CompartmentId() pulu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMigrationPlansMigrationPlanCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMigrationPlansMigrationPlanCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -9634,8 +9634,8 @@ func (o GetMigrationPlansMigrationPlanCollectionItemOutput) DisplayName() pulumi
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetMigrationPlansMigrationPlanCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMigrationPlansMigrationPlanCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The unique Oracle ID (OCID) that is immutable on creation.
@@ -9683,8 +9683,8 @@ func (o GetMigrationPlansMigrationPlanCollectionItemOutput) Strategies() GetMigr
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMigrationPlansMigrationPlanCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMigrationPlansMigrationPlanCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationPlansMigrationPlanCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // List of target environments.
@@ -11101,11 +11101,11 @@ type GetMigrationsMigrationCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id string `pulumi:"id"`
 	// Indicates whether migration is marked as completed.
@@ -11117,7 +11117,7 @@ type GetMigrationsMigrationCollectionItem struct {
 	// A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -11139,11 +11139,11 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation
 	Id pulumi.StringInput `pulumi:"id"`
 	// Indicates whether migration is marked as completed.
@@ -11155,7 +11155,7 @@ type GetMigrationsMigrationCollectionItemArgs struct {
 	// A filter to return only resources where the resource's lifecycle state matches the given lifecycle state.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the migration project was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the migration project was updated. An RFC3339 formatted datetime string
@@ -11219,8 +11219,8 @@ func (o GetMigrationsMigrationCollectionItemOutput) CompartmentId() pulumi.Strin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMigrationsMigrationCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetMigrationsMigrationCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -11229,8 +11229,8 @@ func (o GetMigrationsMigrationCollectionItemOutput) DisplayName() pulumi.StringO
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetMigrationsMigrationCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetMigrationsMigrationCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation
@@ -11259,8 +11259,8 @@ func (o GetMigrationsMigrationCollectionItemOutput) State() pulumi.StringOutput 
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetMigrationsMigrationCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetMigrationsMigrationCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMigrationsMigrationCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the migration project was created. An RFC3339 formatted datetime string
@@ -11499,13 +11499,13 @@ type GetReplicationSchedulesReplicationScheduleCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Recurrence specification for the replication schedule execution.
 	ExecutionRecurrences string `pulumi:"executionRecurrences"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
 	Id string `pulumi:"id"`
 	// The detailed state of the replication schedule.
@@ -11513,7 +11513,7 @@ type GetReplicationSchedulesReplicationScheduleCollectionItem struct {
 	// The current state of the replication schedule.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -11535,13 +11535,13 @@ type GetReplicationSchedulesReplicationScheduleCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Recurrence specification for the replication schedule execution.
 	ExecutionRecurrences pulumi.StringInput `pulumi:"executionRecurrences"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The detailed state of the replication schedule.
@@ -11549,7 +11549,7 @@ type GetReplicationSchedulesReplicationScheduleCollectionItemArgs struct {
 	// The current state of the replication schedule.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time when the replication schedule was created in RFC3339 format.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time when the replication schedule was last updated in RFC3339 format.
@@ -11613,10 +11613,10 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) Compartm
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]interface{} {
+func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -11630,10 +11630,10 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) Executio
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]interface{} {
+func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the replication schedule.
@@ -11652,10 +11652,10 @@ func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) State() 
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]interface{} {
+func (o GetReplicationSchedulesReplicationScheduleCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetReplicationSchedulesReplicationScheduleCollectionItem) map[string]string {
 		return v.SystemTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The time when the replication schedule was created in RFC3339 format.
@@ -12516,9 +12516,9 @@ type GetTargetAssetMigrationAsset struct {
 	// Name of snapshot bucket
 	SnapShotBucketName string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData map[string]interface{} `pulumi:"sourceAssetData"`
+	SourceAssetData map[string]string `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId string `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -12572,9 +12572,9 @@ type GetTargetAssetMigrationAssetArgs struct {
 	// Name of snapshot bucket
 	SnapShotBucketName pulumi.StringInput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapInput `pulumi:"snapshots"`
+	Snapshots pulumi.StringMapInput `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData pulumi.MapInput `pulumi:"sourceAssetData"`
+	SourceAssetData pulumi.StringMapInput `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringInput `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -12706,13 +12706,13 @@ func (o GetTargetAssetMigrationAssetOutput) SnapShotBucketName() pulumi.StringOu
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetMigrationAssetOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetMigrationAsset) map[string]interface{} { return v.Snapshots }).(pulumi.MapOutput)
+func (o GetTargetAssetMigrationAssetOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAsset) map[string]string { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetMigrationAssetOutput) SourceAssetData() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetMigrationAsset) map[string]interface{} { return v.SourceAssetData }).(pulumi.MapOutput)
+func (o GetTargetAssetMigrationAssetOutput) SourceAssetData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetMigrationAsset) map[string]string { return v.SourceAssetData }).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.
@@ -12779,13 +12779,13 @@ type GetTargetAssetRecommendedSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -12828,13 +12828,13 @@ type GetTargetAssetRecommendedSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -12938,8 +12938,8 @@ func (o GetTargetAssetRecommendedSpecOutput) DedicatedVmHostId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetRecommendedSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetRecommendedSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetRecommendedSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetRecommendedSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -12953,8 +12953,8 @@ func (o GetTargetAssetRecommendedSpecOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetRecommendedSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetRecommendedSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetRecommendedSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetRecommendedSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -13262,11 +13262,11 @@ type GetTargetAssetRecommendedSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -13298,11 +13298,11 @@ type GetTargetAssetRecommendedSpecCreateVnicDetailArgs struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -13379,8 +13379,8 @@ func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) AssignPublicIp() pu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetRecommendedSpecCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetRecommendedSpecCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -13389,8 +13389,8 @@ func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) DisplayName() pulum
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetRecommendedSpecCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetRecommendedSpecCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -14018,13 +14018,13 @@ type GetTargetAssetTestSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -14067,13 +14067,13 @@ type GetTargetAssetTestSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -14173,8 +14173,8 @@ func (o GetTargetAssetTestSpecOutput) DedicatedVmHostId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetTestSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetTestSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetTestSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetTestSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -14188,8 +14188,8 @@ func (o GetTargetAssetTestSpecOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetTestSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetTestSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetTestSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetTestSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -14491,11 +14491,11 @@ type GetTargetAssetTestSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -14527,11 +14527,11 @@ type GetTargetAssetTestSpecCreateVnicDetailArgs struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -14608,8 +14608,8 @@ func (o GetTargetAssetTestSpecCreateVnicDetailOutput) AssignPublicIp() pulumi.Bo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetTestSpecCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetTestSpecCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -14618,8 +14618,8 @@ func (o GetTargetAssetTestSpecCreateVnicDetailOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetTestSpecCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetTestSpecCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -15247,13 +15247,13 @@ type GetTargetAssetUserSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -15296,13 +15296,13 @@ type GetTargetAssetUserSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -15402,8 +15402,8 @@ func (o GetTargetAssetUserSpecOutput) DedicatedVmHostId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetUserSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetUserSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetUserSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetUserSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -15417,8 +15417,8 @@ func (o GetTargetAssetUserSpecOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetUserSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetUserSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetUserSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetUserSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -15720,11 +15720,11 @@ type GetTargetAssetUserSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -15756,11 +15756,11 @@ type GetTargetAssetUserSpecCreateVnicDetailArgs struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -15837,8 +15837,8 @@ func (o GetTargetAssetUserSpecCreateVnicDetailOutput) AssignPublicIp() pulumi.Bo
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetUserSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetUserSpecCreateVnicDetail) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetUserSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetUserSpecCreateVnicDetail) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -15847,8 +15847,8 @@ func (o GetTargetAssetUserSpecCreateVnicDetailOutput) DisplayName() pulumi.Strin
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetUserSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetUserSpecCreateVnicDetail) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetUserSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetUserSpecCreateVnicDetail) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -17814,9 +17814,9 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAsset struct {
 	// Name of snapshot bucket
 	SnapShotBucketName string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData map[string]interface{} `pulumi:"sourceAssetData"`
+	SourceAssetData map[string]string `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId string `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -17870,9 +17870,9 @@ type GetTargetAssetsTargetAssetCollectionItemMigrationAssetArgs struct {
 	// Name of snapshot bucket
 	SnapShotBucketName pulumi.StringInput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapInput `pulumi:"snapshots"`
+	Snapshots pulumi.StringMapInput `pulumi:"snapshots"`
 	// Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SourceAssetData pulumi.MapInput `pulumi:"sourceAssetData"`
+	SourceAssetData pulumi.StringMapInput `pulumi:"sourceAssetData"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringInput `pulumi:"sourceAssetId"`
 	// The current state of the target asset.
@@ -18006,17 +18006,15 @@ func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) SnapShotBu
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) map[string]interface{} {
-		return v.Snapshots
-	}).(pulumi.MapOutput)
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) map[string]string { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // Key-value pair representing asset metadata keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) SourceAssetData() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemMigrationAssetOutput) SourceAssetData() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemMigrationAsset) map[string]string {
 		return v.SourceAssetData
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.
@@ -18083,13 +18081,13 @@ type GetTargetAssetsTargetAssetCollectionItemRecommendedSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -18132,13 +18130,13 @@ type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -18242,10 +18240,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) Dedicated
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpec) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpec) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -18259,10 +18257,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) FaultDoma
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpec) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpec) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -18582,11 +18580,11 @@ type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail str
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -18618,11 +18616,11 @@ type GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailArgs
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -18703,10 +18701,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailO
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -18717,10 +18715,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailO
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemRecommendedSpecCreateVnicDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -19376,13 +19374,13 @@ type GetTargetAssetsTargetAssetCollectionItemTestSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -19425,13 +19423,13 @@ type GetTargetAssetsTargetAssetCollectionItemTestSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -19535,8 +19533,8 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) DedicatedVmHostI
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -19550,8 +19548,8 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) FaultDomain() pu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -19867,11 +19865,11 @@ type GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -19903,11 +19901,11 @@ type GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailArgs struct
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -19986,10 +19984,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -19998,10 +19996,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemTestSpecCreateVnicDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -20643,13 +20641,13 @@ type GetTargetAssetsTargetAssetCollectionItemUserSpec struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId string `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -20692,13 +20690,13 @@ type GetTargetAssetsTargetAssetCollectionItemUserSpecArgs struct {
 	// The OCID of the dedicated VM host.
 	DedicatedVmHostId pulumi.StringInput `pulumi:"dedicatedVmHostId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
 	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// Optional mutable instance options
@@ -20802,8 +20800,8 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) DedicatedVmHostI
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpec) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpec) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -20817,8 +20815,8 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) FaultDomain() pu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpec) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpec) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
@@ -21134,11 +21132,11 @@ type GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail struct {
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp bool `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel string `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -21170,11 +21168,11 @@ type GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailArgs struct
 	// Whether the VNIC should be assigned a public IP address. Defaults to whether the subnet is public or private. If not set and the VNIC is being created in a private subnet (that is, where `prohibitPublicIpOnVnic` = true in the [Subnet](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Subnet/)), then no public IP address is assigned. If not set and the subnet is public (`prohibitPublicIpOnVnic` = false), then a public IP address is assigned. If set to true and `prohibitPublicIpOnVnic` = true, an error is returned.
 	AssignPublicIp pulumi.BoolInput `pulumi:"assignPublicIp"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only resources that match the entire given display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
 	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
 	// List of OCIDs of the network security groups (NSGs) that are added to the VNIC. For more information about NSGs, see [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
@@ -21253,10 +21251,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the entire given display name.
@@ -21265,10 +21263,10 @@ func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail) map[string]interface{} {
+func (o GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetailOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTargetAssetsTargetAssetCollectionItemUserSpecCreateVnicDetail) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.

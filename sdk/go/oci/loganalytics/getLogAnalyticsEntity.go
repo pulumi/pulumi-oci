@@ -68,13 +68,13 @@ type LookupLogAnalyticsEntityResult struct {
 	// Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Internal name for the log analytics entity type.
 	EntityTypeInternalName string `pulumi:"entityTypeInternalName"`
 	// Log analytics entity type name.
 	EntityTypeName string `pulumi:"entityTypeName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
 	Hostname string `pulumi:"hostname"`
 	// The log analytics entity OCID. This ID is a reference used by log analytics features and it represents a resource that is provisioned and managed by the customer on their premises or on the cloud.
@@ -94,7 +94,7 @@ type LookupLogAnalyticsEntityResult struct {
 	Name      string `pulumi:"name"`
 	Namespace string `pulumi:"namespace"`
 	// The name/value pairs for parameter values to be used in file patterns specified in log sources.
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// This indicates the type of source. It is primarily for Enterprise Manager Repository ID.
 	SourceId string `pulumi:"sourceId"`
 	// The current state of the log analytics entity.
@@ -165,8 +165,8 @@ func (o LookupLogAnalyticsEntityResultOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupLogAnalyticsEntityResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupLogAnalyticsEntityResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Internal name for the log analytics entity type.
@@ -180,8 +180,8 @@ func (o LookupLogAnalyticsEntityResultOutput) EntityTypeName() pulumi.StringOutp
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupLogAnalyticsEntityResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupLogAnalyticsEntityResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The hostname where the entity represented here is actually present. This would be the output one would get if they run `echo $HOSTNAME` on Linux or an equivalent OS command. This may be different from management agents host since logs may be collected remotely.
@@ -233,8 +233,8 @@ func (o LookupLogAnalyticsEntityResultOutput) Namespace() pulumi.StringOutput {
 }
 
 // The name/value pairs for parameter values to be used in file patterns specified in log sources.
-func (o LookupLogAnalyticsEntityResultOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o LookupLogAnalyticsEntityResultOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupLogAnalyticsEntityResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // This indicates the type of source. It is primarily for Enterprise Manager Repository ID.

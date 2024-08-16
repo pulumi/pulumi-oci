@@ -27,17 +27,17 @@ export interface GetFsuCollectionArgs {
 export interface GetFsuCollectionResult {
     readonly activeFsuCycles: outputs.FleetSoftwareUpdate.GetFsuCollectionActiveFsuCycle[];
     readonly compartmentId: string;
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly displayName: string;
     readonly fleetDiscoveries: outputs.FleetSoftwareUpdate.GetFsuCollectionFleetDiscovery[];
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     readonly fsuCollectionId: string;
     readonly id: string;
     readonly lifecycleDetails: string;
     readonly serviceType: string;
     readonly sourceMajorVersion: string;
     readonly state: string;
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     readonly targetCount: number;
     readonly timeCreated: string;
     readonly timeUpdated: string;

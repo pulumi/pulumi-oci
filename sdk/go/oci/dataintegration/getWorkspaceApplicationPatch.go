@@ -72,14 +72,14 @@ type LookupWorkspaceApplicationPatchResult struct {
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
-	Id            string                 `pulumi:"id"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
+	Id            string            `pulumi:"id"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
 	Identifier string `pulumi:"identifier"`
 	// The key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationPatchMetadata `pulumi:"metadatas"`
 	// The object type.
@@ -172,8 +172,8 @@ func (o LookupWorkspaceApplicationPatchResultOutput) Description() pulumi.String
 }
 
 // The errors encountered while applying the patch, if any.
-func (o LookupWorkspaceApplicationPatchResultOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationPatchResult) map[string]interface{} { return v.ErrorMessages }).(pulumi.MapOutput)
+func (o LookupWorkspaceApplicationPatchResultOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationPatchResult) map[string]string { return v.ErrorMessages }).(pulumi.StringMapOutput)
 }
 
 func (o LookupWorkspaceApplicationPatchResultOutput) Id() pulumi.StringOutput {
@@ -191,8 +191,8 @@ func (o LookupWorkspaceApplicationPatchResultOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o LookupWorkspaceApplicationPatchResultOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationPatchResult) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o LookupWorkspaceApplicationPatchResultOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationPatchResult) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

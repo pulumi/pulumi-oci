@@ -37,12 +37,12 @@ import (
 //				},
 //				BackupPolicyId:          pulumi.Any(testVolumeBackupPolicies.VolumeBackupPolicies[0].Id),
 //				ClusterPlacementGroupId: pulumi.Any(testGroup.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(volumeGroupDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				VolumeGroupReplicas: core.VolumeGroupVolumeGroupReplicaArray{
 //					&core.VolumeGroupVolumeGroupReplicaArgs{
@@ -84,11 +84,11 @@ type VolumeGroup struct {
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
 	IsHydrated            pulumi.BoolOutput    `pulumi:"isHydrated"`
 	PreserveVolumeReplica pulumi.BoolPtrOutput `pulumi:"preserveVolumeReplica"`
@@ -162,11 +162,11 @@ type volumeGroupState struct {
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
 	IsHydrated            *bool `pulumi:"isHydrated"`
 	PreserveVolumeReplica *bool `pulumi:"preserveVolumeReplica"`
@@ -202,11 +202,11 @@ type VolumeGroupState struct {
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.
 	IsHydrated            pulumi.BoolPtrInput
 	PreserveVolumeReplica pulumi.BoolPtrInput
@@ -246,12 +246,12 @@ type volumeGroupArgs struct {
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags          map[string]interface{} `pulumi:"freeformTags"`
-	PreserveVolumeReplica *bool                  `pulumi:"preserveVolumeReplica"`
+	FreeformTags          map[string]string `pulumi:"freeformTags"`
+	PreserveVolumeReplica *bool             `pulumi:"preserveVolumeReplica"`
 	// Specifies the source for a volume group.
 	SourceDetails VolumeGroupSourceDetails `pulumi:"sourceDetails"`
 	// (Updatable) The list of volume group replicas that this volume group will be enabled to have in the specified destination availability domains.
@@ -277,11 +277,11 @@ type VolumeGroupArgs struct {
 	// (Updatable) The OCID of the compartment that contains the volume group.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags          pulumi.MapInput
+	FreeformTags          pulumi.StringMapInput
 	PreserveVolumeReplica pulumi.BoolPtrInput
 	// Specifies the source for a volume group.
 	SourceDetails VolumeGroupSourceDetailsInput
@@ -405,8 +405,8 @@ func (o VolumeGroupOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o VolumeGroupOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VolumeGroupOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -415,8 +415,8 @@ func (o VolumeGroupOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o VolumeGroupOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VolumeGroup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VolumeGroupOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VolumeGroup) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether the newly created cloned volume group's data has finished copying from the source volume group or backup.

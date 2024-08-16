@@ -62,11 +62,11 @@ type LookupAccessPolicyResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description string `pulumi:"description"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable on creation.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -80,7 +80,7 @@ type LookupAccessPolicyResult struct {
 	// The current state of the Resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
@@ -135,8 +135,8 @@ func (o LookupAccessPolicyResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAccessPolicyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAccessPolicyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
@@ -145,8 +145,8 @@ func (o LookupAccessPolicyResultOutput) Description() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAccessPolicyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAccessPolicyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable on creation.
@@ -180,8 +180,8 @@ func (o LookupAccessPolicyResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAccessPolicyResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAccessPolicyResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAccessPolicyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.

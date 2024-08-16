@@ -63,14 +63,14 @@ type LookupEmailReturnPathResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the email return path. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// The name of the DNS subdomain that must be provisioned to enable email recipients to verify Email Return Path. It is usually created with a CNAME record set to the cnameRecordValue.
 	DnsSubdomainName  string `pulumi:"dnsSubdomainName"`
 	EmailReturnPathId string `pulumi:"emailReturnPathId"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -82,7 +82,7 @@ type LookupEmailReturnPathResult struct {
 	// The current state of the email return path.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time of the last change to the Email Return Path configuration, due to a state change or an update operation. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".
@@ -138,8 +138,8 @@ func (o LookupEmailReturnPathResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupEmailReturnPathResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupEmailReturnPathResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the email return path. Avoid entering confidential information.
@@ -157,8 +157,8 @@ func (o LookupEmailReturnPathResultOutput) EmailReturnPathId() pulumi.StringOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupEmailReturnPathResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupEmailReturnPathResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email return path.
@@ -187,8 +187,8 @@ func (o LookupEmailReturnPathResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupEmailReturnPathResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupEmailReturnPathResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupEmailReturnPathResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`

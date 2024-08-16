@@ -37,12 +37,12 @@ import (
 //				DefaultRoutingPolicy: &servicemesh.VirtualServiceDefaultRoutingPolicyArgs{
 //					Type: pulumi.Any(virtualServiceDefaultRoutingPolicyType),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(virtualServiceDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Hosts: pulumi.Any(virtualServiceHosts),
 //				Mtls: &servicemesh.VirtualServiceMtlsArgs{
@@ -74,11 +74,11 @@ type VirtualService struct {
 	// (Updatable) Routing policy for the virtual service.
 	DefaultRoutingPolicy VirtualServiceDefaultRoutingPolicyOutput `pulumi:"defaultRoutingPolicy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts pulumi.StringArrayOutput `pulumi:"hosts"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -95,7 +95,7 @@ type VirtualService struct {
 	// The current state of the Resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
@@ -143,11 +143,11 @@ type virtualServiceState struct {
 	// (Updatable) Routing policy for the virtual service.
 	DefaultRoutingPolicy *VirtualServiceDefaultRoutingPolicy `pulumi:"defaultRoutingPolicy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts []string `pulumi:"hosts"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -164,7 +164,7 @@ type virtualServiceState struct {
 	// The current state of the Resource.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when this resource was created in an RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
@@ -177,11 +177,11 @@ type VirtualServiceState struct {
 	// (Updatable) Routing policy for the virtual service.
 	DefaultRoutingPolicy VirtualServiceDefaultRoutingPolicyPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts pulumi.StringArrayInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
@@ -198,7 +198,7 @@ type VirtualServiceState struct {
 	// The current state of the Resource.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when this resource was created in an RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when this resource was updated in an RFC3339 formatted datetime string.
@@ -215,11 +215,11 @@ type virtualServiceArgs struct {
 	// (Updatable) Routing policy for the virtual service.
 	DefaultRoutingPolicy *VirtualServiceDefaultRoutingPolicy `pulumi:"defaultRoutingPolicy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts []string `pulumi:"hosts"`
 	// The OCID of the service mesh in which this virtual service is created.
@@ -240,11 +240,11 @@ type VirtualServiceArgs struct {
 	// (Updatable) Routing policy for the virtual service.
 	DefaultRoutingPolicy VirtualServiceDefaultRoutingPolicyPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
 	Hosts pulumi.StringArrayInput
 	// The OCID of the service mesh in which this virtual service is created.
@@ -356,8 +356,8 @@ func (o VirtualServiceOutput) DefaultRoutingPolicy() VirtualServiceDefaultRoutin
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o VirtualServiceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o VirtualServiceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
@@ -366,8 +366,8 @@ func (o VirtualServiceOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o VirtualServiceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o VirtualServiceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The DNS hostnames of the virtual service that is used by its callers. Wildcard hostnames are supported in the prefix form. Examples of valid hostnames are "www.example.com", "*.example.com", "*.com". Can be omitted if the virtual service will only have TCP virtual deployments.
@@ -404,8 +404,8 @@ func (o VirtualServiceOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o VirtualServiceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *VirtualService) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o VirtualServiceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *VirtualService) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when this resource was created in an RFC3339 formatted datetime string.

@@ -4,7 +4,6 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class DeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private @Nullable Map<String,Object> deployStageExecutionProgress;
+    private @Nullable Map<String,String> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -34,7 +33,7 @@ public final class DeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public Map<String,Object> deployStageExecutionProgress() {
+    public Map<String,String> deployStageExecutionProgress() {
         return this.deployStageExecutionProgress == null ? Map.of() : this.deployStageExecutionProgress;
     }
     /**
@@ -61,7 +60,7 @@ public final class DeploymentDeploymentExecutionProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> deployStageExecutionProgress;
+        private @Nullable Map<String,String> deployStageExecutionProgress;
         private @Nullable String timeFinished;
         private @Nullable String timeStarted;
         public Builder() {}
@@ -73,7 +72,7 @@ public final class DeploymentDeploymentExecutionProgress {
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgress(@Nullable Map<String,Object> deployStageExecutionProgress) {
+        public Builder deployStageExecutionProgress(@Nullable Map<String,String> deployStageExecutionProgress) {
 
             this.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;

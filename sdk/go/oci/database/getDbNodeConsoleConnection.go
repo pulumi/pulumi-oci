@@ -68,11 +68,11 @@ type LookupDbNodeConsoleConnectionResult struct {
 	// The OCID of the database node.
 	DbNodeId string `pulumi:"dbNodeId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The SSH public key fingerprint for the console connection.
 	Fingerprint string `pulumi:"fingerprint"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the console connection.
 	Id string `pulumi:"id"`
 	// Information about the current lifecycle state.
@@ -140,8 +140,8 @@ func (o LookupDbNodeConsoleConnectionResultOutput) DbNodeId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o LookupDbNodeConsoleConnectionResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The SSH public key fingerprint for the console connection.
@@ -150,8 +150,8 @@ func (o LookupDbNodeConsoleConnectionResultOutput) Fingerprint() pulumi.StringOu
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupDbNodeConsoleConnectionResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupDbNodeConsoleConnectionResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDbNodeConsoleConnectionResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the console connection.

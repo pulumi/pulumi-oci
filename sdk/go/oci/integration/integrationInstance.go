@@ -47,12 +47,12 @@ import (
 //					Hostname:            pulumi.Any(integrationInstanceCustomEndpointHostname),
 //					CertificateSecretId: pulumi.Any(testSecret.Id),
 //				},
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DomainId: pulumi.Any(testDomain.Id),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				IdcsAt:                 pulumi.Any(integrationInstanceIdcsAt),
 //				IsFileServerEnabled:    pulumi.Any(integrationInstanceIsFileServerEnabled),
@@ -101,14 +101,14 @@ type IntegrationInstance struct {
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointOutput `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId                       pulumi.StringPtrOutput `pulumi:"domainId"`
 	EnableProcessAutomationTrigger pulumi.IntPtrOutput    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrOutput `pulumi:"idcsAt"`
 	// Information for IDCS access
@@ -139,7 +139,7 @@ type IntegrationInstance struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringOutput `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -209,14 +209,14 @@ type integrationInstanceState struct {
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint *IntegrationInstanceCustomEndpoint `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId                       *string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
 	// Information for IDCS access
@@ -247,7 +247,7 @@ type integrationInstanceState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage *string `pulumi:"stateMessage"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -266,14 +266,14 @@ type IntegrationInstanceState struct {
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId                       pulumi.StringPtrInput
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrInput
 	// Information for IDCS access
@@ -304,7 +304,7 @@ type IntegrationInstanceState struct {
 	// An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	StateMessage pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the Integration Instance was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
@@ -325,14 +325,14 @@ type integrationInstanceArgs struct {
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint *IntegrationInstanceCustomEndpoint `pulumi:"customEndpoint"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId                       *string `pulumi:"domainId"`
 	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt *string `pulumi:"idcsAt"`
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -367,14 +367,14 @@ type IntegrationInstanceArgs struct {
 	// (Updatable) Details for a custom endpoint for the integration instance (update).
 	CustomEndpoint IntegrationInstanceCustomEndpointPtrInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
 	DomainId                       pulumi.StringPtrInput
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
 	IdcsAt pulumi.StringPtrInput
 	// (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -513,8 +513,8 @@ func (o IntegrationInstanceOutput) CustomEndpoint() IntegrationInstanceCustomEnd
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o IntegrationInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o IntegrationInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Integration Instance Identifier.
@@ -532,8 +532,8 @@ func (o IntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPt
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o IntegrationInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o IntegrationInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -609,8 +609,8 @@ func (o IntegrationInstanceOutput) StateMessage() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o IntegrationInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *IntegrationInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o IntegrationInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Integration Instance was created. An RFC3339 formatted datetime string.

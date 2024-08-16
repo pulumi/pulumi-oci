@@ -64,13 +64,13 @@ type LookupAiPrivateEndpointResult struct {
 	// Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Private Reverse Connection Endpoint display name.
 	DisplayName string `pulumi:"displayName"`
 	// List of DNS zones to be used by the data assets. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
 	DnsZones []string `pulumi:"dnsZones"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -80,7 +80,7 @@ type LookupAiPrivateEndpointResult struct {
 	// Subnet Identifier
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -140,8 +140,8 @@ func (o LookupAiPrivateEndpointResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupAiPrivateEndpointResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAiPrivateEndpointResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Private Reverse Connection Endpoint display name.
@@ -155,8 +155,8 @@ func (o LookupAiPrivateEndpointResultOutput) DnsZones() pulumi.StringArrayOutput
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupAiPrivateEndpointResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAiPrivateEndpointResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable.
@@ -180,8 +180,8 @@ func (o LookupAiPrivateEndpointResultOutput) SubnetId() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupAiPrivateEndpointResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupAiPrivateEndpointResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAiPrivateEndpointResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.

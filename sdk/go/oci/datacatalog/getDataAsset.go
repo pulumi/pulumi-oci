@@ -82,7 +82,7 @@ type LookupDataAssetResult struct {
 	// A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-	Properties map[string]interface{} `pulumi:"properties"`
+	Properties map[string]string `pulumi:"properties"`
 	// The current state of the data asset.
 	State string `pulumi:"state"`
 	// The date and time the data asset was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: `2019-03-25T21:10:29.600Z`
@@ -189,8 +189,8 @@ func (o LookupDataAssetResultOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
-func (o LookupDataAssetResultOutput) Properties() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupDataAssetResult) map[string]interface{} { return v.Properties }).(pulumi.MapOutput)
+func (o LookupDataAssetResultOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupDataAssetResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
 // The current state of the data asset.

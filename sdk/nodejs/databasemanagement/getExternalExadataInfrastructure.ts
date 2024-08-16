@@ -48,7 +48,7 @@ export interface GetExternalExadataInfrastructureResult {
     /**
      * The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
      */
-    readonly additionalDetails: {[key: string]: any};
+    readonly additionalDetails: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
@@ -65,7 +65,7 @@ export interface GetExternalExadataInfrastructureResult {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
-    readonly definedTags: {[key: string]: any};
+    readonly definedTags: {[key: string]: string};
     readonly discoveryKey: string;
     /**
      * The name of the Exadata resource. English letters, numbers, "-", "_" and "." only.
@@ -75,7 +75,7 @@ export interface GetExternalExadataInfrastructureResult {
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
      */
-    readonly freeformTags: {[key: string]: any};
+    readonly freeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata resource.
      */
@@ -112,7 +112,7 @@ export interface GetExternalExadataInfrastructureResult {
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
-    readonly systemTags: {[key: string]: any};
+    readonly systemTags: {[key: string]: string};
     /**
      * The timestamp of the creation of the Exadata resource.
      */

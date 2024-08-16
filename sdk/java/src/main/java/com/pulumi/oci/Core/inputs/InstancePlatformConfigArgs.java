@@ -8,7 +8,6 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -40,13 +39,13 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
      * 
      */
     @Import(name="configMap")
-    private @Nullable Output<Map<String,Object>> configMap;
+    private @Nullable Output<Map<String,String>> configMap;
 
     /**
      * @return Instance Platform Configuration Configuration Map for flexible setting input.
      * 
      */
-    public Optional<Output<Map<String,Object>>> configMap() {
+    public Optional<Output<Map<String,String>>> configMap() {
         return Optional.ofNullable(this.configMap);
     }
 
@@ -270,7 +269,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
          * @return builder
          * 
          */
-        public Builder configMap(@Nullable Output<Map<String,Object>> configMap) {
+        public Builder configMap(@Nullable Output<Map<String,String>> configMap) {
             $.configMap = configMap;
             return this;
         }
@@ -281,7 +280,7 @@ public final class InstancePlatformConfigArgs extends com.pulumi.resources.Resou
          * @return builder
          * 
          */
-        public Builder configMap(Map<String,Object> configMap) {
+        public Builder configMap(Map<String,String> configMap) {
             return configMap(Output.of(configMap));
         }
 

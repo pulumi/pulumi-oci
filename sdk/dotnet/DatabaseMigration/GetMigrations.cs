@@ -75,7 +75,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Optional settings for Oracle GoldenGate processes
         /// </summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DatabaseMigration
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> SystemTags;
+        public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
         /// The OCID of the resource being referenced.
         /// </summary>
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string databaseCombination,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string description,
 
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string executingJobId,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             ImmutableArray<Outputs.GetMigrationsGgsDetailResult> ggsDetails,
 
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string state,
 
-            ImmutableDictionary<string, object> systemTags,
+            ImmutableDictionary<string, string> systemTags,
 
             string targetDatabaseConnectionId,
 

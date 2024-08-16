@@ -85,7 +85,7 @@ type Session struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds pulumi.IntOutput `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
-	SshMetadata pulumi.MapOutput `pulumi:"sshMetadata"`
+	SshMetadata pulumi.StringMapOutput `pulumi:"sshMetadata"`
 	// The current state of the session.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Details about a bastion session's target resource.
@@ -154,7 +154,7 @@ type sessionState struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds *int `pulumi:"sessionTtlInSeconds"`
 	// The connection message for the session.
-	SshMetadata map[string]interface{} `pulumi:"sshMetadata"`
+	SshMetadata map[string]string `pulumi:"sshMetadata"`
 	// The current state of the session.
 	State *string `pulumi:"state"`
 	// Details about a bastion session's target resource.
@@ -185,7 +185,7 @@ type SessionState struct {
 	// The amount of time the session can remain active.
 	SessionTtlInSeconds pulumi.IntPtrInput
 	// The connection message for the session.
-	SshMetadata pulumi.MapInput
+	SshMetadata pulumi.StringMapInput
 	// The current state of the session.
 	State pulumi.StringPtrInput
 	// Details about a bastion session's target resource.
@@ -364,8 +364,8 @@ func (o SessionOutput) SessionTtlInSeconds() pulumi.IntOutput {
 }
 
 // The connection message for the session.
-func (o SessionOutput) SshMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *Session) pulumi.MapOutput { return v.SshMetadata }).(pulumi.MapOutput)
+func (o SessionOutput) SshMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Session) pulumi.StringMapOutput { return v.SshMetadata }).(pulumi.StringMapOutput)
 }
 
 // The current state of the session.

@@ -27,15 +27,15 @@ type MigrationPlan struct {
 	pulumi.CustomResourceState
 
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits pulumi.MapOutput `pulumi:"calculatedLimits"`
+	CalculatedLimits pulumi.StringMapOutput `pulumi:"calculatedLimits"`
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Migration plan identifier
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The OCID of the associated migration.
@@ -51,7 +51,7 @@ type MigrationPlan struct {
 	// (Updatable) List of strategies for the resources to be migrated.
 	Strategies MigrationPlanStrategyArrayOutput `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) List of target environments.
 	TargetEnvironments MigrationPlanTargetEnvironmentArrayOutput `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -100,15 +100,15 @@ func GetMigrationPlan(ctx *pulumi.Context,
 // Input properties used for looking up and filtering MigrationPlan resources.
 type migrationPlanState struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits map[string]interface{} `pulumi:"calculatedLimits"`
+	CalculatedLimits map[string]string `pulumi:"calculatedLimits"`
 	// (Updatable) Compartment identifier
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Migration plan identifier
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The OCID of the associated migration.
@@ -124,7 +124,7 @@ type migrationPlanState struct {
 	// (Updatable) List of strategies for the resources to be migrated.
 	Strategies []MigrationPlanStrategy `pulumi:"strategies"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) List of target environments.
 	TargetEnvironments []MigrationPlanTargetEnvironment `pulumi:"targetEnvironments"`
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -135,15 +135,15 @@ type migrationPlanState struct {
 
 type MigrationPlanState struct {
 	// Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-	CalculatedLimits pulumi.MapInput
+	CalculatedLimits pulumi.StringMapInput
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Migration plan identifier
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The OCID of the associated migration.
@@ -159,7 +159,7 @@ type MigrationPlanState struct {
 	// (Updatable) List of strategies for the resources to be migrated.
 	Strategies MigrationPlanStrategyArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) List of target environments.
 	TargetEnvironments MigrationPlanTargetEnvironmentArrayInput
 	// The time when the migration plan was created. An RFC3339 formatted datetime string.
@@ -176,11 +176,11 @@ type migrationPlanArgs struct {
 	// (Updatable) Compartment identifier
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Migration plan identifier
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the associated migration.
 	MigrationId string `pulumi:"migrationId"`
 	// Source migraiton plan ID to be cloned.
@@ -196,11 +196,11 @@ type MigrationPlanArgs struct {
 	// (Updatable) Compartment identifier
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Migration plan identifier
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the associated migration.
 	MigrationId pulumi.StringInput
 	// Source migraiton plan ID to be cloned.
@@ -299,8 +299,8 @@ func (o MigrationPlanOutput) ToMigrationPlanOutputWithContext(ctx context.Contex
 }
 
 // Limits of the resources that are needed for migration. Example: {"BlockVolume": 2, "VCN": 1}
-func (o MigrationPlanOutput) CalculatedLimits() pulumi.MapOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.MapOutput { return v.CalculatedLimits }).(pulumi.MapOutput)
+func (o MigrationPlanOutput) CalculatedLimits() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringMapOutput { return v.CalculatedLimits }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Compartment identifier
@@ -309,8 +309,8 @@ func (o MigrationPlanOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MigrationPlanOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MigrationPlanOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Migration plan identifier
@@ -319,8 +319,8 @@ func (o MigrationPlanOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
-func (o MigrationPlanOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MigrationPlanOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in Failed state.
@@ -359,8 +359,8 @@ func (o MigrationPlanOutput) Strategies() MigrationPlanStrategyArrayOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MigrationPlanOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MigrationPlan) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MigrationPlanOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationPlan) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) List of target environments.

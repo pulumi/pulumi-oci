@@ -36,12 +36,12 @@ import (
 //				DisplayName:                 pulumi.Any(occAvailabilityCatalogDisplayName),
 //				Namespace:                   pulumi.Any(occAvailabilityCatalogNamespace),
 //				OccCustomerGroupId:          pulumi.Any(testOccCustomerGroup.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(occAvailabilityCatalogDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				MetadataDetails: &capacitymanagement.OccAvailabilityCatalogMetadataDetailsArgs{
 //					FormatVersion: pulumi.Any(occAvailabilityCatalogMetadataDetailsFormatVersion),
@@ -73,7 +73,7 @@ type OccAvailabilityCatalog struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Additional information about the availability catalog.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// Details about capacity available for  different resources in catalog.
@@ -81,7 +81,7 @@ type OccAvailabilityCatalog struct {
 	// (Updatable) The display name of the availability catalog.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
@@ -96,7 +96,7 @@ type OccAvailabilityCatalog struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -155,7 +155,7 @@ type occAvailabilityCatalogState struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Additional information about the availability catalog.
 	Description *string `pulumi:"description"`
 	// Details about capacity available for  different resources in catalog.
@@ -163,7 +163,7 @@ type occAvailabilityCatalogState struct {
 	// (Updatable) The display name of the availability catalog.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
@@ -178,7 +178,7 @@ type occAvailabilityCatalogState struct {
 	// The current lifecycle state of the resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time when the availability catalog was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the availability catalog was last updated.
@@ -193,7 +193,7 @@ type OccAvailabilityCatalogState struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Additional information about the availability catalog.
 	Description pulumi.StringPtrInput
 	// Details about capacity available for  different resources in catalog.
@@ -201,7 +201,7 @@ type OccAvailabilityCatalogState struct {
 	// (Updatable) The display name of the availability catalog.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
 	LifecycleDetails pulumi.StringPtrInput
 	// Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
@@ -216,7 +216,7 @@ type OccAvailabilityCatalogState struct {
 	// The current lifecycle state of the resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time when the availability catalog was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the availability catalog was last updated.
@@ -233,13 +233,13 @@ type occAvailabilityCatalogArgs struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Additional information about the availability catalog.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the availability catalog.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
 	MetadataDetails *OccAvailabilityCatalogMetadataDetails `pulumi:"metadataDetails"`
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -258,13 +258,13 @@ type OccAvailabilityCatalogArgs struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Additional information about the availability catalog.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the availability catalog.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Used for representing the metadata of the catalog. This denotes the version and format of the CSV file for parsing.
 	MetadataDetails OccAvailabilityCatalogMetadataDetailsPtrInput
 	// The name of the Oracle Cloud Infrastructure service in consideration. For example, Compute, Exadata, and so on.
@@ -379,8 +379,8 @@ func (o OccAvailabilityCatalogOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OccAvailabilityCatalogOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OccAvailabilityCatalogOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Additional information about the availability catalog.
@@ -399,8 +399,8 @@ func (o OccAvailabilityCatalogOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OccAvailabilityCatalogOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OccAvailabilityCatalogOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
@@ -432,8 +432,8 @@ func (o OccAvailabilityCatalogOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o OccAvailabilityCatalogOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o OccAvailabilityCatalogOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OccAvailabilityCatalog) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time when the availability catalog was created.

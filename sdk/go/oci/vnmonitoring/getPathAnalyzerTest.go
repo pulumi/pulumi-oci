@@ -61,13 +61,13 @@ type LookupPathAnalyzerTestResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the `PathAnalyzerTest` resource's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Information describing a source or destination in a `PathAnalyzerTest` resource.
 	DestinationEndpoints []GetPathAnalyzerTestDestinationEndpoint `pulumi:"destinationEndpoints"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A unique identifier established when the resource is created. The identifier can't be changed later.
 	Id                 string `pulumi:"id"`
 	PathAnalyzerTestId string `pulumi:"pathAnalyzerTestId"`
@@ -82,7 +82,7 @@ type LookupPathAnalyzerTestResult struct {
 	// The current state of the `PathAnalyzerTest` resource.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the `PathAnalyzerTest` resource was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -133,8 +133,8 @@ func (o LookupPathAnalyzerTestResultOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupPathAnalyzerTestResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupPathAnalyzerTestResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Information describing a source or destination in a `PathAnalyzerTest` resource.
@@ -150,8 +150,8 @@ func (o LookupPathAnalyzerTestResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupPathAnalyzerTestResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupPathAnalyzerTestResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A unique identifier established when the resource is created. The identifier can't be changed later.
@@ -191,8 +191,8 @@ func (o LookupPathAnalyzerTestResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupPathAnalyzerTestResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupPathAnalyzerTestResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupPathAnalyzerTestResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the `PathAnalyzerTest` resource was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

@@ -29,13 +29,13 @@ type DetectAnomalyJob struct {
 	// (Updatable) The OCID of the compartment that starts the job.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the detect anomaly job.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Detect anomaly job display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Detect anomaly asynchronous job details.
 	InputDetails DetectAnomalyJobInputDetailsOutput `pulumi:"inputDetails"`
 	// The current state details of the batch document job.
@@ -54,7 +54,7 @@ type DetectAnomalyJob struct {
 	// The current state of the batch document job.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Job accepted time
 	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
 	// Job finished time
@@ -108,13 +108,13 @@ type detectAnomalyJobState struct {
 	// (Updatable) The OCID of the compartment that starts the job.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the detect anomaly job.
 	Description *string `pulumi:"description"`
 	// (Updatable) Detect anomaly job display name.
 	DisplayName *string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Detect anomaly asynchronous job details.
 	InputDetails *DetectAnomalyJobInputDetails `pulumi:"inputDetails"`
 	// The current state details of the batch document job.
@@ -133,7 +133,7 @@ type detectAnomalyJobState struct {
 	// The current state of the batch document job.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Job accepted time
 	TimeAccepted *string `pulumi:"timeAccepted"`
 	// Job finished time
@@ -146,13 +146,13 @@ type DetectAnomalyJobState struct {
 	// (Updatable) The OCID of the compartment that starts the job.
 	CompartmentId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the detect anomaly job.
 	Description pulumi.StringPtrInput
 	// (Updatable) Detect anomaly job display name.
 	DisplayName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Detect anomaly asynchronous job details.
 	InputDetails DetectAnomalyJobInputDetailsPtrInput
 	// The current state details of the batch document job.
@@ -171,7 +171,7 @@ type DetectAnomalyJobState struct {
 	// The current state of the batch document job.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Job accepted time
 	TimeAccepted pulumi.StringPtrInput
 	// Job finished time
@@ -318,8 +318,8 @@ func (o DetectAnomalyJobOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DetectAnomalyJobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DetectAnomalyJobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description of the detect anomaly job.
@@ -333,8 +333,8 @@ func (o DetectAnomalyJobOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DetectAnomalyJobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DetectAnomalyJobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Detect anomaly asynchronous job details.
@@ -376,8 +376,8 @@ func (o DetectAnomalyJobOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DetectAnomalyJobOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DetectAnomalyJobOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DetectAnomalyJob) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Job accepted time

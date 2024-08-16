@@ -67,7 +67,7 @@ type LookupReplicaResult struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// User provided description of the read replica.
 	Description string `pulumi:"description"`
 	// The user-friendly name for the read replica. It does not have to be unique.
@@ -75,7 +75,7 @@ type LookupReplicaResult struct {
 	// The name of the Fault Domain the read replica is located in.
 	FaultDomain string `pulumi:"faultDomain"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the read replica.
 	Id string `pulumi:"id"`
 	// The IP address the read replica is configured to listen on.
@@ -164,8 +164,8 @@ func (o LookupReplicaResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupReplicaResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicaResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupReplicaResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicaResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // User provided description of the read replica.
@@ -184,8 +184,8 @@ func (o LookupReplicaResultOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupReplicaResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupReplicaResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupReplicaResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupReplicaResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the read replica.

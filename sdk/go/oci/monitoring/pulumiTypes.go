@@ -1544,15 +1544,15 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id string `pulumi:"id"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
@@ -1584,15 +1584,15 @@ type GetAlarmSuppressionsAlarmSuppressionCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	Description pulumi.StringInput `pulumi:"description"`
 	// Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
@@ -1671,10 +1671,8 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) CompartmentId(
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]interface{} {
-		return v.DefinedTags
-	}).(pulumi.MapOutput)
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -1683,8 +1681,8 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Description() 
 }
 
 // Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
@@ -1693,10 +1691,8 @@ func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) DisplayName() 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]interface{} {
-		return v.FreeformTags
-	}).(pulumi.MapOutput)
+func (o GetAlarmSuppressionsAlarmSuppressionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlarmSuppressionsAlarmSuppressionCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
@@ -1973,7 +1969,7 @@ type GetAlarmsAlarm struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations []string `pulumi:"destinations"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
@@ -1981,7 +1977,7 @@ type GetAlarmsAlarm struct {
 	// Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
 	EvaluationSlackDuration string `pulumi:"evaluationSlackDuration"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 	Id string `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
@@ -2048,7 +2044,7 @@ type GetAlarmsAlarmArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
 	Destinations pulumi.StringArrayInput `pulumi:"destinations"`
 	// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
@@ -2056,7 +2052,7 @@ type GetAlarmsAlarmArgs struct {
 	// Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
 	EvaluationSlackDuration pulumi.StringInput `pulumi:"evaluationSlackDuration"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Whether the alarm is enabled.  Example: `true`
@@ -2171,8 +2167,8 @@ func (o GetAlarmsAlarmOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
-func (o GetAlarmsAlarmOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetAlarmsAlarmOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
@@ -2191,8 +2187,8 @@ func (o GetAlarmsAlarmOutput) EvaluationSlackDuration() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
-func (o GetAlarmsAlarmOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetAlarmsAlarm) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetAlarmsAlarmOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetAlarmsAlarm) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
@@ -2794,11 +2790,11 @@ type GetMetricDataMetricData struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
 	EndTime string `pulumi:"endTime"`
 	// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Name string `pulumi:"name"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
@@ -2840,11 +2836,11 @@ type GetMetricDataMetricDataArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
 	EndTime pulumi.StringInput `pulumi:"endTime"`
 	// The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// The name of the metric.  Example: `CpuUtilization`
 	Name pulumi.StringInput `pulumi:"name"`
 	// The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
@@ -2936,8 +2932,8 @@ func (o GetMetricDataMetricDataOutput) CompartmentIdInSubtree() pulumi.BoolOutpu
 }
 
 // Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-func (o GetMetricDataMetricDataOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+func (o GetMetricDataMetricDataOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
@@ -2946,8 +2942,8 @@ func (o GetMetricDataMetricDataOutput) EndTime() pulumi.StringOutput {
 }
 
 // The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
-func (o GetMetricDataMetricDataOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetricDataMetricData) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetMetricDataMetricDataOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetricDataMetricData) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The name of the metric.  Example: `CpuUtilization`
@@ -3229,9 +3225,9 @@ type GetMetricsMetric struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree bool `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	DimensionFilters map[string]interface{} `pulumi:"dimensionFilters"`
+	DimensionFilters map[string]string `pulumi:"dimensionFilters"`
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions map[string]interface{} `pulumi:"dimensions"`
+	Dimensions map[string]string `pulumi:"dimensions"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
 	// Example - group by namespace: `[ "namespace" ]`
@@ -3261,9 +3257,9 @@ type GetMetricsMetricArgs struct {
 	// When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
 	CompartmentIdInSubtree pulumi.BoolInput `pulumi:"compartmentIdInSubtree"`
 	// Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	DimensionFilters pulumi.MapInput `pulumi:"dimensionFilters"`
+	DimensionFilters pulumi.StringMapInput `pulumi:"dimensionFilters"`
 	// Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-	Dimensions pulumi.MapInput `pulumi:"dimensions"`
+	Dimensions pulumi.StringMapInput `pulumi:"dimensions"`
 	// Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
 	//
 	// Example - group by namespace: `[ "namespace" ]`
@@ -3338,13 +3334,13 @@ func (o GetMetricsMetricOutput) CompartmentIdInSubtree() pulumi.BoolOutput {
 }
 
 // Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-func (o GetMetricsMetricOutput) DimensionFilters() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetricsMetric) map[string]interface{} { return v.DimensionFilters }).(pulumi.MapOutput)
+func (o GetMetricsMetricOutput) DimensionFilters() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetricsMetric) map[string]string { return v.DimensionFilters }).(pulumi.StringMapOutput)
 }
 
 // Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-func (o GetMetricsMetricOutput) Dimensions() pulumi.MapOutput {
-	return o.ApplyT(func(v GetMetricsMetric) map[string]interface{} { return v.Dimensions }).(pulumi.MapOutput)
+func (o GetMetricsMetricOutput) Dimensions() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetMetricsMetric) map[string]string { return v.Dimensions }).(pulumi.StringMapOutput)
 }
 
 // Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.

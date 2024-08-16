@@ -43,7 +43,7 @@ class GetEncryptedDataResult:
 
     @property
     @pulumi.getter(name="associatedData")
-    def associated_data(self) -> Optional[Mapping[str, Any]]:
+    def associated_data(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "associated_data")
 
     @property
@@ -92,7 +92,7 @@ class AwaitableGetEncryptedDataResult(GetEncryptedDataResult):
             plaintext=self.plaintext)
 
 
-def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
+def get_encrypted_data(associated_data: Optional[Mapping[str, str]] = None,
                        crypto_endpoint: Optional[str] = None,
                        key_id: Optional[str] = None,
                        plaintext: Optional[str] = None,
@@ -117,7 +117,7 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
     ```
 
 
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
+    :param Mapping[str, str] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
     :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
     :param str key_id: The OCID of the key to encrypt with.
     :param str plaintext: The plaintext data to encrypt.
@@ -140,7 +140,7 @@ def get_encrypted_data(associated_data: Optional[Mapping[str, Any]] = None,
 
 
 @_utilities.lift_output_func(get_encrypted_data)
-def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, Any]]]] = None,
+def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Mapping[str, str]]]] = None,
                               crypto_endpoint: Optional[pulumi.Input[str]] = None,
                               key_id: Optional[pulumi.Input[str]] = None,
                               plaintext: Optional[pulumi.Input[str]] = None,
@@ -165,7 +165,7 @@ def get_encrypted_data_output(associated_data: Optional[pulumi.Input[Optional[Ma
     ```
 
 
-    :param Mapping[str, Any] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
+    :param Mapping[str, str] associated_data: Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associatedData must be fewer than 4096 characters.
     :param str crypto_endpoint: The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,' and 'GenerateDataEncryptionKey' operations. see Vault Crypto endpoint.
     :param str key_id: The OCID of the key to encrypt with.
     :param str plaintext: The plaintext data to encrypt.

@@ -2627,13 +2627,13 @@ type GetEkmsPrivateEndpointsEkmsPrivateEndpoint struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Mutable name of the EKMS private endpoint
 	DisplayName string `pulumi:"displayName"`
 	// Private IP of the external key manager system to connect to from the EKMS private endpoint
 	ExternalKeyManagerIp string `pulumi:"externalKeyManagerIp"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -2669,13 +2669,13 @@ type GetEkmsPrivateEndpointsEkmsPrivateEndpointArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Mutable name of the EKMS private endpoint
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Private IP of the external key manager system to connect to from the EKMS private endpoint
 	ExternalKeyManagerIp pulumi.StringInput `pulumi:"externalKeyManagerIp"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Unique identifier that is immutable
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
@@ -2756,8 +2756,8 @@ func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) CompartmentId() pulumi
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Mutable name of the EKMS private endpoint
@@ -2771,8 +2771,8 @@ func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) ExternalKeyManagerIp()
 }
 
 // Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetEkmsPrivateEndpointsEkmsPrivateEndpointOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetEkmsPrivateEndpointsEkmsPrivateEndpoint) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier that is immutable
@@ -4621,15 +4621,15 @@ type GetKeysKey struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion string `pulumi:"currentKeyVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
-	DesiredState string                 `pulumi:"desiredState"`
+	DefinedTags  map[string]string `pulumi:"definedTags"`
+	DesiredState string            `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails []GetKeysKeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	ExternalKeyReferences       []GetKeysKeyExternalKeyReference       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id string `pulumi:"id"`
 	// A parameter specifying whether the auto key rotation is enabled or not.
@@ -4677,15 +4677,15 @@ type GetKeysKeyArgs struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion pulumi.StringInput `pulumi:"currentKeyVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags  pulumi.MapInput    `pulumi:"definedTags"`
-	DesiredState pulumi.StringInput `pulumi:"desiredState"`
+	DefinedTags  pulumi.StringMapInput `pulumi:"definedTags"`
+	DesiredState pulumi.StringInput    `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails GetKeysKeyExternalKeyReferenceDetailArrayInput `pulumi:"externalKeyReferenceDetails"`
 	ExternalKeyReferences       GetKeysKeyExternalKeyReferenceArrayInput       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A parameter specifying whether the auto key rotation is enabled or not.
@@ -4781,8 +4781,8 @@ func (o GetKeysKeyOutput) CurrentKeyVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetKeysKeyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKeysKey) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetKeysKeyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKeysKey) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o GetKeysKeyOutput) DesiredState() pulumi.StringOutput {
@@ -4804,8 +4804,8 @@ func (o GetKeysKeyOutput) ExternalKeyReferences() GetKeysKeyExternalKeyReference
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetKeysKeyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetKeysKey) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetKeysKeyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetKeysKey) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the key.
@@ -6933,14 +6933,14 @@ type GetVaultsVault struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries []GetVaultsVaultExternalKeyManagerMetadataSummary `pulumi:"externalKeyManagerMetadataSummaries"`
 	ExternalKeyManagerMetadatas         []GetVaultsVaultExternalKeyManagerMetadata        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id string `pulumi:"id"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
@@ -6981,14 +6981,14 @@ type GetVaultsVaultArgs struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include [Encrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/EncryptedData/Encrypt), [Decrypt](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/DecryptedData/Decrypt), and [GenerateDataEncryptionKey](https://docs.cloud.oracle.com/iaas/api/#/en/key/latest/GeneratedKey/GenerateDataEncryptionKey) operations.
 	CryptoEndpoint pulumi.StringInput `pulumi:"cryptoEndpoint"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Summary about metadata of external key manager to be returned to the customer as a response.
 	ExternalKeyManagerMetadataSummaries GetVaultsVaultExternalKeyManagerMetadataSummaryArrayInput `pulumi:"externalKeyManagerMetadataSummaries"`
 	ExternalKeyManagerMetadatas         GetVaultsVaultExternalKeyManagerMetadataArrayInput        `pulumi:"externalKeyManagerMetadatas"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the vault.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean value that indicates whether the Vault is primary Vault or replica Vault.
@@ -7074,8 +7074,8 @@ func (o GetVaultsVaultOutput) CryptoEndpoint() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetVaultsVaultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVaultsVault) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetVaultsVaultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVaultsVault) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name for the vault. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -7097,8 +7097,8 @@ func (o GetVaultsVaultOutput) ExternalKeyManagerMetadatas() GetVaultsVaultExtern
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetVaultsVaultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetVaultsVault) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetVaultsVaultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVaultsVault) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the vault.

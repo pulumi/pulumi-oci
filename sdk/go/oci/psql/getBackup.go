@@ -68,13 +68,13 @@ type LookupBackupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup's source database system.
 	DbSystemId string `pulumi:"dbSystemId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A description for the backup.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the backup. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
 	Id string `pulumi:"id"`
 	// lastAcceptedRequestToken from MP.
@@ -90,7 +90,7 @@ type LookupBackupResult struct {
 	// The current state of the backup.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the backup was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
@@ -160,8 +160,8 @@ func (o LookupBackupResultOutput) DbSystemId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupBackupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBackupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A description for the backup.
@@ -175,8 +175,8 @@ func (o LookupBackupResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupBackupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBackupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup.
@@ -215,8 +215,8 @@ func (o LookupBackupResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupBackupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBackupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupBackupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBackupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the backup request was received, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`

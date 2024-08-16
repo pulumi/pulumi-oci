@@ -65,7 +65,7 @@ export interface GetBdsInstanceGetOsPatchResult {
     /**
      * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      */
-    readonly minCompatibleOdhVersionMap: {[key: string]: any};
+    readonly minCompatibleOdhVersionMap: {[key: string]: string};
     /**
      * Version of the os patch.
      */

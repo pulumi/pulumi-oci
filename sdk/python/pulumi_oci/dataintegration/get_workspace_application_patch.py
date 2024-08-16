@@ -127,7 +127,7 @@ class GetWorkspaceApplicationPatchResult:
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Mapping[str, Any]:
+    def error_messages(self) -> Mapping[str, str]:
         """
         The errors encountered while applying the patch, if any.
         """
@@ -156,7 +156,7 @@ class GetWorkspaceApplicationPatchResult:
 
     @property
     @pulumi.getter(name="keyMap")
-    def key_map(self) -> Mapping[str, Any]:
+    def key_map(self) -> Mapping[str, str]:
         """
         A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """

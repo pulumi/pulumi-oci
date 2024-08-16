@@ -5,7 +5,6 @@ package com.pulumi.oci.Core.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -37,7 +36,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    private Map<String,Object> schemaData;
+    private Map<String,String> schemaData;
     /**
      * @return The date and time the compute global image capability schema version was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
      * 
@@ -80,7 +79,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
      * @return The map of each capability name to its ImageCapabilityDescriptor.
      * 
      */
-    public Map<String,Object> schemaData() {
+    public Map<String,String> schemaData() {
         return this.schemaData;
     }
     /**
@@ -105,7 +104,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
         private String displayName;
         private String id;
         private String name;
-        private Map<String,Object> schemaData;
+        private Map<String,String> schemaData;
         private String timeCreated;
         public Builder() {}
         public Builder(GetComputeGlobalImageCapabilitySchemasVersionResult defaults) {
@@ -160,7 +159,7 @@ public final class GetComputeGlobalImageCapabilitySchemasVersionResult {
             return this;
         }
         @CustomType.Setter
-        public Builder schemaData(Map<String,Object> schemaData) {
+        public Builder schemaData(Map<String,String> schemaData) {
             if (schemaData == null) {
               throw new MissingRequiredPropertyException("GetComputeGlobalImageCapabilitySchemasVersionResult", "schemaData");
             }

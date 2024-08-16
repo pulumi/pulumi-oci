@@ -53,10 +53,10 @@ class GetOceInstancesOceInstanceResult(dict):
                  add_on_features: Sequence[str],
                  admin_email: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  dr_region: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  guid: str,
                  id: str,
                  idcs_access_token: str,
@@ -67,10 +67,10 @@ class GetOceInstancesOceInstanceResult(dict):
                  lifecycle_details: str,
                  name: str,
                  object_storage_namespace: str,
-                 service: Mapping[str, Any],
+                 service: Mapping[str, str],
                  state: str,
                  state_message: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  tenancy_id: str,
                  tenancy_name: str,
                  time_created: str,
@@ -81,10 +81,10 @@ class GetOceInstancesOceInstanceResult(dict):
         :param Sequence[str] add_on_features: a list of add-on features for the ocm instance
         :param str admin_email: Admin Email for Notification
         :param str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: OceInstance description, can be updated
         :param str dr_region: disaster recovery paired ragion name
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str guid: Unique GUID identifier that is immutable on creation
         :param str id: Unique identifier that is immutable on creation
         :param str idcs_tenancy: IDCS Tenancy Identifier
@@ -94,10 +94,10 @@ class GetOceInstancesOceInstanceResult(dict):
         :param str lifecycle_details: Details of the current state of the instance lifecycle
         :param str name: OceInstance Name
         :param str object_storage_namespace: Object Storage Namespace of tenancy
-        :param Mapping[str, Any] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
+        :param Mapping[str, str] service: SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         :param str state: Filter results on lifecycleState.
         :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str tenancy_id: The ID of the tenancy in which to list resources.
         :param str tenancy_name: Tenancy Name
         :param str time_created: The time the the OceInstance was created. An RFC3339 formatted datetime string
@@ -159,7 +159,7 @@ class GetOceInstancesOceInstanceResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -183,7 +183,7 @@ class GetOceInstancesOceInstanceResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -268,7 +268,7 @@ class GetOceInstancesOceInstanceResult(dict):
 
     @property
     @pulumi.getter
-    def service(self) -> Mapping[str, Any]:
+    def service(self) -> Mapping[str, str]:
         """
         SERVICE data. Example: `{"service": {"IDCS": "value"}}`
         """
@@ -292,7 +292,7 @@ class GetOceInstancesOceInstanceResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

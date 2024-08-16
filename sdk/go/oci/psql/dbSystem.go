@@ -56,12 +56,12 @@ import (
 //					Iops:                pulumi.Any(dbSystemStorageDetailsIops),
 //				},
 //				ConfigId: pulumi.Any(testConfig.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(dbSystemDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				InstanceCount:           pulumi.Any(dbSystemInstanceCount),
 //				InstanceMemorySizeInGbs: pulumi.Any(dbSystemInstanceMemorySizeInGbs),
@@ -129,13 +129,13 @@ type DbSystem struct {
 	// Version of database system software.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntOutput `pulumi:"instanceCount"`
 	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
@@ -163,7 +163,7 @@ type DbSystem struct {
 	// (Updatable) Storage details of the database system.
 	StorageDetails DbSystemStorageDetailsOutput `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Type of the database system.
 	//
 	// ** IMPORTANT **
@@ -236,13 +236,13 @@ type dbSystemState struct {
 	// Version of database system software.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-provided description of a database system.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Count of database instances nodes to be created in the database system.
 	InstanceCount *int `pulumi:"instanceCount"`
 	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
@@ -270,7 +270,7 @@ type dbSystemState struct {
 	// (Updatable) Storage details of the database system.
 	StorageDetails *DbSystemStorageDetails `pulumi:"storageDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of the database system.
 	//
 	// ** IMPORTANT **
@@ -296,13 +296,13 @@ type DbSystemState struct {
 	// Version of database system software.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntPtrInput
 	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
@@ -330,7 +330,7 @@ type DbSystemState struct {
 	// (Updatable) Storage details of the database system.
 	StorageDetails DbSystemStorageDetailsPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Type of the database system.
 	//
 	// ** IMPORTANT **
@@ -358,13 +358,13 @@ type dbSystemArgs struct {
 	// Version of database system software.
 	DbVersion string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-provided description of a database system.
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Count of database instances nodes to be created in the database system.
 	InstanceCount *int `pulumi:"instanceCount"`
 	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
@@ -405,13 +405,13 @@ type DbSystemArgs struct {
 	// Version of database system software.
 	DbVersion pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Count of database instances nodes to be created in the database system.
 	InstanceCount pulumi.IntPtrInput
 	// (Updatable) The total amount of memory available to each database instance node, in gigabytes.
@@ -557,8 +557,8 @@ func (o DbSystemOutput) DbVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DbSystemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DbSystemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-provided description of a database system.
@@ -572,8 +572,8 @@ func (o DbSystemOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DbSystemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DbSystemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Count of database instances nodes to be created in the database system.
@@ -642,8 +642,8 @@ func (o DbSystemOutput) StorageDetails() DbSystemStorageDetailsOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DbSystemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DbSystem) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DbSystemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of the database system.

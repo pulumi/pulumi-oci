@@ -66,13 +66,13 @@ type LookupRuleResult struct {
 	// * Fields not mentioned in the condition are ignored. You can create a valid filter that matches all events with two curly brackets: `{}`
 	Condition string `pulumi:"condition"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// A string that describes the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.  Example: `"This rule sends a notification upon completion of DbaaS backup."`
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.
 	Id string `pulumi:"id"`
 	// Whether or not this rule is currently enabled.  Example: `true`
@@ -141,8 +141,8 @@ func (o LookupRuleResultOutput) Condition() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupRuleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRuleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupRuleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRuleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
@@ -156,8 +156,8 @@ func (o LookupRuleResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. Exists for cross-compatibility only. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupRuleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRuleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupRuleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRuleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this rule.

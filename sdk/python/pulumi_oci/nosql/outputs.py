@@ -1094,8 +1094,8 @@ class GetTablesTableCollectionResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  ddl_statement: str,
-                 defined_tags: Mapping[str, Any],
-                 freeform_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_auto_reclaimable: bool,
                  is_multi_region: bool,
@@ -1106,15 +1106,15 @@ class GetTablesTableCollectionResult(dict):
                  schema_state: str,
                  schemas: Sequence['outputs.GetTablesTableCollectionSchemaResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  table_limits: Sequence['outputs.GetTablesTableCollectionTableLimitResult'],
                  time_created: str,
                  time_of_expiration: str,
                  time_updated: str):
         """
         :param str compartment_id: The ID of a table's compartment.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable.
         :param bool is_auto_reclaimable: True if this table can be reclaimed after an idle period.
         :param bool is_multi_region: True if this table is currently a member of a replication set.
@@ -1122,7 +1122,7 @@ class GetTablesTableCollectionResult(dict):
         :param str name: A shell-globbing-style (*?[]) filter for names.
         :param str schema_state: The current state of this table's schema. Available states are MUTABLE - The schema can be changed. The table is not eligible for replication. FROZEN - The schema is immutable. The table is eligible for replication.
         :param str state: Filter list by the lifecycle state of the item.
-        :param Mapping[str, Any] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
+        :param Mapping[str, str] system_tags: Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         :param Sequence['GetTablesTableCollectionTableLimitArgs'] table_limits: Throughput and storage limits configuration of a table.
         :param str time_created: The time the the table was created. An RFC3339 formatted datetime string.
         :param str time_of_expiration: If lifecycleState is INACTIVE, indicates when this table will be automatically removed. An RFC3339 formatted datetime string.
@@ -1163,7 +1163,7 @@ class GetTablesTableCollectionResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -1171,7 +1171,7 @@ class GetTablesTableCollectionResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1250,7 +1250,7 @@ class GetTablesTableCollectionResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Read-only system tag. These predefined keys are scoped to namespaces.  At present the only supported namespace is `"orcl-cloud"`; and the only key in that namespace is `"free-tier-retained"`. Example: `{"orcl-cloud"": {"free-tier-retained": "true"}}`
         """

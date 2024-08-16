@@ -60,11 +60,11 @@ import (
 //				VcnCompartmentId:               pulumi.Any(testCompartment.Id),
 //				VcnId:                          pulumi.Any(testVcn.Id),
 //				DataNodeHostBareMetalShape:     pulumi.Any(opensearchClusterDataNodeHostBareMetalShape),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				MasterNodeHostBareMetalShape:   pulumi.Any(opensearchClusterMasterNodeHostBareMetalShape),
 //				SecurityMasterUserName:         pulumi.Any(testUser.Name),
@@ -108,13 +108,13 @@ type Cluster struct {
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntOutput `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn pulumi.StringOutput `pulumi:"fqdn"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -156,7 +156,7 @@ type Cluster struct {
 	// The OCID of the cluster's subnet.
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
@@ -285,13 +285,13 @@ type clusterState struct {
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb *int `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn *string `pulumi:"fqdn"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -333,7 +333,7 @@ type clusterState struct {
 	// The OCID of the cluster's subnet.
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The amount of time in milliseconds since the cluster was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The amount of time in milliseconds since the cluster was updated.
@@ -369,13 +369,13 @@ type ClusterState struct {
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// The fully qualified domain name (FQDN) for the cluster's API endpoint.
 	Fqdn pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Additional information about the current lifecycle state of the cluster.
 	LifecycleDetails pulumi.StringPtrInput
 	// (Updatable) The number of master nodes to configure for the cluster.
@@ -417,7 +417,7 @@ type ClusterState struct {
 	// The OCID of the cluster's subnet.
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The amount of time in milliseconds since the cluster was created.
 	TimeCreated pulumi.StringPtrInput
 	// The amount of time in milliseconds since the cluster was updated.
@@ -455,11 +455,11 @@ type clusterArgs struct {
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb int `pulumi:"dataNodeStorageGb"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount int `pulumi:"masterNodeCount"`
 	// The bare metal shape for the cluster's master nodes.
@@ -489,7 +489,7 @@ type clusterArgs struct {
 	// The OCID of the cluster's subnet.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId string `pulumi:"vcnCompartmentId"`
 	// The OCID of the cluster's VCN.
@@ -516,11 +516,11 @@ type ClusterArgs struct {
 	// (Updatable) The amount of storage in GB, to configure per node for the cluster's data nodes.
 	DataNodeStorageGb pulumi.IntInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The name of the cluster. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The number of master nodes to configure for the cluster.
 	MasterNodeCount pulumi.IntInput
 	// The bare metal shape for the cluster's master nodes.
@@ -550,7 +550,7 @@ type ClusterArgs struct {
 	// The OCID of the cluster's subnet.
 	SubnetId pulumi.StringInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The OCID for the compartment where the cluster's VCN is located.
 	VcnCompartmentId pulumi.StringInput
 	// The OCID of the cluster's VCN.
@@ -688,8 +688,8 @@ func (o ClusterOutput) DataNodeStorageGb() pulumi.IntOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ClusterOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ClusterOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The name of the cluster. Avoid entering confidential information.
@@ -703,8 +703,8 @@ func (o ClusterOutput) Fqdn() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ClusterOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ClusterOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Additional information about the current lifecycle state of the cluster.
@@ -808,8 +808,8 @@ func (o ClusterOutput) SubnetId() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ClusterOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Cluster) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The amount of time in milliseconds since the cluster was created.

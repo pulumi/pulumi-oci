@@ -61,13 +61,13 @@ type GetSecurityPolicyReportResult struct {
 	// The OCID of the compartment that contains the security policy report.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy report.
 	Description string `pulumi:"description"`
 	// The display name of the security policy report.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy report.
@@ -76,7 +76,7 @@ type GetSecurityPolicyReportResult struct {
 	// The current state of the security policy report.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the of the  target database.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the security policy report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -129,8 +129,8 @@ func (o GetSecurityPolicyReportResultOutput) CompartmentId() pulumi.StringOutput
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o GetSecurityPolicyReportResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSecurityPolicyReportResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the security policy report.
@@ -144,8 +144,8 @@ func (o GetSecurityPolicyReportResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o GetSecurityPolicyReportResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSecurityPolicyReportResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The provider-assigned unique ID for this managed resource.
@@ -168,8 +168,8 @@ func (o GetSecurityPolicyReportResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetSecurityPolicyReportResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetSecurityPolicyReportResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSecurityPolicyReportResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the of the  target database.

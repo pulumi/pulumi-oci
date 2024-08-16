@@ -64,13 +64,13 @@ type LookupCertificateResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name of the SSL certificate.
 	DisplayName string `pulumi:"displayName"`
 	// Additional attributes associated with users or public keys for managing relationships between Certificate Authorities.
 	Extensions []GetCertificateExtension `pulumi:"extensions"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.
 	Id string `pulumi:"id"`
 	// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
@@ -152,8 +152,8 @@ func (o LookupCertificateResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupCertificateResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupCertificateResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name of the SSL certificate.
@@ -167,8 +167,8 @@ func (o LookupCertificateResultOutput) Extensions() GetCertificateExtensionArray
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupCertificateResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupCertificateResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupCertificateResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupCertificateResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SSL certificate.

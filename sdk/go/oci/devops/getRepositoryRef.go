@@ -64,9 +64,9 @@ type LookupRepositoryRefResult struct {
 	// Commit ID pointed to by the new branch.
 	CommitId string `pulumi:"commitId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique full reference name inside a repository.
 	FullRefName string `pulumi:"fullRefName"`
 	Id          string `pulumi:"id"`
@@ -126,13 +126,13 @@ func (o LookupRepositoryRefResultOutput) CommitId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupRepositoryRefResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupRepositoryRefResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o LookupRepositoryRefResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupRepositoryRefResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupRepositoryRefResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupRepositoryRefResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique full reference name inside a repository.

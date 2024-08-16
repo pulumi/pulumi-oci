@@ -32,11 +32,11 @@ type LookupFsuCycleResult struct {
 	BatchingStrategies       []GetFsuCycleBatchingStrategy      `pulumi:"batchingStrategies"`
 	CollectionType           string                             `pulumi:"collectionType"`
 	CompartmentId            string                             `pulumi:"compartmentId"`
-	DefinedTags              map[string]interface{}             `pulumi:"definedTags"`
+	DefinedTags              map[string]string                  `pulumi:"definedTags"`
 	DiagnosticsCollections   []GetFsuCycleDiagnosticsCollection `pulumi:"diagnosticsCollections"`
 	DisplayName              string                             `pulumi:"displayName"`
 	ExecutingFsuActionId     string                             `pulumi:"executingFsuActionId"`
-	FreeformTags             map[string]interface{}             `pulumi:"freeformTags"`
+	FreeformTags             map[string]string                  `pulumi:"freeformTags"`
 	FsuCollectionId          string                             `pulumi:"fsuCollectionId"`
 	FsuCycleId               string                             `pulumi:"fsuCycleId"`
 	GoalVersionDetails       []GetFsuCycleGoalVersionDetail     `pulumi:"goalVersionDetails"`
@@ -50,7 +50,7 @@ type LookupFsuCycleResult struct {
 	NextActionToExecutes     []GetFsuCycleNextActionToExecute   `pulumi:"nextActionToExecutes"`
 	StageActionSchedules     []GetFsuCycleStageActionSchedule   `pulumi:"stageActionSchedules"`
 	State                    string                             `pulumi:"state"`
-	SystemTags               map[string]interface{}             `pulumi:"systemTags"`
+	SystemTags               map[string]string                  `pulumi:"systemTags"`
 	TimeCreated              string                             `pulumi:"timeCreated"`
 	TimeFinished             string                             `pulumi:"timeFinished"`
 	TimeUpdated              string                             `pulumi:"timeUpdated"`
@@ -110,8 +110,8 @@ func (o LookupFsuCycleResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o LookupFsuCycleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCycleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupFsuCycleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCycleResultOutput) DiagnosticsCollections() GetFsuCycleDiagnosticsCollectionArrayOutput {
@@ -126,8 +126,8 @@ func (o LookupFsuCycleResultOutput) ExecutingFsuActionId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.ExecutingFsuActionId }).(pulumi.StringOutput)
 }
 
-func (o LookupFsuCycleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCycleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupFsuCycleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCycleResultOutput) FsuCollectionId() pulumi.StringOutput {
@@ -182,8 +182,8 @@ func (o LookupFsuCycleResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupFsuCycleResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-func (o LookupFsuCycleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupFsuCycleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupFsuCycleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupFsuCycleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupFsuCycleResultOutput) TimeCreated() pulumi.StringOutput {

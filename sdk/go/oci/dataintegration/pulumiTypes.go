@@ -178,7 +178,7 @@ type WorkspaceApplicationMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -220,7 +220,7 @@ type WorkspaceApplicationMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -321,8 +321,8 @@ func (o WorkspaceApplicationMetadataOutput) IdentifierPath() pulumi.StringPtrOut
 }
 
 // Information property fields.
-func (o WorkspaceApplicationMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceApplicationMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceApplicationMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -989,7 +989,7 @@ type WorkspaceApplicationPatchMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -1031,7 +1031,7 @@ type WorkspaceApplicationPatchMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -1134,8 +1134,8 @@ func (o WorkspaceApplicationPatchMetadataOutput) IdentifierPath() pulumi.StringP
 }
 
 // Information property fields.
-func (o WorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationPatchMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -2830,7 +2830,7 @@ type WorkspaceApplicationScheduleMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -2872,7 +2872,7 @@ type WorkspaceApplicationScheduleMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -2975,8 +2975,8 @@ func (o WorkspaceApplicationScheduleMetadataOutput) IdentifierPath() pulumi.Stri
 }
 
 // Information property fields.
-func (o WorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationScheduleMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -4208,7 +4208,7 @@ type WorkspaceApplicationTaskScheduleMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -4250,7 +4250,7 @@ type WorkspaceApplicationTaskScheduleMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -4353,8 +4353,8 @@ func (o WorkspaceApplicationTaskScheduleMetadataOutput) IdentifierPath() pulumi.
 }
 
 // Information property fields.
-func (o WorkspaceApplicationTaskScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceApplicationTaskScheduleMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -5955,7 +5955,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefMetadata struct {
 	// (Updatable) The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -5997,7 +5997,7 @@ type WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs struct {
 	// (Updatable) The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// (Updatable) Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// (Updatable) Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -6126,10 +6126,8 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) IdentifierPat
 }
 
 // (Updatable) Information property fields.
-func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]interface{} {
-		return v.InfoFields
-	}).(pulumi.MapOutput)
+func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies whether this object is a favorite or not.
@@ -6252,13 +6250,13 @@ func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataPtrOutput) Identifier
 }
 
 // (Updatable) Information property fields.
-func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataPtrOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]interface{} {
+func (o WorkspaceApplicationTaskScheduleScheduleRefMetadataPtrOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Specifies whether this object is a favorite or not.
@@ -7123,7 +7121,7 @@ type WorkspaceFolderMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -7165,7 +7163,7 @@ type WorkspaceFolderMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -7264,8 +7262,8 @@ func (o WorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 }
 
 // Information property fields.
-func (o WorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceFolderMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceFolderMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceFolderMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -8347,7 +8345,7 @@ type WorkspaceProjectMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -8389,7 +8387,7 @@ type WorkspaceProjectMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -8488,8 +8486,8 @@ func (o WorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringPtrOutput 
 }
 
 // Information property fields.
-func (o WorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceProjectMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceProjectMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceProjectMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -9583,7 +9581,7 @@ type WorkspaceTaskCancelRestCallConfig struct {
 	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // WorkspaceTaskCancelRestCallConfigInput is an input type that accepts WorkspaceTaskCancelRestCallConfigArgs and WorkspaceTaskCancelRestCallConfigOutput values.
@@ -9607,7 +9605,7 @@ type WorkspaceTaskCancelRestCallConfigArgs struct {
 	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (WorkspaceTaskCancelRestCallConfigArgs) ElementType() reflect.Type {
@@ -9710,8 +9708,8 @@ func (o WorkspaceTaskCancelRestCallConfigOutput) ModelType() pulumi.StringPtrOut
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskCancelRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o WorkspaceTaskCancelRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceTaskCancelRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskCancelRestCallConfigPtrOutput struct{ *pulumi.OutputState }
@@ -9779,13 +9777,13 @@ func (o WorkspaceTaskCancelRestCallConfigPtrOutput) ModelType() pulumi.StringPtr
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskCancelRestCallConfigPtrOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfig) map[string]interface{} {
+func (o WorkspaceTaskCancelRestCallConfigPtrOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceTaskCancelRestCallConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskCancelRestCallConfigConfigValues struct {
@@ -11761,7 +11759,7 @@ type WorkspaceTaskExecuteRestCallConfig struct {
 	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // WorkspaceTaskExecuteRestCallConfigInput is an input type that accepts WorkspaceTaskExecuteRestCallConfigArgs and WorkspaceTaskExecuteRestCallConfigOutput values.
@@ -11785,7 +11783,7 @@ type WorkspaceTaskExecuteRestCallConfigArgs struct {
 	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (WorkspaceTaskExecuteRestCallConfigArgs) ElementType() reflect.Type {
@@ -11888,8 +11886,8 @@ func (o WorkspaceTaskExecuteRestCallConfigOutput) ModelType() pulumi.StringPtrOu
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskExecuteRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o WorkspaceTaskExecuteRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceTaskExecuteRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskExecuteRestCallConfigPtrOutput struct{ *pulumi.OutputState }
@@ -11957,13 +11955,13 @@ func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) ModelType() pulumi.StringPt
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfig) map[string]interface{} {
+func (o WorkspaceTaskExecuteRestCallConfigPtrOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceTaskExecuteRestCallConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskExecuteRestCallConfigConfigValues struct {
@@ -14223,7 +14221,7 @@ type WorkspaceTaskMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath *string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite *bool `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -14265,7 +14263,7 @@ type WorkspaceTaskMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringPtrInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolPtrInput `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -14364,8 +14362,8 @@ func (o WorkspaceTaskMetadataOutput) IdentifierPath() pulumi.StringPtrOutput {
 }
 
 // Information property fields.
-func (o WorkspaceTaskMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceTaskMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o WorkspaceTaskMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceTaskMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -18459,7 +18457,7 @@ type WorkspaceTaskPollRestCallConfig struct {
 	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // WorkspaceTaskPollRestCallConfigInput is an input type that accepts WorkspaceTaskPollRestCallConfigArgs and WorkspaceTaskPollRestCallConfigOutput values.
@@ -18483,7 +18481,7 @@ type WorkspaceTaskPollRestCallConfigArgs struct {
 	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput `pulumi:"modelType"`
 	// (Updatable) The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (WorkspaceTaskPollRestCallConfigArgs) ElementType() reflect.Type {
@@ -18586,8 +18584,8 @@ func (o WorkspaceTaskPollRestCallConfigOutput) ModelType() pulumi.StringPtrOutpu
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskPollRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o WorkspaceTaskPollRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v WorkspaceTaskPollRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskPollRestCallConfigPtrOutput struct{ *pulumi.OutputState }
@@ -18655,13 +18653,13 @@ func (o WorkspaceTaskPollRestCallConfigPtrOutput) ModelType() pulumi.StringPtrOu
 }
 
 // (Updatable) The headers for the REST call.
-func (o WorkspaceTaskPollRestCallConfigPtrOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfig) map[string]interface{} {
+func (o WorkspaceTaskPollRestCallConfigPtrOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *WorkspaceTaskPollRestCallConfig) map[string]string {
 		if v == nil {
 			return nil
 		}
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type WorkspaceTaskPollRestCallConfigConfigValues struct {
@@ -22503,7 +22501,7 @@ type GetWorkspaceApplicationMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -22545,7 +22543,7 @@ type GetWorkspaceApplicationMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -22648,8 +22646,8 @@ func (o GetWorkspaceApplicationMetadataOutput) IdentifierPath() pulumi.StringOut
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -23316,7 +23314,7 @@ type GetWorkspaceApplicationPatchMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -23358,7 +23356,7 @@ type GetWorkspaceApplicationPatchMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -23461,8 +23459,8 @@ func (o GetWorkspaceApplicationPatchMetadataOutput) IdentifierPath() pulumi.Stri
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationPatchMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -24467,13 +24465,13 @@ type GetWorkspaceApplicationPatchesPatchSummaryCollectionItem struct {
 	// The description of the aggregator.
 	Description string `pulumi:"description"`
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// Used to filter by the identifier of the published object.
 	Identifier string `pulumi:"identifier"`
 	// The key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The object type.
@@ -24523,13 +24521,13 @@ type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemArgs struct {
 	// The description of the aggregator.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The errors encountered while applying the patch, if any.
-	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	ErrorMessages pulumi.StringMapInput `pulumi:"errorMessages"`
 	// Used to filter by the identifier of the published object.
 	Identifier pulumi.StringInput `pulumi:"identifier"`
 	// The key of the object.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The object type.
@@ -24632,10 +24630,10 @@ func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Descript
 }
 
 // The errors encountered while applying the patch, if any.
-func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]interface{} {
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]string {
 		return v.ErrorMessages
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Used to filter by the identifier of the published object.
@@ -24649,10 +24647,8 @@ func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) Key() pu
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]interface{} {
-		return v.KeyMap
-	}).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItem) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -24930,7 +24926,7 @@ type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -24972,7 +24968,7 @@ type GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataArgs struct
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -25081,10 +25077,10 @@ func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) 
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) map[string]interface{} {
+func (o GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationPatchesPatchSummaryCollectionItemMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -26438,7 +26434,7 @@ type GetWorkspaceApplicationScheduleMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -26480,7 +26476,7 @@ type GetWorkspaceApplicationScheduleMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -26583,8 +26579,8 @@ func (o GetWorkspaceApplicationScheduleMetadataOutput) IdentifierPath() pulumi.S
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationScheduleMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationScheduleMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -27888,7 +27884,7 @@ type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata struc
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -27930,7 +27926,7 @@ type GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataArgs s
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -28041,10 +28037,10 @@ func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOut
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) map[string]interface{} {
+func (o GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationSchedulesScheduleSummaryCollectionItemMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -29104,7 +29100,7 @@ type GetWorkspaceApplicationTaskScheduleMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -29146,7 +29142,7 @@ type GetWorkspaceApplicationTaskScheduleMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -29249,8 +29245,8 @@ func (o GetWorkspaceApplicationTaskScheduleMetadataOutput) IdentifierPath() pulu
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationTaskScheduleMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationTaskScheduleMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationTaskScheduleMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationTaskScheduleMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -30390,7 +30386,7 @@ type GetWorkspaceApplicationTaskScheduleScheduleRefMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -30432,7 +30428,7 @@ type GetWorkspaceApplicationTaskScheduleScheduleRefMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -30535,10 +30531,8 @@ func (o GetWorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) Identifier
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]interface{} {
-		return v.InfoFields
-	}).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationTaskScheduleScheduleRefMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationTaskScheduleScheduleRefMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -31960,7 +31954,7 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetada
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -32002,7 +31996,7 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetada
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -32113,10 +32107,10 @@ func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMet
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadata) map[string]interface{} {
+func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -33107,7 +33101,7 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSchedu
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -33149,7 +33143,7 @@ type GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSchedu
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -33235,10 +33229,10 @@ func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemSch
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadata) map[string]interface{} {
+func (o GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationTaskSchedulesTaskScheduleSummaryCollectionItemScheduleRefMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -33719,7 +33713,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItem struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas []GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
@@ -33727,7 +33721,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItem struct {
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
 	Id string `pulumi:"id"`
 	// Used to filter by the identifier of the published object.
@@ -33735,7 +33729,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItem struct {
 	// The key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The object type.
@@ -33784,7 +33778,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas GetWorkspaceApplicationsApplicationSummaryCollectionItemDependentObjectMetadataArrayInput `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
@@ -33792,7 +33786,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs struct {
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
 	Id pulumi.StringInput `pulumi:"id"`
 	// Used to filter by the identifier of the published object.
@@ -33800,7 +33794,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemArgs struct {
 	// The key of the object.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The object type.
@@ -33894,10 +33888,10 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Compartm
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]interface{} {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]string {
 		return v.DefinedTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // A list of dependent objects in this patch.
@@ -33918,10 +33912,10 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) DisplayN
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]interface{} {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]string {
 		return v.FreeformTags
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // OCID of the resource that is used to uniquely identify the application
@@ -33940,10 +33934,8 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) Key() pu
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]interface{} {
-		return v.KeyMap
-	}).(pulumi.MapOutput)
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItem) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -34229,7 +34221,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -34271,7 +34263,7 @@ type GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataArgs struct
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -34380,10 +34372,10 @@ func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) 
 }
 
 // Information property fields.
-func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) map[string]interface{} {
+func (o GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceApplicationsApplicationSummaryCollectionItemMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -35720,7 +35712,7 @@ type GetWorkspaceExportRequestsExportRequestSummaryCollectionItem struct {
 	// Name of the user who initiated export request.
 	CreatedBy string `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// The array of exported object details.
 	ExportedItems []GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItem `pulumi:"exportedItems"`
 	// Name of the exported zip file.
@@ -35772,7 +35764,7 @@ type GetWorkspaceExportRequestsExportRequestSummaryCollectionItemArgs struct {
 	// Name of the user who initiated export request.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	ErrorMessages pulumi.StringMapInput `pulumi:"errorMessages"`
 	// The array of exported object details.
 	ExportedItems GetWorkspaceExportRequestsExportRequestSummaryCollectionItemExportedItemArrayInput `pulumi:"exportedItems"`
 	// Name of the exported zip file.
@@ -35874,10 +35866,10 @@ func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) Crea
 }
 
 // Contains key of the error
-func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) map[string]interface{} {
+func (o GetWorkspaceExportRequestsExportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceExportRequestsExportRequestSummaryCollectionItem) map[string]string {
 		return v.ErrorMessages
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // The array of exported object details.
@@ -36284,7 +36276,7 @@ type GetWorkspaceFolderMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -36326,7 +36318,7 @@ type GetWorkspaceFolderMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -36427,8 +36419,8 @@ func (o GetWorkspaceFolderMetadataOutput) IdentifierPath() pulumi.StringOutput {
 }
 
 // Information property fields.
-func (o GetWorkspaceFolderMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceFolderMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceFolderMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceFolderMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -37279,7 +37271,7 @@ type GetWorkspaceFoldersFolderSummaryCollectionItem struct {
 	// The key of the aggregator object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceFoldersFolderSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The type of the object.
@@ -37321,7 +37313,7 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemArgs struct {
 	// The key of the aggregator object.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the object.
@@ -37417,8 +37409,8 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) Key() pulumi.Strin
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItem) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -37505,7 +37497,7 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -37547,7 +37539,7 @@ type GetWorkspaceFoldersFolderSummaryCollectionItemMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -37650,10 +37642,8 @@ func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) Identifier
 }
 
 // Information property fields.
-func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) map[string]interface{} {
-		return v.InfoFields
-	}).(pulumi.MapOutput)
+func (o GetWorkspaceFoldersFolderSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceFoldersFolderSummaryCollectionItemMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -38755,7 +38745,7 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItem struct {
 	// Name of the user who initiated import request.
 	CreatedBy string `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages map[string]interface{} `pulumi:"errorMessages"`
+	ErrorMessages map[string]string `pulumi:"errorMessages"`
 	// Name of the zip file from which objects will be imported.
 	FileName string `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
@@ -38803,7 +38793,7 @@ type GetWorkspaceImportRequestsImportRequestSummaryCollectionItemArgs struct {
 	// Name of the user who initiated import request.
 	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Contains key of the error
-	ErrorMessages pulumi.MapInput `pulumi:"errorMessages"`
+	ErrorMessages pulumi.StringMapInput `pulumi:"errorMessages"`
 	// Name of the zip file from which objects will be imported.
 	FileName pulumi.StringInput `pulumi:"fileName"`
 	// Import Objects Conflict resolution.
@@ -38901,10 +38891,10 @@ func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) Crea
 }
 
 // Contains key of the error
-func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) map[string]interface{} {
+func (o GetWorkspaceImportRequestsImportRequestSummaryCollectionItemOutput) ErrorMessages() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceImportRequestsImportRequestSummaryCollectionItem) map[string]string {
 		return v.ErrorMessages
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Name of the zip file from which objects will be imported.
@@ -39296,7 +39286,7 @@ type GetWorkspaceProjectMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -39338,7 +39328,7 @@ type GetWorkspaceProjectMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -39439,8 +39429,8 @@ func (o GetWorkspaceProjectMetadataOutput) IdentifierPath() pulumi.StringOutput 
 }
 
 // Information property fields.
-func (o GetWorkspaceProjectMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceProjectMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -40288,7 +40278,7 @@ type GetWorkspaceProjectsProjectSummaryCollectionItem struct {
 	// The key of the aggregator object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceProjectsProjectSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The type of the object.
@@ -40328,7 +40318,7 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemArgs struct {
 	// The key of the aggregator object.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the object.
@@ -40416,8 +40406,8 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) Key() pulumi.Str
 }
 
 // A key map. If provided, the key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItem) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -40508,7 +40498,7 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -40550,7 +40540,7 @@ type GetWorkspaceProjectsProjectSummaryCollectionItemMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
@@ -40653,10 +40643,10 @@ func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) Identifi
 }
 
 // Information property fields.
-func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) map[string]interface{} {
+func (o GetWorkspaceProjectsProjectSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceProjectsProjectSummaryCollectionItemMetadata) map[string]string {
 		return v.InfoFields
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -41503,7 +41493,7 @@ type GetWorkspaceTaskCancelRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTaskCancelRestCallConfigInput is an input type that accepts GetWorkspaceTaskCancelRestCallConfigArgs and GetWorkspaceTaskCancelRestCallConfigOutput values.
@@ -41527,7 +41517,7 @@ type GetWorkspaceTaskCancelRestCallConfigArgs struct {
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTaskCancelRestCallConfigArgs) ElementType() reflect.Type {
@@ -41604,8 +41594,8 @@ func (o GetWorkspaceTaskCancelRestCallConfigOutput) ModelType() pulumi.StringOut
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTaskCancelRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTaskCancelRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o GetWorkspaceTaskCancelRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTaskCancelRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTaskCancelRestCallConfigArrayOutput struct{ *pulumi.OutputState }
@@ -43020,7 +43010,7 @@ type GetWorkspaceTaskExecuteRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTaskExecuteRestCallConfigInput is an input type that accepts GetWorkspaceTaskExecuteRestCallConfigArgs and GetWorkspaceTaskExecuteRestCallConfigOutput values.
@@ -43044,7 +43034,7 @@ type GetWorkspaceTaskExecuteRestCallConfigArgs struct {
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTaskExecuteRestCallConfigArgs) ElementType() reflect.Type {
@@ -43121,8 +43111,8 @@ func (o GetWorkspaceTaskExecuteRestCallConfigOutput) ModelType() pulumi.StringOu
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTaskExecuteRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTaskExecuteRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o GetWorkspaceTaskExecuteRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTaskExecuteRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTaskExecuteRestCallConfigArrayOutput struct{ *pulumi.OutputState }
@@ -44745,7 +44735,7 @@ type GetWorkspaceTaskMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -44787,7 +44777,7 @@ type GetWorkspaceTaskMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -44886,8 +44876,8 @@ func (o GetWorkspaceTaskMetadataOutput) IdentifierPath() pulumi.StringOutput {
 }
 
 // Information property fields.
-func (o GetWorkspaceTaskMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTaskMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceTaskMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTaskMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -47863,7 +47853,7 @@ type GetWorkspaceTaskPollRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTaskPollRestCallConfigInput is an input type that accepts GetWorkspaceTaskPollRestCallConfigArgs and GetWorkspaceTaskPollRestCallConfigOutput values.
@@ -47887,7 +47877,7 @@ type GetWorkspaceTaskPollRestCallConfigArgs struct {
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTaskPollRestCallConfigArgs) ElementType() reflect.Type {
@@ -47964,8 +47954,8 @@ func (o GetWorkspaceTaskPollRestCallConfigOutput) ModelType() pulumi.StringOutpu
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTaskPollRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTaskPollRestCallConfig) map[string]interface{} { return v.RequestHeaders }).(pulumi.MapOutput)
+func (o GetWorkspaceTaskPollRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTaskPollRestCallConfig) map[string]string { return v.RequestHeaders }).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTaskPollRestCallConfigArrayOutput struct{ *pulumi.OutputState }
@@ -50783,7 +50773,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItem struct {
 	// Used to filter by the key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceTasksTaskSummaryCollectionItemMetadata `pulumi:"metadatas"`
 	// The type of the types object.
@@ -50851,7 +50841,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemArgs struct {
 	// Used to filter by the key of the object.
 	Key pulumi.StringInput `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap pulumi.MapInput `pulumi:"keyMap"`
+	KeyMap pulumi.StringMapInput `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas GetWorkspaceTasksTaskSummaryCollectionItemMetadataArrayInput `pulumi:"metadatas"`
 	// The type of the types object.
@@ -50998,8 +50988,8 @@ func (o GetWorkspaceTasksTaskSummaryCollectionItemOutput) Key() pulumi.StringOut
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o GetWorkspaceTasksTaskSummaryCollectionItemOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItem) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o GetWorkspaceTasksTaskSummaryCollectionItemOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItem) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.
@@ -51279,7 +51269,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigInput is an input type that accepts GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigArgs and GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigOutput values.
@@ -51303,7 +51293,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigArgs struct {
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigArgs) ElementType() reflect.Type {
@@ -51355,10 +51345,10 @@ func (o GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigOutput) Mo
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfig) map[string]interface{} {
+func (o GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfig) map[string]string {
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTasksTaskSummaryCollectionItemCancelRestCallConfigConfigValues struct {
@@ -52219,7 +52209,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigInput is an input type that accepts GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigArgs and GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigOutput values.
@@ -52243,7 +52233,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigArgs struct 
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigArgs) ElementType() reflect.Type {
@@ -52295,10 +52285,10 @@ func (o GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigOutput) M
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig) map[string]interface{} {
+func (o GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfig) map[string]string {
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTasksTaskSummaryCollectionItemExecuteRestCallConfigConfigValues struct {
@@ -53340,7 +53330,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemMetadata struct {
 	// The full path to identify this object.
 	IdentifierPath string `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields map[string]interface{} `pulumi:"infoFields"`
+	InfoFields map[string]string `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite bool `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -53382,7 +53372,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemMetadataArgs struct {
 	// The full path to identify this object.
 	IdentifierPath pulumi.StringInput `pulumi:"identifierPath"`
 	// Information property fields.
-	InfoFields pulumi.MapInput `pulumi:"infoFields"`
+	InfoFields pulumi.StringMapInput `pulumi:"infoFields"`
 	// Specifies whether this object is a favorite or not.
 	IsFavorite pulumi.BoolInput `pulumi:"isFavorite"`
 	// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
@@ -53485,8 +53475,8 @@ func (o GetWorkspaceTasksTaskSummaryCollectionItemMetadataOutput) IdentifierPath
 }
 
 // Information property fields.
-func (o GetWorkspaceTasksTaskSummaryCollectionItemMetadataOutput) InfoFields() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemMetadata) map[string]interface{} { return v.InfoFields }).(pulumi.MapOutput)
+func (o GetWorkspaceTasksTaskSummaryCollectionItemMetadataOutput) InfoFields() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemMetadata) map[string]string { return v.InfoFields }).(pulumi.StringMapOutput)
 }
 
 // Specifies whether this object is a favorite or not.
@@ -55702,7 +55692,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfig struct {
 	// The type of the types object.
 	ModelType string `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders map[string]interface{} `pulumi:"requestHeaders"`
+	RequestHeaders map[string]string `pulumi:"requestHeaders"`
 }
 
 // GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigInput is an input type that accepts GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigArgs and GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigOutput values.
@@ -55726,7 +55716,7 @@ type GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigArgs struct {
 	// The type of the types object.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
 	// The headers for the REST call.
-	RequestHeaders pulumi.MapInput `pulumi:"requestHeaders"`
+	RequestHeaders pulumi.StringMapInput `pulumi:"requestHeaders"`
 }
 
 func (GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigArgs) ElementType() reflect.Type {
@@ -55778,10 +55768,10 @@ func (o GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigOutput) Mode
 }
 
 // The headers for the REST call.
-func (o GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigOutput) RequestHeaders() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfig) map[string]interface{} {
+func (o GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigOutput) RequestHeaders() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfig) map[string]string {
 		return v.RequestHeaders
-	}).(pulumi.MapOutput)
+	}).(pulumi.StringMapOutput)
 }
 
 type GetWorkspaceTasksTaskSummaryCollectionItemPollRestCallConfigConfigValues struct {
@@ -57487,7 +57477,7 @@ type GetWorkspacesWorkspace struct {
 	// The OCID of the compartment containing the resources you want to list.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user defined description for the workspace.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -57502,7 +57492,7 @@ type GetWorkspacesWorkspace struct {
 	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
 	EndpointName string `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               string `pulumi:"id"`
 	IsForceOperation bool   `pulumi:"isForceOperation"`
@@ -57542,7 +57532,7 @@ type GetWorkspacesWorkspaceArgs struct {
 	// The OCID of the compartment containing the resources you want to list.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user defined description for the workspace.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
@@ -57557,7 +57547,7 @@ type GetWorkspacesWorkspaceArgs struct {
 	// Name of the private endpoint associated with the container/workspace. Returns null if there is none.
 	EndpointName pulumi.StringInput `pulumi:"endpointName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// A system-generated and immutable identifier assigned to the workspace upon creation.
 	Id               pulumi.StringInput `pulumi:"id"`
 	IsForceOperation pulumi.BoolInput   `pulumi:"isForceOperation"`
@@ -57639,8 +57629,8 @@ func (o GetWorkspacesWorkspaceOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o GetWorkspacesWorkspaceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetWorkspacesWorkspaceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user defined description for the workspace.
@@ -57678,8 +57668,8 @@ func (o GetWorkspacesWorkspaceOutput) EndpointName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o GetWorkspacesWorkspaceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetWorkspacesWorkspace) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetWorkspacesWorkspaceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetWorkspacesWorkspace) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // A system-generated and immutable identifier assigned to the workspace upon creation.

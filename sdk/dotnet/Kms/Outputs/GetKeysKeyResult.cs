@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         public readonly string DesiredState;
         /// <summary>
         /// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Kms.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// The OCID of the key.
         /// </summary>
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Kms.Outputs
 
             string currentKeyVersion,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string desiredState,
 
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Kms.Outputs
 
             ImmutableArray<Outputs.GetKeysKeyExternalKeyReferenceResult> externalKeyReferences,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string id,
 

@@ -7,7 +7,6 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -24,13 +23,13 @@ public final class PluggableDatabaseManagementsManagementConnectionStringArgs ex
      * 
      */
     @Import(name="allConnectionStrings")
-    private @Nullable Output<Map<String,Object>> allConnectionStrings;
+    private @Nullable Output<Map<String,String>> allConnectionStrings;
 
     /**
      * @return All connection strings to use to connect to the pluggable database.
      * 
      */
-    public Optional<Output<Map<String,Object>>> allConnectionStrings() {
+    public Optional<Output<Map<String,String>>> allConnectionStrings() {
         return Optional.ofNullable(this.allConnectionStrings);
     }
 
@@ -118,7 +117,7 @@ public final class PluggableDatabaseManagementsManagementConnectionStringArgs ex
          * @return builder
          * 
          */
-        public Builder allConnectionStrings(@Nullable Output<Map<String,Object>> allConnectionStrings) {
+        public Builder allConnectionStrings(@Nullable Output<Map<String,String>> allConnectionStrings) {
             $.allConnectionStrings = allConnectionStrings;
             return this;
         }
@@ -129,7 +128,7 @@ public final class PluggableDatabaseManagementsManagementConnectionStringArgs ex
          * @return builder
          * 
          */
-        public Builder allConnectionStrings(Map<String,Object> allConnectionStrings) {
+        public Builder allConnectionStrings(Map<String,String> allConnectionStrings) {
             return allConnectionStrings(Output.of(allConnectionStrings));
         }
 

@@ -197,24 +197,24 @@ class JobParameterFileVersion(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 defined_tags: Optional[Mapping[str, Any]] = None,
+                 defined_tags: Optional[Mapping[str, str]] = None,
                  description: Optional[str] = None,
-                 freeform_tags: Optional[Mapping[str, Any]] = None,
+                 freeform_tags: Optional[Mapping[str, str]] = None,
                  is_current: Optional[bool] = None,
                  is_factory: Optional[bool] = None,
                  kind: Optional[str] = None,
                  name: Optional[str] = None,
-                 system_tags: Optional[Mapping[str, Any]] = None,
+                 system_tags: Optional[Mapping[str, str]] = None,
                  time_created: Optional[str] = None):
         """
-        :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A description to discribe the current parameter file version
-        :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param Mapping[str, str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param bool is_current: Return boolean true/false for the currently in-use parameter file (factory or a versioned file)
         :param bool is_factory: Return true/false for whether the parameter file is oracle provided (Factory)
         :param str kind: Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
         :param str name: Phase name
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the Migration Job was created. An RFC3339 formatted datetime string
         """
         if defined_tags is not None:
@@ -238,7 +238,7 @@ class JobParameterFileVersion(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[Mapping[str, Any]]:
+    def defined_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -254,7 +254,7 @@ class JobParameterFileVersion(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[Mapping[str, Any]]:
+    def freeform_tags(self) -> Optional[Mapping[str, str]]:
         """
         (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
@@ -294,7 +294,7 @@ class JobParameterFileVersion(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[Mapping[str, Any]]:
+    def system_tags(self) -> Optional[Mapping[str, str]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -2256,10 +2256,10 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  database_id: str,
                  database_name: str,
                  db_system_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  host: str,
                  id: str,
                  ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
@@ -2284,7 +2284,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  ssl_mode: str,
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  technology_type: str,
                  time_created: str,
                  time_updated: str,
@@ -2299,10 +2299,10 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str database_id: The OCID of the database being referenced.
         :param str database_name: The name of the database being referenced.
         :param str db_system_id: The OCID of the database system being referenced.
-        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str description: A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
         :param str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param Mapping[str, str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         :param str host: The IP Address of the host.
         :param str id: The OCID of the connection being referenced.
         :param Sequence['GetConnectionsConnectionCollectionItemIngressIpArgs'] ingress_ips: List of ingress IP addresses from where to connect to this connection's privateIp.
@@ -2323,7 +2323,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str ssl_mode: SSL mode to be used for the connection.
         :param str state: The current state of the Database Migration Deployment.
         :param str subnet_id: Oracle Cloud Infrastructure resource ID.
-        :param Mapping[str, Any] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str technology_type: The array of technology types.
         :param str time_created: The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
         :param str time_updated: The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
@@ -2431,7 +2431,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -2455,7 +2455,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
@@ -2643,7 +2643,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

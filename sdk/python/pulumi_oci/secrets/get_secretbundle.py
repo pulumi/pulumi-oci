@@ -70,7 +70,7 @@ class GetSecretbundleResult:
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         Customer-provided contextual metadata for the secret.
         """

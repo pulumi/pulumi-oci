@@ -13,14 +13,14 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
     public sealed class ExternalExadataStorageServerConnectorGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("additionalDetails")]
-        private InputMap<object>? _additionalDetails;
+        private InputMap<string>? _additionalDetails;
 
         /// <summary>
         /// The additional details of the resource defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
         /// </summary>
-        public InputMap<object> AdditionalDetails
+        public InputMap<string> AdditionalDetails
         {
-            get => _additionalDetails ?? (_additionalDetails = new InputMap<object>());
+            get => _additionalDetails ?? (_additionalDetails = new InputMap<string>());
             set => _additionalDetails = value;
         }
 
@@ -37,14 +37,14 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? ConnectionUri { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}` 
@@ -64,9 +64,9 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -113,14 +113,14 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? StorageServerId { get; set; }
 
         [Input("systemTags")]
-        private InputMap<object>? _systemTags;
+        private InputMap<string>? _systemTags;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// </summary>
-        public InputMap<object> SystemTags
+        public InputMap<string> SystemTags
         {
-            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
 

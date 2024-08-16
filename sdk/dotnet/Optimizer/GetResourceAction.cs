@@ -136,7 +136,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
         /// The unique OCID associated with the resource action.
         /// </summary>
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The name assigned to the resource.
         /// </summary>
@@ -200,13 +200,13 @@ namespace Pulumi.Oci.Optimizer
 
             double estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, string> extendedMetadata,
 
             string id,
 
             bool? includeResourceMetadata,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string name,
 

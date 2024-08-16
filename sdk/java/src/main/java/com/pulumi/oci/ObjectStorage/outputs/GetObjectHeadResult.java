@@ -6,7 +6,6 @@ package com.pulumi.oci.ObjectStorage.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Integer;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -39,7 +38,7 @@ public final class GetObjectHeadResult {
      * @return The metadata of the object
      * 
      */
-    private Map<String,Object> metadata;
+    private Map<String,String> metadata;
     private String namespace;
     private String object;
     /**
@@ -88,7 +87,7 @@ public final class GetObjectHeadResult {
      * @return The metadata of the object
      * 
      */
-    public Map<String,Object> metadata() {
+    public Map<String,String> metadata() {
         return this.metadata;
     }
     public String namespace() {
@@ -121,7 +120,7 @@ public final class GetObjectHeadResult {
         private String contentType;
         private String etag;
         private String id;
-        private Map<String,Object> metadata;
+        private Map<String,String> metadata;
         private String namespace;
         private String object;
         private String storageTier;
@@ -189,7 +188,7 @@ public final class GetObjectHeadResult {
             return this;
         }
         @CustomType.Setter
-        public Builder metadata(Map<String,Object> metadata) {
+        public Builder metadata(Map<String,String> metadata) {
             if (metadata == null) {
               throw new MissingRequiredPropertyException("GetObjectHeadResult", "metadata");
             }

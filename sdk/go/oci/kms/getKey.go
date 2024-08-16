@@ -73,15 +73,15 @@ type LookupKeyResult struct {
 	// The OCID of the key version used in cryptographic operations. During key rotation, the service might be in a transitional state where this or a newer key version are used intermittently. The `currentKeyVersion` property is updated when the service is guaranteed to use the new key version for all subsequent encryption operations.
 	CurrentKeyVersion string `pulumi:"currentKeyVersion"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
-	DesiredState string                 `pulumi:"desiredState"`
+	DefinedTags  map[string]string `pulumi:"definedTags"`
+	DesiredState string            `pulumi:"desiredState"`
 	// A user-friendly name for the key. It does not have to be unique, and it is changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Key reference data to be returned to the customer as a response.
 	ExternalKeyReferenceDetails []GetKeyExternalKeyReferenceDetail `pulumi:"externalKeyReferenceDetails"`
 	ExternalKeyReferences       []GetKeyExternalKeyReference       `pulumi:"externalKeyReferences"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the key.
 	Id string `pulumi:"id"`
 	// A parameter specifying whether the auto key rotation is enabled or not.
@@ -170,8 +170,8 @@ func (o LookupKeyResultOutput) CurrentKeyVersion() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupKeyResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupKeyResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupKeyResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupKeyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o LookupKeyResultOutput) DesiredState() pulumi.StringOutput {
@@ -193,8 +193,8 @@ func (o LookupKeyResultOutput) ExternalKeyReferences() GetKeyExternalKeyReferenc
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupKeyResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupKeyResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupKeyResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupKeyResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the key.

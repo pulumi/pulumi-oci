@@ -110,8 +110,8 @@ import (
 //					},
 //				},
 //				ContainerRestartPolicy: pulumi.Any(containerInstanceContainerRestartPolicy),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(containerInstanceDisplayName),
 //				DnsConfig: &containerengine.ContainerInstanceDnsConfigArgs{
@@ -120,8 +120,8 @@ import (
 //					Searches:    pulumi.Any(containerInstanceDnsConfigSearches),
 //				},
 //				FaultDomain: pulumi.Any(containerInstanceFaultDomain),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				GracefulShutdownTimeoutInSeconds: pulumi.Any(containerInstanceGracefulShutdownTimeoutInSeconds),
 //				ImagePullSecrets: containerengine.ContainerInstanceImagePullSecretArray{
@@ -178,7 +178,7 @@ type ContainerInstance struct {
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayOutput `pulumi:"containers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
@@ -186,7 +186,7 @@ type ContainerInstance struct {
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringOutput `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// The image pulls secrets so you can access private registry to pull container images.
@@ -203,7 +203,7 @@ type ContainerInstance struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -277,7 +277,7 @@ type containerInstanceState struct {
 	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
@@ -285,7 +285,7 @@ type containerInstanceState struct {
 	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// The image pulls secrets so you can access private registry to pull container images.
@@ -302,7 +302,7 @@ type containerInstanceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -329,7 +329,7 @@ type ContainerInstanceState struct {
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
@@ -337,7 +337,7 @@ type ContainerInstanceState struct {
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
 	// The image pulls secrets so you can access private registry to pull container images.
@@ -354,7 +354,7 @@ type ContainerInstanceState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
 	TimeCreated pulumi.StringPtrInput
 	// The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -383,7 +383,7 @@ type containerInstanceArgs struct {
 	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
@@ -391,7 +391,7 @@ type containerInstanceArgs struct {
 	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
 	// The image pulls secrets so you can access private registry to pull container images.
@@ -424,7 +424,7 @@ type ContainerInstanceArgs struct {
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
@@ -432,7 +432,7 @@ type ContainerInstanceArgs struct {
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
 	// The image pulls secrets so you can access private registry to pull container images.
@@ -567,8 +567,8 @@ func (o ContainerInstanceOutput) Containers() ContainerInstanceContainerArrayOut
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
-func (o ContainerInstanceOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ContainerInstanceOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ContainerInstance) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
@@ -587,8 +587,8 @@ func (o ContainerInstanceOutput) FaultDomain() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ContainerInstanceOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ContainerInstanceOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ContainerInstance) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
@@ -625,8 +625,8 @@ func (o ContainerInstanceOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
-func (o ContainerInstanceOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ContainerInstanceOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ContainerInstance) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).

@@ -4,7 +4,6 @@
 package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class BuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    private @Nullable Map<String,Object> buildPipelineStageRunProgress;
+    private @Nullable Map<String,String> buildPipelineStageRunProgress;
     /**
      * @return The time the build run finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -34,7 +33,7 @@ public final class BuildRunBuildRunProgress {
      * @return Map of stage OCIDs to build pipeline stage run progress model.
      * 
      */
-    public Map<String,Object> buildPipelineStageRunProgress() {
+    public Map<String,String> buildPipelineStageRunProgress() {
         return this.buildPipelineStageRunProgress == null ? Map.of() : this.buildPipelineStageRunProgress;
     }
     /**
@@ -61,7 +60,7 @@ public final class BuildRunBuildRunProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private @Nullable Map<String,Object> buildPipelineStageRunProgress;
+        private @Nullable Map<String,String> buildPipelineStageRunProgress;
         private @Nullable String timeFinished;
         private @Nullable String timeStarted;
         public Builder() {}
@@ -73,7 +72,7 @@ public final class BuildRunBuildRunProgress {
         }
 
         @CustomType.Setter
-        public Builder buildPipelineStageRunProgress(@Nullable Map<String,Object> buildPipelineStageRunProgress) {
+        public Builder buildPipelineStageRunProgress(@Nullable Map<String,String> buildPipelineStageRunProgress) {
 
             this.buildPipelineStageRunProgress = buildPipelineStageRunProgress;
             return this;

@@ -33,12 +33,12 @@ import (
 //			_, err := MediaServices.NewMediaWorkflowJob(ctx, "test_media_workflow_job", &MediaServices.MediaWorkflowJobArgs{
 //				CompartmentId:          pulumi.Any(compartmentId),
 //				WorkflowIdentifierType: pulumi.Any(mediaWorkflowJobWorkflowIdentifierType),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				DisplayName: pulumi.Any(mediaWorkflowJobDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Locks: mediaservices.MediaWorkflowJobLockArray{
 //					&mediaservices.MediaWorkflowJobLockArgs{
@@ -76,12 +76,12 @@ type MediaWorkflowJob struct {
 	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapOutput  `pulumi:"freeformTags"`
-	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
+	FreeformTags   pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IsLockOverride pulumi.BoolOutput      `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -101,7 +101,7 @@ type MediaWorkflowJob struct {
 	// The current state of the MediaWorkflowJob task.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayOutput `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
@@ -158,12 +158,12 @@ type mediaWorkflowJobState struct {
 	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -183,7 +183,7 @@ type mediaWorkflowJobState struct {
 	// The current state of the MediaWorkflowJob task.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []MediaWorkflowJobTaskLifecycleState `pulumi:"taskLifecycleStates"`
 	// Creation time of the job. An RFC3339 formatted datetime string.
@@ -205,11 +205,11 @@ type MediaWorkflowJobState struct {
 	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapInput
+	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// The lifecycle details of MediaWorkflowJob task.
 	LifecycleDetails pulumi.StringPtrInput
@@ -230,7 +230,7 @@ type MediaWorkflowJobState struct {
 	// The current state of the MediaWorkflowJob task.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayInput
 	// Creation time of the job. An RFC3339 formatted datetime string.
@@ -256,12 +256,12 @@ type mediaWorkflowJobArgs struct {
 	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
-	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	FreeformTags   map[string]string `pulumi:"freeformTags"`
+	IsLockOverride *bool             `pulumi:"isLockOverride"`
 	// Locks associated with this resource.
 	Locks []MediaWorkflowJobLock `pulumi:"locks"`
 	// Configurations to be applied to this run of the workflow.
@@ -284,11 +284,11 @@ type MediaWorkflowJobArgs struct {
 	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags   pulumi.MapInput
+	FreeformTags   pulumi.StringMapInput
 	IsLockOverride pulumi.BoolPtrInput
 	// Locks associated with this resource.
 	Locks MediaWorkflowJobLockArrayInput
@@ -400,8 +400,8 @@ func (o MediaWorkflowJobOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o MediaWorkflowJobOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o MediaWorkflowJobOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Name of the Media Workflow Job. Does not have to be unique. Avoid entering confidential information.
@@ -410,8 +410,8 @@ func (o MediaWorkflowJobOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o MediaWorkflowJobOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o MediaWorkflowJobOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o MediaWorkflowJobOutput) IsLockOverride() pulumi.BoolOutput {
@@ -464,8 +464,8 @@ func (o MediaWorkflowJobOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o MediaWorkflowJobOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o MediaWorkflowJobOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Status of each task.

@@ -43,11 +43,11 @@ import (
 //				},
 //				Name:                      pulumi.Any(profileName),
 //				AggregationIntervalInDays: pulumi.Any(profileAggregationIntervalInDays),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				TargetCompartments: &optimizer.ProfileTargetCompartmentsArgs{
 //					Items: pulumi.Any(profileTargetCompartmentsItems),
@@ -87,18 +87,18 @@ type Profile struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Text describing the profile. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfigurationOutput `pulumi:"levelsConfiguration"`
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The profile's current state.
-	State      pulumi.StringOutput `pulumi:"state"`
-	SystemTags pulumi.MapOutput    `pulumi:"systemTags"`
+	State      pulumi.StringOutput    `pulumi:"state"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments ProfileTargetCompartmentsOutput `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -153,18 +153,18 @@ type profileState struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Text describing the profile. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration *ProfileLevelsConfiguration `pulumi:"levelsConfiguration"`
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name *string `pulumi:"name"`
 	// The profile's current state.
-	State      *string                `pulumi:"state"`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	State      *string           `pulumi:"state"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments *ProfileTargetCompartments `pulumi:"targetCompartments"`
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -181,18 +181,18 @@ type ProfileState struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Text describing the profile. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfigurationPtrInput
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
 	Name pulumi.StringPtrInput
 	// The profile's current state.
 	State      pulumi.StringPtrInput
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Optional. The compartments specified in the profile override for a recommendation.
 	TargetCompartments ProfileTargetCompartmentsPtrInput
 	// (Updatable) Optional. The tags specified in the profile override for a recommendation.
@@ -213,11 +213,11 @@ type profileArgs struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Text describing the profile. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfiguration `pulumi:"levelsConfiguration"`
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
@@ -235,11 +235,11 @@ type ProfileArgs struct {
 	// The OCID of the tenancy. The tenancy is the root compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Text describing the profile. Avoid entering confidential information.
 	Description pulumi.StringInput
 	// (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) A list of configuration levels for each recommendation.
 	LevelsConfiguration ProfileLevelsConfigurationInput
 	// (Updatable) The name assigned to the profile. Avoid entering confidential information.
@@ -348,8 +348,8 @@ func (o ProfileOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"foo-namespace.bar-key": "value"}`
-func (o ProfileOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Profile) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ProfileOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Text describing the profile. Avoid entering confidential information.
@@ -358,8 +358,8 @@ func (o ProfileOutput) Description() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair applied without any predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-func (o ProfileOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Profile) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ProfileOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A list of configuration levels for each recommendation.
@@ -377,8 +377,8 @@ func (o ProfileOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Profile) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-func (o ProfileOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Profile) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ProfileOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Profile) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Optional. The compartments specified in the profile override for a recommendation.

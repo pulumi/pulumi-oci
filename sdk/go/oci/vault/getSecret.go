@@ -63,11 +63,11 @@ type LookupSecretResult struct {
 	// The version number of the secret version that's currently in use.
 	CurrentVersionNumber string `pulumi:"currentVersionNumber"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A brief description of the secret. Avoid entering confidential information.
 	Description string `pulumi:"description"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the secret.
 	Id string `pulumi:"id"`
 	// The OCID of the master encryption key that is used to encrypt the secret. You must specify a symmetric key to encrypt the secret during import to the vault. You cannot encrypt secrets with asymmetric keys. Furthermore, the key must exist in the vault that you specify.
@@ -77,7 +77,7 @@ type LookupSecretResult struct {
 	// Additional information about the current lifecycle state of the secret.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	NextRotationTime string `pulumi:"nextRotationTime"`
 	// Defines the frequency of the rotation and the information about the target system
@@ -151,8 +151,8 @@ func (o LookupSecretResultOutput) CurrentVersionNumber() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSecretResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecretResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSecretResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecretResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A brief description of the secret. Avoid entering confidential information.
@@ -161,8 +161,8 @@ func (o LookupSecretResultOutput) Description() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupSecretResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecretResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSecretResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecretResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the secret.
@@ -186,8 +186,8 @@ func (o LookupSecretResultOutput) LifecycleDetails() pulumi.StringOutput {
 }
 
 // Additional metadata that you can use to provide context about how to use the secret or during rotation or other administrative tasks. For example, for a secret that you use to connect to a database, the additional metadata might specify the connection endpoint and the connection string. Provide additional metadata as key-value pairs.
-func (o LookupSecretResultOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecretResult) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o LookupSecretResultOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecretResult) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // A property indicating when the secret is scheduled to be rotated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`

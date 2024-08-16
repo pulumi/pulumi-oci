@@ -56,13 +56,13 @@ import (
 //			_, err := Core.NewImage(ctx, "test_image", &Core.ImageArgs{
 //				CompartmentId: pulumi.Any(compartmentId),
 //				InstanceId:    pulumi.Any(testInstance.Id),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(imageDisplayName),
 //				LaunchMode:  pulumi.Any(imageLaunchMode),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //			})
 //			if err != nil {
@@ -165,7 +165,7 @@ type Image struct {
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
 	CreateImageAllowed pulumi.BoolOutput `pulumi:"createImageAllowed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// You cannot use a platform image name as a custom image name.
@@ -173,7 +173,7 @@ type Image struct {
 	// Example: `My Oracle Linux image`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags       pulumi.MapOutput                 `pulumi:"freeformTags"`
+	FreeformTags       pulumi.StringMapOutput           `pulumi:"freeformTags"`
 	ImageSourceDetails ImageImageSourceDetailsPtrOutput `pulumi:"imageSourceDetails"`
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrOutput `pulumi:"instanceId"`
@@ -246,7 +246,7 @@ type imageState struct {
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
 	CreateImageAllowed *bool `pulumi:"createImageAllowed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// You cannot use a platform image name as a custom image name.
@@ -254,7 +254,7 @@ type imageState struct {
 	// Example: `My Oracle Linux image`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags       map[string]interface{}   `pulumi:"freeformTags"`
+	FreeformTags       map[string]string        `pulumi:"freeformTags"`
 	ImageSourceDetails *ImageImageSourceDetails `pulumi:"imageSourceDetails"`
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId *string `pulumi:"instanceId"`
@@ -295,7 +295,7 @@ type ImageState struct {
 	// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
 	CreateImageAllowed pulumi.BoolPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// You cannot use a platform image name as a custom image name.
@@ -303,7 +303,7 @@ type ImageState struct {
 	// Example: `My Oracle Linux image`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags       pulumi.MapInput
+	FreeformTags       pulumi.StringMapInput
 	ImageSourceDetails ImageImageSourceDetailsPtrInput
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrInput
@@ -340,7 +340,7 @@ type imageArgs struct {
 	// (Updatable) The OCID of the compartment you want the image to be created in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// You cannot use a platform image name as a custom image name.
@@ -348,7 +348,7 @@ type imageArgs struct {
 	// Example: `My Oracle Linux image`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags       map[string]interface{}   `pulumi:"freeformTags"`
+	FreeformTags       map[string]string        `pulumi:"freeformTags"`
 	ImageSourceDetails *ImageImageSourceDetails `pulumi:"imageSourceDetails"`
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId *string `pulumi:"instanceId"`
@@ -368,7 +368,7 @@ type ImageArgs struct {
 	// (Updatable) The OCID of the compartment you want the image to be created in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
 	//
 	// You cannot use a platform image name as a custom image name.
@@ -376,7 +376,7 @@ type ImageArgs struct {
 	// Example: `My Oracle Linux image`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags       pulumi.MapInput
+	FreeformTags       pulumi.StringMapInput
 	ImageSourceDetails ImageImageSourceDetailsPtrInput
 	// The OCID of the instance you want to use as the basis for the image.
 	InstanceId pulumi.StringPtrInput
@@ -504,8 +504,8 @@ func (o ImageOutput) CreateImageAllowed() pulumi.BoolOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o ImageOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Image) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ImageOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name for the image. It does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -518,8 +518,8 @@ func (o ImageOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o ImageOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Image) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ImageOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Image) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o ImageOutput) ImageSourceDetails() ImageImageSourceDetailsPtrOutput {

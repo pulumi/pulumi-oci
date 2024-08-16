@@ -31,7 +31,7 @@ type ShardedDatabaseCatalogDetail struct {
 	// Determines the auto-scaling mode for the catalog database.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
@@ -79,7 +79,7 @@ type ShardedDatabaseCatalogDetailArgs struct {
 	// Determines the auto-scaling mode for the catalog database.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
@@ -192,8 +192,8 @@ func (o ShardedDatabaseCatalogDetailOutput) IsAutoScalingEnabled() pulumi.BoolOu
 }
 
 // Additional metadata related to shard's underlying supporting resource.
-func (o ShardedDatabaseCatalogDetailOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v ShardedDatabaseCatalogDetail) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o ShardedDatabaseCatalogDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ShardedDatabaseCatalogDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -433,7 +433,7 @@ func (o ShardedDatabaseCatalogDetailEncryptionKeyDetailsPtrOutput) VaultId() pul
 
 type ShardedDatabaseConnectionString struct {
 	// Collection of connection strings.
-	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
 }
 
 // ShardedDatabaseConnectionStringInput is an input type that accepts ShardedDatabaseConnectionStringArgs and ShardedDatabaseConnectionStringOutput values.
@@ -449,7 +449,7 @@ type ShardedDatabaseConnectionStringInput interface {
 
 type ShardedDatabaseConnectionStringArgs struct {
 	// Collection of connection strings.
-	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
 }
 
 func (ShardedDatabaseConnectionStringArgs) ElementType() reflect.Type {
@@ -504,8 +504,8 @@ func (o ShardedDatabaseConnectionStringOutput) ToShardedDatabaseConnectionString
 }
 
 // Collection of connection strings.
-func (o ShardedDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
-	return o.ApplyT(func(v ShardedDatabaseConnectionString) map[string]interface{} { return v.AllConnectionStrings }).(pulumi.MapOutput)
+func (o ShardedDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ShardedDatabaseConnectionString) map[string]string { return v.AllConnectionStrings }).(pulumi.StringMapOutput)
 }
 
 type ShardedDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
@@ -534,7 +534,7 @@ type ShardedDatabaseGsm struct {
 	// The data disk group size to be allocated in GBs.
 	DataStorageSizeInGbs *float64 `pulumi:"dataStorageSizeInGbs"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name *string `pulumi:"name"`
 	// Status of shard or catalog or gsm for the sharded database.
@@ -566,7 +566,7 @@ type ShardedDatabaseGsmArgs struct {
 	// The data disk group size to be allocated in GBs.
 	DataStorageSizeInGbs pulumi.Float64PtrInput `pulumi:"dataStorageSizeInGbs"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Status of shard or catalog or gsm for the sharded database.
@@ -643,8 +643,8 @@ func (o ShardedDatabaseGsmOutput) DataStorageSizeInGbs() pulumi.Float64PtrOutput
 }
 
 // Additional metadata related to shard's underlying supporting resource.
-func (o ShardedDatabaseGsmOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v ShardedDatabaseGsm) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o ShardedDatabaseGsmOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ShardedDatabaseGsm) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -830,7 +830,7 @@ type ShardedDatabaseShardDetail struct {
 	// Determines the auto-scaling mode for the shard database.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name *string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
@@ -880,7 +880,7 @@ type ShardedDatabaseShardDetailArgs struct {
 	// Determines the auto-scaling mode for the shard database.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// Additional metadata related to shard's underlying supporting resource.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
@@ -995,8 +995,8 @@ func (o ShardedDatabaseShardDetailOutput) IsAutoScalingEnabled() pulumi.BoolOutp
 }
 
 // Additional metadata related to shard's underlying supporting resource.
-func (o ShardedDatabaseShardDetailOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v ShardedDatabaseShardDetail) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o ShardedDatabaseShardDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ShardedDatabaseShardDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -1445,13 +1445,13 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// PrivateEndpoint description.
 	Description string `pulumi:"description"`
 	// A filter to return only private endpoint that match the entire name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The identifier of the Private Endpoint.
 	Id string `pulumi:"id"`
 	// Detailed message for the lifecycle state.
@@ -1467,7 +1467,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItem struct {
 	// Identifier of the subnet in which private endpoint exists.
 	SubnetId string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
@@ -1491,13 +1491,13 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// PrivateEndpoint description.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only private endpoint that match the entire name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The identifier of the Private Endpoint.
 	Id pulumi.StringInput `pulumi:"id"`
 	// Detailed message for the lifecycle state.
@@ -1513,7 +1513,7 @@ type GetPrivateEndpointsPrivateEndpointCollectionItemArgs struct {
 	// Identifier of the subnet in which private endpoint exists.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Private Endpoint was last updated. An RFC3339 formatted datetime string
@@ -1579,8 +1579,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) CompartmentId() 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // PrivateEndpoint description.
@@ -1594,8 +1594,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) DisplayName() pu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The identifier of the Private Endpoint.
@@ -1634,8 +1634,8 @@ func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SubnetId() pulum
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetPrivateEndpointsPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPrivateEndpointsPrivateEndpointCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the PrivateEndpoint was first created. An RFC3339 formatted datetime string
@@ -1690,7 +1690,7 @@ type GetShardedDatabaseCatalogDetail struct {
 	// Determines the auto-scaling mode.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name string `pulumi:"name"`
 	// Identifier of the peer cloudAutonomousVmCluster for the shard.
@@ -1737,7 +1737,7 @@ type GetShardedDatabaseCatalogDetailArgs struct {
 	// Determines the auto-scaling mode.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Identifier of the peer cloudAutonomousVmCluster for the shard.
@@ -1849,8 +1849,8 @@ func (o GetShardedDatabaseCatalogDetailOutput) IsAutoScalingEnabled() pulumi.Boo
 }
 
 // Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-func (o GetShardedDatabaseCatalogDetailOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabaseCatalogDetail) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetShardedDatabaseCatalogDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabaseCatalogDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -2030,7 +2030,7 @@ func (o GetShardedDatabaseCatalogDetailEncryptionKeyDetailArrayOutput) Index(i p
 
 type GetShardedDatabaseConnectionString struct {
 	// Collection of connection strings.
-	AllConnectionStrings map[string]interface{} `pulumi:"allConnectionStrings"`
+	AllConnectionStrings map[string]string `pulumi:"allConnectionStrings"`
 }
 
 // GetShardedDatabaseConnectionStringInput is an input type that accepts GetShardedDatabaseConnectionStringArgs and GetShardedDatabaseConnectionStringOutput values.
@@ -2046,7 +2046,7 @@ type GetShardedDatabaseConnectionStringInput interface {
 
 type GetShardedDatabaseConnectionStringArgs struct {
 	// Collection of connection strings.
-	AllConnectionStrings pulumi.MapInput `pulumi:"allConnectionStrings"`
+	AllConnectionStrings pulumi.StringMapInput `pulumi:"allConnectionStrings"`
 }
 
 func (GetShardedDatabaseConnectionStringArgs) ElementType() reflect.Type {
@@ -2101,8 +2101,8 @@ func (o GetShardedDatabaseConnectionStringOutput) ToGetShardedDatabaseConnection
 }
 
 // Collection of connection strings.
-func (o GetShardedDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabaseConnectionString) map[string]interface{} { return v.AllConnectionStrings }).(pulumi.MapOutput)
+func (o GetShardedDatabaseConnectionStringOutput) AllConnectionStrings() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabaseConnectionString) map[string]string { return v.AllConnectionStrings }).(pulumi.StringMapOutput)
 }
 
 type GetShardedDatabaseConnectionStringArrayOutput struct{ *pulumi.OutputState }
@@ -2131,7 +2131,7 @@ type GetShardedDatabaseGsm struct {
 	// The data disk group size to be allocated in GBs.
 	DataStorageSizeInGbs float64 `pulumi:"dataStorageSizeInGbs"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name string `pulumi:"name"`
 	// Status of shard or catalog or gsm for the sharded database.
@@ -2163,7 +2163,7 @@ type GetShardedDatabaseGsmArgs struct {
 	// The data disk group size to be allocated in GBs.
 	DataStorageSizeInGbs pulumi.Float64Input `pulumi:"dataStorageSizeInGbs"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Status of shard or catalog or gsm for the sharded database.
@@ -2240,8 +2240,8 @@ func (o GetShardedDatabaseGsmOutput) DataStorageSizeInGbs() pulumi.Float64Output
 }
 
 // Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-func (o GetShardedDatabaseGsmOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabaseGsm) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetShardedDatabaseGsmOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabaseGsm) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -2417,7 +2417,7 @@ type GetShardedDatabaseShardDetail struct {
 	// Determines the auto-scaling mode.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// Name of the shard.
 	Name string `pulumi:"name"`
 	// Identifier of the peer cloudAutonomousVmCluster for the shard.
@@ -2466,7 +2466,7 @@ type GetShardedDatabaseShardDetailArgs struct {
 	// Determines the auto-scaling mode.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
 	// Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-	Metadata pulumi.MapInput `pulumi:"metadata"`
+	Metadata pulumi.StringMapInput `pulumi:"metadata"`
 	// Name of the shard.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Identifier of the peer cloudAutonomousVmCluster for the shard.
@@ -2580,8 +2580,8 @@ func (o GetShardedDatabaseShardDetailOutput) IsAutoScalingEnabled() pulumi.BoolO
 }
 
 // Comma separated names of argument corresponding to which metadata need to be retrived, namely VM_CLUSTER_INFO, ADDITIONAL_RESOURCE_INFO. An example is metadata=VM_CLUSTER_INFO,ADDITIONAL_RESOURCE_INFO.
-func (o GetShardedDatabaseShardDetailOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabaseShardDetail) map[string]interface{} { return v.Metadata }).(pulumi.MapOutput)
+func (o GetShardedDatabaseShardDetailOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabaseShardDetail) map[string]string { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // Name of the shard.
@@ -2985,11 +2985,11 @@ type GetShardedDatabasesShardedDatabaseCollectionItem struct {
 	// Possible workload types.
 	DbWorkload string `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A filter to return only sharded databases that match the entire name given. The match is not case sensitive.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Sharded Database identifier
 	Id             string `pulumi:"id"`
 	LifecycleState string `pulumi:"lifecycleState"`
@@ -3012,7 +3012,7 @@ type GetShardedDatabasesShardedDatabaseCollectionItem struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -3048,11 +3048,11 @@ type GetShardedDatabasesShardedDatabaseCollectionItemArgs struct {
 	// Possible workload types.
 	DbWorkload pulumi.StringInput `pulumi:"dbWorkload"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A filter to return only sharded databases that match the entire name given. The match is not case sensitive.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Sharded Database identifier
 	Id             pulumi.StringInput `pulumi:"id"`
 	LifecycleState pulumi.StringInput `pulumi:"lifecycleState"`
@@ -3075,7 +3075,7 @@ type GetShardedDatabasesShardedDatabaseCollectionItemArgs struct {
 	// A filter to return only resources their lifecycleState matches the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The time the the Sharded Database was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The time the Sharded Database was last updated. An RFC3339 formatted datetime string
@@ -3171,8 +3171,8 @@ func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) DbWorkload() pul
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A filter to return only sharded databases that match the entire name given. The match is not case sensitive.
@@ -3181,8 +3181,8 @@ func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) DisplayName() pu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Sharded Database identifier
@@ -3240,8 +3240,8 @@ func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) State() pulumi.S
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetShardedDatabasesShardedDatabaseCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetShardedDatabasesShardedDatabaseCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the Sharded Database was created. An RFC3339 formatted datetime string

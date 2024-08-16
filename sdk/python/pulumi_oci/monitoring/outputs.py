@@ -659,11 +659,11 @@ class GetAlarmSuppressionsAlarmSuppressionCollectionItemResult(dict):
     def __init__(__self__, *,
                  alarm_suppression_targets: Sequence['outputs.GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetResult'],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  description: str,
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  state: str,
                  time_created: str,
@@ -673,11 +673,11 @@ class GetAlarmSuppressionsAlarmSuppressionCollectionItemResult(dict):
         """
         :param Sequence['GetAlarmSuppressionsAlarmSuppressionCollectionItemAlarmSuppressionTargetArgs'] alarm_suppression_targets: The target of the alarm suppression.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the alarm suppression.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param str description: Human-readable reason for this alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param Mapping[str, Any] dimensions: Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
+        :param Mapping[str, str] dimensions: Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list a alarm suppression by name. Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
         :param str state: A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
         :param str time_created: The date and time the alarm suppression was created. Format defined by RFC3339.  Example: `2018-02-01T01:02:29.600Z`
@@ -717,7 +717,7 @@ class GetAlarmSuppressionsAlarmSuppressionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
@@ -733,7 +733,7 @@ class GetAlarmSuppressionsAlarmSuppressionCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         """
@@ -749,7 +749,7 @@ class GetAlarmSuppressionsAlarmSuppressionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
@@ -866,11 +866,11 @@ class GetAlarmsAlarmResult(dict):
                  alarm_summary: str,
                  body: str,
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  destinations: Sequence[str],
                  display_name: str,
                  evaluation_slack_duration: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  is_enabled: bool,
                  is_notifications_per_metric_dimension_enabled: bool,
@@ -896,11 +896,11 @@ class GetAlarmsAlarmResult(dict):
         :param str alarm_summary: Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
         :param str body: The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         :param Sequence[str] destinations: A list of destinations for alarm notifications. Each destination is represented by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a related resource, such as a [topic](https://docs.cloud.oracle.com/iaas/api/#/en/notification/latest/NotificationTopic). Supported destination services: Notifications, Streaming. Limit: One destination per supported destination service.
         :param str display_name: A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
         :param str evaluation_slack_duration: Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm.
         :param bool is_enabled: Whether the alarm is enabled.  Example: `true`
         :param bool is_notifications_per_metric_dimension_enabled: Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
@@ -982,7 +982,7 @@ class GetAlarmsAlarmResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"Operations.CostCenter": "42"}`
         """
@@ -1014,7 +1014,7 @@ class GetAlarmsAlarmResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         """
@@ -1360,9 +1360,9 @@ class GetMetricDataMetricDataResult(dict):
                  aggregated_datapoints: Sequence['outputs.GetMetricDataMetricDataAggregatedDatapointResult'],
                  compartment_id: str,
                  compartment_id_in_subtree: bool,
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  end_time: str,
-                 metadata: Mapping[str, Any],
+                 metadata: Mapping[str, str],
                  name: str,
                  namespace: str,
                  query: str,
@@ -1373,9 +1373,9 @@ class GetMetricDataMetricDataResult(dict):
         :param Sequence['GetMetricDataMetricDataAggregatedDatapointArgs'] aggregated_datapoints: The list of timestamp-value pairs returned for the specified request. Metric values are rolled up to the start time specified in the request. For important limits information related to data points, see MetricData Reference at the top of this page.
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
         :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        :param Mapping[str, Any] dimensions: Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
+        :param Mapping[str, str] dimensions: Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         :param str end_time: The end of the time range to use when searching for metric data points. Format is defined by RFC3339. The response excludes metric data points for the endTime. Default value: the timestamp representing when the call was sent.  Example: `2023-02-01T02:02:29.600Z`
-        :param Mapping[str, Any] metadata: The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
+        :param Mapping[str, str] metadata: The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
         :param str name: The name of the metric.  Example: `CpuUtilization`
         :param str namespace: The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
         :param str query: The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
@@ -1430,7 +1430,7 @@ class GetMetricDataMetricDataResult(dict):
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         """
@@ -1446,7 +1446,7 @@ class GetMetricDataMetricDataResult(dict):
 
     @property
     @pulumi.getter
-    def metadata(self) -> Mapping[str, Any]:
+    def metadata(self) -> Mapping[str, str]:
         """
         The references provided in a metric definition to indicate extra information about the metric.  Example: `"unit": "bytes"`
         """
@@ -1576,8 +1576,8 @@ class GetMetricsMetricResult(dict):
     def __init__(__self__, *,
                  compartment_id: str,
                  compartment_id_in_subtree: bool,
-                 dimension_filters: Mapping[str, Any],
-                 dimensions: Mapping[str, Any],
+                 dimension_filters: Mapping[str, str],
+                 dimensions: Mapping[str, str],
                  group_bies: Sequence[str],
                  name: str,
                  namespace: str,
@@ -1585,8 +1585,8 @@ class GetMetricsMetricResult(dict):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resources monitored by the metric that you are searching for. Use tenancyId to search in the root compartment.  Example: `ocid1.compartment.oc1..exampleuniqueID`
         :param bool compartment_id_in_subtree: When true, returns resources from all compartments and subcompartments. The parameter can only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, returns resources from only the compartment specified in compartmentId. Default is false.
-        :param Mapping[str, Any] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
-        :param Mapping[str, Any] dimensions: Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
+        :param Mapping[str, str] dimension_filters: Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
+        :param Mapping[str, str] dimensions: Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         :param Sequence[str] group_bies: Group metrics by these fields in the response. For example, to list all metric namespaces available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup. If `groupBy` is used, then `dimensionFilters` is ignored.
                
                Example - group by namespace: `[ "namespace" ]`
@@ -1621,7 +1621,7 @@ class GetMetricsMetricResult(dict):
 
     @property
     @pulumi.getter(name="dimensionFilters")
-    def dimension_filters(self) -> Mapping[str, Any]:
+    def dimension_filters(self) -> Mapping[str, str]:
         """
         Qualifiers that you want to use when searching for metric definitions. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         """
@@ -1629,7 +1629,7 @@ class GetMetricsMetricResult(dict):
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         Qualifiers provided in a metric definition. Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.  Example: `{"resourceId": "instance.region1.phx.exampleuniqueID"}`
         """

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> CompartmentId { get; private set; } = null!;
 
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> DisplayName { get; private set; } = null!;
 
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> State { get; private set; } = null!;
 
         [Output("systemTags")]
-        public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         [Output("targetId")]
         public Output<string?> TargetId { get; private set; } = null!;
@@ -104,10 +104,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
-        public InputMap<object> DefinedTags
+        private InputMap<string>? _definedTags;
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -118,10 +118,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
-        public InputMap<object> FreeformTags
+        private InputMap<string>? _freeformTags;
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -146,10 +146,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
-        public InputMap<object> DefinedTags
+        private InputMap<string>? _definedTags;
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -160,10 +160,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
-        public InputMap<object> FreeformTags
+        private InputMap<string>? _freeformTags;
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
@@ -180,10 +180,10 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         [Input("systemTags")]
-        private InputMap<object>? _systemTags;
-        public InputMap<object> SystemTags
+        private InputMap<string>? _systemTags;
+        public InputMap<string> SystemTags
         {
-            get => _systemTags ?? (_systemTags = new InputMap<object>());
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
             set => _systemTags = value;
         }
 

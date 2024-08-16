@@ -66,15 +66,15 @@ export interface GetDataGuardAssociationResult {
     readonly dataCollectionOptions: outputs.Database.GetDataGuardAssociationDataCollectionOption[];
     readonly dataGuardAssociationId: string;
     readonly databaseAdminPassword: string;
-    readonly databaseDefinedTags: {[key: string]: any};
-    readonly databaseFreeformTags: {[key: string]: any};
+    readonly databaseDefinedTags: {[key: string]: string};
+    readonly databaseFreeformTags: {[key: string]: string};
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
      */
     readonly databaseId: string;
     readonly databaseSoftwareImageId: string;
-    readonly dbSystemDefinedTags: {[key: string]: any};
-    readonly dbSystemFreeformTags: {[key: string]: any};
+    readonly dbSystemDefinedTags: {[key: string]: string};
+    readonly dbSystemFreeformTags: {[key: string]: string};
     readonly deleteStandbyDbHomeOnDelete: string;
     readonly displayName: string;
     readonly faultDomains: string[];

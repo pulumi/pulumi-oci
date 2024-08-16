@@ -20,13 +20,13 @@ namespace Pulumi.Oci.Logging.Outputs
         /// <summary>
         /// Parameters of the custom filter
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Params;
+        public readonly ImmutableDictionary<string, string> Params;
 
         [OutputConstructor]
         private GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionResult(
             string name,
 
-            ImmutableDictionary<string, object> @params)
+            ImmutableDictionary<string, string> @params)
         {
             Name = name;
             Params = @params;

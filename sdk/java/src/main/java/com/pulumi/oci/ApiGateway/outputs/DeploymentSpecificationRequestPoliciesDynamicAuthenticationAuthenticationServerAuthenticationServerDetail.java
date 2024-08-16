@@ -11,7 +11,6 @@ import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesD
 import com.pulumi.oci.ApiGateway.outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailVerifyClaim;
 import java.lang.Boolean;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -55,7 +54,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
-    private @Nullable Map<String,Object> parameters;
+    private @Nullable Map<String,String> parameters;
     /**
      * @return (Updatable) A set of Public Keys that will be used to verify the JWT signature.
      * 
@@ -144,7 +143,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
      * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
-    public Map<String,Object> parameters() {
+    public Map<String,String> parameters() {
         return this.parameters == null ? Map.of() : this.parameters;
     }
     /**
@@ -219,7 +218,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         private @Nullable Boolean isAnonymousAccessAllowed;
         private @Nullable List<String> issuers;
         private @Nullable Double maxClockSkewInSeconds;
-        private @Nullable Map<String,Object> parameters;
+        private @Nullable Map<String,String> parameters;
         private @Nullable DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeys publicKeys;
         private @Nullable String tokenAuthScheme;
         private @Nullable String tokenHeader;
@@ -294,7 +293,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
             return this;
         }
         @CustomType.Setter
-        public Builder parameters(@Nullable Map<String,Object> parameters) {
+        public Builder parameters(@Nullable Map<String,String> parameters) {
 
             this.parameters = parameters;
             return this;

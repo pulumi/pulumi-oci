@@ -65,9 +65,9 @@ type PluggableDatabasesRemoteClone struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
 	ContainerDatabaseId pulumi.StringOutput `pulumi:"containerDatabaseId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted pulumi.BoolOutput `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
@@ -169,9 +169,9 @@ type pluggableDatabasesRemoteCloneState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
 	ContainerDatabaseId *string `pulumi:"containerDatabaseId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted *bool `pulumi:"isRestricted"`
 	// Detailed message for the lifecycle state.
@@ -217,9 +217,9 @@ type PluggableDatabasesRemoteCloneState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CDB.
 	ContainerDatabaseId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.
 	IsRestricted pulumi.BoolPtrInput
 	// Detailed message for the lifecycle state.
@@ -410,13 +410,13 @@ func (o PluggableDatabasesRemoteCloneOutput) ContainerDatabaseId() pulumi.String
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o PluggableDatabasesRemoteCloneOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o PluggableDatabasesRemoteCloneOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o PluggableDatabasesRemoteCloneOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o PluggableDatabasesRemoteCloneOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *PluggableDatabasesRemoteClone) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The restricted mode of the pluggable database. If a pluggable database is opened in restricted mode, the user needs both create a session and have restricted session privileges to connect to it.

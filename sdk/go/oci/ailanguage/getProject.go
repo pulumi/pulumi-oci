@@ -35,13 +35,13 @@ type LookupProjectResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the project's compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of a project.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique identifier OCID of the project
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail.
@@ -49,7 +49,7 @@ type LookupProjectResult struct {
 	// The state of the project.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -100,8 +100,8 @@ func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupProjectResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of a project.
@@ -115,8 +115,8 @@ func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupProjectResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Unique identifier OCID of the project
@@ -135,8 +135,8 @@ func (o LookupProjectResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupProjectResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupProjectResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupProjectResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

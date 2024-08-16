@@ -63,13 +63,13 @@ type LookupScheduleResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the schedule is created
 	CompartmentId string `pulumi:"compartmentId"`
 	// These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// This is the description of the schedule.
 	Description string `pulumi:"description"`
 	// This is a user-friendly name for the schedule. It does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`
 	// These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// This is the resource OCID.
 	Id string `pulumi:"id"`
 	// This is the frequency of recurrence of a schedule. The frequency field can either conform to RFC-5545 formatting or UNIX cron formatting for recurrences, based on the value specified by the recurrenceType field.
@@ -84,7 +84,7 @@ type LookupScheduleResult struct {
 	// This is the current state of a schedule.
 	State string `pulumi:"state"`
 	// These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// This is the date and time the schedule ends, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339)  Example: `2016-08-25T21:10:29.600Z`
@@ -148,8 +148,8 @@ func (o LookupScheduleResultOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // These are defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupScheduleResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupScheduleResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduleResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // This is the description of the schedule.
@@ -163,8 +163,8 @@ func (o LookupScheduleResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // These are free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupScheduleResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupScheduleResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduleResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // This is the resource OCID.
@@ -202,8 +202,8 @@ func (o LookupScheduleResultOutput) State() pulumi.StringOutput {
 }
 
 // These are system tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupScheduleResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupScheduleResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupScheduleResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupScheduleResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // This is the date and time the schedule was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`

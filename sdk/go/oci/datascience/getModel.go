@@ -71,14 +71,14 @@ type LookupModelResult struct {
 	// An array of defined metadata details for the model.
 	DefinedMetadataLists []GetModelDefinedMetadataList `pulumi:"definedMetadataLists"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A short description of the model.
 	Description string `pulumi:"description"`
 	// A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	EmptyModel  bool   `pulumi:"emptyModel"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
 	Id string `pulumi:"id"`
 	// Input schema file content in String format
@@ -170,8 +170,8 @@ func (o LookupModelResultOutput) DefinedMetadataLists() GetModelDefinedMetadataL
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o LookupModelResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A short description of the model.
@@ -189,8 +189,8 @@ func (o LookupModelResultOutput) EmptyModel() pulumi.BoolOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o LookupModelResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupModelResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupModelResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupModelResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.

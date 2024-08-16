@@ -5,7 +5,6 @@ package com.pulumi.oci.CapacityManagement.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -17,7 +16,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOp
     private String position;
     private String selectedItem;
     private String selection;
-    private Map<String,Object> value;
+    private Map<String,String> value;
 
     private GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation() {}
     public String from() {
@@ -35,7 +34,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOp
     public String selection() {
         return this.selection;
     }
-    public Map<String,Object> value() {
+    public Map<String,String> value() {
         return this.value;
     }
 
@@ -53,7 +52,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOp
         private String position;
         private String selectedItem;
         private String selection;
-        private Map<String,Object> value;
+        private Map<String,String> value;
         public Builder() {}
         public Builder(GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,7 +105,7 @@ public final class GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOp
             return this;
         }
         @CustomType.Setter
-        public Builder value(Map<String,Object> value) {
+        public Builder value(Map<String,String> value) {
             if (value == null) {
               throw new MissingRequiredPropertyException("GetOccCapacityRequestsOccCapacityRequestCollectionItemPatchOperation", "value");
             }

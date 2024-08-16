@@ -39,11 +39,11 @@ type CertificateAuthority struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions CertificateAuthorityCurrentVersionArrayOutput `pulumi:"currentVersions"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId pulumi.StringOutput `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -119,11 +119,11 @@ type certificateAuthorityState struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions []CertificateAuthorityCurrentVersion `pulumi:"currentVersions"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -161,11 +161,11 @@ type CertificateAuthorityState struct {
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions CertificateAuthorityCurrentVersionArrayInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId pulumi.StringPtrInput
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
@@ -203,11 +203,11 @@ type certificateAuthorityArgs struct {
 	// (Updatable) The compartment in which you want to create the CA.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A brief description of the CA.
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -228,11 +228,11 @@ type CertificateAuthorityArgs struct {
 	// (Updatable) The compartment in which you want to create the CA.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A brief description of the CA.
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId pulumi.StringInput
 	// A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -366,8 +366,8 @@ func (o CertificateAuthorityOutput) CurrentVersions() CertificateAuthorityCurren
 }
 
 // (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o CertificateAuthorityOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CertificateAuthority) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o CertificateAuthorityOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A brief description of the CA.
@@ -376,8 +376,8 @@ func (o CertificateAuthorityOutput) Description() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o CertificateAuthorityOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *CertificateAuthority) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o CertificateAuthorityOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.

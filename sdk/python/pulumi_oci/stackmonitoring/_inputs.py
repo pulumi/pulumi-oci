@@ -253,69 +253,69 @@ class DiscoveryJobDiscoveryDetailsCredentialsItemArgs:
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsCredentialsItemPropertiesArgs:
     def __init__(__self__, *,
-                 properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] properties_map: Key/Value pair of Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Key/Value pair of Property
         """
         return pulumi.get(self, "properties_map")
 
     @properties_map.setter
-    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties_map", value)
 
 
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsPropertiesArgs:
     def __init__(__self__, *,
-                 properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] properties_map: Key/Value pair of Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Key/Value pair of Property
         """
         return pulumi.get(self, "properties_map")
 
     @properties_map.setter
-    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties_map", value)
 
 
 @pulumi.input_type
 class DiscoveryJobDiscoveryDetailsTagsArgs:
     def __init__(__self__, *,
-                 properties_map: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 properties_map: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] properties_map: Key/Value pair of Property
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] properties_map: Key/Value pair of Property
         """
         if properties_map is not None:
             pulumi.set(__self__, "properties_map", properties_map)
 
     @property
     @pulumi.getter(name="propertiesMap")
-    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def properties_map(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Key/Value pair of Property
         """
         return pulumi.get(self, "properties_map")
 
     @properties_map.setter
-    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def properties_map(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "properties_map", value)
 
 
@@ -1826,7 +1826,7 @@ class MonitoredResourceTypeMetadataArgs:
                  unique_property_sets: Optional[pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]]] = None,
                  valid_properties_for_creates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  valid_properties_for_updates: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 valid_property_values: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 valid_property_values: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] format: (Updatable) ResourceType metadata format to be used. Currently supports only one format. Possible values - SYSTEM_FORMAT.
                * SYSTEM_FORMAT - The resource type metadata is defined in machine friendly format.
@@ -1835,7 +1835,7 @@ class MonitoredResourceTypeMetadataArgs:
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourceTypeMetadataUniquePropertySetArgs']]] unique_property_sets: (Updatable) List of property sets used to uniquely identify the resources.  This check is made during create or update of stack monitoring resource.  The resource has to pass unique check for each set in the list.  For example, database can have user, password and SID as one unique set.  Another unique set would be user, password and service name.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_creates: (Updatable) List of valid properties for resource type while creating the monitored resource.  If resources of this type specifies any other properties during create operation,  the operation will fail.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] valid_properties_for_updates: (Updatable) List of valid properties for resource type while updating the monitored resource.  If resources of this type specifies any other properties during update operation,  the operation will fail.
-        :param pulumi.Input[Mapping[str, Any]] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] valid_property_values: (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
         pulumi.set(__self__, "format", format)
         if agent_properties is not None:
@@ -1926,14 +1926,14 @@ class MonitoredResourceTypeMetadataArgs:
 
     @property
     @pulumi.getter(name="validPropertyValues")
-    def valid_property_values(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def valid_property_values(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) List of valid values for the properties. This is useful when resource type wants to restrict only certain values for some properties. For instance for 'osType' property,  supported values can be restricted to be either Linux or Windows. Example: `{ "osType": "Linux,Windows,Solaris"}`
         """
         return pulumi.get(self, "valid_property_values")
 
     @valid_property_values.setter
-    def valid_property_values(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def valid_property_values(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "valid_property_values", value)
 
 
@@ -2073,9 +2073,9 @@ class MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs:
 class MonitoredResourcesListMemberItemArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
@@ -2086,12 +2086,12 @@ class MonitoredResourcesListMemberItemArgs:
                  resource_type: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: Monitored Resource Host Name.
         :param pulumi.Input[str] license: License edition of the monitored resource.
         :param pulumi.Input[str] parent_id: Parent monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -2102,7 +2102,7 @@ class MonitoredResourcesListMemberItemArgs:
         :param pulumi.Input[str] resource_type: Monitored Resource Type.
         :param pulumi.Input[str] source_type: Source type to indicate if the resource is stack monitoring discovered, Oracle Cloud Infrastructure native resource, etc.
         :param pulumi.Input[str] state: The current state of the Resource.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -2149,14 +2149,14 @@ class MonitoredResourcesListMemberItemArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -2173,14 +2173,14 @@ class MonitoredResourcesListMemberItemArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -2305,14 +2305,14 @@ class MonitoredResourcesListMemberItemArgs:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
 
@@ -2533,10 +2533,10 @@ class MonitoredResourcesSearchAssociationItemSourceResourceDetailArgs:
 class MonitoredResourcesSearchItemArgs:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[str]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  external_id: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  host_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None,
                  license: Optional[pulumi.Input[str]] = None,
@@ -2546,16 +2546,16 @@ class MonitoredResourcesSearchItemArgs:
                  resource_category: Optional[pulumi.Input[str]] = None,
                  source_type: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: Monitored resource display name.
         :param pulumi.Input[str] external_id: External resource is any Oracle Cloud Infrastructure resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a Stack Monitoring service resource. Currently supports only following resource types - Container database, non-container database,  pluggable database and Oracle Cloud Infrastructure compute instance.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_name: A filter to return resources with host name match.
         :param pulumi.Input[str] id: Monitored resource identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param pulumi.Input[str] license: License edition of the monitored resource.
@@ -2565,7 +2565,7 @@ class MonitoredResourcesSearchItemArgs:
         :param pulumi.Input[str] resource_category: Resource category filter.
         :param pulumi.Input[str] source_type: Source type filter.
         :param pulumi.Input[str] state: A filter to return resources with matching lifecycle state.
-        :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: Monitored resource creation time. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: Monitored resource update time. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: A filter to return resources that match resource type. 
@@ -2625,14 +2625,14 @@ class MonitoredResourcesSearchItemArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -2661,14 +2661,14 @@ class MonitoredResourcesSearchItemArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -2781,14 +2781,14 @@ class MonitoredResourcesSearchItemArgs:
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
 
     @system_tags.setter
-    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "system_tags", value)
 
     @property
@@ -2976,12 +2976,12 @@ class ProcessSetSpecificationItemArgs:
 class GetBaselineableMetricsEvaluateItemArgs:
     def __init__(__self__, *,
                  data_points: Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'],
-                 dimensions: Mapping[str, Any],
+                 dimensions: Mapping[str, str],
                  evaluation_data_points: Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs'],
                  training_data_points: Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs']):
         """
         :param Sequence['GetBaselineableMetricsEvaluateItemDataPointArgs'] data_points: list of anomaly data points for the metric
-        :param Mapping[str, Any] dimensions: list of dimensions for the metric
+        :param Mapping[str, str] dimensions: list of dimensions for the metric
         :param Sequence['GetBaselineableMetricsEvaluateItemEvaluationDataPointArgs'] evaluation_data_points: list of data points for the metric for evaluation of anomalies
         :param Sequence['GetBaselineableMetricsEvaluateItemTrainingDataPointArgs'] training_data_points: list of data points for the metric for training of baseline
         """
@@ -3004,14 +3004,14 @@ class GetBaselineableMetricsEvaluateItemArgs:
 
     @property
     @pulumi.getter
-    def dimensions(self) -> Mapping[str, Any]:
+    def dimensions(self) -> Mapping[str, str]:
         """
         list of dimensions for the metric
         """
         return pulumi.get(self, "dimensions")
 
     @dimensions.setter
-    def dimensions(self, value: Mapping[str, Any]):
+    def dimensions(self, value: Mapping[str, str]):
         pulumi.set(self, "dimensions", value)
 
     @property

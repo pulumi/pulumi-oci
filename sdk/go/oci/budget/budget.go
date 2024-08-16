@@ -35,14 +35,14 @@ import (
 //				CompartmentId:                     pulumi.Any(tenancyOcid),
 //				ResetPeriod:                       pulumi.Any(budgetResetPeriod),
 //				BudgetProcessingPeriodStartOffset: pulumi.Any(budgetBudgetProcessingPeriodStartOffset),
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				Description: pulumi.Any(budgetDescription),
 //				DisplayName: pulumi.Any(budgetDisplayName),
 //				EndDate:     pulumi.Any(budgetEndDate),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				ProcessingPeriodType: pulumi.Any(budgetProcessingPeriodType),
 //				StartDate:            pulumi.Any(budgetStartDate),
@@ -80,7 +80,7 @@ type Budget struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
@@ -90,7 +90,7 @@ type Budget struct {
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64Output `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringOutput `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -170,7 +170,7 @@ type budgetState struct {
 	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description *string `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
@@ -180,7 +180,7 @@ type budgetState struct {
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend *float64 `pulumi:"forecastedSpend"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -222,7 +222,7 @@ type BudgetState struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the budget.
 	Description pulumi.StringPtrInput
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
@@ -232,7 +232,7 @@ type BudgetState struct {
 	// The forecasted spend in currency by the end of the current budget cycle.
 	ForecastedSpend pulumi.Float64PtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -274,7 +274,7 @@ type budgetArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The description of the budget.
 	Description *string `pulumi:"description"`
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
@@ -282,7 +282,7 @@ type budgetArgs struct {
 	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	EndDate *string `pulumi:"endDate"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType *string `pulumi:"processingPeriodType"`
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -311,7 +311,7 @@ type BudgetArgs struct {
 	// The OCID of the compartment.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The description of the budget.
 	Description pulumi.StringPtrInput
 	// (Updatable) The displayName of the budget. Avoid entering confidential information.
@@ -319,7 +319,7 @@ type BudgetArgs struct {
 	// (Updatable) The date when the one-time budget concludes. For example, `2023-03-23`. The date-time format conforms to RFC 3339, and will be truncated to the starting point of the date provided after being converted to UTC time.
 	EndDate pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.
 	ProcessingPeriodType pulumi.StringPtrInput
 	// (Updatable) The reset period for the budget. Valid value is MONTHLY.
@@ -452,8 +452,8 @@ func (o BudgetOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o BudgetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Budget) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o BudgetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The description of the budget.
@@ -477,8 +477,8 @@ func (o BudgetOutput) ForecastedSpend() pulumi.Float64Output {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o BudgetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Budget) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o BudgetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Budget) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The type of the budget processing period. Valid values are INVOICE, MONTH, and SINGLE_USE.

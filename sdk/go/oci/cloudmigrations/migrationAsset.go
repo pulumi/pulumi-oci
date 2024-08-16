@@ -55,7 +55,7 @@ type MigrationAsset struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName pulumi.StringOutput `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapOutput `pulumi:"snapshots"`
+	Snapshots pulumi.StringMapOutput `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringOutput `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
@@ -144,7 +144,7 @@ type migrationAssetState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName *string `pulumi:"snapShotBucketName"`
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots map[string]interface{} `pulumi:"snapshots"`
+	Snapshots map[string]string `pulumi:"snapshots"`
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId *string `pulumi:"sourceAssetId"`
 	// The current state of the migration asset.
@@ -189,7 +189,7 @@ type MigrationAssetState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SnapShotBucketName pulumi.StringPtrInput
 	// Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-	Snapshots pulumi.MapInput
+	Snapshots pulumi.StringMapInput
 	// OCID that is referenced to an asset for an inventory.
 	SourceAssetId pulumi.StringPtrInput
 	// The current state of the migration asset.
@@ -406,8 +406,8 @@ func (o MigrationAssetOutput) SnapShotBucketName() pulumi.StringOutput {
 }
 
 // Key-value pair representing disks ID mapped to the OCIDs of replicated or hydration server volume snapshots. Example: `{"bar-key": "value"}`
-func (o MigrationAssetOutput) Snapshots() pulumi.MapOutput {
-	return o.ApplyT(func(v *MigrationAsset) pulumi.MapOutput { return v.Snapshots }).(pulumi.MapOutput)
+func (o MigrationAssetOutput) Snapshots() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *MigrationAsset) pulumi.StringMapOutput { return v.Snapshots }).(pulumi.StringMapOutput)
 }
 
 // OCID that is referenced to an asset for an inventory.

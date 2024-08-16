@@ -36,11 +36,11 @@ import (
 //				ContentType:     pulumi.Any(scriptContentType),
 //				DisplayName:     pulumi.Any(scriptDisplayName),
 //				ContentFileName: pulumi.Any(scriptContentFileName),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Parameters: apmsynthetics.ScriptParameterArray{
 //					&apmsynthetics.ScriptParameterArgs{
@@ -80,11 +80,11 @@ type Script struct {
 	// (Updatable) Content type of script.
 	ContentType pulumi.StringOutput `pulumi:"contentType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps ScriptMonitorStatusCountMapArrayOutput `pulumi:"monitorStatusCountMaps"`
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
@@ -150,11 +150,11 @@ type scriptState struct {
 	// (Updatable) Content type of script.
 	ContentType *string `pulumi:"contentType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps []ScriptMonitorStatusCountMap `pulumi:"monitorStatusCountMaps"`
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
@@ -179,11 +179,11 @@ type ScriptState struct {
 	// (Updatable) Content type of script.
 	ContentType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`
 	MonitorStatusCountMaps ScriptMonitorStatusCountMapArrayInput
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
@@ -210,11 +210,11 @@ type scriptArgs struct {
 	// (Updatable) Content type of script.
 	ContentType string `pulumi:"contentType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
 	Parameters []ScriptParameter `pulumi:"parameters"`
 }
@@ -230,11 +230,11 @@ type ScriptArgs struct {
 	// (Updatable) Content type of script.
 	ContentType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) List of script parameters. Example: `[{"paramName": "userid", "paramValue":"testuser", "isSecret": false}]`
 	Parameters ScriptParameterArrayInput
 }
@@ -352,8 +352,8 @@ func (o ScriptOutput) ContentType() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o ScriptOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Script) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ScriptOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Unique name that can be edited. The name should not contain any confidential information.
@@ -362,8 +362,8 @@ func (o ScriptOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o ScriptOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *Script) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ScriptOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Script) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Details of the monitor count per state. Example: `{ "total" : 5, "enabled" : 3 , "disabled" : 2, "invalid" : 0 }`

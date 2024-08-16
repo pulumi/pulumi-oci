@@ -66,11 +66,11 @@ type LookupAutoScalingConfigurationResult struct {
 	// For threshold-based autoscaling policies, this value is the minimum period of time to wait between scaling actions. The cooldown period gives the system time to stabilize before rescaling. The minimum value is 300 seconds, which is also the default. The cooldown period starts when the instance pool reaches the running state.
 	CoolDownInSeconds int `pulumi:"coolDownInSeconds"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// ID of the condition that is assigned after creation.
 	Id string `pulumi:"id"`
 	// Whether the autoscaling policy is enabled.
@@ -145,8 +145,8 @@ func (o LookupAutoScalingConfigurationResultOutput) CoolDownInSeconds() pulumi.I
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupAutoScalingConfigurationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupAutoScalingConfigurationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -155,8 +155,8 @@ func (o LookupAutoScalingConfigurationResultOutput) DisplayName() pulumi.StringO
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupAutoScalingConfigurationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupAutoScalingConfigurationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupAutoScalingConfigurationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // ID of the condition that is assigned after creation.

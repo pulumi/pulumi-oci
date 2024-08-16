@@ -41,7 +41,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? DefinedTags;
+        public readonly ImmutableDictionary<string, string>? DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// 
         /// The total size of all environment variables combined, name and values, must be 64 KB or smaller.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
+        public readonly ImmutableDictionary<string, string>? EnvironmentVariables;
         public readonly int? ExitCode;
         /// <summary>
         /// The fault domain where the container instance runs.
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? FreeformTags;
+        public readonly ImmutableDictionary<string, string>? FreeformTags;
         /// <summary>
         /// list of container health checks to check container status and take appropriate action if container status is failed. There are three types of health checks that we currently support HTTP, TCP, and Command.
         /// </summary>
@@ -102,7 +102,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// <summary>
         /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`.
         /// </summary>
-        public readonly ImmutableDictionary<string, object>? SystemTags;
+        public readonly ImmutableDictionary<string, string>? SystemTags;
         /// <summary>
         /// The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         /// </summary>
@@ -135,17 +135,17 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? containerInstanceId,
 
-            ImmutableDictionary<string, object>? definedTags,
+            ImmutableDictionary<string, string>? definedTags,
 
             string? displayName,
 
-            ImmutableDictionary<string, object>? environmentVariables,
+            ImmutableDictionary<string, string>? environmentVariables,
 
             int? exitCode,
 
             string? faultDomain,
 
-            ImmutableDictionary<string, object>? freeformTags,
+            ImmutableDictionary<string, string>? freeformTags,
 
             ImmutableArray<Outputs.ContainerInstanceContainerHealthCheck> healthChecks,
 
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? state,
 
-            ImmutableDictionary<string, object>? systemTags,
+            ImmutableDictionary<string, string>? systemTags,
 
             string? timeCreated,
 

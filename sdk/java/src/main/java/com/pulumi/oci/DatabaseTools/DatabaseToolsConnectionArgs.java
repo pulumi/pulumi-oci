@@ -11,7 +11,6 @@ import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionLockArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionProxyClientArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionRelatedResourceArgs;
 import com.pulumi.oci.DatabaseTools.inputs.DatabaseToolsConnectionUserPasswordArgs;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -29,13 +28,13 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="advancedProperties")
-    private @Nullable Output<Map<String,Object>> advancedProperties;
+    private @Nullable Output<Map<String,String>> advancedProperties;
 
     /**
      * @return (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
      * 
      */
-    public Optional<Output<Map<String,Object>>> advancedProperties() {
+    public Optional<Output<Map<String,String>>> advancedProperties() {
         return Optional.ofNullable(this.advancedProperties);
     }
 
@@ -74,13 +73,13 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="definedTags")
-    private @Nullable Output<Map<String,Object>> definedTags;
+    private @Nullable Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> definedTags() {
+    public Optional<Output<Map<String,String>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
     }
 
@@ -104,13 +103,13 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
      * 
      */
     @Import(name="freeformTags")
-    private @Nullable Output<Map<String,Object>> freeformTags;
+    private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Optional<Output<Map<String,Object>>> freeformTags() {
+    public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
     }
 
@@ -309,7 +308,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder advancedProperties(@Nullable Output<Map<String,Object>> advancedProperties) {
+        public Builder advancedProperties(@Nullable Output<Map<String,String>> advancedProperties) {
             $.advancedProperties = advancedProperties;
             return this;
         }
@@ -320,7 +319,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder advancedProperties(Map<String,Object> advancedProperties) {
+        public Builder advancedProperties(Map<String,String> advancedProperties) {
             return advancedProperties(Output.of(advancedProperties));
         }
 
@@ -372,7 +371,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+        public Builder definedTags(@Nullable Output<Map<String,String>> definedTags) {
             $.definedTags = definedTags;
             return this;
         }
@@ -383,7 +382,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
         }
 
@@ -414,7 +413,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+        public Builder freeformTags(@Nullable Output<Map<String,String>> freeformTags) {
             $.freeformTags = freeformTags;
             return this;
         }
@@ -425,7 +424,7 @@ public final class DatabaseToolsConnectionArgs extends com.pulumi.resources.Reso
          * @return builder
          * 
          */
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
         }
 

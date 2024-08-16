@@ -83,7 +83,7 @@ class GetComputeGlobalImageCapabilitySchemasVersionResult:
 
     @property
     @pulumi.getter(name="schemaData")
-    def schema_data(self) -> Mapping[str, Any]:
+    def schema_data(self) -> Mapping[str, str]:
         """
         The map of each capability name to its ImageCapabilityDescriptor.
         """

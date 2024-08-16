@@ -52,7 +52,7 @@ type AutonomousContainerDatabase struct {
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringOutput `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -62,7 +62,7 @@ type AutonomousContainerDatabase struct {
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntOutput `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringOutput `pulumi:"infrastructureType"`
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
@@ -216,7 +216,7 @@ type autonomousContainerDatabaseState struct {
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName *string `pulumi:"displayName"`
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -226,7 +226,7 @@ type autonomousContainerDatabaseState struct {
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The infrastructure type this resource belongs to.
 	InfrastructureType *string `pulumi:"infrastructureType"`
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
@@ -345,7 +345,7 @@ type AutonomousContainerDatabaseState struct {
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringPtrInput
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -355,7 +355,7 @@ type AutonomousContainerDatabaseState struct {
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The infrastructure type this resource belongs to.
 	InfrastructureType pulumi.StringPtrInput
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
@@ -472,7 +472,7 @@ type autonomousContainerDatabaseArgs struct {
 	// The base version for the Autonomous Container Database.
 	DbVersion *string `pulumi:"dbVersion"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName string `pulumi:"displayName"`
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -480,7 +480,7 @@ type autonomousContainerDatabaseArgs struct {
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds *int `pulumi:"fastStartFailOverLagLimitInSeconds"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled *bool `pulumi:"isAutomaticFailoverEnabled"`
 	// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
@@ -548,7 +548,7 @@ type AutonomousContainerDatabaseArgs struct {
 	// The base version for the Autonomous Container Database.
 	DbVersion pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The display name for the Autonomous Container Database.
 	DisplayName pulumi.StringInput
 	// This option determines whether to open an Autonomous Database across the maximum number of nodes or the least number of nodes. The default will be for the minimum number of VMs.
@@ -556,7 +556,7 @@ type AutonomousContainerDatabaseArgs struct {
 	// The lag time for my preference based on data loss tolerance in seconds.
 	FastStartFailOverLagLimitInSeconds pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
 	IsAutomaticFailoverEnabled pulumi.BoolPtrInput
 	// (Updatable) Indicates if an automatic DST Time Zone file update is enabled for the Autonomous Container Database. If enabled along with Release Update, patching will be done in a Non-Rolling manner.
@@ -756,8 +756,8 @@ func (o AutonomousContainerDatabaseOutput) DbVersion() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o AutonomousContainerDatabaseOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o AutonomousContainerDatabaseOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The display name for the Autonomous Container Database.
@@ -781,8 +781,8 @@ func (o AutonomousContainerDatabaseOutput) FastStartFailOverLagLimitInSeconds() 
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o AutonomousContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o AutonomousContainerDatabaseOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *AutonomousContainerDatabase) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The infrastructure type this resource belongs to.

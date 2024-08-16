@@ -6,7 +6,6 @@ package com.pulumi.oci.MediaServices.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -39,13 +38,13 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
      * 
      */
     @Import(name="enableWhenReferencedParameterEquals")
-    private @Nullable Output<Map<String,Object>> enableWhenReferencedParameterEquals;
+    private @Nullable Output<Map<String,String>> enableWhenReferencedParameterEquals;
 
     /**
      * @return (Updatable) Used in conjunction with enableParameterReference to conditionally enable a task.  When a job is created from the workflow of this task, the task will only be enabled if the value of the parameter specified by enableParameterReference is equal to the value of this property. This property must be prenset if and only if a enableParameterReference is given. The value is a JSON node.
      * 
      */
-    public Optional<Output<Map<String,Object>>> enableWhenReferencedParameterEquals() {
+    public Optional<Output<Map<String,String>>> enableWhenReferencedParameterEquals() {
         return Optional.ofNullable(this.enableWhenReferencedParameterEquals);
     }
 
@@ -187,7 +186,7 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder enableWhenReferencedParameterEquals(@Nullable Output<Map<String,Object>> enableWhenReferencedParameterEquals) {
+        public Builder enableWhenReferencedParameterEquals(@Nullable Output<Map<String,String>> enableWhenReferencedParameterEquals) {
             $.enableWhenReferencedParameterEquals = enableWhenReferencedParameterEquals;
             return this;
         }
@@ -198,7 +197,7 @@ public final class MediaWorkflowTaskArgs extends com.pulumi.resources.ResourceAr
          * @return builder
          * 
          */
-        public Builder enableWhenReferencedParameterEquals(Map<String,Object> enableWhenReferencedParameterEquals) {
+        public Builder enableWhenReferencedParameterEquals(Map<String,String> enableWhenReferencedParameterEquals) {
             return enableWhenReferencedParameterEquals(Output.of(enableWhenReferencedParameterEquals));
         }
 

@@ -57,12 +57,12 @@ import (
 //				},
 //				DisplayName: pulumi.Any(namespaceIngestTimeRuleDisplayName),
 //				Namespace:   pulumi.Any(namespaceIngestTimeRuleNamespace),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(namespaceIngestTimeRuleDescription),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //			})
 //			if err != nil {
@@ -91,14 +91,14 @@ type NamespaceIngestTimeRule struct {
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsOutput `pulumi:"conditions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The ingest time rule display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags     pulumi.MapOutput    `pulumi:"freeformTags"`
-	IngestTimeRuleId pulumi.StringOutput `pulumi:"ingestTimeRuleId"`
+	FreeformTags     pulumi.StringMapOutput `pulumi:"freeformTags"`
+	IngestTimeRuleId pulumi.StringOutput    `pulumi:"ingestTimeRuleId"`
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled pulumi.BoolOutput `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
@@ -166,14 +166,14 @@ type namespaceIngestTimeRuleState struct {
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions *NamespaceIngestTimeRuleConditions `pulumi:"conditions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description *string `pulumi:"description"`
 	// (Updatable) The ingest time rule display name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags     map[string]interface{} `pulumi:"freeformTags"`
-	IngestTimeRuleId *string                `pulumi:"ingestTimeRuleId"`
+	FreeformTags     map[string]string `pulumi:"freeformTags"`
+	IngestTimeRuleId *string           `pulumi:"ingestTimeRuleId"`
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// The Logging Analytics namespace used for the request.
@@ -197,13 +197,13 @@ type NamespaceIngestTimeRuleState struct {
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringPtrInput
 	// (Updatable) The ingest time rule display name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags     pulumi.MapInput
+	FreeformTags     pulumi.StringMapInput
 	IngestTimeRuleId pulumi.StringPtrInput
 	// A flag indicating whether or not the ingest time rule is enabled.
 	IsEnabled pulumi.BoolPtrInput
@@ -232,13 +232,13 @@ type namespaceIngestTimeRuleArgs struct {
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditions `pulumi:"conditions"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description *string `pulumi:"description"`
 	// (Updatable) The ingest time rule display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The Logging Analytics namespace used for the request.
 	//
 	// ** IMPORTANT **
@@ -255,13 +255,13 @@ type NamespaceIngestTimeRuleArgs struct {
 	// (Updatable) The condition(s) to evaluate for an ingest time rule.
 	Conditions NamespaceIngestTimeRuleConditionsInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringPtrInput
 	// (Updatable) The ingest time rule display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The Logging Analytics namespace used for the request.
 	//
 	// ** IMPORTANT **
@@ -372,8 +372,8 @@ func (o NamespaceIngestTimeRuleOutput) Conditions() NamespaceIngestTimeRuleCondi
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o NamespaceIngestTimeRuleOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NamespaceIngestTimeRuleOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description for this resource.
@@ -387,8 +387,8 @@ func (o NamespaceIngestTimeRuleOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o NamespaceIngestTimeRuleOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NamespaceIngestTimeRuleOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NamespaceIngestTimeRule) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o NamespaceIngestTimeRuleOutput) IngestTimeRuleId() pulumi.StringOutput {

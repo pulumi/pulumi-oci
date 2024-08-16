@@ -366,31 +366,31 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
     def __init__(__self__, *,
                  attached_catalogs: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
                  dns_zones: Sequence[str],
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetCatalogPrivateEndpointsCatalogPrivateEndpointLockResult'],
                  state: str,
                  subnet_id: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence[str] attached_catalogs: The list of catalogs using the private reverse connection endpoint
         :param str compartment_id: The OCID of the compartment where you want to list resources.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param Sequence[str] dns_zones: List of DNS zones to be used by the data assets to be harvested. Example: custpvtsubnet.oraclevcn.com for data asset: db.custpvtsubnet.oraclevcn.com
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param Sequence['GetCatalogPrivateEndpointsCatalogPrivateEndpointLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str subnet_id: Subnet Identifier
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the private endpoint was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_updated: The time the private endpoint was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
@@ -427,7 +427,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -451,7 +451,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -499,7 +499,7 @@ class GetCatalogPrivateEndpointsCatalogPrivateEndpointResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -741,9 +741,9 @@ class GetCatalogsCatalogResult(dict):
     def __init__(__self__, *,
                  attached_catalog_private_endpoints: Sequence[str],
                  compartment_id: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetCatalogsCatalogLockResult'],
@@ -751,15 +751,15 @@ class GetCatalogsCatalogResult(dict):
                  service_api_url: str,
                  service_console_url: str,
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param Sequence[str] attached_catalog_private_endpoints: The list of private reverse connection endpoints attached to the catalog
         :param str compartment_id: The OCID of the compartment where you want to list resources.
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique identifier that is immutable on creation.
         :param str lifecycle_details: An message describing the current state in more detail. For example, it can be used to provide actionable information for a resource in 'Failed' state.
         :param Sequence['GetCatalogsCatalogLockArgs'] locks: Locks associated with this resource.
@@ -767,7 +767,7 @@ class GetCatalogsCatalogResult(dict):
         :param str service_api_url: The REST front endpoint URL to the data catalog instance.
         :param str service_console_url: The console front endpoint URL to the data catalog instance.
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time the data catalog was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_updated: The time the data catalog was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
@@ -805,7 +805,7 @@ class GetCatalogsCatalogResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -821,7 +821,7 @@ class GetCatalogsCatalogResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -885,7 +885,7 @@ class GetCatalogsCatalogResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
@@ -1016,7 +1016,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  external_key: str,
                  is_default: bool,
                  key: str,
-                 properties: Mapping[str, Any],
+                 properties: Mapping[str, str],
                  state: str,
                  time_created: str,
                  time_status_updated: str,
@@ -1024,7 +1024,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  type_key: str,
                  updated_by_id: str,
                  uri: str,
-                 enc_properties: Optional[Mapping[str, Any]] = None):
+                 enc_properties: Optional[Mapping[str, str]] = None):
         """
         :param str catalog_id: Unique catalog identifier.
         :param str created_by_id: OCID of the user who created the resource.
@@ -1034,7 +1034,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str external_key: Unique external identifier of this resource in the external source system.
         :param bool is_default: Indicates whether this connection is the default connection.
         :param str key: Unique connection key that is immutable.
-        :param Mapping[str, Any] properties: A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
+        :param Mapping[str, str] properties: A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_status_updated: Time that the resource's status was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -1128,7 +1128,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
+    def properties(self) -> Mapping[str, str]:
         """
         A map of maps that contains the properties which are specific to the connection type. Each connection type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most connections have required properties within the "default" category. Example: `{"properties": { "default": { "username": "user1"}}}`
         """
@@ -1192,7 +1192,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="encProperties")
-    def enc_properties(self) -> Optional[Mapping[str, Any]]:
+    def enc_properties(self) -> Optional[Mapping[str, str]]:
         return pulumi.get(self, "enc_properties")
 
 
@@ -1252,7 +1252,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
                  external_key: str,
                  key: str,
                  lifecycle_details: str,
-                 properties: Mapping[str, Any],
+                 properties: Mapping[str, str],
                  state: str,
                  time_created: str,
                  time_harvested: str,
@@ -1268,7 +1268,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
         :param str external_key: Unique external identifier of this resource in the external source system.
         :param str key: Unique data asset key that is immutable.
         :param str lifecycle_details: A message describing the current state in more detail. An object not in ACTIVE state may have functional limitations, see service documentation for details.
-        :param Mapping[str, Any] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
+        :param Mapping[str, str] properties: A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
         :param str time_created: Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_harvested: The last time that a harvest was performed on the data asset. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
@@ -1351,7 +1351,7 @@ class GetDataAssetsDataAssetCollectionItemResult(dict):
 
     @property
     @pulumi.getter
-    def properties(self) -> Mapping[str, Any]:
+    def properties(self) -> Mapping[str, str]:
         """
         A map of maps that contains the properties which are specific to the asset type. Each data asset type definition defines it's set of required and optional properties. The map keys are category names and the values are maps of property name to property value. Every property is contained inside of a category. Most data assets have required properties within the "default" category. Example: `{"properties": { "default": { "host": "host1", "port": "1521", "database": "orcl"}}}`
         """
@@ -1525,28 +1525,28 @@ class GetMetastoresMetastoreResult(dict):
                  compartment_id: str,
                  default_external_table_location: str,
                  default_managed_table_location: str,
-                 defined_tags: Mapping[str, Any],
+                 defined_tags: Mapping[str, str],
                  display_name: str,
-                 freeform_tags: Mapping[str, Any],
+                 freeform_tags: Mapping[str, str],
                  id: str,
                  lifecycle_details: str,
                  locks: Sequence['outputs.GetMetastoresMetastoreLockResult'],
                  state: str,
-                 system_tags: Mapping[str, Any],
+                 system_tags: Mapping[str, str],
                  time_created: str,
                  time_updated: str):
         """
         :param str compartment_id: The OCID of the compartment where you want to list resources.
         :param str default_external_table_location: Location under which external tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
         :param str default_managed_table_location: Location under which managed tables will be created by default. This references Object Storage using an HDFS URI format. Example: oci://bucket@namespace/sub-dir/
-        :param Mapping[str, Any] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        :param Mapping[str, str] defined_tags: Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
-        :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param Mapping[str, str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The metastore's OCID.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence['GetMetastoresMetastoreLockArgs'] locks: Locks associated with this resource.
         :param str state: A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
-        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Mapping[str, str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: Time at which the metastore was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         :param str time_updated: Time at which the metastore was last modified. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
         """
@@ -1590,7 +1590,7 @@ class GetMetastoresMetastoreResult(dict):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, Any]:
+    def defined_tags(self) -> Mapping[str, str]:
         """
         Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         """
@@ -1606,7 +1606,7 @@ class GetMetastoresMetastoreResult(dict):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, Any]:
+    def freeform_tags(self) -> Mapping[str, str]:
         """
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
@@ -1646,7 +1646,7 @@ class GetMetastoresMetastoreResult(dict):
 
     @property
     @pulumi.getter(name="systemTags")
-    def system_tags(self) -> Mapping[str, Any]:
+    def system_tags(self) -> Mapping[str, str]:
         """
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """

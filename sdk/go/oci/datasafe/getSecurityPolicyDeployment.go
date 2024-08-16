@@ -61,13 +61,13 @@ type LookupSecurityPolicyDeploymentResult struct {
 	// The OCID of the compartment containing the security policy deployment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The description of the security policy deployment.
 	Description string `pulumi:"description"`
 	// The display name of the security policy deployment.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the security policy deployment.
 	Id string `pulumi:"id"`
 	// Details about the current state of the security policy deployment in Data Safe.
@@ -78,7 +78,7 @@ type LookupSecurityPolicyDeploymentResult struct {
 	// The current state of the security policy deployment.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The OCID of the target where the security policy is deployed.
 	TargetId string `pulumi:"targetId"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
@@ -131,8 +131,8 @@ func (o LookupSecurityPolicyDeploymentResultOutput) CompartmentId() pulumi.Strin
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupSecurityPolicyDeploymentResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupSecurityPolicyDeploymentResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The description of the security policy deployment.
@@ -146,8 +146,8 @@ func (o LookupSecurityPolicyDeploymentResultOutput) DisplayName() pulumi.StringO
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-func (o LookupSecurityPolicyDeploymentResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupSecurityPolicyDeploymentResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the security policy deployment.
@@ -175,8 +175,8 @@ func (o LookupSecurityPolicyDeploymentResultOutput) State() pulumi.StringOutput 
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupSecurityPolicyDeploymentResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupSecurityPolicyDeploymentResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyDeploymentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the target where the security policy is deployed.

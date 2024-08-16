@@ -16,10 +16,10 @@ type DefaultDhcpOptions struct {
 	pulumi.CustomResourceState
 
 	CompartmentId           pulumi.StringOutput                 `pulumi:"compartmentId"`
-	DefinedTags             pulumi.MapOutput                    `pulumi:"definedTags"`
+	DefinedTags             pulumi.StringMapOutput              `pulumi:"definedTags"`
 	DisplayName             pulumi.StringOutput                 `pulumi:"displayName"`
 	DomainNameType          pulumi.StringOutput                 `pulumi:"domainNameType"`
-	FreeformTags            pulumi.MapOutput                    `pulumi:"freeformTags"`
+	FreeformTags            pulumi.StringMapOutput              `pulumi:"freeformTags"`
 	ManageDefaultResourceId pulumi.StringOutput                 `pulumi:"manageDefaultResourceId"`
 	Options                 DefaultDhcpOptionsOptionArrayOutput `pulumi:"options"`
 	State                   pulumi.StringOutput                 `pulumi:"state"`
@@ -63,10 +63,10 @@ func GetDefaultDhcpOptions(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DefaultDhcpOptions resources.
 type defaultDhcpOptionsState struct {
 	CompartmentId           *string                    `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}     `pulumi:"definedTags"`
+	DefinedTags             map[string]string          `pulumi:"definedTags"`
 	DisplayName             *string                    `pulumi:"displayName"`
 	DomainNameType          *string                    `pulumi:"domainNameType"`
-	FreeformTags            map[string]interface{}     `pulumi:"freeformTags"`
+	FreeformTags            map[string]string          `pulumi:"freeformTags"`
 	ManageDefaultResourceId *string                    `pulumi:"manageDefaultResourceId"`
 	Options                 []DefaultDhcpOptionsOption `pulumi:"options"`
 	State                   *string                    `pulumi:"state"`
@@ -75,10 +75,10 @@ type defaultDhcpOptionsState struct {
 
 type DefaultDhcpOptionsState struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
 	DomainNameType          pulumi.StringPtrInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	ManageDefaultResourceId pulumi.StringPtrInput
 	Options                 DefaultDhcpOptionsOptionArrayInput
 	State                   pulumi.StringPtrInput
@@ -91,10 +91,10 @@ func (DefaultDhcpOptionsState) ElementType() reflect.Type {
 
 type defaultDhcpOptionsArgs struct {
 	CompartmentId           *string                    `pulumi:"compartmentId"`
-	DefinedTags             map[string]interface{}     `pulumi:"definedTags"`
+	DefinedTags             map[string]string          `pulumi:"definedTags"`
 	DisplayName             *string                    `pulumi:"displayName"`
 	DomainNameType          *string                    `pulumi:"domainNameType"`
-	FreeformTags            map[string]interface{}     `pulumi:"freeformTags"`
+	FreeformTags            map[string]string          `pulumi:"freeformTags"`
 	ManageDefaultResourceId string                     `pulumi:"manageDefaultResourceId"`
 	Options                 []DefaultDhcpOptionsOption `pulumi:"options"`
 }
@@ -102,10 +102,10 @@ type defaultDhcpOptionsArgs struct {
 // The set of arguments for constructing a DefaultDhcpOptions resource.
 type DefaultDhcpOptionsArgs struct {
 	CompartmentId           pulumi.StringPtrInput
-	DefinedTags             pulumi.MapInput
+	DefinedTags             pulumi.StringMapInput
 	DisplayName             pulumi.StringPtrInput
 	DomainNameType          pulumi.StringPtrInput
-	FreeformTags            pulumi.MapInput
+	FreeformTags            pulumi.StringMapInput
 	ManageDefaultResourceId pulumi.StringInput
 	Options                 DefaultDhcpOptionsOptionArrayInput
 }
@@ -201,8 +201,8 @@ func (o DefaultDhcpOptionsOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DefaultDhcpOptionsOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultDhcpOptionsOutput) DisplayName() pulumi.StringOutput {
@@ -213,8 +213,8 @@ func (o DefaultDhcpOptionsOutput) DomainNameType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringOutput { return v.DomainNameType }).(pulumi.StringOutput)
 }
 
-func (o DefaultDhcpOptionsOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DefaultDhcpOptionsOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DefaultDhcpOptions) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 func (o DefaultDhcpOptionsOutput) ManageDefaultResourceId() pulumi.StringOutput {

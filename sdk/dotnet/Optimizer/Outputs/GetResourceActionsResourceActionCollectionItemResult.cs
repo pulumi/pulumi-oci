@@ -36,7 +36,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
         /// The unique OCID associated with the resource action.
         /// </summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// <summary>
         /// Custom metadata key/value pairs for the resource action.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// Optional. A filter that returns results that match the name specified.
         /// </summary>
@@ -99,11 +99,11 @@ namespace Pulumi.Oci.Optimizer.Outputs
 
             double estimatedCostSaving,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, string> extendedMetadata,
 
             string id,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             string name,
 

@@ -37,11 +37,11 @@ import (
 //				ResourcePrincipalTokenPublicKey: pulumi.Any(onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey),
 //				Version:                         pulumi.Any(onPremiseVantagePointWorkerVersion),
 //				ConfigurationDetails:            pulumi.Any(onPremiseVantagePointWorkerConfigurationDetails),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				Priority:   pulumi.Any(onPremiseVantagePointWorkerPriority),
 //				Status:     pulumi.Any(onPremiseVantagePointWorkerStatus),
@@ -71,11 +71,11 @@ type OnPremiseVantagePointWorker struct {
 	// (Updatable) Configuration details of the On-premise VP worker.
 	ConfigurationDetails pulumi.StringOutput `pulumi:"configurationDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Geographical information of the On-premise VP worker.
 	GeoInfo pulumi.StringOutput `pulumi:"geoInfo"`
 	// Domain details of the On-premise VP worker.
@@ -162,11 +162,11 @@ type onPremiseVantagePointWorkerState struct {
 	// (Updatable) Configuration details of the On-premise VP worker.
 	ConfigurationDetails *string `pulumi:"configurationDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Geographical information of the On-premise VP worker.
 	GeoInfo *string `pulumi:"geoInfo"`
 	// Domain details of the On-premise VP worker.
@@ -212,11 +212,11 @@ type OnPremiseVantagePointWorkerState struct {
 	// (Updatable) Configuration details of the On-premise VP worker.
 	ConfigurationDetails pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Geographical information of the On-premise VP worker.
 	GeoInfo pulumi.StringPtrInput
 	// Domain details of the On-premise VP worker.
@@ -266,9 +266,9 @@ type onPremiseVantagePointWorkerArgs struct {
 	// (Updatable) Configuration details of the On-premise VP worker.
 	ConfigurationDetails *string `pulumi:"configurationDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
 	Name *string `pulumi:"name"`
 	// The OCID of the On-premise vantage point.
@@ -295,9 +295,9 @@ type OnPremiseVantagePointWorkerArgs struct {
 	// (Updatable) Configuration details of the On-premise VP worker.
 	ConfigurationDetails pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
 	Name pulumi.StringPtrInput
 	// The OCID of the On-premise vantage point.
@@ -415,8 +415,8 @@ func (o OnPremiseVantagePointWorkerOutput) ConfigurationDetails() pulumi.StringO
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o OnPremiseVantagePointWorkerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremiseVantagePointWorker) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OnPremiseVantagePointWorkerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremiseVantagePointWorker) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Unique name that can be edited. The name should not contain any confidential information.
@@ -425,8 +425,8 @@ func (o OnPremiseVantagePointWorkerOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o OnPremiseVantagePointWorkerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OnPremiseVantagePointWorker) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OnPremiseVantagePointWorkerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OnPremiseVantagePointWorker) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Geographical information of the On-premise VP worker.

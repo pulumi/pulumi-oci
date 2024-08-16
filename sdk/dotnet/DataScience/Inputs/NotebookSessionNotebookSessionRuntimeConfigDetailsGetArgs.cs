@@ -13,14 +13,14 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class NotebookSessionNotebookSessionRuntimeConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("customEnvironmentVariables")]
-        private InputMap<object>? _customEnvironmentVariables;
+        private InputMap<string>? _customEnvironmentVariables;
 
         /// <summary>
         /// (Updatable) Custom environment variables for Notebook Session. These key-value pairs will be available for customers in Notebook Sessions.
         /// </summary>
-        public InputMap<object> CustomEnvironmentVariables
+        public InputMap<string> CustomEnvironmentVariables
         {
-            get => _customEnvironmentVariables ?? (_customEnvironmentVariables = new InputMap<object>());
+            get => _customEnvironmentVariables ?? (_customEnvironmentVariables = new InputMap<string>());
             set => _customEnvironmentVariables = value;
         }
 

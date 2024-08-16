@@ -27,7 +27,7 @@ type ExternalListener struct {
 	pulumi.CustomResourceState
 
 	// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapOutput `pulumi:"additionalDetails"`
+	AdditionalDetails pulumi.StringMapOutput `pulumi:"additionalDetails"`
 	// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
 	AdrHomeDirectory pulumi.StringOutput `pulumi:"adrHomeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
@@ -35,7 +35,7 @@ type ExternalListener struct {
 	// The name of the external listener.
 	ComponentName pulumi.StringOutput `pulumi:"componentName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
@@ -54,7 +54,7 @@ type ExternalListener struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The name of the host on which the external listener is running.
 	HostName pulumi.StringOutput `pulumi:"hostName"`
 	// Additional information about the current lifecycle state.
@@ -76,7 +76,7 @@ type ExternalListener struct {
 	// The current lifecycle state of the external listener.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the external listener was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The date and time the external listener was last updated.
@@ -121,7 +121,7 @@ func GetExternalListener(ctx *pulumi.Context,
 // Input properties used for looking up and filtering ExternalListener resources.
 type externalListenerState struct {
 	// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails map[string]interface{} `pulumi:"additionalDetails"`
+	AdditionalDetails map[string]string `pulumi:"additionalDetails"`
 	// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
 	AdrHomeDirectory *string `pulumi:"adrHomeDirectory"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
@@ -129,7 +129,7 @@ type externalListenerState struct {
 	// The name of the external listener.
 	ComponentName *string `pulumi:"componentName"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The list of protocol addresses the listener is configured to listen on.
@@ -148,7 +148,7 @@ type externalListenerState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The name of the host on which the external listener is running.
 	HostName *string `pulumi:"hostName"`
 	// Additional information about the current lifecycle state.
@@ -170,7 +170,7 @@ type externalListenerState struct {
 	// The current lifecycle state of the external listener.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the external listener was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The date and time the external listener was last updated.
@@ -183,7 +183,7 @@ type externalListenerState struct {
 
 type ExternalListenerState struct {
 	// The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-	AdditionalDetails pulumi.MapInput
+	AdditionalDetails pulumi.StringMapInput
 	// The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
 	AdrHomeDirectory pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external database resides.
@@ -191,7 +191,7 @@ type ExternalListenerState struct {
 	// The name of the external listener.
 	ComponentName pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// The user-friendly name for the database. The name does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// The list of protocol addresses the listener is configured to listen on.
@@ -210,7 +210,7 @@ type ExternalListenerState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The name of the host on which the external listener is running.
 	HostName pulumi.StringPtrInput
 	// Additional information about the current lifecycle state.
@@ -232,7 +232,7 @@ type ExternalListenerState struct {
 	// The current lifecycle state of the external listener.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the external listener was created.
 	TimeCreated pulumi.StringPtrInput
 	// The date and time the external listener was last updated.
@@ -249,7 +249,7 @@ func (ExternalListenerState) ElementType() reflect.Type {
 
 type externalListenerArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId *string `pulumi:"externalConnectorId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -258,13 +258,13 @@ type externalListenerArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 }
 
 // The set of arguments for constructing a ExternalListener resource.
 type ExternalListenerArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
 	ExternalConnectorId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external listener.
@@ -273,7 +273,7 @@ type ExternalListenerArgs struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 }
 
 func (ExternalListenerArgs) ElementType() reflect.Type {
@@ -364,8 +364,8 @@ func (o ExternalListenerOutput) ToExternalListenerOutputWithContext(ctx context.
 }
 
 // The additional details of the external listener defined in `{"key": "value"}` format. Example: `{"bar-key": "value"}`
-func (o ExternalListenerOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.MapOutput { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o ExternalListenerOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringMapOutput { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 // The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
@@ -384,8 +384,8 @@ func (o ExternalListenerOutput) ComponentName() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o ExternalListenerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o ExternalListenerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The user-friendly name for the database. The name does not have to be unique.
@@ -427,8 +427,8 @@ func (o ExternalListenerOutput) ExternalListenerId() pulumi.StringOutput {
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ExternalListenerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o ExternalListenerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The name of the host on which the external listener is running.
@@ -482,8 +482,8 @@ func (o ExternalListenerOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o ExternalListenerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *ExternalListener) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o ExternalListenerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ExternalListener) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the external listener was created.

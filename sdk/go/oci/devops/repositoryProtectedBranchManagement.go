@@ -53,7 +53,7 @@ type RepositoryProtectedBranchManagement struct {
 	// Name of a branch to protect.
 	BranchName pulumi.StringOutput `pulumi:"branchName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Level of protection to add on a branch.
 	ProtectionLevels pulumi.StringArrayOutput `pulumi:"protectionLevels"`
 	// Unique repository identifier.
@@ -102,7 +102,7 @@ type repositoryProtectedBranchManagementState struct {
 	// Name of a branch to protect.
 	BranchName *string `pulumi:"branchName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Level of protection to add on a branch.
 	ProtectionLevels []string `pulumi:"protectionLevels"`
 	// Unique repository identifier.
@@ -116,7 +116,7 @@ type RepositoryProtectedBranchManagementState struct {
 	// Name of a branch to protect.
 	BranchName pulumi.StringPtrInput
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// Level of protection to add on a branch.
 	ProtectionLevels pulumi.StringArrayInput
 	// Unique repository identifier.
@@ -248,8 +248,8 @@ func (o RepositoryProtectedBranchManagementOutput) BranchName() pulumi.StringOut
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"bar-key": "value"}`
-func (o RepositoryProtectedBranchManagementOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *RepositoryProtectedBranchManagement) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o RepositoryProtectedBranchManagementOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *RepositoryProtectedBranchManagement) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Level of protection to add on a branch.

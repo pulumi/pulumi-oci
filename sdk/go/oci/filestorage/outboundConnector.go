@@ -60,12 +60,12 @@ import (
 //						Port:     pulumi.Any(outboundConnectorEndpointsPort),
 //					},
 //				},
-//				DefinedTags: pulumi.Map{
-//					"Operations.CostCenter": pulumi.Any("42"),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
 //				},
 //				DisplayName: pulumi.Any(outboundConnectorDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"Department": pulumi.Any("Finance"),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
 //				},
 //				PasswordSecretId:      pulumi.Any(testSecret.Id),
 //				PasswordSecretVersion: pulumi.Any(outboundConnectorPasswordSecretVersion),
@@ -98,13 +98,13 @@ type OutboundConnector struct {
 	// The account type of this outbound connector.
 	ConnectorType pulumi.StringOutput `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayOutput `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringOutput `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -172,13 +172,13 @@ type outboundConnectorState struct {
 	// The account type of this outbound connector.
 	ConnectorType *string `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName *string `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []OutboundConnectorEndpoint `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -202,13 +202,13 @@ type OutboundConnectorState struct {
 	// The account type of this outbound connector.
 	ConnectorType pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName pulumi.StringPtrInput
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringPtrInput
 	// Version of the password secret in the Vault to use.
@@ -236,13 +236,13 @@ type outboundConnectorArgs struct {
 	// The account type of this outbound connector.
 	ConnectorType string `pulumi:"connectorType"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName *string `pulumi:"displayName"`
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints []OutboundConnectorEndpoint `pulumi:"endpoints"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
 	// Version of the password secret in the Vault to use.
@@ -263,13 +263,13 @@ type OutboundConnectorArgs struct {
 	// The account type of this outbound connector.
 	ConnectorType pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
 	DisplayName pulumi.StringPtrInput
 	// Array of server endpoints to use when connecting with the LDAP bind account.
 	Endpoints OutboundConnectorEndpointArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
 	PasswordSecretId pulumi.StringPtrInput
 	// Version of the password secret in the Vault to use.
@@ -387,8 +387,8 @@ func (o OutboundConnectorOutput) ConnectorType() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-func (o OutboundConnectorOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o OutboundConnectorOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My outbound connector`
@@ -402,8 +402,8 @@ func (o OutboundConnectorOutput) Endpoints() OutboundConnectorEndpointArrayOutpu
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o OutboundConnectorOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *OutboundConnector) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o OutboundConnectorOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *OutboundConnector) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.

@@ -27,17 +27,17 @@ type DatabaseToolsConnection struct {
 	pulumi.CustomResourceState
 
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties pulumi.MapOutput `pulumi:"advancedProperties"`
+	AdvancedProperties pulumi.StringMapOutput `pulumi:"advancedProperties"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringOutput `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayOutput `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
@@ -55,7 +55,7 @@ type DatabaseToolsConnection struct {
 	// The current state of the Database Tools connection.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
@@ -116,17 +116,17 @@ func GetDatabaseToolsConnection(ctx *pulumi.Context,
 // Input properties used for looking up and filtering DatabaseToolsConnection resources.
 type databaseToolsConnectionState struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
+	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
@@ -144,7 +144,7 @@ type databaseToolsConnectionState struct {
 	// The current state of the Database Tools connection.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
@@ -161,17 +161,17 @@ type databaseToolsConnectionState struct {
 
 type DatabaseToolsConnectionState struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties pulumi.MapInput
+	AdvancedProperties pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
 	// A message describing the current state in more detail. For example, this message can be used to provide actionable information for a resource in the Failed state.
@@ -189,7 +189,7 @@ type DatabaseToolsConnectionState struct {
 	// The current state of the Database Tools connection.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
@@ -210,17 +210,17 @@ func (DatabaseToolsConnectionState) ElementType() reflect.Type {
 
 type databaseToolsConnectionArgs struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties map[string]interface{} `pulumi:"advancedProperties"`
+	AdvancedProperties map[string]string `pulumi:"advancedProperties"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString *string `pulumi:"connectionString"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores []DatabaseToolsConnectionKeyStore `pulumi:"keyStores"`
 	// Locks associated with this resource.
@@ -246,17 +246,17 @@ type databaseToolsConnectionArgs struct {
 // The set of arguments for constructing a DatabaseToolsConnection resource.
 type DatabaseToolsConnectionArgs struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-	AdvancedProperties pulumi.MapInput
+	AdvancedProperties pulumi.StringMapInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The connect descriptor or Easy Connect Naming method use to connect to the database.
 	ConnectionString pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
 	KeyStores DatabaseToolsConnectionKeyStoreArrayInput
 	// Locks associated with this resource.
@@ -367,8 +367,8 @@ func (o DatabaseToolsConnectionOutput) ToDatabaseToolsConnectionOutputWithContex
 }
 
 // (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
-func (o DatabaseToolsConnectionOutput) AdvancedProperties() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.AdvancedProperties }).(pulumi.MapOutput)
+func (o DatabaseToolsConnectionOutput) AdvancedProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringMapOutput { return v.AdvancedProperties }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools connection.
@@ -382,8 +382,8 @@ func (o DatabaseToolsConnectionOutput) ConnectionString() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DatabaseToolsConnectionOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DatabaseToolsConnectionOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -392,8 +392,8 @@ func (o DatabaseToolsConnectionOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DatabaseToolsConnectionOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DatabaseToolsConnectionOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Oracle wallet or Java Keystores containing trusted certificates for authenticating the server's public certificate and the client private key and associated certificates required for client authentication.
@@ -439,8 +439,8 @@ func (o DatabaseToolsConnectionOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DatabaseToolsConnectionOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DatabaseToolsConnectionOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DatabaseToolsConnection) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the Database Tools connection was created. An RFC3339 formatted datetime string.

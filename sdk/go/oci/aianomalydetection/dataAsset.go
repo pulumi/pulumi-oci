@@ -61,13 +61,13 @@ import (
 //					WalletPasswordSecretId: pulumi.Any(testSecret.Id),
 //				},
 //				ProjectId: pulumi.Any(testProject.Id),
-//				DefinedTags: pulumi.Map{
-//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
 //				Description: pulumi.Any(dataAssetDescription),
 //				DisplayName: pulumi.Any(dataAssetDisplayName),
-//				FreeformTags: pulumi.Map{
-//					"bar-key": pulumi.Any("value"),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
 //				},
 //				PrivateEndpointId: pulumi.Any(testPrivateEndpoint.Id),
 //			})
@@ -95,13 +95,13 @@ type DataAsset struct {
 	// Possible data sources
 	DataSourceDetails DataAssetDataSourceDetailsOutput `pulumi:"dataSourceDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) A short description of the Ai data asset
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringOutput `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -112,7 +112,7 @@ type DataAsset struct {
 	// The lifecycle state of the Data Asset.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
@@ -163,13 +163,13 @@ type dataAssetState struct {
 	// Possible data sources
 	DataSourceDetails *DataAssetDataSourceDetails `pulumi:"dataSourceDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the Ai data asset
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of Private Endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -180,7 +180,7 @@ type dataAssetState struct {
 	// The lifecycle state of the Data Asset.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
@@ -193,13 +193,13 @@ type DataAssetState struct {
 	// Possible data sources
 	DataSourceDetails DataAssetDataSourceDetailsPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the Ai data asset
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -210,7 +210,7 @@ type DataAssetState struct {
 	// The lifecycle state of the Data Asset.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The time the the DataAsset was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the the DataAsset was updated. An RFC3339 formatted datetime string
@@ -227,13 +227,13 @@ type dataAssetArgs struct {
 	// Possible data sources
 	DataSourceDetails DataAssetDataSourceDetails `pulumi:"dataSourceDetails"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) A short description of the Ai data asset
 	Description *string `pulumi:"description"`
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of Private Endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -250,13 +250,13 @@ type DataAssetArgs struct {
 	// Possible data sources
 	DataSourceDetails DataAssetDataSourceDetailsInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) A short description of the Ai data asset
 	Description pulumi.StringPtrInput
 	// (Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// OCID of Private Endpoint.
 	PrivateEndpointId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the data asset.
@@ -364,8 +364,8 @@ func (o DataAssetOutput) DataSourceDetails() DataAssetDataSourceDetailsOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o DataAssetOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o DataAssetOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) A short description of the Ai data asset
@@ -379,8 +379,8 @@ func (o DataAssetOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o DataAssetOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o DataAssetOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID of Private Endpoint.
@@ -402,8 +402,8 @@ func (o DataAssetOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o DataAssetOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *DataAsset) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o DataAssetOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DataAsset) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the the DataAsset was created. An RFC3339 formatted datetime string

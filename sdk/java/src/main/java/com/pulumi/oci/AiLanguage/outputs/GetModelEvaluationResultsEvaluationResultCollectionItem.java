@@ -7,7 +7,6 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity;
 import com.pulumi.oci.AiLanguage.outputs.GetModelEvaluationResultsEvaluationResultCollectionItemTrueEntity;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -19,12 +18,12 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> definedTags;
+    private Map<String,String> definedTags;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    private Map<String,Object> freeformTags;
+    private Map<String,String> freeformTags;
     /**
      * @return For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * 
@@ -66,14 +65,14 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> definedTags() {
+    public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Map<String,Object> freeformTags() {
+    public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
@@ -135,8 +134,8 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private Map<String,Object> definedTags;
-        private Map<String,Object> freeformTags;
+        private Map<String,String> definedTags;
+        private Map<String,String> freeformTags;
         private String location;
         private String modelType;
         private List<GetModelEvaluationResultsEvaluationResultCollectionItemPredictedEntity> predictedEntities;
@@ -159,7 +158,7 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
         }
 
         @CustomType.Setter
-        public Builder definedTags(Map<String,Object> definedTags) {
+        public Builder definedTags(Map<String,String> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "definedTags");
             }
@@ -167,7 +166,7 @@ public final class GetModelEvaluationResultsEvaluationResultCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder freeformTags(Map<String,Object> freeformTags) {
+        public Builder freeformTags(Map<String,String> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetModelEvaluationResultsEvaluationResultCollectionItem", "freeformTags");
             }

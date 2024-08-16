@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// unique FusionEnvironment identifier
         /// </summary>
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Functions.Outputs
 
             string displayName,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             string fusionEnvironmentId,
 

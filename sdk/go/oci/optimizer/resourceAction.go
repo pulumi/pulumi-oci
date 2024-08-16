@@ -42,9 +42,9 @@ type ResourceAction struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving pulumi.Float64Output `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.MapOutput `pulumi:"extendedMetadata"`
+	ExtendedMetadata pulumi.StringMapOutput `pulumi:"extendedMetadata"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata pulumi.MapOutput `pulumi:"metadata"`
+	Metadata pulumi.StringMapOutput `pulumi:"metadata"`
 	// The name assigned to the resource.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -121,9 +121,9 @@ type resourceActionState struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving *float64 `pulumi:"estimatedCostSaving"`
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata map[string]interface{} `pulumi:"extendedMetadata"`
+	ExtendedMetadata map[string]string `pulumi:"extendedMetadata"`
 	// Custom metadata key/value pairs for the resource action.
-	Metadata map[string]interface{} `pulumi:"metadata"`
+	Metadata map[string]string `pulumi:"metadata"`
 	// The name assigned to the resource.
 	Name *string `pulumi:"name"`
 	// The unique OCID associated with the recommendation.
@@ -165,9 +165,9 @@ type ResourceActionState struct {
 	// The estimated cost savings, in dollars, for the resource action.
 	EstimatedCostSaving pulumi.Float64PtrInput
 	// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-	ExtendedMetadata pulumi.MapInput
+	ExtendedMetadata pulumi.StringMapInput
 	// Custom metadata key/value pairs for the resource action.
-	Metadata pulumi.MapInput
+	Metadata pulumi.StringMapInput
 	// The name assigned to the resource.
 	Name pulumi.StringPtrInput
 	// The unique OCID associated with the recommendation.
@@ -343,13 +343,13 @@ func (o ResourceActionOutput) EstimatedCostSaving() pulumi.Float64Output {
 }
 
 // Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
-func (o ResourceActionOutput) ExtendedMetadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.MapOutput { return v.ExtendedMetadata }).(pulumi.MapOutput)
+func (o ResourceActionOutput) ExtendedMetadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringMapOutput { return v.ExtendedMetadata }).(pulumi.StringMapOutput)
 }
 
 // Custom metadata key/value pairs for the resource action.
-func (o ResourceActionOutput) Metadata() pulumi.MapOutput {
-	return o.ApplyT(func(v *ResourceAction) pulumi.MapOutput { return v.Metadata }).(pulumi.MapOutput)
+func (o ResourceActionOutput) Metadata() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ResourceAction) pulumi.StringMapOutput { return v.Metadata }).(pulumi.StringMapOutput)
 }
 
 // The name assigned to the resource.

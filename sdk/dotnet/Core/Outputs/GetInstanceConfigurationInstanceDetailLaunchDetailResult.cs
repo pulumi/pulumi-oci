@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> ExtendedMetadata;
+        public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
         /// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         /// </summary>
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
-        public readonly ImmutableDictionary<string, object> FreeformTags;
+        public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
         /// Optional mutable instance options. As a part of Instance Metadata Service Security Header, This allows user to disable the legacy imds endpoints.
         /// </summary>
@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// <summary>
         /// Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
         /// </summary>
-        public readonly ImmutableDictionary<string, object> Metadata;
+        public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
         /// The platform configuration requested for the instance.
         /// </summary>
@@ -135,15 +135,15 @@ namespace Pulumi.Oci.Core.Outputs
 
             string dedicatedVmHostId,
 
-            ImmutableDictionary<string, object> definedTags,
+            ImmutableDictionary<string, string> definedTags,
 
             string displayName,
 
-            ImmutableDictionary<string, object> extendedMetadata,
+            ImmutableDictionary<string, string> extendedMetadata,
 
             string faultDomain,
 
-            ImmutableDictionary<string, object> freeformTags,
+            ImmutableDictionary<string, string> freeformTags,
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailInstanceOptionResult> instanceOptions,
 
@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailLaunchOptionResult> launchOptions,
 
-            ImmutableDictionary<string, object> metadata,
+            ImmutableDictionary<string, string> metadata,
 
             ImmutableArray<Outputs.GetInstanceConfigurationInstanceDetailLaunchDetailPlatformConfigResult> platformConfigs,
 

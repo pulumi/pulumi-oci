@@ -63,11 +63,11 @@ type LookupNetworkAddressListResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// NetworkAddressList display name, can be renamed.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in FAILED state.
@@ -76,7 +76,7 @@ type LookupNetworkAddressListResult struct {
 	// The current state of the NetworkAddressList.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The time the NetworkAddressList was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time the NetworkAddressList was updated. An RFC3339 formatted datetime string.
@@ -136,8 +136,8 @@ func (o LookupNetworkAddressListResultOutput) CompartmentId() pulumi.StringOutpu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupNetworkAddressListResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupNetworkAddressListResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // NetworkAddressList display name, can be renamed.
@@ -146,8 +146,8 @@ func (o LookupNetworkAddressListResultOutput) DisplayName() pulumi.StringOutput 
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupNetworkAddressListResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupNetworkAddressListResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the NetworkAddressList.
@@ -170,8 +170,8 @@ func (o LookupNetworkAddressListResultOutput) State() pulumi.StringOutput {
 }
 
 // Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o LookupNetworkAddressListResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupNetworkAddressListResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNetworkAddressListResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The time the NetworkAddressList was created. An RFC3339 formatted datetime string.

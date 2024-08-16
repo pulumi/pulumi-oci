@@ -68,7 +68,7 @@ type LookupWorkspaceApplicationResult struct {
 	// OCID of the compartment that this resource belongs to. Defaults to compartment of the Workspace.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A list of dependent objects in this patch.
 	DependentObjectMetadatas []GetWorkspaceApplicationDependentObjectMetadata `pulumi:"dependentObjectMetadatas"`
 	// The description of the aggregator.
@@ -76,7 +76,7 @@ type LookupWorkspaceApplicationResult struct {
 	// Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID of the resource that is used to uniquely identify the application
 	Id string `pulumi:"id"`
 	// Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
@@ -84,7 +84,7 @@ type LookupWorkspaceApplicationResult struct {
 	// The key of the object.
 	Key string `pulumi:"key"`
 	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-	KeyMap map[string]interface{} `pulumi:"keyMap"`
+	KeyMap map[string]string `pulumi:"keyMap"`
 	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []GetWorkspaceApplicationMetadata `pulumi:"metadatas"`
 	// The object type.
@@ -172,8 +172,8 @@ func (o LookupWorkspaceApplicationResultOutput) CompartmentId() pulumi.StringOut
 }
 
 // Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupWorkspaceApplicationResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupWorkspaceApplicationResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A list of dependent objects in this patch.
@@ -194,8 +194,8 @@ func (o LookupWorkspaceApplicationResultOutput) DisplayName() pulumi.StringOutpu
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o LookupWorkspaceApplicationResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupWorkspaceApplicationResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID of the resource that is used to uniquely identify the application
@@ -214,8 +214,8 @@ func (o LookupWorkspaceApplicationResultOutput) Key() pulumi.StringOutput {
 }
 
 // A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-func (o LookupWorkspaceApplicationResultOutput) KeyMap() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]interface{} { return v.KeyMap }).(pulumi.MapOutput)
+func (o LookupWorkspaceApplicationResultOutput) KeyMap() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupWorkspaceApplicationResult) map[string]string { return v.KeyMap }).(pulumi.StringMapOutput)
 }
 
 // A summary type containing information about the object including its key, name and when/who created/updated it.

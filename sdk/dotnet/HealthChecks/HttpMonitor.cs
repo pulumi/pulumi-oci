@@ -74,7 +74,7 @@ namespace Pulumi.Oci.HealthChecks
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         [Output("definedTags")]
-        public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly and mutable name suitable for display in a user interface.
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.HealthChecks
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
-        public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A dictionary of HTTP request headers.
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.HealthChecks
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
         [Output("headers")]
-        public Output<ImmutableDictionary<string, object>> Headers { get; private set; } = null!;
+        public Output<ImmutableDictionary<string, string>> Headers { get; private set; } = null!;
 
         /// <summary>
         /// The region where updates must be made and where results must be fetched from.
@@ -225,14 +225,14 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string> CompartmentId { get; set; } = null!;
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -243,28 +243,28 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string> DisplayName { get; set; } = null!;
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
         [Input("headers")]
-        private InputMap<object>? _headers;
+        private InputMap<string>? _headers;
 
         /// <summary>
         /// (Updatable) A dictionary of HTTP request headers.
         /// 
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
-        public InputMap<object> Headers
+        public InputMap<string> Headers
         {
-            get => _headers ?? (_headers = new InputMap<object>());
+            get => _headers ?? (_headers = new InputMap<string>());
             set => _headers = value;
         }
 
@@ -353,14 +353,14 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string>? CompartmentId { get; set; }
 
         [Input("definedTags")]
-        private InputMap<object>? _definedTags;
+        private InputMap<string>? _definedTags;
 
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
-        public InputMap<object> DefinedTags
+        public InputMap<string> DefinedTags
         {
-            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
 
@@ -371,28 +371,28 @@ namespace Pulumi.Oci.HealthChecks
         public Input<string>? DisplayName { get; set; }
 
         [Input("freeformTags")]
-        private InputMap<object>? _freeformTags;
+        private InputMap<string>? _freeformTags;
 
         /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         /// </summary>
-        public InputMap<object> FreeformTags
+        public InputMap<string> FreeformTags
         {
-            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
 
         [Input("headers")]
-        private InputMap<object>? _headers;
+        private InputMap<string>? _headers;
 
         /// <summary>
         /// (Updatable) A dictionary of HTTP request headers.
         /// 
         /// *Note:* Monitors and probes do not support the use of the `Authorization` HTTP header.
         /// </summary>
-        public InputMap<object> Headers
+        public InputMap<string> Headers
         {
-            get => _headers ?? (_headers = new InputMap<object>());
+            get => _headers ?? (_headers = new InputMap<string>());
             set => _headers = value;
         }
 

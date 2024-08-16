@@ -12,7 +12,6 @@ import com.pulumi.oci.Optimizer.inputs.ResourceActionState;
 import com.pulumi.oci.Optimizer.outputs.ResourceActionAction;
 import com.pulumi.oci.Utilities;
 import java.lang.Double;
-import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -113,28 +112,28 @@ public class ResourceAction extends com.pulumi.resources.CustomResource {
      * Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    @Export(name="extendedMetadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> extendedMetadata;
+    @Export(name="extendedMetadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> extendedMetadata;
 
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
      */
-    public Output<Map<String,Object>> extendedMetadata() {
+    public Output<Map<String,String>> extendedMetadata() {
         return this.extendedMetadata;
     }
     /**
      * Custom metadata key/value pairs for the resource action.
      * 
      */
-    @Export(name="metadata", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> metadata;
+    @Export(name="metadata", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> metadata;
 
     /**
      * @return Custom metadata key/value pairs for the resource action.
      * 
      */
-    public Output<Map<String,Object>> metadata() {
+    public Output<Map<String,String>> metadata() {
         return this.metadata;
     }
     /**

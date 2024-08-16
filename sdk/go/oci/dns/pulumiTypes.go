@@ -3290,12 +3290,12 @@ type GetResolversResolver struct {
 	// The OCID of the default view.
 	DefaultViewId string `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName string                         `pulumi:"displayName"`
 	Endpoints   []GetResolversResolverEndpoint `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -3334,12 +3334,12 @@ type GetResolversResolverArgs struct {
 	// The OCID of the default view.
 	DefaultViewId pulumi.StringInput `pulumi:"defaultViewId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName pulumi.StringInput                     `pulumi:"displayName"`
 	Endpoints   GetResolversResolverEndpointArrayInput `pulumi:"endpoints"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -3429,8 +3429,8 @@ func (o GetResolversResolverOutput) DefaultViewId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetResolversResolverOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetResolversResolver) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetResolversResolverOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolversResolver) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The displayName of a resource.
@@ -3443,8 +3443,8 @@ func (o GetResolversResolverOutput) Endpoints() GetResolversResolverEndpointArra
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetResolversResolverOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetResolversResolver) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetResolversResolverOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResolversResolver) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a resource.
@@ -4532,11 +4532,11 @@ type GetSteeringPoliciesSteeringPolicy struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
 	HealthCheckMonitorId string `pulumi:"healthCheckMonitorId"`
 	// The OCID of a resource.
@@ -4572,11 +4572,11 @@ type GetSteeringPoliciesSteeringPolicyArgs struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
 	HealthCheckMonitorId pulumi.StringInput `pulumi:"healthCheckMonitorId"`
 	// The OCID of a resource.
@@ -4657,8 +4657,8 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) CompartmentId() pulumi.StringOu
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetSteeringPoliciesSteeringPolicyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The displayName of a resource.
@@ -4667,8 +4667,8 @@ func (o GetSteeringPoliciesSteeringPolicyOutput) DisplayName() pulumi.StringOutp
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetSteeringPoliciesSteeringPolicyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetSteeringPoliciesSteeringPolicyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // Search by health check monitor OCID. Will match any resource whose health check monitor ID matches the provided value.
@@ -6388,9 +6388,9 @@ type GetTsigKeysTsigKey struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id string `pulumi:"id"`
 	// The name of a resource.
@@ -6424,9 +6424,9 @@ type GetTsigKeysTsigKeyArgs struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// The name of a resource.
@@ -6505,13 +6505,13 @@ func (o GetTsigKeysTsigKeyOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetTsigKeysTsigKeyOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetTsigKeysTsigKeyOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetTsigKeysTsigKeyOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetTsigKeysTsigKey) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetTsigKeysTsigKeyOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetTsigKeysTsigKey) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a resource.
@@ -6679,11 +6679,11 @@ type GetViewsView struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -6715,11 +6715,11 @@ type GetViewsViewArgs struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// The displayName of a resource.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of a resource.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -6793,8 +6793,8 @@ func (o GetViewsViewOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetViewsViewOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetViewsView) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetViewsViewOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetViewsView) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // The displayName of a resource.
@@ -6803,8 +6803,8 @@ func (o GetViewsViewOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetViewsViewOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetViewsView) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetViewsViewOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetViewsView) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of a resource.
@@ -6975,13 +6975,13 @@ type GetZonesZone struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams []GetZonesZoneExternalDownstream `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters []GetZonesZoneExternalMaster `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the zone.
 	Id string `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -7026,13 +7026,13 @@ type GetZonesZoneArgs struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
 	ExternalDownstreams GetZonesZoneExternalDownstreamArrayInput `pulumi:"externalDownstreams"`
 	// External master servers for the zone. `externalMasters` becomes a required parameter when the `zoneType` value is `SECONDARY`.
 	ExternalMasters GetZonesZoneExternalMasterArrayInput `pulumi:"externalMasters"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The OCID of the zone.
 	Id pulumi.StringInput `pulumi:"id"`
 	// A Boolean flag indicating whether or not parts of the resource are unable to be explicitly managed.
@@ -7119,8 +7119,8 @@ func (o GetZonesZoneOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetZonesZoneOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetZonesZone) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetZonesZoneOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetZonesZone) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
@@ -7134,8 +7134,8 @@ func (o GetZonesZoneOutput) ExternalMasters() GetZonesZoneExternalMasterArrayOut
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-func (o GetZonesZoneOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetZonesZone) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetZonesZoneOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetZonesZone) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the zone.

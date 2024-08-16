@@ -68,11 +68,11 @@ type GetDataSourceResult struct {
 	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
 	DataSourceId           string `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Display name of the data source
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// OCID for the data source
 	Id string `pulumi:"id"`
 	// Information about the region and status of query replication
@@ -82,7 +82,7 @@ type GetDataSourceResult struct {
 	// Enablement status of the data source
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the data source was updated. Format defined by RFC3339.
@@ -154,8 +154,8 @@ func (o GetDataSourceResultOutput) DataSourceId() pulumi.StringOutput {
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetDataSourceResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSourceResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o GetDataSourceResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSourceResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // Display name of the data source
@@ -164,8 +164,8 @@ func (o GetDataSourceResultOutput) DisplayName() pulumi.StringOutput {
 }
 
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetDataSourceResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSourceResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o GetDataSourceResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSourceResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // OCID for the data source
@@ -189,8 +189,8 @@ func (o GetDataSourceResultOutput) Status() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetDataSourceResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v GetDataSourceResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o GetDataSourceResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDataSourceResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the Data source was created. Format defined by RFC3339.

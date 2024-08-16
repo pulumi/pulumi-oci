@@ -15,7 +15,6 @@ import com.pulumi.oci.DataLabellingService.outputs.DatasetInitialImportDatasetCo
 import com.pulumi.oci.DataLabellingService.outputs.DatasetInitialRecordGenerationConfiguration;
 import com.pulumi.oci.DataLabellingService.outputs.DatasetLabelSet;
 import com.pulumi.oci.Utilities;
-import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
 import javax.annotation.Nullable;
@@ -124,14 +123,14 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="additionalProperties", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> additionalProperties;
+    @Export(name="additionalProperties", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> additionalProperties;
 
     /**
      * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> additionalProperties() {
+    public Output<Map<String,String>> additionalProperties() {
         return this.additionalProperties;
     }
     /**
@@ -194,14 +193,14 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> definedTags;
+    @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> definedTags;
 
     /**
      * @return (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
-    public Output<Map<String,Object>> definedTags() {
+    public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
@@ -236,14 +235,14 @@ public class Dataset extends com.pulumi.resources.CustomResource {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
-    private Output<Map<String,Object>> freeformTags;
+    @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
-    public Output<Map<String,Object>> freeformTags() {
+    public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**

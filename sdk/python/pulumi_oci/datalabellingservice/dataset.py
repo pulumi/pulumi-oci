@@ -21,10 +21,10 @@ class DatasetArgs:
                  dataset_format_details: pulumi.Input['DatasetDatasetFormatDetailsArgs'],
                  dataset_source_details: pulumi.Input['DatasetDatasetSourceDetailsArgs'],
                  label_set: pulumi.Input['DatasetLabelSetArgs'],
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
                  labeling_instructions: Optional[pulumi.Input[str]] = None):
@@ -35,10 +35,10 @@ class DatasetArgs:
         :param pulumi.Input['DatasetDatasetFormatDetailsArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param pulumi.Input['DatasetDatasetSourceDetailsArgs'] dataset_source_details: This allows the customer to specify the source of the dataset.
         :param pulumi.Input['DatasetLabelSetArgs'] label_set: An ordered collection of labels that are unique by name.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input['DatasetInitialImportDatasetConfigurationArgs'] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[str] labeling_instructions: (Updatable) The labeling instructions for human labelers in rich text format
@@ -129,14 +129,14 @@ class DatasetArgs:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -165,14 +165,14 @@ class DatasetArgs:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -219,15 +219,15 @@ class DatasetArgs:
 @pulumi.input_type
 class _DatasetState:
     def __init__(__self__, *,
-                 additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 additional_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  annotation_format: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  dataset_format_details: Optional[pulumi.Input['DatasetDatasetFormatDetailsArgs']] = None,
                  dataset_source_details: Optional[pulumi.Input['DatasetDatasetSourceDetailsArgs']] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_import_dataset_configuration: Optional[pulumi.Input['DatasetInitialImportDatasetConfigurationArgs']] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs']] = None,
                  label_set: Optional[pulumi.Input['DatasetLabelSetArgs']] = None,
@@ -239,15 +239,15 @@ class _DatasetState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Dataset resources.
-        :param pulumi.Input[Mapping[str, Any]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input['DatasetDatasetFormatDetailsArgs'] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param pulumi.Input['DatasetDatasetSourceDetailsArgs'] dataset_source_details: This allows the customer to specify the source of the dataset.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input['DatasetInitialImportDatasetConfigurationArgs'] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input['DatasetInitialRecordGenerationConfigurationArgs'] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input['DatasetLabelSetArgs'] label_set: An ordered collection of labels that are unique by name.
@@ -301,14 +301,14 @@ class _DatasetState:
 
     @property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def additional_properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "additional_properties")
 
     @additional_properties.setter
-    def additional_properties(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def additional_properties(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "additional_properties", value)
 
     @property
@@ -361,14 +361,14 @@ class _DatasetState:
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
     @defined_tags.setter
-    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "defined_tags", value)
 
     @property
@@ -397,14 +397,14 @@ class _DatasetState:
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
     @freeform_tags.setter
-    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
     @property
@@ -529,10 +529,10 @@ class Dataset(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
                  dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
                  label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
@@ -608,10 +608,10 @@ class Dataset(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
@@ -710,10 +710,10 @@ class Dataset(pulumi.CustomResource):
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
                  dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
                  initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
                  label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
@@ -765,15 +765,15 @@ class Dataset(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
-            additional_properties: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            additional_properties: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             annotation_format: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
             dataset_format_details: Optional[pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']]] = None,
             dataset_source_details: Optional[pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']]] = None,
-            defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             description: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
-            freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             initial_import_dataset_configuration: Optional[pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']]] = None,
             initial_record_generation_configuration: Optional[pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']]] = None,
             label_set: Optional[pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']]] = None,
@@ -790,15 +790,15 @@ class Dataset(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Mapping[str, Any]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] additional_properties: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[str] annotation_format: The annotation format name required for labeling records.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment of the resource.
         :param pulumi.Input[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict']] dataset_format_details: It specifies how to process the data. Supported formats include DOCUMENT, IMAGE, and TEXT.
         :param pulumi.Input[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict']] dataset_source_details: This allows the customer to specify the source of the dataset.
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] defined_tags: (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         :param pulumi.Input[str] description: (Updatable) A user provided description of the dataset
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         :param pulumi.Input[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict']] initial_import_dataset_configuration: Initial import dataset configuration. Allows user to create dataset from existing dataset files.
         :param pulumi.Input[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict']] initial_record_generation_configuration: The initial generate records configuration. It generates records from the dataset's source.
         :param pulumi.Input[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict']] label_set: An ordered collection of labels that are unique by name.
@@ -839,7 +839,7 @@ class Dataset(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="additionalProperties")
-    def additional_properties(self) -> pulumi.Output[Mapping[str, Any]]:
+    def additional_properties(self) -> pulumi.Output[Mapping[str, str]]:
         """
         A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
@@ -879,7 +879,7 @@ class Dataset(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def defined_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) The defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
@@ -903,7 +903,7 @@ class Dataset(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
+    def freeform_tags(self) -> pulumi.Output[Mapping[str, str]]:
         """
         (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """

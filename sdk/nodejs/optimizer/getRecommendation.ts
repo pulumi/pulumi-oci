@@ -63,7 +63,7 @@ export interface GetRecommendationResult {
     /**
      * Additional metadata key/value pairs for the recommendation.
      */
-    readonly extendedMetadata: {[key: string]: any};
+    readonly extendedMetadata: {[key: string]: string};
     /**
      * The unique OCID associated with the recommendation.
      */

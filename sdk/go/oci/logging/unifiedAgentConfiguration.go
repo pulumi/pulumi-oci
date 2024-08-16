@@ -31,13 +31,13 @@ type UnifiedAgentConfiguration struct {
 	// State of unified agent service configuration.
 	ConfigurationState pulumi.StringOutput `pulumi:"configurationState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// (Updatable) Groups using the configuration.
 	GroupAssociation UnifiedAgentConfigurationGroupAssociationOutput `pulumi:"groupAssociation"`
 	// (Updatable) Whether or not this resource is currently enabled.
@@ -102,13 +102,13 @@ type unifiedAgentConfigurationState struct {
 	// State of unified agent service configuration.
 	ConfigurationState *string `pulumi:"configurationState"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description *string `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Groups using the configuration.
 	GroupAssociation *UnifiedAgentConfigurationGroupAssociation `pulumi:"groupAssociation"`
 	// (Updatable) Whether or not this resource is currently enabled.
@@ -129,13 +129,13 @@ type UnifiedAgentConfigurationState struct {
 	// State of unified agent service configuration.
 	ConfigurationState pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringPtrInput
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Groups using the configuration.
 	GroupAssociation UnifiedAgentConfigurationGroupAssociationPtrInput
 	// (Updatable) Whether or not this resource is currently enabled.
@@ -158,13 +158,13 @@ type unifiedAgentConfigurationArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Description for this resource.
 	Description string `pulumi:"description"`
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) Groups using the configuration.
 	GroupAssociation *UnifiedAgentConfigurationGroupAssociation `pulumi:"groupAssociation"`
 	// (Updatable) Whether or not this resource is currently enabled.
@@ -178,13 +178,13 @@ type UnifiedAgentConfigurationArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Description for this resource.
 	Description pulumi.StringInput
 	// (Updatable) The user-friendly display name. This must be unique within the enclosing resource, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) Groups using the configuration.
 	GroupAssociation UnifiedAgentConfigurationGroupAssociationPtrInput
 	// (Updatable) Whether or not this resource is currently enabled.
@@ -291,8 +291,8 @@ func (o UnifiedAgentConfigurationOutput) ConfigurationState() pulumi.StringOutpu
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o UnifiedAgentConfigurationOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o UnifiedAgentConfigurationOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Description for this resource.
@@ -306,8 +306,8 @@ func (o UnifiedAgentConfigurationOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-func (o UnifiedAgentConfigurationOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o UnifiedAgentConfigurationOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *UnifiedAgentConfiguration) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Groups using the configuration.

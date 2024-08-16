@@ -160,7 +160,7 @@ class _WorkspaceImportRequestState:
                  are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
                  bucket: Optional[pulumi.Input[str]] = None,
                  created_by: Optional[pulumi.Input[str]] = None,
-                 error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
                  file_name: Optional[pulumi.Input[str]] = None,
                  import_conflict_resolution: Optional[pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs']] = None,
                  imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]]] = None,
@@ -179,7 +179,7 @@ class _WorkspaceImportRequestState:
         :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] created_by: Name of the user who initiated import request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: Contains key of the error
         :param pulumi.Input[str] file_name: Name of the zip file to be imported.
         :param pulumi.Input['WorkspaceImportRequestImportConflictResolutionArgs'] import_conflict_resolution: Import Objects Conflict resolution.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceImportRequestImportedObjectArgs']]] imported_objects: The array of imported object details.
@@ -271,14 +271,14 @@ class _WorkspaceImportRequestState:
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+    def error_messages(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]:
         """
         Contains key of the error
         """
         return pulumi.get(self, "error_messages")
 
     @error_messages.setter
-    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+    def error_messages(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]]):
         pulumi.set(self, "error_messages", value)
 
     @property
@@ -613,7 +613,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
             are_data_asset_references_included: Optional[pulumi.Input[bool]] = None,
             bucket: Optional[pulumi.Input[str]] = None,
             created_by: Optional[pulumi.Input[str]] = None,
-            error_messages: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            error_messages: Optional[pulumi.Input[Mapping[str, pulumi.Input[str]]]] = None,
             file_name: Optional[pulumi.Input[str]] = None,
             import_conflict_resolution: Optional[pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']]] = None,
             imported_objects: Optional[pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]]] = None,
@@ -637,7 +637,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         :param pulumi.Input[bool] are_data_asset_references_included: This field controls if the data asset references will be included during import.
         :param pulumi.Input[str] bucket: Name of the Object Storage bucket where the object will be imported from.
         :param pulumi.Input[str] created_by: Name of the user who initiated import request.
-        :param pulumi.Input[Mapping[str, Any]] error_messages: Contains key of the error
+        :param pulumi.Input[Mapping[str, pulumi.Input[str]]] error_messages: Contains key of the error
         :param pulumi.Input[str] file_name: Name of the zip file to be imported.
         :param pulumi.Input[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict']] import_conflict_resolution: Import Objects Conflict resolution.
         :param pulumi.Input[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict']]]] imported_objects: The array of imported object details.
@@ -705,7 +705,7 @@ class WorkspaceImportRequest(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="errorMessages")
-    def error_messages(self) -> pulumi.Output[Mapping[str, Any]]:
+    def error_messages(self) -> pulumi.Output[Mapping[str, str]]:
         """
         Contains key of the error
         """

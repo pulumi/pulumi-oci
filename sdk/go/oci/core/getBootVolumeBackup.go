@@ -64,13 +64,13 @@ type LookupBootVolumeBackupResult struct {
 	// The OCID of the compartment that contains the boot volume backup.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// The date and time the volume backup will expire and be automatically deleted. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). This parameter will always be present for backups that were created automatically by a scheduled-backup policy. For manually created backups, it will be absent, signifying that there is no expiration time and the backup will last forever until manually deleted.
 	ExpirationTime string `pulumi:"expirationTime"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The OCID of the boot volume backup.
 	Id string `pulumi:"id"`
 	// The image OCID used to create the boot volume the backup is taken from.
@@ -87,7 +87,7 @@ type LookupBootVolumeBackupResult struct {
 	// The current state of a boot volume backup.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the request to create the boot volume backup was received. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -151,8 +151,8 @@ func (o LookupBootVolumeBackupResultOutput) CompartmentId() pulumi.StringOutput 
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupBootVolumeBackupResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupBootVolumeBackupResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -166,8 +166,8 @@ func (o LookupBootVolumeBackupResultOutput) ExpirationTime() pulumi.StringOutput
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupBootVolumeBackupResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupBootVolumeBackupResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The OCID of the boot volume backup.
@@ -210,8 +210,8 @@ func (o LookupBootVolumeBackupResultOutput) State() pulumi.StringOutput {
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o LookupBootVolumeBackupResultOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+func (o LookupBootVolumeBackupResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupBootVolumeBackupResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the boot volume backup was created. This is the time the actual point-in-time image of the volume data was taken. Format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

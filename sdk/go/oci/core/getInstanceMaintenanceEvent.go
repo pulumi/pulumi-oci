@@ -59,8 +59,8 @@ type LookupInstanceMaintenanceEventArgs struct {
 // A collection of values returned by getInstanceMaintenanceEvent.
 type LookupInstanceMaintenanceEventResult struct {
 	// Additional details of the maintenance in the form of json.
-	AdditionalDetails           map[string]interface{} `pulumi:"additionalDetails"`
-	AlternativeResolutionAction string                 `pulumi:"alternativeResolutionAction"`
+	AdditionalDetails           map[string]string `pulumi:"additionalDetails"`
+	AlternativeResolutionAction string            `pulumi:"alternativeResolutionAction"`
 	// These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
 	AlternativeResolutionActions []string `pulumi:"alternativeResolutionActions"`
 	// For Instances that have local storage, this field is set to true when local storage will be deleted as a result of the Maintenance.
@@ -74,7 +74,7 @@ type LookupInstanceMaintenanceEventResult struct {
 	// The creator of the maintenance event.
 	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// It is the descriptive information about the maintenance taking place on the customer instance.
 	Description string `pulumi:"description"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -82,7 +82,7 @@ type LookupInstanceMaintenanceEventResult struct {
 	// This is the estimated duration of the Maintenance, once the Maintenance has entered the STARTED state.
 	EstimatedDuration string `pulumi:"estimatedDuration"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.
 	Id string `pulumi:"id"`
 	// This is the action that will be performed on the Instance by Oracle Cloud Infrastructure when the Maintenance begins.
@@ -149,8 +149,8 @@ func (o LookupInstanceMaintenanceEventResultOutput) ToLookupInstanceMaintenanceE
 }
 
 // Additional details of the maintenance in the form of json.
-func (o LookupInstanceMaintenanceEventResultOutput) AdditionalDetails() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]interface{} { return v.AdditionalDetails }).(pulumi.MapOutput)
+func (o LookupInstanceMaintenanceEventResultOutput) AdditionalDetails() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]string { return v.AdditionalDetails }).(pulumi.StringMapOutput)
 }
 
 func (o LookupInstanceMaintenanceEventResultOutput) AlternativeResolutionAction() pulumi.StringOutput {
@@ -188,8 +188,8 @@ func (o LookupInstanceMaintenanceEventResultOutput) CreatedBy() pulumi.StringOut
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o LookupInstanceMaintenanceEventResultOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+func (o LookupInstanceMaintenanceEventResultOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // It is the descriptive information about the maintenance taking place on the customer instance.
@@ -208,8 +208,8 @@ func (o LookupInstanceMaintenanceEventResultOutput) EstimatedDuration() pulumi.S
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o LookupInstanceMaintenanceEventResultOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+func (o LookupInstanceMaintenanceEventResultOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupInstanceMaintenanceEventResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance event.

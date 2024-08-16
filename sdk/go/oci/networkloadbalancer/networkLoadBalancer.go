@@ -33,11 +33,11 @@ type NetworkLoadBalancer struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) Network load balancer identifier, which can be renamed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// An array of IP addresses.
 	IpAddresses NetworkLoadBalancerIpAddressArrayOutput `pulumi:"ipAddresses"`
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
@@ -83,7 +83,7 @@ type NetworkLoadBalancer struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIpv6cidr pulumi.StringPtrOutput `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -136,11 +136,11 @@ type networkLoadBalancerState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Network load balancer identifier, which can be renamed.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// An array of IP addresses.
 	IpAddresses []NetworkLoadBalancerIpAddress `pulumi:"ipAddresses"`
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
@@ -186,7 +186,7 @@ type networkLoadBalancerState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIpv6cidr *string `pulumi:"subnetIpv6cidr"`
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -201,11 +201,11 @@ type NetworkLoadBalancerState struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Network load balancer identifier, which can be renamed.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// An array of IP addresses.
 	IpAddresses NetworkLoadBalancerIpAddressArrayInput
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
@@ -251,7 +251,7 @@ type NetworkLoadBalancerState struct {
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIpv6cidr pulumi.StringPtrInput
 	// Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-	SystemTags pulumi.MapInput
+	SystemTags pulumi.StringMapInput
 	// The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
 	// The time the network load balancer was updated. An RFC3339 formatted date-time string.  Example: `2020-05-01T22:10:29.600Z`
@@ -270,11 +270,11 @@ type networkLoadBalancerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) Network load balancer identifier, which can be renamed.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
 	IsPreserveSourceDestination *bool `pulumi:"isPreserveSourceDestination"`
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -324,11 +324,11 @@ type NetworkLoadBalancerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancer.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.MapInput
+	DefinedTags pulumi.StringMapInput
 	// (Updatable) Network load balancer identifier, which can be renamed.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags pulumi.StringMapInput
 	// (Updatable) This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
 	IsPreserveSourceDestination pulumi.BoolPtrInput
 	// Whether the network load balancer has a virtual cloud network-local (private) IP address.
@@ -472,8 +472,8 @@ func (o NetworkLoadBalancerOutput) CompartmentId() pulumi.StringOutput {
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o NetworkLoadBalancerOutput) DefinedTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+func (o NetworkLoadBalancerOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Network load balancer identifier, which can be renamed.
@@ -482,8 +482,8 @@ func (o NetworkLoadBalancerOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o NetworkLoadBalancerOutput) FreeformTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
+func (o NetworkLoadBalancerOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
 // An array of IP addresses.
@@ -564,8 +564,8 @@ func (o NetworkLoadBalancerOutput) SubnetIpv6cidr() pulumi.StringPtrOutput {
 }
 
 // Key-value pair representing system tags' keys and values scoped to a namespace. Example: `{"bar-key": "value"}`
-func (o NetworkLoadBalancerOutput) SystemTags() pulumi.MapOutput {
-	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+func (o NetworkLoadBalancerOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NetworkLoadBalancer) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // The date and time the network load balancer was created, in the format defined by RFC3339.  Example: `2020-05-01T21:10:29.600Z`
